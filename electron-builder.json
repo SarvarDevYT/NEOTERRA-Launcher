@@ -1,0 +1,30 @@
+{
+  "appId": "uz.neoterra.launcher",
+  "productName": "NeoTerra Launcher",
+  "directories": {
+    "output": "dist-build"
+  },
+  "files": [
+    "src/main/**/*",
+    "dist/renderer/**/*"
+  ],
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": ["x64"]
+      },
+      {
+        "target": "portable",
+        "arch": ["x64"]
+      }
+    ],
+    "icon": "public/neoterra-new-logo.jpg"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "shortcutName": "NeoTerra Launcher"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "version": "1.0.0",
+  "gameVersion": "1.20.1",
+  "loader": {
+    "type": "fabric",
+    "version": "0.14.24"
+  },
+  "java": {
+    "version": "17",
+    "downloadUrl": "https://cdn.neoterra.uz/java/openjdk-17-windows-x64.zip"
+  },
+  "server": {
+    "ip": "play.neoterra.uz",
+    "port": 25565
+  },
+  "files": [
+    {
+      "path": "mods/sodium-fabric-0.5.3+mc1.20.1.jar",
+      "sha256": "a3b1c2d3e4f567890abcdef1234567890abcdef1234567890abcdef123456789",
+      "size": 1245000,
+      "url": "https://cdn.neoterra.uz/mods/sodium-fabric-0.5.3+mc1.20.1.jar"
+    },
+    {
+      "path": "mods/iris-1.6.10-1.20.1.jar",
+      "sha256": "f9e8d7c6b5a43210fedcba0987654321fedcba0987654321fedcba0987654321",
+      "size": 2300000,
+      "url": "https://cdn.neoterra.uz/mods/iris-1.6.10-1.20.1.jar"
+    },
+    {
+      "path": "resourcepacks/NeoTerra-Pack.zip",
+      "sha256": "11223344556677889900aabbccddeeff11223344556677889900aabbccddeeff",
+      "size": 15400000,
+      "url": "https://cdn.neoterra.uz/resourcepacks/NeoTerra-Pack.zip"
+    }
+  ]
+}
