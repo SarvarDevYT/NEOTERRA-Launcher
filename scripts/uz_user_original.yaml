@@ -1,0 +1,2260 @@
+﻿AppAddInstanceDialog:
+  choiceTitle: ╨Ю╨▒╨╜╨░╤А╤Г╨╢╨╡╨╜╨╛ ╨╜╨╡╤Б╨║╨╛╨╗╤М╨║╨╛ ╨┐╤А╨╛╤Д╨╕╨╗╨╡╨╣ ╨╖╨░╨┐╤Г╤Б╨║╨░. ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨▓╤Л╨▒╨╡╤А╨╕╤В╨╡ ╨╛╨┤╨╕╨╜ ╨┤╨╗╤П
+    ╨╕╨╝╨┐╨╛╤А╤В╨░.
+  createTitle: ╨б╨╛╨╖╨┤╨░╤В╤М ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А
+  serverTitle: ╨Т╨▓╨╡╨┤╨╕╤В╨╡ ╨░╨┤╤А╨╡╤Б ╨▓╨░╤И╨╡╨│╨╛ ╤Б╨╡╤А╨▓╨╡╤А╨░
+AppShareInstanceDialog:
+  alterDownloadDescription: ╨Х╤Б╨╗╨╕ ╨▓╤Л ╨╜╨╡ ╤Е╨╛╤В╨╕╤В╨╡ ╨╝╨╡╨╜╤П╤В╤М ╤В╨╡╨║╤Г╤Й╨╕╨╣ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А, ╨▓╤Л ╨╝╨╛╨╢╨╡╤В╨╡
+    ╤Б╨╛╨╖╨┤╨░╤В╤М ╨╜╨╛╨▓╤Л╨╣ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А ╨╕╨╖ ╨║╨╛╨╜╤Д╨╕╨│╤Г╤А╨░╤Ж╨╕╨╕ ╨▓╨░╤И╨╡╨│╨╛ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П. ╨Э╨░╨╢╨╝╨╕╤В╨╡ ╨╜╨░ ╨║╨╜╨╛╨┐╨║╤Г
+    ╨╜╨╕╨╢╨╡, ╤З╤В╨╛╨▒╤Л ╤Б╨╛╨╖╨┤╨░╤В╤М ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А.
+  baseInfo: ╨Ы╨╛╨║╨░╨╗╤М╨╜╤Л╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕
+  cancelShare: ╨Ю╤В╨╝╨╡╨╜╨╕╤В╤М ╨╛╨▒╨╝╨╡╨╜
+  description: ╨Я╨╛╤Б╨╗╨╡ ╤В╨╛╨│╨╛, ╨║╨░╨║ ╨▓╤Л ╤А╨░╨╖╤А╨╡╤И╨╕╤В╨╡ ╨╛╨▒╨╝╨╡╨╜ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨╛╨╝, ╨┤╤А╤Г╨│╨╕╨╡ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╨╕
+    ╤Б╨╝╨╛╨│╤Г╤В ╨╖╨░╨│╤А╤Г╨╢╨░╤В╤М ╤Н╤В╨╕ ╤Д╨░╨╣╨╗╤Л ╤З╨╡╤А╨╡╨╖ ╨▓╨░╤И ╨║╨╛╨╝╨┐╤М╤О╤В╨╡╤А.
+  downloadDescription: ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨┐╤А╨╛╨▓╨╡╤А╤М╤В╨╡ ╤Д╨░╨╣╨╗╤Л, ╨┐╤А╨╡╨┤╨╛╤Б╤В╨░╨▓╨╗╨╡╨╜╨╜╤Л╨╡ ╨▓╨░╤И╨╕╨╝ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╨╡╨╝.
+    ╨Т╤Л╨▒╨╡╤А╨╕╤В╨╡ ╤Д╨░╨╣╨╗╤Л, ╨║╨╛╤В╨╛╤А╤Л╨╡ ╨▓╤Л ╤Е╨╛╤В╨╕╤В╨╡ ╤Б╨║╨░╤З╨░╤В╤М. ╨Ю╨╜╨╕ ╨▒╤Г╨┤╤Г╤В ╤А╨░╨╖╨╝╨╡╤Й╨╡╨╜╤Л ╨▓ ╤В╨╡╨║╤Г╤Й╨╡╨╝ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨╡
+    {name}.
+  downloadNotifyTitle: ╨б╨║╨░╤З╨╕╨▓╨░╨╜╨╕╨╡ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░ ╨╛╤В {user}
+  downloadTitle: ╨б╨║╨░╤З╨╕╨▓╨░╨╜╨╕╨╡ ╤Д╨░╨╣╨╗╨╛╨▓ ╨╛╤В ╨┤╤А╤Г╨│╨╕╤Е ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╨╡╨╣
+  filesToDownload: ╨Т╤Л╨▒╨╡╤А╨╕╤В╨╡ ╤Д╨░╨╣╨╗╤Л ╨┤╨╗╤П ╨╖╨░╨│╤А╤Г╨╖╨║╨╕
+  filesToShare: ╨Т╤Л╨▒╨╡╤А╨╕╤В╨╡ ╤Д╨░╨╣╨╗╤Л ╨┤╨╗╤П ╨╛╨▒╨╝╨╡╨╜╨░
+  instanceShare: '{user} ╤В╨╛╨╗╤М╨║╨╛ ╤З╤В╨╛ ╨┐╨╛╨┤╨╡╨╗╨╕╨╗╤Б╤П ╤В╨╡╨║╤Г╤Й╨╕╨╝ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨╛╨╝ ╤Б ╨▓╨░╨╝╨╕'
+  share: ╨Ю╨▒╨╝╨╡╨╜
+  shareNotifyTitle: ╨Ю╨▒╨╝╨╡╨╜ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨╛╨╝
+  shareTitle: ╨Ю╨▒╨╝╨╡╨╜ ╨╕╨│╤А╨╛╨▓╤Л╨╝╨╕ ╤Д╨░╨╣╨╗╨░╨╝╨╕ ╤Б ╨┤╤А╤Г╨│╨╕╨╝╨╕ ╨╕╨│╤А╨╛╨║╨░╨╝╨╕
+BaseSettingGeneral:
+  title: ╨Ю╨▒╤Й╨╕╨╡
+HomeJavaIssueDialog:
+  incompatibleJava: ╨Э╨╡╤Б╨╛╨▓╨╝╨╡╤Б╤В╨╕╨╝╨░╤П ╨▓╨╡╤А╤Б╨╕╤П Java
+  incompatibleJavaHint: ╨в╨╡╨║╤Г╤Й╨░╤П ╨▓╨╡╤А╤Б╨╕╤П Java ╨╝╨╛╨╢╨╡╤В ╨▒╤Л╤В╤М ╨╜╨╡╤Б╨╛╨▓╨╝╨╡╤Б╤В╨╕╨╝╨░ ╤Б ╨▓╤Л╨▒╤А╨░╨╜╨╜╨╛╨╣ ╨▓╨╡╤А╤Б╨╕╨╡╨╣
+    Minecraft!
+  missingJava: ╨Ю╤В╤Б╤Г╤В╤Б╤В╨▓╤Г╨╡╤В Java
+  missingJavaHint: '╨Ы╨░╤Г╨╜╤З╨╡╤А ╨╜╨╡ ╨╝╨╛╨╢╨╡╤В ╨╛╨▒╨╜╨░╤А╤Г╨╢╨╕╤В╤М ╨╜╨╕ ╨╛╨┤╨╜╨╛╨╣ ╨▓╨╡╤А╤Б╨╕╨╕ Java ╨╜╨░ ╨▓╨░╤И╨╡╨╝ ╨║╨╛╨╝╨┐╤М╤О╤В╨╡╤А╨╡.
+    ╨Т╤Л ╨╝╨╛╨╢╨╡╤В╨╡:'
+  optionSwitch:
+    name: ╨Я╨╡╤А╨╡╨║╨╗╤О╤З╨╕╤В╤М╤Б╤П ╨╜╨░ {version}
+HomeLaunchMultiInstanceDialog:
+  confirm: ╨Ф╨░, ╨╖╨░╨┐╤Г╤Б╤В╨╕╤В╤М
+  description: ╨Т╤Л ╨╖╨░╨┐╤Г╤Б╨║╨░╨╡╤В╨╡ ╨╜╨╡╤Б╨║╨╛╨╗╤М╨║╨╛ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨╛╨▓ Minecraft. ╨Т╤Л ╤Г╨▓╨╡╤А╨╡╨╜╤Л?
+  title: ╨Э╨╡╤Б╨║╨╛╨╗╤М╨║╨╛ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨╛╨▓
+SettingMigrationDialog:
+  selectRootDirectory: ╨Т╤Л╨▒╤А╨░╤В╤М ╨║╨╛╤А╨╜╨╡╨▓╨╛╨╣ ╨║╨░╤В╨░╨╗╨╛╨│
+agent:
+  title: NeoTerra Launcher Agent
+  statusReady: ╨У╨╛╤В╨╛╨▓
+  statusWorking: ╨а╨░╨▒╨╛╤В╨░╤ОтАж
+  statusDisabled: ╨Ю╤В╨║╨╗╤О╤З╨╡╨╜╨╛ тАФ ╨╜╨╡╤В API-╨║╨╗╤О╤З╨░
+  reset: ╨б╨▒╤А╨╛╤Б╨╕╤В╤М ╨┤╨╕╨░╨╗╨╛╨│
+  notConfiguredTitle: Agent ╨╜╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╡╨╜
+  notConfiguredHint: ╨г╨║╨░╨╢╨╕╤В╨╡ API-╨║╨╗╤О╤З, ╨╝╨╛╨┤╨╡╨╗╤М ╨╕ endpoint ╨▓ ╨Э╨░╤Б╤В╤А╨╛╨╣╨║╨╕ тЖТ ╨Ю╨▒╤Й╨╕╨╡ тЖТ AI
+    Agent, ╤З╤В╨╛╨▒╤Л ╨▓╨║╨╗╤О╤З╨╕╤В╤М ╨░╨│╨╡╨╜╤В╨░.
+  openSettings: ╨Ю╤В╨║╤А╤Л╤В╤М ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕
+  setupGuide: ╨а╤Г╨║╨╛╨▓╨╛╨┤╤Б╤В╨▓╨╛ ╨┐╨╛ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╡
+  emptyHint: ╨Я╨╛╨┐╤А╨╛╤Б╨╕╤В╨╡ ╨░╨│╨╡╨╜╤В╨░ ╨┐╤А╨╛╨▓╨╡╤А╨╕╤В╤М ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А, ╨▓╨║╨╗╤О╤З╨╕╤В╤М/╨▓╤Л╨║╨╗╤О╤З╨╕╤В╤М ╨╝╨╛╨┤╤Л, ╤З╨╕╤В╨░╤В╤М
+    ╨╗╨╛╨│╨╕ ╨╕╨╗╨╕ ╨┤╨╕╨░╨│╨╜╨╛╤Б╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨║╤А╨░╤И.
+  suggestion1: ╨Ю╨▒╨╜╨╛╨▓╨╕╤В╨╡ ╤Н╤В╨╛╤В ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А ╨┤╨╛ ╨╜╨╛╨▓╨╛╨╣ ╨▓╨╡╤А╤Б╨╕╨╕ Minecraft ╨╕ ╨╛╨▒╨╜╨╛╨▓╨╕╤В╨╡ ╨╝╨╛╨┤╤Л
+  suggestion2: ╨Ь╨╛╨╕ ╨╝╨╛╨┤╤Л ╨┐╨░╨┤╨░╤О╤В тАФ ╨╜╨░╨╣╨┤╨╕╤В╨╡ ╨┐╤А╨╕╤З╨╕╨╜╤Г ╨╕ ╨┐╨╛╨┤╤Б╨║╨░╨╢╨╕╤В╨╡, ╨║╨░╨║ ╨╕╤Б╨┐╤А╨░╨▓╨╕╤В╤М
+  suggestion3: '╨б╨╛╨▒╨╡╤А╨╕╤В╨╡ ╤Б╨▒╨╛╤А╨║╤Г: ╨╜╨░╨╣╨┤╨╕╤В╨╡ ╨╝╨╛╨┤╤Л ╨┤╨╗╤П ╨╜╤Г╨╢╨╜╨╛╨╣ ╤Д╤Г╨╜╨║╤Ж╨╕╨╕ ╨╕ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╨╡ ╨╕╤Е ╨▓
+    ╤Н╤В╨╛╤В ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А'
+  thinking: ╨┤╤Г╨╝╨░╤ОтАж
+  callingTool: ╨▓╤Л╨╖╨╛╨▓ {name}тАж
+  inputPlaceholder: ╨б╨┐╤А╨╛╤Б╨╕╤В╨╡ ╨░╨│╨╡╨╜╤В╨░тАж (Enter тАФ ╨╛╤В╨┐╤А╨░╨▓╨╕╤В╤М, Shift+Enter тАФ ╨╜╨╛╨▓╨░╤П ╤Б╤В╤А╨╛╨║╨░)
+  disabledPlaceholder: Agent ╨╛╤В╨║╨╗╤О╤З╨╡╨╜
+  toggleHint: ╨┐╨╡╤А╨╡╨║╨╗╤О╤З╨╕╤В╤М
+  confirmAccept: Continue
+  confirmCancel: Bekor Qilish
+  confirmTitle: Confirm agent action
+  errorTitle: The agent hit an error
+  toolArguments: Arguments
+  toolResult: Result
+  toolRunning: Waiting for resultтАж
+  marketConfirmMessage: Install {name} into the current instance?
+  marketConfirmTarget: 'Target: {instance}'
+  marketConfirmTitle: Install {type}
+  marketInstall: O'rnatish
+  marketInstalled: O'rnatildi
+  marketInstallFailed: Failed to install {type}
+  marketType:
+    datapack: data pack
+    mod: mod
+    modpack: modpack
+    resourcepack: resource pack
+    shader: shader pack
+  marketResultCount: '{count} results'
+ago:
+  day: '{duration} ╨┤╨╡╨╜╤М ╨╜╨░╨╖╨░╨┤ | {duration} ╨┤╨╜╨╡╨╣ ╨╜╨░╨╖╨░╨┤'
+  hour: '{duration} ╤З╨░╤Б ╨╜╨░╨╖╨░╨┤ | {duration} ╤З╨░╤Б╨╛╨▓ ╨╜╨░╨╖╨░╨┤'
+  minute: '{duration} ╨╝╨╕╨╜╤Г╤В╤Г ╨╜╨░╨╖╨░╨┤ | {duration} ╨╝╨╕╨╜╤Г╤В ╨╜╨░╨╖╨░╨┤'
+  second: '{duration} ╤Б╨╡╨║╤Г╨╜╨┤╤Г ╨╜╨░╨╖╨░╨┤ | {duration} ╤Б╨╡╨║╤Г╨╜╨┤ ╨╜╨░╨╖╨░╨┤'
+askAICrash:
+  copyPrompt: ╨б╨║╨╛╨┐╨╕╤А╤Г╨╣╤В╨╡ ╨┐╨╛╨┤╤Б╨║╨░╨╖╨║╤Г, ╤З╤В╨╛╨▒╤Л ╤Б╨┐╤А╨╛╤Б╨╕╤В╤М AI
+  description: '╨Я╤Г╤Б╤В╤М AI ╨┐╨╛╨╝╨╛╨╢╨╡╤В ╨▓╨░╨╝ ╨┐╨╛╨╜╤П╤В╤М ╨╕╨│╤А╨╛╨▓╨╛╨╣ ╤Б╨▒╨╛╨╣!
+
+    ╨б╨╗╨╡╨┤╤Г╨╣╤В╨╡ ╨╕╨╜╤Б╤В╤А╤Г╨║╤Ж╨╕╤П╨╝ ╨╜╨╕╨╢╨╡, ╤З╤В╨╛╨▒╤Л ╤Б╨┐╤А╨╛╤Б╨╕╤В╤М ╨Ш╨Ш ╨╛╨▒ ╤Н╤В╨╛╨╝ ╨╕╨│╤А╨╛╨▓╨╛╨╝ ╤Б╨▒╨╛╨╡!'
+  selectPlatform: ╨Ю╤В╨║╤А╨╛╨╣╤В╨╡ ╨┐╨╗╨░╤В╤Д╨╛╤А╨╝╤Г ╨┤╨╗╤П ╨Ш╨Ш ╨╕ ╨▓╤Б╤В╨░╨▓╤М╤В╨╡ ╤В╨╛╨╗╤М╨║╨╛ ╤З╤В╨╛ ╤В╨╛╨╗╤М╨║╨╛ ╤З╤В╨╛ ╤Б╨║╨╛╨┐╨╕╤А╨╛╨▓╨░╨╜╨╜╨╛╨╡.
+  agentNotConfigured: Add an AI provider and API key in Settings to let the launcher's
+    built-in agent diagnose and fix this for you.
+  askAgent: Diagnose with the built-in AI agent
+  orExternal: or use an external AI
+  setupAgent: Set up the AI agent
+authProfileAddedNotification: ╨Я╤А╨╛╤Д╨╕╨╗╤М ╨░╤Г╤В╨╡╨╜╤В╨╕╤Д╨╕╨║╨░╤Ж╨╕╨╕ {name} ╨┤╨╛╨▒╨░╨▓╨╗╨╡╨╜
+bedrock:
+  installBedrockVersion: Downloading Bedrock {version}
+  versionsTitle: Version manager
+  versionsHint: Download multiple Bedrock versions from Microsoft's servers and switch
+    between them. Windows can register only one version at a time.
+  versionsError: Failed to load the version list. Check your network and try again.
+  channel: Channel
+  channelRelease: Release
+  channelBeta: Beta
+  channelPreview: Preview
+  active: Active
+  play: O'ynash
+  download: Yuklab Olish
+  installedTag: O'rnatildi
+  developerModeRequired: Registering a downloaded version requires Windows Developer
+    Mode.
+  enableDeveloperMode: Enable Developer Mode
+  enableDeveloperModeFailed: Failed to enable Developer Mode
+  downloadFailed: Failed to download Bedrock {version}
+  launchFailed: Failed to launch this Bedrock version
+  removeFailed: Failed to remove Bedrock {version}
+  description: Minecraft Bedrock Edition is installed and launched through the Microsoft
+    Store. You need to own a Bedrock license on your Microsoft account.
+  install: Get from Microsoft Store
+  installFailed: Failed to open the Microsoft Store
+  installed: 'Installed: {version}'
+  launchHint: Use the Launch button to start Bedrock Edition.
+  licenseRequired: Sign in with a Microsoft account that owns Minecraft to install
+    and play Bedrock Edition.
+  refresh: Yangilash
+baseSetting:
+  title: ╨Ы╨╛╨║╨░╨╗╤М╨╜╤Л╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕
+browseApp:
+  createShortcut: ╨б╨╛╨╖╨┤╨░╤В╤М ╤П╤А╨╗╤Л╨║
+  default: ╨Я╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О
+  delete: ╨г╨┤╨░╨╗╨╕╤В╤М
+  launch: ╨Ч╨░╨┐╤Г╤Б╤В╨╕╤В╤М ╨╕ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О
+browseApps: ╨Я╤А╨╛╤Б╨╝╨╛╤В╤А ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤М╤Б╨║╨╛╨│╨╛ ╨╕╨╜╤В╨╡╤А╤Д╨╡╨╣╤Б╨░ ╨┐╤Г╤Б╨║╨╛╨▓╨╛╨╣ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨║╨╕
+color: ╨ж╨▓╨╡╤В
+confirm: ╨Я╨╛╨┤╤В╨▓╨╡╤А╨┤╨╕╤В╤М
+copyClipboard:
+  success: ╨б╨║╨╛╨┐╨╕╤А╨╛╨▓╨░╨╜╨╛ ╨▓ ╨▒╤Г╤Д╨╡╤А ╨╛╨▒╨╝╨╡╨╜╨░
+create: ╨б╨╛╨╖╨┤╨░╤В╤М
+curseforge:
+  category: ╨Ъ╨░╤В╨╡╨│╨╛╤А╨╕╤П
+  createdDate: ╨Ф╨░╤В╨░ ╤Б╨╛╨╖╨┤╨░╨╜╨╕╤П
+  lastUpdate: ╨Ф╨░╤В╨░ ╨┐╨╛╤Б╨╗╨╡╨┤╨╜╨╡╨│╨╛ ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╤П
+  releasedDate: ╨Ф╨░╤В╨░ ╤А╨╡╨╗╨╕╨╖╨░
+curseforgeCategory:
+  API and Library: API ╨╕ ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╨╕
+  Addons: ╨Ф╨╛╨┐╨╛╨╗╨╜╨╡╨╜╨╕╤П
+  Adventure: ╨Я╤А╨╕╨║╨╗╤О╤З╨╡╨╜╨╕╨╡
+  Adventure and RPG: ╨Я╤А╨╕╨║╨╗╤О╤З╨╡╨╜╨╕╤П ╨╕ RPG
+  Animated: ╨Р╨╜╨╕╨╝╨░╤Ж╨╕╤П
+  Armor, Tools, and Weapons: ╨Ф╨╛╤Б╨┐╨╡╤Е╨╕, ╨╕╨╜╤Б╤В╤А╤Г╨╝╨╡╨╜╤В╤Л ╨╕ ╨╛╤А╤Г╨╢╨╕╨╡
+  Combat / PvP: ╨б╨╛╤А╨╡╨▓╨╜╨╛╨▓╨░╨╜╨╕╤П/PVP
+  Cosmetic: ╨Т╨╜╨╡╤И╨╜╨╕╨╣ ╨▓╨╕╨┤/╨┤╨╡╨║╨╛╤А
+  Creation: ╨в╨▓╨╛╤А╤З╨╡╤Б╨║╨╕╨╣ ╤А╨╡╨╢╨╕╨╝
+  Data Packs: ╨Я╨░╨║╨╡╤В ╨┤╨░╨╜╨╜╤Л╤Е
+  Education: ╨Ю╨▒╤А╨░╨╖╨╛╨▓╨░╨╜╨╕╨╡
+  Exploration: ╨а╨░╨╖╨▓╨╡╨┤╨║╨░
+  Extra Large: ╨С╨╛╨╗╤М╤И╨╛╨╣ ╤А╨░╨╖╨╝╨╡╤А
+  FTB Official Pack: ╨Ю╤Д╨╕╤Ж╨╕╨░╨╗╤М╨╜╤Л╨╣ ╨┐╨░╨║╨╡╤В FTB
+  Fabric: Fabric
+  FancyMenu: FancyMenu
+  Font Packs: ╨и╤А╨╕╤Д╤В╤Л
+  Food: ╨Х╨┤╨░
+  Game Map: ╨Ш╨│╤А╨╛╨▓╤Л╨╡ ╨║╨░╤А╤В╤Л
+  Hardcore: ╨е╨░╤А╨┤╨║╨╛╤А
+  MCreator: MCreator
+  Magic: ╨Ь╨░╨│╨╕╤П
+  Map Based: ╨Э╨░ ╨╛╤Б╨╜╨╛╨▓╨╡ ╨║╨░╤А╤В╤Л
+  Map and Information: ╨Ъ╨░╤А╤В╤Л ╨╕ ╨╕╨╜╤Д╨╛╤А╨╝╨░╤Ж╨╕╤П
+  Medieval: ╨б╤А╨╡╨┤╨╜╨╡╨▓╨╡╨║╨╛╨▓╤М╨╡
+  Mini Game: ╨Ь╨╕╨╜╨╕-╨╕╨│╤А╤Л
+  Miscellaneous: ╨а╨░╨╖╨╜╨╛╨╡
+  Mod Support: ╨Я╨╛╨┤╨┤╨╡╤А╨╢╨║╨░ ╨╝╨╛╨┤╨╛╨▓
+  Modded World: ╨Ь╨╛╨┤ ╨┤╨╗╤П ╨╝╨╕╤А╨╛╨▓
+  Modern: Modern
+  Multiplayer: ╨Ь╤Г╨╗╤М╤В╨╕╨┐╨╗╨╡╨╡╤А
+  Parkour: ╨Я╨░╤А╨║╤Г╤А
+  Photo Realistic: ╨а╨╡╨░╨╗╨╕╤Б╤В╨╕╤З╨╜╨░╤П ╤Д╨╛╤В╨╛╨│╤А╨░╤Д╨╕╤П
+  Puzzle: ╨Я╨░╨╖╨╗╤Л
+  QoL: QoL
+  Quests: ╨Ъ╨▓╨╡╤Б╤В╤Л
+  Redstone: Redstone
+  Sci-Fi: ╨Э╨░╤Г╤З╨╜╨░╤П ╤Д╨░╨╜╤В╨░╤Б╤В╨╕╨║╨░
+  Server Utility: ╨б╨╡╤А╨▓╨╡╤А╨╜╤Л╨╣ ╨╕╨╜╤Б╤В╤А╤Г╨╝╨╡╨╜╤В
+  Skyblock: SkyBlock
+  Small / Light: ╨Э╨╡╨╝╨╜╨╛╨│╨╛
+  Steampunk: Steampunk
+  Storage: ╨е╤А╨░╨╜╨╡╨╜╨╕╨╡
+  Survival: ╨Т╤Л╨╢╨╕╨▓╨░╨╜╨╕╨╡
+  Tech: ╨в╨╡╤Е╨╜╨╛╨╗╨╛╨│╨╕╤П
+  Technology: ╨в╨╡╤Е╨╜╨╛╨╗╨╛╨│╨╕╤П
+  Traditional: ╨в╤А╨░╨┤╨╕╤Ж╨╕╨╛╨╜╨╜╤Л╨╣
+  Twitch Integration: ╨Ш╨╜╤В╨╡╨│╤А╨░╤Ж╨╕╤П ╤Б Twitch
+  Utility & QoL: ╨г╤В╨╕╨╗╨╕╤В╨░ ╨╕ Qol
+  Vanilla+: ╨Т╨░╨╜╨╕╨╗╨░+
+  World Gen: ╨У╨╡╨╜╨╡╤А╨░╤В╨╛╤А ╨╝╨╕╤А╨░
+dataMigration:
+  apply: ╨Я╤А╨╕╨╝╨╡╨╜╨╕╤В╤М ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕
+  directoryCriteriaHint: ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╤Г╨▒╨╡╨┤╨╕╤В╨╡╤Б╤М, ╤З╤В╨╛ ╨╜╨╛╨▓╨╛╨╡ ╤А╨░╤Б╨┐╨╛╨╗╨╛╨╢╨╡╨╜╨╕╨╡ ╤П╨▓╨╗╤П╨╡╤В╤Б╤П ╨┐╤Г╤Б╤В╤Л╨╝
+    ╨║╨░╤В╨░╨╗╨╛╨│╨╛╨╝!
+  placeholder: ╨Э╨░╨╢╨╝╨╕╤В╨╡ ╨╖╨┤╨╡╤Б╤М, ╤З╤В╨╛╨▒╤Л ╨▓╤Л╨▒╤А╨░╤В╤М ╨║╨░╤В╨░╨╗╨╛╨│
+  setRootCause: ╨Т╤Л ╨┐╨╛╤В╨╡╤А╤П╨╡╤В╨╡ ╤Б╨▓╨╛╨╕ ╨┤╨░╨╜╨╜╤Л╨╡ (╨║╨░╤А╤В╤Л, ╨╜╨░╨▒╨╛╤А╤Л ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓, ╨╝╨╛╨┤╤Л), ╨╡╤Б╨╗╨╕ ╨╖╨░╨║╤А╨╛╨╡╤В╨╡
+    ╨╗╨░╤Г╨╜╤З╨╡╤А ╨▓╨╛ ╨▓╤А╨╡╨╝╤П ╨┐╨╡╤А╨╡╨╜╨╛╤Б╨░!
+  setRootDescription: ╨н╤В╨╛ ╨╕╨╖╨╝╨╡╨╜╨╕╤В ╨║╨╛╤А╨╜╨╡╨▓╨╛╨╣ ╨║╨░╤В╨░╨╗╨╛╨│ ╨┤╨░╨╜╨╜╤Л╤Е ╤Н╤В╨╛╨│╨╛ ╨╗╨░╤Г╨╜╤З╨╡╤А╨░ ╨╕ Minecraft.
+  setRootTitle: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╨╜╨╛╨▓╨╛╨╡ ╤А╨░╤Б╨┐╨╛╨╗╨╛╨╢╨╡╨╜╨╕╨╡ ╤Е╤А╨░╨╜╨╕╨╗╨╕╤Й╨░
+  unknownError: ╨Э╨╡╨╕╨╖╨▓╨╡╤Б╤В╨╜╨░╤П ╨╛╤И╨╕╨▒╨║╨░! ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨┐╨╛╨┐╤А╨╛╨▒╤Г╨╣╤В╨╡ ╨╡╤Й╤С ╤А╨░╨╖ ╨╕╨╗╨╕ ╤Б╨▓╤П╨╢╨╕╤В╨╡╤Б╤М ╤Б
+    ╤А╨░╨╖╤А╨░╨▒╨╛╤В╤З╨╕╨║╨╛╨╝!
+  waitReload: ╨Ь╨╕╨│╤А╨░╤Ж╨╕╤П ╨┤╨░╨╜╨╜╤Л╤Е. ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨╜╨╡ ╨╖╨░╨║╤А╤Л╨▓╨░╨╣╤В╨╡ ╨╗╨░╤Г╨╜╤З╨╡╤А ╨╕╨╗╨╕ ╨▓╤Л ╨┐╨╛╤В╨╡╤А╤П╨╡╤В╨╡
+    ╤Б╨▓╨╛╨╕ ╨┤╨░╨╜╨╜╤Л╨╡.
+delete:
+  name: ╨г╨┤╨░╨╗╨╕╤В╤М {name}
+  'no': ╨Э╨╡╤В
+  'yes': ╨г╨┤╨░╨╗╨╕╤В╤М
+dependencies:
+  embedded: ╨Т╤Б╤В╤А╨░╨╕╨▓╨░╨╡╨╝╤Л╨╡
+  incompatible: ╨Э╨╡╤Б╨╛╨▓╨╝╨╡╤Б╤В╨╕╨╝╤Л╨╡
+  name: ╨Ч╨░╨▓╨╕╤Б╨╕╨╝╨╛╤Б╤В╨╕
+  optional: ╨Э╨╡╨╛╨▒╤П╨╖╨░╤В╨╡╨╗╤М╨╜╤Л╨╡
+  required: ╨Э╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╤Л╨╡
+diagnosis:
+  badInstall:
+    message: ╨Э╨░╨╢╨╝╨╕╤В╨╡, ╤З╤В╨╛╨▒╤Л ╨┐╨╛╨┐╤Л╤В╨░╤В╤М╤Б╤П ╨┐╨╡╤А╨╡╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╤Н╤В╤Г ╨▓╨╡╤А╤Б╨╕╤О.
+    name: ╨Э╨╡╤Г╨┤╨░╤З╨╜╨░╤П ╤Г╤Б╤В╨░╨╜╨╛╨▓╨║╨░ ╨╜╨░ {version}
+  corruptedAssets:
+    message: ╨Ы╨░╤Г╨╜╤З╨╡╤А ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В ╤А╨╡╤Б╤Г╤А╤Б╤Л ╨┤╨╗╤П ╨▓╨░╤Б
+    name: ╨Я╨╛╨▓╤А╨╡╨╢╨┤╤С╨╜╨╜╤Л╨╣ ╤А╨╡╤Б╤Г╤А╤Б {name} | ╨Я╨╛╨▓╤А╨╡╨╢╨┤╤С╨╜╨╜╤Л╨╣ ╤А╨╡╤Б╤Г╤А╤Б {name} | {count} ╨┐╨╛╨▓╤А╨╡╨╢╨┤╤С╨╜╨╜╤Л╤Е
+      ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓
+  corruptedAssetsIndex:
+    message: ╨Ы╨░╤Г╨╜╤З╨╡╤А ╤Б╨║╨░╤З╨░╨╡╤В ╤Д╨░╨╣╨╗ ╨╕╨╜╨┤╨╡╨║╤Б╨░ ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓ ╨┤╨╗╤П ╨▓╨░╤Б
+    name: ╨Я╨╛╨▓╤А╨╡╨╢╨┤╤С╨╜╨╜╤Л╨╣ ╤Д╨░╨╣╨╗ ╨╕╨╜╨┤╨╡╨║╤Б╨░ ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓ ╨▓╨╡╤А╤Б╨╕╨╕ {version}.
+  corruptedLibraries:
+    message: ╨Ы╨░╤Г╨╜╤З╨╡╤А ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╨╕ ╨┤╨╗╤П ╨▓╨░╤Б
+    name: ╨Я╨╛╨▓╤А╨╡╨╢╨┤╤С╨╜╨╜╨░╤П ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╨░ {name} | ╨Я╨╛╨▓╤А╨╡╨╢╨┤╤С╨╜╨╜╨░╤П ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╨░ {name} | {count}
+      ╨┐╨╛╨▓╤А╨╡╨╢╨┤╤С╨╜╨╜╤Л╤Е ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║
+  corruptedVersionJar:
+    message: ╨Э╨░╨╢╨╝╨╕╤В╨╡, ╤З╤В╨╛╨▒╤Л ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╤Н╤В╤Г ╨▓╨╡╤А╤Б╨╕╤О
+    name: ╨Я╨╛╨▓╤А╨╡╨╢╨┤╤С╨╜ jar ╤Д╨░╨╣╨╗ ╨▓╨╡╤А╤Б╨╕╨╕ Minecraft {version}.
+  incompatibleJava:
+    name: ╨Т╨╡╤А╤Б╨╕╤П Java {javaVersion} ╨╜╨╡ ╨┐╨╛╨┤╤Е╨╛╨┤╨╕╤В ╨┤╨╗╤П {version}!
+  instanceFiles:
+    description: ╨г╤Б╤В╨░╨╜╨╛╨▓╨║╨░ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░ ╨▓╨║╨╗╤О╤З╨░╨╡╤В {counts} ╤Д╨░╨╣╨╗╨╛╨▓.
+    title: ╨Э╨╡╨╖╨░╨▓╨╡╤А╤И╤С╨╜╨╜╨░╤П ╤Г╤Б╤В╨░╨╜╨╛╨▓╨║╨░ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+  invalidJava:
+    name: ╨Э╨╡╨▓╨╡╤А╨╜╨╛╨╡ ╤А╨░╤Б╨┐╨╛╨╗╨╛╨╢╨╡╨╜╨╕╨╡ Java.
+  missingJava:
+    message: ╨Э╨░╨╢╨╝╨╕╤В╨╡, ╤З╤В╨╛╨▒╤Л ╤А╨╡╤И╨╕╤В╤М ╤Н╤В╤Г ╨┐╤А╨╛╨▒╨╗╨╡╨╝╤Г
+    name: ╨Э╨╡ ╤Г╨┤╨░╤С╤В╤Б╤П ╨╜╨░╨╣╤В╨╕ Java ╨┤╨╗╤П ╨╖╨░╨┐╤Г╤Б╨║╨░ Minecraft!
+  missingLibraries:
+    message: ╨Ы╨░╤Г╨╜╤З╨╡╤А ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╨╕ ╨┤╨╗╤П ╨▓╨░╤Б
+    name: ╨Ю╤В╤Б╤Г╤В╤Б╤В╨▓╤Г╨╡╤В ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╨░ {name} | ╨Ю╤В╤Б╤Г╤В╤Б╤В╨▓╤Г╨╡╤В ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╨░ {name} | {count}
+      ╨╛╤В╤Б╤Г╤В╤Б╤В╨▓╤Г╤О╤Й╨╕╤Е ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║ | {count} ╨╛╤В╤Б╤Г╤В╤Б╤В╨▓╤Г╤О╤Й╨╕╤Е ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║
+  missingVersion:
+    message: ╨Э╨░╨╢╨╝╨╕╤В╨╡, ╤З╤В╨╛╨▒╤Л ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╤Н╤В╤Г ╨▓╨╡╤А╤Б╨╕╤О
+    name: ╨Т╨╡╤А╤Б╨╕╤П {version} ╨╜╨╡ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨░!
+  unresolvedFiles:
+    description: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╤А╨░╨╖╤А╨╡╤И╨╕╤В╤М {count} ╤Д╨░╨╣╨╗ ╨┐╤А╨╕ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨║╨╡ | ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╤А╨░╨╖╤А╨╡╤И╨╕╤В╤М
+      {count} ╤Д╨░╨╣╨╗╨╛╨▓ ╨┐╤А╨╕ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨║╨╡
+    title: ╨Э╨╡╤А╨░╨╖╤А╨╡╤И╤С╨╜╨╜╤Л╨╡ ╤Д╨░╨╣╨╗╤Л
+  unzipFileNotFound:
+    description: ╨Э╨╡ ╨╝╨╛╨│╤Г ╨╜╨░╨╣╤В╨╕ {file}
+    title: ╨д╨░╨╣╨╗ Modpack ╨╜╨╡ ╨╜╨░╨╣╨┤╨╡╨╜
+disk:
+  available: ╨Ф╨╛╤Б╤В╤Г╨┐╨╜╨╛
+  used: ╨Ш╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╨╜╨╛
+downloadCount: '{count} ╨╖╨░╨│╤А╤Г╨╖╨╛╨║'
+downloadUpdate:
+  name: ╨Ч╨░╨│╤А╤Г╨╖╨╕╤В╤М ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╨╡ {version}
+duration:
+  day: '{duration} ╨┤╨╡╨╜╤М | {duration} ╨┤╨╜╨╡╨╣'
+  hour: '{duration} ╤З╨░╤Б | {duration} ╤З╨░╤Б╨╛╨▓'
+  minute: '{duration} ╨╝╨╕╨╜╤Г╤В╨░ | {duration} ╨╝╨╕╨╜╤Г╤В'
+  second: '{duration} ╤Б╨╡╨║╤Г╨╜╨┤╨░ | {duration} ╤Б╨╡╨║╤Г╨╜╨┤'
+env:
+  select:
+    all: ╨Т╤Л╨▒╤А╨░╤В╤М ╨▓╤Б╨╡
+    fit: ╨Т╤Л╨▒╤А╨░╤В╤М ╨┐╨╛╨┤╤Е╨╛╨┤╤П╤Й╨╕╨╡
+    none: ╨Ю╤В╨╝╨╡╨╜╨╕╤В╤М ╨▓╤Л╨▒╨╛╤А
+errors:
+  BadForgeInstallerJarError: ╨Э╨╡ ╤Г╨┤╨░╤С╤В╤Б╤П ╨┐╨╛╨╗╤Г╤З╨╕╤В╤М ╤Д╨░╨╣╨╗ ╨╖╨░╨│╤А╤Г╨╖╤З╨╕╨║╨░ forge. ╨Т╨╛╨╖╨╝╨╛╨╢╨╜╨╛,
+    ╤Г forge ╨╜╨╛╨▓╤Л╨╣ ╤Д╨╛╤А╨╝╨░╤В ╤Д╨░╨╣╨╗╨░ ╨╖╨░╨│╤А╤Г╨╖╤З╨╕╨║╨░? ╨Ю╨▒╤А╨░╤В╨╕╤В╨╡╤Б╤М ╨║ ╤А╨░╨╖╤А╨░╨▒╨╛╤В╤З╨╕╨║╨░╨╝, ╨╡╤Б╨╗╨╕ ╤Н╤В╨░ ╨┐╤А╨╛╨▒╨╗╨╡╨╝╨░
+    ╨▒╤Г╨┤╨╡╤В ╨┐╨╛╨▓╤В╨╛╤А╤П╤В╤М╤Б╤П.
+  BadInstanceType: '╨Э╨╡╨┤╨╛╨┐╤Г╤Б╤В╨╕╨╝╤Л╨╣ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А: {type}'
+  BodyTimeoutError: ╨Ш╤Б╤В╨╡╨║╨╗╨╛ ╨▓╤А╨╡╨╝╤П ╨╛╨╢╨╕╨┤╨░╨╜╨╕╤П ╨╛╤В╨▓╨╡╤В╨░ ╤Б╨╡╤А╨▓╨╡╤А╨░
+  ChecksumNotMatchError: ╨Ъ╨╛╨╜╤В╤А╨╛╨╗╤М╨╜╨░╤П ╤Б╤Г╨╝╨╝╨░ ╨╜╨╡ ╤Б╨╛╨▓╨┐╨░╨┤╨░╨╡╤В! ╨Ю╨╢╨╕╨┤╨░╨╗╨░╤Б╤М {expect}. ╨Я╨╛╨╗╤Г╤З╨╡╨╜╨░
+    {actual}.
+  ConnectTimeoutError: ╨Ш╤Б╤В╨╡╨║╨╗╨╛ ╨▓╤А╨╡╨╝╤П ╨╛╨╢╨╕╨┤╨░╨╜╨╕╤П ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╤П ╤Б ╤Б╨╡╤А╨▓╨╡╤А╨╛╨╝.
+  DNSNotFoundError: ╨Ю╤И╨╕╨▒╨║╨░ ╨┐╨╛╨╕╤Б╨║╨░ DNS
+  DatabaseNotOpened: ╨С╨░╨╖╨░ ╨┤╨░╨╜╨╜╤Л╤Е ╨╜╨╡ ╨╛╤В╨║╤А╤Л╤В╨░! ╨Ы╨░╤Г╨╜╤З╨╡╤А ╨╜╨╡ ╨▒╤Г╨┤╨╡╤В ╤А╨░╨▒╨╛╤В╨░╤В╤М ╨┤╨╛╨╗╨╢╨╜╤Л╨╝ ╨╛╨▒╤А╨░╨╖╨╛╨╝!
+    ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨▓╤Л╨▒╨╡╤А╨╕╤В╨╡ ╨║╨░╤В╨░╨╗╨╛╨│ ╨┤╨░╨╜╨╜╤Л╤Е, ╨║ ╨║╨╛╤В╨╛╤А╨╛╨╝╤Г ╨╗╨░╤Г╨╜╤З╨╡╤А ╨╝╨╛╨╢╨╡╤В ╨┐╨╛╨╗╤Г╤З╨╕╤В╤М ╨┤╨╛╤Б╤В╤Г╨┐.
+    ╨Т╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨┐╨╛╨┐╤А╨╛╨▒╨╛╨▓╨░╤В╤М ╤Б╨▒╤А╨╛╤Б╨╕╤В╤М ╨║╨╛╤А╨╜╨╡╨▓╨╛╨╣ ╨║╨░╤В╨░╨╗╨╛╨│ ╨┤╨░╨╜╨╜╤Л╤Е ╨╜╨░ ╤Б╤В╤А╨░╨╜╨╕╤Ж╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╡╨║.
+  DiskIsFull: '╨Т╨░╤И ╨┤╨╕╤Б╨║ ╨┐╨╛╨╗╨╛╨╜!
+
+    ╨Э╨╡ ╨╝╨╛╨│╤Г ╨╜╨╕╤З╨╡╨│╨╛ ╨╜╨░╨┐╨╕╤Б╨░╤В╤М ╨╜╨░ ╨┤╨╕╤Б╨║!
+
+    ╨Т╤Б╨╡ ╤Д╤Г╨╜╨║╤Ж╨╕╨╕ ╨╝╨╛╨│╤Г╤В ╨▒╤Л╤В╤М ╨╜╨╡ ╤Д╤Г╨╜╨║╤Ж╨╕╨╛╨╜╨░╨╗╤М╨╜╤Л╨╝╨╕!'
+  DownloadAggregateError: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╤Б╨║╨░╤З╨░╤В╤М ╤Д╨░╨╣╨╗.
+  DownloadFileSystemError: ╨Ю╤И╨╕╨▒╨║╨░ ╨┐╤А╨╕ ╨┤╨╛╤Б╤В╤Г╨┐╨╡ ╨║ ╨┐╤Г╤В╨╕ ╤Б╨╛╤Е╤А╨░╨╜╨╡╨╜╨╕╤П ╤Б╨║╨░╤З╨░╨╜╨╜╨╛╨│╨╛ ╤Д╨░╨╣╨╗╨░.
+    ╨г╨▒╨╡╨┤╨╕╤В╨╡╤Б╤М, ╤З╤В╨╛ ╨╗╨░╤Г╨╜╤З╨╡╤А ╨╕╨╝╨╡╨╡╤В ╤А╨░╨╖╤А╨╡╤И╨╡╨╜╨╕╨╡ ╨╜╨░ ╨╖╨░╨┐╨╕╤Б╤М ╨▓ ╨╜╨╡╨│╨╛.
+  HeadersTimeoutError: ╨Ш╤Б╤В╨╡╨║╨╗╨╛ ╨▓╤А╨╡╨╝╤П ╨╛╨╢╨╕╨┤╨░╨╜╨╕╤П ╨╖╨░╨│╨╛╨╗╨╛╨▓╨║╨╛╨▓ HTTP
+  NotFoundError: 404 ╨Э╨╡ ╨╜╨░╨╣╨┤╨╡╨╜╨╛
+  SocketError: ╨Ю╤И╨╕╨▒╨║╨░ ╤Б╨╛╨║╨╡╤В╨░ ╤Б╨╡╤А╨▓╨╡╤А╨░
+  bedrockUnsupportedPlatform: Minecraft Bedrock Edition is only supported on the Windows
+    build.
+  bedrockNotInstalled: Minecraft Bedrock Edition is not installed.
+  bedrockLaunchFailed: Failed to launch Minecraft Bedrock Edition.
+  bedrockInstallFailed: Failed to install Minecraft Bedrock Edition.
+  bedrockDownloadUrlUnavailable: This Bedrock version is not available for the current
+    Microsoft account. Beta and Preview versions require an account enrolled in the
+    Minecraft beta programme.
+  bedrockDeveloperModeRequired: Windows Developer Mode is required to register this
+    Bedrock version.
+  bedrockRegisterFailed: Failed to register this Bedrock version with Windows.
+  bedrockVersionNotFound: This Bedrock version is not installed locally.
+  CorruptedResourceMetadata: Detected and cleared corrupted metadata on {count} resource(s).
+    The files still work, but their Modrinth/CurseForge attribution was lost and will
+    be re-detected automatically.
+  InstallBackendUnresponsive:
+    body: The launcher's background process stopped responding, so the install could
+      not finish. Please fully close and relaunch the launcher, then try again.
+    title: Launcher is not responding
+  InstallInstructionFailed:
+    body: '{name}: {message}'
+    title: Failed to install Minecraft files
+  InstallNetworkError:
+    body: A network problem interrupted the install. Check your internet connection
+      or proxy and try again.
+    title: Cannot download Minecraft files
+  InstallPermissionDenied:
+    body: An anti-virus tool or restricted folder permissions blocked the install.
+      Add the launcher to your AV exclusion list, or pick a different data root in
+      the launcher settings.
+    title: Cannot write to the launcher folder
+eula:
+  body: ╨г╤Б╤В╨░╨╜╨░╨▓╨╗╨╕╨▓╨░╤П ╤Д╨╗╨░╨╢╨╛╨║, ╨▓╤Л ╨┐╨╛╨┤╤В╨▓╨╡╤А╨╢╨┤╨░╨╡╤В╨╡ ╤Б╨▓╨╛╨╡ ╤Б╨╛╨│╨╗╨░╤Б╨╕╨╡ ╤Б {eula} Minecraft.
+exception:
+  http: HTTP-╨╖╨░╨┐╤А╨╛╤Б ╤Б {url} ╨╜╨╡ ╨▓╤Л╨┐╨╛╨╗╨╜╨╡╨╜. ╨Ъ╨╛╨┤ ╤Б╨╛╤Б╤В╨╛╤П╨╜╨╕╤П {statusCode}. {code}. ╨Я╨╛╨▓╤В╨╛╤А╨╕╤В╨╡
+    ╨┐╨╛╨┐╤Л╤В╨║╤Г ╨╕╨╗╨╕ ╨┐╤А╨╛╨▓╨╡╤А╤М╤В╨╡ ╤Б╨▓╨╛╨╣ ╨╕╨╜╤В╨╡╤А╨╜╨╡╤В. ╨Х╤Б╨╗╨╕ ╤Н╤В╨░ ╨╛╤И╨╕╨▒╨║╨░ ╤Б╨╛╤Е╤А╨░╨╜╤П╨╡╤В╤Б╤П, ╨╛╤В╨┐╤А╨░╨▓╤М╤В╨╡ ╨╛╤В╤З╨╡╤В
+    ╨║╨╛╨╝╨░╨╜╨┤╨░ ╤А╨░╨╖╤А╨░╨▒╨╛╤В╤З╨╕╨║╨╛╨▓.
+extensions:
+  mrpack: ╨б╨▒╨╛╤А╨║╨░ ╨╝╨╛╨┤╨╛╨▓ Modrinth
+  zip: Zip-╤Д╨░╨╣╨╗
+fabricVersion:
+  disable: Fabric ╨╜╨╡ ╨▓╤Л╨▒╤А╨░╨╜
+  empty: ╨Э╨╡ ╨╜╨░╨╣╨┤╨╡╨╜╨╛ ╤Б╨╛╨╛╤В╨▓╨╡╤В╤Б╤В╨▓╤Г╤О╤Й╨╡╨╣ ╨▓╨╡╤А╤Б╨╕╨╕ Fabric ╨┤╨╗╤П Minecraft {version}
+  showSnapshot: ╨Я╨╛╨║╨░╨╖╤Л╨▓╨░╤В╤М ╤Б╨╜╨░╨┐╤И╨╛╤В╤Л
+  stable: ╨б╤В╨░╨▒╨╕╨╗╤М╨╜╨░╤П
+  unstable: ╨Э╨╡╤Б╤В╨░╨▒╨╕╨╗╤М╨╜╨░╤П
+command:
+  instance:
+    launch:
+      title: ╨Ч╨░╨┐╤Г╤Б╤В╨╕╤В╤М ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А
+      description: Launch a Minecraft instance
+    create:
+      title: ╨б╨╛╨╖╨┤╨░╤В╤М ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А
+      description: Create a new instance
+    delete:
+      title: ╨г╨┤╨░╨╗╨╕╤В╤М ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А
+      description: Delete an existing instance
+  user:
+    login:
+      title: ╨Т╤Е╨╛╨┤ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П
+      description: Log in to your account
+    refresh:
+      title: ╨Ю╨▒╨╜╨╛╨▓╨╕╤В╤М ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П
+      description: Refresh user session
+commandPalette:
+  placeholder: ╨Я╨╛╨╕╤Б╨║ ╨║╨╛╨╝╨░╨╜╨┤, ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨╛╨▓, ╨╝╨╛╨┤╨╛╨▓тАж
+  commands: ╨Ъ╨╛╨╝╨░╨╜╨┤╤Л
+  instances: ╨н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╤Л
+  modrinth: Modrinth
+  recent: ╨Э╨╡╨┤╨░╨▓╨╜╨╕╨╡
+  open: ╨С╤Л╤Б╤В╤А╨╛╨╡ ╨┤╨╡╨╣╤Б╤В╨▓╨╕╨╡
+  openHint: ╨Ю╤В╨║╤А╤Л╤В╤М ╨┐╨░╨╗╨╕╤В╤А╤Г ╨║╨╛╨╝╨░╨╜╨┤ ({shortcut})
+  empty: ╨Т╨▓╨╡╨┤╨╕╤В╨╡ ╨╖╨░╨┐╤А╨╛╤Б ╨┤╨╗╤П ╨┐╨╛╨╕╤Б╨║╨░.
+  noResults: ╨Э╨╡╤В ╤Б╨╛╨▓╨┐╨░╨┤╨╡╨╜╨╕╨╣.
+  searching: ╨Я╨╛╨╕╤Б╨║тАж
+  hintNavigate: ╨╜╨░╨▓╨╕╨│╨░╤Ж╨╕╤П
+  hintInvoke: ╨▓╤Л╨┐╨╛╨╗╨╜╨╕╤В╤М
+  hintEnter: ╨╛╤В╨║╤А╤Л╤В╤М
+  hintBack: ╨╜╨░╨╖╨░╨┤
+  hintClose: ╨╖╨░╨║╤А╤Л╤В╤М
+feedback:
+  channel: NeoTerra Rasmiy Kanallari
+  description: Muammo yoki taklifingiz bo'lsa, rasmiy kanallarimiz orqali bog'laning.
+  discord: Discord Server
+  discordDescription: discord.gg/neoterra тАФ O'yinchilar bilan ovozli muloqot.
+  discordJoin: Qo'shilish
+  generateReport: ╨б╨╛╨╖╨┤╨░╤В╤М ╨╛╤В╤З╤С╤В
+  generateSaveAs: ╨б╨╛╤Е╤А╨░╨╜╨╕╤В╤М ╨╛╤В╤З╤С╤В
+  github: NeoTerra Rasmiy Sayti
+  githubDescription: site.neoterra.uz тАФ Server yangiliklari va ma'lumotlar platformasi.
+  githubOpenIssue: Saytga o'tish
+  hint: ╨Э╨░╨╢╨╝╨╕╤В╨╡ ╨╜╨░ ╨║╨╜╨╛╨┐╨║╤Г, ╤З╤В╨╛╨▒╤Л ╤Б╨╛╨╖╨┤╨░╤В╤М ╨╛╤В╤З╤С╤В ╨╕ ╤Б╨▓╤П╨╖╨░╤В╤М╤Б╤П ╤Б ╨║╨╛╨╝╨░╨╜╨┤╨╛╨╣ ╤А╨░╨╖╤А╨░╨▒╨╛╤В╤З╨╕╨║╨╛╨▓.
+    ╨Ю╤В╤З╤С╤В ╨▒╤Г╨┤╨╡╤В ╤Б╨╛╨┤╨╡╤А╨╢╨░╤В╤М ╨╕╨╜╤Д╨╛╤А╨╝╨░╤Ж╨╕╤О ╨╛ ╨▓╨░╤И╨╡╨╝ ╤Г╤Б╤В╤А╨╛╨╣╤Б╤В╨▓╨╡, ╨▓╨║╨╗╤О╤З╨░╤П ╤В╨╕╨┐ ╨╛╨┐╨╡╤А╨░╤Ж╨╕╨╛╨╜╨╜╨╛╨╣
+    ╤Б╨╕╤Б╤В╨╡╨╝╤Л, ╨▓╨╡╤А╤Б╨╕╤О, ╨╕╨╝╤П ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П (╨▓ ╨╛╨┐╨╡╤А╨░╤Ж╨╕╨╛╨╜╨╜╨╛╨╣ ╤Б╨╕╤Б╤В╨╡╨╝╨╡) ╨╕ ╨┤╤А╤Г╨│╨╕╨╡ ╨┤╨░╨╜╨╜╤Л╨╡.
+  kook: YouTube Kanal
+  kookDescription: youtube.com/NeoTerraMC тАФ Videolar va treylerlar.
+  name: Murojaat va Yordam
+  qq: Telegram Hamjamiyati
+  qqDescription: t.me/NeoTerraServer тАФ Rasmiy Telegram kanal va guruh.
+  qqEnterGroup: A'zo bo'lish
+  kookEnterGroup: Obuna bo'lish
+fileDetail:
+  fileSize: ╨а╨░╨╖╨╝╨╡╤А ╤Д╨░╨╣╨╗╨░
+  filesize: ╨а╨░╨╖╨╝╨╡╤А ╤Д╨░╨╣╨╗╨░
+  hash: Hash
+filterLocalOnly: ╨Я╨╛╨║╨░╨╖╤Л╨▓╨░╤В╤М ╤В╨╛╨╗╤М╨║╨╛ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨╜╤Л╨╡
+forgeVersion:
+  disable: Forge ╨╜╨╡ ╨▓╤Л╨▒╤А╨░╨╜
+  empty: ╨Ф╨╗╤П Minecraft {version} ╨╜╨╡╤В ╨▓╤Л╨┐╤Г╤Б╨║╨╛╨▓ Forge
+  latest: ╨Я╨╛╤Б╨╗╨╡╨┤╨╜╤П╤П
+  recommended: ╨а╨╡╨║╨╛╨╝╨╡╨╜╨┤╤Г╨╡╨╝╨░╤П
+gameType:
+  adventure: ╨а╨╡╨╢╨╕╨╝ ╨┐╤А╨╕╨║╨╗╤О╤З╨╡╨╜╨╕╤П
+  creative: ╨в╨▓╨╛╤А╤З╨╡╤Б╨║╨╕╨╣ ╤А╨╡╨╢╨╕╨╝
+  spectator: ╨а╨╡╨╢╨╕╨╝ ╨╜╨░╨▒╨╗╤О╨┤╨░╤В╨╡╨╗╤П
+  survival: ╨а╨╡╨╢╨╕╨╝ ╨▓╤Л╨╢╨╕╨▓╨░╨╜╨╕╤П
+help: ╨б╨┐╤А╨░╨▓╨║╨░
+home: ╨У╨╗╨░╨▓╨╜╨░╤П
+importModpack:
+  name: ╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╤Б╨▒╨╛╤А╨║╤Г ╨╝╨╛╨┤╨╛╨▓
+installAssets:
+  asset: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М {count} ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓
+  assetIndex: ╨Я╤А╨╛╨▓╨╡╤А╨╕╤В╤М ╤Д╨░╨╣╨╗ ╨╕╨╜╨┤╨╡╨║╤Б╨░ ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓
+  name: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╤Д╨░╨╣╨╗╤Л ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓
+installAuthlibInjector: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М authlib-injector
+installCurseforgeFile: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╤Д╨░╨╣╨╗ CurseForge
+installFabric:
+  name: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М Fabric
+installForge:
+  downloadInstaller: ╨б╨║╨░╤З╨░╤В╤М ╨┐╤А╨╛╨│╤А╨░╨╝╨╝╤Г ╤Г╤Б╤В╨░╨╜╨╛╨▓╨║╨╕
+  name: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М Forge
+  postProcessing: ╨Ф╨╛╨┐╨╛╨╗╨╜╨╕╤В╨╡╨╗╤М╨╜╨░╤П ╨╛╨▒╤А╨░╨▒╨╛╤В╨║╨░
+installInstance:
+  file: ╨Ю╨▒╨╜╨╛╨▓╨╕╤В╤М ╤Д╨░╨╣╨╗ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░ {file}
+  link: ╨Ъ╨╛╨┐╨╕╤А╨╛╨▓╨░╤В╤М ╨╕╨╗╨╕ ╤Б╨╛╨╡╨┤╨╕╨╜╨╕╤В╤М {count} ╤Д╨░╨╣╨╗╨╛╨▓
+  name: ╨Ю╨▒╨╜╨╛╨▓╨╕╤В╤М ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А
+  resolve: ╨а╨░╨╖╤А╨╡╤И╨╕╤В╤М ╨║╨╛╨╜╤Д╨╕╨│╤Г╤А╨░╤Ж╨╕╤О ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+  unzip: ╨а╨░╤Б╨┐╨░╨║╨╛╨▓╨░╤В╤М {count} ╤Д╨░╨╣╨╗╨╛╨▓
+installJre:
+  decompress: ╨а╨░╤Б╨┐╨░╨║╨╛╨▓╨░╤В╤М ╤Д╨░╨╣╨╗╤Л JRE ╨▓ ╨┐╨░╨┐╨║╤Г
+  download: ╨б╨║╨░╤З╨░╤В╤М ╤Б╨╢╨░╤В╤Л╨╣ ╤Д╨░╨╣╨╗ JRE
+  name: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╤Б╤А╨╡╨┤╤Г ╨▓╤Л╨┐╨╛╨╗╨╜╨╡╨╜╨╕╤П Java
+installLabyMod:
+  name: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М LabyMod
+installLibraries:
+  library: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╤Г
+  name: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╨╕
+installModrinthFile:
+  name: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М Modrinth
+installOptifine:
+  download: ╨б╨║╨░╤З╨░╤В╤М Optifine Universal
+  name: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М Optifine
+installVersion:
+  jar: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М Jar-╤Д╨░╨╣╨╗ ╨▓╨╡╤А╤Б╨╕╨╕
+  json: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М Json-╤Д╨░╨╣╨╗ ╨▓╨╡╤А╤Б╨╕╨╕
+  name: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╨║╨╗╨╕╨╡╨╜╤В Minecraft {version}
+instance:
+  changeIcon: ╨Ш╨╖╨╝╨╡╨╜╨╕╤В╤М ╨╖╨╜╨░╤З╨╛╨║
+  contents: ╨б╨╛╨┤╨╡╤А╨╢╨░╨╜╨╕╨╡
+  current: ╨в╨╡╨║╤Г╤Й╨╕╨╣ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А
+  delete: ╨г╨┤╨░╨╗╨╕╤В╤М ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А
+  deleteFailed: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╤Г╨┤╨░╨╗╨╕╤В╤М ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А
+  deleteFailedPermission: ╨Ф╤А╤Г╨│╨░╤П ╨┐╤А╨╛╨│╤А╨░╨╝╨╝╨░ ╨╖╨░╨╜╤П╨╗╨░ ╤Д╨░╨╣╨╗
+  deleteFile: ╨г╨┤╨░╨╗╨╕╤В╤М ╤Д╨░╨╣╨╗╤Л ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+  deleteHint: ╨Ф╨░╨╜╨╜╤Л╨╡ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░ ╨▒╤Г╨┤╤Г╤В ╤Г╨┤╨░╨╗╨╡╨╜╤Л ╤Б ╨┤╨╕╤Б╨║╨░ ╨╜╨░╨▓╤Б╨╡╨│╨┤╨░. ╨Т╤Л ╤Г╨▓╨╡╤А╨╡╨╜╤Л, ╤З╤В╨╛ ╤Е╨╛╤В╨╕╤В╨╡
+    ╤Н╤В╨╛ ╤Б╨┤╨╡╨╗╨░╤В╤М?
+  duplicate: ╨Ф╤Г╨▒╨╗╨╕╤А╨╛╨▓╨░╤В╤М ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А
+  duplicatedName: ╨Ф╤Г╨▒╨╗╨╕╤А╨╛╨▓╨░╨╜╨╜╨╛╨╡ ╨╕╨╝╤П
+  fileApi: URL API ╤Б╨╡╤А╨▓╨╡╤А╨░ ╤Б╨╕╨╜╤Е╤А╨╛╨╜╨╕╨╖╨░╤Ж╨╕╨╕ ╤Д╨░╨╣╨╗╨╛╨▓
+  fileApiHint: URL ╨┤╨╗╤П ╤Б╨╕╨╜╤Е╤А╨╛╨╜╨╕╨╖╨░╤Ж╨╕╨╕ ╤Д╨░╨╣╨╗╨╛╨▓ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░ ╤Б ╤Г╨┤╨░╨╗╤С╨╜╨╜╤Л╨╝ ╤Б╨╡╤А╨▓╨╡╤А╨╛╨╝ ╨║╨╛╨╜╤Д╨╕╨│╤Г╤А╨░╤Ж╨╕╨╕.
+  fullscreen: ╨Я╨╛╨╗╨╜╨╛╤Н╨║╤А╨░╨╜╨╜╤Л╨╣
+  height: ╨Т╤Л╤Б╨╛╤В╨░
+  icon: ╨Ш╨║╨╛╨╜╨║╨░ ╨┐╤А╨╛╤Д╨╕╨╗╤П
+  iconHint: ╨Ч╨╜╨░╤З╨╛╨║ ╨╝╨╛╨╢╨╡╤В ╨┐╤А╨╡╨┤╤Б╤В╨░╨▓╨╗╤П╤В╤М ╤Б╨╛╨▒╨╛╨╣ ╤Д╨░╨╣╨╗ ╨╕╨╗╨╕ ╤Б╤Б╤Л╨╗╨║╤Г ╨╜╨░ URL-╨░╨┤╤А╨╡╤Б ╨▓ ╨Ш╨╜╤В╨╡╤А╨╜╨╡╤В╨╡.
+  iconUrl: URL-╨░╨┤╤А╨╡╤Б ╨╕╨║╨╛╨╜╨║╨╕
+  installModpack: ╨Ю╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╨╡ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░ ╨╛╤В Modpack
+  lastPlayed: ╨Я╨╛╤Б╨╗╨╡╨┤╨╜╤П╤П ╨╕╨│╤А╨░
+  launchArguments: ╨Я╤А╨╡╨┤╨┐╤А╨╛╤Б╨╝╨╛╤В╤А ╨░╤А╨│╤Г╨╝╨╡╨╜╤В╨╛╨▓ ╨╖╨░╨┐╤Г╤Б╨║╨░
+  launchServer: ╨Ч╨░╨┐╤Г╤Б╤В╨╕╤В╤М ╨╗╨╛╨║╨░╨╗╤М╨╜╤Л╨╣ ╤Б╨╡╤А╨▓╨╡╤А
+  linkFileDesc: '╨н╤В╨╛ ╨┐╨╡╤А╨╡╨╖╨░╨┐╨╕╤И╨╡╤В ╨╗╨╛╨║╨░╨╗╤М╨╜╤Л╨╣ {file} ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░ ╨│╨╗╨╛╨▒╨░╨╗╤М╨╜╤Л╨╝ {file}.
+
+    ╨Т╤Л ╤Г╨▓╨╡╤А╨╡╨╜╤Л, ╤З╤В╨╛ ╤Б╨╛╨╡╨┤╨╕╨╜╨╕╤В╨╡ ╤Н╤В╨╛?'
+  linkFileTitle: ╨Т╤Л ╤Г╨▓╨╡╤А╨╡╨╜╤Л, ╤З╤В╨╛ ╤Е╨╛╤В╨╕╤В╨╡ ╤Б╨▓╤П╨╖╨░╤В╤М {file}?
+  mcOptions: ╨Ю╨┐╤Ж╨╕╨╕ Minecraft
+  mcOptionsHint: ╨Ф╨╛╨┐╨╛╨╗╨╜╨╕╤В╨╡╨╗╤М╨╜╤Л╨╡ ╨░╤А╨│╤Г╨╝╨╡╨╜╤В╤Л ╨╖╨░╨┐╤Г╤Б╨║╨░ Minecraft
+  name: ╨Ш╨╝╤П ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+  nameHint: ╨Ш╨╝╤П, ╨╕╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╡╨╝╨╛╨╡ ╨┤╨╗╤П ╨╕╨┤╨╡╨╜╤В╨╕╤Д╨╕╨║╨░╤Ж╨╕╨╕ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░.
+  nameNoCyrillic: ╨Э╨░╨╖╨▓╨░╨╜╨╕╨╡ ╨╜╨╡ ╨╝╨╛╨╢╨╡╤В ╤Б╨╛╨┤╨╡╤А╨╢╨░╤В╤М ╨║╨╕╤А╨╕╨╗╨╗╨╕╤З╨╡╤Б╨║╨╕╨╡ ╤Б╨╕╨╝╨▓╨╛╨╗╤Л
+  neverPlayed: ╨Э╨╕╨║╨╛╨│╨┤╨░ ╨╜╨╡ ╨╕╨│╤А╨░╨╗╨╕
+  openCrashReportFolder: ╨Ю╤В╨║╤А╤Л╤В╤М ╨┐╨░╨┐╨║╤Г ╤Б ╨╛╤В╤З╤С╤В╨░╨╝╨╕ ╨╛╨▒ ╨╛╤И╨╕╨▒╨║╨░╤Е
+  openLogFolder: ╨Ю╤В╨║╤А╤Л╤В╤М ╨┐╨░╨┐╨║╤Г ╤Б ╨╢╤Г╤А╨╜╨░╨╗╨░╨╝╨╕
+  playtime: ╨Т╤А╨╡╨╝╤П ╨╕╨│╤А╤Л
+  preExecCommand: ╨Ъ╨╛╨╝╨░╨╜╨┤╨░ ╨┐╤А╨╡╨┤╨▓╨░╤А╨╕╤В╨╡╨╗╤М╨╜╨╛╨│╨╛ ╨╖╨░╨┐╤Г╤Б╨║╨░
+  preExecCommandHint: ╨Ъ╨╛╨╝╨░╨╜╨┤╨░ ╨┤╨╗╤П ╨▓╤Л╨┐╨╛╨╗╨╜╨╡╨╜╨╕╤П ╨┐╨╡╤А╨╡╨┤ ╨╖╨░╨┐╤Г╤Б╨║╨╛╨╝ Minecraft
+  prependCommand: ╨Ф╨╛╨▒╨░╨▓╨╕╤В╤М ╨║╨╛╨╝╨░╨╜╨┤╤Г ╨▓ ╨╜╨░╤З╨░╨╗╨╛
+  prependCommandHint: ╨н╤В╨╛ ╨┤╨╛╨▒╨░╨▓╨╕╤В ╤Н╤В╤Г ╨║╨╛╨╝╨░╨╜╨┤╤Г ╨┐╨╡╤А╨╡╨┤ ╨▓╤Б╨╡╨╝╨╕ ╨║╨╛╨╝╨░╨╜╨┤╨░╨╝╨╕ ╨╖╨░╨┐╤Г╤Б╨║╨░.
+  requireName: ╨в╤А╨╡╨▒╤Г╨╡╤В╤Б╤П ╨╕╨╝╤П
+  resolution: ╨а╨░╨╖╤А╨╡╤И╨╡╨╜╨╕╨╡ ╨╛╨║╨╜╨░
+  resolutionPreset: ╨а╨╡╨╖╨╛╨╗╤О╤Ж╨╕╤П ╨┐╤А╨╡╨┤╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨░
+  showInstance: ╨Ю╤В╨║╤А╤Л╤В╤М ╨┐╨░╨┐╨║╤Г ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+  updates: ╨Ю╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╤П
+  useSharedOptions: ╨Ш╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╤М ╨╛╨▒╤Й╨╕╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕ ╨╕╨│╤А╤Л
+  useSharedOptionsDesc: ╨н╤В╨╛ ╤Б╨▓╤П╨╢╨╡╤В ╤Д╨░╨╣╨╗ options.txt ╤Б ╨╛╨▒╤Й╨╕╨╝ ╤Д╨░╨╣╨╗╨╛╨╝ ╨▓ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨╡.
+  useSharedServersList: ╨Ш╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╤М ╤Б╨┐╨╕╤Б╨╛╨║ ╨╛╨▒╤Й╨╕╤Е ╤Б╨╡╤А╨▓╨╡╤А╨╛╨▓
+  useSharedServersListDesc: ╨н╤В╨╛ ╤Б╨▓╤П╨╢╨╡╤В ╤Д╨░╨╣╨╗ server.dat ╤Б ╨╛╨▒╤Й╨╕╨╝ ╤Д╨░╨╣╨╗╨╛╨╝ ╨▓ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨╡.
+  vmOptions: ╨Ю╨┐╤Ж╨╕╨╕ JVM
+  vmOptionsHint: ╨Ф╨╛╨┐╨╛╨╗╨╜╨╕╤В╨╡╨╗╤М╨╜╤Л╨╡ ╨░╤А╨│╤Г╨╝╨╡╨╜╤В╤Л, ╨┐╨╡╤А╨╡╨┤╨░╨▓╨░╨╡╨╝╤Л╨╡ JVM
+  vmVar: ╨Я╨╡╤А╨╡╨╝╨╡╨╜╨╜╤Л╨╡ ╤Б╤А╨╡╨┤╤Л
+  vmVarHint: ╨Э╨░╨╢╨╝╨╕╤В╨╡ ╨║╨╜╨╛╨┐╨║╤Г, ╤З╤В╨╛╨▒╤Л ╨┤╨╛╨▒╨░╨▓╨╕╤В╤М ╨┐╨╡╤А╨╡╨╝╨╡╨╜╨╜╤Л╨╡ ╤Б╤А╨╡╨┤╤Л.
+  width: ╨и╨╕╤А╨╕╨╜╨░
+  envVarKey: ╨Ъ╨╗╤О╤З
+  envVarValue: ╨Ч╨╜╨░╤З╨╡╨╜╨╕╨╡
+  envVarKeyPlaceholder: MY_VAR
+  envVarValuePlaceholder: ╨╖╨╜╨░╤З╨╡╨╜╨╕╨╡
+  fileApiPlaceholder: ╨Т╨▓╨╡╨┤╨╕╤В╨╡ ╨╖╨┤╨╡╤Б╤М URL ╤Г╨┤╨░╨╗╤С╨╜╨╜╨╛╨╣ ╤Б╨╕╨╜╤Е╤А╨╛╨╜╨╕╨╖╨░╤Ж╨╕╨╕, ╨╡╤Б╨╗╨╕ ╤Е╨╛╤В╨╕╤В╨╡ ╨┐╨╛╨┤╨┤╨╡╤А╨╢╨╕╨▓╨░╤В╤М
+    ╤Б╨╕╨╜╤Е╤А╨╛╨╜╨╕╨╖╨░╤Ж╨╕╤О ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓
+  deleteHintBedrock: Minecraft Bedrock Edition and all its data will be completely
+    deleted from your computer. Are you sure?
+  hideCard: Hide this card
+  nameInvalidChars: 'The name cannot contain these characters: < > : " / \\ | ? *'
+  namePathTraversal: The name cannot contain path traversal ("..")
+  nameReservedName: This name is reserved by the system and cannot be used
+  nameTrailingDotOrSpace: The name cannot end with a dot or space
+  nameWhitespaceOnly: The name cannot be only whitespace or dots
+  showHiddenCards: Show hidden cards
+instanceAge:
+  older: ╨б╤В╨░╤А╤Л╨╡
+  threeDay: ╨Т ╤В╨╡╤З╨╡╨╜╨╕╨╡ ╤В╤А╤С╤Е ╨┤╨╜╨╡╨╣
+  today: ╨б╨╡╨│╨╛╨┤╨╜╤П
+instanceDiscover:
+  gameFolder: ╨Ю╤В╨║╤А╨╛╨╣╤В╨╡ {count} ╨┐╨░╨┐╨╛╨║ ╤Б ╨╕╨│╤А╨░╨╝╨╕
+  instanceFolder: '╨Э╨░╨╣╨┤╨╡╨╜╨╛ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨╛╨▓: {count}'
+instanceFileOperation:
+  add: ╨Ф╨╛╨▒╨░╨▓╨╕╤В╤М
+  backup-add: ╨Ч╨░╨╝╨╡╨╜╨╕╤В╤М (╤Б╨╛╨╖╨┤╨░╤В╤М ╤А╨╡╨╖╨╡╤А╨▓╨╜╤Г╤О ╨║╨╛╨┐╨╕╤О)
+  backup-remove: ╨г╨┤╨░╨╗╨╕╤В╤М (╤Б╨╛╨╖╨┤╨░╤В╤М ╤А╨╡╨╖╨╡╤А╨▓╨╜╤Г╤О ╨║╨╛╨┐╨╕╤О)
+  keep: ╨Ю╤Б╤В╨░╨▓╨╕╤В╤М
+  remove: ╨г╨┤╨░╨╗╨╕╤В╤М
+instanceInstallSkip:
+  ignore: ╨╕╨│╨╜╨╛╤А╨╕╤А╨╛╨▓╨░╤В╤М
+  skip: ╨Я╤А╨╛╨┐╤Г╤Б╨║╨░╤В╤М
+  title: ╨Я╨╛╤В╨╡╨╜╤Ж╨╕╨░╨╗╤М╨╜╤Л╨╣ ╨┐╨╛╨▓╤А╨╡╨╢╨┤╨╡╨╜╨╜╤Л╨╣ ╨╕╤Б╤В╨╛╤З╨╜╨╕╨║ ╤Д╨░╨╣╨╗╨░
+  warning: '╨Э╨╡╨║╨╛╤В╨╛╤А╤Л╨╡ ╤Д╨░╨╣╨╗╤Л ╨╖╨░╨│╤А╤Г╨╢╨░╤О╤В╤Б╤П ╨╜╨╡╤Б╨║╨╛╨╗╤М╨║╨╛ ╤А╨░╨╖, ╨╕ ╨║╨╛╨╜╤В╤А╨╛╨╗╤М╨╜╨░╤П ╤Б╤Г╨╝╨╝╨░ ╨╜╨╡ ╤Б╨╛╨▓╨┐╨░╨┤╨░╨╡╤В.
+
+    ╨н╤В╨╛ ╨╝╨╛╨╢╨╡╤В ╨▒╤Л╤В╤М ╤Б╨▓╤П╨╖╨░╨╜╨╛ ╤Б ╤В╨╡╨╝, ╤З╤В╨╛ ╨╕╤Б╤Е╨╛╨┤╨╜╨░╤П ╨║╨╛╨╜╤В╤А╨╛╨╗╤М╨╜╨░╤П ╤Б╤Г╨╝╨╝╨░ ╨╜╨╡╨▓╨╡╤А╨╜╨░.
+
+    ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨┐╤А╨╛╨▓╨╡╤А╤М╤В╨╡.
+
+    ╨Х╤Б╨╗╨╕ ╨▓╤Л ╨┐╨╛╨┤╤В╨▓╨╡╤А╨┤╨╕╤В╨╡, ╤З╤В╨╛ ╤В╨╡╨║╤Г╤Й╨╕╨╡ ╤Д╨░╨╣╨╗╤Л ╨┤╨╡╨╣╤Б╤В╨▓╨╕╤В╨╡╨╗╤М╨╜╤Л, ╨▓╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨┐╤А╨╛╨┐╤Г╤Б╤В╨╕╤В╤М ╨┐╤А╨╛╨▓╨╡╤А╨║╤Г.'
+instanceSetting:
+  disableAuthlibInjector: ╨Ю╤В╨║╨╗╤О╤З╨╕╤В╤М authlib injector
+  disableAuthlibInjectorDescription: ╨Х╤Б╨╗╨╕ ╨▓╤Л ╨╕╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╡╤В╨╡ ╤Б╨╕╤Б╤В╨╡╨╝╤Г ╤Б╨║╨╕╨╜╨╛╨▓ ╨╛╤В ╤Б╤В╨╛╤А╨╛╨╜╨╜╨╕╤Е
+    ╤А╨░╨╖╤А╨░╨▒╨╛╤В╤З╨╕╨║╨╛╨▓, authlib injector ╨╝╨╛╨╢╨╡╤В ╨┐╨╛╨╝╨╛╤З╤М ╨╛╤В╨╛╨▒╤А╨░╨╢╨░╤В╤М ╤Б╨║╨╕╨╜╤Л ╨▓ ╨╕╨│╤А╨╡.
+  disableElyByAuthlib: ╨Ю╤В╨║╨╗╤О╤З╨╕╤В╤М ╨╖╨░╨╝╨╡╨╜╤Г authlib ╨╛╤В ely.by
+  disableElyByAuthlibDescription: Ely.by ╨╕╨╝╨╡╨╡╤В ╤Г╨╜╨╕╨║╨░╨╗╤М╨╜╤Г╤О ╨╖╨░╨╝╨╡╨╜╤Г authlib ╨┤╨╗╤П ╤Г╨╜╨╕╨▓╨╡╤А╤Б╨░╨╗╤М╨╜╨╛╨│╨╛
+    ╨╛╤В╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╤П ╤Б╨║╨╕╨╜╨╛╨▓ ╨╜╨░ ╨╗╤О╨▒╨╛╨╝ ╤Б╨╡╤А╨▓╨╡╤А╨╡.
+  fastLaunch: ╨С╤Л╤Б╤В╤А╤Л╨╣ ╨╖╨░╨┐╤Г╤Б╨║
+  fastLaunchHint: ╨Ш╨│╨╜╨╛╤А╨╕╤А╨╛╨▓╨░╤В╤М ╤Б╤В╨░╤В╤Г╤Б ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П ╨╕ ╤Б╤Г╤Й╨╡╤Б╤В╨▓╤Г╤О╤Й╨╕╨╡ ╨╜╨╡╨╕╤Б╨┐╤А╨░╨▓╨╗╨╡╨╜╨╜╤Л╨╡ ╨┐╤А╨╛╨▒╨╗╨╡╨╝╤Л.
+  hideLauncher: ╨б╨║╤А╤Л╤В╤М ╨╗╨░╤Г╨╜╤З╨╡╤А ╨┐╨╛╤Б╨╗╨╡ ╨╖╨░╨┐╤Г╤Б╨║╨░
+  icon: ╨Т╤Л╨▒╤А╨░╤В╤М ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡
+  showLog: ╨Я╨╛╨║╨░╨╖╤Л╨▓╨░╤В╤М ╨╢╤Г╤А╨╜╨░╨╗ Minecraft
+  showLogHint: ╨н╤В╨╛ ╨╛╤В╨║╤А╨╛╨╡╤В ╨╛╨║╨╜╨╛ ╨╢╤Г╤А╨╜╨░╨╗╨░ Minecraft ╨┐╨╛╤Б╨╗╨╡ ╨╖╨░╨┐╤Г╤Б╨║╨░ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+instanceTemplate:
+  ftb: ╨н╤В╨╛ ╤Б╨▒╨╛╤А╨║╨░ ╨╝╨╛╨┤╨╛╨▓ FTB
+  preview: ╨Я╤А╨╡╨┤╨▓╨░╤А╨╕╤В╨╡╨╗╤М╨╜╤Л╨╣ ╨┐╤А╨╛╤Б╨╝╨╛╤В╤А ╤Б╨▒╨╛╤А╨║╨╕ ╨╝╨╛╨┤╨╛╨▓
+instanceUpdate:
+  basic: ╨Ю╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╡╨║
+  files: ╨Ю╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╨╡ ╤Д╨░╨╣╨╗╨╛╨▓
+  loaderChanged: '╨Ь╨╛╨┤╨╗╨╛╨░╨┤╨╡╤А ╤Н╤В╨╛╨│╨╛ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░ ╨▒╤Л╨╗ ╨╕╨╖╨╝╨╡╨╜╨╡╨╜.
+
+    ╨б╤В╨░╤А╤Л╨╣ ╨╝╨╛╨┤╨╗╨╛╨░╨┤╨╡╤А - ╤Н╤В╨╛ {modloader}, ╨░ ╨╜╨╛╨▓╤Л╨╣ - {newModloader}.'
+  summary: '╨Ф╨╛╨▒╨░╨▓╨╕╤В╤М {add} ╤Д╨░╨╣╨╗╤Л.
+
+    ╨г╨┤╨░╨╗╨╕╤В╤М {remove} ╤Д╨░╨╣╨╗╤Л.
+
+    ╨б╨╛╤Е╤А╨░╨╜╨╕╤В╤М {keep} ╤Д╨░╨╣╨╗╤Л.'
+  title: ╨Ю╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╨╡ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+  update: ╨Э╨░╤З╨░╤В╤М ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╨╡
+  noFiles: No file changes
+instances:
+  add: ╨б╨╛╨╖╨┤╨░╤В╤М ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А
+  addCurseForgeDescription: '╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╤Г╨╣╤В╨╡ ╨╕╨╖ ╨┐╨░╨┐╨║╨╕ ╨┤╨░╨╜╨╜╤Л╤Е Curseforge.
+
+    ╨Т╨░╨╝ ╨╜╤Г╨╢╨╜╨╛ ╨▓╤Л╨▒╤А╨░╤В╤М ╨║╨╛╤А╨╜╨╡╨▓╤Г╤О ╨┐╨░╨┐╨║╤Г ╨┤╨░╨╜╨╜╤Л╤Е Curseforge.'
+  addDescription: ╨б╨╛╨╖╨┤╨░╤В╤М ╨╜╨╛╨▓╤Л╨╣ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А ╤Б ╨╜╤Г╨╗╤П
+  addMMCDescription: '╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╤Г╨╣╤В╨╡ ╤Б╤Г╤Й╨╡╤Б╤В╨▓╤Г╤О╤Й╨╕╨╣ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А MultiMC.
+
+    ╨Т╨░╨╝ ╨╜╤Г╨╢╨╜╨╛ ╨▓╤Л╨▒╤А╨░╤В╤М ╨┐╨░╨┐╨║╤Г ╤Б ╨┤╨░╨╜╨╜╤Л╨╝╨╕ ╨╕╨╖ MultiMC.'
+  addManually: ╨б╨╛╨╖╨┤╨░╤В╤М ╨▓╤А╤Г╤З╨╜╤Г╤О
+  addModrinthDescription: '╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╤Г╨╣╤В╨╡ ╤Б╤Г╤Й╨╡╤Б╤В╨▓╤Г╤О╤Й╨╕╨╣ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А Modrinth.
+
+    ╨Т╨░╨╝ ╨╜╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╨╛ ╨▓╤Л╨▒╤А╨░╤В╤М ╨║╨╛╤А╨╜╨╡╨▓╤Г╤О ╨┐╨░╨┐╨║╤Г ╨┤╨░╨╜╨╜╤Л╤Е Modrinth.'
+  addServer: ╨б╨╛╨╖╨┤╨░╤В╤М ╨╕╨╖ ╤Б╨╡╤А╨▓╨╡╤А╨░
+  addServerDescription: ╨н╤В╨╛ ╤Б╨╛╨╖╨┤╨░╤Б╤В ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А, ╨║╨╛╤В╨╛╤А╤Л╨╣ ╨╖╨░╨┐╤Г╤Б╤В╨╕╤В╤Б╤П ╨╜╨╡╨┐╨╛╤Б╤А╨╡╨┤╤Б╤В╨▓╨╡╨╜╨╜╨╛
+    ╨╜╨░ ╤Б╨╡╤А╨▓╨╡╤А╨╡.
+  addTemplate: ╨б╨╛╨╖╨┤╨░╤В╤М ╨╕╨╖ ╤Б╨║╨░╤З╨░╨╜╨╜╨╛╨│╨╛ ╨╝╨╛╨┤╨┐╨░╨║╨░
+  addTemplateDescription: ╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨╕╨╖ ╨╖╨░╨│╤А╤Г╨╢╨╡╨╜╨╜╨╛╨╣ ╤Б╨▒╨╛╤А╨║╨╕ ╨╝╨╛╨┤╨╛╨▓
+  addVanilla: ╨б╨╛╨╖╨┤╨░╤В╤М ╨╕╨╖ ╤Б╤В╨░╨╜╨┤╨░╤А╤В╨╜╨╛╨│╨╛ Minecraft
+  addVanillaDescription: ╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨╕╨╖ ╨╛╨▒╤Л╤З╨╜╨╛╨╣ ╨┐╨░╨┐╨║╨╕ (.minecraft). ╨н╤В╨╛ ╨┤╤Г╨▒╨╗╨╕╤А╤Г╨╡╤В
+    ╨╛╤А╨╕╨│╨╕╨╜╨░╨╗╤М╨╜╤Л╨╣ ╨┐╤А╨╛╤Д╨╕╨╗╤М ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░ ╨▓ NeoTerra Launcher.
+  fix: ╨Ш╤Б╨┐╤А╨░╨▓╨╕╤В╤М
+  folder: ╨Я╨░╨┐╨║╨░
+  folderSetting: ╨Э╨░╤Б╤В╤А╨╛╨╣╨║╨╕ ╨┐╨░╨┐╨║╨╕
+  importFolderDescription: ╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М Minecraft ╨▓ ╨╗╨░╤Г╨╜╤З╨╡╤А
+  loadingFiles: ╨Ч╨░╨│╤А╤Г╨╖╨║╨░ ╤Д╨░╨╣╨╗╨╛╨▓ ╤Б╨▒╨╛╤А╨║╨╕ ╨╝╨╛╨┤╨╛╨▓
+  edition: ╨Ш╨╖╨┤╨░╨╜╨╕╨╡
+  editionJava: Java-╨╕╨╖╨┤╨░╨╜╨╕╨╡
+  editionBedrock: Bedrock-╨╕╨╖╨┤╨░╨╜╨╕╨╡
+  editionBedrockHint: ╨Ш╨╖╨┤╨░╨╜╨╕╨╡ Bedrock ╨╖╨░╨┐╤Г╤Б╨║╨░╨╡╤В╤Б╤П ╤З╨╡╤А╨╡╨╖ ╨┐╤А╨╕╨╗╨╛╨╢╨╡╨╜╨╕╨╡ Microsoft Store.
+    ╨г ╨▓╨░╤Б ╨┤╨╛╨╗╨╢╨╜╨░ ╨▒╤Л╤В╤М ╨╗╨╕╤Ж╨╡╨╜╨╖╨╕╤П Bedrock. ╨Ь╨╛╨┤╤Л, ╨╜╨░╨▒╨╛╤А╤Л ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓ ╨╕ ╨┤╤А╤Г╨│╨╕╨╡ ╤Д╤Г╨╜╨║╤Ж╨╕╨╕, ╨┤╨╛╤Б╤В╤Г╨┐╨╜╤Л╨╡
+    ╤В╨╛╨╗╤М╨║╨╛ ╨▓ Java, ╨╜╨╡╨┤╨╛╤Б╤В╤Г╨┐╨╜╤Л.
+  editionBedrockWindowsOnly: ╨Ш╨╖╨┤╨░╨╜╨╕╨╡ Bedrock ╨┐╨╛╨┤╨┤╨╡╤А╨╢╨╕╨▓╨░╨╡╤В╤Б╤П ╤В╨╛╨╗╤М╨║╨╛ ╨▓ ╤Б╨▒╨╛╤А╨║╨╡ ╨┤╨╗╤П Windows.
+  linkSharedFolders: ╨Ю╨▒╤Й╨╕╨╣ ╨┤╨╛╤Б╤В╤Г╨┐ ╨║ ╨┐╨░╨┐╨║╨░╨╝ ╨╝╨╡╨╢╨┤╤Г ╤Б╨▒╨╛╤А╨║╨░╨╝╨╕
+  linkSharedFoldersHint: ╨б╨╛╨╖╨┤╨░╨╣╤В╨╡ ╤Н╤В╨╕ ╨┐╨░╨┐╨║╨╕ ╨║╨░╨║ ╤Б╤Б╤Л╨╗╨║╨╕ ╨╜╨░ ╨╛╨▒╤Й╨╕╨╡ ╨┐╨░╨┐╨║╨╕ ╨╗╨░╤Г╨╜╤З╨╡╤А╨░, ╤З╤В╨╛╨▒╤Л
+    ╤Н╤В╨░ ╤Б╨▒╨╛╤А╨║╨░ ╨┤╨╡╨╗╨╕╨╗╨░ ╨╕╤Е ╤Б╨╛╨┤╨╡╤А╨╢╨╕╨╝╨╛╨╡ ╤Б╨╛ ╨▓╤Б╨╡╨╝╨╕ ╨┤╤А╤Г╨│╨╕╨╝╨╕ ╤Б╨▓╤П╨╖╨░╨╜╨╜╤Л╨╝╨╕ ╤Б╨▒╨╛╤А╨║╨░╨╝╨╕. ╨н╤В╨╛ ╨╜╨╡ ╨║╨╛╨┐╨╕╤А╨╛╨▓╨░╨╜╨╕╨╡
+    тАФ ╨╕╨╖╨╝╨╡╨╜╨╡╨╜╨╕╤П ╨▓ ╨╛╨┤╨╜╨╛╨╣ ╤Б╨▒╨╛╤А╨║╨╡ ╨┐╨╛╤П╨▓╨╗╤П╤О╤В╤Б╤П ╨▓╨╛ ╨▓╤Б╨╡╤Е. ╨Э╨╡╨╛╤В╨╝╨╡╤З╨╡╨╜╨╜╤Л╨╡ ╨┐╨░╨┐╨║╨╕ ╨╛╤Б╤В╨░╤О╤В╤Б╤П ╨┐╤А╨╕╨▓╨░╤В╨╜╤Л╨╝╨╕
+    ╨┤╨╗╤П ╤Н╤В╨╛╨╣ ╤Б╨▒╨╛╤А╨║╨╕.
+  linkFailed: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╤Б╨▓╤П╨╖╨░╤В╤М ╨┐╨░╨┐╨║╤Г {folder} ╤Б ╨╛╨▒╤Й╨╡╨╣ ╨┐╨░╨┐╨║╨╛╨╣
+  addPrismDescription: ╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╤Б╤Г╤Й╨╡╤Б╤В╨▓╤Г╤О╤Й╨╕╨╣ ╨╕╨╜╤Б╤В╨░╨╜╤Б PrismLauncher.
+  instanceCount: '{count} instances'
+items:
+  count: '{count} ╤Н╨╗╨╡╨╝╨╡╨╜╤В╨╛╨▓'
+  total: '{total} ╨▓╤Б╨╡╨│╨╛'
+java:
+  allocatedLong: ╨Ш╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╤М ╤Б╨╕╤Б╤В╨╡╨╝╨╜╤Л╨╣ Java ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О
+  allocatedShort: ╨Р╨▓╤В╨╛╨╝╨░╤В╨╕╤З╨╡╤Б╨║╨╛╨╡ ╨▓╤Л╨┤╨╡╨╗╨╡╨╜╨╕╨╡
+  importFromFile: ╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М Java ╨╕╨╖ ╤Д╨░╨╣╨╗╨░
+  invalid: ╨Э╨╡╨▓╨╡╤А╨╜╨╛╨╡ ╤А╨░╤Б╨┐╨╛╨╗╨╛╨╢╨╡╨╜╨╕╨╡ Java
+  location: ╨а╨░╤Б╨┐╨╛╨╗╨╛╨╢╨╡╨╜╨╕╨╡ Java
+  maxMemory: ╨Ь╨░╨║╤Б╨╕╨╝╨░╨╗╤М╨╜╨░╤П ╨┐╨░╨╝╤П╤В╤М
+  memory: ╨Я╨░╨╝╤П╤В╤М Java
+  memoryAuto: ╨Р╨▓╤В╨╛╨╝╨░╤В╨╕╤З╨╡╤Б╨║╨╕
+  memoryManual: ╨Т╤А╤Г╤З╨╜╤Г╤О
+  memoryUnassigned: ╨Э╨╡ ╨╜╨░╨╖╨╜╨░╤З╨╡╨╜╨╛
+  minMemory: ╨Ь╨╕╨╜╨╕╨╝╨░╨╗╤М╨╜╨░╤П ╨┐╨░╨╝╤П╤В╤М
+  name: Java
+  noMemory: ╨Э╨╡ ╨╛╨│╤А╨░╨╜╨╕╤З╨╕╨▓╨░╤В╤М ╨╕╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╨╜╨╕╨╡ ╨┐╨░╨╝╤П╤В╨╕
+  refresh: ╨Ю╨▒╨╜╨╛╨▓╨╕╤В╤М ╨╗╨╛╨║╨░╨╗╤М╨╜╤Л╨╣ Java
+  systemMemory: '╨б╨▓╨╛╨▒╨╛╨┤╨╜╨░╤П ╨┐╨░╨╝╤П╤В╤М ╤Б╨╕╤Б╤В╨╡╨╝╤Л: {free} / {total}'
+  allocation: ╨Т╤Л╨┤╨╡╨╗╨╡╨╜╨╛
+  autoHint: ╨Ь╨╕╨╜╨╕╨╝╤Г╨╝ ╤А╨░╤Б╤В╤С╤В ╤Б ╨║╨╛╨╗╨╕╤З╨╡╤Б╤В╨▓╨╛╨╝ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨╜╤Л╤Е ╨╝╨╛╨┤╨╛╨▓; ╨╝╨░╨║╤Б╨╕╨╝╤Г╨╝ ╨╕╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╡╤В
+    ╨┤╨╛╤Б╤В╤Г╨┐╨╜╤Г╤О ╤Б╨╕╤Б╤В╨╡╨╝╨╜╤Г╤О ╨┐╨░╨╝╤П╤В╤М.
+  change: ╨Ш╨╖╨╝╨╡╨╜╨╕╤В╤М
+  locationHint: Java ╨╜╨╡ ╨▓╤Л╨▒╤А╨░╨╜╨░ тАФ ╨╕╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╡╤В╤Б╤П ╤Б╨╕╤Б╤В╨╡╨╝╨╜╨░╤П ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О
+  openFolder: ╨Ю╤В╨║╤А╤Л╤В╤М ╨┐╨░╨┐╨║╤Г Java
+  presets: ╨Я╤А╨╡╨┤╤Г╤Б╤В╨░╨╜╨╛╨▓╨║╨╕
+labyMod:
+  disable: LabyMod ╨╜╨╡ ╨▓╤Л╨▒╤А╨░╨╜
+  empty: LabyMod ╨╜╨╡ ╨┐╨╛╨┤╨┤╨╡╤А╨╢╨╕╨▓╨░╨╡╤В ╤В╨╡╨║╤Г╤Й╤Г╤О ╨▓╨╡╤А╤Б╨╕╤О Minecraft
+unauthenticatedWarning:
+  title: ╨Т╤Л ╨╜╨╡ ╨▓╨╛╤И╨╗╨╕ ╨▓ ╨░╨║╨║╨░╤Г╨╜╤В
+  description: ╨Э╨╕ ╨╛╨┤╨╕╨╜ ╨░╨║╨║╨░╤Г╨╜╤В ╨╜╨╡ ╨▓╤Л╨┐╨╛╨╗╨╜╨╕╨╗ ╨▓╤Е╨╛╨┤. ╨Ш╨│╤А╨░ ╨╖╨░╨┐╤Г╤Б╤В╨╕╤В╤Б╤П ╨▓ ╨┤╨╡╨╝╨╛-╤А╨╡╨╢╨╕╨╝╨╡. ╨Т╨╛╨╣╨┤╨╕╤В╨╡,
+    ╤З╤В╨╛╨▒╤Л ╨┐╨╛╨╗╤Г╤З╨╕╤В╤М ╨┤╨╛╤Б╤В╤Г╨┐ ╨║╨╛ ╨▓╤Б╨╡╨╝ ╨▓╨╛╨╖╨╝╨╛╨╢╨╜╨╛╤Б╤В╤П╨╝.
+  cancel: ╨Ю╤В╨╝╨╡╨╜╨░
+  login: ╨Т╨╛╨╣╤В╨╕
+  playAnyway: ╨Т╤Б╤С ╤А╨░╨▓╨╜╨╛ ╨╖╨░╨┐╤Г╤Б╤В╨╕╤В╤М
+launch:
+  cancel: ╨Ю╤В╨╝╨╡╨╜╨╕╤В╤М
+  createShortcut: ╨б╨╛╨╖╨┤╨░╤В╤М ╤П╤А╨╗╤Л╨║
+  kill: ╨Ю╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М
+  killServer: ╨Ю╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╨╗╨╛╨║╨░╨╗╤М╨╜╤Л╨╣ ╤Б╨╡╤А╨▓╨╡╤А
+  launch: ╨Ч╨░╨┐╤Г╤Б╤В╨╕╤В╤М
+  launchAnyway: ╨Ч╨░╨┐╤Г╤Б╤В╨╕╤В╤М ╨▓ ╨╗╤О╨▒╨╛╨╝ ╤Б╨╗╤Г╤З╨░╨╡
+  launchAs: ╨Ч╨░╨┐╤Г╤Б╤В╨╕╤В╤М ╨╛╤В ╨╕╨╝╨╡╨╜╨╕
+  forceKill: ╨Я╤А╨╕╨╜╤Г╨┤╨╕╤В╨╡╨╗╤М╨╜╨╛ ╨╖╨░╨▓╨╡╤А╤И╨╕╤В╤М
+  launchTo: Launch to
+launchBlocked:
+  launchBadVersion:
+    description: ╨д╨░╨╣╨╗ ╨▓╨╡╤А╤Б╨╕╨╕ {version} ╨┐╨╛╨▓╤А╨╡╨╢╨┤╤С╨╜ ╨╕╨╗╨╕ ╨╛╤В╤Б╤Г╤В╤Б╤В╨▓╤Г╨╡╤В. ╨Т╨╛╨╖╨╝╨╛╨╢╨╜╨╛, ╨▓╨░╨╝ ╨╜╤Г╨╢╨╜╨╛
+      ╨┐╨╡╤А╨╡╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╤Н╤В╤Г ╨▓╨╡╤А╤Б╨╕╤О?
+    title: ╨Ю╤И╨╕╨▒╨║╨░ ╤Д╨░╨╣╨╗╨░ ╨▓╨╡╤А╤Б╨╕╨╕
+  launchGeneralException:
+    description: ╨Т╨╛╨╖╨╜╨╕╨║╨╗╨╕ ╨╛╤И╨╕╨▒╨║╨╕, ╨╕╨╖-╨╖╨░ ╨║╨╛╤В╨╛╤А╤Л╤Е ╨╖╨░╨┐╤Г╤Б╨║ ╨╜╨╡ ╤Г╨┤╨░╨╗╤Б╤П.
+    title: ╨Ю╤И╨╕╨▒╨║╨░ ╨╖╨░╨┐╤Г╤Б╨║╨░
+  launchInvalidJavaPath:
+    description: ╨Т╤Л╨▒╤А╨░╨╜╨╜╤Л╨╣ ╨┐╤Г╤В╤М ╨║ Java ╨╜╨╡╨▓╨╡╤А╨╡╨╜ ╨╕╨╗╨╕ ╤Д╨░╨╣╨╗ ╨╛╤В╤Б╤Г╤В╤Б╤В╨▓╤Г╨╡╤В. ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨▓╤Л╨▒╨╡╤А╨╕╤В╨╡
+      ╨┤╤А╤Г╨│╨╛╨╣ ╨┐╤Г╤В╤М. <span class="highlight"> {javaPath} </span>
+    title: ╨Э╨╡╨▓╨╡╤А╨╜╤Л╨╣ ╨┐╤Г╤В╤М ╨║ Java
+  launchJavaNoPermission:
+    description: ╨г ╨╗╨░╤Г╨╜╤З╨╡╤А╨░ ╨╜╨╡╤В ╤А╨░╨╖╤А╨╡╤И╨╡╨╜╨╕╤П ╨╜╨░ ╨▓╤Л╨┐╨╛╨╗╨╜╨╡╨╜╨╕╨╡ Java ╨┐╨╛ ╤Г╨║╨░╨╖╨░╨╜╨╜╨╛╨╝╤Г ╨┐╤Г╤В╨╕.
+      ╨Ш╨╖╨╝╨╡╨╜╨╕╤В╨╡ ╤А╨░╨╖╤А╨╡╤И╨╡╨╜╨╕╤П ╤Д╨░╨╣╨╗╨░ ╨╕╨╗╨╕ ╨╖╨░╨┐╤Г╤Б╤В╨╕╤В╨╡ ╨╗╨░╤Г╨╜╤З╨╡╤А ╨╛╤В ╨╕╨╝╨╡╨╜╨╕ ╨░╨┤╨╝╨╕╨╜╨╕╤Б╤В╤А╨░╤В╨╛╤А╨░. <span
+      class="highlight"> {javaPath} </span>
+    title: ╨Ю╤В╤Б╤Г╤В╤Б╤В╨▓╤Г╤О╤В ╨┐╤А╨░╨▓╨░ ╨╜╨░ ╨▓╤Л╨┐╨╛╨╗╨╜╨╡╨╜╨╕╨╡
+  launchNoProperJava:
+    description: ╨Э╨╡ ╨╜╨░╨╣╨┤╨╡╨╜╨░ ╨┐╨╛╨┤╤Е╨╛╨┤╤П╤Й╨░╤П ╨▓╨╡╤А╤Б╨╕╤П Java ╨┤╨╗╤П ╨╖╨░╨┐╤Г╤Б╨║╨░ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░. ({javaPath}
+      ╨╜╨╡╨▓╨╡╤А╨╡╨╜?)
+    title: ╨Ю╤В╤Б╤Г╤В╤Б╤В╨▓╤Г╨╡╤В ╨┐╨╛╨┤╤Е╨╛╨┤╤П╤Й╨░╤П ╨▓╨╡╤А╤Б╨╕╤П Java
+  launchNoVersionInstalled:
+    description: ╨Э╨╡ ╤Г╨┤╨░╤С╤В╤Б╤П ╤А╨░╨╖╤А╨╡╤И╨╕╤В╤М ╨▓╨╡╤А╤Б╨╕╤О <span class="highlight">{version}</span>
+      ╨┤╨╗╤П ╨╖╨░╨┐╤Г╤Б╨║╨░.
+    title: ╨Ю╤В╤Б╤Г╤В╤Б╤В╨▓╤Г╨╡╤В ╨▓╤Л╨▒╤А╨░╨╜╨╜╨░╤П ╨▓╨╡╤А╤Б╨╕╤П
+  launchSpawnProcessFailed:
+    description: ╨Я╤А╨╛╨╕╨╖╨╛╤И╨╗╨░ ╨╛╤И╨╕╨▒╨║╨░ ╨┐╤А╨╕ ╨╖╨░╨┐╤Г╤Б╨║╨╡ ╨┐╤А╨╛╤Ж╨╡╤Б╤Б╨░ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░. ╨Я╤А╨╛╨▓╨╡╤А╤М╤В╨╡, ╤З╤В╨╛
+      ╤Г╨║╨░╨╖╨░╨╜╨░ ╨┐╤А╨░╨▓╨╕╨╗╤М╨╜╨░╤П ╨▓╨╡╤А╤Б╨╕╤П Java, ╨╕ ╨┐╨╛╨┐╤А╨╛╨▒╤Г╨╣╤В╨╡ ╨┐╤А╨╡╨┤╨╛╤Б╤В╨░╨▓╨╕╤В╤М ╨▒╨╛╨╗╤М╤И╨╡ ╤А╨░╨╖╤А╨╡╤И╨╡╨╜╨╕╨╣
+      ╨╗╨░╤Г╨╜╤З╨╡╤А╤Г. ╨Х╤Б╨╗╨╕ ╤Н╤В╨╛ ╨╜╨╡ ╨┐╨╛╨╝╨╛╨╢╨╡╤В, ╤Б╨▓╤П╨╢╨╕╤В╨╡╤Б╤М ╤Б ╤А╨░╨╖╤А╨░╨▒╨╛╤В╤З╨╕╨║╨░╨╝╨╕.
+    title: ╨Ю╤И╨╕╨▒╨║╨░ ╨╖╨░╨┐╤Г╤Б╨║╨░ ╨┐╤А╨╛╤Ж╨╡╤Б╤Б╨░ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+  unexpectedText: ╨н╤В╨╛ ╨╜╨╡╨╛╨╢╨╕╨┤╨░╨╜╨╜╨╛. ╨Т╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨┐╨╡╤А╨╡╨╖╨░╨┐╤Г╤Б╤В╨╕╤В╤М ╨╗╨░╤Г╨╜╤З╨╡╤А, ╤З╤В╨╛╨▒╤Л ╤Г╤Б╤В╤А╨░╨╜╨╕╤В╤М
+    ╨┐╤А╨╛╨▒╨╗╨╡╨╝╤Г. ╨Х╤Б╨╗╨╕ ╨┐╤А╨╛╨▒╨╗╨╡╨╝╨░ ╨┐╨╛╨▓╤В╨╛╤А╨╕╤В╤Б╤П, ╤Б╨▓╤П╨╢╨╕╤В╨╡╤Б╤М ╤Б ╨░╨▓╤В╨╛╤А╨╛╨╝.
+launchFailed:
+  crash: ╨Ш╨│╤А╨░ ╨▓╤Л╨╗╨╡╤В╨╡╨╗╨░!
+  description: ╨Ю╤В╤З╨╡╤В ╨╛ ╤Б╨▒╨╛╨╡ ╨╛╤В╤Б╤Г╤В╤Б╤В╨▓╤Г╨╡╤В. ╨н╤В╨╛ ╨╢╤Г╤А╨╜╨░╨╗ ╨╛╤И╨╕╨▒╨╛╨║ ╨╕ ╨┐╨╛╤Б╨╗╨╡╨┤╨╜╨╕╨╣ ╨╢╤Г╤А╨╜╨░╨╗.
+  elyByAuthlib:
+    description: ╨Ч╨░╨╝╨╡╨╜╨╕╤В╨╡╨╗╤М Authlib ╨╛╤В Ely.by ╨▒╤Л╨╗ ╨╕╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╨╜ ╨┤╨╗╤П ╨▓╨╡╤А╤Б╨╕╨╕ Minecraft
+      {version}, ╨╜╨╛ ╤Н╤В╨░ ╨▓╨╡╤А╤Б╨╕╤П ╨╝╨╛╨╢╨╡╤В ╨▒╤Л╤В╤М ╨╜╨╡ ╨┐╨╛╨╗╨╜╨╛╤Б╤В╤М╤О ╤Б╨╛╨▓╨╝╨╡╤Б╤В╨╕╨╝╨░.
+    suggestion: ╨Т╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨╛╤В╨║╨╗╤О╤З╨╕╤В╤М ╨╖╨░╨╝╨╡╨╜╨╕╤В╨╡╨╗╤М Authlib Ely.by ╨▓ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨░╤Е ╨╕╨╜╤Б╤В╨░╨╜╤Б╨░,
+      ╤З╤В╨╛╨▒╤Л ╨╕╨╖╨▒╨╡╨╢╨░╤В╤М ╤Н╤В╨╛╨╣ ╨┐╤А╨╛╨▒╨╗╨╡╨╝╤Л.
+    title: ╨Я╤А╨╛╨▒╨╗╨╡╨╝╨░ ╤Б╨╛╨▓╨╝╨╡╤Б╤В╨╕╨╝╨╛╤Б╤В╨╕ Ely.by Authlib
+  failedToLaunch: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╨╖╨░╨┐╤Г╤Б╤В╨╕╤В╤М ╨╖╨░╨┐╤Г╤Б╨║
+  latestLog: '╨Я╨╛╤Б╨╗╨╡╨┤╨╜╨╕╨╡ ╨╗╨╛╨│╨╕ '
+  title: ╨Ш╨│╤А╨░ ╨╖╨░╨▓╨╡╤А╤И╨╕╨╗╨░╤Б╤М ╤Б ╨░╨╜╨╛╨╝╨░╨╗╤М╨╜╤Л╨╝ ╨║╨╛╨┤╨╛╨╝
+launchPreExecuteCommandFailed:
+  description: '╨Ъ╨╛╨╝╨░╨╜╨┤╨░ ╨┐╤А╨╡╨┤╨▓╨░╤А╨╕╤В╨╡╨╗╤М╨╜╨╛╨│╨╛ ╨▓╤Л╨┐╨╛╨╗╨╜╨╡╨╜╨╕╤П ╨╖╨░╨▓╨╡╤А╤И╨╕╨╗╨░╤Б╤М ╤Б ╨╛╤И╨╕╨▒╨║╨╛╨╣: {error}.
+    ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨┐╤А╨╛╨▓╨╡╤А╤М╤В╨╡ ╨║╨╛╨╝╨░╨╜╨┤╤Г ╨╕ ╨┐╨╛╨▓╤В╨╛╤А╨╕╤В╨╡ ╨┐╨╛╨┐╤Л╤В╨║╤Г.'
+  title: ╨Ъ╨╛╨╝╨░╨╜╨┤╨░ ╨┐╤А╨╡╨┤╨▓╨░╤А╨╕╤В╨╡╨╗╤М╨╜╨╛╨│╨╛ ╨▓╤Л╨┐╨╛╨╗╨╜╨╡╨╜╨╕╤П ╨╜╨╡ ╨▓╤Л╨┐╨╛╨╗╨╜╨╡╨╜╨░
+launchStatus:
+  assigningMemory: ╨а╨░╤Б╨┐╤А╨╡╨┤╨╡╨╗╨╡╨╜╨╕╨╡ ╨┐╨░╨╝╤П╤В╨╕
+  elyByWarning: ╨Ч╨░╨╝╨╡╨╜╨╕╤В╨╡╨╗╤М Authlib Ely.by ╨▓╨║╨╗╤О╤З╤С╨╜. ╨Э╨╡╨║╨╛╤В╨╛╤А╤Л╨╡ ╨▓╨╡╤А╤Б╨╕╨╕ Minecraft ╨╝╨╛╨│╤Г╤В
+    ╨▒╤Л╤В╤М ╨╜╨╡╤Б╨╛╨▓╨╝╨╡╤Б╤В╨╕╨╝╤Л ╨╕ ╨▓╤Л╨╖╤Л╨▓╨░╤В╤М ╨┐╨░╨┤╨╡╨╜╨╕╤П. ╨Т╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨╛╤В╨║╨╗╤О╤З╨╕╤В╤М ╨╡╨│╨╛ ╨▓ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨░╤Е ╨╕╨╜╤Б╤В╨░╨╜╤Б╨░,
+    ╨╡╤Б╨╗╨╕ ╨▓╨╛╨╖╨╜╨╕╨║╨╜╤Г╤В ╨┐╤А╨╛╨▒╨╗╨╡╨╝╤Л.
+  exit: ╨Т╤Л╨╣╤В╨╕ ╨╕╨╖ ╨╕╨│╤А╤Л?
+  injectingAuthLib: ╨Э╨░╤Б╤В╤А╨╛╨╣╨║╨░ ╤Б╤В╨╛╤А╨╛╨╜╨╜╨╡╨╣ ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╨╕ AuthLib
+  launching: ╨Ч╨░╨┐╤Г╤Б╨║ ╨╕╨│╤А╤Л...
+  launchingSlow: ╨Ч╨░╨┐╤Г╤Б╨║ ╨╕╨│╤А╤Л ╨▓╤Б╤С ╨╡╤Й╤С ╨▓╤Л╨┐╨╛╨╗╨╜╤П╨╡╤В╤Б╤П... ╨Ф╨╗╤П ╨╕╨╜╨╕╤Ж╨╕╨░╨╗╨╕╨╖╨░╤Ж╨╕╨╕ ╨│╤А╨░╤Д╨╕╤З╨╡╤Б╨║╨╛╨│╨╛
+    ╨┤╨▓╨╕╨╢╨║╨░ ╨╝╨╛╨╢╨╡╤В ╨┐╨╛╤В╤А╨╡╨▒╨╛╨▓╨░╤В╤М╤Б╤П ╨╜╨╡╨║╨╛╤В╨╛╤А╨╛╨╡ ╨▓╤А╨╡╨╝╤П...
+  refreshingUser: ╨Ю╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╨╡ ╤В╨╛╨║╨╡╨╜╨░ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П
+  spawningProcess: ╨Ч╨░╨┐╤Г╤Б╨║ ╨┐╤А╨╛╤Ж╨╡╤Б╤Б╨░
+launcherUpdate:
+  alreadyLatest: ╨Я╨╛╤Б╨╗╨╡╨┤╨╜╤П╤П ╨▓╨╡╤А╤Б╨╕╤П
+  installAndQuit: ╨Я╨╡╤А╨╡╨╖╨░╨┐╤Г╤Б╤В╨╕╤В╨╡, ╤З╤В╨╛╨▒╤Л ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М
+  noUpdateAvailable: ╨Э╨╡╤В ╨┤╨╛╤Б╤В╤Г╨┐╨╜╤Л╤Е ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╨╣
+  updateToThisVersion: ╨б╨║╨░╤З╨░╤В╤М ╨╕ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М
+localVersion:
+  auto: ╨Ю╨┐╤А╨╡╨┤╨╡╨╗╨╕╤В╤М ╨░╨▓╤В╨╛╨╝╨░╤В╨╕╤З╨╡╤Б╨║╨╕
+  empty: ╨Т╨╡╤А╤Б╨╕╤П ╨╜╨╡ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨░
+  hint: ╨Ч╨░╨┐╤Г╤Б╤В╨╕╤В╤М ╨║╨╛╨╜╨║╤А╨╡╤В╨╜╤Г╤О ╨╗╨╛╨║╨░╨╗╤М╨╜╤Г╤О ╨▓╨╡╤А╤Б╨╕╤О ╨╜╨░╨┐╤А╤П╨╝╤Г╤О
+  reinstallDescription: ╨Х╤Б╨╗╨╕ ╨▓╤Л ╤Б╤З╨╕╤В╨░╨╡╤В╨╡, ╤З╤В╨╛ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨║╨░ ╤Н╤В╨╛╨╣ ╨▓╨╡╤А╤Б╨╕╨╕ ╨▓╤Л╨╖╤Л╨▓╨░╨╡╤В ╨┐╤А╨╛╨▒╨╗╨╡╨╝╤Л,
+    ╨▓╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨┐╨╛╨┐╤А╨╛╨▒╨╛╨▓╨░╤В╤М ╨┐╨╡╤А╨╡╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╨╡╤С.
+  reinstallTitle: ╨Я╨╡╤А╨╡╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М {version}
+  title: ╨Ы╨╛╨║╨░╨╗╤М╨╜╨░╤П ╨▓╨╡╤А╤Б╨╕╤П | ╨Ы╨╛╨║╨░╨╗╤М╨╜╤Л╨╡ ╨▓╨╡╤А╤Б╨╕╨╕
+logLevel:
+  error: ╨Ю╤И╨╕╨▒╨║╨░
+  info: ╨Ш╨╜╤Д╨╛╤А╨╝╨░╤Ж╨╕╤П
+  success: ╨г╤Б╨┐╨╡╤Е
+  warning: ╨Я╤А╨╡╨┤╤Г╨┐╤А╨╡╨╢╨┤╨╡╨╜╨╕╨╡
+logView:
+  searchPlaceholder: ╨Я╨╛╨╕╤Б╨║ ╨╗╨╛╨│╨╛╨▓...
+login:
+  dropHint: ╨Я╨╡╤А╨╡╤В╨░╤Й╨╕╤В╨╡ ╤Б╤О╨┤╨░ ╤Б╤Б╤Л╨╗╨║╤Г ╤Б ╨║╨╛╨┤╨╛╨╝ ╨░╨▓╤В╨╛╤А╨╕╨╖╨░╤Ж╨╕╨╕ ╨┤╨╗╤П ╤А╤Г╤З╨╜╨╛╨│╨╛ ╨▓╤Е╨╛╨┤╨░
+  forgetPassword: ╨Ч╨░╨▒╤Л╨╗╨╕ ╨┐╨░╤А╨╛╨╗╤М?
+  login: ╨Т╨╛╨╣╤В╨╕
+  manualLoginUrl: ╨Х╤Б╨╗╨╕ ╨▒╤А╨░╤Г╨╖╨╡╤А ╨╜╨╡ ╨╛╤В╨║╤А╤Л╨▓╨░╨╡╤В╤Б╤П, ╨┐╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨╜╨░╨╢╨╝╨╕╤В╨╡ ╨╜╨░ ╤Н╤В╤Г ╤Б╤Б╤Л╨╗╨║╤Г ╨┤╨╗╤П
+    ╨░╨▓╤В╨╛╤А╨╕╨╖╨░╤Ж╨╕╨╕!
+  signup: ╨Ч╨░╤А╨╡╨│╨╕╤Б╤В╤А╨╕╤А╨╛╨▓╨░╤В╤М╤Б╤П
+  signupDescription: ╨Э╨╡╤В ╤Г╤З╤С╤В╨╜╨╛╨╣ ╨╖╨░╨┐╨╕╤Б╨╕?
+  userRelogin: ╨б╤А╨╛╨║ ╨┤╨╡╨╣╤Б╤В╨▓╨╕╤П ╤В╨╛╨║╨╡╨╜╨░ ╨┤╨╛╤Б╤В╤Г╨┐╨░ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П ╨╕╤Б╤В╤С╨║. ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨┐╨╛╨▓╤В╨╛╤А╨╕╤В╨╡
+    ╨▓╤Е╨╛╨┤!
+loginError:
+  acquireMicrosoftTokenFailed: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╨┐╨╛╨╗╤Г╤З╨╕╤В╤М ╤В╨╛╨║╨╡╨╜ Microsoft. ╨н╤В╨╛ ╨╝╨╛╨╢╨╡╤В ╨▒╤Л╤В╤М
+    ╨┐╤А╨╛╨▒╨╗╨╡╨╝╨░ ╤Б ╤Б╨╡╤В╤М╤О. ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨┐╨╛╨▓╤В╨╛╤А╨╕╤В╨╡ ╨┐╨╛╨┐╤Л╤В╨║╤Г.
+  badNetworkOrServer: ╨Я╤А╨╛╨▓╨╡╤А╤М╤В╨╡ ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡ ╤Б ╤Б╨╡╤В╤М╤О! ╨Т╨╛╨╖╨╝╨╛╨╢╨╜╨╛, ╤Б╨╡╤А╨▓╨╡╤А ╨░╨▓╤В╨╛╤А╨╕╨╖╨░╤Ж╨╕╨╕ ╨╜╨╡╨┤╨╛╤Б╤В╤Г╨┐╨╡╨╜!
+  checkOwnershipFailed: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╨┐╨╛╨┤╤В╨▓╨╡╤А╨┤╨╕╤В╤М ╨▓╨╗╨░╨┤╨╡╨╜╨╕╨╡ ╨╕╨│╤А╨╛╨╣. ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨┐╨╛╨┐╤А╨╛╨▒╤Г╨╣╤В╨╡
+    ╨╡╤Й╤С ╤А╨░╨╖.
+  connectionReset: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╨▓╨╛╨╣╤В╨╕, ╤В╨░╨║ ╨║╨░╨║ ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡ ╨▒╤Л╨╗╨╛ ╤Б╨▒╤А╨╛╤И╨╡╨╜╨╛ ╤Б╨╡╤А╨▓╨╡╤А╨╛╨╝
+  fetchMinecraftProfileFailed: '╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╨┐╨╛╨╗╤Г╤З╨╕╤В╤М ╨┐╤А╨╛╤Д╨╕╨╗╤М Minecraft: {reason}'
+  illegalEmail: ╨Э╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝ ╨║╨╛╤А╤А╨╡╨║╤В╨╜╤Л╨╣ ╨░╨┤╤А╨╡╤Б ╤Н╨╗╨╡╨║╤В╤А╨╛╨╜╨╜╨╛╨╣ ╨┐╨╛╤З╤В╤Л
+  invalidCredentials: ╨Э╨╡╨▓╨╡╤А╨╜╤Л╨╡ ╤Г╤З╤С╤В╨╜╤Л╨╡ ╨┤╨░╨╜╨╜╤Л╨╡. ╨Э╨╡╨▓╨╡╤А╨╜╨╛╨╡ ╨╕╨╝╤П ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П ╨╕╨╗╨╕ ╨┐╨░╤А╨╛╨╗╤М.
+  loginMinecraftByXboxFailed: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╨┐╨╛╨╗╤Г╤З╨╕╤В╤М ╤В╨╛╨║╨╡╨╜ Minecraft ╤Б ╨┐╨╛╨╝╨╛╤Й╤М╤О ╤В╨╛╨║╨╡╨╜╨░
+    Xbox. ╨г╨▒╨╡╨┤╨╕╤В╨╡╤Б╤М, ╤З╤В╨╛ ╤Г ╨▓╨░╤Б ╨╡╤Б╤В╤М Minecraft ╨▓ Xbox, ╨╕╨╗╨╕ ╨┐╨╛╨┐╤А╨╛╨▒╤Г╨╣╤В╨╡ ╨╡╤Й╤С ╤А╨░╨╖.
+  loginXboxAgeRestricted: '╨Э╨╡ ╨▓ ╤Б╨╛╤Б╤В╨╛╤П╨╜╨╕╨╕ ╨▓╨╛╨╣╤В╨╕ ╨▓ ╤Б╨╕╤Б╤В╨╡╨╝╤Г xbox ╨╕╨╖ -╨╖╨░ ╨▓╨╛╨╖╨╜╨╕╨║╨╜╨╛╨▓╨╡╨╜╨╕╤П
+    ╨▓╨╛╨╖╤А╨░╤Б╤В╨░.
+
+    ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╤Г╨▒╨╡╨┤╨╕╤В╨╡╤Б╤М, ╤З╤В╨╛ ╨▓╨╛╨╖╤А╨░╤Б╤В ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜ ╨┤╨╗╤П ╨▓╨░╤И╨╡╨╣ ╤Г╤З╨╡╤В╨╜╨╛╨╣ ╨╖╨░╨┐╨╕╤Б╨╕ Microsoft,
+    ╨░ ╨▓╨╛╨╖╤А╨░╤Б╤В ╨┐╤А╨╡╨▓╤Л╤И╨░╨╡╤В 18.'
+  loginXboxFailed: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╨▓╨╛╨╣╤В╨╕ ╨▓ Xbox ╤Б ╨┐╨╛╨╝╨╛╤Й╤М╤О ╤В╨╛╨║╨╡╨╜╨░ Microsoft. ╨г╨▒╨╡╨┤╨╕╤В╨╡╤Б╤М,
+    ╤З╤В╨╛ ╤Г ╨▓╨░╤Б ╨╡╤Б╤В╤М ╨╜╨╡╨╖╨░╨▓╨╕╤Б╨╕╨╝╤Л╨╣ ╨░╨║╨║╨░╤Г╨╜╤В Xbox ╨╛╤В ╨▓╨░╤И╨╡╨│╨╛ ╨░╨║╨║╨░╤Г╨╜╤В╨░ Microsoft. ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░,
+    ╨┐╨╛╨┐╤А╨╛╨▒╤Г╨╣╤В╨╡ ╨╡╤Й╤С ╤А╨░╨╖.
+  noProfileForNewUser: '╨Я╤А╨╛╤Д╨╕╨╗╤М ╨╕╨│╤А╤Л ╨╜╨╡ ╨╜╨░╨╣╨┤╨╡╨╜!
+
+    ╨Х╤Б╨╗╨╕ ╨▓╤Л ╨╜╨╛╨▓╤Л╨╣ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤М Minecraft, ╨┐╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨▓╨╛╨╣╨┤╨╕╤В╨╡ ╨▓ ╤Б╨╕╤Б╤В╨╡╨╝╤Г ╨║╨░╨║ ╨╝╨╕╨╜╨╕╨╝╤Г╨╝
+    ╨╛╨┤╨╕╨╜ ╤А╨░╨╖ ╨▓ ╨╛╤Д╨╕╤Ж╨╕╨░╨╗╤М╨╜╨╛╨╣ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨║╨╡ Minecraft.'
+  requestFailed: ╨Ю╤И╨╕╨▒╨║╨░ ╨▓╤Е╨╛╨┤╨░, ╨┐╤А╨╕╤З╨╕╨╜╨░ ╨╜╨╡╨╕╨╖╨▓╨╡╤Б╤В╨╜╨░. ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨┐╨╛╨┐╤А╨╛╨▒╤Г╨╣╤В╨╡ ╨╡╤Й╤С ╤А╨░╨╖.
+  requireEmail: ╨в╤А╨╡╨▒╤Г╨╡╤В╤Б╤П ╨░╨┤╤А╨╡╤Б ╤Н╨╗╨╡╨║╤В╤А╨╛╨╜╨╜╨╛╨╣ ╨┐╨╛╤З╤В╤Л
+  requirePassword: ╨в╤А╨╡╨▒╤Г╨╡╤В╤Б╤П ╨┐╨░╤А╨╛╨╗╤М
+  requireUsername: ╨в╤А╨╡╨▒╤Г╨╡╤В╤Б╤П ╨╕╨╝╤П ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П
+  timeout: ╨Т╤А╨╡╨╝╤П ╨╛╨╢╨╕╨┤╨░╨╜╨╕╤П ╨▓╤Е╨╛╨┤╨░ ╨╕╤Б╤В╨╡╨║╨╗╨╛. ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨┐╨╛╨┐╤А╨╛╨▒╤Г╨╣╤В╨╡ ╨╡╤Й╤С ╤А╨░╨╖ ╨╕╨╗╨╕ ╨┐╤А╨╛╨▓╨╡╤А╤М╤В╨╡
+    ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡ ╤Б ╤Б╨╡╤В╤М╤О.
+  loginCanceled: Microsoft sign-in was canceled.
+  cyrillicNotAllowed: Cyrillic characters are not allowed
+  illegalOfflineUsername: Username must be 3-16 characters long and contain only English
+    letters, numbers, and underscores
+  loginMinecraftByXboxRateLimited: Microsoft's Minecraft authentication service is
+    currently rate-limiting requests (HTTP 429). Please wait a moment and try again.
+  loginMinecraftByXboxRateLimitedWithRetry: Microsoft's Minecraft authentication service
+    is currently rate-limiting requests (HTTP 429). Please wait about {seconds} second(s)
+    and try again.
+  loginMinecraftByXboxServerError: Microsoft's Minecraft authentication service returned
+    a server error (HTTP {status}). This is on their side. Please try again in a few
+    minutes.
+  loginMinecraftByXboxStatus: Fail to exchange Minecraft token by Xbox token (HTTP
+    {status}). Please make sure you have Minecraft in Xbox, or retry.
+  loginXboxAdultVerification: Your Microsoft account requires adult verification (commonly
+    required in some regions) before it can sign in to Xbox. Open {url} in your browser
+    to complete verification, then try again.
+  loginXboxBadXsts: Microsoft returned an XSTS response without the expected user
+    claims. This is usually temporary -- please try again in a few minutes.
+  loginXboxBanned: This Microsoft / Xbox account has been suspended or banned by Microsoft
+    and cannot sign in to Minecraft. Please contact Microsoft / Xbox support.
+  loginXboxChildAccount: Your Microsoft account is a child account and needs to be
+    added to a Microsoft Family before it can sign in to Xbox / Minecraft. Open {url}
+    in your browser to fix it, then try again.
+  loginXboxFailedWithCode: Fail to login Xbox by Microsoft token (XErr {code}). Please
+    search the code for help, or try again later.
+  loginXboxNoXboxProfile: This Microsoft account does not have an Xbox profile yet.
+    Open {url} in your browser to create one, then try again.
+  loginXboxRegionLocked: Xbox Live is not available in your account's region. Please
+    change your Microsoft account's country/region in Microsoft account settings and
+    try again.
+  xboxErrorGuideHint: Having trouble signing in? Learn how to fix Microsoft & Xbox
+    login issues.
+  openLoginGuide: How to fix this issue
+  openDiscordSupport: Still need help? Join our Discord
+logsCrashes:
+  crashes: ╨Ю╤В╤З╤С╤В╤Л ╨╛╨▒ ╨╛╤И╨╕╨▒╨║╨░╤Е
+  logs: ╨Ц╤Г╤А╨╜╨░╨╗╤Л
+  placeholder: ╨д╨░╨╣╨╗╤Л ╨╜╨╡ ╨╜╨░╨╣╨┤╨╡╨╜╤Л
+  title: ╨Ц╤Г╤А╨╜╨░╨╗╤Л ╨╕ ╨╛╤В╤З╤С╤В╤Л ╨╛╨▒ ╨╛╤И╨╕╨▒╨║╨░╤Е
+  failures: ╨Ю╤И╨╕╨▒╨║╨╕ ╨╖╨░╨┐╤Г╤Б╨║╨░
+  serverLogs: Server Logs
+  showFile: Show in Folder
+me:
+  news: ╨Э╨╛╨▓╨╛╤Б╤В╨╕
+  recentPlay: ╨Я╨╛╤Б╨╗╨╡╨┤╨╜╨╕╨╡ ╨╕╨│╤А╤Л
+migrationWindow:
+  title: ╨Я╨╡╤А╨╡╨╜╨╛╤Б ╨┤╨░╨╜╨╜╤Л╤Е
+  preparing: ╨Я╨╛╨┤╨│╨╛╤В╨╛╨▓╨║╨░ ╨║ ╨┐╨╡╤А╨╡╨╜╨╛╤Б╤ГтАж
+  scanning: ╨Я╨╛╨┤╤Б╤З╤С╤ВтАж
+  migrating: ╨Я╨╡╤А╨╡╨╝╨╡╤Й╨╡╨╜╨╕╨╡ ╨┤╨░╨╜╨╜╤Л╤Е
+  done: ╨Я╨╡╤А╨╡╨╜╨╛╤Б ╨╖╨░╨▓╨╡╤А╤И╤С╨╜
+  files: ╤Д╨░╨╣╨╗╨╛╨▓
+  warning: ╨Э╨╡ ╨╖╨░╨║╤А╤Л╨▓╨░╨╣╤В╨╡ ╨╗╨░╤Г╨╜╤З╨╡╤А ╨┤╨╛ ╨╖╨░╨▓╨╡╤А╤И╨╡╨╜╨╕╤П, ╨╕╨╜╨░╤З╨╡ ╨┤╨░╨╜╨╜╤Л╨╡ ╨╝╨╛╨│╤Г╤В ╨▒╤Л╤В╤М ╨┐╨╛╤В╨╡╤А╤П╨╜╤Л.
+  error: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╨┐╨╡╤А╨╡╨╜╨╡╤Б╤В╨╕ ╨┤╨░╨╜╨╜╤Л╨╡
+minecraftVersion:
+  name: ╨Т╨╡╤А╤Б╨╕╤П Minecraft
+  all: ╨Т╤Б╨╡ ╨▓╨╡╤А╤Б╨╕╨╕
+  release: ╨а╨╡╨╗╨╕╨╖
+  showAlpha: ╨Я╨╛╨║╨░╨╖╨░╤В╤М snapshot
+  snapshot: ╨б╨╜╨░╨┐╤И╨╛╤В
+mod:
+  acceptVersion: ╨Я╤А╨╕╨╜╨╕╨╝╨░╨╡╤В {version}
+  applyGroupRules: ╨Я╤А╨╕╨╝╨╡╨╜╨╕╤В╤М ╤Б╨╛╤Е╤А╨░╨╜╨╡╨╜╨╜╤Л╨╡ ╨┐╤А╨░╨▓╨╕╨╗╨░ ╨│╤А╤Г╨┐╨┐╨╕╤А╨╛╨▓╨║╨╕
+  compatible: ╨б╨╛╨▓╨╝╨╡╤Б╤В╨╕╨╝╤Л╨╣ ╨╝╨╛╨┤.
+  createGroup: ╨б╨╛╨╖╨┤╨░╤В╤М ╨│╤А╤Г╨┐╨┐╤Г
+  currentVersion: ╨в╨╡╨║╤Г╤Й╨░╤П {current}
+  denseView: ╨Ъ╨╛╨╝╨┐╨░╨║╤В╨╜╨╛╨╡ ╨╛╤В╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨╝╨╛╨┤╨╛╨▓
+  description: ╨Ю╨┐╨╕╤Б╨░╨╜╨╕╨╡
+  disableAll: ╨Ю╤В╨║╨╗╤О╤З╨╕╤В╤М ╨▓╤Б╨╡
+  dropHint: ╨Я╨╡╤А╨╡╤В╨░╤Й╨╕╤В╨╡ ╤Б╤О╨┤╨░ ╤Д╨░╨╣╨╗ ╨╝╨╛╨┤╨░ (.jar/.litemod), ╤З╤В╨╛╨▒╤Л ╨╕╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨╡╨│╨╛.
+  duplicatedDetected: '{count} ╨┤╤Г╨▒╨╗╨╕╤А╨╛╨▓╨░╨╜╨╜╤Л╤Е ╨╝╨╛╨┤╨╛╨▓'
+  duplicatedDetectedDescription: '╨Э╨░╨╣╨┤╨╡╨╜╤Л ╨╝╨╛╨┤╤Л ╤Б ╨╛╨┤╨╕╨╜╨░╨║╨╛╨▓╤Л╨╝ ╨╕╨┤╨╡╨╜╤В╨╕╤Д╨╕╨║╨░╤В╨╛╤А╨╛╨╝, ╨╜╨╛ ╤Б
+    ╤А╨░╨╖╨╜╤Л╨╝╨╕ ╤Д╨░╨╣╨╗╨░╨╝╨╕.
+
+    ╨н╤В╨╛ ╨╝╨╛╨╢╨╡╤В ╨┐╤А╨╕╨▓╨╡╤Б╤В╨╕ ╨║ ╤Б╨▒╨╛╤О Minecraft.
+
+    ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨▓╤Л╨▒╨╡╤А╨╕╤В╨╡ ╤Д╨░╨╣╨╗, ╨║╨╛╤В╨╛╤А╤Л╨╣ ╨▓╤Л ╤Е╨╛╤В╨╕╤В╨╡ ╤Б╨╛╤Е╤А╨░╨╜╨╕╤В╤М.'
+  enableAll: ╨Т╨║╨╗╤О╤З╨╕╤В╤М ╨▓╤Б╨╡
+  enabled: '╨Т╤Б╨╡╨│╨╛ ╨╝╨╛╨┤╨╛╨▓ ╨▓╨║╨╗╤О╤З╨╡╨╜╨╛: {count}'
+  filter: ╨д╨╕╨╗╤М╤В╤А ╨╝╨╛╨┤╨╛╨▓
+  group: ╨У╤А╤Г╨┐╨┐╨░ ╨▓╨▓╨╡╤А╤Е
+  groupInstalled: ╨У╤А╤Г╨┐╨┐╨╕╤А╨╛╨▓╨░╤В╤М ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨╜╤Л╨╡ ╨╝╨╛╨┤╤Л
+  groupName: ╨Э╨░╨╖╨▓╨░╨╜╨╕╨╡ ╨│╤А╤Г╨┐╨┐╤Л
+  groupNameRequired: ╨Э╨░╨╖╨▓╨░╨╜╨╕╨╡ ╨│╤А╤Г╨┐╨┐╤Л ╨╛╨▒╤П╨╖╨░╤В╨╡╨╗╤М╨╜╨╛
+  hasUpdate: ╨г ╨╝╨╛╨┤╨░ ╨╡╤Б╤В╤М ╨╜╨╛╨▓╨░╤П ╨▓╨╡╤А╤Б╨╕╤П!
+  incompatible: ╨Э╨╡╤Б╨╛╨▓╨╝╨╡╤Б╤В╨╕╨╝╤Л╨╣ ╨╝╨╛╨┤.
+  incompatibleHint: ╨Я╨╛╤Б╨╝╨╛╤В╤А╨╕╤В╨╡ ╨╛╤В╤З╨╡╤В ╨╛ ╤Б╨╛╨▓╨╝╨╡╤Б╤В╨╕╨╝╨╛╤Б╤В╨╕ ╨▓╨░╤И╨╡╨│╨╛ ╨╝╨╛╨┤╨░
+  incompatibleHintDescription: '╨Э╨╡╨║╨╛╤В╨╛╤А╤Л╨╡ ╨╖╨░╨▓╨╕╤Б╨╕╨╝╨╛╤Б╤В╨╕ ╨╝╨╛╨┤╨╛╨▓ ╨╝╨╛╨│╤Г╤В ╨╛╤В╤Б╤Г╤В╤Б╤В╨▓╨╛╨▓╨░╤В╤М.
+
+    ╨Ш╨╗╨╕ ╨╜╨╡╨║╨╛╤В╨╛╤А╤Л╨╡ ╨▓╨╡╤А╤Б╨╕╨╕ ╨╖╨░╨▓╨╕╤Б╨╕╨╝╨╛╤Б╤В╨╡╨╣ ╨╜╨╡ ╤Б╨╛╨▓╨┐╨░╨┤╨░╤О╤В.'
+  maybeCompatible: ╨Т╨╛╨╖╨╝╨╛╨╢╨╜╨╛, ╤Б╨╛╨▓╨╝╨╡╤Б╤В╨╕╨╝.
+  modloaderSelectHint: '╨Ь╨╛╨┤ ╨┐╨╛╨┤╨┤╨╡╤А╨╢╨╕╨▓╨░╨╡╤В ╤Б╨╗╨╡╨┤╤Г╤О╤Й╨╕╨╡ ╨╖╨░╨│╤А╤Г╨╖╤З╨╕╨║╨╕ ╨╝╨╛╨┤╨╛╨▓.
+
+    ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨▓╤Л╨▒╨╡╤А╨╕╤В╨╡ ╨╛╨┤╨╕╨╜ ╨┤╨╗╤П ╤Г╤Б╤В╨░╨╜╨╛╨▓╨║╨╕.'
+  modloaderSelectNotSupported: ╨Э╨╡ ╨╜╨░╨╣╨┤╨╡╨╜ {modloader} ╨┤╨╗╤П Minecraft {minecraft}
+  mods: '{count} ╨Ь╨╛╨┤╨╛╨▓'
+  name: ╨Ь╨╛╨┤ | ╨Ь╨╛╨┤╤Л
+  newFolder: ╨Э╨╛╨▓╨░╤П ╨┐╨░╨┐╨║╨░
+  noGroupsFound: ╨У╤А╤Г╨┐╨┐╤Л ╨╜╨╡ ╨╜╨░╨╣╨┤╨╡╨╜╤Л
+  noGroupsYet: ╨У╤А╤Г╨┐╨┐ ╨┐╨╛╨║╨░ ╨╜╨╡╤В. ╨б╨╛╨╖╨┤╨░╨╣╤В╨╡ ╨╛╨┤╨╜╤Г!
+  noModLoaderHint: ╨Э╨╡ ╨╖╨░╨▒╤Г╨┤╤М╤В╨╡ ╨▓╨║╨╗╤О╤З╨╕╤В╤М ╨╖╨░╨│╤А╤Г╨╖╤З╨╕╨║ ╨╝╨╛╨┤╨╛╨▓, ╤З╤В╨╛╨▒╤Л ╨╕╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╤М ╨╝╨╛╨┤╤Л!
+  openLink: ╨Ю╤В╨║╤А╤Л╤В╤М ╤Б╤Б╤Л╨╗╨║╤Г ╨╜╨░ ╨╝╨╛╨┤ {url}
+  search: ╨Я╨╛╨╕╤Б╨║ ╨╝╨╛╨┤╨╛╨▓
+  searchGroups: ╨Я╨╛╨╕╤Б╨║ ╨│╤А╤Г╨┐╨┐...
+  searchOnMcWiki: ╨Э╨░╨╣╨┤╨╕╤В╨╡ {name} ╨▓ ╤Н╨╜╤Ж╨╕╨║╨╗╨╛╨┐╨╡╨┤╨╕╨╕ MC.
+  selectOrCreateGroup: ╨Т╤Л╨▒╤А╨░╤В╤М ╨╕╨╗╨╕ ╤Б╨╛╨╖╨┤╨░╤В╤М ╨│╤А╤Г╨┐╨┐╤Г
+  showDirectory: ╨Ю╤В╨║╤А╤Л╤В╤М ╨┐╨░╨┐╨║╤Г ╤Б ╨╝╨╛╨┤╨░╨╝╨╕
+  showFile: ╨Я╨╛╨║╨░╨╖╨░╤В╤М ╨┐╤Г╤В╤М ╨║ ╤Д╨░╨╣╨╗╤Г ╨╝╨╛╨┤╨░ {file}
+  showInModrinth: ╨Я╨╛╨║╨░╨╖╨░╤В╤М {name} ╨╜╨░ Modrinth
+  switchDefaultSource: ╨Ш╤Б╤В╨╛╤З╨╜╨╕╨║ ╨║╨╛╨╜╤В╨╡╨╜╤В╨░ ╨╝╨╛╨┤╨╛╨▓ ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О
+  syncGroupRules: ╨б╨╛╤Е╤А╨░╨╜╨╕╤В╤М ╨┐╤А╨░╨▓╨╕╨╗╨░ ╨│╤А╤Г╨┐╨┐╨╕╤А╨╛╨▓╨║╨╕
+  toUpdate: '{count} ╨┤╨╗╤П ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╤П'
+  ungroup: ╨Э╨╡╨│╤А╤Г╨┐╨┐╨╕╨╜╨│
+modFilter:
+  clear: ╨з╨╕╤Б╤В╤Л╨╣ ╤Д╨╕╨╗╤М╤В╤А
+  dependenciesInstallOnly: ╨в╨╛╨╗╤М╨║╨╛ ╨┐╨╛╨║╨░╨╖╤Л╨▓╨░╤В╤М ╨┐╤А╨╛╨┐╤Г╤Й╨╡╨╜╨╜╤Л╨╡ ╨╝╨╛╨┤╤Л ╨╖╨░╨▓╨╕╤Б╨╕╨╝╨╛╤Б╤В╨╕
+  disabledOnly: ╨в╨╛╨╗╤М╨║╨╛ ╨┐╨╛╨║╨░╨╖╤Л╨▓╨░╤В╤М ╨╛╤В╨║╨╗╤О╤З╨╡╨╜╨╜╤Л╨╡ ╨╝╨╛╨┤╤Л
+  hasUpdateOnly: ╨в╨╛╨╗╤М╨║╨╛ ╤Г ╤И╨╛╤Г ╨╡╤Б╤В╤М ╨╝╨╛╨┤╤Л ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╤П
+  incompatibleOnly: ╨Я╨╛╨║╨░╨╖╤Л╨▓╨░╤В╤М ╤В╨╛╨╗╤М╨║╨╛ ╨╜╨╡╤Б╨╛╨▓╨╝╨╡╤Б╤В╨╕╨╝╤Л╨╡ ╨╕╨╗╨╕ ╨╛╤В╤Б╤Г╤В╤Б╤В╨▓╤Г╤О╤Й╨╕╨╡ ╨╖╨░╨▓╨╕╤Б╨╕╨╝╨╛╤Б╤В╨╕
+    ╨╛╤В╤Б╤Г╤В╤Б╤В╨▓╤Г╤О╤Й╨╕╨╡ ╨╝╨╛╨┤╤Л
+  unusedOnly: ╨Я╨╛╨║╨░╨╖╨░╤В╤М ╤В╨╛╨╗╤М╨║╨╛ ╨╜╨╡╨╕╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╨╜╨╜╤Л╨╡ ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╤З╨╜╤Л╨╡ ╨╝╨╛╨┤╤Л
+modInstall:
+  archived: '{name} ╨╖╨░╨░╤А╤Е╨╕╨▓╨╕╤А╨╛╨▓╨░╨╜╨╛.
+
+    {name} ╨╜╨╡ ╨▒╤Г╨┤╨╡╤В ╨┐╨╛╨╗╤Г╤З╨░╤В╤М ╨╜╨╕╨║╨░╨║╨╕╤Е ╨┤╨░╨╗╤М╨╜╨╡╨╣╤И╨╕╤Е ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╨╣, ╨╡╤Б╨╗╨╕ ╨░╨▓╤В╨╛╤А ╨╜╨╡ ╤А╨╡╤И╨╕╤В ╤А╨░╨╖╨░╤А╤Е╨╕╨▓╨╕╤А╨╛╨▓╨░╤В╤М
+    ╨┐╤А╨╛╨╡╨║╤В.'
+  autoUpgrade:
+    description: ╨Т╤Л ╨╕╨╖╨╝╨╡╨╜╨╕╨╗╨╕ ╨▓╨╡╤А╤Б╨╕╤О Minecraft. ╨е╨╛╤В╨╕╤В╨╡ ╨░╨▓╤В╨╛╨╝╨░╤В╨╕╤З╨╡╤Б╨║╨╕ ╨╛╨▒╨╜╨╛╨▓╨╕╤В╤М ╤Б╨╛╨▓╨╝╨╡╤Б╤В╨╕╨╝╤Л╨╡
+      ╨╝╨╛╨┤╤Л ╨┤╨╛ ╨▓╨╡╤А╤Б╨╕╨╣, ╤Б╨╛╨╛╤В╨▓╨╡╤В╤Б╤В╨▓╤Г╤О╤Й╨╕╤Е Minecraft {version}?
+    'no': ╨Я╤А╨╛╨┐╤Г╤Б╤В╨╕╤В╤М
+    title: ╨Ю╨▒╨╜╨╛╨▓╨╕╤В╤М ╨╝╨╛╨┤╤Л?
+    'yes': ╨Ю╨▒╨╜╨╛╨▓╨╕╤В╤М ╨╝╨╛╨┤╤Л
+  checkDependencies: ╨Я╤А╨╛╨▓╨╡╤А╨╕╤В╤М ╨╜╨╡╨┤╨╛╤Б╤В╨░╤О╤Й╨╕╨╡ ╨╖╨░╨▓╨╕╤Б╨╕╨╝╨╛╤Б╤В╨╕
+  checkedDependencies: ╨Э╨╡╨┤╨╛╤Б╤В╨░╤О╤Й╨╕╨╡ ╨╖╨░╨▓╨╕╤Б╨╕╨╝╨╛╤Б╤В╨╕ ╨┐╤А╨╛╨▓╨╡╤А╨╡╨╜╤Л
+  currentVersion: ╨Т╤Л╨▒╤А╨░╨╜╨╜╨░╤П ╨▓╨╡╤А╤Б╨╕╤П
+  dependencyHint: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨░ тАЛтАЛ╨┤╤А╤Г╨│╨░╤П ╨▓╨╡╤А╤Б╨╕╤П {version}
+  releaseOnly: ╨Ш╨│╨╜╨╛╤А╨╕╤А╨╛╨▓╨░╤В╤М ╨░╨╗╤М╤Д╨░- ╨╕ ╨▒╨╡╤В╨░-╨▓╨╡╤А╤Б╨╕╨╕ ╨┐╤А╨╕ ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╨╕
+  installDependencies: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╨╜╨╡╨┤╨╛╤Б╤В╨░╤О╤Й╨╕╨╡ ╨╖╨░╨▓╨╕╤Б╨╕╨╝╨╛╤Б╤В╨╕
+  installHint: ╨С╤Г╨┤╨╡╤В ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜ ╤Д╨░╨╣╨╗ {file} ╤Б ╨╖╨░╨▓╨╕╤Б╨╕╨╝╨╛╤Б╤В╤П╨╝╨╕ {dependents}
+  noVersionSupported: ╨Ь╨╛╨┤ ╨┐╨╛╨┤╨┤╨╡╤А╨╢╨╕╨▓╨░╨╡╤В ╤В╨╛╨╗╤М╨║╨╛ Minecraft {supported}.
+  recommendation: ╨Ш╤Б╤Б╨╗╨╡╨┤╤Г╨╣╤В╨╡ {first} ╨╝╨╛╨┤╤Л ╨▓ {modrinth} ╨╕ тАЛтАЛ{curseforge}!
+  removeUnusedLibraries: ╨г╨┤╨░╨╗╨╕╤В╤М ╨╜╨╡╨╕╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╨╜╨╜╤Л╨╡ ╨╝╨╛╨┤╤Л ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╨╛╨▓
+  search: ╨а╨╡╨╖╤Г╨╗╤М╤В╨░╤В╤Л ╨┐╨╛╨╕╤Б╨║╨░
+  skipVersion: ╨Я╤А╨╛╨┐╤Г╤Б╤В╨╕╤В╨╡ ╨╝╨╛╨┤╤Л ╤Б ╨┤╤А╤Г╨│╨╛╨╣ ╨▓╨╡╤А╤Б╨╕╨╡╨╣ Minecraft
+  source: ╨Ш╤Б╤В╨╛╤З╨╜╨╕╨║ ╨║╨╛╨╜╤В╨╡╨╜╤В╨░ ╨╝╨╛╨┤╨░
+  switch: ╨Я╨╡╤А╨╡╨║╨╗╤О╤З╨╕╤В╤М ╨▓╨╡╤А╤Б╨╕╤О
+  scanUnusedLibraries: Scan Unused Libraries
+modSearch:
+  noLocalModsFound: ╨Ы╨╛╨║╨░╨╗╤М╨╜╤Л╨╡ ╨╝╨╛╨┤╤Л, ╤Б╨╛╨╛╤В╨▓╨╡╤В╤Б╤В╨▓╤Г╤О╤Й╨╕╨╡ ╨▓╨░╤И╨╡╨╝╤Г ╨┐╨╛╨╕╤Б╨║╤Г, ╨╜╨╡ ╨╜╨░╨╣╨┤╨╡╨╜╤Л.
+  noModsFound: ╨Ь╨╛╨┤╤Л ╨╜╨╡ ╨╜╨░╨╣╨┤╨╡╨╜╤Л.
+  noModsInstalled: ╨г ╨▓╨░╤Б ╨╜╨╡ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨╛ ╨╜╨╕ ╨╛╨┤╨╜╨╛╨│╨╛ ╨╝╨╛╨┤╨░.
+  searchInMarket: ╨Ш╤Б╨║╨░╤В╤М {keyword} ╨╜╨░ ╤А╤Л╨╜╨║╨╡
+modUpgradePolicy:
+  curseforge: Curseforge First
+  curseforgeOnly: ╨в╨╛╨╗╤М╨║╨╛ ╨▓ ╨Ъ╤С╤А╤Б╤Д╨╛╤А╨┤╨╢╨╡
+  modrinth: Modrinth ╨Я╨╡╤А╨▓╤Л╨╣
+  modrinthOnly: ╨в╨╛╨╗╤М╨║╨╛ ╨Ь╨╛╨┤╤А╨╕╨╜╤В
+  name: ╨Я╨╛╨╗╨╕╤В╨╕╨║╨░ ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╤П
+modified:
+  reset: ╨б╨▒╤А╨╛╤Б╨╕╤В╤М
+  save: ╨б╨╛╤Е╤А╨░╨╜╨╕╤В╤М
+  unsaved: ╨Т╨░╤И╨╕ ╨╕╨╖╨╝╨╡╨╜╨╡╨╜╨╕╤П ╨╜╨╡ ╤Б╨╛╤Е╤А╨░╨╜╨╡╨╜╤Л!
+modpack:
+  author: ╨Ш╨╝╤П ╨░╨▓╤В╨╛╤А╨░
+  authorHint: ╨Ш╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╡╤В╤Б╤П ╨┤╨╗╤П ╨┐╨╛╨┤╨┐╨╕╤Б╨╕ ╤Н╨║╤Б╨┐╨╛╤А╤В╨╕╤А╤Г╨╡╨╝╨╛╨╣ ╤Б╨▒╨╛╤А╨║╨╕ ╨╝╨╛╨┤╨╛╨▓ (CurseForge).
+  description: ╨Ю╨┐╨╕╤Б╨░╨╜╨╕╨╡
+  descriptionHint: ╨Ю╨▒╤Й╨╡╨╡ ╨╛╨┐╨╕╤Б╨░╨╜╨╕╨╡ ╨┤╨╗╤П ╨▓╨░╤И╨╡╨╣ ╤Б╨▒╨╛╤А╨║╨╕ ╨╝╨╛╨┤╨╛╨▓. ╨Ш╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╡╤В╤Б╤П ╨┐╤А╨╕ ╤Н╨║╤Б╨┐╨╛╤А╤В╨╡
+    ╨▓ ╤Д╨╛╤А╨╝╨░╤В CurseForge.
+  dropHint: ╨б╨║╨╕╨╜╤М╤В╨╡ ╤Б╤О╨┤╨░ zip-╤Д╨░╨╣╨╗ modpack ╨┤╨╗╤П ╨╕╨╝╨┐╨╛╤А╤В╨░
+  emitCurseforge: ╨б╨╛╨╖╨┤╨░╤В╤М ╤Б╨▒╨╛╤А╨║╤Г ╨╝╨╛╨┤╨╛╨▓ ╨┤╨╗╤П CurseForge
+  emitModrinth: ╨б╨╛╨╖╨┤╨░╤В╤М ╤Б╨▒╨╛╤А╨║╤Г ╨╝╨╛╨┤╨╛╨▓ ╨┤╨╗╤П Modrinth
+  emitModrinthStrict: ╨б╤В╤А╨╛╨│╨╕╨╣ ╤Д╨╛╤А╨╝╨░╤В Modrinth
+  emitModrinthStrictDescription: ╨а╨░╨╖╤А╨╡╤И╨╡╨╜╤Л ╤В╨╛╨╗╤М╨║╨╛ URL-╨░╨┤╤А╨╡╤Б╨░ ╨╕╨╖ 4 ╨┤╨╛╨╝╨╡╨╜╨╛╨▓, ╨┐╨╡╤А╨╡╤З╨╕╤Б╨╗╨╡╨╜╨╜╤Л╤Е
+    ╨▓ ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╨╡ Modrinth
+  export: ╨н╨║╤Б╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨║╨░╨║ ╤Б╨▒╨╛╤А╨║╤Г ╨╝╨╛╨┤╨╛╨▓
+  exportDirectory: ╨н╨║╤Б╨┐╨╛╤А╤В╨╜╤Л╨╣ ╨║╨░╤В╨░╨╗╨╛╨│
+  exportDirectoryDescription: Modpack ╨▒╤Г╨┤╨╡╤В ╤Н╨║╤Б╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╨╜ ╨▓ ╨┐╨░╨┐╨║╤Г ╨╖╨░╨│╤А╤Г╨╖╨║╨╕ ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О
+  includeAssets: ╨Т╨║╨╗╤О╤З╨╕╤В╤М ╤А╨╡╤Б╤Г╤А╤Б╤Л
+  includes: ╨д╨░╨╣╨╗╤Л ╨┤╨╗╤П ╨▓╨║╨╗╤О╤З╨╡╨╜╨╕╤П
+  modpackVersion: ╨Т╨╡╤А╤Б╨╕╤П ╤Б╨▒╨╛╤А╨║╨╕ ╨╝╨╛╨┤╨╛╨▓
+  name: ╨б╨▒╨╛╤А╨║╨░ ╨╝╨╛╨┤╨╛╨▓ | ╨б╨▒╨╛╤А╨║╨╕ ╨╝╨╛╨┤╨╛╨▓
+  overrides: ╨Я╨╡╤А╨╡╨╛╨┐╤А╨╡╨┤╨╡╨╗╨╡╨╜╨╕╤П
+  url: URL-╨░╨┤╤А╨╡╤Б
+  urlHint: URL-╨░╨┤╤А╨╡╤Б ╨┤╨╛╨╝╨░╤И╨╜╨╡╨╣ ╤Б╤В╤А╨░╨╜╨╕╤Ж╤Л ╨▓╨░╤И╨╡╨╣ ╤Б╨▒╨╛╤А╨║╨╕ ╨╝╨╛╨┤╨╛╨▓.
+modpackImportConfirm:
+  description: '╨Ю╨▒╨╜╨░╤А╤Г╨╢╨╕╤В╨╡, ╤З╤В╨╛ ╨▓╤Л ╨▒╤А╨╛╤Б╨╕╤В╨╡ ╤Д╨░╨╣╨╗ ╨▓ ╨┐╤Г╤Б╨║╨╛╨▓╤Г╤О ╤Г╤Б╤В╨░╨╜╨╛╨▓╨║╤Г.
+
+    ╨Т╤Л ╨┐╤Л╤В╨░╨╡╤В╨╡╤Б╤М ╨╕╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М Modpack?'
+  title: ╨Т╤Л ╨┐╤Л╤В╨░╨╡╤В╨╡╤Б╤М ╨╕╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М Modpack?
+modpackUpdateOrCreate:
+  createNew: ╨б╨╛╨╖╨┤╨░╤В╤М ╨╜╨╛╨▓╤Л╨╣
+  description: ╨н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А "{name}" ╨┤╨╗╤П ╤Н╤В╨╛╨│╨╛ ╨╝╨╛╨┤╨┐╨░╨║╨░ ╤Г╨╢╨╡ ╤Б╤Г╤Й╨╡╤Б╤В╨▓╤Г╨╡╤В. ╨е╨╛╤В╨╕╤В╨╡ ╨╛╨▒╨╜╨╛╨▓╨╕╤В╤М
+    ╨╡╨│╨╛ ╨╕╨╗╨╕ ╤Б╨╛╨╖╨┤╨░╤В╤М ╨╜╨╛╨▓╤Л╨╣?
+  title: ╨н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А ╤Г╨╢╨╡ ╤Б╤Г╤Й╨╡╤Б╤В╨▓╤Г╨╡╤В
+  update: ╨Ю╨▒╨╜╨╛╨▓╨╕╤В╤М ╤Б╤Г╤Й╨╡╤Б╤В╨▓╤Г╤О╤Й╨╕╨╣
+modrinth:
+  browseUrl: ╨Ю╤В╨║╤А╤Л╤В╤М ╨▓ ╨▒╤А╨░╤Г╨╖╨╡╤А╨╡ {url}
+  categories:
+    128x: 128x
+    16x: 16x
+    256x: 256x
+    32x: 32x
+    48x: 48x
+    512x+: 512x+
+    64x: 64x
+    8x-: 8x-
+    adventure: ╨Я╤А╨╕╨║╨╗╤О╤З╨╡╨╜╨╕╨╡
+    atmosphere: ╨Р╤В╨╝╨╛╤Б╤Д╨╡╤А╨░
+    audio: ╨Р╤Г╨┤╨╕╨╛
+    blocks: ╨С╨╗╨╛╨║╨╕
+    bloom: ╨а╨░╤Б╤Б╨╡╤П╨╜╨╜╤Л╨╣ ╤Б╨▓╨╡╤В
+    bukkit: Bukkit
+    bungeecord: Bungeecord
+    canvas: ╨Я╨╛╨╗╨╛╤В╨╜╨╛
+    cartoon: ╨Ь╤Г╨╗╤М╤В╨╕╨┐╨╗╨╕╨║╨░╤Ж╨╕╤П
+    categories: ╨Ъ╨░╤В╨╡╨│╨╛╤А╨╕╨╕
+    challenging: ╨Т╤Л╤Б╨╛╨║╨░╤П ╤Б╨╗╨╛╨╢╨╜╨╛╤Б╤В╤М
+    colored-lighting: ╨а╨░╨╖╨╜╨╛╤Ж╨▓╨╡╤В╨╜╨╛╨╡ ╨╛╤Б╨▓╨╡╤Й╨╡╨╜╨╕╨╡
+    combat: ╨С╨╛╨╣
+    core-shaders: ╨С╨░╨╖╨╛╨▓╤Л╨╡ ╤И╨╡╨╣╨┤╨╡╤А╤Л
+    cursed: ╨б╤В╤А╨░╨╜╨╜╨╛╤Б╤В╤М
+    datapack: ╨Э╨░╨▒╨╛╤А ╨┤╨░╨╜╨╜╤Л╤Е
+    decoration: ╨Ф╨╡╨║╨╛╤А╨░╤Ж╨╕╤П
+    economy: ╨н╨║╨╛╨╜╨╛╨╝╨╕╨║╨░
+    entities: ╨б╤Г╤Й╨╡╤Б╤В╨▓╨░
+    environment: ╨Ю╨║╤А╤Г╨╢╨╡╨╜╨╕╨╡
+    equipment: ╨н╨║╨╕╨┐╨╕╤А╨╛╨▓╨║╨░
+    fabric: Fabric
+    fantasy: ╨д╤Н╨╜╤В╨╡╨╖╨╕
+    features: ╨д╤Г╨╜╨║╤Ж╨╕╨╕
+    folia: Folia
+    foliage: ╨Ы╨╕╤Б╤В╨▓╨░
+    fonts: ╨и╤А╨╕╤Д╤В╤Л
+    food: ╨Х╨┤╨░
+    forge: Forge
+    game-mechanics: ╨Ш╨│╤А╨╛╨▓╤Л╨╡ ╨╝╨╡╤Е╨░╨╜╨╕╨║╨╕
+    gui: ╨У╤А╨░╤Д╨╕╤З╨╡╤Б╨║╨╕╨╣ ╨╕╨╜╤В╨╡╤А╤Д╨╡╨╣╤Б
+    high: ╨Т╤Л╤Б╨╛╨║╨░╤П ╤В╤А╨╡╨▒╨╛╨▓╨░╤В╨╡╨╗╤М╨╜╨╛╤Б╤В╤М
+    iris: Iris
+    items: ╨Я╤А╨╡╨┤╨╝╨╡╤В╤Л
+    kitchen-sink: ╨Я╨╛╤Б╤Г╨┤╨░
+    library: ╨С╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╨░
+    lightweight: ╨Ь╨░╨╗╤Л╨╣ ╤А╨░╨╖╨╝╨╡╤А
+    liteloader: Liteloader
+    locale: ╨Ы╨╛╨║╨░╨╗╨╕╨╖╨░╤Ж╨╕╤П
+    low: ╨Э╨╕╨╖╨║╨░╤П ╤В╤А╨╡╨▒╨╛╨▓╨░╤В╨╡╨╗╤М╨╜╨╛╤Б╤В╤М
+    magic: ╨Ь╨░╨│╨╕╤П
+    management: ╨г╨┐╤А╨░╨▓╨╗╨╡╨╜╨╕╨╡
+    medium: ╨б╤А╨╡╨┤╨╜╤П╤П ╤В╤А╨╡╨▒╨╛╨▓╨░╤В╨╡╨╗╤М╨╜╨╛╤Б╤В╤М
+    minecraft: Minecraft
+    minigame: ╨Ь╨╕╨╜╨╕-╨╕╨│╤А╤Л
+    misc: ╨а╨░╨╖╨╜╨╛╨╛╨▒╤А╨░╨╖╨╕╨╡
+    mobs: ╨Ь╨╛╨▒╤Л
+    modded: ╨Ь╨╛╨┤╨╕╤Д╨╕╨║╨░╤Ж╨╕╤П
+    models: ╨Ь╨╛╨┤╨╡╨╗╨╕
+    modloader: ╨Ч╨░╨│╤А╤Г╨╖╤З╨╕╨║ ╨╝╨╛╨┤╨╛╨▓
+    multiplayer: ╨б╨╡╤В╨╡╨▓╨░╤П ╨╕╨│╤А╨░
+    name: ╨Ъ╨░╤В╨╡╨│╨╛╤А╨╕╨╕
+    neoforge: NeoForge
+    optifine: Optifine
+    optimization: ╨Ю╨┐╤В╨╕╨╝╨╕╨╖╨░╤Ж╨╕╤П
+    paper: Paper
+    path-tracing: ╨в╤А╨░╤Б╤Б╨╕╤А╨╛╨▓╨║╨░ ╨┐╤Г╤В╨╕
+    pbr: ╨д╨╕╨╖╨╕╤З╨╡╤Б╨║╨╕ ╨║╨╛╤А╤А╨╡╨║╤В╨╜╤Л╨╣ ╤А╨╡╨╜╨┤╨╡╤А╨╕╨╜╨│ (PBR)
+    performance impact: ╨Т╨╗╨╕╤П╨╜╨╕╨╡ ╨╜╨░ ╨┐╤А╨╛╨╕╨╖╨▓╨╛╨┤╨╕╤В╨╡╨╗╤М╨╜╨╛╤Б╤В╤М
+    potato: ╨Ф╨╗╤П ╨║╨░╤А╤В╨╛╤Д╨╡╨╗╤М╨╜╤Л╤Е ╨Я╨Ъ
+    purpur: Purpur
+    quests: ╨Ъ╨▓╨╡╤Б╤В╤Л
+    quilt: Quilt
+    realistic: ╨а╨╡╨░╨╗╨╕╨╖╨╝
+    reflections: ╨Ю╤В╤А╨░╨╢╨╡╨╜╨╕╤П
+    resolutions: ╨а╨░╨╖╤А╨╡╤И╨╡╨╜╨╕╤П
+    rift: Rift
+    screenshot: ╨Ф╨╗╤П ╤Б╨╜╨╕╨╝╨║╨╛╨▓ ╤Н╨║╤А╨░╨╜╨░
+    semi-realistic: ╨Я╨╛╨╗╤Г╤А╨╡╨░╨╗╨╕╨╖╨╝
+    shadows: ╨в╨╡╨╜╨╕
+    simplistic: ╨Я╤А╨╛╤Б╤В╨╛╤В╨░
+    social: ╨б╨╛╤Ж╨╕╨░╨╗╤М╨╜╨╛╤Б╤В╤М
+    spigot: Spigot
+    sponge: Sponge
+    storage: ╨е╤А╨░╨╜╨╡╨╜╨╕╨╡
+    technology: ╨в╨╡╤Е╨╜╨╛╨╗╨╛╨│╨╕╨╕
+    themed: ╨в╨╡╨╝╨░
+    transportation: ╨в╤А╨░╨╜╤Б╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨║╨░
+    tweaks: ╨в╨▓╨╕╨║╨╕
+    utility: ╨Я╨╛╨╗╨╡╨╖╨╜╨╛╤Б╤В╤М
+    vanilla: ╨Т╨░╨╜╨╕╨╗╨╗╨░
+    vanilla-like: ╨Я╨╛╤Е╨╛╨╢╨╡╨╡ ╨╜╨░ ╨▓╨░╨╜╨╕╨╗╨╗╤Г
+    velocity: Velocity
+    waterfall: Waterfall
+    worldgen: ╨У╨╡╨╜╨╡╤А╨░╤Ж╨╕╤П ╨╝╨╕╤А╨░
+  clientSide: ╨Ъ╨╗╨╕╨╡╨╜╤В╤Б╨║╨░╤П ╤Б╤В╨╛╤А╨╛╨╜╨░
+  copyTitle: ╨б╨║╨╛╨┐╨╕╤А╨╛╨▓╨░╤В╤М ╤В╨╡╨║╤Б╤В {title} ╨▓ ╨▒╤Г╤Д╨╡╤А ╨╛╨▒╨╝╨╡╨╜╨░
+  createAt: ╨б╨╛╨╖╨┤╨░╨╜╨╛
+  createCollection: ╨б╨╛╨╖╨┤╨░╤В╤М ╨║╨╛╨╗╨╗╨╡╨║╤Ж╨╕╤О
+  description: ╨Ю╨┐╨╕╤Б╨░╨╜╨╕╨╡
+  downloads: ╨б╨║╨░╤З╨╕╨▓╨░╨╜╨╕╨╣
+  environments:
+    default: ╨Я╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О
+    name: ╨Ю╨║╤А╤Г╨╢╨░╤О╤Й╨░╤П ╤Б╤А╨╡╨┤╨░
+    optional: ╨Э╨╡╨╛╨▒╤П╨╖╨░╤В╨╡╨╗╤М╨╜╨╛
+    required: ╨в╤А╨╡╨▒╤Г╨╡╤В╤Б╤П
+    unsupported: ╨Э╨╡ ╨┐╨╛╨┤╨┤╨╡╤А╨╢╨╕╨▓╨░╨╡╤В╤Б╤П
+    all: ╨Т╤Б╨╡
+  externalResources: ╨Т╨╜╨╡╤И╨╜╨╕╨╡ ╤А╨╡╤Б╤Г╤А╤Б╤Л
+  featuredVersions: ╨а╨╡╨║╨╛╨╝╨╡╨╜╨┤╤Г╨╡╨╝╤Л╨╡ ╨▓╨╡╤А╤Б╨╕╨╕
+  followedProjects: ╨б╨╗╨╡╨┤╨╛╨▓╨░╨╗ ╨┐╤А╨╛╨╡╨║╤В╨░╨╝
+  followers: ╨Я╨╛╨┤╨┐╨╕╤Б╤З╨╕╨║╨╕
+  gallery: ╨У╨░╨╗╨╡╤А╨╡╤П
+  gameVersions:
+    name: ╨Т╨╡╤А╤Б╨╕╨╕ ╨╕╨│╤А╤Л
+  headers:
+    status: ╨б╤В╨░╤В╤Г╤Б
+    support: ╨Я╨╛╨┤╨┤╨╡╤А╨╢╨╕╨▓╨░╨╡╤В
+    version: ╨Т╨╡╤А╤Б╨╕╤П
+  issueUrl: ╨Я╤А╨╛╨▒╨╗╨╡╨╝╤Л
+  license: ╨Ы╨╕╤Ж╨╡╨╜╨╖╨╕╤П
+  licenses:
+    name: ╨Ы╨╕╤Ж╨╡╨╜╨╖╨╕╨╕
+  loginHint: '╨Ю╨┐╨╡╤А╨░╤Ж╨╕╤П ╤В╤А╨╡╨▒╤Г╨╡╤В ╨╛╤В Modrinth ╨┤╨╗╤П ╨▓╤Л╨┐╨╛╨╗╨╜╨╡╨╜╨╕╤П.
+
+    ╨Я╤Г╤Б╨║╨╛╨▓╨░╤П ╤Г╤Б╤В╨░╨╜╨╛╨▓╨║╨░ ╨╛╤В╨║╤А╨╛╨╡╤В ╨╛╨║╨╜╨╛ ╨▒╤А╨░╤Г╨╖╨╡╤А╨░ ╨┤╨╗╤П ╨▓╤Е╨╛╨┤╨░ ╨▓ Modrinth.'
+  loginTitle: ╨Т╨╛╨╣╨┤╨╕╤В╨╡ ╨▓ Modrinth
+  modLoaders:
+    name: ╨Ч╨░╨│╤А╤Г╨╖╤З╨╕╨║╨╕ ╨╝╨╛╨┤╨╛╨▓
+  modpackSource:
+    source: ╨Ш╤Б╤В╨╛╤З╨╜╨╕╨║
+  projectId: ID ╨┐╤А╨╛╨╡╨║╤В╨░
+  projectMembers: ╨г╤З╨░╤Б╤В╨╜╨╕╨║╨╕ ╨┐╤А╨╛╨╡╨║╤В╨░
+  projectType:
+    mod: ╨Ь╨╛╨┤
+    modpack: ╨б╨▒╨╛╤А╨║╨░ ╨╝╨╛╨┤╨╛╨▓
+    resourcepack: ╨Э╨░╨▒╨╛╤А ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓
+    shader: ╨и╨╡╨╣╨┤╨╡╤А
+    datapack: ╨Э╨░╨▒╨╛╤А ╨┤╨░╨╜╨╜╤Л╤Е
+    plugin: ╨Я╨╗╨░╨│╨╕╨╜
+  projects: '{count} ╨┐╤А╨╛╨╡╨║╤В╤Л'
+  serverSide: ╨б╨╡╤А╨▓╨╡╤А╨╜╨░╤П ╤З╨░╤Б╤В╤М
+  sort:
+    downloads: ╨Ъ╨╛╨╗╨╕╤З╨╡╤Б╤В╨▓╨╛ ╨╖╨░╨│╤А╤Г╨╖╨╛╨║
+    follows: ╨Ъ╨╛╨╗╨╕╤З╨╡╤Б╤В╨▓╨╛ ╨┐╨╛╨┤╨┐╨╕╤Б╤З╨╕╨║╨╛╨▓
+    newest: ╨Э╨╡╨┤╨░╨▓╨╜╨╛ ╤Б╨╛╨╖╨┤╨░╨╜╨╜╤Л╨╡
+    relevance: ╨а╨╡╨╗╨╡╨▓╨░╨╜╤В╨╜╨╛╤Б╤В╤М
+    title: ╨б╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨┐╨╛
+    updated: ╨Э╨╡╨┤╨░╨▓╨╜╨╛ ╨╛╨▒╨╜╨╛╨▓╨╗╤С╨╜╨╜╤Л╨╡
+  sourceUrl: ╨Ш╤Б╤Е╨╛╨┤╨╜╤Л╨╕╠Ж ╨║╨╛╨┤
+  technicalInformation: ╨в╨╡╤Е╨╜╨╕╤З╨╡╤Б╨║╨░╤П ╨╕╨╜╤Д╨╛╤А╨╝╨░╤Ж╨╕╤П
+  updateAt: ╨Ю╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╛
+  versions: ╨Т╨╡╤А╤Б╨╕╨╕
+  wikiUrl: ╨Т╨╕╨║╨╕
+modrinthCard:
+  currentVersion: ╨в╨╡╨║╤Г╤Й╨░╤П ╨▓╨╡╤А╤Б╨╕╤П
+multiplayer:
+  allowTurn: ╨а╨░╨╖╤А╨╡╤И╨╕╤В╤М ╤Б╨╡╤А╨▓╨╡╤А-╤А╨╡╤В╤А╨░╨╜╤Б╨╗╤П╤В╨╛╤А
+  allowTurnHint: ╨Т╨║╨╗╤О╤З╨╕╤В╨╡ ╤А╨╡╤В╤А╨░╨╜╤Б╨╗╤П╤В╨╛╤А, ╨╡╤Б╨╗╨╕ ╤Б╨▓╤П╨╖╤М ╨╜╨░╨┐╤А╤П╨╝╤Г╤О ╨╜╨╡ ╤А╨░╨▒╨╛╤В╨░╨╡╤В.  ╨Ю╨╜ ╨╝╨╛╨╢╨╡╤В
+    ╨╖╨░╨╝╨╡╨┤╨╗╨╕╤В╤М ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡, ╨╕╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╣╤В╨╡ ╨╛╤Б╤В╨╛╤А╨╛╨╢╨╜╨╛. ╨Т╨║╨╗╤О╤З╨╕╤В╨╡ ╤А╨╡╤В╤А╨░╨╜╤Б╨╗╤П╤В╨╛╤А, ╨╡╤Б╨╗╨╕ ╤Б╨▓╤П╨╖╤М
+    ╨╜╨░╨┐╤А╤П╨╝╤Г╤О ╨╜╨╡ ╤А╨░╨▒╨╛╤В╨░╨╡╤В.  ╨Ю╨╜ ╨╝╨╛╨╢╨╡╤В ╨╖╨░╨╝╨╡╨┤╨╗╨╕╤В╤М ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡, ╨╕╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╣╤В╨╡ ╨╛╤Б╤В╨╛╤А╨╛╨╢╨╜╨╛.
+  complete: ╨Ч╨░╨▓╨╡╤А╤И╨╡╨╜╨╛
+  confirm: ╨Я╨╛╨┤╤В╨▓╨╡╤А╨┤╨╕╤В╤М
+  connections: ╨б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╤П
+  copied: ╨б╨║╨╛╨┐╨╕╤А╨╛╨▓╨░╨╜╨╛!
+  copy: ╨Ъ╨╛╨┐╨╕╤А╨╛╨▓╨░╤В╤М
+  copyGroupToFriendHint: ╨Я╨╛╨╖╨▓╨╛╨╗╤М╤В╨╡ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П╨╝ ╨┐╤А╨╕╤Б╨╛╨╡╨┤╨╕╨╜╨╕╤В╤М╤Б╤П ╨║ ╨│╤А╤Г╨┐╨┐╨╡ ╤Б ╨┐╨╛╨╝╨╛╤Й╤М╤О
+    ╤Н╤В╨╛╨│╨╛ ID
+  copyLocalHint: '╨б╨║╨╛╨┐╨╕╤А╤Г╨╣╤В╨╡ ╨╗╨╛╨║╨░╨╗╤М╨╜╤Л╨╣ ╤В╨╛╨║╨╡╨╜ SDP ╨╕ ╨╛╤В╨┐╤А╨░╨▓╤М╤В╨╡ ╨╡╨│╨╛ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤О, ╤З╤В╨╛╨▒╤Л
+    ╨╛╨╜ ╨▓╨▓╤С╨╗ ╤Н╤В╨╛╤В ╤В╨╛╨║╨╡╨╜ ╨▓ ╤А╨░╨╖╨┤╨╡╨╗ ╨┐╤А╨╕╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╤П ╨║ ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╤О. <span>╨в╨╛╨║╨╡╨╜ ╨╝╨╛╨╢╨╡╤В ╨▒╤Л╤В╤М
+    ╨╕╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╨╜ ╤В╨╛╨╗╤М╨║╨╛ ╨┤╨╗╤П <span style="color: red; font-weight: bold">╨╛╨┤╨╜╨╛╨│╨╛ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П</span>!
+    ╨Т╤Л ╨╜╨╡ ╨╝╨╛╨╢╨╡╤В╨╡ ╨╛╤В╨┐╤А╨░╨▓╨╗╤П╤В╤М ╨╛╨┤╨╕╨╜ ╨╕ ╤В╨╛╤В ╨╢╨╡ ╤В╨╛╨║╨╡╨╜ ╨╜╨╡╤Б╨║╨╛╨╗╤М╨║╨╕╨╝ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П╨╝!</span> <br>
+    <span class="hint-text" style="font-style: italic;"> ╨Х╤Б╨╗╨╕ ╨▓╨░╨╝ ╨╜╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╨╛ ╨┐╨╛╨┤╨║╨╗╤О╤З╨╕╤В╤М
+    ╨╜╨╡╤Б╨║╨╛╨╗╤М╨║╨╕╤Е ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╨╡╨╣, ╨╜╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╨╛ ╤Б╨╛╨╖╨┤╨░╤В╤М <span style="font-weight: bold; color:
+    rgba(245, 158, 11)">╨╜╨╡╤Б╨║╨╛╨╗╤М╨║╨╛</span> ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╣.</span>'
+  createLocalToken: ╨б╨╛╨╖╨┤╨░╤В╤М ╨╗╨╛╨║╨░╨╗╤М╨╜╤Л╨╣ ╤В╨╛╨║╨╡╨╜
+  currentIpTitle: ╨Ю╨▒╨╜╨░╤А╤Г╨╢╨╡╨╜╨╜╤Л╨╣ ╨╛╨▒╤Й╨╡╨┤╨╛╤Б╤В╤Г╨┐╨╜╤Л╨╣ IP
+  currentNatTitle: '╨в╨╡╨║╤Г╤Й╨░╤П ╤Б╨╡╤В╤М (NAT):'
+  difficultyLevelHint: ╨г╤А╨╛╨▓╨╡╨╜╤М ╤Б╨╗╨╛╨╢╨╜╨╛╤Б╤В╨╕ ╨┤╨╗╤П ╤Б╨╛╨╖╨┤╨░╨╜╨╕╤П ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╤П ╤Б ╨┤╤А╤Г╨│╨╕╨╝╨╕ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П╨╝╨╕
+  disconnect: ╨Ю╤В╨║╨╗╤О╤З╨╕╤В╤М╤Б╤П
+  disconnectDescription: ╨Т╤Л ╤Г╨▓╨╡╤А╨╡╨╜╤Л, ╤З╤В╨╛ ╤Е╨╛╤В╨╕╤В╨╡ ╨┐╤А╨╡╤А╨▓╨░╤В╤М ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡ ╤Б ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╨╡╨╝
+    {user}({id})?
+  disconnected: ╨╛╤В╨║╨╗╤О╤З╨╡╨╜╨╛
+  enterRemoteToken: ╨Т╨▓╨╡╨┤╨╕╤В╨╡ ╤Г╨┤╨░╨╗╤С╨╜╨╜╤Л╨╣ ╤В╨╛╨║╨╡╨╜
+  enterRemoteTokenHint: ╨Я╨╛╤Б╨╗╨╡ ╤В╨╛╨│╨╛, ╨║╨░╨║ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤М ╨▓╨▓╨╡╨┤╤С╤В ╨▓╨░╤И ╤В╨╛╨║╨╡╨╜, ╨╜╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╨╛
+    ╨▓╨▓╨╡╤Б╤В╨╕ ╨╡╨│╨╛ ╤В╨╛╨║╨╡╨╜ ╨▓ ╨┐╤А╨╕╨▓╨╡╨┤╤С╨╜╨╜╨╛╨╡ ╨╜╨╕╨╢╨╡ ╤В╨╡╨║╤Б╤В╨╛╨▓╨╛╨╡ ╨┐╨╛╨╗╨╡. ╨Э╨░╨╢╨╝╨╕╤В╨╡ "╨Я╨╛╨┤╤В╨▓╨╡╤А╨┤╨╕╤В╤М", ╤З╤В╨╛╨▒╤Л
+    ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡.
+  exposedPortDescription: ╨Я╨╛╤А╤В, ╨║╨╛╤В╨╛╤А╤Л╨╣ ╨▓╤Л ╨┐╤А╨╡╨┤╨╛╤Б╤В╨░╨▓╨╕╨╗╨╕ ╨┤╤А╤Г╨│╨╕╨╝ ╤Г╨╖╨╗╨░╨╝
+  exposedPorts: ╨Я╨╡╤А╨╡╨╜╨░╨┐╤А╨░╨▓╨╗╨╡╨╜╨╜╤Л╨╡ ╨┐╨╛╤А╤В╤Л
+  gatheringIce: '╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨┐╨╛╨┤╨╛╨╢╨┤╨╕╤В╨╡, ╨┐╨╛╨║╨░ ╤Б╨╡╤А╨▓╨╡╤А ICE ╤Б╨╛╨▒╨╡╤А╤С╤В ╨╜╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╤Г╤О ╨╕╨╜╤Д╨╛╤А╨╝╨░╤Ж╨╕╤О
+    ╨╛ ╨▓╨░╤И╨╡╨╣ ╤Б╨╡╤В╨╕. ╨Х╤Б╨╗╨╕ ╨▓╤Л ╨╜╨╡╤В╨╡╤А╨┐╨╡╨╗╨╕╨▓╤Л ╨╕ ╨╕╨╜╤Д╨╛╤А╨╝╨░╤Ж╨╕╨╕ ╨┤╨╛╤Б╤В╨░╤В╨╛╤З╨╜╨╛, ╨▓╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨╛╤В╨┐╤А╨░╨▓╨╕╤В╤М
+    ╤В╨╡╨║╤Г╤Й╨╕╨╣ SDP ╨┤╤А╤Г╨│╨╛╨╝╤Г ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤О ╨╜╨░╨┐╨╡╤А╤С╨┤ ╨╕ ╨╜╨░╨╢╨░╤В╤М "╨Ф╨░╨╗╨╡╨╡". <br> ╨Ч╨░╤В╨╡╨╝, ╨╛╤В╨┐╤А╨░╨▓╤М╤В╨╡
+    <span class="v-chip v-chip--label v-size--small" style="font-weight: bold">╨Ы╨╛╨║╨░╨╗╤М╨╜╤Л╨╣
+    ╤В╨╛╨║╨╡╨╜</span> ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤О, ╨║╨╛╤В╨╛╤А╤Л╨╣ ╨┤╨╛╨╗╨╢╨╡╨╜ ╨▒╤Г╨┤╨╡╤В ╨╡╨│╨╛ ╨▓╨▓╨╡╤Б╤В╨╕ ╨▓ ╤А╨░╨╖╨┤╨╡╨╗╨╡ <span class="v-chip
+    v-chip--label v-size--small" style="font-weight: bold">╨Я╤А╨╕╤Б╨╛╨╡╨┤╨╕╨╜╨╕╤В╤М╤Б╤П ╨║ ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╤О</span>.
+    <br> ╨б╨╡╤А╨▓╨╡╤А╤Г ICE ╨╝╨╛╨╢╨╡╤В ╨┐╨╛╤В╤А╨╡╨▒╨╛╨▓╨░╤В╤М╤Б╤П ╨╜╨╡╨║╨╛╤В╨╛╤А╨╛╨╡ ╨▓╤А╨╡╨╝╤П, ╤З╤В╨╛╨▒╤Л ╤Б╨╛╨▒╤А╨░╤В╤М ╨▓╨░╤И╤Г ╨╕╨╜╤Д╨╛╤А╨╝╨░╤Ж╨╕╤О
+    ╨┤╨╗╤П ╤Б╨╛╨╖╨┤╨░╨╜╨╕╤П <span class="v-chip v-chip--label v-size--small" style="font-weight:
+    bold">╨Ы╨╛╨║╨░╨╗╤М╨╜╨╛╨│╨╛ ╤В╨╛╨║╨╡╨╜╨░</span>. <br> ╨Т╨░╨╝ ╨╜╨╡ ╨╜╤Г╨╢╨╜╨╛ ╨╢╨┤╨░╤В╤М, ╨┐╨╛╨║╨░ ╤Б╤В╨░╤В╤Г╤Б ICE ╨▒╤Г╨┤╨╡╤В
+    ╨╖╨░╨▓╨╡╤А╤И╤С╨╜. ╨Х╤Б╨╗╨╕ ╤В╨╛╨║╨╡╨╜ ╨╜╨╕╨╢╨╡ ╨╛╤Б╤В╨░╤С╤В╤Б╤П ╨╜╨╡╨╕╨╖╨╝╨╡╨╜╨╜╤Л╨╝, ╨▓╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╤Б╨║╨╛╨┐╨╕╤А╨╛╨▓╨░╤В╤М ╨╕ ╨╛╤В╨┐╤А╨░╨▓╨╕╤В╤М
+    ╨╡╨│╨╛ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤О.'
+  groupId: ID ╨│╤А╤Г╨┐╨┐╤Л
+  illegalTokenDescription: ╨Э╨╡╨┤╨╛╨┐╤Г╤Б╤В╨╕╨╝╤Л╨╣ ╤В╨╛╨║╨╡╨╜, ╤Г╨▒╨╡╨┤╨╕╤В╨╡╤Б╤М, ╤З╤В╨╛ ╤В╨╛╨║╨╡╨╜ ╨╛╤В ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П
+    ╨▓╨▓╨╡╨┤╤С╨╜ ╨▓╨╡╤А╨╜╨╛
+  initiateConnection: ╨Ш╨╜╨╕╤Ж╨╕╨╕╤А╨╛╨▓╨░╤В╤М ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡
+  joinConnection: ╨Х╤Б╨╗╨╕ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤М ╤Г╨╢╨╡ ╨╕╨╜╨╕╤Ж╨╕╨╕╤А╨╛╨▓╨░╨╗ ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡, ╨▓╨░╨╝ ╨╜╤Г╨╢╨╜╨╛ ╨┐╤А╨╕╤Б╨╛╨╡╨┤╨╕╨╜╨╕╤В╤М╤Б╤П
+    ╨║ ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╤О.
+  joinManual: ╨Я╤А╨╕╤Б╨╛╨╡╨┤╨╕╨╜╨╕╤В╤М╤Б╤П
+  joinOrCreateGroup: ╨Я╤А╨╕╤Б╨╛╨╡╨┤╨╕╨╜╨╕╤В╤М╤Б╤П/╨б╨╛╨╖╨┤╨░╤В╤М ╨│╤А╤Г╨┐╨┐╤Г
+  joinOrCreateGroupHint: ╨Я╨╛╨╗╤Г╤З╨╕╤В╨╡ ID ╨│╤А╤Г╨┐╨┐╤Л ╨╛╤В ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П ╨╕╨╗╨╕ ╤Б╨╛╨╖╨┤╨░╨╣╤В╨╡ ╨│╤А╤Г╨┐╨┐╤Г
+  kernel: ╨п╨┤╤А╨╛ P2P
+  kernelDescription: ╨Ш╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╣╤В╨╡ WebRTC ╨╕╨╗╨╕ node-datachannel.  ╨Я╨╡╤А╨╡╨║╨╗╤О╤З╨░╨╣╤В╨╡╤Б╤М ╨╝╨╡╨╢╨┤╤Г
+    ╨╜╨╕╨╝╨╕ ╤В╨╛╨╗╤М╨║╨╛ ╨╡╤Б╨╗╨╕ p2p-╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡ ╨╕╨╜╨╛╨│╨┤╨░ ╨▓╤Л╨╖╤Л╨▓╨░╨╡╤В ╨╛╤И╨╕╨▒╨║╤Г ╨╛╨║╨╜╨░ ╨╖╨░╨┐╤Г╤Б╨║╨░. ╨Ш╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╣╤В╨╡
+    WebRTC ╨╕╨╗╨╕ node-datachannel.  ╨Я╨╡╤А╨╡╨║╨╗╤О╤З╨░╨╣╤В╨╡╤Б╤М ╨╝╨╡╨╢╨┤╤Г ╨╜╨╕╨╝╨╕ ╤В╨╛╨╗╤М╨║╨╛ ╨╡╤Б╨╗╨╕ p2p-╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡
+    ╨╕╨╜╨╛╨│╨┤╨░ ╨▓╤Л╨╖╤Л╨▓╨░╨╡╤В ╨╛╤И╨╕╨▒╨║╤Г ╨╛╨║╨╜╨░ ╨╖╨░╨┐╤Г╤Б╨║╨░.
+  leaveGroup: ╨Я╨╛╨║╨╕╨╜╤Г╤В╤М ╨│╤А╤Г╨┐╨┐╤Г
+  localToken: ╨Ы╨╛╨║╨░╨╗╤М╨╜╤Л╨╣ ╤В╨╛╨║╨╡╨╜
+  manualConnect: ╨а╤Г╤З╨╜╨╛╨╡ ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡
+  name: ╨Ш╨│╤А╨░ ╨┐╨╛ ╨╗╨╛╨║╨░╨╗╤М╨╜╨╛╨╣ ╤Б╨╡╤В╨╕
+  networkInfo: ╨Ш╨╜╤Д╨╛╤А╨╝╨░╤Ж╨╕╤П ╨╛ ╤Б╨╡╤В╨╕
+  next: ╨Ф╨░╨╗╨╡╨╡
+  otherExposedPortDescription: ╨Я╤А╨╡╨┤╨╕╤Б╨╗╨╛╨▓╨╕╨╡ ╨║ ╨┐╨╛╤А╤В╤Г ╨╛╤В {user}
+  placeholder: ╨б╨╛╨╡╨┤╨╕╨╜╨╕╤В╨╡╤Б╤М ╤Б ╨┤╤А╤Г╨│╨╕╨╝ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╨╡╨╝, ╤З╤В╨╛╨▒╤Л ╨╕╨│╤А╨░╤В╤М ╨▓ Minecraft ╨▓ ╨╗╨╛╨║╨░╨╗╤М╨╜╨╛╨╣
+    ╤Б╨╡╤В╨╕!
+  previous: ╨Э╨░╨╖╨░╨┤
+  receiveHint: ╨Я╨╛╤Б╨╗╨╡ ╤В╨╛╨│╨╛, ╨║╨░╨║ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤М ╨▓╨▓╨╡╨┤╤С╤В ╨▓╨░╤И ╤В╨╛╨║╨╡╨╜, ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡ ╨▒╤Г╨┤╨╡╤В ╤Б╨╛╨╖╨┤╨░╨╜╨╛
+    ╨░╨▓╤В╨╛╨╝╨░╤В╨╕╤З╨╡╤Б╨║╨╕. ╨в╨╡╨┐╨╡╤А╤М ╨▓╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨╖╨░╨║╤А╤Л╤В╤М ╨┤╨╕╨░╨╗╨╛╨│╨╛╨▓╨╛╨╡ ╨╛╨║╨╜╨╛.
+  receiveRemoteTokenHint: ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨▓╨▓╨╡╨┤╨╕╤В╨╡ ╤Г╨┤╨░╨╗╤С╨╜╨╜╤Л╨╣ ╤В╨╛╨║╨╡╨╜ ╨╛╤В ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П ╨╖╨┤╨╡╤Б╤М.
+  remoteToken: ╨г╨┤╨░╨╗╤С╨╜╨╜╤Л╨╣ ╤В╨╛╨║╨╡╨╜
+  routerInfo: ╨Ш╨╜╤Д╨╛╤А╨╝╨░╤Ж╨╕╤П ╨╛ ╤А╨╛╤Г╤В╨╡╤А╨╡
+  sendTokenToRemote: ╨Ю╤В╨┐╤А╨░╨▓╨╕╤В╤М ╤В╨╛╨║╨╡╨╜
+  share: ╨Я╨╛╨┤╨╡╨╗╨╕╤В╤М╤Б╤П ╨║╨╛╨╜╤Д╨╕╨│╤Г╤А╨░╤Ж╨╕╨╡╨╣ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+  sharing: ╨Ю╨▒╨╝╨╡╨╜ ╤Д╨░╨╣╨╗╨░╨╝╨╕...
+  sharingNotificationBody: ╨Т╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨╖╨░╨│╤А╤Г╨╖╨╕╤В╤М ╨╕╨╗╨╕ ╤Б╨╛╨╖╨┤╨░╤В╤М ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А ╨╕╨╖ ╨╛╨▒╤Й╨╕╤Е ╨╜╨░╤Б╤В╤А╨╛╨╡╨║
+    {name}.
+  sharingNotificationTitle: ╨Я╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤М ╨┤╨╡╨╗╨╕╤В╤Б╤П ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨░╨╝╨╕ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+  start: ╨Э╨░╤З╨░╤В╤М
+  startNewP2PConnection: ╨Э╨░╨╢╨╝╨╕╤В╨╡ ╨╜╨░ ╨║╨╜╨╛╨┐╨║╤Г "╨Э╨░╤З╨░╤В╤М", ╤З╤В╨╛╨▒╤Л ╤Б╨╛╨╖╨┤╨░╤В╤М ╨╜╨╛╨▓╨╛╨╡ p2p-╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡
+  connectionError: ╨Ю╤И╨╕╨▒╨║╨░ ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╤П
+  connectionFailedHint: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡. ╨Я╤А╨╛╨▓╨╡╤А╤М╤В╨╡, ╤З╤В╨╛ ╤Г ╨╛╨▒╨╡╨╕╤Е ╤Б╤В╨╛╤А╨╛╨╜
+    ╤Б╨╛╨▓╨╝╨╡╤Б╤В╨╕╨╝╤Л╨╡ ╤В╨╕╨┐╤Л NAT.
+  natWarning: ╨Т╨░╤И ╤В╨╕╨┐ NAT ╨╝╨╛╨╢╨╡╤В ╨┐╤А╨╡╨┐╤П╤В╤Б╤В╨▓╨╛╨▓╨░╤В╤М ╨┐╤А╤П╨╝╤Л╨╝ ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╤П╨╝. ╨Я╨╛╨┐╤А╨╛╨▒╤Г╨╣╤В╨╡ ╨▓╨║╨╗╤О╤З╨╕╤В╤М
+    ╤А╨╡╨╗╨╡╨╣╨╜╤Л╨╣ ╤Б╨╡╤А╨▓╨╡╤А ╨▓ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨░╤Е ╨╕╨╗╨╕ ╨┐╨╛╨┐╤А╨╛╤Б╨╕╤В╨╡ ╨┤╤А╤Г╨│╨░ ╤Б╤В╨░╤В╤М ╤Е╨╛╤Б╤В╨╛╨╝.
+  connectedToHost: Connected to the room host
+  directConnection: Direct
+  guest: Guest
+  host: Host
+  relayConnection: Relay
+myStuff: ╨Ь╨╛╨╣ ╨║╨╛╨╜╤В╨╡╨╜╤В
+natType:
+  blocked: ╨Ч╨░╨▒╨╗╨╛╨║╨╕╤А╨╛╨▓╨░╨╜
+  fullCone: ╨Я╨╛╨╗╨╜╤Л╨╣ ╨║╨╛╨╜╤Г╤Б (Full Cone)
+  openInternet: ╨Ю╤В╨║╤А╤Л╤В╤Л╨╣ ╨╕╨╜╤В╨╡╤А╨╜╨╡╤В
+  restrictNat: ╨Ю╨│╤А╨░╨╜╨╕╤З╨╡╨╜╨╜╤Л╨╣ NAT
+  restrictPortNat: ╨Ю╨│╤А╨░╨╜╨╕╤З╨╡╨╜╨╜╤Л╨╣ ╨┐╨╛╤А╤В NAT
+  symmetricNat: ╨б╨╕╨╝╨╝╨╡╤В╤А╨╕╤З╨╜╤Л╨╣ NAT
+  symmetricUDPFirewall: ╨б╨╕╨╝╨╝╨╡╤В╤А╨╕╤З╨╜╤Л╨╣ ╨╝╨╡╨╢╤Б╨╡╤В╨╡╨▓╨╛╨╣ ╤Н╨║╤А╨░╨╜ UDP
+  unknown: ╨Э╨╡╨╕╨╖╨▓╨╡╤Б╤В╨╜╨╛
+neoForgedVersion:
+  disable: NeoForged ╨╜╨╡ ╨▓╤Л╨▒╤А╨░╨╜
+  empty: NeoForged ╨╜╨╡ ╨┐╨╛╨┤╨┤╨╡╤А╨╢╨╕╨▓╨░╨╡╤В {version}
+news:
+  name: ╨Э╨╛╨▓╨╛╤Б╤В╨╕
+  readMore: ╨Я╨╛╨┤╤А╨╛╨▒╨╜╨╡╨╡
+optifineVersion:
+  disable: Optifine ╨╜╨╡ ╨▓╤Л╨▒╤А╨░╨╜
+  empty: Optifine ╨╜╨╡ ╨┐╨╛╨┤╨┤╨╡╤А╨╢╨╕╨▓╨░╨╡╤В Minecraft {version}
+optional: ╨Э╨╡╨╛╨▒╤П╨╖╨░╤В╨╡╨╗╤М╨╜╨╛
+peerConnectionState:
+  closed: ╨Ч╨░╨║╤А╤Л╤В╨╛
+  connected: ╨Я╨╛╨┤╨║╨╗╤О╤З╨╡╨╜╨╛
+  connecting: ╨Я╨╛╨┤╨║╨╗╤О╤З╨╡╨╜╨╕╨╡
+  disconnected: ╨Ю╤В╨║╨╗╤О╤З╨╡╨╜╨╛
+  failed: ╨Ю╤И╨╕╨▒╨║╨░
+  name: ╨б╨╛╤Б╤В╨╛╤П╨╜╨╕╨╡ ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╤П
+  new: ╨Э╨╛╨▓╨╛╨╡
+peerGroupState:
+  closed: ╨Э╨╡ ╨▓ ╨│╤А╤Г╨┐╨┐╨╡
+  closing: ╨Ч╨░╨║╤А╤Л╤В╨╕╨╡
+  connected: ╨Я╨╛╨┤╨║╨╗╤О╤З╤С╨╜ ╨║ ╨│╤А╤Г╨┐╨┐╨╡
+  connecting: ╨Я╨╛╨┤╨║╨╗╤О╤З╨╡╨╜╨╕╨╡ ╨║ ╨│╤А╤Г╨┐╨┐╨╡
+peerIceGatheringState:
+  gathering: ╨б╨▒╨╛╤А ╨╕╨╜╤Д╨╛╤А╨╝╨░╤Ж╨╕╨╕ ╤Б ╤Б╨╡╤А╨▓╨╡╤А╨░ ICE
+peerSignalingState:
+  have-local-offer: ╨Ю╨╢╨╕╨┤╨░╨╜╨╕╨╡ ╨╛╨┐╨╕╤Б╨░╨╜╨╕╤П ╨╛╤В ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П
+presence:
+  instance: ╨Э╨╡╨░╨║╤В╨╕╨▓╨╡╨╜ ╨▓ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨╡ {instance}
+  instanceSetting: '╨а╨╡╨┤╨░╨║╤В╨╕╤А╤Г╨╡╤В ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░: {instance}'
+  mod: ╨Я╤А╨╛╤Б╨╝╨░╤В╤А╨╕╨▓╨░╨╡╤В ╨╝╨╛╨┤╤Л ╨▓ {instance}
+  modrinthProject: ╨Я╤А╨╛╤Б╨╝╨░╤В╤А╨╕╨▓╨░╨╡╤В {name} ╨▓ Modrinth
+  resourcePack: ╨Я╤А╨╛╤Б╨╝╨░╤В╤А╨╕╨▓╨░╨╡╤В ╨╜╨░╨▒╨╛╤А╤Л ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓ ╨▓ {instance}
+  save: ╨Я╤А╨╛╤Б╨╝╨░╤В╤А╨╕╨▓╨░╨╡╤В ╨╝╨╕╤А╤Л ╨▓ {instance}
+  setting: ╨Я╤А╨╛╤Б╨╝╨░╤В╤А╨╕╨▓╨░╨╡╤В ╤Б╤В╤А╨░╨╜╨╕╤Ж╤Г ╨╜╨░╤Б╤В╤А╨╛╨╡╨║
+  shaderPack: ╨Я╤А╨╛╤Б╨╝╨░╤В╤А╨╕╨▓╨░╨╡╤В ╨╜╨░╨▒╨╛╤А╤Л ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓ ╨▓ {instance}
+proxy:
+  host: ╨е╨╛╤Б╤В
+  port: ╨Я╨╛╤А╤В
+quiltVersion:
+  disable: Quilt ╨╜╨╡ ╨▓╤Л╨▒╤А╨░╨╜
+  empty: Quilt ╨╜╨╡ ╨┐╨╛╨┤╨┤╨╡╤А╨╢╨╕╨▓╨░╨╡╤В Minecraft {version}
+resourcepack:
+  linkShared: ╨Ю╨▒╤Й╨╕╨╡ ╨┐╨░╨║╨╡╤В╤Л ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓ ╨┤╨╗╤П ╨▓╤Б╨╡╤Е ╤Б╨▒╨╛╤А╨╛╨║
+  linkSharedHint: ╨б╨▓╤П╨╖╨░╤В╤М ╨┐╨░╨┐╨║╤Г resourcepacks ╤Н╤В╨╛╨╣ ╤Б╨▒╨╛╤А╨║╨╕ ╤Б ╨╛╨▒╤Й╨╡╨╣ ╨│╨╗╨╛╨▒╨░╨╗╤М╨╜╨╛╨╣ ╨┐╨░╨┐╨║╨╛╨╣,
+    ╤З╤В╨╛╨▒╤Л ╨▓╤Б╨╡ ╤Б╨▒╨╛╤А╨║╨╕ ╨╕╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╨╗╨╕ ╨╛╨┤╨╜╨╕ ╨╕ ╤В╨╡ ╨╢╨╡ ╨┐╨░╨║╨╡╤В╤Л ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓. ╨б╤Г╤Й╨╡╤Б╤В╨▓╤Г╤О╤Й╨╕╨╡ ╨┐╨░╨║╨╡╤В╤Л
+    ╨▒╤Г╨┤╤Г╤В ╨┐╨╡╤А╨╡╨╝╨╡╤Й╨╡╨╜╤Л ╨▓ ╨╛╨▒╤Й╤Г╤О ╨┐╨░╨┐╨║╤Г.
+  compatible: ╨д╨╛╤А╨╝╨░╤В {format} ╤Б╨╛╨▓╨╝╨╡╤Б╤В╨╕╨╝ ╤Б {version}
+  defaultDescription: ╨Т╨╜╨╡╤И╨╜╨╕╨╣ ╨▓╨╕╨┤ Minecraft ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О
+  delete:
+    content: ╨н╤В╨╛ ╨┐╤А╨╕╨▓╨╡╨┤╤С╤В ╨║ ╤Г╨┤╨░╨╗╨╡╨╜╨╕╤О ╤Д╨░╨╣╨╗╨░ ╨╜╨░╨▒╨╛╤А╨░ ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓ ╤Б ╨┤╨╕╤Б╨║╨░, ╨╕ ╨╝╤Л ╨╜╨╡ ╤Б╨╝╨╛╨╢╨╡╨╝
+      ╨╡╨│╨╛ ╨▓╨╛╤Б╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М. ╨Т╤Л ╤Г╨▓╨╡╤А╨╡╨╜╤Л, ╤З╤В╨╛ ╤Е╨╛╤В╨╕╤В╨╡ ╤Н╤В╨╛ ╤Б╨┤╨╡╨╗╨░╤В╤М?
+    title: ╨г╨┤╨░╨╗╨╕╤В╤М ╨╜╨░╨▒╨╛╤А ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓
+  dropHint: ╨Я╨╡╤А╨╡╤В╨░╤Й╨╕╤В╨╡ ╤Б╤О╨┤╨░ ╨┐╨░╨┐╨║╤Г/zip-╨░╤А╤Е╨╕╨▓ ╤Б ╨╜╨░╨▒╨╛╤А╨╛╨╝ ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓ ╨┤╨╗╤П ╨╕╨╝╨┐╨╛╤А╤В╨░.
+  enable: '╨Т╤Б╨╡╨│╨╛ ╨╜╨░╨▒╨╛╤А╨╛╨▓ ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓ ╨▓╤Л╨▒╤А╨░╨╜╨╛: {count}'
+  incompatible: ╨Э╨╡╤Б╨╛╨▓╨╝╨╡╤Б╤В╨╕╨╝╤Л╨╣ ╤Д╨╛╤А╨╝╨░╤В ╨╜╨░╨▒╨╛╤А╨░ ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓ ({format}). ╨Я╨╛╨┤╤Е╨╛╨┤╤П╤Й╨╕╨╣ {accept}.
+    ╨в╨╡╨║╤Г╤Й╨╕╨╣ {actual}.
+  name: ╨Э╨░╨▒╨╛╤А ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓ | ╨Э╨░╨▒╨╛╤А╤Л ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓
+  searchHint: ╨Я╨╛╨╕╤Б╨║ ╨┐╨░╨║╨╡╤В╨╛╨▓ ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓
+  searchOnCurseforge: ╨Я╨╛╨╕╤Б╨║ {name} ╨╜╨░ CurseForge
+  searchOnModrinth: :mod.searchOnModrinth
+  selected: ╨Т╤Л╨▒╤А╨░╨╜╨╜╤Л╨╡ ╨╜╨░╨▒╨╛╤А╤Л ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓
+  showDirectory: ╨Ю╤В╨║╤А╤Л╤В╤М ╨┐╨░╨┐╨║╤Г ╤Б ╨╜╨░╨▒╨╛╤А╨░╨╝╨╕ ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓
+  showFile: ╨Я╨╛╨║╨░╨╖╨░╤В╤М ╨┐╤Г╤В╤М ╨║ ╨╜╨░╨▒╨╛╤А╤Г ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓ {file}
+  showInCurseforge: ╨Я╨╛╨║╨░╨╖╨░╤В╤М {name} ╨╜╨░ CurseForge
+  unselected: ╨Э╨╡╨▓╤Л╨▒╤А╨░╨╜╨╜╤Л╨╡ ╨╜╨░╨▒╨╛╤А╤Л ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓
+  noPacks: ╨а╨╡╤Б╤Г╤А╤Б-╨┐╨░╨║╨╕ ╨╜╨╡ ╨╜╨░╨╣╨┤╨╡╨╜╤Л
+  search: ╨Я╨╛╨╕╤Б╨║ ╤А╨╡╤Б╤Г╤А╤Б-╨┐╨░╨║╨╛╨▓...
+  noLocalPacksFound: No local resource packs found matching your search.
+  noPacksInstalled: You don't have any resource packs installed.
+save:
+  linkShared: ╨Ю╨▒╤Й╨╕╨╡ ╤Б╨╛╤Е╤А╨░╨╜╨╡╨╜╨╕╤П ╨┤╨╗╤П ╨▓╤Б╨╡╤Е ╤Б╨▒╨╛╤А╨╛╨║
+  linkSharedHint: ╨б╨▓╤П╨╖╨░╤В╤М ╨┐╨░╨┐╨║╤Г saves ╤Н╤В╨╛╨╣ ╤Б╨▒╨╛╤А╨║╨╕ ╤Б ╨╛╨▒╤Й╨╡╨╣ ╨│╨╗╨╛╨▒╨░╨╗╤М╨╜╨╛╨╣ ╨┐╨░╨┐╨║╨╛╨╣, ╤З╤В╨╛╨▒╤Л
+    ╨▓╤Б╨╡ ╤Б╨▒╨╛╤А╨║╨╕ ╨╕╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╨╗╨╕ ╨╛╨┤╨╜╨╕ ╨╕ ╤В╨╡ ╨╢╨╡ ╨╝╨╕╤А╤Л. ╨б╤Г╤Й╨╡╤Б╤В╨▓╤Г╤О╤Й╨╕╨╡ ╤Б╨╛╤Е╤А╨░╨╜╨╡╨╜╨╕╤П ╨▒╤Г╨┤╤Г╤В ╨┐╨╡╤А╨╡╨╝╨╡╤Й╨╡╨╜╤Л
+    ╨▓ ╨╛╨▒╤Й╤Г╤О ╨┐╨░╨┐╨║╤Г.
+  copy:
+    name: ╨Ъ╨╛╨┐╨╕╤А╨╛╨▓╨░╤В╤М ╨╝╨╕╤А
+  createNew: ╨б╨╛╨╖╨┤╨░╤В╤М ╨╜╨╛╨▓╤Л╨╣ ╨╝╨╕╤А
+  createdWorlds: '╨Т╤Б╨╡╨│╨╛ ╨╝╨╕╤А╨╛╨▓: {count}'
+  deleteHint: ╨н╤В╨░ ╨╛╨┐╨╡╤А╨░╤Ж╨╕╤П ╨╜╨╡ ╨╝╨╛╨╢╨╡╤В ╨▒╤Л╤В╤М ╨╛╤В╨╝╨╡╨╜╨╡╨╜╨░. ╨Т╤Л ╨╜╨░╨▓╤Б╨╡╨│╨┤╨░ ╨┐╨╛╤В╨╡╤А╤П╨╡╤В╨╡ ╨┤╨░╨╜╨╜╤Л╨╡ ╤Н╤В╨╛╨│╨╛
+    ╨╝╨╕╤А╨░. ╨Т╤Л ╤Г╨▓╨╡╤А╨╡╨╜╤Л, ╤З╤В╨╛ ╤Е╨╛╤В╨╕╤В╨╡ ╤Г╨┤╨░╨╗╨╕╤В╤М ╤Н╤В╨╛ ╨╝╨╕╤А?
+  deleteTitle: ╨г╨┤╨░╨╗╨╕╤В╤М ╨╝╨╕╤А
+  dropHint: ╨Я╨╡╤А╨╡╤В╨░╤Й╨╕╤В╨╡ zip-╨░╤А╤Е╨╕╨▓ ╤Б╤О╨┤╨░, ╤З╤В╨╛╨▒╤Л ╨╕╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М
+  export: ╨н╨║╤Б╨┐╨╛╤А╤В ╤Б╨╛╤Е╤А╨░╨╜╨╡╨╜╨╕╤П
+  exportMessage: ╨н╨║╤Б╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨╝╨╕╤А ╨▓ zip-╨░╤А╤Е╨╕╨▓
+  exportTitle: ╨н╨║╤Б╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨╝╨╕╤А
+  gameMode: ╨╕╨│╤А╨╛╨▓╨╛╨╣ ╤А╨╡╨╢╨╕╨╝
+  independent: ╨н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А ╨╕╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╡╤В ╨╜╨╡╨╖╨░╨▓╨╕╤Б╨╕╨╝╤Г╤О ╨┐╨░╨┐╨║╤Г ╤Б╨╛╤Е╤А╨░╨╜╨╡╨╜╨╕╨╣
+  levelName: ╨Э╨░╨╖╨▓╨░╨╜╨╕╨╡ ╤Г╤А╨╛╨▓╨╜╤П
+  name: ╨Ь╨╕╤А | ╨Ь╨╕╤А╤Л
+  search: ╨Я╨╛╨╕╤Б╨║ ╤Б╨╛╤Е╤А╨░╨╜╨╡╨╜╨╕╨╣
+  seed: Seed
+  selected: ╨╝╨╡╤Б╤В╨╜╤Л╨╣ ╨░╤А╤Е╨╕╨▓
+  shared: ╨н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А ╨╕╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╡╤В ╨╛╨▒╤Й╤Г╤О ╨┐╨░╨┐╨║╤Г ╤Б╨╛╤Е╤А╨░╨╜╨╡╨╜╨╕╨╣
+  showDirectory: ╨Ю╤В╨║╤А╤Л╤В╤М ╨┐╨░╨┐╨║╤Г ╤Б ╨╝╨╕╤А╨░╨╝╨╕
+  unselected: ╨╛╨▒╤Й╨╕╨╣ ╨░╤А╤Е╨╕╨▓
+  useCurrent: ╨Ш╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╤М ╤В╨╡╨║╤Г╤Й╨╕╨╣ ╨╝╨╕╤А
+  openFolder: ╨Ю╤В╨║╤А╤Л╤В╤М ╨┐╨░╨┐╨║╤Г ╤Б╨╛╤Е╤А╨░╨╜╨╡╨╜╨╕╨╣
+  searchHint: ╨Я╨╛╨╕╤Б╨║ ╨╝╨╕╤А╨╛╨▓ ╨╜╨░ CurseForge
+  searchSaves: ╨Я╨╛╨╕╤Б╨║ ╤Б╨╛╤Е╤А╨░╨╜╨╡╨╜╨╕╨╣
+  allowCheats: Allow Cheats
+  difficulty: Difficulty
+  datapack:
+    name: Data Pack | Data Packs
+    noSaveHint: Create or select a world first to install this data pack
+    packFormat: 'Pack format: {format}'
+    imported: Data pack imported into {save}
+  duplicate: Duplicate Save
+  loadMap: Load Map
+  mapError: Map Error
+  mapInfo: 'Interactive 3D world preview:'
+  mapLoaded: Map Loaded
+  mapPreview: Map Preview
+  chunkSelectMode: Select Chunks
+  panMode: Pan
+  chunkSelected: '{count} chunks selected'
+  mapHintPan: Drag to pan
+  mapHintSelect: Tanlash
+  mapHintDeselect: Deselect
+  toggleGrid: Toggle region grid
+  heightTop: Top
+  resetView: Reset View
+  clearSelection: Clear Selection
+  copyChunks: Copy Chunks
+  pasteChunks: Paste {count} Chunks
+  pasteChunksPlaceHint: Move the mouse to position {count} chunk(s), then click to
+    paste. Existing chunks at the target are overwritten. Press Esc to cancel.
+  pasteChunksCancel: Bekor Qilish
+  deleteChunks: Delete Chunks
+  deleteChunksTitle: Delete Selected Chunks
+  deleteChunksHint: Delete {count} selected chunk(s)? This cannot be undone. The chunks
+    will be regenerated the next time the area is loaded in game.
+  mapLoading: Loading mapтАж
+  noRegions: This world has no generated regions to preview.
+  dimOverworld: Overworld
+  dimNether: The Nether
+  dimEnd: The End
+  noLocalSavesFound: No local saves found matching your search.
+  noSavesFound: No saves found
+  noSavesInstalled: You don't have any saves.
+  properties: World Properties
+  useMouseRotate: Use mouse to rotate view
+  useScrollZoom: Use scroll wheel to zoom
+  world: World
+screenshots:
+  empty: ╨г ╨▓╨░╤Б ╨╜╨╡╤В ╤Б╨╜╨╕╨╝╨║╨╛╨▓ ╤Н╨║╤А╨░╨╜╨░
+  playRandom: ╨Я╨╛╨║╨░╨╖╤Л╨▓╨░╤В╤М ╤Б╨╗╤Г╤З╨░╨╣╨╜╤Л╨╝ ╨╛╨▒╤А╨░╨╖╨╛╨╝
+  playSequence: ╨Я╨╛╨║╨░╨╖╤Л╨▓╨░╤В╤М ╨┐╨╛ ╨┐╨╛╤А╤П╨┤╨║╤Г
+  gallery: ╨У╨░╨╗╨╡╤А╨╡╤П ╤Б╨║╤А╨╕╨╜╤И╨╛╤В╨╛╨▓
+  hint: ╨Т ╨╕╨│╤А╨╡ ╨╜╨░╨╢╨╝╨╕╤В╨╡ F2, ╤З╤В╨╛╨▒╤Л ╤Б╨┤╨╡╨╗╨░╤В╤М ╤Б╨║╤А╨╕╨╜╤И╨╛╤В
+  openFolder: ╨Ю╤В╨║╤А╤Л╤В╤М ╨┐╨░╨┐╨║╤Г ╤Б╨║╤А╨╕╨╜╤И╨╛╤В╨╛╨▓
+search:
+  favorate: ╨Ъ╨╛╨╗╨╗╨╡╨║╤Ж╨╕╤П
+  local: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨╛
+  market: ╨Ь╨░╤А╨║╨╡╤В
+  emptyInstalled: ╨Я╨╛╨║╨░ ╨╜╨╕╤З╨╡╨│╨╛ ╨╜╨╡ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨╛
+  browseMarket: ╨Ю╤В╨║╤А╤Л╤В╤М ╨╝╨░╤А╨║╨╡╤В
+  noResults: ╨Э╨╕╤З╨╡╨│╨╛ ╨╜╨╡ ╨╜╨░╨╣╨┤╨╡╨╜╨╛
+  pageSize: ╨а╨╡╨╖╤Г╨╗╤М╤В╨░╤В╨╛╨▓ ╨╜╨░ ╤Б╤В╤А╨░╨╜╨╕╤Ж╨╡
+server:
+  acceptingMinecraftVersion: ╨Я╤А╨╕╨╜╤П╤В╨╕╨╡ ╨▓╨╡╤А╤Б╨╕╨╕ Minecraft
+  creationHint: ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨╖╨░╨┐╨╛╨╗╨╜╨╕╤В╨╡ ╨░╨┤╤А╨╡╤Б ╤Б╨╡╤А╨▓╨╡╤А╨░ ╨╕ ╨┐╤А╨╛╤В╨╡╤Б╤В╨╕╤А╤Г╨╣╤В╨╡ ╤Б╨╡╤А╨▓╨╡╤А
+  expectedVersions: ╨Я╨╛╨┤╨┤╨╡╤А╨╢╨╕╨▓╨░╨╡╨╝╤Л╨╡ ╨▓╨╡╤А╤Б╨╕╨╕
+  export: ╨н╨║╤Б╨┐╨╛╤А╤В╨╜╤Л╨╣ ╤Б╨╡╤А╨▓╨╡╤А
+  exportNoFilesHint: '╨д╨░╨╣╨╗╤Л ╤Б╨╡╤А╨▓╨╡╤А╨░ ╨╜╨╡ ╨╜╨░╨╣╨┤╨╡╨╜╤Л.
+
+    ╨Т╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨╖╨░╨┐╤Г╤Б╤В╨╕╤В╤М ╤Б╨╡╤А╨▓╨╡╤А ╨╜╨░ ╨╗╨╛╨║╨░╨╗╨╡ ╨╛╨┤╨╕╨╜ ╤А╨░╨╖, ╤З╤В╨╛╨▒╤Л ╨│╨╡╨╜╨╡╤А╨╕╤А╨╛╨▓╨░╤В╤М ╨╜╨╡╨║╨╛╤В╨╛╤А╤Л╨╡ ╤Д╨░╨╣╨╗╤Л.'
+  exportOption: ╨Я╨░╤А╨░╨╝╨╡╤В╤А╤Л ╤Н╨║╤Б╨┐╨╛╤А╤В╨░ ╤Б╨╡╤А╨▓╨╡╤А╨░
+  exportSSHAuthenticationFailed: '╨Т╤Б╨╡ ╨╝╨╡╤В╨╛╨┤╤Л ╨░╤Г╤В╨╡╨╜╤В╨╕╤Д╨╕╨║╨░╤Ж╨╕╨╕ ╨╜╨╡ ╤Г╨┤╨░╨╗╨╕╤Б╤М.
+
+    ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨┐╤А╨╛╨▓╨╡╤А╤М╤В╨╡ ╨╕╨╝╤П ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П/╨┐╨░╤А╨╛╨╗╤М ╨╕╨╗╨╕ ╨╖╨░╨║╤А╤Л╤В╤Л╨╣ ╨║╨╗╤О╤З.'
+  exportSSHOptions: SSH ╨┐╨░╤А╨░╨╝╨╡╤В╤А╤Л
+  exportSSHPrivateKeyPath: SSH Private Key Path
+  exportSSHRemotePath: ╨г╨┤╨░╨╗╨╡╨╜╨╜╤Л╨╣ ╨┐╤Г╤В╤М ╤Б╨╡╤А╨▓╨╡╤А╨░
+  exportToFolder: ╨н╨║╤Б╨┐╨╛╤А╤В ╨▓ ╨┐╨░╨┐╨║╤Г
+  filterVersion: ╨д╨╕╨╗╤М╤В╤А ╤Б╨╡╤А╨▓╨╡╤А ╨╛╤В╨▓╨╡╤В╨╕╨╗ Minecraft ╨▓╨╡╤А╤Б╨╕╤П
+  host: ╨е╨╛╤Б╤В
+  hostHint: ╨е╨╛╤Б╤В (╤Б ╨┐╨╛╤А╤В╨╛╨╝) ╤Б╨╡╤А╨▓╨╡╤А╨░
+  hostRequired: ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨▓╨▓╨╡╨┤╨╕╤В╨╡ IP -╨░╨┤╤А╨╡╤Б ╤Б╨╡╤А╨▓╨╡╤А╨░
+  ipAddress: IP-╨░╨┤╤А╨╡╤Б
+  maxPlayers: ╨Ь╨░╨║╤Б╨╕╨╝╤Г╨╝ ╨╕╨│╤А╨╛╨║╨╛╨▓r
+  motd: ╨б╨╡╤А╨▓╨╡╤А MOTD
+  nogui: ╨Э╨╡╤В ╨│╤А╨░╤Д╨╕╤З╨╡╤Б╨║╨╛╨│╨╛ ╨╕╨╜╤В╨╡╤А╤Д╨╡╨╣╤Б╨░ ╤Б╨╡╤А╨▓╨╡╤А╨░
+  onlineMode: ╨Ю╨╜╨╗╨░╨╣╨╜ ╤А╨╡╨╢╨╕╨╝
+  ping: ╨Я╨╕╨╜╨│
+  pings: ╨Я╨╕╨╜╨│
+  players: ╨Ш╨│╤А╨╛╨║╨╕
+  port: ╨Я╨╛╤А╤В
+  unknown: ╨Э╨╡╨╕╨╖╨▓╨╡╤Б╤В╨╜╤Л╨╣ ╤Б╨╡╤А╨▓╨╡╤А
+  unknownDescription: ╨Э╨╡╨╕╨╖╨▓╨╡╤Б╤В╨╜╤Л╨╣ ╤Б╨╡╤А╨▓╨╡╤А. ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨╛╨▒╨╜╨╛╨▓╨╕╤В╨╡.
+  upload: ╨Ч╨░╨│╤А╤Г╨╖╨╕╤В╤М ╤Б╨╡╤А╨▓╨╡╤А
+  version: ╨б╨╡╤А╨▓╨╡╤А ╤В╤А╨╡╨▒╤Г╨╡╤В ╨▓╨╡╤А╤Б╨╕╤О
+  versionHint: ╨Т╨╡╤А╤Б╨╕╤П Minecraft ╨┤╨╗╤П ╨┐╨╕╨╜╨│╨░
+  addServer: Add Server
+  address: Server Address
+  addressHint: e.g. mc.hypixel.net
+  bindUpstream: Bind as upstream
+  boundUpstream: Server upstream bound
+  boundUpstreamHint: This instance follows the bound server's Minecraft version.
+  editServer: Edit Server
+  emptyHint: No servers in this instance's servers.dat yet. Add one to get started.
+  entryCount: '{count} server | {count} servers'
+  launchClient: Launch client instead
+  launchPinned: Pinned
+  launchTargetHint: This instance launches straight into the pinned server. Switch
+    back to the client?
+  nameHint: Display name shown in the Multiplayer list
+  pin: Pin server
+  pinAfterSave: Pin as default launch target after save
+  pinnedHeader: 'pinned: {name}'
+  serverName: Server name
+  serversListTitle: Server List
+  unbindUpstream: Unbind
+  unpin: Unpin
+  upstreamUpToDate: Your instance matches the server ({version}).
+  upstreamUpToDateHint: No upgrade needed. Click to re-ping the server.
+  upstreamUpdateAvailable: Server now runs Minecraft {version}. Click to apply.
+  upstreamUpdateHint: Applies the suggested Minecraft version to this instance.
+  useAsUpstreamHint: The instance will follow the server's reported Minecraft version.
+serverStatus:
+  nohost: ┬з4╨Э╨╡╨▓╨╛╨╖╨╝╨╛╨╢╨╜╨╛ ╨╜╨░╨╣╤В╨╕ ╤Е╨╛╤Б╤В!
+  ping: ╨б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡...
+  refuse: ┬з4╨б╨╡╤А╨▓╨╡╤А ╨╛╤В╨║╨░╨╖╨░╨╗!
+  timeout: ┬з4╨Т╤Л╤И╨╗╨╛ ╨▓╤А╨╡╨╝╤П ╨┐╨╛╨┤╨║╨╗╤О╤З╨╡╨╜╨╕╤П ╨║ ╤Б╨╡╤А╨▓╨╡╤А╤Г!
+setting:
+  themeStore:
+    name: ╨е╤А╨░╨╜╨╕╨╗╨╕╤Й╨╡ ╤В╨╡╨╝
+    description: ╨б╨╛╤Е╤А╨░╨╜╤П╨╣╤В╨╡ ╨╕ ╤Г╨┐╤А╨░╨▓╨╗╤П╨╣╤В╨╡ ╨│╨╗╨╛╨▒╨░╨╗╤М╨╜╤Л╨╝╨╕ ╤В╨╡╨╝╨░╨╝╨╕
+    savedThemes: ╨б╨╛╤Е╤А╨░╨╜╤С╨╜╨╜╤Л╨╡ ╤В╨╡╨╝╤Л
+    noSavedThemes: ╨б╨╛╤Е╤А╨░╨╜╤С╨╜╨╜╤Л╤Е ╤В╨╡╨╝ ╨┐╨╛╨║╨░ ╨╜╨╡╤В
+    saveToStore: ╨б╨╛╤Е╤А╨░╨╜╨╕╤В╤М ╨▓ ╤Е╤А╨░╨╜╨╕╨╗╨╕╤Й╨╡
+    saveDialogTitle: ╨б╨╛╤Е╤А╨░╨╜╨╕╤В╤М ╤В╨╡╨╝╤Г
+    themeName: ╨Э╨░╨╖╨▓╨░╨╜╨╕╨╡ ╤В╨╡╨╝╤Л
+    themeNameHint: ╨Ш╨╝╤П ╨┤╨╗╤П ╤Б╨╛╤Е╤А╨░╨╜╨╡╨╜╨╕╤П ╤Н╤В╨╛╨╣ ╤В╨╡╨╝╤Л
+    loadConfirmTitle: ╨Ч╨░╨╝╨╡╨╜╨╕╤В╤М ╤В╨╡╨║╤Г╤Й╤Г╤О ╤В╨╡╨╝╤Г?
+    loadConfirmMessage: ╨Ч╨░╨│╤А╤Г╨╖╨║╨░ ╤Б╨╛╤Е╤А╨░╨╜╤С╨╜╨╜╨╛╨╣ ╤В╨╡╨╝╤Л ╨╖╨░╨╝╨╡╨╜╨╕╤В ╤В╨╡╨║╤Г╤Й╤Г╤О. ╨Я╤А╨╕ ╨╜╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╨╛╤Б╤В╨╕
+      ╤Б╨┤╨╡╨╗╨░╨╣╤В╨╡ ╤А╨╡╨╖╨╡╤А╨▓╨╜╤Г╤О ╨║╨╛╨┐╨╕╤О.
+    loadTheme: ╨Ч╨░╨│╤А╤Г╨╖╨╕╤В╤М ╤В╨╡╨╝╤Г
+  about: NeoTerra Launcher Haqida
+  aboutBmclDescription: BMCL API ╨┐╤А╨╡╨┤╨╛╤Б╤В╨░╨▓╨╗╤П╨╡╤В ╤Г╨┤╨╛╨▒╨╜╤Л╨╡ ╨╖╨░╨│╤А╤Г╨╖╨║╨╕ ╨┤╨╗╤П ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╨╡╨╣
+    ╨╝╨░╤В╨╡╤А╨╕╨║╨░
+  aboutContributors: ЁЯзСтАНЁЯТ╗ ╨г╤З╨░╤Б╤В╨╜╨╕╨║╨╕ ЁЯзСтАНЁЯТ╗
+  aboutDenoDescription: NeoTerra Launcher ╨╕╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╡╤В ╤Б╨╡╤А╨▓╨╡╤А╨╜╤Г╤О ╨┐╨╗╨░╤В╤Д╨╛╤А╨╝╤Г Deno Deploy
+    ╨┤╨╗╤П ╨┐╤А╨╕╨╗╨╛╨╢╨╡╨╜╨╕╨╣ JavaScript
+  aboutLicense: MIT Litsenziyasi
+  aboutLicenseInfo: ╨С╨╗╨░╨│╨╛╨┤╨░╤А╨╕╨╝ SignPath.io ╨╖╨░ ╨▒╨╡╤Б╨┐╨╗╨░╤В╨╜╤Г╤О ╨┐╨╛╨┤╨┐╨╕╤Б╤М ╨║╨╛╨┤╨░ Windows
+  aboutSponsors: ЁЯШЗ ╨б╨┐╨╛╨╜╤Б╨╛╤А╤Л ЁЯШЗ
+  advancedJavaOptions: ╨а╨░╤Б╤И╨╕╤А╨╡╨╜╨╜╤Л╨╡ ╨┐╨░╤А╨░╨╝╨╡╤В╤А╤Л Java
+  advancedSettings: ╨а╨░╤Б╤И╨╕╤А╨╡╨╜╨╜╤Л╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕
+  advancedSettingsHint: ╨Ю╨┐╨░╤Б╨╜╨░╤П ╨╖╨╛╨╜╨░ - ╤Б╨▒╤А╨╛╤Б ╨╕╨╗╨╕ ╤Г╨┐╤А╨░╨▓╨╗╨╡╨╜╨╕╨╡ ╨┤╨░╨╜╨╜╤Л╨╝╨╕ ╨╗╨░╤Г╨╜╤З╨╡╤А╨░
+  aiAgentApiKey: API-╨║╨╗╤О╤З AI Agent
+  aiAgentApiKeyDescription: ╨е╤А╨░╨╜╨╕╤В╤Б╤П ╨╗╨╛╨║╨░╨╗╤М╨╜╨╛ ╨╜╨░ ╤Н╤В╨╛╨╝ ╤Г╤Б╤В╤А╨╛╨╣╤Б╤В╨▓╨╡ ╨╕ ╨╕╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╡╤В╤Б╤П ╨┤╨╗╤П
+    ╨╖╨░╨┐╤А╨╛╤Б╨╛╨▓ ╨░╨│╨╡╨╜╤В╨░.
+  aiAgentEndpoint: Endpoint AI Agent
+  aiAgentEndpointDescription: URL endpoint ╨┤╨╗╤П chat completions.
+  aiAgentModel: ╨Ь╨╛╨┤╨╡╨╗╤М AI Agent
+  aiAgentModelDescription: ╨Ш╨╝╤П ╨╝╨╛╨┤╨╡╨╗╨╕ ╨┤╨╗╤П ╨╖╨░╨┐╤А╨╛╤Б╨╛╨▓ chat completion.
+  apiSets:
+    auto: ╨Р╨▓╤В╨╛╨╝╨░╤В╨╕╤З╨╡╤Б╨║╨╕ (╨╛╨┐╤А╨╡╨┤╨╡╨╗╤П╨╡╤В╤Б╤П ╤Б╨╡╤В╤М╤О)
+    official: ╨Ю╤Д╨╕╤Ж╨╕╨░╨╗╤М╨╜╤Л╨╣ (Mojang)
+  appearance: Dizayn va Tashqi Ko'rinish
+  appearanceDescription: ╨Э╨░╤Б╤В╤А╨╛╨╣╨║╨░ ╨▓╨╜╨╡╤И╨╜╨╡╨│╨╛ ╨▓╨╕╨┤╨░ ╨╗╨░╤Г╨╜╤З╨╡╤А╨░
+  appxUpdateHint: ╨Ы╨░╤Г╨╜╤З╨╡╤А ╤Б╨║╨░╤З╨░╨╡╤В ╨╕ ╨╖╨░╨┐╤Г╤Б╤В╨╕╤В ╤Г╤Б╤В╨░╨╜╨╛╨▓╤Й╨╕╨║. ╨Х╤Б╨╗╨╕ ╨▓╤Б╨┐╨╗╤Л╨▓╨░╤О╤Й╨╡╨╡ ╨╛╨║╨╜╨╛ ╤Г╤Б╤В╨░╨╜╨╛╨▓╤Й╨╕╨║╨░
+    ╨╜╨╡ ╨╛╤В╨║╤А╨╛╨╡╤В╤Б╤П ╨░╨▓╤В╨╛╨╝╨░╤В╨╕╤З╨╡╤Б╨║╨╕, ╨┐╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨╖╨░╨┐╤Г╤Б╤В╨╕╤В╨╡ ╨╡╨│╨╛ ╨▓╤А╤Г╤З╨╜╤Г╤О.
+  authenticationSettings: ╨Р╤Г╤В╨╡╨╜╤В╨╕╤Д╨╕╨║╨░╤Ж╨╕╤П
+  backdropBlur: ╨д╨╛╨╜ ╤А╨░╨╖╨╝╤Л╤В╨╕╨╡
+  backgroundColorAbove: ╨Я╨╛╨║╨░╨╖╨░╤В╤М ╤Ж╨▓╨╡╤В ╤Д╨╛╨╜╨░ ╨║╨░╨║ ╨╜╨░╨╗╨╛╨╢╨╡╨╜╨╕╨╡
+  backgroundColorAboveDescription: ╨н╤В╨╛ ╨┐╨╛╨╖╨▓╨╛╨╗╨╕╤В ╨╛╤В╨╛╨▒╤А╨░╨╖╨╕╤В╤М ╤Ж╨▓╨╡╤В ╤Д╨╛╨╜╨░ ╨╜╨░╨┤ ╤Д╨╛╨╜╨╛╨▓╤Л╨╝ ╤Н╤Д╤Д╨╡╨║╤В╨╛╨╝.
+  backgroundImage: ╨д╨╛╨╜╨╛╨▓╨╛╨╡ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡
+  backgroundImageClear: ╨Ю╤З╨╕╤Б╤В╨╕╤В╤М
+  backgroundImageDescription: ╨Т╤Л╨▒╨╡╤А╨╕╤В╨╡ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨▓ ╨║╨░╤З╨╡╤Б╤В╨▓╨╡ ╤Д╨╛╨╜╨░ ╨╕╨╗╨╕ ╨╛╤З╨╕╤Б╤В╨╕╤В╨╡ ╨╡╨│╨╛.
+  backgroundImageFit:
+    contain: ╨Т╨╝╨╡╤Б╤В╨╕╤В╤М
+    cover: ╨Ю╨▒╤А╨╡╨╖╨░╤В╤М
+    name: ╨Я╨╛╨┤╨╛╨│╨╜╨░╤В╤М
+  backgroundImageUrl: URL-╨░╨┤╤А╨╡╤Б ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╤П
+  backgroundImageUrlPlaceholder: ╨Т╨▓╨╡╨┤╨╕╤В╨╡ URL-╨░╨┤╤А╨╡╤Б HTTP/HTTPS ╨┤╨╗╤П ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╤П
+  backgroundMusic: ╨д╨╛╨╜╨╛╨▓╨░╤П ╨╝╤Г╨╖╤Л╨║╨░
+  backgroundMusicUrl: URL-╨░╨┤╤А╨╡╤Б ╨╝╤Г╨╖╤Л╨║╨╕
+  backgroundMusicUrlPlaceholder: ╨Т╨▓╨╡╨┤╨╕╤В╨╡ URL-╨░╨┤╤А╨╡╤Б HTTP/HTTPS ╨┤╨╗╤П ╨╝╤Г╨╖╤Л╨║╨╕
+  backgroundType: ╨д╨╛╨╜╨╛╨▓╨╛╨╣ ╤Н╤Д╤Д╨╡╨║╤В
+  backgroundTypeDescription: ╨Я╨╛╨║╨░╨╖╤Л╨▓╨░╤В╤М ╤Б╨┐╨╡╤Ж╨╕╨░╨╗╤М╨╜╤Л╨╣ ╤Н╤Д╤Д╨╡╨║╤В ╨╜╨░ ╤Д╨╛╨╜╨╡ (╤Н╤В╨╛ ╨╝╨╛╨╢╨╡╤В ╨┐╨╛╨▓╨╗╨╕╤П╤В╤М
+    ╨╜╨░ ╨┐╤А╨╛╨╕╨╖╨▓╨╛╨┤╨╕╤В╨╡╨╗╤М╨╜╨╛╤Б╤В╤М).
+  backgroundTypes:
+    halo: ╨Ю╤А╨╡╨╛╨╗
+    image: ╨Ш╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡
+    none: ╨Э╨╡╤В
+    particle: ╨з╨░╤Б╤В╨╕╤Ж╤Л
+    video: ╨Т╨╕╨┤╨╡╨╛
+  backgroundVideo: ╨д╨╛╨╜╨╛╨▓╨╛╨╡ ╨▓╨╕╨┤╨╡╨╛
+  backgroundVideoDescription: ╨Ш╨╖╨╝╨╡╨╜╨╕╤В╤М ╨╕╨╗╨╕ ╨╛╤З╨╕╤Б╤В╨╕╤В╤М ╨▓╨╕╨┤╨╡╨╛.
+  backgroundVideoUrl: URL-╨░╨┤╤А╨╡╤Б ╨▓╨╕╨┤╨╡╨╛
+  backgroundVideoUrlPlaceholder: ╨Т╨▓╨╡╨┤╨╕╤В╨╡ URL-╨░╨┤╤А╨╡╤Б HTTP/HTTPS ╨┤╨╗╤П ╨▓╨╕╨┤╨╡╨╛
+  backgroundVideoVolume: ╨У╤А╨╛╨╝╨║╨╛╤Б╤В╤М
+  backgroundVideoVolumeDescription: ╨Я╨╡╤А╨╡╤В╨░╤Й╨╕╤В╨╡, ╤З╤В╨╛╨▒╤Л ╨╛╤В╤А╨╡╨│╤Г╨╗╨╕╤А╨╛╨▓╨░╤В╤М ╨│╤А╨╛╨╝╨║╨╛╤Б╤В╤М.
+  browseRoot: ╨Ш╨╖╨╝╨╡╨╜╨╕╤В╤М
+  checkUpdate: ╨Я╤А╨╛╨▓╨╡╤А╨╕╤В╤М ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╨╡
+  colorTheme:
+    appBarColor: ╨ж╨▓╨╡╤В ╨┐╨░╨╜╨╡╨╗╨╕ ╨┐╤А╨╕╨╗╨╛╨╢╨╡╨╜╨╕╤П
+    backgroundColor: ╨ж╨▓╨╡╤В ╤Д╨╛╨╜╨░
+    cardColor: ╨ж╨▓╨╡╤В ╨║╨░╤А╤В╨╛╤З╨║╨╕
+    description: ╨Ш╨╖╨╝╨╡╨╜╨╕╤В╤М ╤Ж╨▓╨╡╤В╨░ ╨▓ ╤В╨╡╨╝╨╡
+    errorColor: ╨ж╨▓╨╡╤В ╨╛╤И╨╕╨▒╨║╨╕
+    name: ╨ж╨▓╨╡╤В ╤В╨╡╨╝╤Л ╨╕ ╤А╨░╨╖╨╝╤Л╤В╨╕╨╡
+    primaryColor: ╨Ю╤Б╨╜╨╛╨▓╨╜╨╛╨╣ ╤Ж╨▓╨╡╤В
+    sideBarColor: ╨ж╨▓╨╡╤В ╨▒╨╛╨║╨╛╨▓╨╛╨╣ ╨┐╨░╨╜╨╡╨╗╨╕
+    warningColor: ╨ж╨▓╨╡╤В ╨┐╤А╨╡╨┤╤Г╨┐╤А╨╡╨╢╨┤╨╡╨╜╨╕╤П
+  darkTheme: ╨в╨╡╨╝╨░
+  darkThemeDescription: ╨Т╤Л╨▒╨╡╤А╨╕╤В╨╡ ╤В╤С╨╝╨╜╤Г╤О ╨╕╨╗╨╕ ╤Б╨▓╨╡╤В╨╗╤Г╤О ╤В╨╡╨╝╤Г.
+  devModeLabel: ╨а╨Р╨Ч╨а╨Р╨С╨Ю╨в╨Ъ╨Р
+  developerMode: ╨а╨╡╨╢╨╕╨╝ ╤А╨░╨╖╤А╨░╨▒╨╛╤В╤З╨╕╨║╨░
+  developerModeDescription: ╨н╤В╨░ ╨╛╨┐╤Ж╨╕╤П ╨┐╤А╨╡╨┤╨╜╨░╨╖╨╜╨░╤З╨╡╨╜╨░ ╨┤╨╗╤П ╤В╨╡╤Б╤В╨╕╤А╨╛╨▓╨░╨╜╨╕╤П ╨▓╨░╤И╨╕╤Е ╤Б╨╛╨▒╤Б╤В╨▓╨╡╨╜╨╜╤Л╤Е
+    ╨╝╨╛╨┤╨╛╨▓.
+  disableTelemetry: ╨Ю╤В╨║╨╗╤О╤З╨╕╤В╤М ╤В╨╡╨╗╨╡╨╝╨╡╤В╤А╨╕╤О
+  disableTelemetryDescription: ╨Х╤Б╨╗╨╕ ╨▓╨║╨╗╤О╤З╨╡╨╜╨╛, NeoTerra Launcher ╨▒╤Г╨┤╨╡╤В ╤Б╨╛╨▒╨╕╤А╨░╤В╤М ╨╕╨╜╤Д╨╛╤А╨╝╨░╤Ж╨╕╤О
+    ╨╛ ╨╖╨░╨┐╤Г╤Б╨║╨╡ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░ ╨╕ ╨▓╤Е╨╛╨┤╨░ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П.
+  enableDedicatedGPUOptimization: ╨Э╨░╨╖╨╜╨░╤З╨╕╤В╤М ╨▓╤Л╨┤╨╡╨╗╨╡╨╜╨╜╤Л╨╣ ╨│╤А╨░╤Д╨╕╤З╨╡╤Б╨║╨╕╨╣ ╨┐╤А╨╛╤Ж╨╡╤Б╤Б╨╛╤А
+  enableDedicatedGPUOptimizationDescription: ╨н╤В╨░ ╨╛╨┐╤Ж╨╕╤П ╨╜╨░╨╖╨╜╨░╤З╨╕╤В ╨▓╤Л╨┤╨╡╨╗╨╡╨╜╨╜╤Л╨╣ ╨│╤А╨░╤Д╨╕╤З╨╡╤Б╨║╨╕╨╣
+    ╨┐╤А╨╛╤Ж╨╡╤Б╤Б╨╛╤А ╨┐╤А╨╛╤Ж╨╡╤Б╤Б╤Г Minecraft.
+  enableDiscord: ╨Т╨║╨╗╤О╤З╨╕╤В╤М ╨░╨║╤В╨╕╨▓╨╜╨╛╤Б╤В╤М Discord
+  enableDiscordDescription: ╨н╤В╨░ ╨╛╨┐╤Ж╨╕╤П ╨▒╤Г╨┤╨╡╤В ╨┐╨╛╨║╨░╨╖╤Л╨▓╨░╤В╤М ╤Б╤В╨░╤В╤Г╤Б ╨╗╨░╤Г╨╜╤З╨╡╤А╨░ ╨▓ Discord.
+  enterUrl: ╨Т╨▓╨╡╨┤╨╕╤В╨╡ URL
+  exportSettings: ╨н╨║╤Б╨┐╨╛╤А╤В ╨╜╨░╤Б╤В╤А╨╛╨╡╨║
+  exportSettingsHint: ╨б╨╛╤Е╤А╨░╨╜╨╕╤В╤М ╤В╨╡╨║╤Г╤Й╨╕╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕ ╨▓ ╤Д╨░╨╣╨╗
+  general: Asosiy Sozlamalar
+  githubRelease: ╨а╨╡╨╗╨╕╨╖ GitHub
+  globalJava: ╨Я╤А╨╡╨┤╨┐╨╛╤З╨╕╤В╨░╨╡╨╝╨░╤П Java
+  globalJavaHint: ╨Т ╨░╨▓╤В╨╛╨╝╨░╤В╨╕╤З╨╡╤Б╨║╨╛╨╝ ╤А╨╡╨╢╨╕╨╝╨╡ ╤Б╨╜╨░╤З╨░╨╗╨░ ╨╕╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╡╤В╤Б╤П ╤Н╤В╨░ Java ╨╕ ╤В╨╛╨╗╤М╨║╨╛ ╨┐╤А╨╕
+    ╨╜╨╡╤Б╨╛╨▓╨╝╨╡╤Б╤В╨╕╨╝╨╛╤Б╤В╨╕ ╤Б ╨▓╨╡╤А╤Б╨╕╨╡╨╣ ╨╕╨│╤А╤Л ╨▓╤Л╨┐╨╛╨╗╨╜╤П╨╡╤В╤Б╤П ╨┐╨╡╤А╨╡╤Е╨╛╨┤ ╨║ ╨░╨▓╤В╨╛╨╛╨┐╤А╨╡╨┤╨╡╨╗╨╡╨╜╨╕╤О.
+  globalSetting: ╨У╨╗╨╛╨▒╨░╨╗╤М╨╜╤Л╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+  globalSettingHint: ╨н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А ╨▒╤Г╨┤╨╡╤В ╨╕╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╤М ╤Н╤В╨╕ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕ ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О.
+  importSettings: ╨Ш╨╝╨┐╨╛╤А╤В ╨╜╨░╤Б╤В╤А╨╛╨╡╨║
+  importSettingsHint: ╨Ч╨░╨│╤А╤Г╨╖╨╕╤В╤М ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕ ╨╕╨╖ ╤А╨░╨╜╨╡╨╡ ╤Н╨║╤Б╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╨╜╨╜╨╛╨│╨╛ ╤Д╨░╨╣╨╗╨░
+  instanceTheme:
+    activeDescription: '╨н╤В╨╛╤В ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А ╨╕╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╡╤В ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤М╤Б╨║╤Г╤О ╤В╨╡╨╝╤Г.
+
+      ╨Т╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╤Г╨┤╨░╨╗╨╕╤В╤М ╨╡╨│╨╛, ╤З╤В╨╛╨▒╤Л ╨╕╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╤М ╨│╨╗╨╛╨▒╨░╨╗╤М╨╜╤Г╤О ╤В╨╡╨╝╤Г.'
+    description: '╨Т╨║╨╗╤О╤З╨╕╤В╨╡ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤М╤Б╨║╤Г╤О ╤В╨╡╨╝╤Г ╨┤╨╗╤П ╤Н╤В╨╛╨│╨╛ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░.
+
+      ╨н╤В╨╛ ╤Б╨╛╨╖╨┤╨░╤Б╤В ╨║╨╛╨┐╨╕╤О ╤В╨╡╨║╤Г╤Й╨╡╨╣ ╨│╨╗╨╛╨▒╨░╨╗╤М╨╜╨╛╨╣ ╤В╨╡╨╝╤Л.'
+    name: ╨в╨╡╨╝╨░ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+  language: ╨п╨╖╤Л╨║
+  languageDescription: ╨Ю╤В╨╛╨▒╤А╨░╨╢╨░╨╡╨╝╤Л╨╣ ╤П╨╖╤Л╨║ ╨╕╨╜╤В╨╡╤А╤Д╨╡╨╣╤Б╨░.
+  latestVersion: ╨Я╨╛╤Б╨╗╨╡╨┤╨╜╤П╤П ╨▓╨╡╤А╤Б╨╕╤П
+  layout:
+    default: ╨б╤В╨░╨╜╨┤╨░╤А╤В╨╜╤Л╨╣
+    focus: ╨Ф╨╗╤П ╤Д╨╛╨║╤Г╤Б╨╕╤А╨╛╨▓╨║╨╕
+  layoutDescription: ╨Т╨╕╨┤ ╨╕╨╜╤В╨╡╤А╤Д╨╡╨╣╤Б╨░ ╨╗╨░╤Г╨╜╤З╨╡╤А╨░, ╨┐╤А╨╡╨┤╤Б╤В╨░╨▓╨╗╤П╤О╤Й╨╕╨╣ ╤А╨░╨╖╨╗╨╕╤З╨╜╤Г╤О ╨╗╨╛╨│╨╕╨║╤Г ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤М╤Б╨║╨╛╨│╨╛
+    ╨╕╨╜╤В╨╡╤А╤Д╨╡╨╣╤Б╨░.
+  layoutTitle: ╨Т╨╕╨┤ ╨╕╨╜╤В╨╡╤А╤Д╨╡╨╣╤Б╨░
+  linuxEnableDedicatedGPUOptimization: ╨Э╨░╨╖╨╜╨░╤З╨╡╨╜╨╕╨╡ ╨▓╤Л╨┤╨╡╨╗╨╡╨╜╨╜╨╛╨│╨╛ ╨│╤А╨░╤Д╨╕╤З╨╡╤Б╨║╨╛╨│╨╛ ╨┐╤А╨╛╤Ж╨╡╤Б╤Б╨╛╤А╨░
+  linuxEnableDedicatedGPUOptimizationDescription: ╨н╤В╨░ ╨╛╨┐╤Ж╨╕╤П ╨╜╨░╨╖╨╜╨░╤З╨░╨╡╤В ╨▓╤Л╨┤╨╡╨╗╨╡╨╜╨╜╤Л╨╣ GPU
+    ╨┤╨╗╤П ╨┐╤А╨╛╤Ж╨╡╤Б╤Б╨░ Minecraft.
+  linuxTitlebar: ╨Э╨░╤В╨╕╨▓╨╜╤Л╨╣ ╨╖╨░╨│╨╛╨╗╨╛╨▓╨╛╨║ ╨╛╨║╨╜╨░
+  linuxTitlebarDescription: ╨Ш╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╤М ╨╜╨░╤В╨╕╨▓╨╜╤Л╨╣ ╨╖╨░╨│╨╛╨╗╨╛╨▓╨╛╨║ ╨╛╨║╨╜╨░ Linux ╨┤╨╗╤П ╨╗╨░╤Г╨╜╤З╨╡╤А╨░.
+  livePreview: ╨Ц╨╕╨▓╨╛╨╣ ╨┐╤А╨╡╨┤╨┐╤А╨╛╤Б╨╝╨╛╤В╤А
+  location: ╨Ь╨╡╤Б╤В╨╛ ╨┤╨╗╤П ╤Е╤А╨░╨╜╨╡╨╜╨╕╤П ╤Д╨░╨╣╨╗╨╛╨▓ ╨╗╨░╤Г╨╜╤З╨╡╤А╨░
+  manualUpdateHint: ╨Т╨╡╤А╤Б╨╕╤П ╨╜╨╡ ╨╝╨╛╨╢╨╡╤В ╨▒╤Л╤В╤М ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨░ ╨░╨▓╤В╨╛╨╝╨░╤В╨╕╤З╨╡╤Б╨║╨╕. ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╤Б╨║╨░╤З╨░╨╣╤В╨╡
+    ╨┐╤Г╤Б╨║╨╛╨▓╤Г╤О ╤Г╤Б╤В╨░╨╜╨╛╨▓╨║╤Г ╨╖╨░╨╜╨╛╨▓╨╛ ╤Б ╨╛╤Д╨╕╤Ж╨╕╨░╨╗╤М╨╜╨╛╨│╨╛ ╤Б╨░╨╣╤В╨░!
+  maunalUpdateHint: ╨Ф╨░╨╜╨╜╨░╤П ╨▓╨╡╤А╤Б╨╕╤П ╨╜╨╡ ╨╝╨╛╨╢╨╡╤В ╨▒╤Л╤В╤М ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨░ ╨░╨▓╤В╨╛╨╝╨░╤В╨╕╤З╨╡╤Б╨║╨╕. ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░,
+    ╤Б╨║╨░╤З╨░╨╣╤В╨╡ ╨╗╨░╤Г╨╜╤З╨╡╤А ╤Б ╤Б╨░╨╣╤В╨░ ╨╡╤Й╤С ╤А╨░╨╖!
+  maxSockets: ╨Ь╨░╨║╤Б╨╕╨╝╤Г╨╝ ╤Б╨╛╨║╨╡╤В╨╛╨▓
+  maxSocketsDescription: ╨Ю╨│╤А╨░╨╜╨╕╤З╤М╤В╨╡ ╨║╨╛╨╗╨╕╤З╨╡╤Б╤В╨▓╨╛ ╤Б╨╛╨║╨╡╤В╨╛╨▓ ╨╜╨░ ╤Е╨╛╤Б╤В ╨╕╨╗╨╕ ╨┤╨╗╤П ╨▓╤Б╨╡╤Е. 0 - ╨▒╨╡╨╖
+    ╨╛╨│╤А╨░╨╜╨╕╤З╨╡╨╜╨╕╨╣.
+  maxSocketsTitle: ╨Ь╨░╨║╤Б╨╕╨╝╨░╨╗╤М╨╜╨╛╨╡ ╨║╨╛╨╗╨╕╤З╨╡╤Б╤В╨▓╨╛ HTTP-╤Б╨╛╨║╨╡╤В╨╛╨▓
+  memoryAssignment: ╨Э╨░╨╖╨╜╨░╤З╨╡╨╜╨╕╨╡ ╨┐╨░╨╝╤П╤В╨╕
+  migrateFromOther: ╨Ш╨╝╨┐╨╛╤А╤В ╨╕╨╖ ╨┤╤А╤Г╨│╨╛╨│╨╛ ╨╗╨░╤Г╨╜╤З╨╡╤А╨░
+  minecraftOptions: ╨Э╨░╤Б╤В╤А╨╛╨╣╨║╨╕ Minecraft
+  name: ╨У╨╗╨╛╨▒╨░╨╗╤М╨╜╤Л╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕ | ╨У╨╗╨╛╨▒╨░╨╗╤М╨╜╤Л╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕
+  network: ╨Э╨░╤Б╤В╤А╨╛╨╣╨║╨╕ ╤Б╨╡╤В╨╕
+  newsPosition: ╨Я╨╡╤А╨╡╨╝╨╡╤Б╤В╨╕╤В╤М ╤А╨░╨╖╨┤╨╡╨╗ ╨╜╨╛╨▓╨╛╤Б╤В╨╡╨╣
+  officialWebsite: ╨Ю╤Д╨╕╤Ж╨╕╨░╨╗╤М╨╜╤Л╨╣ ╤Б╨░╨╣╤В
+  particleMode:
+    bubble: ╨Э╨░╨┤╤Г╨▓╨░╨╜╨╕╨╡
+    name: ╨Я╨╛╨▓╨╡╨┤╨╡╨╜╨╕╨╡ ╤З╨░╤Б╤В╨╕╤Ж
+    push: ╨Ф╨╛╨▒╨░╨▓╨╗╨╡╨╜╨╕╨╡
+    remove: ╨г╨┤╨░╨╗╨╡╨╜╨╕╨╡
+    repulse: ╨Ю╤В╤В╨░╨╗╨║╨╕╨▓╨░╨╜╨╕╨╡
+  particleModeDescription: ╨Т╤Л╨▒╨╡╤А╨╕╤В╨╡ ╨┐╨╛╨▓╨╡╨┤╨╡╨╜╨╕╨╡ ╤З╨░╤Б╤В╨╕╤Ж ╨┐╤А╨╕ ╨╜╨░╨╢╨░╤В╨╕╨╕.
+  quickLaunchSettings: ╨С╤Л╤Б╤В╤А╤Л╨╣ ╨╖╨░╨┐╤Г╤Б╨║
+  replaceNative: ╨Ч╨░╨╝╨╡╨╜╨╕╤В╤М ╨╜╨░╤В╨╕╨▓╨╜╤Л╨╡ ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╨╕
+  replaceNativeDescription: ╨Ч╨░╨╝╨╡╨╜╨╕╤В╤М ╨╜╨░╤В╨╕╨▓╨╜╤Л╨╡ ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╨╕ ╨▓ ╤Б╨╛╨╛╤В╨▓╨╡╤В╤Б╤В╨▓╨╕╨╕ ╤Б ╨░╤А╤Е╨╕╤В╨╡╨║╤В╤Г╤А╨╛╨╣
+    ╨▓╨░╤И╨╡╨│╨╛ ╨║╨╛╨╝╨┐╤М╤О╤В╨╡╤А╨░.
+  replaceNatives:
+    all: ╨Т╤Б╨╡
+    legacy: ╨в╨╛╨╗╤М╨║╨╛ ╤Б╤В╨░╤А╤Л╨╡ ╨▓╨╡╤А╤Б╨╕╨╕
+  resetAllSettings: ╨б╨▒╤А╨╛╤Б╨╕╤В╤М ╨▓╤Б╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕
+  resetAllSettingsConfirmMessage: ╨н╤В╨╛ ╨╜╨░╨▓╤Б╨╡╨│╨┤╨░ ╤Г╨┤╨░╨╗╨╕╤В ╨▓╤Б╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕, ╤Г╤З╨╡╤В╨╜╤Л╨╡ ╨╖╨░╨┐╨╕╤Б╨╕,
+    ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╤Л, ╨│╤А╤Г╨┐╨┐╤Л ╨╕ ╨║╤Н╤И╨╕╤А╨╛╨▓╨░╨╜╨╜╤Л╨╡ ╨┤╨░╨╜╨╜╤Л╨╡. ╨н╤В╨╛ ╨┤╨╡╨╣╤Б╤В╨▓╨╕╨╡ ╨╜╨╡╨╗╤М╨╖╤П ╨╛╤В╨╝╨╡╨╜╨╕╤В╤М. ╨Т╤Л ╤Г╨▓╨╡╤А╨╡╨╜╤Л?
+  resetAllSettingsConfirmTitle: ╨б╨▒╤А╨╛╤Б╨╕╤В╤М ╨▓╤Б╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕?
+  resetAllSettingsHint: ╨б╨▒╤А╨╛╤Б╨╕╤В╤М ╨╗╨░╤Г╨╜╤З╨╡╤А ╨┤╨╛ ╨╖╨░╨▓╨╛╨┤╤Б╨║╨╕╤Е ╨╜╨░╤Б╤В╤А╨╛╨╡╨║ (╤Г╨┤╨░╨╗╤П╨╡╤В ╨▓╤Б╨╡)
+  resetAllSettingsSuccess: ╨Т╤Б╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕ ╨▒╤Л╨╗╨╕ ╤Б╨▒╤А╨╛╤И╨╡╨╜╤Л. ╨Ы╨░╤Г╨╜╤З╨╡╤А ╨┐╨╡╤А╨╡╨╖╨░╨┐╤Г╤Б╤В╨╕╤В╤Б╤П.
+  resetSettingsError: '╨Ю╤И╨╕╨▒╨║╨░ ╨┐╤А╨╕ ╤Б╨▒╤А╨╛╤Б╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╡╨║: {error}'
+  resetToDefault: ╨б╨▒╤А╨╛╤Б╨╕╤В╤М ╨║ ╨╖╨╜╨░╤З╨╡╨╜╨╕╤П╨╝ ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О
+  select: ╨Ш╨╖╨╝╨╡╨╜╨╕╤В╤М
+  settingsExported: ╨Э╨░╤Б╤В╤А╨╛╨╣╨║╨╕ ╤Г╤Б╨┐╨╡╤И╨╜╨╛ ╤Н╨║╤Б╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╨╜╤Л
+  settingsImportError: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╨╕╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕. ╨Я╤А╨╛╨▓╨╡╤А╤М╤В╨╡ ╤Д╨╛╤А╨╝╨░╤В ╤Д╨░╨╣╨╗╨░.
+  settingsImported: ╨Э╨░╤Б╤В╤А╨╛╨╣╨║╨╕ ╤Г╤Б╨┐╨╡╤И╨╜╨╛ ╨╕╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╨╜╤Л
+  settingsReloadHint: ╨Ы╨░╤Г╨╜╤З╨╡╤А ╨┐╨╡╤А╨╡╨╖╨░╨│╤А╤Г╨╖╨╕╤В╤Б╤П ╨┤╨╗╤П ╨┐╤А╨╕╨╝╨╡╨╜╨╡╨╜╨╕╤П ╨▓╤Б╨╡╤Е ╨╜╨░╤Б╤В╤А╨╛╨╡╨║.
+  showNewsHeader: ╨Я╨╛╨║╨░╨╖╨░╤В╤М ╨▓╨╕╤В╤А╨╕╨╜╤Г ╨╜╨╛╨▓╨╛╤Б╤В╨╡╨╣
+  showRoot: ╨Ю╤В╨║╤А╤Л╤В╤М ╨┐╨░╨┐╨║╤Г
+  sidebarAlign: ╨Т╤Л╤А╨░╨▓╨╜╨╕╨▓╨░╨╜╨╕╨╡ ╨▒╨╛╨║╨╛╨▓╨╛╨╣ ╨┐╨░╨╜╨╡╨╗╨╕
+  sidebarAutoHide: ╨Р╨▓╤В╨╛-╤Б╨║╤А╤Л╤В╨╕╨╡ ╨▒╨╛╨║╨╛╨▓╨╛╨╣ ╨┐╨░╨╜╨╡╨╗╨╕
+  sidebarAutoHideHint: ╨б╨║╤А╤Л╨▓╨░╤В╤М ╨▒╨╛╨║╨╛╨▓╤Г╤О ╨┐╨░╨╜╨╡╨╗╤М ╨░╨▓╤В╨╛╨╝╨░╤В╨╕╤З╨╡╤Б╨║╨╕ ╨╕ ╨┐╨╛╨║╨░╨╖╤Л╨▓╨░╤В╤М ╨┐╤А╨╕ ╨╜╨░╨▓╨╡╨┤╨╡╨╜╨╕╨╕
+  sidebarClassic: ╨Ъ╨╗╨░╤Б╤Б╨╕╤З╨╡╤Б╨║╨╕╨╣
+  sidebarNotch: Notch
+  sidebarPosition: ╨Я╨╛╨╗╨╛╨╢╨╡╨╜╨╕╨╡ ╨▒╨╛╨║╨╛╨▓╨╛╨╣ ╨┐╨░╨╜╨╡╨╗╨╕
+  sidebarScale: ╨Ь╨░╤Б╤И╤В╨░╨▒ ╨▒╨╛╨║╨╛╨▓╨╛╨╣ ╨┐╨░╨╜╨╡╨╗╨╕
+  sidebarShowOnlyPinned: ╨Я╨╛╨║╨░╨╖╤Л╨▓╨░╤В╤М ╤В╨╛╨╗╤М╨║╨╛ ╨╖╨░╨║╤А╨╡╨┐╨╗╨╡╨╜╨╜╤Л╨╡ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╤Л
+  sidebarShowOnlyPinnedHint: ╨Ю╤В╨╛╨▒╤А╨░╨╢╨░╤В╤М ╤В╨╛╨╗╤М╨║╨╛ ╨╖╨░╨║╤А╨╡╨┐╨╗╨╡╨╜╨╜╤Л╨╡ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╤Л ╨╜╨░ ╨▒╨╛╨║╨╛╨▓╨╛╨╣
+    ╨┐╨░╨╜╨╡╨╗╨╕
+  sidebarStyle: ╨б╤В╨╕╨╗╤М ╨▒╨╛╨║╨╛╨▓╨╛╨╣ ╨┐╨░╨╜╨╡╨╗╨╕
+  sidebarStyleHint: ╨Т╤Л╨▒╨╡╤А╨╕╤В╨╡ ╨╝╨╡╨╢╨┤╤Г ╨║╨╗╨░╤Б╤Б╨╕╤З╨╡╤Б╨║╨╕╨╝ ╨╕ ╤Б╨╛╨▓╤А╨╡╨╝╨╡╨╜╨╜╤Л╨╝ ╨┤╨╕╨╖╨░╨╣╨╜╨╛╨╝ Notch
+  streamerMode: ╨а╨╡╨╢╨╕╨╝ ╤Б╤В╤А╨╕╨╝╨╡╤А╨░
+  streamerModeDescription: ╨н╤В╨░ ╨╛╨┐╤Ж╨╕╤П ╤Б╨║╤А╨╛╨╡╤В ╨▓╨░╤И╤Г ╨╗╨╕╤З╨╜╤Г╤О ╨╕╨╜╤Д╨╛╤А╨╝╨░╤Ж╨╕╤О, ╤В╨░╨║╤Г╤О ╨║╨░╨║ ╤Н╨╗╨╡╨║╤В╤А╨╛╨╜╨╜╨░╤П
+    ╨┐╨╛╤З╤В╨░, ╨▓ ╨╗╨░╤Г╨╜╤З╨╡╤А╨╡.
+  theme:
+    dark: ╨в╤С╨╝╨╜╨░╤П ╤В╨╡╨╝╨░
+    light: ╨б╨▓╨╡╤В╨╗╨░╤П ╤В╨╡╨╝╨░
+    system: ╨Ш╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╤М ╤Б╨╕╤Б╤В╨╡╨╝╨╜╤Г╤О ╤В╨╡╨╝╤Г
+  themeExport: ╨н╨║╤Б╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╤В╨╡╨╝╤Г
+  themeBorderRadius: ╨б╨║╤А╤Г╨│╨╗╨╡╨╜╨╜╤Л╨╡ ╤Г╨│╨╗╤Л
+  themeBorderRadiusDescription: ╨Т╨║╨╗╤О╤З╨╕╤В╤М ╨╕╨╗╨╕ ╨╛╤В╨║╨╗╤О╤З╨╕╤В╤М ╤Б╨║╤А╤Г╨│╨╗╨╡╨╜╨╜╤Л╨╡ ╤Г╨│╨╗╤Л ╨┤╨╗╤П ╨║╨░╤А╤В╨╛╤З╨╡╨║,
+    ╨┤╨╕╨░╨╗╨╛╨│╨╛╨▓, ╨╝╨╡╨╜╤О ╨╕ ╨┐╨░╨╜╨╡╨╗╨╡╨╣.
+  themeFont: ╨и╤А╨╕╤Д╤В
+  themeFontDescription: ╨Ш╨╖╨╝╨╡╨╜╨╕╤В╤М ╤И╤А╨╕╤Д╤В ╨╗╨░╤Г╨╜╤З╨╡╤А╨░.
+  themeFontUrl: URL-╨░╨┤╤А╨╡╤Б ╤И╤А╨╕╤Д╤В╨░
+  themeFontUrlPlaceholder: ╨Т╨▓╨╡╨┤╨╕╤В╨╡ URL-╨░╨┤╤А╨╡╤Б HTTP/HTTPS ╨┤╨╗╤П ╤И╤А╨╕╤Д╤В╨░
+  themeImport: ╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╤В╨╡╨╝╤Г
+  themeResetFont: ╨б╨▒╤А╨╛╤Б╨╕╤В╤М
+  themeSelectFont: ╨Ш╨╖╨╝╨╡╨╜╨╕╤В╤М
+  themeSettings: ╨Э╨░╤Б╤В╤А╨╛╨╣╨║╨╕ ╤В╨╡╨╝╤Л
+  themeShare: ╨Я╨╛╨┤╨╡╨╗╨╕╤В╤М╤Б╤П ╤В╨╡╨╝╨╛╨╣
+  themeShareDescription: ╨Т╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨┐╨╛╨┤╨╡╨╗╨╕╤В╤М╤Б╤П ╤В╨╡╨╝╨╛╨╣ ╤Б ╨▓╨░╤И╨╕╨╝ ╨┤╤А╤Г╨│╨╛╨╝.
+  update: ╨Ю╨▒╨╜╨╛╨▓╨╕╤В╤М
+  useBmclAPI: ╨Ш╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╤М BMCL API
+  useBmclAPIDescription: ╨б╨║╨░╤З╨░╨╣╤В╨╡ Minecraft ╨▓ ╨Ъ╨╕╤В╨░╨╡ ╤Б ╨┐╨╛╨╝╨╛╤Й╤М╤О BMCL-API
+  useProxy: HTTP-╨┐╤А╨╛╨║╤Б╨╕
+  useProxyDescription: ╨Р╨┤╤А╨╡╤Б ╨┐╤А╨╛╨║╤Б╨╕-╤Б╨╡╤А╨▓╨╡╤А╨░ ╨┤╨╗╤П http-╨╖╨░╨┐╤А╨╛╤Б╨░
+  viewBackgroundMusic: ╨Я╤А╨╛╤Б╨╝╨╛╤В╤А ╨╝╤Г╨╖╤Л╨║╨╕
+  setAsBackground:
+    global: ╨б╨┤╨╡╨╗╨░╤В╤М ╤Д╨╛╨╜╨╛╨╝ ╨╗╨░╤Г╨╜╤З╨╡╤А╨░
+    instance: ╨б╨┤╨╡╨╗╨░╤В╤М ╤Д╨╛╨╜╨╛╨╝ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+    successGlobal: ╨д╨╛╨╜╨╛╨▓╨╛╨╡ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╛.
+    successInstance: ╨д╨╛╨╜╨╛╨▓╨╛╨╡ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░ ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╛.
+    failed: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╤Д╨╛╨╜╨╛╨▓╨╛╨╡ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡
+  title: Sozlamalar
+  aiAgentApiKeyClear: Clear key
+  aiAgentApiKeyEmpty: Paste your API key
+  aiAgentApiKeyNotNeeded: Not required
+  aiAgentApiKeyNotNeededHint: This provider runs locally and needs no API key
+  aiAgentApiKeySaved: Saved
+  aiAgentApiKeyStored: Key saved - type to replace
+  aiAgentProvider: AI Agent Provider
+  aiAgentProviderCustom: Custom (OpenAI compatible)
+  aiAgentProviderDescription: Pick a preset OpenAI-compatible provider to fill the
+    endpoint.
+  useDesktopBackground: Use current desktop wallpaper
+  customCss:
+    advancedDescription: Override the launcher's current styling with your own CSS.
+    assistantHint: Describe the look you want and I'll write the CSS for you.
+    assistantSuggestion1: Make the sidebar translucent
+    assistantSuggestion2: Add a subtle gradient background to cards
+    assistantTitle: CSS Assistant
+    dropHint: Drop a .css file to load it
+    editorPlaceholder: /* Write your custom CSS here */
+    globalToggle: Toggle Custom CSS
+    openInDialog: Open in the agent dialog
+    title: Custom CSS
+    warning: Custom CSS allows you to customize any aspect of the launcher. Be careful
+      when pasting CSS from untrusted sources, as it can modify the UI layout.
+settingLabel:
+  global: ╨У╨╗╨╛╨▒╨░╨╗╤М╨╜╤Л╨╣
+  globalHint: ╨н╤В╨╛ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨░ ╨▒╤Г╨┤╨╡╤В ╤Б╨╗╨╡╨┤╨╛╨▓╨░╤В╤М ╨│╨╗╨╛╨▒╨░╨╗╤М╨╜╨╛╨╣ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╡.
+  local: ╨Ы╨╛╨║╨░╨╗╤М╨╜╤Л╨╣
+  localHint: ╨н╤В╨░ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨░ ╨╝╨╛╨╢╨╡╤В ╨▒╤Л╤В╤М ╨╕╨╖╨╝╨╡╨╜╨╡╨╜╨░ ╤В╨╡╨║╤Г╤Й╨╕╨╝ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨╛╨╝.
+setup:
+  account:
+    description: ╨Р╨▓╤В╨╛╤А╨╕╨╖╤Г╨╣╤В╨╡╤Б╤М ╨▓ ╤Б╨▓╨╛╨╡╨╣ ╨╕╨│╤А╨╛╨▓╨╛╨╣ ╤Г╤З╤С╤В╨╜╨╛╨╣ ╨╖╨░╨┐╨╕╤Б╨╕. ╨Х╤Б╨╗╨╕ ╤Г ╨▓╨░╤Б ╨╡╤С ╨╜╨╡╤В,
+      ╨▓╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨┐╤А╨╛╨┐╤Г╤Б╤В╨╕╤В╤М ╤Н╤В╨╛ ╨╜╨░ ╨┤╨░╨╜╨╜╤Л╨╣ ╨╝╨╛╨╝╨╡╨╜╤В.
+    name: ╨Ф╨╛╨▒╨░╨▓╨╕╤В╤М ╨╕╨│╤А╨╛╨▓╤Г╤О ╤Г╤З╤С╤В╨╜╤Г╤О ╨╖╨░╨┐╨╕╤Б╤М
+    skip: ╨Я╨╛╨║╨░ ╨┐╤А╨╛╨┐╤Г╤Б╤В╨╕╤В╤М
+  appearance:
+    name: :setting.appearance
+  dataRoot:
+    description: ╨Ъ╨╛╤А╨╜╨╡╨▓╨░╤П ╨┐╨░╨┐╨║╨░ ╨╜╨╡ ╤П╨▓╨╗╤П╨╡╤В╤Б╤П ╨╛╨▒╤Л╤З╨╜╨╛╨╣ ╨┐╨░╨┐╨║╨╛╨╣ (.minecraft). ╨Я╨╛╤Б╨║╨╛╨╗╤М╨║╤Г
+      ╤Б╤В╤А╤Г╨║╤В╤Г╤А╨░ ╨║╨░╤В╨░╨╗╨╛╨│╨╛╨▓ ╨┤╨░╨╜╨╜╤Л╤Е NeoTerra Launcher ╨╛╤В╨╗╨╕╤З╨░╨╡╤В╤Б╤П ╨╛╤В ╨╛╤А╨╕╨│╨╕╨╜╨░╨╗╤М╨╜╨╛╨╣, ╨╝╤Л
+      ╨╜╨╡ ╤А╨╡╨║╨╛╨╝╨╡╨╜╨┤╤Г╨╡╨╝ ╨╕╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╤М ╨╛╨▒╤Й╤Г╤О ╨┐╨░╨┐╨║╤Г (.minecraft) ╨▓ ╨║╨░╤З╨╡╤Б╤В╨▓╨╡ ╨║╨╛╤А╨╜╨╡╨▓╨╛╨╣ ╨┐╨░╨┐╨║╨╕
+      ╨┤╨░╨╜╨╜╤Л╤Е.
+    drives: ╨а╨╡╨║╨╛╨╝╨╡╨╜╨┤╤Г╨╡╨╝╤Л╨╡ ╤А╨░╤Б╨┐╨╛╨╗╨╛╨╢╨╡╨╜╨╕╤П
+    name: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╨║╨╛╤А╨╜╨╡╨▓╤Г╤О ╨┐╨░╨┐╨║╤Г
+  defaultLayoutDescription: ╨Т╨╕╨┤ ╨╕╨╜╤В╨╡╤А╤Д╨╡╨╣╤Б╨░ "╨б╤В╨░╨╜╨┤╨░╤А╤В╨╜╤Л╨╣" ╨┐╤Л╤В╨░╨╡╤В╤Б╤П ╤Г╨╗╤Г╤З╤И╨╕╤В╤М ╨║╨╛╨╜╤Ж╨╡╨┐╤Ж╨╕╤О
+    "╨╕╨│╤А╨╛╨▓╨╛╨│╨╛ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░". ╨Ю╨╜ ╨▓╤Л╨│╨╗╤П╨┤╨╕╤В ╨║╨░╨║ ╨┐╤А╨╕╨╗╨╛╨╢╨╡╨╜╨╕╤П, ╤В╨░╨║╨╕╨╡ ╨║╨░╨║ Discord. ╨Ю╨╜ ╤В╨░╨║╨╢╨╡
+    ╨▓╨┤╨╛╤Е╨╜╨╛╨▓╨╗╤С╨╜ ╨┤╤А╤Г╨│╨╕╨╝╨╕ ╨┐╤А╨╕╨╗╨╛╨╢╨╡╨╜╨╕╤П╨╝╨╕ ╨╖╨░╨┐╤Г╤Б╨║╨░ ╨╕╨│╤А, ╤В╨░╨║╨╕╨╝╨╕ ╨║╨░╨║ Steam ╨╕ ╤В.╨┤.
+  defaultPath: ╨Я╤Г╤В╤М ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О
+  error:
+    badDataRoot: ╨Э╨╡╨┤╨╛╨┐╤Г╤Б╤В╨╕╨╝╤Л╨╣ ╨║╨░╤В╨░╨╗╨╛╨│ ╨┤╨╗╤П ╨┤╨░╨╜╨╜╤Л╤Е ╨╗╨░╤Г╨╜╤З╨╡╤А╨░! ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨┐╨╛╨┐╤А╨╛╨▒╤Г╨╣╤В╨╡
+      ╨┤╤А╤Г╨│╨╛╨╣.
+    exists: ╨Т╤Л╨▒╤А╨░╨╜╨╜╤Л╨╣ ╨║╨░╤В╨░╨╗╨╛╨│ ╨╜╨╡ ╨┐╤Г╤Б╤В. ╨н╤В╨╛ ╨╜╨╛╤А╨╝╨░╨╗╤М╨╜╨╛, ╨╜╨╛ ╤Г╨▒╨╡╨┤╨╕╤В╨╡╤Б╤М, ╤З╤В╨╛ ╨▓╤Л ╤Б╨┤╨╡╨╗╨░╨╗╨╕
+      ╤А╨╡╨╖╨╡╤А╨▓╨╜╤Г╤О ╨║╨╛╨┐╨╕╤О ╤Б╨▓╨╛╨╕╤Е ╨┤╨░╨╜╨╜╤Л╤Е.
+    invalidChar: '╨Я╤Г╤В╤М ╤Б╨╛╨┤╨╡╤А╨╢╨╕╤В ╨╜╨╡╨▓╨╡╤А╨╜╤Л╨╡ ╤Б╨╕╨╝╨▓╨╛╨╗╤Л!
+
+      ╨н╤В╨╛ ╨╝╨╛╨╢╨╡╤В ╨┐╤А╨╕╨▓╨╡╤Б╤В╨╕ ╨║ ╤В╨╛╨╝╤Г, ╤З╤В╨╛ Minecraft ╨╜╨╡ ╨╝╨╛╨╢╨╡╤В ╨╜╨░╤З╨░╤В╤М!
+
+      PLAESE ╨╕╤Б╨┐╨╛╨╗╤М╨╖╤Г╤О╤В ╤В╨╛╨╗╤М╨║╨╛ ╨░╨╜╨│╨╗╨╕╨╣╤Б╨║╨╕╨╡ ╨┐╨╡╤А╤Б╨╛╨╜╨░╨╢╨╕ ╨╕ ╤Б╨╕╨╝╨▓╨╛╨╗!'
+    noPermission: ╨г ╨╗╨░╤Г╨╜╤З╨╡╤А╨░ ╨╜╨╡╤В ╨╜╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╤Л╤Е ╨┐╤А╨░╨▓ ╨╜╨░ ╨┤╨╛╤Б╤В╤Г╨┐ ╨║ ╨▓╤Л╨▒╤А╨░╨╜╨╜╨╛╨╝╤Г ╨║╨░╤В╨░╨╗╨╛╨│╤Г!
+      ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨┐╨╛╨┐╤А╨╛╨▒╤Г╨╣╤В╨╡ ╨┤╤А╤Г╨│╨╛╨╣.
+    nonDictionary: ╨Т╤Л╨▒╤А╨░╨╜╨╜╤Л╨╣ ╨┐╤Г╤В╤М ╤П╨▓╨╗╤П╨╡╤В╤Б╤П ╤Д╨░╨╣╨╗╨╛╨╝! ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨▓╤Л╨▒╨╡╤А╨╕╤В╨╡ ╨║╨░╤В╨░╨╗╨╛╨│!
+  focusLayoutDescription: ╨Т╨╕╨┤ ╨╕╨╜╤В╨╡╤А╤Д╨╡╨╣╤Б╨░ "╨Ф╨╗╤П ╤Д╨╛╨║╤Г╤Б╨╕╤А╨╛╨▓╨║╨╕" - ╤Н╤В╨╛ ╤Г╤Б╤В╨░╤А╨╡╨▓╤И╨╕╨╣ ╨▓╨╕╨┤ ╨╕╨╜╤В╨╡╤А╤Д╨╡╨╣╤Б╨░
+    Minecraft. ╨Ю╨╜ ╨┐╤А╨╡╨┤╨╜╨░╨╖╨╜╨░╤З╨╡╨╜ ╨┤╨╗╤П ╨╕╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╨╜╨╕╤П ╤Б ╨╛╨┤╨╜╨╕╨╝ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨╛╨╝ ╨╕╨╗╨╕ ╨╜╨╡╨▒╨╛╨╗╤М╤И╨╕╨╝
+    ╨║╨╛╨╗╨╕╤З╨╡╤Б╤В╨▓╨╛╨╝ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨╛╨▓.
+  game:
+    name: ╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╤Б╤Г╤Й╨╡╤Б╤В╨▓╤Г╤О╤Й╤Г╤О ╨╕╨│╤А╤Г
+  locale:
+    description: ╨Т╤Л╨▒╨╡╤А╨╕╤В╨╡ ╨▓╨░╤И ╨┐╤А╨╡╨┤╨┐╨╛╤З╨╕╤В╨░╨╡╨╝╤Л╨╣ ╤П╨╖╤Л╨║, ╨╡╤Б╨╗╨╕ ╨╛╨╜ ╨┤╨╛╤Б╤В╤Г╨┐╨╡╨╜. ╨Х╤Б╨╗╨╕ ╨▓╤Л ╨╜╨╡ ╨▓╨╕╨┤╨╕╤В╨╡
+      ╨╜╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╤Л╨╣ ╤П╨╖╤Л╨║ ╨╕ ╤Е╨╛╤В╨╕╤В╨╡ ╨┐╨╛╨╝╨╛╤З╤М, ╨▓╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨┐╨╛╤Б╨╡╤В╨╕╤В╤М ╨╜╨░╤И Github, ╤З╤В╨╛╨▒╤Л ╨╛╤В╨┐╤А╨░╨▓╨╕╤В╤М
+      Pool Request ╨┤╨╗╤П ╨┐╨╡╤А╨╡╨▓╨╛╨┤╨░.
+    language: ╨п╨╖╤Л╨║
+    name: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╤П╨╖╤Л╨║
+  path: ╨в╨╡╨║╤Г╤Й╨╕╨╣ ╨┐╤Г╤В╤М
+shaderPack:
+  linkShared: ╨Ю╨▒╤Й╨╕╨╡ ╨┐╨░╨║╨╡╤В╤Л ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓ ╨┤╨╗╤П ╨▓╤Б╨╡╤Е ╤Б╨▒╨╛╤А╨╛╨║
+  linkSharedHint: ╨б╨▓╤П╨╖╨░╤В╤М ╨┐╨░╨┐╨║╤Г shaderpacks ╤Н╤В╨╛╨╣ ╤Б╨▒╨╛╤А╨║╨╕ ╤Б ╨╛╨▒╤Й╨╡╨╣ ╨│╨╗╨╛╨▒╨░╨╗╤М╨╜╨╛╨╣ ╨┐╨░╨┐╨║╨╛╨╣,
+    ╤З╤В╨╛╨▒╤Л ╨▓╤Б╨╡ ╤Б╨▒╨╛╤А╨║╨╕ ╨╕╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╨╗╨╕ ╨╛╨┤╨╜╨╕ ╨╕ ╤В╨╡ ╨╢╨╡ ╨┐╨░╨║╨╡╤В╤Л ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓. ╨б╤Г╤Й╨╡╤Б╤В╨▓╤Г╤О╤Й╨╕╨╡ ╨┐╨░╨║╨╡╤В╤Л
+    ╨▒╤Г╨┤╤Г╤В ╨┐╨╡╤А╨╡╨╝╨╡╤Й╨╡╨╜╤Л ╨▓ ╨╛╨▒╤Й╤Г╤О ╨┐╨░╨┐╨║╤Г.
+  deletion: ╨г╨┤╨░╨╗╨╕╤В╤М ╨╜╨░╨▒╨╛╤А ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓
+  deletionHint: ╨н╤В╨╛ ╨┐╤А╨╕╨▓╨╡╨┤╤С╤В ╨║ ╤Г╨┤╨░╨╗╨╡╨╜╨╕╤О ╤Д╨░╨╣╨╗╨░ ╨╜╨░╨▒╨╛╤А╨░ ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓ {path} ╨╕ ╨╡╨│╨╛ ╨▒╤Г╨┤╨╡╤В ╨╜╨╡╨▓╨╛╨╖╨╝╨╛╨╢╨╜╨╛
+    ╨▓╨╛╤Б╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М.
+  disabled: ╨Э╨╡╨▓╤Л╨▒╤А╨░╨╜╨╜╤Л╨╡ ╨╜╨░╨▒╨╛╤А╤Л ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓
+  dropHint: ╨Я╨╡╤А╨╡╤В╨░╤Й╨╕╤В╨╡ ╤Б╤О╨┤╨░ ╤Д╨░╨╣╨╗ ╨╜╨░╨▒╨╛╤А╨░ ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓ (.zip)
+  empty: ╨Э╨╡ ╨▓╤Л╨┤╨╡╨╗╨╡╨╜ ╨╜╨╕ ╨╛╨┤╨╕╨╜ ╨╜╨░╨▒╨╛╤А ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓
+  enable: '╨Ш╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╡╤В╤Б╤П ╨╜╨░╨▒╨╛╤А ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓: {name}'
+  enabled: ╨Т╤Л╨▒╤А╨░╨╜╨╜╤Л╨╡ ╨╜╨░╨▒╨╛╤А╤Л ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓
+  manage: ╨и╨╡╨╣╨┤╨╡╤А╨░
+  name: ╨Э╨░╨▒╨╛╤А ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓ | ╨Э╨░╨▒╨╛╤А╤Л ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓
+  noShaderMod: ╨Ь╨╛╨┤ ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓ ╨╜╨╡ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜
+  noShaderModHint: ╨Т╤Л ╨╜╨╡ ╨╝╨╛╨╢╨╡╤В╨╡ ╨╕╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╤М ╤И╨╡╨╣╨┤╨╡╤А ╨▒╨╡╨╖ ╨╝╨╛╨┤╨░ ╤И╨╡╨╣╨┤╨╡╤А╨░.
+  noShaderModInstallHint: ╨Ф╨╗╤П ╨╖╨░╨│╤А╤Г╨╖╨║╨╕ ╨┐╨░╨║╨╡╤В╨░ ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓ ╨▓╨░╨╝ ╨╜╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╨╛ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╨╛╨┤╨╕╨╜
+    ╨╕╨╖ ╤Б╨╗╨╡╨┤╤Г╤О╤Й╨╕╤Е ╨╝╨╛╨┤╨╛╨▓.
+  searchHint: ╨Я╨╛╨╕╤Б╨║ ╨╜╨░╨▒╨╛╤А╨░ ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓
+  selectSearchHint: ╨Э╨░╨╣╨┤╨╕╤В╨╡ ╨╕ ╨▓╤Л╨▒╨╡╤А╨╕╤В╨╡ Shader Pack
+  showDirectory: ╨Ю╤В╨║╤А╤Л╤В╤М ╨┐╨░╨┐╨║╤Г ╤Б ╨╜╨░╨▒╨╛╤А╨░╨╝╨╕ ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓
+  showFile: ╨Я╨╛╨║╨░╨╖╨░╤В╤М ╨┐╤Г╤В╤М ╨║ ╨╜╨░╨▒╨╛╤А╤Г ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓ {file}
+  market: ╨Ь╨░╨│╨░╨╖╨╕╨╜ ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓
+  noPacks: ╨и╨╡╨╣╨┤╨╡╤А-╨┐╨░╨║╨╕ ╨╜╨╡ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╤Л
+  search: ╨Я╨╛╨╕╤Б╨║ ╤И╨╡╨╣╨┤╨╡╤А-╨┐╨░╨║╨╛╨▓...
+  noLocalPacksFound: No local shader packs found matching your search.
+  noPacksInstalled: You don't have any shader packs installed.
+shared:
+  add: ╨Ф╨╛╨▒╨░╨▓╨╕╤В╤М
+  author: ╨Р╨▓╤В╨╛╤А
+  back: ╨Э╨░╨╖╨░╨┤
+  browse: ╨Ю╨▒╨╖╨╛╤А
+  cancel: ╨Ю╤В╨╝╨╡╨╜╨░
+  checkUpgrade: ╨Я╤А╨╛╨▓╨╡╤А╨╕╤В╤М ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╤П
+  client: ╨Ъ╨╗╨╕╨╡╨╜╤В
+  description: ╨Ю╨┐╨╕╤Б╨░╨╜╨╕╨╡
+  disable: ╨Ю╤В╨║╨╗╤О╤З╨╕╤В╤М
+  download: ╨б╨║╨░╤З╨░╤В╤М
+  edit: ╨Ш╨╖╨╝╨╡╨╜╨╕╤В╤М
+  enable: ╨Т╨║╨╗╤О╤З╨╕╤В╤М
+  filter: ╨д╨╕╨╗╤М╤В╤А
+  install: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М
+  installed: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜
+  keepSelected: ╨б╨╛╤Е╤А╨░╨╜╨╕╤В╤М ╨▓╤Л╨▒╤А╨░╨╜╨╜╨╛╨╡
+  manage: ╨г╨┐╤А╨░╨▓╨╗╨╡╨╜╨╕╨╡
+  name: Nomi
+  next: ╨Ф╨░╨╗╨╡╨╡
+  'no': ╨Э╨╡╤В
+  ok: ╨Ю╨Ъ
+  previous: ╨Э╨░╨╖╨░╨┤
+  refresh: ╨Ю╨▒╨╜╨╛╨▓╨╕╤В╤М
+  remove: ╨г╨┤╨░╨╗╨╕╤В╤М
+  search: ╨Я╨╛╨╕╤Б╨║
+  server: ╨б╨╡╤А╨▓╨╡╤А
+  skipForNow: ╨Я╤А╨╛╨┐╤Г╤Б╤В╨╕╤В╤М ╤Б╨╡╨╣╤З╨░╤Б
+  upgrade: ╨Ю╨▒╨╜╨╛╨▓╨╕╤В╤М
+  'yes': ╨Ф╨░
+  copied: Copied
+  copy: Nusxalash
+  close: Yopish
+  copyFailed: Copy failed
+  copyFailedHint: Could not copy to clipboard
+  save: Saqlash
+  delete: O'chirish
+sidebar:
+  pin: ╨Ч╨░╨║╤А╨╡╨┐╨╕╤В╤М
+  unpin: ╨Ю╤В╨║╤А╨╡╨┐╨╕╤В╤М
+sortBy:
+  alphabetAsc: ╨б╨╛╤А╤В╨╕╤А╨╛╨▓╨║╨░ ╨┐╨╛ ╨░╨╗╤Д╨░╨▓╨╕╤В╤Г (╨▓╨╛╤Б╤Е╨╛╨┤╤П╤Й╨╡╨╡)
+  alphabetDesc: ╨б╨╛╤А╤В╨╕╤А╨╛╨▓╨║╨░ ╨┐╨╛ ╨░╨╗╤Д╨░╨▓╨╕╤В╤Г (╤Б╨┐╤Г╤Б╨║)
+  timeAsc: ╨б╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨┐╨╛ ╨▓╤А╨╡╨╝╨╡╨╜╨╕ ╨╝╨╛╨┤╨╕╤Д╨╕╨║╨░╤Ж╨╕╨╕ (╨▓╨╛╤Б╤Е╨╛╨┤╤П╤Й╨░╤П)
+  timeDesc: ╨б╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨┐╨╛ ╨▓╤А╨╡╨╝╨╡╨╜╨╕ ╨╝╨╛╨┤╨╕╤Д╨╕╨║╨░╤Ж╨╕╨╕ (╤Б╨┐╤Г╤Б╨║)
+  name: ╨б╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨┐╨╛
+store:
+  discover: ╨Ю╨▒╨╜╨░╤А╤Г╨╢╨╕╤В╤М
+  latestMinecraft: ╨Я╨╛╤Б╨╗╨╡╨┤╨╜╤П╤П ╨▓╨╡╤А╤Б╨╕╤П Minecraft
+  name: ╨Ь╨░╨│╨░╨╖╨╕╨╜ ╤Б╨▒╨╛╤А╨╛╨║ ╨╝╨╛╨┤╨╛╨▓
+  searchResult: ╨а╨╡╨╖╤Г╨╗╤М╤В╨░╤В ╨┐╨╛╨╕╤Б╨║╨░
+  trending: ╨в╨╡╨╜╨┤╨╡╨╜╤Ж╨╕╨╕
+  empty: ╨Ь╨╛╨┤╨┐╨░╨║╨╕ ╨╜╨╡ ╨╜╨░╨╣╨┤╨╡╨╜╤Л
+  emptyHint: ╨Я╨╛╨┐╤А╨╛╨▒╤Г╨╣╤В╨╡ ╨╕╨╖╨╝╨╡╨╜╨╕╤В╤М ╤Д╨╕╨╗╤М╤В╤А╤Л ╨╕╨╗╨╕ ╨┐╨╛╨╕╤Б╨║╨╛╨▓╤Л╨╣ ╨╖╨░╨┐╤А╨╛╤Б.
+tag:
+  create: ╨б╨╛╨╖╨┤╨░╤В╤М ╤В╨╡╨│
+  createSelected: ╨б╨╛╨╖╨┤╨░╤В╤М ╤В╨╡╨│ ╨┤╨╗╤П ╨▓╤Л╨▒╤А╨░╨╜╨╜╨╛╨│╨╛
+task:
+  cancelled: ╨Ю╤В╨╝╨╡╨╜╨╡╨╜╨╛
+  clear: ╨Ю╤З╨╕╤Б╤В╨╕╤В╤М ╨▓╤Л╨┐╨╛╨╗╨╜╨╡╨╜╨╜╤Л╨╡ ╨╖╨░╨┤╨░╤З╨╕
+  connection:
+    connected: ╨Я╨╛╨┤╨║╨╗╤О╤З╤С╨╜
+    free: ╨С╨╡╤Б╨┐╨╗╨░╤В╨╜╨╛
+    pending: ╨Т ╨╛╨╢╨╕╨┤╨░╨╜╨╕╨╕
+    queued: ╨Т ╨╛╤З╨╡╤А╨╡╨┤╨╕
+    running: ╨в╨╡╨║╤Г╤Й╨╡╨╡ ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡
+    size: ╨Ю╨▒╤Й╨╡╨╡ ╨║╨╛╨╗╨╕╤З╨╡╤Б╤В╨▓╨╛
+  connections: ╨б╨╡╤В╨╡╨▓╤Л╨╡ ╨┐╨╛╨┤╨║╨╗╤О╤З╨╡╨╜╨╕╤П
+  empty: ╨Э╨╡╤В ╨╖╨░╨┐╤Г╤Й╨╡╨╜╨╜╤Л╤Е ╨╖╨░╨┤╨░╤З
+  failed: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╨▓╤Л╨┐╨╛╨╗╨╜╨╕╤В╤М
+  manager: ╨Ь╨╡╨╜╨╡╨┤╨╢╨╡╤А ╨╖╨░╨┤╨░╤З
+  nTaskRunning: '{count} ╨╖╨░╨┤╨░╤З ╨▓╤Л╨┐╨╛╨╗╨╜╤П╨╡╤В╤Б╤П'
+  name: ╨Ч╨░╨┤╨░╤З╨░ | ╨Ч╨░╨┤╨░╤З╨╕
+  pause: ╨Я╤А╨╕╨╛╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М
+theme:
+  selectImage: ╨Т╤Л╨▒╨╡╤А╨╕╤В╨╡ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡
+  selectMusic: ╨Т╤Л╨▒╨╡╤А╨╕╤В╨╡ ╨╝╤Г╨╖╤Л╨║╤Г
+  selectVideo: ╨Т╤Л╨▒╨╡╤А╨╕╤В╨╡ ╨▓╨╕╨┤╨╡╨╛
+  title: NeoTerra Launcher
+title: NeoTerra Launcher
+transportType:
+  host: ╨е╨╛╤Б╤В-╨║╨░╨╜╨┤╨╕╨┤╨░╤В
+  prflx: ╨Я╨╕╤А╨╕╨╜╨│-╤А╨╡╤Д╨╗╨╡╨║╤Б╨╕╨▓╨╜╤Л╨╣ ╨║╨░╨╜╨┤╨╕╨┤╨░╤В
+  relay: ╨а╨╡╤В╤А╨░╨╜╤Б╨╗╤П╤В╨╛╤А-╨║╨░╨╜╨┤╨╕╨┤╨░╤В
+  srflx: ╨б╨╡╤А╨▓╨╡╤А-╤А╨╡╤Д╨╗╨╡╨║╤Б╨╕╨▓╨╜╤Л╨╣ ╨║╨░╨╜╨┤╨╕╨┤╨░╤В
+turnRegion:
+  fr: ╨д╤А╨░╨╜╤Ж╨╕╤П
+  guangzhou: ╨У╤Г╨░╨╜╤З╨╢╨╛╤Г, ╨Ъ╨╕╤В╨░╨╣
+  hk: ╨У╨╛╨╜╨║╨╛╨╜╨│
+  liaoning: ╨Ы╤П╨╛╨╜╨╕╨╜, ╨Ъ╨╕╤В╨░╨╣
+  po: ╨Я╨╛╨╗╤М╤И╨░
+tutorial:
+  feedbackDescription: ╨Х╤Б╨╗╨╕ ╤Г ╨▓╨░╤Б ╨▓╨╛╨╖╨╜╨╕╨║╨╜╤Г╤В ╨║╨░╨║╨╕╨╡-╨╗╨╕╨▒╨╛ ╨┐╤А╨╛╨▒╨╗╨╡╨╝╤Л, ╨╜╨░╨╢╨╝╨╕╤В╨╡ ╨╜╨░ ╤Н╤В╤Г ╨║╨╜╨╛╨┐╨║╤Г,
+    ╤З╤В╨╛╨▒╤Л ╨╛╤В╨┐╤А╨░╨▓╨╕╤В╤М ╨╛╤В╨╖╤Л╨▓!
+  hideNewsHeaderDescription: ╨Т╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╤Г╨▓╨╕╨┤╨╡╤В╤М ╨╜╨╛╨▓╨╛╤Б╤В╨╕ ╤Б╨╗╨╡╨▓╨░. ╨Э╨░╨╢╨░╤В╨╕╨╡ ╨╜╨░ ╤Н╤В╤Г ╨║╨╜╨╛╨┐╨║╤Г
+    ╨╝╨╛╨╢╨╡╤В ╤Б╨║╤А╤Л╤В╤М ╤Н╤В╨╛╤В ╤А╨░╨╖╨┤╨╡╨╗.
+  instance:
+    iconDescription: ╨Э╨░╨╢╨╝╨╕╤В╨╡, ╤З╤В╨╛╨▒╤Л ╨╕╨╖╨╝╨╡╨╜╨╕╤В╤М ╨╕╨║╨╛╨╜╨║╤Г.
+    iconTitle: ╨Ш╨║╨╛╨╜╨║╨░ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+    javaDescription: ╨Т╤Л╨▒╨╡╤А╨╕╤В╨╡ ╨╕╨╗╨╕ ╨╕╨╖╨╝╨╡╨╜╨╕╤В╨╡ ╨▓╨╡╤А╤Б╨╕╤О Java.
+    javaImportDescription: ╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М Java ╨╕╨╖ ╨╗╨╛╨║╨░╨╗╤М╨╜╨╛╨│╨╛ ╤Е╤А╨░╨╜╨╕╨╗╨╕╤Й╨░.
+    javaImportTitle: ╨Ш╨╝╨┐╨╛╤А╤В Java
+    javaTitle: ╨б╨┐╨╕╤Б╨╛╨║ Java
+  instanceAddDescription: ╨Э╨░╨╢╨╝╨╕╤В╨╡ ╨╜╨░ ╤Н╤В╤Г ╨║╨╜╨╛╨┐╨║╤Г, ╤З╤В╨╛╨▒╤Л ╨╕╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╤Б╤Г╤Й╨╡╤Б╤В╨▓╤Г╤О╤Й╨╕╨╣
+    Minecraft ╨╕╨╗╨╕ ╤Б╨╛╨╖╨┤╨░╤В╤М ╨╜╨╛╨▓╤Л╨╣ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А/╤Б╨▒╨╛╤А╨║╤Г ╨╝╨╛╨┤╨╛╨▓ ╤Б ╨╜╤Г╨╗╤П.
+  instanceSelectDescription: ╨Э╨░╨╢╨░╤В╨╕╨╡ ╨╜╨░ ╤Н╤В╤Г ╨║╨╜╨╛╨┐╨║╤Г ╨╛╤В╨║╤А╨╛╨╡╤В ╤Б╤В╤А╨░╨╜╨╕╤Ж╤Г ╨▓╤Л╨▒╨╛╤А╨░ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+    ╨╕ ╨┐╤А╨╛╤З╤В╨╡╨╜╨╕╤П ╨╜╨╛╨▓╨╛╤Б╤В╨╡╨╣.
+  launchDescription: ╨Э╨░╨╢╨╝╨╕╤В╨╡ ╨╜╨░ ╤Н╤В╤Г ╨║╨╜╨╛╨┐╨║╤Г, ╤З╤В╨╛╨▒╤Л ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╨╕╨╗╨╕ ╨╖╨░╨┐╤Г╤Б╤В╨╕╤В╤М ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А.
+  mod:
+    defaultSourceDescription: ╨Т╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨▓╤Л╨▒╤А╨░╤В╤М ╨╕╤Б╤В╨╛╤З╨╜╨╕╨║ ╨║╨╛╨╜╤В╨╡╨╜╤В╨░ ╨╝╨╛╨┤╨╛╨▓ ╨╖╨┤╨╡╤Б╤М. ╨Х╤Б╤В╤М
+      ╨╝╨╛╨┤╤Л, ╨╛╨┐╤Г╨▒╨╗╨╕╨║╨╛╨▓╨░╨╜╨╜╤Л╨╡ ╨║╨░╨║ ╨▓ Modrinth, ╤В╨░╨║ ╨╕ ╨▓ CurseForge. ╨Х╤Б╨╗╨╕ ╨▓╤Л ╤Е╨╛╤В╨╕╤В╨╡ ╨┐╨╡╤А╨╡╨║╨╗╤О╤З╨░╤В╤М╤Б╤П
+      ╨╝╨╡╨╢╨┤╤Г ╤Н╤В╨╕╨╝╨╕ ╨┤╨▓╤Г╨╝╤П ╨┐╨╛╤Б╤В╨░╨▓╤Й╨╕╨║╨░╨╝╨╕ ╨║╨╛╨╜╤В╨╡╨╜╤В╨░, ╨▓╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨╕╨╖╨╝╨╡╨╜╨╕╤В╤М ╨╖╨╜╨░╤З╨╡╨╜╨╕╨╡ ╨╖╨┤╨╡╤Б╤М.
+    defaultSourceTitle: ╨Т╤Л╨▒╨╡╤А╨╕╤В╨╡ ╨╕╤Б╤В╨╛╤З╨╜╨╕╨║ ╨║╨╛╨╜╤В╨╡╨╜╤В╨░ ╨╝╨╛╨┤╨░
+    detailDescription: ╨Ъ╨╛╨│╨┤╨░ ╨▓╤Л ╨▓╤Л╨▒╨╕╤А╨░╨╡╤В╨╡ ╤Н╨╗╨╡╨╝╨╡╨╜╤В ╤Б╨╗╨╡╨▓╨░, ╨▓╤Л ╤Г╨▓╨╕╨┤╨╕╤В╨╡ ╨┤╨╡╤В╨░╨╗╨╕ ╨╝╨╛╨┤╨░. ╨Ъ╨╛╨╜╤В╨╡╨╜╤В
+      ╨╝╨╛╨╢╨╡╤В ╨▒╤Л╤В╤М ╨┐╨╛╨╗╤Г╤З╨╡╨╜ ╨╕╨╖ Modrinth, CurseForge ╨╕╨╗╨╕ ╤Б╨╛╨┤╨╡╤А╨╢╨╕╨╝╨╛╨│╨╛ ╨┐╤А╨╛╨░╨╜╨░╨╗╨╕╨╖╨╕╤А╨╛╨▓╨░╨╜╨╜╨╛╨│╨╛
+      ╨║╨╛╨╜╤В╨╡╨╜╤В╨░ ╨╝╨╛╨┤╨░.
+    detailTitle: ╨Ф╨╡╤В╨░╨╗╨╕ ╨╝╨╛╨┤╨░
+    listDescription: ╨Ь╤Л ╨╛╤В╨╛╨▒╤А╨░╨╖╨╕╨╝ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨╜╤Л╨╡ ╨╝╨╛╨┤╤Л, ╨║╨╛╨│╨┤╨░ ╤Б╤В╤А╨╛╨║╨░ ╨┐╨╛╨╕╤Б╨║╨░ ╨▒╤Г╨┤╨╡╤В ╨┐╤Г╤Б╤В╨░.
+      ╨Т╤Л ╤Г╨▓╨╕╨┤╨╕╤В╨╡ ╨╕╤Б╨║╨╛╨╝╤Л╨╡ ╨╝╨╛╨┤╤Л, ╨║╨░╨║ ╤В╨╛╨╗╤М╨║╨╛ ╤Г ╨▓╨░╤Б ╨▒╤Г╨┤╨╡╤В ╨▓╨▓╨╡╨┤╨╡╨╜╨╛ ╨║╨╗╤О╤З╨╡╨▓╨╛╨╡ ╤Б╨╗╨╛╨▓╨╛ ╨╕╨╗╨╕ ╨▓╤Л╨▒╤А╨░╨╜╨░
+      ╨║╨░╤В╨╡╨│╨╛╤А╨╕╤П.
+    listTitle: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨╜╤Л╨╡ ╨╝╨╛╨┤╤Л
+    searchDescription: ╨Т╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨╕╤Б╨║╨░╤В╤М ╨╝╨╛╨┤╤Л ╨╕╨╖ Modrinth, CurseForge ╨╕╨╗╨╕ ╨▓╨░╤И╨╡╨│╨╛ ╨╗╨╛╨║╨░╨╗╤М╨╜╨╛╨│╨╛
+      ╨║╤Н╤И╨░ ╤Б ╨┐╨╛╨╝╨╛╤Й╤М╤О ╤Н╤В╨╛╨│╨╛ ╨┐╨╛╨╗╤П ╨┐╨╛╨╕╤Б╨║╨░.
+    searchTitle: ╨Я╨╛╨╕╤Б╨║ ╨╝╨╛╨┤╨╛╨▓
+  multiplayer:
+    contentDescription: ╨б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╤П ╨╝╨╡╨╢╨┤╤Г ╨▓╨░╨╝╨╕ ╨╕ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П╨╝╨╕ ╨▒╤Г╨┤╤Г╤В ╨┐╨╡╤А╨╡╤З╨╕╤Б╨╗╨╡╨╜╤Л ╨╖╨┤╨╡╤Б╤М.
+    contentTitle: :multiplayer.connections
+    groupDescription: ╨Т╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╤Б╨╛╨╖╨┤╨░╤В╤М ╨╕╨╗╨╕ ╨┐╤А╨╕╤Б╨╛╨╡╨┤╨╕╨╜╨╕╤В╤М╤Б╤П ╨║ ╨│╤А╤Г╨┐╨┐╨╡ ╤Б ╨┤╤А╤Г╨│╨╕╨╝╨╕ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П╨╝╨╕.
+      ╨Ы╨░╤Г╨╜╤З╨╡╤А ╨┐╨╛╨┐╤Л╤В╨░╨╡╤В╤Б╤П ╤Б╨╛╨╖╨┤╨░╤В╤М P2P-╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╤П ╨╝╨╡╨╢╨┤╤Г ╨▓╨░╨╝╨╕ ╨╕ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П╨╝╨╕ ╨▓ ╤Б╨╛╨╛╤В╨▓╨╡╤В╤Б╤В╨▓╨╕╨╕
+      ╤Б ╨│╤А╤Г╨┐╨┐╨╛╨╣. ╨Т╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨▓╨▓╨╡╤Б╤В╨╕ ╨╕╨╝╤П ╨│╤А╤Г╨┐╨┐╤Л, ╨┐╤А╨╡╨┤╨╛╤Б╤В╨░╨▓╨╗╨╡╨╜╨╜╨╛╨╡ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П╨╝╨╕. ╨Ш╨╗╨╕
+      ╨╢╨╡ ╨▓╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╤Б╨╛╨╖╨┤╨░╤В╤М ╤Г╨╜╨╕╨║╨░╨╗╤М╨╜╨╛╨╡ ╨╕╨╝╤П ╤Б╨░╨╝╨╛╤Б╤В╨╛╤П╤В╨╡╨╗╤М╨╜╨╛.
+    groupTitle: ╨Я╤А╨╕╤Б╨╛╨╡╨┤╨╕╨╜╨╕╤В╤М╤Б╤П ╨║ ╨│╤А╤Г╨┐╨┐╨╡
+    joinDescription: ╨Ъ╨░╨║ ╤В╨╛╨╗╤М╨║╨╛ ╨▓╤Л ╨▓╨▓╨╡╨┤╤С╤В╨╡ ╨╕╨╝╤П ╨│╤А╤Г╨┐╨┐╤Л, ╨▓╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨╜╨░╨╢╨░╤В╤М ╨╜╨░ ╤Н╤В╤Г ╨║╨╜╨╛╨┐╨║╤Г,
+      ╤З╤В╨╛╨▒╤Л ╨┐╤А╨╕╤Б╨╛╨╡╨┤╨╕╨╜╨╕╤В╤М╤Б╤П ╨╕╨╗╨╕ ╤Б╨╛╨╖╨┤╨░╤В╤М ╨│╤А╤Г╨┐╨┐╤Г. ╨Х╤Б╨╗╨╕ ╨╕╨╝╤П ╨│╤А╤Г╨┐╨┐╤Л ╨┐╤Г╤Б╤В╨╛╨╡, ╨╗╨░╤Г╨╜╤З╨╡╤А ╤Б╨│╨╡╨╜╨╡╤А╨╕╤А╤Г╨╡╤В
+      ╨╕╨╝╤П ╨┤╨╗╤П ╨▓╨░╤Б.
+    manualDescription: ╨Х╤Б╨╗╨╕ ╨▓╤Л ╨╕╨╗╨╕ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤М ╨╜╨╡ ╨╝╨╛╨╢╨╡╤В╨╡ ╨┐╨╛╨┤╨║╨╗╤О╤З╨╕╤В╤М╤Б╤П ╨║ ╨│╤А╤Г╨┐╨┐╨╡, ╨▓╤Л
+      ╨╝╨╛╨╢╨╡╤В╨╡ ╨┐╨╛╨┐╤Л╤В╨░╤В╤М╤Б╤П ╨▓╤А╤Г╤З╨╜╤Г╤О ╨╛╨▒╨╝╨╡╨╜╤П╤В╤М╤Б╤П ╤В╨╛╨║╨╡╨╜╨╛╨╝, ╨╜╨░╨╢╨░╨▓ ╨╜╨░ "╤А╤Г╤З╨╜╨╛╨╡ ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡".
+      ╨Х╤Б╨╗╨╕ ╤Н╤В╨╛ ╤В╨░╨║╨╢╨╡ ╨╜╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М, ╨▓╨╛╨╖╨╝╨╛╨╢╨╜╨╛ ╤Г ╨▓╨░╤Б ╨╝╨╛╨│╤Г╤В ╨▒╤Л╤В╤М ╨┐╤А╨╛╨▒╨╗╨╡╨╝╤Л ╤Б ╨╕╨╜╤В╨╡╤А╨╜╨╡╤В╨╛╨╝.
+  recentPlayDescription: ╨б╨╛╨╖╨┤╨░╨╜╨╜╤Л╨╡ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╤Л ╨▒╤Г╨┤╤Г╤В ╨┐╨╡╤А╨╡╤З╨╕╤Б╨╗╨╡╨╜╤Л ╨╖╨┤╨╡╤Б╤М. ╨Т╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨┐╨╡╤А╨╡╨║╨╗╤О╤З╨░╤В╤М
+    ╨┐╤А╨╡╨┤╤Б╤В╨░╨▓╨╗╨╡╨╜╨╕╤П ╨╖╨┤╨╡╤Б╤М, ╤З╤В╨╛╨▒╤Л ╤В╨░╨║╨╢╨╡ ╤Г╨▓╨╕╨┤╨╡╤В╤М ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨╜╤Л╨╡ ╨▓╨╡╤А╤Б╨╕╨╕ ╨╕ ╨╖╨░╨│╤А╤Г╨╢╨╡╨╜╨╜╤Л╨╡ ╤Б╨▒╨╛╤А╨║╨╕
+    ╨╝╨╛╨┤╨╛╨▓.
+  storePoupularModpackDescription: ╨Т╤Л ╤Г╨▓╨╕╨┤╨╕╤В╨╡ ╤Б╨░╨╝╤Л╨╡ ╨┐╨╛╨┐╤Г╨╗╤П╤А╨╜╤Л╨╡ ╤Б╨▒╨╛╤А╨║╨╕ ╨╝╨╛╨┤╨╛╨▓ ╨▓ CurseForge
+    ╨╕ Modrinth ╨▓ ╤Н╤В╨╛╨╝ ╤А╨░╨╖╨┤╨╡╨╗╨╡.
+  storeSearchCategoryDescription: ╨Т╤Л ╤В╨░╨║╨╢╨╡ ╨╝╨╛╨╢╨╡╤В╨╡ ╨┐╨╡╤А╨╡╨║╨╗╤О╤З╨░╤В╤М ╨║╨░╤В╨╡╨│╨╛╤А╨╕╨╕ ╨╕╨╗╨╕ ╤Д╨╕╨╗╤М╤В╤А╤Л
+    ╨╖╨┤╨╡╤Б╤М.
+  storeSearchDescription: ╨Т╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨╜╨░╨╣╤В╨╕ ╤Б╨▒╨╛╤А╨║╤Г ╨╝╨╛╨┤╨╛╨▓, ╨▓╨▓╨╡╨┤╤П ╨╜╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╤Л╨╣ ╨╖╨░╨┐╤А╨╛╤Б ╨▓
+    ╤Н╤В╨╛ ╨┐╨╛╨╗╨╡ ╨┐╨╛╨╕╤Б╨║╨░. ╨Э╨░╨╢╨╝╨╕╤В╨╡ ╨║╨╗╨░╨▓╨╕╤И╤Г Enter ╨┤╨╗╤П ╨╜╨░╤З╨░╨╗╨░ ╨┐╨╛╨╕╤Б╨║╨░.
+  storeSearchResultDescription: ╨Т╤Л ╤Г╨▓╨╕╨┤╨╕╤В╨╡ ╨▓╤Б╨╡ ╤А╨╡╨╖╤Г╨╗╤М╤В╨░╤В╤Л ╨┐╨╛╨╕╤Б╨║╨░ ╨┐╨╡╤А╨╡╤З╨╕╤Б╨╗╨╡╨╜╨╜╤Л╨╝╨╕ ╨╖╨┤╨╡╤Б╤М.
+  userAccountDescription: ╨Э╨░╨╢╨╝╨╕╤В╨╡ ╨╜╨░ ╤Н╤В╤Г ╨╕╨║╨╛╨╜╨║╤Г, ╤З╤В╨╛╨▒╤Л ╨┤╨╛╨▒╨░╨▓╨╕╤В╤М ╨╕╨╗╨╕ ╨╕╨╖╨╝╨╡╨╜╨╕╤В╤М ╤Б╨▓╨╛╤О
+    ╤Г╤З╤С╤В╨╜╤Г╤О ╨╖╨░╨┐╨╕╤Б╤М Minecraft.
+universalDrop:
+  unknownResource: ╨Э╨╡╨╕╨╖╨▓╨╡╤Б╤В╨╜╨╛
+unresolvedFiles:
+  description: ╨н╤В╨╕ ╤Д╨░╨╣╨╗╤Л ╨╜╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╨╖╨░╨│╤А╤Г╨╖╨╕╤В╤М ╨▓╨╛ ╨▓╤А╨╡╨╝╤П ╤Г╤Б╤В╨░╨╜╨╛╨▓╨║╨╕. ╨Э╨░╨╣╨┤╨╕╤В╨╡ ╨┐╨╛╨┤╤Е╨╛╨┤╤П╤Й╨╕╨╣
+    ╨╕╤Б╤В╨╛╤З╨╜╨╕╨║, ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╨╡ ╤Б╨╛╨▓╨┐╨░╨┤╨╡╨╜╨╕╤П ╨╕╨╗╨╕ ╨┐╤А╨╛╨╕╨│╨╜╨╛╤А╨╕╤А╤Г╨╣╤В╨╡ ╤Д╨░╨╣╨╗╤Л, ╤З╤В╨╛╨▒╤Л ╨▓╤Б╤С ╤А╨░╨▓╨╜╨╛ ╨╖╨░╨┐╤Г╤Б╤В╨╕╤В╤М.
+  empty: ╨Т╤Б╨╡ ╤Д╨░╨╣╨╗╤Л ╤А╨░╨╖╤А╨╡╤И╨╡╨╜╤Л.
+  ignoreSelected: ╨Ш╨│╨╜╨╛╤А╨╕╤А╨╛╨▓╨░╤В╤М {count}
+  install: '╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╤Б╨╛╨▓╨┐╨░╨┤╨╡╨╜╨╕╨╣: {count}'
+  matched: ╨б╨╛╨▓╨┐╨░╨┤╨╡╨╜╨╕╨╡
+  noMatch: ╨Э╨╡ ╨╜╨░╨╣╨┤╨╡╨╜╨╛
+  search: ╨Ш╤Б╨║╨░╤В╤М ╨╕╤Б╤В╨╛╤З╨╜╨╕╨║╨╕
+  source:
+    curseforge-name: CurseForge
+    dependency: ╨Ч╨░╨▓╨╕╤Б╨╕╨╝╨╛╤Б╤В╤М
+    modrinth-hash: ╨е╨╡╤И Modrinth
+    modrinth-name: Modrinth
+  title: ╨Э╨╡╤А╨░╨╖╤А╨╡╤И╤С╨╜╨╜╤Л╨╡ ╤Д╨░╨╣╨╗╤Л
+  via: ╤З╨╡╤А╨╡╨╖ {source}
+upstream:
+  downgrade: ╨Я╨╛╨╜╨╕╨╖╨╕╤В╤М ╨▓╨╡╤А╤Б╨╕╤О
+  onlyShowCurrentVersion: ╨Я╨╛╨║╨░╨╖╤Л╨▓╨░╤В╤М ╤В╨╛╨╗╤М╨║╨╛ ╤В╨╡╨║╤Г╤Й╤Г╤О ╨▓╨╡╤А╤Б╨╕╤О Minecraft
+  update: ╨Ю╨▒╨╜╨╛╨▓╨╕╤В╤М
+user:
+  accessToken: ╨в╨╛╨║╨╡╨╜ ╨┤╨╛╤Б╤В╤Г╨┐╨░
+  authMode: ╨б╨╡╤А╨▓╨╕╤Б ╨░╤Г╤В╨╡╨╜╤В╨╕╤Д╨╕╨║╨░╤Ж╨╕╨╕
+  authService: ╨б╨╡╤А╨▓╨╕╤Б ╨░╨▓╤В╨╛╤А╨╕╨╖╨░╤Ж╨╕╨╕
+  email: ╨Р╨┤╤А╨╡╤Б ╤Н╨╗╨╡╨║╤В╤А╨╛╨╜╨╜╨╛╨╣ ╨┐╨╛╤З╤В╤Л
+  id: ╨Ш╨┤╨╡╨╜╤В╨╕╤Д╨╕╨║╨░╤В╨╛╤А ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П
+  name: ╨Ш╨╝╤П ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П
+  nameHint: ╨Ш╨╝╤П, ╨╛╤В╨╛╨▒╤А╨░╨╢╨░╨╡╨╝╨╛╨╡ ╨▓ ╨╕╨│╤А╨╡
+  profile: ╨Я╤А╨╛╤Д╨╕╨╗╤М
+  tokenExpired: ╨б╤А╨╛╨║ ╨┤╨╡╨╣╤Б╤В╨▓╨╕╤П ╤В╨╛╨║╨╡╨╜╨░ ╨╕╤Б╤В╤С╨║
+  tokenValidUntil: ╨б╤А╨╛╨║ ╨┤╨╡╨╣╤Б╤В╨▓╨╕╤П ╤В╨╛╨║╨╡╨╜╨░
+userAccount:
+  add: ╨Ф╨╛╨▒╨░╨▓╨╕╤В╤М ╨░╨║╨║╨░╤Г╨╜╤В
+  removeDescription: ╨н╤В╨╛ ╤Г╨┤╨░╨╗╨╕╤В ╨▓╤Б╨╡ ╨┤╨░╨╜╨╜╤Л╨╡ ╤Н╤В╨╛╨│╨╛ ╨░╨║╨║╨░╤Г╨╜╤В╨░. ╨Т╤Л ╤Г╨▓╨╡╤А╨╡╨╜╤Л?
+  removeTitle: ╨г╨┤╨░╨╗╨╕╤В╤М ╨░╨║╨║╨░╤Г╨╜╤В
+userCape:
+  changeTitle: ╨Ш╨╖╨╝╨╡╨╜╨╕╤В╤М ╨┐╨╗╨░╤Й
+  description: '╨Я╨╗╨░╤Й╨╕ - ╤Н╤В╨╛ ╤Б╨┐╨╡╤Ж╨╕╨░╨╗╤М╨╜╤Л╨╡ ╨╜╨░╨│╤А╨░╨┤╤Л, ╨║╨╛╤В╨╛╤А╤Л╨╡ ╨╕╨│╤А╨╛╨║╨╕ ╨╝╨╛╨│╤Г╤В ╤А╨░╨╖╨▒╨╗╨╛╨║╨╕╤А╨╛╨▓╨░╤В╤М,
+    ╤Г╤З╨░╤Б╤В╨▓╤Г╤П ╨▓ ╤А╨░╨╖╨╗╨╕╤З╨╜╤Л╤Е ╨╝╨╡╤А╨╛╨┐╤А╨╕╤П╤В╨╕╤П╤Е, ╨║╨░╨╝╨┐╨░╨╜╨╕╤П╤Е ╨╕ ╨┤╤А╤Г╨│╨╕╤Е ╤Б╤З╨░╤Б╤В╨╗╨╕╨▓╤Л╤Е ╤Б╨╛╨▒╤Л╤В╨╕╤П╤Е. ╨Ч╨┤╨╡╤Б╤М
+    ╨▓╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨▓╤Л╨▒╤А╨░╤В╤М ╨╝╨╡╨╢╨┤╤Г ╨┐╨╗╨░╤Й╨░╨╝╨╕, ╨║╨╛╤В╨╛╤А╤Л╨╡ ╤Г ╨▓╨░╤Б ╨╡╤Б╤В╤М:'
+  noCape: ╨С╨╡╨╖ ╨┐╨╗╨░╤Й╨░
+userService:
+  add: ╨Ф╨╛╨▒╨░╨▓╨╕╤В╤М ╨╡╤Й╤С ╨╛╨┤╨╕╨╜ ╤Б╨╡╤А╨▓╨╕╤Б
+  authlibInjectorMetadata: ╨Ь╨╡╤В╨░╨┤╨░╨╜╨╜╤Л╨╡ Authlib-Injector
+  baseUrlHint: ╨С╨░╨╖╨╛╨▓╤Л╨╣ URL-╨░╨┤╤А╨╡╤Б ╨▓╨░╤И╨╡╨│╨╛ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤М╤Б╨║╨╛╨│╨╛ ╤Б╨╡╤А╨▓╨╕╤Б╨░
+  homepage: ╨Ф╨╛╨╝╨░╤И╨╜╤П╤П ╤Б╤В╤А╨░╨╜╨╕╤Ж╨░
+  implementation: ╨а╨╡╨░╨╗╨╕╨╖╨░╤Ж╨╕╤П
+  manageServices: ╨г╨┐╤А╨░╨▓╨╗╤П╤В╤М ╤Б╨╡╤А╨▓╨╕╤Б╨░╨╝╨╕
+  register: ╨а╨╡╨│╨╕╤Б╤В╤А╨░╤Ж╨╕╤П
+  server: ╨б╨╡╤А╨▓╨╡╤А
+  skinDomains: ╨Ф╨╛╨╝╨╡╨╜╤Л ╤Б╨║╨╕╨╜╨╛╨▓
+  title: ╨б╤В╨╛╤А╨╛╨╜╨╜╨╕╨╡ ╤Б╨╡╤А╨▓╨╕╤Б╤Л ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П
+  version: ╨Т╨╡╤А╤Б╨╕╤П
+userServices:
+  microsoft:
+    account: ╨Р╨║╨║╨░╤Г╨╜╤В Microsoft
+    deviceCode: ╨Ъ╨╛╨┤ ╤Г╤Б╤В╤А╨╛╨╣╤Б╤В╨▓╨░
+    deviceCodeHint: ╨С╤Г╨┤╨╡╤В ╤Б╨│╨╡╨╜╨╡╤А╨╕╤А╨╛╨▓╨░╨╜ ╨┐╨╛╤Б╨╗╨╡ ╨╜╨░╨╢╨░╤В╨╕╤П "╨Т╨╛╨╣╤В╨╕"
+    name: Microsoft
+    password: ╨Т╨▓╨╡╨┤╨╕╤В╨╡ ╨┐╨░╤А╨╛╨╗╤М ╨▓ ╨▒╤А╨░╤Г╨╖╨╡╤А╨╡
+    useDeviceCode: ╨Т╨╛╨╣╤В╨╕ ╨┐╨╛ ╨║╨╛╨┤╤Г ╤Г╤Б╤В╤А╨╛╨╣╤Б╤В╨▓╨░
+  mojang:
+    account: ╨н╨╗╨╡╨║╤В╤А╨╛╨╜╨╜╨░╤П ╨┐╨╛╤З╤В╨░
+    name: Mojang
+    password: ╨Я╨░╤А╨╛╨╗╤М
+  offline:
+    account: ╨Ш╨╝╤П ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П
+    name: ╨Р╨▓╤В╨╛╨╜╨╛╨╝╨╜╨░╤П ╤Г╤З╨╡╠И╤В╨╜╨░╤П ╨╖╨░╨┐╨╕╤Б╤М
+    password: ╨Э╨╡╤В ╨┐╨░╤А╨╛╨╗╤П
+    uuid: UUID ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П (╨╜╨╡╨╛╨▒╤П╨╖╨░╤В╨╡╨╗╤М╨╜╨╛)
+userSkin:
+  import: ╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╤Б╨║╨╕╨╜
+  importFile: ╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨╕╨╖ ╤Д╨░╨╣╨╗╨░
+  importLink: ╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨╕╨╖ ╤Б╤Б╤Л╨╗╨║╨╕
+  placeUrlHere: ╨Т╤Б╤В╨░╨▓╤М╤В╨╡ ╤Б╤О╨┤╨░ URL-╨░╨┤╤А╨╡╤Б ╤Б╨║╨╕╨╜╨░ ╨┤╨╗╤П ╨╕╨╝╨┐╨╛╤А╤В╨░
+  reset: ╨б╨▒╤А╨╛╤Б╨╕╤В╤М
+  save: ╨б╨╛╤Е╤А╨░╨╜╨╕╤В╤М
+  saveTitle: ╨б╨╛╤Е╤А╨░╨╜╨╕╤В╤М ╤Б╨║╨╕╨╜ ╨╜╨░ ╨┤╨╕╤Б╨║
+  skinType: ╨в╨╕╨┐ ╤Б╨║╨╕╨╜╨░
+  upload: ╨Ч╨░╨│╤А╤Г╨╖╨╕╤В╤М ╤Б╨║╨╕╨╜
+  urlNotEmpty: URL-╨░╨┤╤А╨╡╤Б ╤Б╨║╨╕╨╜╨░ ╨╜╨╡ ╨╝╨╛╨╢╨╡╤В ╨▒╤Л╤В╤М ╨┐╤Г╤Б╤В╤Л╨╝
+  urlNotValid: URL-╨░╨┤╤А╨╡╤Б ╤Б╨║╨╕╨╜╨░ ╨╜╨╡╨▓╨╡╤А╨╜╤Л╨╣
+  useSlim: ╨Ш╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╤М ╤В╨╛╨╜╨║╨╕╨╡ ╤А╤Г╨║╨╕
+  classic: Classic
+  invalidImage: Choose a valid Minecraft skin image.
+  invalidImageTitle: Invalid Skin Image
+  slim: Slim
+  uploadFailed: Skin Upload Failed
+  uploadRejected: Minecraft rejected this skin upload. Please try again later.
+version:
+  checkIntegrity: ╨Я╤А╨╛╨▓╨╡╤А╤М╤В╨╡ ╤Ж╨╡╨╗╨╛╤Б╤В╨╜╨╛╤Б╤В╤М
+  name: ╨Т╨╡╤А╤Б╨╕╤П | ╨Т╨╡╤А╤Б╨╕╨╕
+  notInstalled: ╨Т╨╡╤А╤Б╨╕╤П ╨╜╨╡ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨░
+versionType:
+  alpha: ╨Р╨╗╤М╤Д╨░
+  beta: ╨С╨╡╤В╨░
+  name: ╨б╤В╨░╤В╤Г╤Б
+  release: ╨а╨╡╨╗╨╕╨╖
+downloadModMetadataDb:
+  name: ╨Ч╨░╨│╤А╤Г╨╖╨╕╤В╤М ╨▒╨░╨╖╤Г ╨╝╨╡╤В╨░╨┤╨░╨╜╨╜╤Л╤Е ╨╝╨╛╨┤╨╛╨▓
+duplicateInstance:
+  name: ╨Ф╤Г╨▒╨╗╨╕╤А╨╛╨▓╨░╤В╤М ╨╕╨╜╤Б╤В╨░╨╜╤Б
+exportModpack:
+  name: ╨н╨║╤Б╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨╝╨╛╨┤╨┐╨░╨║
+installProfile:
+  name: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╨┐╤А╨╛╤Д╨╕╨╗╤М {version}
+installQuilt:
+  name: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М Quilt {version}
+instanceLauncher:
+  search: ╨Я╨╛╨╕╤Б╨║ ╨╕╨╜╤Б╤В╨░╨╜╤Б╨╛╨▓...
+  showAll: ╨Я╨╛╨║╨░╨╖╨░╤В╤М ╨▓╤Б╨╡ ╨╕╨╜╤Б╤В╨░╨╜╤Б╤Л
+  title: ╨Т╤Б╨╡ ╨╕╨╜╤Б╤В╨░╨╜╤Б╤Л
+migrateMinecraft:
+  name: ╨Я╨╡╤А╨╡╨╜╨╡╤Б╤В╨╕ ╤Д╨░╨╣╨╗╤Л Minecraft
+reinstall:
+  name: ╨Я╨╡╤А╨╡╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М {version}
+difficulty:
+  easy: Easy
+  hard: Hard
+  normal: Normal
+  peaceful: Peaceful
+xmclAccount:
+  accountSummary: Hisob (Account)
+  confirmMerge: Hisoblarni biriktirishni tasdiqlash
+  createdAt: Yaratilgan sana {date}
+  description: NeoTerra profilingiz (Minecraft o'yin hisobidan alohida).
+  expiresAt: Tugash muddati {date}
+  gameAccountsSeparate: O'yin hisobini o'chirish NeoTerra profilini uzib qo'ymaydi.
+  guest: Mehmon (Guest)
+  identityConflict: Ushbu {provider} kirishi boshqa NeoTerra hisobiga tegishli.
+  linkAccountWith: 'Hisobni quyidagilar orqali biriktirish:'
+  mergePreview: Biriktirishdan oldin resurslarni tekshiring.
+  mergeNeedsSession: Davom etish uchun NeoTerra hisobingizga kiring.
+  mergeQueued: Hisoblarni biriktirish jarayonda.
+  requestFailed: NeoTerra hisob xizmati so'rovni bajara olmadi.
+  reviewMerge: Biriktirishni ko'rib chiqish
+  session: Sessiya
+  sessionActive: Faol
+  sessionExpired: Muddati o'tgan
+  signOutAll: Barcha qurilmalardan chiqish
+  signOutDevice: Ushbu qurilmadan chiqish
+  status:
+    active: Faol
+    deleted: O'chirilgan
+    deletion_pending: O'chirilishi kutilmoqda
+    merged: Biriktirilgan
+  title: NeoTerra Hisobi
+minecraftFriends:
+  accept: Accept
+  add: Add a friend
+  addPlaceholder: Minecraft username
+  addedRelative: Added {time}
+  errors:
+    cannotAddSelf: You cannot send a friend request to yourself.
+    duplicate: That player is already in your list.
+    friendsDisabled: Your Minecraft account has friends disabled or cannot use friends.
+      Enable friends in Minecraft account settings, then try again.
+    generic: Something went wrong. Please try again.
+    invalidName: Minecraft usernames must be between 3 and 16 characters.
+    inviteRejected: That player does not have friends enabled or does not accept invites.
+    tokenExpired: Your Microsoft session expired. Please log in again.
+    unknownProfile: We could not find a player with that name.
+  expiresRelative: Expires {time}
+  friends: Friends
+  heroEmptyHint: Add a Minecraft player by username above to send a friend request.
+  heroEmptyTitle: Your friends list is empty
+  incoming: Incoming requests
+  incomingHint: 1 incoming request | {count} incoming requests
+  notifyAdded: Friend request sent to {name}
+  outgoing: Outgoing requests
+  privacy:
+    acceptInvites: Accept friend invites
+    acceptInvitesHint: When off, other players cannot send you friend requests.
+    friendsEnabled: Friends list enabled
+  reconnectAction: Reconnect
+  requiresMicrosoft: Sign in with a Microsoft account to use friends.
+  scopedTo: Signed in as {name}
+  send: Send
+  title: Minecraft Friends
+  unsupported: Friends are only available for Microsoft accounts.
+relative:
+  daysAgo: '{count} day ago | {count} days ago'
+  hoursAgo: '{count} hour ago | {count} hours ago'
+  justNow: just now
+  minutesAgo: '{count} minute ago | {count} minutes ago'
+  secondsAgo: '{count} second ago | {count} seconds ago'
+resourceError:
+  body: '"{path}" could not be parsed ({code}). The file may be corrupted, locked,
+    or incomplete. Try re-downloading or removing it.'
+  title: Cannot read {file}
+blueprint:
+  name: Blueprint | Blueprints
+  count: '{count} blueprints'
+  searchLocal: Search blueprints...
+  searchOnline: Search online...
+  market: Market
+  local: Local
+  provider: Provider
+  import: Import Qilish
+  openFolder: Open folder
+  refresh: Yangilash
+  empty: No blueprints found. Import a .litematic / .schem / .nbt file or browse the
+    market.
+  dropHint: Drop blueprint files (.litematic / .schem / .nbt) here to import.
+  selectHint: Select a blueprint to preview it.
+  blocks: '{count} blocks'
+  materials: Materials
+  allNamespaces: All
+  findMod: Find the mod for this namespace
+  compatible: Compatible
+  incompatible: Missing mods
+  missingNamespaces: 'Missing mods for: {namespaces}'
+  delete: O'chirish
+  cancel: Bekor Qilish
+  install: O'rnatish
+  goTo: Website
+  byAuthor: by {author}
+  noDescription: No description provided.
+  loadMore: Load more
+  cmsBrowseOnly: This source is browse-only; open the website to download.
+  mixedSources: Results are mixed from all sources. Some are browse-only тАФ open their
+    website to download.
+  formats:
+    structure: Vanilla Structure
+  preview:
+    title: 3D Preview
+    loading: Loading preview...
+    empty: This blueprint has no blocks to display.
+    hint: '{count} blocks ┬╖ {x}├Ч{y}├Ч{z}'
+    controls: Drag to look ┬╖ WASD move ┬╖ Space/Shift up/down
+  convert:
+    title: Convert format
+    hint: Convert this blueprint to another format. A new file will be created.
+    target: Target format
+    action: Convert
+  replace:
+    title: Replace blocks
+    simple: Simple
+    precise: Precise
+    simpleHint: Match by block id only, keeping the existing block state properties.
+    preciseHint: Match the full block state (id + properties) and replace it entirely.
+    from: From
+    to: To
+    addRule: Add rule
+    newFile: Save as a new file
+    action: Replace
+localCollection:
+  title: Launcher collections
+  newCollection: New collection
+  namePlaceholder: Collection name
+  addToCollection: Add to collection
+  empty: No launcher collections yet
+  corrupted: Your saved collections could not be read and have been reset. A backup
+    was kept next to the data file.
+  modrinthSection: Modrinth account
+  installAll: Install all
+  installAllHint: Install every project in this collection compatible with the current
+    Minecraft version and loader.
+  incompatibleAlert: '1 project is not compatible with the current instance and was
+    skipped: | {count} projects are not compatible with the current instance and were
+    skipped:'
+  projects: No projects | {count} project | {count} projects
+  result:
+    failed: Failed
+    installed: O'rnatildi
+    skipped: Skipped
+    title: Collection Installation Result
+gamepad:
+  detectedTitle: Gamepad Detected
+  connected: Controller Connected
+  guideTitle: Controller Controls
+  enableSwitchLabel: Gamepad Controls
+  enabledState: Enabled
+  disabledState: Disabled
+  toggle: Toggle
+  disabledNotify: Gamepad controls disabled.
+  enabledNotify: Gamepad controls enabled! Use D-pad/Left stick to navigate, {btnA}
+    to select, {btnB} to go back.
+  guide:
+    confirm: Tanlash
+    navigate: Navigate
+    tabs: Switch tabs
+    sections: Switch sections
+    launch: Launch game
+    instanceSettings: Instance settings
+  modSuggestTitle: Controller Mod
+  modSuggestBody: To use your gamepad inside Minecraft, a controller mod is recommended.
+    Would you like to install the appropriate mod for your modloader?
+  modInstall: Install Mod
+  modSkip: Skip
+  modDone: Done
+  modInstalled: Controller mod installed successfully! It will be active next time
+    you launch Minecraft.
+  modInstalledNotify: '{name} has been installed for in-game controller support.'
+  modNotFound: No compatible version found for {loader} on Minecraft {version}.
+  autoEnableLabel: Auto Enable Controls
+  autoEnableHint: Automatically enable gamepad navigation when a controller is detected.
+  autoOpenKeyboardLabel: Auto Open Steam Keyboard
+  autoOpenKeyboardHint: Open Steam On-Screen Keyboard when focusing text input fields.
+  focusTooltipsLabel: Show Tooltips on Focus
+  focusTooltipsHint: Display hover tooltips when navigating elements using gamepad
+    focus.
+  disableModPromptLabel: Disable Controller Mod Suggestions
+  disableModPromptHint: Do not prompt to install controller mods when launching with
+    a gamepad.
+  settingSteamTitle: Add Launcher to Steam
+  steamAddedNotify: Launcher added to Steam Library successfully! Please restart Steam
+    to see it.
+  steamAlreadyAddedNotify: Launcher is already in your Steam Library.
+  steamDeckTitle: Steam Deck Detected
+  steamDeckDesc: We detected that you are running on Steam Deck. Would you like to
+    add NeoTerra Launcher to your Steam Library as a non-Steam game for full Steam
+    overlay and controller integration in Gaming Mode?
+  steamDeckAddBtn: Add to Steam ({btn})
+  steamDeckCancelBtn: Cancel ({btn})
