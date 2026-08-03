@@ -62,7 +62,7 @@ agent:
   disabledPlaceholder: Agent отключен
   toggleHint: переключить
   confirmAccept: Continue
-  confirmCancel: Cancel
+  confirmCancel: Bekor Qilish
   confirmTitle: Confirm agent action
   errorTitle: The agent hit an error
   toolArguments: Arguments
@@ -71,8 +71,8 @@ agent:
   marketConfirmMessage: Install {name} into the current instance?
   marketConfirmTarget: 'Target: {instance}'
   marketConfirmTitle: Install {type}
-  marketInstall: Install
-  marketInstalled: Installed
+  marketInstall: O'rnatish
+  marketInstalled: O'rnatildi
   marketInstallFailed: Failed to install {type}
   marketType:
     datapack: data pack
@@ -109,9 +109,9 @@ bedrock:
   channelBeta: Beta
   channelPreview: Preview
   active: Active
-  play: Play
-  download: Download
-  installedTag: Installed
+  play: O'ynash
+  download: Yuklab Olish
+  installedTag: O'rnatildi
   developerModeRequired: Registering a downloaded version requires Windows Developer
     Mode.
   enableDeveloperMode: Enable Developer Mode
@@ -127,7 +127,7 @@ bedrock:
   launchHint: Use the Launch button to start Bedrock Edition.
   licenseRequired: Sign in with a Microsoft account that owns Minecraft to install
     and play Bedrock Edition.
-  refresh: Refresh
+  refresh: Yangilash
 baseSetting:
   title: Локальные настройки
 browseApp:
@@ -1360,7 +1360,7 @@ save:
   panMode: Pan
   chunkSelected: '{count} chunks selected'
   mapHintPan: Drag to pan
-  mapHintSelect: Select
+  mapHintSelect: Tanlash
   mapHintDeselect: Deselect
   toggleGrid: Toggle region grid
   heightTop: Top
@@ -1370,7 +1370,7 @@ save:
   pasteChunks: Paste {count} Chunks
   pasteChunksPlaceHint: Move the mouse to position {count} chunk(s), then click to
     paste. Existing chunks at the target are overwritten. Press Esc to cancel.
-  pasteChunksCancel: Cancel
+  pasteChunksCancel: Bekor Qilish
   deleteChunks: Delete Chunks
   deleteChunksTitle: Delete Selected Chunks
   deleteChunksHint: Delete {count} selected chunk(s)? This cannot be undone. The chunks
@@ -1809,7 +1809,7 @@ shared:
   installed: Установлен
   keepSelected: Сохранить выбранное
   manage: Управление
-  name: Name
+  name: Nomi
   next: Далее
   'no': Нет
   ok: ОК
@@ -1822,12 +1822,12 @@ shared:
   upgrade: Обновить
   'yes': Да
   copied: Copied
-  copy: Copy
-  close: Close
+  copy: Nusxalash
+  close: Yopish
   copyFailed: Copy failed
   copyFailedHint: Could not copy to clipboard
-  save: Save
-  delete: Delete
+  save: Saqlash
+  delete: O'chirish
 sidebar:
   pin: Закрепить
   unpin: Открепить
@@ -2141,9 +2141,9 @@ blueprint:
   market: Market
   local: Local
   provider: Provider
-  import: Import
+  import: Import Qilish
   openFolder: Open folder
-  refresh: Refresh
+  refresh: Yangilash
   empty: No blueprints found. Import a .litematic / .schem / .nbt file or browse the
     market.
   dropHint: Drop blueprint files (.litematic / .schem / .nbt) here to import.
@@ -2155,9 +2155,9 @@ blueprint:
   compatible: Compatible
   incompatible: Missing mods
   missingNamespaces: 'Missing mods for: {namespaces}'
-  delete: Delete
-  cancel: Cancel
-  install: Install
+  delete: O'chirish
+  cancel: Bekor Qilish
+  install: O'rnatish
   goTo: Website
   byAuthor: by {author}
   noDescription: No description provided.
@@ -2207,7 +2207,7 @@ localCollection:
   projects: No projects | {count} project | {count} projects
   result:
     failed: Failed
-    installed: Installed
+    installed: O'rnatildi
     skipped: Skipped
     title: Collection Installation Result
 gamepad:
@@ -2222,7 +2222,7 @@ gamepad:
   enabledNotify: Gamepad controls enabled! Use D-pad/Left stick to navigate, {btnA}
     to select, {btnB} to go back.
   guide:
-    confirm: Select
+    confirm: Tanlash
     navigate: Navigate
     tabs: Switch tabs
     sections: Switch sections
