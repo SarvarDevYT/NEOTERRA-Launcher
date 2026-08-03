@@ -1,903 +1,864 @@
 AppAddInstanceDialog:
-  choiceTitle: Bir nechta ishga tushirish profillari aniqlandi. Iltimos, import qilish
-    uchun birini tanlang.
-  createTitle: Ekzemplar yaratish
-  serverTitle: Serveringiz manzilini kiriting
+  choiceTitle: ╨Ю╨▒╨╜╨░╤А╤Г╨╢╨╡╨╜╨╛ ╨╜╨╡╤Б╨║╨╛╨╗╤М╨║╨╛ ╨┐╤А╨╛╤Д╨╕╨╗╨╡╨╣ ╨╖╨░╨┐╤Г╤Б╨║╨░.
+    ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨▓╤Л╨▒╨╡╤А╨╕╤В╨╡ ╨╛╨┤╨╕╨╜ ╨┤╨╗╤П
+  createTitle: ╨б╨╛╨╖╨┤╨░╤В╤М ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А
+  serverTitle: ╨Т╨▓╨╡╨┤╨╕╤В╨╡ ╨░╨┤╤А╨╡╤Б ╨▓╨░╤И╨╡╨│╨╛ ╤Б╨╡╤А╨▓╨╡╤А╨░
 AppShareInstanceDialog:
-  alterDownloadDescription: Agar joriy ekzemplarni o'zgartirishni xohlamasangiz, foydalanuvchi
-    sozlamalaridan yangi ekzemplar yaratishingiz mumkin. Ekzemplar yaratish uchun
-    quyidagi tugmani bosing.
-  baseInfo: Mahalliy sozlamalar
-  cancelShare: Ulashishni bekor qilish
-  description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-    komilmi?
-  downloadDescription: Iltimos, foydalanuvchingiz tomonidan taqdim etilgan fayllarni
-    tekshiring. Yuklab olmoqchi bo'lgan fayllarni tanlang. Ular joriy {name} ekzemplariga
-    joylashtiriladi.
-  downloadNotifyTitle: '{user} foydalanuvchisidan ekzemplarni yuklab olish'
-  downloadTitle: Boshqa foydalanuvchilardan fayllarni yuklab olish
-  filesToDownload: Yuklab olish uchun fayllarni tanlang
-  filesToShare: Ulashish uchun fayllarni tanlang
-  instanceShare: '{user} hozirgina joriy ekzemplarni siz bilan ulashdi'
-  share: Ulashish
-  shareNotifyTitle: Ekzemplarni ulashish
-  shareTitle: O'yin fayllarini boshqa o'yinchilar bilan ulashish
+  alterDownloadDescription: ╨Х╤Б╨╗╨╕ ╨▓╤Л ╨╜╨╡ ╤Е╨╛╤В╨╕╤В╨╡ ╨╝╨╡╨╜╤П╤В╤М ╤В╨╡╨║╤Г╤Й╨╕╨╣
+    ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А, ╨▓╤Л ╨╝╨╛╨╢╨╡╤В╨╡
+  baseInfo: ╨Ы╨╛╨║╨░╨╗╤М╨╜╤Л╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕
+  cancelShare: ╨Ю╤В╨╝╨╡╨╜╨╕╤В╤М ╨╛╨▒╨╝╨╡╨╜
+  description: ╨Я╨╛╤Б╨╗╨╡ ╤В╨╛╨│╨╛, ╨║╨░╨║ ╨▓╤Л ╤А╨░╨╖╤А╨╡╤И╨╕╤В╨╡ ╨╛╨▒╨╝╨╡╨╜ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨╛╨╝,
+    ╨┤╤А╤Г╨│╨╕╨╡ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╨╕
+  downloadDescription: ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨┐╤А╨╛╨▓╨╡╤А╤М╤В╨╡ ╤Д╨░╨╣╨╗╤Л, ╨┐╤А╨╡╨┤╨╛╤Б╤В╨░╨▓╨╗╨╡╨╜╨╜╤Л╨╡
+    ╨▓╨░╤И╨╕╨╝ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╨╡╨╝.
+  downloadNotifyTitle: ╨б╨║╨░╤З╨╕╨▓╨░╨╜╨╕╨╡ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░ ╨╛╤В {user}
+  downloadTitle: ╨б╨║╨░╤З╨╕╨▓╨░╨╜╨╕╨╡ ╤Д╨░╨╣╨╗╨╛╨▓ ╨╛╤В ╨┤╤А╤Г╨│╨╕╤Е ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╨╡╨╣
+  filesToDownload: ╨Т╤Л╨▒╨╡╤А╨╕╤В╨╡ ╤Д╨░╨╣╨╗╤Л ╨┤╨╗╤П ╨╖╨░╨│╤А╤Г╨╖╨║╨╕
+  filesToShare: ╨Т╤Л╨▒╨╡╤А╨╕╤В╨╡ ╤Д╨░╨╣╨╗╤Л ╨┤╨╗╤П ╨╛╨▒╨╝╨╡╨╜╨░
+  instanceShare: '{user} ╤В╨╛╨╗╤М╨║╨╛ ╤З╤В╨╛ ╨┐╨╛╨┤╨╡╨╗╨╕╨╗╤Б╤П ╤В╨╡╨║╤Г╤Й╨╕╨╝ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨╛╨╝
+    ╤Б ╨▓╨░╨╝╨╕'
+  share: ╨Ю╨▒╨╝╨╡╨╜
+  shareNotifyTitle: ╨Ю╨▒╨╝╨╡╨╜ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨╛╨╝
+  shareTitle: ╨Ю╨▒╨╝╨╡╨╜ ╨╕╨│╤А╨╛╨▓╤Л╨╝╨╕ ╤Д╨░╨╣╨╗╨░╨╝╨╕ ╤Б ╨┤╤А╤Г╨│╨╕╨╝╨╕ ╨╕╨│╤А╨╛╨║╨░╨╝╨╕
 BaseSettingGeneral:
-  title: Общие
+  title: Umumiy
 HomeJavaIssueDialog:
-  incompatibleJava: Mos kelmaydigan Java versiyasi
-  incompatibleJavaHint: Joriy Java versiyasi tanlangan Minecraft versiyasiga mos kelmasligi
-    mumkin!
-  missingJava: Java yetishmayapti
-  missingJavaHint: 'Launcher kompyuteringizda hech qanday Java versiyasini aniqlay
-    olmadi. Siz quyidagilarni qilishingiz mumkin:'
+  incompatibleJava: ╨Э╨╡╤Б╨╛╨▓╨╝╨╡╤Б╤В╨╕╨╝╨░╤П ╨▓╨╡╤А╤Б╨╕╤П Java
+  incompatibleJavaHint: ╨в╨╡╨║╤Г╤Й╨░╤П ╨▓╨╡╤А╤Б╨╕╤П Java ╨╝╨╛╨╢╨╡╤В ╨▒╤Л╤В╤М ╨╜╨╡╤Б╨╛╨▓╨╝╨╡╤Б╤В╨╕╨╝╨░
+    ╤Б ╨▓╤Л╨▒╤А╨░╨╜╨╜╨╛╨╣ ╨▓╨╡╤А╤Б╨╕╨╡╨╣
+  missingJava: ╨Ю╤В╤Б╤Г╤В╤Б╤В╨▓╤Г╨╡╤В Java
+  missingJavaHint: '''╨Ы╨░╤Г╨╜╤З╨╡╤А ╨╜╨╡ ╨╝╨╛╨╢╨╡╤В ╨╛╨▒╨╜╨░╤А╤Г╨╢╨╕╤В╤М ╨╜╨╕ ╨╛╨┤╨╜╨╛╨╣
+    ╨▓╨╡╤А╤Б╨╕╨╕ Java ╨╜╨░ ╨▓╨░╤И╨╡╨╝ ╨║╨╛╨╝╨┐╤М╤О╤В╨╡╤А╨╡.'
   optionSwitch:
-    name: '{name} o''chirilsinmi'
+    name: ╨Я╨╡╤А╨╡╨║╨╗╤О╤З╨╕╤В╤М╤Б╤П ╨╜╨░ {version}
 HomeLaunchMultiInstanceDialog:
-  confirm: Tasdiqlash
-  description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-    komilmi?
-  title: Несколько экземпляров
+  confirm: ╨Ф╨░, ╨╖╨░╨┐╤Г╤Б╤В╨╕╤В╤М
+  description: ╨Т╤Л ╨╖╨░╨┐╤Г╤Б╨║╨░╨╡╤В╨╡ ╨╜╨╡╤Б╨║╨╛╨╗╤М╨║╨╛ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨╛╨▓
+    Minecraft. ╨Т╤Л ╤Г╨▓╨╡╤А╨╡╨╜╤Л?
+  title: ╨Э╨╡╤Б╨║╨╛╨╗╤М╨║╨╛ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨╛╨▓
 SettingMigrationDialog:
-  selectRootDirectory: Tizim katalogini tanlang
+  selectRootDirectory: ╨Т╤Л╨▒╤А╨░╤В╤М ╨║╨╛╤А╨╜╨╡╨▓╨╛╨╣ ╨║╨░╤В╨░╨╗╨╛╨│
 agent:
-  callingTool: '{name} chaqirilmoqda...'
-  confirmAccept: Davom etish
-  confirmCancel: Bekor qilish
-  confirmTitle: Agent harakatini tasdiqlang
-  disabledPlaceholder: Agent o'chirilgan
-  emptyHint: Agentdan ekzemplarni tekshirishni, modlarni yoqish/o'chirishni, loglarni
-    o'qishni yoki nosozliklarni tashxislashni so'rang.
-  errorTitle: Agentda xatolik yuz berdi
-  inputPlaceholder: Agentdan so'rang... (Enter — yuborish, Shift+Enter — yangi qator)
-  notConfiguredHint: Agentni yoqish uchun Sozlamalar - Umumiy - AI Agent bo'limida
-    API kaliti, model va endpointni ko'rsating.
-  notConfiguredTitle: Agent sozlanmagan
-  openSettings: Sozlamalarni ochish
-  reset: Muloqotni qayta tiklash
-  setupGuide: Sozlash bo'yicha qo'llanma
-  statusDisabled: O'chirilgan — API kaliti yo'q
-  statusReady: Tayyor
-  statusWorking: Ishlamoqda...
-  suggestion1: Ushbu ekzemplarni Minecraft'ning yangi versiyasiga va modlarni yangilang
-  suggestion2: Modlarim buzilmoqda — sababini toping va tuzatishga yordam bering
-  suggestion3: 'Sborka yig''ing: kerakli funksiya uchun modlarni toping va ularni
-    ushbu ekzemplarga o''rnating'
-  thinking: o'ylamoqda...
-  title: XMCL Agent
-  toolArguments: Argumentlar
-  toolResult: Natija
-  toolRunning: Natija kutilmoqda...
-  toggleHint: o'tkazish
-  marketConfirmMessage: '{name} joriy ekzemplarga o''rnatilsinmi?'
-  marketConfirmTarget: 'Nishon: {instance}'
-  marketConfirmTitle: '{type} o''rnatish'
+  callingTool: ╨▓╤Л╨╖╨╛╨▓ {name}тАж
+  confirmAccept: Continue
+  confirmCancel: Bekor Qilish
+  confirmTitle: Confirm agent action
+  disabledPlaceholder: Agent ╨╛╤В╨║╨╗╤О╤З╨╡╨╜
+  emptyHint: ╨Я╨╛╨┐╤А╨╛╤Б╨╕╤В╨╡ ╨░╨│╨╡╨╜╤В╨░ ╨┐╤А╨╛╨▓╨╡╤А╨╕╤В╤М ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А,
+    ╨▓╨║╨╗╤О╤З╨╕╤В╤М/╨▓╤Л╨║╨╗╤О╤З╨╕╤В╤М ╨╝╨╛╨┤╤Л, ╤З╨╕╤В╨░╤В╤М
+  errorTitle: The agent hit an error
+  inputPlaceholder: ╨б╨┐╤А╨╛╤Б╨╕╤В╨╡ ╨░╨│╨╡╨╜╤В╨░тАж (Enter тАФ ╨╛╤В╨┐╤А╨░╨▓╨╕╤В╤М,
+    Shift+Enter тАФ ╨╜╨╛╨▓╨░╤П ╤Б╤В╤А╨╛╨║╨░)
+  notConfiguredHint: ╨г╨║╨░╨╢╨╕╤В╨╡ API-╨║╨╗╤О╤З, ╨╝╨╛╨┤╨╡╨╗╤М ╨╕ endpoint ╨▓ ╨Э╨░╤Б╤В╤А╨╛╨╣╨║╨╕
+    тЖТ ╨Ю╨▒╤Й╨╕╨╡ тЖТ AI
+  notConfiguredTitle: Agent ╨╜╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╡╨╜
+  openSettings: ╨Ю╤В╨║╤А╤Л╤В╤М ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕
+  reset: ╨б╨▒╤А╨╛╤Б╨╕╤В╤М ╨┤╨╕╨░╨╗╨╛╨│
+  setupGuide: ╨а╤Г╨║╨╛╨▓╨╛╨┤╤Б╤В╨▓╨╛ ╨┐╨╛ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╡
+  statusDisabled: ╨Ю╤В╨║╨╗╤О╤З╨╡╨╜╨╛ тАФ ╨╜╨╡╤В API-╨║╨╗╤О╤З╨░
+  statusReady: ╨У╨╛╤В╨╛╨▓
+  statusWorking: ╨а╨░╨▒╨╛╤В╨░╤ОтАж
+  suggestion1: ╨Ю╨▒╨╜╨╛╨▓╨╕╤В╨╡ ╤Н╤В╨╛╤В ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А ╨┤╨╛ ╨╜╨╛╨▓╨╛╨╣ ╨▓╨╡╤А╤Б╨╕╨╕
+    Minecraft ╨╕ ╨╛╨▒╨╜╨╛╨▓╨╕╤В╨╡ ╨╝╨╛╨┤╤Л
+  suggestion2: ╨Ь╨╛╨╕ ╨╝╨╛╨┤╤Л ╨┐╨░╨┤╨░╤О╤В тАФ ╨╜╨░╨╣╨┤╨╕╤В╨╡ ╨┐╤А╨╕╤З╨╕╨╜╤Г ╨╕ ╨┐╨╛╨┤╤Б╨║╨░╨╢╨╕╤В╨╡,
+    ╨║╨░╨║ ╨╕╤Б╨┐╤А╨░╨▓╨╕╤В╤М
+  suggestion3: '''╨б╨╛╨▒╨╡╤А╨╕╤В╨╡ ╤Б╨▒╨╛╤А╨║╤Г: ╨╜╨░╨╣╨┤╨╕╤В╨╡ ╨╝╨╛╨┤╤Л ╨┤╨╗╤П ╨╜╤Г╨╢╨╜╨╛╨╣
+    ╤Д╤Г╨╜╨║╤Ж╨╕╨╕ ╨╕ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╨╡ ╨╕╤Е ╨▓'
+  thinking: ╨┤╤Г╨╝╨░╤ОтАж
+  title: NeoTerra Launcher Agenti
+  toolArguments: Arguments
+  toolResult: Result
+  toolRunning: Waiting for resultтАж
+  toggleHint: ╨┐╨╡╤А╨╡╨║╨╗╤О╤З╨╕╤В╤М
+  marketConfirmMessage: Install {name} into the current instance?
+  marketConfirmTarget: 'Target: {instance}'
+  marketConfirmTitle: Install {type}
   marketInstall: O'rnatish
   marketInstalled: O'rnatildi
-  marketInstallFailed: '{type} o''rnatib bo''lmadi'
+  marketInstallFailed: Failed to install {type}
   marketType:
     datapack: data pack
     mod: mod
     modpack: modpack
     resourcepack: resource pack
     shader: shader pack
-  marketResultCount: '{count} ta natija'
+  marketResultCount: '{count} results'
 ago:
-  day: '{duration} kun oldin | {duration} kun oldin'
-  hour: '{duration} soat oldin | {duration} soat oldin'
-  minute: '{duration} daqiqa oldin | {duration} daqiqa oldin'
-  second: '{duration} soniya oldin | {duration} soniya oldin'
+  day: '{duration} ╨┤╨╡╨╜╤М ╨╜╨░╨╖╨░╨┤ | {duration} ╨┤╨╜╨╡╨╣ ╨╜╨░╨╖╨░╨┤'
+  hour: '{duration} ╤З╨░╤Б ╨╜╨░╨╖╨░╨┤ | {duration} ╤З╨░╤Б╨╛╨▓ ╨╜╨░╨╖╨░╨┤'
+  minute: '{duration} ╨╝╨╕╨╜╤Г╤В╤Г ╨╜╨░╨╖╨░╨┤ | {duration} ╨╝╨╕╨╜╤Г╤В ╨╜╨░╨╖╨░╨┤'
+  second: '{duration} ╤Б╨╡╨║╤Г╨╜╨┤╤Г ╨╜╨░╨╖╨░╨┤ | {duration} ╤Б╨╡╨║╤Г╨╜╨┤ ╨╜╨░╨╖╨░╨┤'
 askAICrash:
-  agentNotConfigured: Launcher'ning o'rnatilgan agenti buni siz uchun tashxis qilishi
-    va tuzatishi uchun Sozlamalarga AI provayderi va API kalitini qo'shing.
-  askAgent: O'rnatilgan AI agenti bilan tashxis qilish
-  copyPrompt: Sun'iy intellektdan so'rash uchun buyruqni nusxalang
-  description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-    komilmi?
-  orExternal: yoki tashqi AI'dan foydalaning
-  selectPlatform: Sun'iy intellekt platformasini oching va nusxalangan matnni joylashtiring.
-  setupAgent: AI agentini sozlash
-authProfileAddedNotification: '{name} autentifikatsiya profili qo''shildi'
+  agentNotConfigured: Add an AI provider and API key in Settings to let the launcher's
+  askAgent: Diagnose with the built-in AI agent
+  copyPrompt: ╨б╨║╨╛╨┐╨╕╤А╤Г╨╣╤В╨╡ ╨┐╨╛╨┤╤Б╨║╨░╨╖╨║╤Г, ╤З╤В╨╛╨▒╤Л ╤Б╨┐╤А╨╛╤Б╨╕╤В╤М
+    AI
+  description: '''╨Я╤Г╤Б╤В╤М AI ╨┐╨╛╨╝╨╛╨╢╨╡╤В ╨▓╨░╨╝ ╨┐╨╛╨╜╤П╤В╤М ╨╕╨│╤А╨╛╨▓╨╛╨╣
+    ╤Б╨▒╨╛╨╣!'
+  orExternal: or use an external AI
+  selectPlatform: ╨Ю╤В╨║╤А╨╛╨╣╤В╨╡ ╨┐╨╗╨░╤В╤Д╨╛╤А╨╝╤Г ╨┤╨╗╤П ╨Ш╨Ш ╨╕ ╨▓╤Б╤В╨░╨▓╤М╤В╨╡
+    ╤В╨╛╨╗╤М╨║╨╛ ╤З╤В╨╛ ╤В╨╛╨╗╤М╨║╨╛ ╤З╤В╨╛ ╤Б╨║╨╛╨┐╨╕╤А╨╛╨▓╨░╨╜╨╜╨╛╨╡.
+  setupAgent: Set up the AI agent
+authProfileAddedNotification: ╨Я╤А╨╛╤Д╨╕╨╗╤М ╨░╤Г╤В╨╡╨╜╤В╨╕╤Д╨╕╨║╨░╤Ж╨╕╨╕ {name} ╨┤╨╛╨▒╨░╨▓╨╗╨╡╨╜
 bedrock:
-  description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-    komilmi?
-  install: O'rnatish
-  installFailed: Microsoft Store'ni ochib bo'lmadi
-  installed: 'O''rnatilgan: {version}'
-  launchHint: Bedrock Edition'ni boshlash uchun Ishga tushirish tugmasini bosing.
-  installBedrockVersion: Bedrock {version} yuklab olinmoqda
-  licenseRequired: Bedrock Edition'ni o'rnatish va o'ynash uchun Minecraft'ga ega
-    bo'lgan Microsoft hisobingiz bilan kiring.
+  description: Minecraft Bedrock Edition is installed and launched through the Microsoft
+  install: Get from Microsoft Store
+  installFailed: Failed to open the Microsoft Store
+  installed: 'Installed: {version}'
+  launchHint: Use the Launch button to start Bedrock Edition.
+  installBedrockVersion: Downloading Bedrock {version}
+  licenseRequired: Sign in with a Microsoft account that owns Minecraft to install
   refresh: Yangilash
-  versionsTitle: Versiya menejeri
-  versionsHint: Microsoft serverlaridan bir nechta Bedrock versiyalarini yuklab oling
-    va ular o'rtasida o'ting. Windows bir vaqtning o'zida faqat bitta versiyani ro'yxatdan
-    o'tkazishi mumkin.
-  versionsError: Versiyalar ro'yxatini yuklab bo'lmadi. Tarmoqni tekshiring va qayta
-    urinib ko'ring.
-  channel: Kanal
-  channelRelease: Reliz
+  versionsTitle: Version manager
+  versionsHint: Download multiple Bedrock versions from Microsoft's servers and switch
+  versionsError: Failed to load the version list. Check your network and try again.
+  channel: Channel
+  channelRelease: Release
   channelBeta: Beta
-  channelPreview: Dastlabki ko'rish
-  active: Faol
+  channelPreview: Preview
+  active: Active
   play: O'ynash
-  download: Yuklab olish
+  download: Yuklab Olish
   installedTag: O'rnatildi
-  developerModeRequired: Yuklab olingan versiyani ro'yxatdan o'tkazish uchun Windows
-    Dasturchi rejimi talab qilinadi.
-  enableDeveloperMode: Dasturchi rejimini yoqish
-  enableDeveloperModeFailed: Dasturchi rejimini yoqib bo'lmadi
-  downloadFailed: Bedrock {version} yuklab olinmadi
-  launchFailed: Ushbu Bedrock versiyasini ishga tushirib bo'lmadi
-  removeFailed: Bedrock {version} o'chirilmadi
+  developerModeRequired: Registering a downloaded version requires Windows Developer
+  enableDeveloperMode: Enable Developer Mode
+  enableDeveloperModeFailed: Failed to enable Developer Mode
+  downloadFailed: Failed to download Bedrock {version}
+  launchFailed: Failed to launch this Bedrock version
+  removeFailed: Failed to remove Bedrock {version}
 baseSetting:
-  title: Локальные настройки
+  title: Mahalliy sozlamalar
 browseApp:
-  createShortcut: Yorliq yaratish
-  default: Odatiy
-  delete: O'chirish
-  launch: O'yinni ishga tushirish
-browseApps: Launcher foydalanuvchi interfeysini ko'rish
-color: Rang
-confirm: Tasdiqlash
+  createShortcut: ╨б╨╛╨╖╨┤╨░╤В╤М ╤П╤А╨╗╤Л╨║
+  default: ╨Я╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О
+  delete: ╨г╨┤╨░╨╗╨╕╤В╤М
+  launch: ╨Ч╨░╨┐╤Г╤Б╤В╨╕╤В╤М ╨╕ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О
+browseApps: ╨Я╤А╨╛╤Б╨╝╨╛╤В╤А ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤М╤Б╨║╨╛╨│╨╛ ╨╕╨╜╤В╨╡╤А╤Д╨╡╨╣╤Б╨░
+  ╨┐╤Г╤Б╨║╨╛╨▓╨╛╨╣ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨║╨╕
+color: ╨ж╨▓╨╡╤В
+confirm: ╨Я╨╛╨┤╤В╨▓╨╡╤А╨┤╨╕╤В╤М
 copyClipboard:
-  success: Buferga nusxalandi
-create: Yaratish
+  success: ╨б╨║╨╛╨┐╨╕╤А╨╛╨▓╨░╨╜╨╛ ╨▓ ╨▒╤Г╤Д╨╡╤А ╨╛╨▒╨╝╨╡╨╜╨░
+create: ╨б╨╛╨╖╨┤╨░╤В╤М
 curseforge:
-  category: Kategoriya
-  createdDate: Yaratilgan sana
-  lastUpdate: Oxirgi yangilangan sana
-  releasedDate: Chiqarilgan sana
+  category: ╨Ъ╨░╤В╨╡╨│╨╛╤А╨╕╤П
+  createdDate: ╨Ф╨░╤В╨░ ╤Б╨╛╨╖╨┤╨░╨╜╨╕╤П
+  lastUpdate: ╨Ф╨░╤В╨░ ╨┐╨╛╤Б╨╗╨╡╨┤╨╜╨╡╨│╨╛ ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╤П
+  releasedDate: ╨Ф╨░╤В╨░ ╤А╨╡╨╗╨╕╨╖╨░
 curseforgeCategory:
-  API and Library: API va kutubxonalar
-  Addons: Qo'shimchalar
-  Adventure: Sarguzasht
-  Adventure and RPG: Sarguzasht va RPG
-  Animated: Animatsiya
-  Armor, Tools, and Weapons: Sovutlar, qurollar va moslamalar
-  Combat / PvP: Jang / PVP
-  Cosmetic: Tashqi ko'rinish/bezak
-  Creation: Ijodiy rejim
-  Data Packs: Ma'lumotlar paketi
-  Education: Ta'lim
-  Exploration: Qidiruv va kashfiyot
-  Extra Large: Juda katta hajmli
-  FTB Official Pack: Rasmiy FTB paketi
+  API and Library: API ╨╕ ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╨╕
+  Addons: ╨Ф╨╛╨┐╨╛╨╗╨╜╨╡╨╜╨╕╤П
+  Adventure: ╨Я╤А╨╕╨║╨╗╤О╤З╨╡╨╜╨╕╨╡
+  Adventure and RPG: ╨Я╤А╨╕╨║╨╗╤О╤З╨╡╨╜╨╕╤П ╨╕ RPG
+  Animated: ╨Р╨╜╨╕╨╝╨░╤Ж╨╕╤П
+  Armor, Tools, and Weapons: Доспехи, инструменты и оружие
+  Combat / PvP: ╨б╨╛╤А╨╡╨▓╨╜╨╛╨▓╨░╨╜╨╕╤П/PVP
+  Cosmetic: ╨Т╨╜╨╡╤И╨╜╨╕╨╣ ╨▓╨╕╨┤/╨┤╨╡╨║╨╛╤А
+  Creation: ╨в╨▓╨╛╤А╤З╨╡╤Б╨║╨╕╨╣ ╤А╨╡╨╢╨╕╨╝
+  Data Packs: ╨Я╨░╨║╨╡╤В ╨┤╨░╨╜╨╜╤Л╤Е
+  Education: ╨Ю╨▒╤А╨░╨╖╨╛╨▓╨░╨╜╨╕╨╡
+  Exploration: ╨а╨░╨╖╨▓╨╡╨┤╨║╨░
+  Extra Large: ╨С╨╛╨╗╤М╤И╨╛╨╣ ╤А╨░╨╖╨╝╨╡╤А
+  FTB Official Pack: ╨Ю╤Д╨╕╤Ж╨╕╨░╨╗╤М╨╜╤Л╨╣ ╨┐╨░╨║╨╡╤В FTB
   Fabric: Fabric
   FancyMenu: FancyMenu
-  Font Packs: Shriftlar
-  Food: Ovqat
-  Game Map: O'yin xaritalari
-  Hardcore: Hardkor
+  Font Packs: ╨и╤А╨╕╤Д╤В╤Л
+  Food: ╨Х╨┤╨░
+  Game Map: ╨Ш╨│╤А╨╛╨▓╤Л╨╡ ╨║╨░╤А╤В╤Л
+  Hardcore: ╨е╨░╤А╨┤╨║╨╛╤А
   MCreator: MCreator
-  Magic: Sehr-jodu
-  Map Based: Xaritaga asoslangan
-  Map and Information: Xaritalar va ma'lumotlar
-  Medieval: O'rta asrlar
-  Mini Game: Mini-o'yinlar
-  Miscellaneous: Har xil
-  Mod Support: Modlarni qo'llab-quvvatlash
-  Modded World: Dunyolar uchun mod
-  Modern: Zamonaviy
-  Multiplayer: Ko'p o'yinchi rejimi
-  Parkour: Parkur
-  Photo Realistic: Realistik fotosurat
-  Puzzle: Boshqotirmalar
+  Magic: ╨Ь╨░╨│╨╕╤П
+  Map Based: ╨Э╨░ ╨╛╤Б╨╜╨╛╨▓╨╡ ╨║╨░╤А╤В╤Л
+  Map and Information: ╨Ъ╨░╤А╤В╤Л ╨╕ ╨╕╨╜╤Д╨╛╤А╨╝╨░╤Ж╨╕╤П
+  Medieval: ╨б╤А╨╡╨┤╨╜╨╡╨▓╨╡╨║╨╛╨▓╤М╨╡
+  Mini Game: ╨Ь╨╕╨╜╨╕-╨╕╨│╤А╤Л
+  Miscellaneous: ╨а╨░╨╖╨╜╨╛╨╡
+  Mod Support: ╨Я╨╛╨┤╨┤╨╡╤А╨╢╨║╨░ ╨╝╨╛╨┤╨╛╨▓
+  Modded World: ╨Ь╨╛╨┤ ╨┤╨╗╤П ╨╝╨╕╤А╨╛╨▓
+  Modern: Modern
+  Multiplayer: ╨Ь╤Г╨╗╤М╤В╨╕╨┐╨╗╨╡╨╡╤А
+  Parkour: ╨Я╨░╤А╨║╤Г╤А
+  Photo Realistic: ╨а╨╡╨░╨╗╨╕╤Б╤В╨╕╤З╨╜╨░╤П ╤Д╨╛╤В╨╛╨│╤А╨░╤Д╨╕╤П
+  Puzzle: ╨Я╨░╨╖╨╗╤Л
   QoL: QoL
-  Quests: Kvestlar
-  Redstone: Redstoun
-  Sci-Fi: Ilmiy fantastika
-  Server Utility: Server vositasi
+  Quests: ╨Ъ╨▓╨╡╤Б╤В╤Л
+  Redstone: Redstone
+  Sci-Fi: ╨Э╨░╤Г╤З╨╜╨░╤П ╤Д╨░╨╜╤В╨░╤Б╤В╨╕╨║╨░
+  Server Utility: ╨б╨╡╤А╨▓╨╡╤А╨╜╤Л╨╣ ╨╕╨╜╤Б╤В╤А╤Г╨╝╨╡╨╜╤В
   Skyblock: SkyBlock
-  Small / Light: Kichik / Yengil
-  Steampunk: Stimpank
-  Storage: Omborxona
-  Survival: Omon qolish
-  Tech: Texnologiya
-  Technology: Texnologiya
-  Traditional: An'anaviy
-  Twitch Integration: Twitch bilan integratsiya
-  Utility & QoL: Utilita va QoL
-  Vanilla+: Vanila+
-  World Gen: Dunyo generatori
+  Small / Light: ╨Э╨╡╨╝╨╜╨╛╨│╨╛
+  Steampunk: Steampunk
+  Storage: ╨е╤А╨░╨╜╨╡╨╜╨╕╨╡
+  Survival: ╨Т╤Л╨╢╨╕╨▓╨░╨╜╨╕╨╡
+  Tech: ╨в╨╡╤Е╨╜╨╛╨╗╨╛╨│╨╕╤П
+  Technology: ╨в╨╡╤Е╨╜╨╛╨╗╨╛╨│╨╕╤П
+  Traditional: ╨в╤А╨░╨┤╨╕╤Ж╨╕╨╛╨╜╨╜╤Л╨╣
+  Twitch Integration: ╨Ш╨╜╤В╨╡╨│╤А╨░╤Ж╨╕╤П ╤Б Twitch
+  Utility & QoL: Утилита и Qol
+  Vanilla+: Ванила+
+  World Gen: ╨У╨╡╨╜╨╡╤А╨░╤В╨╛╤А ╨╝╨╕╤А╨░
 dataMigration:
-  apply: Sozlamalarni qo'llash
-  directoryCriteriaHint: Iltimos, yangi joylashuv bo'sh katalog ekanligiga ishonch
-    hosil qiling!
-  placeholder: Katalogni tanlash uchun bu yerga bosing
-  setRootCause: Ma'lumotlarni ko'chirish paytida launcherni yopsangiz, ma'lumotlaringizni
-    (xaritalar, resurslar toplami, modlar) yoqotasiz!
-  setRootDescription: Bu ushbu launcher va Minecraft ma'lumotlarining asosiy katalogini
-    o'zgartiradi.
-  setRootTitle: Yangi saqlash joyini belgilash
-  unknownError: Noma'lum xatolik! Iltimos, qayta urinib ko'ring yoki dasturchi bilan
-    bog'laning!
-  waitReload: Ma'lumotlar ko'chirilmoqda. Iltimos, launcherni yopmang, aks holda ma'lumotlaringiz
-    yo'qolishi mumkin.
+  apply: ╨Я╤А╨╕╨╝╨╡╨╜╨╕╤В╤М ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕
+  directoryCriteriaHint: ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╤Г╨▒╨╡╨┤╨╕╤В╨╡╤Б╤М, ╤З╤В╨╛ ╨╜╨╛╨▓╨╛╨╡
+    ╤А╨░╤Б╨┐╨╛╨╗╨╛╨╢╨╡╨╜╨╕╨╡ ╤П╨▓╨╗╤П╨╡╤В╤Б╤П ╨┐╤Г╤Б╤В╤Л╨╝
+  placeholder: ╨Э╨░╨╢╨╝╨╕╤В╨╡ ╨╖╨┤╨╡╤Б╤М, ╤З╤В╨╛╨▒╤Л ╨▓╤Л╨▒╤А╨░╤В╤М ╨║╨░╤В╨░╨╗╨╛╨│
+  setRootCause: ╨Т╤Л ╨┐╨╛╤В╨╡╤А╤П╨╡╤В╨╡ ╤Б╨▓╨╛╨╕ ╨┤╨░╨╜╨╜╤Л╨╡ (╨║╨░╤А╤В╤Л, ╨╜╨░╨▒╨╛╤А╤Л
+    ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓, ╨╝╨╛╨┤╤Л), ╨╡╤Б╨╗╨╕ ╨╖╨░╨║╤А╨╛╨╡╤В╨╡
+  setRootDescription: ╨н╤В╨╛ ╨╕╨╖╨╝╨╡╨╜╨╕╤В ╨║╨╛╤А╨╜╨╡╨▓╨╛╨╣ ╨║╨░╤В╨░╨╗╨╛╨│ ╨┤╨░╨╜╨╜╤Л╤Е
+    ╤Н╤В╨╛╨│╨╛ ╨╗╨░╤Г╨╜╤З╨╡╤А╨░ ╨╕ Minecraft.
+  setRootTitle: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╨╜╨╛╨▓╨╛╨╡ ╤А╨░╤Б╨┐╨╛╨╗╨╛╨╢╨╡╨╜╨╕╨╡ ╤Е╤А╨░╨╜╨╕╨╗╨╕╤Й╨░
+  unknownError: ╨Э╨╡╨╕╨╖╨▓╨╡╤Б╤В╨╜╨░╤П ╨╛╤И╨╕╨▒╨║╨░! ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨┐╨╛╨┐╤А╨╛╨▒╤Г╨╣╤В╨╡
+    ╨╡╤Й╤С ╤А╨░╨╖ ╨╕╨╗╨╕ ╤Б╨▓╤П╨╢╨╕╤В╨╡╤Б╤М ╤Б
+  waitReload: ╨Ь╨╕╨│╤А╨░╤Ж╨╕╤П ╨┤╨░╨╜╨╜╤Л╤Е. ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨╜╨╡ ╨╖╨░╨║╤А╤Л╨▓╨░╨╣╤В╨╡
+    ╨╗╨░╤Г╨╜╤З╨╡╤А ╨╕╨╗╨╕ ╨▓╤Л ╨┐╨╛╤В╨╡╤А╤П╨╡╤В╨╡
 delete:
   name: '{name} o''chirilsinmi'
   'no': Yo'q
   'yes': O'chirish
 dependencies:
-  embedded: Ichki o'rnatilgan
-  incompatible: Mos kelmaydigan
-  name: '{name} o''chirilsinmi'
-  optional: Majburiy bo'lmagan
-  required: Zaruriy
+  embedded: ╨Т╤Б╤В╤А╨░╨╕╨▓╨░╨╡╨╝╤Л╨╡
+  incompatible: ╨Э╨╡╤Б╨╛╨▓╨╝╨╡╤Б╤В╨╕╨╝╤Л╨╡
+  name: ╨Ч╨░╨▓╨╕╤Б╨╕╨╝╨╛╤Б╤В╨╕
+  optional: ╨Э╨╡╨╛╨▒╤П╨╖╨░╤В╨╡╨╗╤М╨╜╤Л╨╡
+  required: ╨Э╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╤Л╨╡
 diagnosis:
   badInstall:
-    message: Ushbu versiyani qayta o'rnatishga urinish uchun bosing.
-    name: '{name} o''chirilsinmi'
+    message: ╨Э╨░╨╢╨╝╨╕╤В╨╡, ╤З╤В╨╛╨▒╤Л ╨┐╨╛╨┐╤Л╤В╨░╤В╤М╤Б╤П ╨┐╨╡╤А╨╡╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М
+      ╤Н╤В╤Г ╨▓╨╡╤А╤Б╨╕╤О.
+    name: ╨Э╨╡╤Г╨┤╨░╤З╨╜╨░╤П ╤Г╤Б╤В╨░╨╜╨╛╨▓╨║╨░ ╨╜╨░ {version}
   corruptedAssets:
-    message: Ushbu versiyani qayta o'rnatishga urinish uchun bosing.
-    name: '{name} o''chirilsinmi'
+    message: ╨Ы╨░╤Г╨╜╤З╨╡╤А ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В ╤А╨╡╤Б╤Г╤А╤Б╤Л ╨┤╨╗╤П ╨▓╨░╤Б
+    name: ╨Я╨╛╨▓╤А╨╡╨╢╨┤╤С╨╜╨╜╤Л╨╣ ╤А╨╡╤Б╤Г╤А╤Б {name} | ╨Я╨╛╨▓╤А╨╡╨╢╨┤╤С╨╜╨╜╤Л╨╣
+      ╤А╨╡╤Б╤Г╤А╤Б {name} | {count} ╨┐╨╛╨▓╤А╨╡╨╢╨┤╤С╨╜╨╜╤Л╤Е
   corruptedAssetsIndex:
-    message: Ushbu versiyani qayta o'rnatishga urinish uchun bosing.
-    name: '{name} o''chirilsinmi'
+    message: ╨Ы╨░╤Г╨╜╤З╨╡╤А ╤Б╨║╨░╤З╨░╨╡╤В ╤Д╨░╨╣╨╗ ╨╕╨╜╨┤╨╡╨║╤Б╨░ ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓
+      ╨┤╨╗╤П ╨▓╨░╤Б
+    name: ╨Я╨╛╨▓╤А╨╡╨╢╨┤╤С╨╜╨╜╤Л╨╣ ╤Д╨░╨╣╨╗ ╨╕╨╜╨┤╨╡╨║╤Б╨░ ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓ ╨▓╨╡╤А╤Б╨╕╨╕
+      {version}.
   corruptedLibraries:
-    message: Ushbu versiyani qayta o'rnatishga urinish uchun bosing.
-    name: '{name} o''chirilsinmi'
+    message: ╨Ы╨░╤Г╨╜╤З╨╡╤А ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╨╕ ╨┤╨╗╤П ╨▓╨░╤Б
+    name: ╨Я╨╛╨▓╤А╨╡╨╢╨┤╤С╨╜╨╜╨░╤П ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╨░ {name} | ╨Я╨╛╨▓╤А╨╡╨╢╨┤╤С╨╜╨╜╨░╤П
+      ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╨░ {name} | {count}
   corruptedVersionJar:
-    message: Ushbu versiyani qayta o'rnatishga urinish uchun bosing.
-    name: '{name} o''chirilsinmi'
+    message: ╨Э╨░╨╢╨╝╨╕╤В╨╡, ╤З╤В╨╛╨▒╤Л ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╤Н╤В╤Г ╨▓╨╡╤А╤Б╨╕╤О
+    name: ╨Я╨╛╨▓╤А╨╡╨╢╨┤╤С╨╜ jar ╤Д╨░╨╣╨╗ ╨▓╨╡╤А╤Б╨╕╨╕ Minecraft {version}.
   incompatibleJava:
-    name: '{name} o''chirilsinmi'
+    name: ╨Т╨╡╤А╤Б╨╕╤П Java {javaVersion} ╨╜╨╡ ╨┐╨╛╨┤╤Е╨╛╨┤╨╕╤В ╨┤╨╗╤П {version}!
   instanceFiles:
-    description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-      komilmi?
-    title: Незавершённая установка экземпляра
+    description: ╨г╤Б╤В╨░╨╜╨╛╨▓╨║╨░ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░ ╨▓╨║╨╗╤О╤З╨░╨╡╤В {counts}
+      ╤Д╨░╨╣╨╗╨╛╨▓.
+    title: ╨Э╨╡╨╖╨░╨▓╨╡╤А╤И╤С╨╜╨╜╨░╤П ╤Г╤Б╤В╨░╨╜╨╛╨▓╨║╨░ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
   invalidJava:
-    name: '{name} o''chirilsinmi'
+    name: ╨Э╨╡╨▓╨╡╤А╨╜╨╛╨╡ ╤А╨░╤Б╨┐╨╛╨╗╨╛╨╢╨╡╨╜╨╕╨╡ Java.
   missingJava:
-    message: Ushbu versiyani qayta o'rnatishga urinish uchun bosing.
-    name: '{name} o''chirilsinmi'
+    message: ╨Э╨░╨╢╨╝╨╕╤В╨╡, ╤З╤В╨╛╨▒╤Л ╤А╨╡╤И╨╕╤В╤М ╤Н╤В╤Г ╨┐╤А╨╛╨▒╨╗╨╡╨╝╤Г
+    name: ╨Э╨╡ ╤Г╨┤╨░╤С╤В╤Б╤П ╨╜╨░╨╣╤В╨╕ Java ╨┤╨╗╤П ╨╖╨░╨┐╤Г╤Б╨║╨░ Minecraft!
   missingLibraries:
-    message: Ushbu versiyani qayta o'rnatishga urinish uchun bosing.
-    name: '{name} o''chirilsinmi'
+    message: ╨Ы╨░╤Г╨╜╤З╨╡╤А ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╨╕ ╨┤╨╗╤П ╨▓╨░╤Б
+    name: ╨Ю╤В╤Б╤Г╤В╤Б╤В╨▓╤Г╨╡╤В ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╨░ {name} | ╨Ю╤В╤Б╤Г╤В╤Б╤В╨▓╤Г╨╡╤В
+      ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╨░ {name} | {count}
   missingVersion:
-    message: Ushbu versiyani qayta o'rnatishga urinish uchun bosing.
-    name: '{name} o''chirilsinmi'
+    message: ╨Э╨░╨╢╨╝╨╕╤В╨╡, ╤З╤В╨╛╨▒╤Л ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╤Н╤В╤Г ╨▓╨╡╤А╤Б╨╕╤О
+    name: ╨Т╨╡╤А╤Б╨╕╤П {version} ╨╜╨╡ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨░!
   unresolvedFiles:
-    description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-      komilmi?
-    title: Неразрешённые файлы
+    description: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╤А╨░╨╖╤А╨╡╤И╨╕╤В╤М {count} ╤Д╨░╨╣╨╗ ╨┐╤А╨╕ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨║╨╡
+      | ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╤А╨░╨╖╤А╨╡╤И╨╕╤В╤М
+    title: ╨Э╨╡╤А╨░╨╖╤А╨╡╤И╤С╨╜╨╜╤Л╨╡ ╤Д╨░╨╣╨╗╤Л
   unzipFileNotFound:
-    description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-      komilmi?
-    title: Файл Modpack не найден
+    description: ╨Э╨╡ ╨╝╨╛╨│╤Г ╨╜╨░╨╣╤В╨╕ {file}
+    title: ╨д╨░╨╣╨╗ Modpack ╨╜╨╡ ╨╜╨░╨╣╨┤╨╡╨╜
 difficulty:
   easy: Easy
   hard: Hard
   normal: Normal
   peaceful: Peaceful
 disk:
-  available: Mavjud
-  used: Ishlatilgan
-downloadCount: '{count} marta yuklab olingan'
+  available: ╨Ф╨╛╤Б╤В╤Г╨┐╨╜╨╛
+  used: ╨Ш╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╨╜╨╛
+downloadCount: '{count} ╨╖╨░╨│╤А╤Г╨╖╨╛╨║'
 downloadModMetadataDb:
-  name: '{name} o''chirilsinmi'
+  name: ╨Ч╨░╨│╤А╤Г╨╖╨╕╤В╤М ╨▒╨░╨╖╤Г ╨╝╨╡╤В╨░╨┤╨░╨╜╨╜╤Л╤Е ╨╝╨╛╨┤╨╛╨▓
 downloadUpdate:
-  name: '{name} o''chirilsinmi'
+  name: ╨Ч╨░╨│╤А╤Г╨╖╨╕╤В╤М ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╨╡ {version}
 duplicateInstance:
-  name: '{name} o''chirilsinmi'
+  name: ╨Ф╤Г╨▒╨╗╨╕╤А╨╛╨▓╨░╤В╤М ╨╕╨╜╤Б╤В╨░╨╜╤Б
 duration:
-  day: '{duration} kun oldin | {duration} kun oldin'
-  hour: '{duration} soat oldin | {duration} soat oldin'
-  minute: '{duration} daqiqa oldin | {duration} daqiqa oldin'
-  second: '{duration} soniya oldin | {duration} soniya oldin'
+  day: '{duration} ╨┤╨╡╨╜╤М | {duration} ╨┤╨╜╨╡╨╣'
+  hour: '{duration} ╤З╨░╤Б | {duration} ╤З╨░╤Б╨╛╨▓'
+  minute: '{duration} ╨╝╨╕╨╜╤Г╤В╨░ | {duration} ╨╝╨╕╨╜╤Г╤В'
+  second: '{duration} ╤Б╨╡╨║╤Г╨╜╨┤╨░ | {duration} ╤Б╨╡╨║╤Г╨╜╨┤'
 env:
   select:
-    all: Barchasini tanlash
-    fit: Mos keladiganlarini tanlash
-    none: Tanlovni bekor qilish
+    all: ╨Т╤Л╨▒╤А╨░╤В╤М ╨▓╤Б╨╡
+    fit: ╨Т╤Л╨▒╤А╨░╤В╤М ╨┐╨╛╨┤╤Е╨╛╨┤╤П╤Й╨╕╨╡
+    none: ╨Ю╤В╨╝╨╡╨╜╨╕╤В╤М ╨▓╤Л╨▒╨╛╤А
 errors:
-  bedrockUnsupportedPlatform: Minecraft Bedrock Edition faqat Windows tizimida qo'llab-quvvatlanadi.
-  bedrockNotInstalled: Minecraft Bedrock Edition o'rnatilmagan.
-  bedrockLaunchFailed: Minecraft Bedrock Edition'ni ishga tushirib bo'lmadi.
-  bedrockInstallFailed: Minecraft Bedrock Edition'ni o'rnatib bo'lmadi.
+  bedrockUnsupportedPlatform: Minecraft Bedrock Edition is only supported on the Windows
+  bedrockNotInstalled: Minecraft Bedrock Edition is not installed.
+  bedrockLaunchFailed: Failed to launch Minecraft Bedrock Edition.
+  bedrockInstallFailed: Failed to install Minecraft Bedrock Edition.
   bedrockDownloadUrlUnavailable: This Bedrock version is not available for the current
-    Microsoft account. Beta and Preview versions require an account enrolled in the
-    Minecraft beta programme.
   bedrockDeveloperModeRequired: Windows Developer Mode is required to register this
-    Bedrock version.
   bedrockRegisterFailed: Failed to register this Bedrock version with Windows.
   bedrockVersionNotFound: This Bedrock version is not installed locally.
-  BadForgeInstallerJarError: Не удаётся получить файл загрузчика forge. Возможно,
-    у forge новый формат файла загрузчика? Обратитесь к разработчикам, если эта проблема
-    будет повторяться.
-  BadInstanceType: 'Noto''g''ri ekzemplar: {type}'
-  BodyTimeoutError: Server javobini kutish vaqti tugadi
-  ChecksumNotMatchError: Контрольная сумма не совпадает! Ожидалась {expect}. Получена
-    {actual}.
-  ConnectTimeoutError: Server bilan ulanish kutish vaqti tugadi.
+  BadForgeInstallerJarError: ╨Э╨╡ ╤Г╨┤╨░╤С╤В╤Б╤П ╨┐╨╛╨╗╤Г╤З╨╕╤В╤М ╤Д╨░╨╣╨╗ ╨╖╨░╨│╤А╤Г╨╖╤З╨╕╨║╨░
+    forge. ╨Т╨╛╨╖╨╝╨╛╨╢╨╜╨╛,
+  BadInstanceType: '╨Э╨╡╨┤╨╛╨┐╤Г╤Б╤В╨╕╨╝╤Л╨╣ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А: {type}'
+  BodyTimeoutError: ╨Ш╤Б╤В╨╡╨║╨╗╨╛ ╨▓╤А╨╡╨╝╤П ╨╛╨╢╨╕╨┤╨░╨╜╨╕╤П ╨╛╤В╨▓╨╡╤В╨░ ╤Б╨╡╤А╨▓╨╡╤А╨░
+  ChecksumNotMatchError: ╨Ъ╨╛╨╜╤В╤А╨╛╨╗╤М╨╜╨░╤П ╤Б╤Г╨╝╨╝╨░ ╨╜╨╡ ╤Б╨╛╨▓╨┐╨░╨┤╨░╨╡╤В!
+    ╨Ю╨╢╨╕╨┤╨░╨╗╨░╤Б╤М {expect}. ╨Я╨╛╨╗╤Г╤З╨╡╨╜╨░
+  ConnectTimeoutError: ╨Ш╤Б╤В╨╡╨║╨╗╨╛ ╨▓╤А╨╡╨╝╤П ╨╛╨╢╨╕╨┤╨░╨╜╨╕╤П ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╤П
+    ╤Б ╤Б╨╡╤А╨▓╨╡╤А╨╛╨╝.
   CorruptedResourceMetadata: Detected and cleared corrupted metadata on {count} resource(s).
-    The files still work, but their Modrinth/CurseForge attribution was lost and will
-    be re-detected automatically.
-  DNSNotFoundError: DNS qidirishda xatolik
-  DatabaseNotOpened: База данных не открыта! Лаунчер не будет работать должным образом!
-    Пожалуйста, выберите каталог данных, к которому лаунчер может получить доступ.
-    Вы можете попробовать сбросить корневой каталог данных на странице настроек.
-  DiskIsFull: Diskingiz to'la! Diskga hech narsa yozib bo'lmaydi! Barcha funksiyalar
-    ishlamasligi mumkin!
-  DownloadAggregateError: Faylni yuklab olib bo'lmadi.
-  DownloadFileSystemError: Yuklab olingan faylni saqlash yo'liga kirishda xatolik.
-    Launcher unda yozish ruxsatiga ega ekanligiga ishonch hosil qiling.
-  HeadersTimeoutError: HTTP sarlavhalarini kutish vaqti tugadi
+  DNSNotFoundError: ╨Ю╤И╨╕╨▒╨║╨░ ╨┐╨╛╨╕╤Б╨║╨░ DNS
+  DatabaseNotOpened: ╨С╨░╨╖╨░ ╨┤╨░╨╜╨╜╤Л╤Е ╨╜╨╡ ╨╛╤В╨║╤А╤Л╤В╨░! ╨Ы╨░╤Г╨╜╤З╨╡╤А ╨╜╨╡
+    ╨▒╤Г╨┤╨╡╤В ╤А╨░╨▒╨╛╤В╨░╤В╤М ╨┤╨╛╨╗╨╢╨╜╤Л╨╝ ╨╛╨▒╤А╨░╨╖╨╛╨╝!
+  DiskIsFull: '''╨Т╨░╤И ╨┤╨╕╤Б╨║ ╨┐╨╛╨╗╨╛╨╜!'
+  DownloadAggregateError: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╤Б╨║╨░╤З╨░╤В╤М ╤Д╨░╨╣╨╗.
+  DownloadFileSystemError: ╨Ю╤И╨╕╨▒╨║╨░ ╨┐╤А╨╕ ╨┤╨╛╤Б╤В╤Г╨┐╨╡ ╨║ ╨┐╤Г╤В╨╕ ╤Б╨╛╤Е╤А╨░╨╜╨╡╨╜╨╕╤П
+    ╤Б╨║╨░╤З╨░╨╜╨╜╨╛╨│╨╛ ╤Д╨░╨╣╨╗╨░.
+  HeadersTimeoutError: ╨Ш╤Б╤В╨╡╨║╨╗╨╛ ╨▓╤А╨╡╨╝╤П ╨╛╨╢╨╕╨┤╨░╨╜╨╕╤П ╨╖╨░╨│╨╛╨╗╨╛╨▓╨║╨╛╨▓
+    HTTP
   InstallBackendUnresponsive:
     body: The launcher's background process stopped responding, so the install could
-      not finish. Please fully close and relaunch the launcher, then try again.
     title: Launcher is not responding
   InstallInstructionFailed:
     body: '{name}: {message}'
     title: Failed to install Minecraft files
   InstallNetworkError:
     body: A network problem interrupted the install. Check your internet connection
-      or proxy and try again.
     title: Cannot download Minecraft files
   InstallPermissionDenied:
     body: An anti-virus tool or restricted folder permissions blocked the install.
-      Add the launcher to your AV exclusion list, or pick a different data root in
-      the launcher settings.
     title: Cannot write to the launcher folder
-  NotFoundError: 404 Topilmadi
-  SocketError: Server soketi xatosi
+  NotFoundError: 404 ╨Э╨╡ ╨╜╨░╨╣╨┤╨╡╨╜╨╛
+  SocketError: ╨Ю╤И╨╕╨▒╨║╨░ ╤Б╨╛╨║╨╡╤В╨░ ╤Б╨╡╤А╨▓╨╡╤А╨░
 eula:
-  body: Устанавливая флажок, вы подтверждаете свое согласие с {eula} Minecraft.
+  body: ╨г╤Б╤В╨░╨╜╨░╨▓╨╗╨╕╨▓╨░╤П ╤Д╨╗╨░╨╢╨╛╨║, ╨▓╤Л ╨┐╨╛╨┤╤В╨▓╨╡╤А╨╢╨┤╨░╨╡╤В╨╡ ╤Б╨▓╨╛╨╡
+    ╤Б╨╛╨│╨╗╨░╤Б╨╕╨╡ ╤Б {eula} Minecraft.
 exception:
-  http: HTTP-запрос с {url} не выполнен. Код состояния {statusCode}. {code}. Повторите
-    попытку или проверьте свой интернет. Если эта ошибка сохраняется, отправьте отчет
-    команда разработчиков.
+  http: HTTP-╨╖╨░╨┐╤А╨╛╤Б ╤Б {url} ╨╜╨╡ ╨▓╤Л╨┐╨╛╨╗╨╜╨╡╨╜. ╨Ъ╨╛╨┤ ╤Б╨╛╤Б╤В╨╛╤П╨╜╨╕╤П
+    {statusCode}. {code}. ╨Я╨╛╨▓╤В╨╛╤А╨╕╤В╨╡
 exportModpack:
-  name: '{name} o''chirilsinmi'
+  name: ╨н╨║╤Б╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨╝╨╛╨┤╨┐╨░╨║
 extensions:
-  mrpack: Modrinth modlar terilmasi
-  zip: Zip-fayli
+  mrpack: ╨б╨▒╨╛╤А╨║╨░ ╨╝╨╛╨┤╨╛╨▓ Modrinth
+  zip: Zip-╤Д╨░╨╣╨╗
 fabricVersion:
-  disable: Tanlanmagan
-  empty: Minecraft {version} uchun tegishli versiya topilmadi
-  showSnapshot: Snabshotlarni ko'rsatish
-  stable: Barqaror
-  unstable: Barqaror emas
+  disable: Fabric ╨╜╨╡ ╨▓╤Л╨▒╤А╨░╨╜
+  empty: ╨Э╨╡ ╨╜╨░╨╣╨┤╨╡╨╜╨╛ ╤Б╨╛╨╛╤В╨▓╨╡╤В╤Б╤В╨▓╤Г╤О╤Й╨╡╨╣ ╨▓╨╡╤А╤Б╨╕╨╕ Fabric ╨┤╨╗╤П
+    Minecraft {version}
+  showSnapshot: ╨Я╨╛╨║╨░╨╖╤Л╨▓╨░╤В╤М ╤Б╨╜╨░╨┐╤И╨╛╤В╤Л
+  stable: ╨б╤В╨░╨▒╨╕╨╗╤М╨╜╨░╤П
+  unstable: ╨Э╨╡╤Б╤В╨░╨▒╨╕╨╗╤М╨╜╨░╤П
 command:
   instance:
     launch:
-      title: Запустить экземпляр
-      description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz.
-        Ishonchingiz komilmi?
+      title: ╨Ч╨░╨┐╤Г╤Б╤В╨╕╤В╤М ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А
+      description: Launch a Minecraft instance
     create:
-      title: Создать экземпляр
-      description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz.
-        Ishonchingiz komilmi?
+      title: ╨б╨╛╨╖╨┤╨░╤В╤М ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А
+      description: Create a new instance
     delete:
-      title: Удалить экземпляр
-      description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz.
-        Ishonchingiz komilmi?
+      title: ╨г╨┤╨░╨╗╨╕╤В╤М ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А
+      description: Delete an existing instance
   user:
     login:
-      title: Вход пользователя
-      description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz.
-        Ishonchingiz komilmi?
+      title: ╨Т╤Е╨╛╨┤ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П
+      description: Log in to your account
     refresh:
-      title: Обновить пользователя
-      description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz.
-        Ishonchingiz komilmi?
+      title: ╨Ю╨▒╨╜╨╛╨▓╨╕╤В╤М ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П
+      description: Refresh user session
 commandPalette:
-  placeholder: Katalogni tanlash uchun bu yerga bosing
-  commands: Buyruqlar
-  instances: Ekzemplarlar
+  placeholder: ╨Я╨╛╨╕╤Б╨║ ╨║╨╛╨╝╨░╨╜╨┤, ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨╛╨▓, ╨╝╨╛╨┤╨╛╨▓тАж
+  commands: ╨Ъ╨╛╨╝╨░╨╜╨┤╤Л
+  instances: ╨н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╤Л
   modrinth: Modrinth
-  recent: Yaqindagilar
-  open: Tezkor harakat
-  openHint: Buyruqlar palitrasini ochish ({shortcut})
-  empty: Minecraft {version} uchun tegishli versiya topilmadi
-  noResults: Mosliklar topilmadi.
-  searching: Qidirilmoqda...
-  hintNavigate: navigatsiya
-  hintInvoke: bajarish
-  hintEnter: ochish
-  hintBack: orqaga
-  hintClose: yopish
+  recent: ╨Э╨╡╨┤╨░╨▓╨╜╨╕╨╡
+  open: ╨С╤Л╤Б╤В╤А╨╛╨╡ ╨┤╨╡╨╣╤Б╤В╨▓╨╕╨╡
+  openHint: ╨Ю╤В╨║╤А╤Л╤В╤М ╨┐╨░╨╗╨╕╤В╤А╤Г ╨║╨╛╨╝╨░╨╜╨┤ ({shortcut})
+  empty: ╨Т╨▓╨╡╨┤╨╕╤В╨╡ ╨╖╨░╨┐╤А╨╛╤Б ╨┤╨╗╤П ╨┐╨╛╨╕╤Б╨║╨░.
+  noResults: ╨Э╨╡╤В ╤Б╨╛╨▓╨┐╨░╨┤╨╡╨╜╨╕╨╣.
+  searching: ╨Я╨╛╨╕╤Б╨║тАж
+  hintNavigate: ╨╜╨░╨▓╨╕╨│╨░╤Ж╨╕╤П
+  hintInvoke: ╨▓╤Л╨┐╨╛╨╗╨╜╨╕╤В╤М
+  hintEnter: ╨╛╤В╨║╤А╤Л╤В╤М
+  hintBack: ╨╜╨░╨╖╨░╨┤
+  hintClose: ╨╖╨░╨║╤А╤Л╤В╤М
 feedback:
-  channel: Kanal
-  description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-    komilmi?
-  discord: Discord
-  discordDescription: Присоединяйтесь к каналу Discord.
-  discordJoin: Присоединиться
-  generateReport: Hisobot yaratish
-  generateSaveAs: Hisobotni saqlash
-  github: Проблема в Github
-  githubDescription: Создайте проблему на Github, чтобы сообщить о своей проблеме/идее.
-  githubOpenIssue: Github
-  hint: Hisobot yaratish va dasturchilar jamoasi bilan bog'lanish uchun tugmani bosing.
-    Hisobot qurilmangiz haqida ma'lumotni, jumladan operatsion tizim turi, versiyasi,
-    foydalanuvchi nomi va boshqa ma'lumotlarni o'z ichiga oladi.
-  kook: Kook
-  kookDescription: Kook - это альтернатива Discord на территории материкового Китая
-  name: '{name} o''chirilsinmi'
-  qq: Группа QQ
-  qqDescription: 'Войдите в группу обратной связи QQ и напрямую поговорите с авторами.
-    Номер группы: {number}'
-  qqEnterGroup: Присоединиться
+  channel: NeoTerra Rasmiy Kanallari
+  description: Muammo yoki taklifingiz bo'lsa, rasmiy kanallarimiz orqali bog'laning.
+  discord: Discord Server
+  discordDescription: discord.gg/neoterra тАФ O'yinchilar bilan ovozli muloqot.
+  discordJoin: Qo'shilish
+  generateReport: ╨б╨╛╨╖╨┤╨░╤В╤М ╨╛╤В╤З╤С╤В
+  generateSaveAs: ╨б╨╛╤Е╤А╨░╨╜╨╕╤В╤М ╨╛╤В╤З╤С╤В
+  github: NeoTerra Rasmiy Sayti
+  githubDescription: site.neoterra.uz тАФ Server yangiliklari va ma'lumotlar platformasi.
+  githubOpenIssue: Saytga o'tish
+  hint: ╨Э╨░╨╢╨╝╨╕╤В╨╡ ╨╜╨░ ╨║╨╜╨╛╨┐╨║╤Г, ╤З╤В╨╛╨▒╤Л ╤Б╨╛╨╖╨┤╨░╤В╤М ╨╛╤В╤З╤С╤В ╨╕
+    ╤Б╨▓╤П╨╖╨░╤В╤М╤Б╤П ╤Б ╨║╨╛╨╝╨░╨╜╨┤╨╛╨╣ ╤А╨░╨╖╤А╨░╨▒╨╛╤В╤З╨╕╨║╨╛╨▓.
+  kook: YouTube Kanal
+  kookDescription: youtube.com/NeoTerraMC тАФ Videolar va treylerlar.
+  name: Murojaat va Yordam
+  qq: Telegram Hamjamiyati
+  qqDescription: t.me/NeoTerraServer тАФ Rasmiy Telegram kanal va guruh.
+  qqEnterGroup: A'zo bo'lish
 fileDetail:
-  fileSize: Fayl hajmi
-  filesize: Fayl hajmi
-  hash: Hesh
-filterLocalOnly: Faqat o'rnatilganlarni ko'rsatish
+  fileSize: ╨а╨░╨╖╨╝╨╡╤А ╤Д╨░╨╣╨╗╨░
+  filesize: ╨а╨░╨╖╨╝╨╡╤А ╤Д╨░╨╣╨╗╨░
+  hash: Hash
+filterLocalOnly: ╨Я╨╛╨║╨░╨╖╤Л╨▓╨░╤В╤М ╤В╨╛╨╗╤М╨║╨╛ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨╜╤Л╨╡
 forgeVersion:
-  disable: Tanlanmagan
-  empty: Minecraft {version} uchun tegishli versiya topilmadi
-  latest: Oxirgi
-  recommended: Tavsiya etilgan
+  disable: Forge ╨╜╨╡ ╨▓╤Л╨▒╤А╨░╨╜
+  empty: ╨Ф╨╗╤П Minecraft {version} ╨╜╨╡╤В ╨▓╤Л╨┐╤Г╤Б╨║╨╛╨▓ Forge
+  latest: ╨Я╨╛╤Б╨╗╨╡╨┤╨╜╤П╤П
+  recommended: ╨а╨╡╨║╨╛╨╝╨╡╨╜╨┤╤Г╨╡╨╝╨░╤П
 gameType:
-  adventure: Sarguzasht rejimi
-  creative: Ijodiy rejim
-  spectator: Kuzatuvchi rejimi
-  survival: Omon qolish rejimi
-help: Yordam
-home: Bosh sahifa
+  adventure: ╨а╨╡╨╢╨╕╨╝ ╨┐╤А╨╕╨║╨╗╤О╤З╨╡╨╜╨╕╤П
+  creative: ╨в╨▓╨╛╤А╤З╨╡╤Б╨║╨╕╨╣ ╤А╨╡╨╢╨╕╨╝
+  spectator: ╨а╨╡╨╢╨╕╨╝ ╨╜╨░╨▒╨╗╤О╨┤╨░╤В╨╡╨╗╤П
+  survival: ╨а╨╡╨╢╨╕╨╝ ╨▓╤Л╨╢╨╕╨▓╨░╨╜╨╕╤П
+help: ╨б╨┐╤А╨░╨▓╨║╨░
+home: ╨У╨╗╨░╨▓╨╜╨░╤П
 importModpack:
-  name: '{name} o''chirilsinmi'
+  name: ╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╤Б╨▒╨╛╤А╨║╤Г ╨╝╨╛╨┤╨╛╨▓
 installAssets:
-  asset: Установить {count} ресурсов
-  assetIndex: Проверить файл индекса ресурсов
-  name: '{name} o''chirilsinmi'
-installAuthlibInjector: Установить authlib-injector
-installCurseforgeFile: Установить файл CurseForge
+  asset: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М {count} ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓
+  assetIndex: ╨Я╤А╨╛╨▓╨╡╤А╨╕╤В╤М ╤Д╨░╨╣╨╗ ╨╕╨╜╨┤╨╡╨║╤Б╨░ ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓
+  name: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╤Д╨░╨╣╨╗╤Л ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓
+installAuthlibInjector: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М authlib-injector
+installCurseforgeFile: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╤Д╨░╨╣╨╗ CurseForge
 installFabric:
-  name: '{name} o''chirilsinmi'
+  name: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М Fabric
 installForge:
-  downloadInstaller: Скачать программу установки
-  name: '{name} o''chirilsinmi'
-  postProcessing: Дополнительная обработка
+  downloadInstaller: ╨б╨║╨░╤З╨░╤В╤М ╨┐╤А╨╛╨│╤А╨░╨╝╨╝╤Г ╤Г╤Б╤В╨░╨╜╨╛╨▓╨║╨╕
+  name: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М Forge
+  postProcessing: ╨Ф╨╛╨┐╨╛╨╗╨╜╨╕╤В╨╡╨╗╤М╨╜╨░╤П ╨╛╨▒╤А╨░╨▒╨╛╤В╨║╨░
 installInstance:
-  file: Обновить файл экземпляра {file}
-  link: Копировать или соединить {count} файлов
-  name: '{name} o''chirilsinmi'
-  resolve: Разрешить конфигурацию экземпляра
-  unzip: Распаковать {count} файлов
+  file: ╨Ю╨▒╨╜╨╛╨▓╨╕╤В╤М ╤Д╨░╨╣╨╗ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░ {file}
+  link: ╨Ъ╨╛╨┐╨╕╤А╨╛╨▓╨░╤В╤М ╨╕╨╗╨╕ ╤Б╨╛╨╡╨┤╨╕╨╜╨╕╤В╤М {count} ╤Д╨░╨╣╨╗╨╛╨▓
+  name: ╨Ю╨▒╨╜╨╛╨▓╨╕╤В╤М ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А
+  resolve: ╨а╨░╨╖╤А╨╡╤И╨╕╤В╤М ╨║╨╛╨╜╤Д╨╕╨│╤Г╤А╨░╤Ж╨╕╤О ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+  unzip: ╨а╨░╤Б╨┐╨░╨║╨╛╨▓╨░╤В╤М {count} ╤Д╨░╨╣╨╗╨╛╨▓
 installJre:
-  decompress: Распаковать файлы JRE в папку
-  download: Yuklab olish
-  name: '{name} o''chirilsinmi'
+  decompress: ╨а╨░╤Б╨┐╨░╨║╨╛╨▓╨░╤В╤М ╤Д╨░╨╣╨╗╤Л JRE ╨▓ ╨┐╨░╨┐╨║╤Г
+  download: ╨б╨║╨░╤З╨░╤В╤М ╤Б╨╢╨░╤В╤Л╨╣ ╤Д╨░╨╣╨╗ JRE
+  name: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╤Б╤А╨╡╨┤╤Г ╨▓╤Л╨┐╨╛╨╗╨╜╨╡╨╜╨╕╤П Java
 installLabyMod:
-  name: '{name} o''chirilsinmi'
+  name: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М LabyMod
 installLibraries:
-  library: Установить библиотеку
-  name: '{name} o''chirilsinmi'
+  library: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╤Г
+  name: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╨╕
 installModrinthFile:
-  name: '{name} o''chirilsinmi'
+  name: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М Modrinth
 installOptifine:
-  download: Yuklab olish
-  name: '{name} o''chirilsinmi'
+  download: ╨б╨║╨░╤З╨░╤В╤М Optifine Universal
+  name: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М Optifine
 installProfile:
-  name: '{name} o''chirilsinmi'
+  name: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╨┐╤А╨╛╤Д╨╕╨╗╤М {version}
 installQuilt:
-  name: '{name} o''chirilsinmi'
+  name: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М Quilt {version}
 installVersion:
-  jar: Установить Jar-файл версии
-  json: Установить Json-файл версии
-  name: '{name} o''chirilsinmi'
+  jar: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М Jar-╤Д╨░╨╣╨╗ ╨▓╨╡╤А╤Б╨╕╨╕
+  json: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М Json-╤Д╨░╨╣╨╗ ╨▓╨╡╤А╤Б╨╕╨╕
+  name: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╨║╨╗╨╕╨╡╨╜╤В Minecraft {version}
 instance:
-  changeIcon: Belgini o'zgartirish
-  contents: Tarkibi
-  current: Joriy ekzemplar
-  delete: O'chirish
-  deleteFailed: Ekzemplarni o'chirib bo'lmadi
-  deleteFailedPermission: Boshqa dastur faylni egallab olgan
-  deleteFile: Ekzemplar fayllarini o'chirish
-  deleteHint: Ekzemplar ma'lumotlari diskdan butunlay o'chiriladi. Buni qilishga ishonchingiz
-    komilmi?
+  changeIcon: ╨Ш╨╖╨╝╨╡╨╜╨╕╤В╤М ╨╖╨╜╨░╤З╨╛╨║
+  contents: ╨б╨╛╨┤╨╡╤А╨╢╨░╨╜╨╕╨╡
+  current: ╨в╨╡╨║╤Г╤Й╨╕╨╣ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А
+  delete: ╨г╨┤╨░╨╗╨╕╤В╤М ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А
+  deleteFailed: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╤Г╨┤╨░╨╗╨╕╤В╤М ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А
+  deleteFailedPermission: ╨Ф╤А╤Г╨│╨░╤П ╨┐╤А╨╛╨│╤А╨░╨╝╨╝╨░ ╨╖╨░╨╜╤П╨╗╨░ ╤Д╨░╨╣╨╗
+  deleteFile: ╨г╨┤╨░╨╗╨╕╤В╤М ╤Д╨░╨╣╨╗╤Л ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+  deleteHint: ╨Ф╨░╨╜╨╜╤Л╨╡ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░ ╨▒╤Г╨┤╤Г╤В ╤Г╨┤╨░╨╗╨╡╨╜╤Л ╤Б ╨┤╨╕╤Б╨║╨░
+    ╨╜╨░╨▓╤Б╨╡╨│╨┤╨░. ╨Т╤Л ╤Г╨▓╨╡╤А╨╡╨╜╤Л, ╤З╤В╨╛ ╤Е╨╛╤В╨╕╤В╨╡
   deleteHintBedrock: Minecraft Bedrock Edition and all its data will be completely
-    deleted from your computer. Are you sure?
-  duplicate: Ekzemplardan nusxa ko'chirish
-  duplicatedName: Takroriy nom
-  envVarKey: Kalit
+  duplicate: ╨Ф╤Г╨▒╨╗╨╕╤А╨╛╨▓╨░╤В╤М ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А
+  duplicatedName: ╨Ф╤Г╨▒╨╗╨╕╤А╨╛╨▓╨░╨╜╨╜╨╛╨╡ ╨╕╨╝╤П
+  envVarKey: ╨Ъ╨╗╤О╤З
   envVarKeyPlaceholder: MY_VAR
-  envVarValue: Qiymat
-  envVarValuePlaceholder: qiymat
-  fileApi: URL API сервера синхронизации файлов
-  fileApiHint: URL для синхронизации файлов экземпляра с удалённым сервером конфигурации.
-  fileApiPlaceholder: Введите здесь URL удалённой синхронизации, если хотите поддерживать
-    синхронизацию ресурсов
-  fullscreen: To'liq ekran
-  height: Balandlik
-  hideCard: Ushbu kartani yashirish
-  icon: Profil belgisi
-  iconHint: Belgi fayl yoki internetdagi URL manziliga havola bo'lishi mumkin.
-  iconUrl: Belgi URL manzili
-  installModpack: Modpak'dan ekzemplarni yangilash
-  lastPlayed: Oxirgi o'ynalgan
-  launchArguments: Ishga tushirish argumentlarini oldindan ko'rish
-  launchServer: Mahalliy serverni ishga tushirish
-  linkFileDesc: 'Это перезапишет локальный {file} экземпляра глобальным {file}.
-
-    Вы уверены, что соедините это?'
-  linkFileTitle: Вы уверены, что хотите связать {file}?
-  mcOptions: Minecraft opsiyalari
-  mcOptionsHint: Minecraft ishga tushirishning qo'shimcha argumentlari
-  name: '{name} o''chirilsinmi'
-  nameHint: Ekzemplarni identifikatsiyalash uchun ishlatiladigan nom.
+  envVarValue: ╨Ч╨╜╨░╤З╨╡╨╜╨╕╨╡
+  envVarValuePlaceholder: ╨╖╨╜╨░╤З╨╡╨╜╨╕╨╡
+  fileApi: URL API ╤Б╨╡╤А╨▓╨╡╤А╨░ ╤Б╨╕╨╜╤Е╤А╨╛╨╜╨╕╨╖╨░╤Ж╨╕╨╕ ╤Д╨░╨╣╨╗╨╛╨▓
+  fileApiHint: URL ╨┤╨╗╤П ╤Б╨╕╨╜╤Е╤А╨╛╨╜╨╕╨╖╨░╤Ж╨╕╨╕ ╤Д╨░╨╣╨╗╨╛╨▓ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+    ╤Б ╤Г╨┤╨░╨╗╤С╨╜╨╜╤Л╨╝ ╤Б╨╡╤А╨▓╨╡╤А╨╛╨╝ ╨║╨╛╨╜╤Д╨╕╨│╤Г╤А╨░╤Ж╨╕╨╕.
+  fileApiPlaceholder: ╨Т╨▓╨╡╨┤╨╕╤В╨╡ ╨╖╨┤╨╡╤Б╤М URL ╤Г╨┤╨░╨╗╤С╨╜╨╜╨╛╨╣ ╤Б╨╕╨╜╤Е╤А╨╛╨╜╨╕╨╖╨░╤Ж╨╕╨╕,
+    ╨╡╤Б╨╗╨╕ ╤Е╨╛╤В╨╕╤В╨╡ ╨┐╨╛╨┤╨┤╨╡╤А╨╢╨╕╨▓╨░╤В╤М
+  fullscreen: ╨Я╨╛╨╗╨╜╨╛╤Н╨║╤А╨░╨╜╨╜╤Л╨╣
+  height: ╨Т╤Л╤Б╨╛╤В╨░
+  hideCard: Hide this card
+  icon: ╨Ш╨║╨╛╨╜╨║╨░ ╨┐╤А╨╛╤Д╨╕╨╗╤П
+  iconHint: ╨Ч╨╜╨░╤З╨╛╨║ ╨╝╨╛╨╢╨╡╤В ╨┐╤А╨╡╨┤╤Б╤В╨░╨▓╨╗╤П╤В╤М ╤Б╨╛╨▒╨╛╨╣ ╤Д╨░╨╣╨╗ ╨╕╨╗╨╕
+    ╤Б╤Б╤Л╨╗╨║╤Г ╨╜╨░ URL-╨░╨┤╤А╨╡╤Б ╨▓ ╨Ш╨╜╤В╨╡╤А╨╜╨╡╤В╨╡.
+  iconUrl: URL-╨░╨┤╤А╨╡╤Б ╨╕╨║╨╛╨╜╨║╨╕
+  installModpack: ╨Ю╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╨╡ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░ ╨╛╤В Modpack
+  lastPlayed: ╨Я╨╛╤Б╨╗╨╡╨┤╨╜╤П╤П ╨╕╨│╤А╨░
+  launchArguments: ╨Я╤А╨╡╨┤╨┐╤А╨╛╤Б╨╝╨╛╤В╤А ╨░╤А╨│╤Г╨╝╨╡╨╜╤В╨╛╨▓ ╨╖╨░╨┐╤Г╤Б╨║╨░
+  launchServer: ╨Ч╨░╨┐╤Г╤Б╤В╨╕╤В╤М ╨╗╨╛╨║╨░╨╗╤М╨╜╤Л╨╣ ╤Б╨╡╤А╨▓╨╡╤А
+  linkFileDesc: '''╨н╤В╨╛ ╨┐╨╡╤А╨╡╨╖╨░╨┐╨╕╤И╨╡╤В ╨╗╨╛╨║╨░╨╗╤М╨╜╤Л╨╣ {file} ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+    ╨│╨╗╨╛╨▒╨░╨╗╤М╨╜╤Л╨╝ {file}.'
+  linkFileTitle: ╨Т╤Л ╤Г╨▓╨╡╤А╨╡╨╜╤Л, ╤З╤В╨╛ ╤Е╨╛╤В╨╕╤В╨╡ ╤Б╨▓╤П╨╖╨░╤В╤М {file}?
+  mcOptions: ╨Ю╨┐╤Ж╨╕╨╕ Minecraft
+  mcOptionsHint: ╨Ф╨╛╨┐╨╛╨╗╨╜╨╕╤В╨╡╨╗╤М╨╜╤Л╨╡ ╨░╤А╨│╤Г╨╝╨╡╨╜╤В╤Л ╨╖╨░╨┐╤Г╤Б╨║╨░ Minecraft
+  name: ╨Ш╨╝╤П ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+  nameHint: ╨Ш╨╝╤П, ╨╕╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╡╨╝╨╛╨╡ ╨┤╨╗╤П ╨╕╨┤╨╡╨╜╤В╨╕╤Д╨╕╨║╨░╤Ж╨╕╨╕ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░.
   nameInvalidChars: 'The name cannot contain these characters: < > : " / \\ | ? *'
-  nameNoCyrillic: Название не может содержать кириллические символы
+  nameNoCyrillic: ╨Э╨░╨╖╨▓╨░╨╜╨╕╨╡ ╨╜╨╡ ╨╝╨╛╨╢╨╡╤В ╤Б╨╛╨┤╨╡╤А╨╢╨░╤В╤М ╨║╨╕╤А╨╕╨╗╨╗╨╕╤З╨╡╤Б╨║╨╕╨╡
+    ╤Б╨╕╨╝╨▓╨╛╨╗╤Л
   namePathTraversal: The name cannot contain path traversal ("..")
   nameReservedName: This name is reserved by the system and cannot be used
   nameTrailingDotOrSpace: The name cannot end with a dot or space
   nameWhitespaceOnly: The name cannot be only whitespace or dots
-  neverPlayed: Hech qachon o'ynalmagan
-  openCrashReportFolder: Xatolik hisobotlari papkasini ochish
-  openLogFolder: Jurnallar papkasini ochish
-  playtime: O'yin vaqti
-  preExecCommand: Oldindan ishga tushirish buyrug'i
-  preExecCommandHint: Minecraft ishga tushirilishidan oldin bajariladigan buyruq
-  prependCommand: Buyruqni boshiga qo'shish
-  prependCommandHint: Bu ushbu buyruqni barcha ishga tushirish buyruqlari oldiga qo'shadi.
-  requireName: Nom talab qilinadi
-  resolution: Oyna o'lchami
-  resolutionPreset: Oldindan o'rnatilgan o'lcham
-  showHiddenCards: Yashirilgan kartalarni ko'rsatish
-  showInstance: Ekzemplar papkasini ochish
-  updates: Yangilanishlar
-  useSharedOptions: Использовать общие настройки игры
-  useSharedOptionsDesc: Это свяжет файл options.txt с общим файлом в экземпляре.
-  useSharedServersList: Использовать список общих серверов
-  useSharedServersListDesc: Это свяжет файл server.dat с общим файлом в экземпляре.
-  vmOptions: JVM opsiyalari
-  vmOptionsHint: JVM'ga uzatiladigan qo'shimcha argumentlar
-  vmVar: Muhit o'zgaruvchilari
-  vmVarHint: Muhit o'zgaruvchilarini qo'shish uchun tugmani bosing.
-  width: Kenglik
+  neverPlayed: ╨Э╨╕╨║╨╛╨│╨┤╨░ ╨╜╨╡ ╨╕╨│╤А╨░╨╗╨╕
+  openCrashReportFolder: ╨Ю╤В╨║╤А╤Л╤В╤М ╨┐╨░╨┐╨║╤Г ╤Б ╨╛╤В╤З╤С╤В╨░╨╝╨╕ ╨╛╨▒ ╨╛╤И╨╕╨▒╨║╨░╤Е
+  openLogFolder: ╨Ю╤В╨║╤А╤Л╤В╤М ╨┐╨░╨┐╨║╤Г ╤Б ╨╢╤Г╤А╨╜╨░╨╗╨░╨╝╨╕
+  playtime: ╨Т╤А╨╡╨╝╤П ╨╕╨│╤А╤Л
+  preExecCommand: ╨Ъ╨╛╨╝╨░╨╜╨┤╨░ ╨┐╤А╨╡╨┤╨▓╨░╤А╨╕╤В╨╡╨╗╤М╨╜╨╛╨│╨╛ ╨╖╨░╨┐╤Г╤Б╨║╨░
+  preExecCommandHint: ╨Ъ╨╛╨╝╨░╨╜╨┤╨░ ╨┤╨╗╤П ╨▓╤Л╨┐╨╛╨╗╨╜╨╡╨╜╨╕╤П ╨┐╨╡╤А╨╡╨┤ ╨╖╨░╨┐╤Г╤Б╨║╨╛╨╝
+    Minecraft
+  prependCommand: ╨Ф╨╛╨▒╨░╨▓╨╕╤В╤М ╨║╨╛╨╝╨░╨╜╨┤╤Г ╨▓ ╨╜╨░╤З╨░╨╗╨╛
+  prependCommandHint: ╨н╤В╨╛ ╨┤╨╛╨▒╨░╨▓╨╕╤В ╤Н╤В╤Г ╨║╨╛╨╝╨░╨╜╨┤╤Г ╨┐╨╡╤А╨╡╨┤ ╨▓╤Б╨╡╨╝╨╕
+    ╨║╨╛╨╝╨░╨╜╨┤╨░╨╝╨╕ ╨╖╨░╨┐╤Г╤Б╨║╨░.
+  requireName: ╨в╤А╨╡╨▒╤Г╨╡╤В╤Б╤П ╨╕╨╝╤П
+  resolution: ╨а╨░╨╖╤А╨╡╤И╨╡╨╜╨╕╨╡ ╨╛╨║╨╜╨░
+  resolutionPreset: ╨а╨╡╨╖╨╛╨╗╤О╤Ж╨╕╤П ╨┐╤А╨╡╨┤╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨░
+  showHiddenCards: Show hidden cards
+  showInstance: ╨Ю╤В╨║╤А╤Л╤В╤М ╨┐╨░╨┐╨║╤Г ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+  updates: ╨Ю╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╤П
+  useSharedOptions: ╨Ш╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╤М ╨╛╨▒╤Й╨╕╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕ ╨╕╨│╤А╤Л
+  useSharedOptionsDesc: ╨н╤В╨╛ ╤Б╨▓╤П╨╢╨╡╤В ╤Д╨░╨╣╨╗ options.txt ╤Б ╨╛╨▒╤Й╨╕╨╝ ╤Д╨░╨╣╨╗╨╛╨╝
+    ╨▓ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨╡.
+  useSharedServersList: ╨Ш╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╤М ╤Б╨┐╨╕╤Б╨╛╨║ ╨╛╨▒╤Й╨╕╤Е ╤Б╨╡╤А╨▓╨╡╤А╨╛╨▓
+  useSharedServersListDesc: ╨н╤В╨╛ ╤Б╨▓╤П╨╢╨╡╤В ╤Д╨░╨╣╨╗ server.dat ╤Б ╨╛╨▒╤Й╨╕╨╝
+    ╤Д╨░╨╣╨╗╨╛╨╝ ╨▓ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨╡.
+  vmOptions: ╨Ю╨┐╤Ж╨╕╨╕ JVM
+  vmOptionsHint: ╨Ф╨╛╨┐╨╛╨╗╨╜╨╕╤В╨╡╨╗╤М╨╜╤Л╨╡ ╨░╤А╨│╤Г╨╝╨╡╨╜╤В╤Л, ╨┐╨╡╤А╨╡╨┤╨░╨▓╨░╨╡╨╝╤Л╨╡
+    JVM
+  vmVar: ╨Я╨╡╤А╨╡╨╝╨╡╨╜╨╜╤Л╨╡ ╤Б╤А╨╡╨┤╤Л
+  vmVarHint: ╨Э╨░╨╢╨╝╨╕╤В╨╡ ╨║╨╜╨╛╨┐╨║╤Г, ╤З╤В╨╛╨▒╤Л ╨┤╨╛╨▒╨░╨▓╨╕╤В╤М ╨┐╨╡╤А╨╡╨╝╨╡╨╜╨╜╤Л╨╡
+    ╤Б╤А╨╡╨┤╤Л.
+  width: ╨и╨╕╤А╨╕╨╜╨░
 instanceAge:
-  older: Старые
-  threeDay: В течение трёх дней
-  today: Сегодня
+  older: ╨б╤В╨░╤А╤Л╨╡
+  threeDay: ╨Т ╤В╨╡╤З╨╡╨╜╨╕╨╡ ╤В╤А╤С╤Е ╨┤╨╜╨╡╨╣
+  today: ╨б╨╡╨│╨╛╨┤╨╜╤П
 instanceDiscover:
-  gameFolder: Откройте {count} папок с играми
-  instanceFolder: 'Найдено экземпляров: {count}'
+  gameFolder: ╨Ю╤В╨║╤А╨╛╨╣╤В╨╡ {count} ╨┐╨░╨┐╨╛╨║ ╤Б ╨╕╨│╤А╨░╨╝╨╕
+  instanceFolder: '╨Э╨░╨╣╨┤╨╡╨╜╨╛ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨╛╨▓: {count}'
 instanceFileOperation:
-  add: O'yin yaratish
-  backup-add: Заменить (создать резервную копию)
-  backup-remove: Удалить (создать резервную копию)
-  keep: Оставить
-  remove: Удалить
+  add: ╨Ф╨╛╨▒╨░╨▓╨╕╤В╤М
+  backup-add: ╨Ч╨░╨╝╨╡╨╜╨╕╤В╤М (╤Б╨╛╨╖╨┤╨░╤В╤М ╤А╨╡╨╖╨╡╤А╨▓╨╜╤Г╤О ╨║╨╛╨┐╨╕╤О)
+  backup-remove: ╨г╨┤╨░╨╗╨╕╤В╤М (╤Б╨╛╨╖╨┤╨░╤В╤М ╤А╨╡╨╖╨╡╤А╨▓╨╜╤Г╤О ╨║╨╛╨┐╨╕╤О)
+  keep: ╨Ю╤Б╤В╨░╨▓╨╕╤В╤М
+  remove: ╨г╨┤╨░╨╗╨╕╤В╤М
 instanceInstallSkip:
-  ignore: игнорировать
-  skip: Пропускать
-  title: Потенциальный поврежденный источник файла
-  warning: 'Некоторые файлы загружаются несколько раз, и контрольная сумма не совпадает.
-
-    Это может быть связано с тем, что исходная контрольная сумма неверна.
-
-    Пожалуйста, проверьте.
-
-    Если вы подтвердите, что текущие файлы действительны, вы можете пропустить проверку.'
+  ignore: ╨╕╨│╨╜╨╛╤А╨╕╤А╨╛╨▓╨░╤В╤М
+  skip: ╨Я╤А╨╛╨┐╤Г╤Б╨║╨░╤В╤М
+  title: ╨Я╨╛╤В╨╡╨╜╤Ж╨╕╨░╨╗╤М╨╜╤Л╨╣ ╨┐╨╛╨▓╤А╨╡╨╢╨┤╨╡╨╜╨╜╤Л╨╣ ╨╕╤Б╤В╨╛╤З╨╜╨╕╨║ ╤Д╨░╨╣╨╗╨░
+  warning: '''╨Э╨╡╨║╨╛╤В╨╛╤А╤Л╨╡ ╤Д╨░╨╣╨╗╤Л ╨╖╨░╨│╤А╤Г╨╢╨░╤О╤В╤Б╤П ╨╜╨╡╤Б╨║╨╛╨╗╤М╨║╨╛
+    ╤А╨░╨╖, ╨╕ ╨║╨╛╨╜╤В╤А╨╛╨╗╤М╨╜╨░╤П ╤Б╤Г╨╝╨╝╨░ ╨╜╨╡ ╤Б╨╛╨▓╨┐╨░╨┤╨░╨╡╤В.'
 instanceLauncher:
-  search: Поиск инстансов...
-  showAll: Показать все инстансы
-  title: Все инстансы
+  search: ╨Я╨╛╨╕╤Б╨║ ╨╕╨╜╤Б╤В╨░╨╜╤Б╨╛╨▓...
+  showAll: ╨Я╨╛╨║╨░╨╖╨░╤В╤М ╨▓╤Б╨╡ ╨╕╨╜╤Б╤В╨░╨╜╤Б╤Л
+  title: ╨Т╤Б╨╡ ╨╕╨╜╤Б╤В╨░╨╜╤Б╤Л
 instanceSetting:
-  disableAuthlibInjector: Отключить authlib injector
-  disableAuthlibInjectorDescription: Если вы используете систему скинов от сторонних
-    разработчиков, authlib injector может помочь отображать скины в игре.
-  disableElyByAuthlib: Отключить замену authlib от ely.by
-  disableElyByAuthlibDescription: Ely.by имеет уникальную замену authlib для универсального
-    отображения скинов на любом сервере.
-  fastLaunch: Быстрый запуск
-  fastLaunchHint: Игнорировать статус пользователя и существующие неисправленные проблемы.
-  hideLauncher: Скрыть лаунчер после запуска
-  icon: Profil belgisi
-  showLog: Показывать журнал Minecraft
-  showLogHint: Это откроет окно журнала Minecraft после запуска экземпляра
+  disableAuthlibInjector: ╨Ю╤В╨║╨╗╤О╤З╨╕╤В╤М authlib injector
+  disableAuthlibInjectorDescription: ╨Х╤Б╨╗╨╕ ╨▓╤Л ╨╕╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╡╤В╨╡ ╤Б╨╕╤Б╤В╨╡╨╝╤Г
+    ╤Б╨║╨╕╨╜╨╛╨▓ ╨╛╤В ╤Б╤В╨╛╤А╨╛╨╜╨╜╨╕╤Е
+  disableElyByAuthlib: ╨Ю╤В╨║╨╗╤О╤З╨╕╤В╤М ╨╖╨░╨╝╨╡╨╜╤Г authlib ╨╛╤В ely.by
+  disableElyByAuthlibDescription: Ely.by ╨╕╨╝╨╡╨╡╤В ╤Г╨╜╨╕╨║╨░╨╗╤М╨╜╤Г╤О ╨╖╨░╨╝╨╡╨╜╤Г
+    authlib ╨┤╨╗╤П ╤Г╨╜╨╕╨▓╨╡╤А╤Б╨░╨╗╤М╨╜╨╛╨│╨╛
+  fastLaunch: ╨С╤Л╤Б╤В╤А╤Л╨╣ ╨╖╨░╨┐╤Г╤Б╨║
+  fastLaunchHint: ╨Ш╨│╨╜╨╛╤А╨╕╤А╨╛╨▓╨░╤В╤М ╤Б╤В╨░╤В╤Г╤Б ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П ╨╕
+    ╤Б╤Г╤Й╨╡╤Б╤В╨▓╤Г╤О╤Й╨╕╨╡ ╨╜╨╡╨╕╤Б╨┐╤А╨░╨▓╨╗╨╡╨╜╨╜╤Л╨╡ ╨┐╤А╨╛╨▒╨╗╨╡╨╝╤Л.
+  hideLauncher: ╨б╨║╤А╤Л╤В╤М ╨╗╨░╤Г╨╜╤З╨╡╤А ╨┐╨╛╤Б╨╗╨╡ ╨╖╨░╨┐╤Г╤Б╨║╨░
+  icon: ╨Т╤Л╨▒╤А╨░╤В╤М ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡
+  showLog: ╨Я╨╛╨║╨░╨╖╤Л╨▓╨░╤В╤М ╨╢╤Г╤А╨╜╨░╨╗ Minecraft
+  showLogHint: ╨н╤В╨╛ ╨╛╤В╨║╤А╨╛╨╡╤В ╨╛╨║╨╜╨╛ ╨╢╤Г╤А╨╜╨░╨╗╨░ Minecraft ╨┐╨╛╤Б╨╗╨╡
+    ╨╖╨░╨┐╤Г╤Б╨║╨░ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
 instanceTemplate:
-  ftb: Это сборка модов FTB
-  preview: Предварительный просмотр сборки модов
+  ftb: ╨н╤В╨╛ ╤Б╨▒╨╛╤А╨║╨░ ╨╝╨╛╨┤╨╛╨▓ FTB
+  preview: ╨Я╤А╨╡╨┤╨▓╨░╤А╨╕╤В╨╡╨╗╤М╨╜╤Л╨╣ ╨┐╤А╨╛╤Б╨╝╨╛╤В╤А ╤Б╨▒╨╛╤А╨║╨╕ ╨╝╨╛╨┤╨╛╨▓
 instanceUpdate:
-  basic: Обновление настроек
-  files: Обновление файлов
-  loaderChanged: 'Модлоадер этого экземпляра был изменен.
-
-    Старый модлоадер - это {modloader}, а новый - {newModloader}.'
+  basic: ╨Ю╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╡╨║
+  files: ╨Ю╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╨╡ ╤Д╨░╨╣╨╗╨╛╨▓
+  loaderChanged: '''╨Ь╨╛╨┤╨╗╨╛╨░╨┤╨╡╤А ╤Н╤В╨╛╨│╨╛ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░ ╨▒╤Л╨╗ ╨╕╨╖╨╝╨╡╨╜╨╡╨╜.'
   noFiles: No file changes
-  summary: 'Добавить {add} файлы.
-
-    Удалить {remove} файлы.
-
-    Сохранить {keep} файлы.'
-  title: Обновление экземпляра
-  update: Начать обновление
+  summary: '''╨Ф╨╛╨▒╨░╨▓╨╕╤В╤М {add} ╤Д╨░╨╣╨╗╤Л.'
+  title: ╨Ю╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╨╡ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+  update: ╨Э╨░╤З╨░╤В╤М ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╨╡
 instances:
-  add: Ekzemplar qo’shish
-  instanceCount: '{count} ekzemplarlar'
-  addCurseForgeDescription: 'Импортируйте из папки данных Curseforge.
-
-    Вам нужно выбрать корневую папку данных Curseforge.'
-  addDescription: Noldan yangi ekzemplar yaratish
-  addMMCDescription: 'Импортируйте существующий экземпляр MultiMC.
-
-    Вам нужно выбрать папку с данными из MultiMC.'
-  addManually: Qo'lda yaratish
-  addModrinthDescription: 'Импортируйте существующий экземпляр Modrinth.
-
-    Вам необходимо выбрать корневую папку данных Modrinth.'
-  addPrismDescription: Импортировать существующий инстанс PrismLauncher.
-  addServer: Serverdan yaratish
-  addServerDescription: Bu serverga to'g'ridan-to'g'ri ulanadigan o'yin yaratadi.
-  addTemplate: Yuklab olingan modpakdan yaratish
-  addTemplateDescription: Yuklab olingan Modpakdan import qilish
-  addVanilla: Oddiy Minecraft'dan yaratish
-  addVanillaDescription: Импортировать из обычной папки (.minecraft). Это дублирует
-    оригинальный профиль экземпляра в XMCL.
-  edition: Nashr
-  editionJava: Java Edition
-  editionBedrock: Bedrock Edition
-  editionBedrockHint: Издание Bedrock запускается через приложение Microsoft Store.
-    У вас должна быть лицензия Bedrock. Моды, наборы ресурсов и другие функции, доступные
-    только в Java, недоступны.
-  editionBedrockWindowsOnly: Издание Bedrock поддерживается только в сборке для Windows.
-  fix: Исправить
-  folder: Папка
-  folderSetting: Настройки папки
-  importFolderDescription: Импортировать Minecraft в лаунчер
-  loadingFiles: Загрузка файлов сборки модов
-  linkSharedFolders: Общий доступ к папкам между сборками
-  linkSharedFoldersHint: Создайте эти папки как ссылки на общие папки лаунчера, чтобы
-    эта сборка делила их содержимое со всеми другими связанными сборками. Это не копирование
-    — изменения в одной сборке появляются во всех. Неотмеченные папки остаются приватными
-    для этой сборки.
-  linkFailed: Не удалось связать папку {folder} с общей папкой
+  add: Ekzemplar qo'shish
+  instanceCount: '{count} instances'
+  addCurseForgeDescription: '''╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╤Г╨╣╤В╨╡ ╨╕╨╖ ╨┐╨░╨┐╨║╨╕ ╨┤╨░╨╜╨╜╤Л╤Е
+    Curseforge.'
+  addDescription: ╨б╨╛╨╖╨┤╨░╤В╤М ╨╜╨╛╨▓╤Л╨╣ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А ╤Б ╨╜╤Г╨╗╤П
+  addMMCDescription: '''╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╤Г╨╣╤В╨╡ ╤Б╤Г╤Й╨╡╤Б╤В╨▓╤Г╤О╤Й╨╕╨╣ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А
+    MultiMC.'
+  addManually: ╨б╨╛╨╖╨┤╨░╤В╤М ╨▓╤А╤Г╤З╨╜╤Г╤О
+  addModrinthDescription: '''╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╤Г╨╣╤В╨╡ ╤Б╤Г╤Й╨╡╤Б╤В╨▓╤Г╤О╤Й╨╕╨╣ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А
+    Modrinth.'
+  addPrismDescription: ╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╤Б╤Г╤Й╨╡╤Б╤В╨▓╤Г╤О╤Й╨╕╨╣ ╨╕╨╜╤Б╤В╨░╨╜╤Б
+    PrismLauncher.
+  addServer: ╨б╨╛╨╖╨┤╨░╤В╤М ╨╕╨╖ ╤Б╨╡╤А╨▓╨╡╤А╨░
+  addServerDescription: ╨н╤В╨╛ ╤Б╨╛╨╖╨┤╨░╤Б╤В ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А, ╨║╨╛╤В╨╛╤А╤Л╨╣ ╨╖╨░╨┐╤Г╤Б╤В╨╕╤В╤Б╤П
+    ╨╜╨╡╨┐╨╛╤Б╤А╨╡╨┤╤Б╤В╨▓╨╡╨╜╨╜╨╛
+  addTemplate: ╨б╨╛╨╖╨┤╨░╤В╤М ╨╕╨╖ ╤Б╨║╨░╤З╨░╨╜╨╜╨╛╨│╨╛ ╨╝╨╛╨┤╨┐╨░╨║╨░
+  addTemplateDescription: ╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨╕╨╖ ╨╖╨░╨│╤А╤Г╨╢╨╡╨╜╨╜╨╛╨╣ ╤Б╨▒╨╛╤А╨║╨╕
+    ╨╝╨╛╨┤╨╛╨▓
+  addVanilla: ╨б╨╛╨╖╨┤╨░╤В╤М ╨╕╨╖ ╤Б╤В╨░╨╜╨┤╨░╤А╤В╨╜╨╛╨│╨╛ Minecraft
+  addVanillaDescription: ╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨╕╨╖ ╨╛╨▒╤Л╤З╨╜╨╛╨╣ ╨┐╨░╨┐╨║╨╕
+    (.minecraft). ╨н╤В╨╛ ╨┤╤Г╨▒╨╗╨╕╤А╤Г╨╡╤В
+  edition: ╨Ш╨╖╨┤╨░╨╜╨╕╨╡
+  editionJava: Java-╨╕╨╖╨┤╨░╨╜╨╕╨╡
+  editionBedrock: Bedrock-╨╕╨╖╨┤╨░╨╜╨╕╨╡
+  editionBedrockHint: ╨Ш╨╖╨┤╨░╨╜╨╕╨╡ Bedrock ╨╖╨░╨┐╤Г╤Б╨║╨░╨╡╤В╤Б╤П ╤З╨╡╤А╨╡╨╖ ╨┐╤А╨╕╨╗╨╛╨╢╨╡╨╜╨╕╨╡
+    Microsoft Store.
+  editionBedrockWindowsOnly: ╨Ш╨╖╨┤╨░╨╜╨╕╨╡ Bedrock ╨┐╨╛╨┤╨┤╨╡╤А╨╢╨╕╨▓╨░╨╡╤В╤Б╤П ╤В╨╛╨╗╤М╨║╨╛
+    ╨▓ ╤Б╨▒╨╛╤А╨║╨╡ ╨┤╨╗╤П Windows.
+  fix: ╨Ш╤Б╨┐╤А╨░╨▓╨╕╤В╤М
+  folder: ╨Я╨░╨┐╨║╨░
+  folderSetting: ╨Э╨░╤Б╤В╤А╨╛╨╣╨║╨╕ ╨┐╨░╨┐╨║╨╕
+  importFolderDescription: ╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М Minecraft ╨▓ ╨╗╨░╤Г╨╜╤З╨╡╤А
+  loadingFiles: ╨Ч╨░╨│╤А╤Г╨╖╨║╨░ ╤Д╨░╨╣╨╗╨╛╨▓ ╤Б╨▒╨╛╤А╨║╨╕ ╨╝╨╛╨┤╨╛╨▓
+  linkSharedFolders: ╨Ю╨▒╤Й╨╕╨╣ ╨┤╨╛╤Б╤В╤Г╨┐ ╨║ ╨┐╨░╨┐╨║╨░╨╝ ╨╝╨╡╨╢╨┤╤Г ╤Б╨▒╨╛╤А╨║╨░╨╝╨╕
+  linkSharedFoldersHint: ╨б╨╛╨╖╨┤╨░╨╣╤В╨╡ ╤Н╤В╨╕ ╨┐╨░╨┐╨║╨╕ ╨║╨░╨║ ╤Б╤Б╤Л╨╗╨║╨╕ ╨╜╨░
+    ╨╛╨▒╤Й╨╕╨╡ ╨┐╨░╨┐╨║╨╕ ╨╗╨░╤Г╨╜╤З╨╡╤А╨░, ╤З╤В╨╛╨▒╤Л
+  linkFailed: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╤Б╨▓╤П╨╖╨░╤В╤М ╨┐╨░╨┐╨║╤Г {folder} ╤Б ╨╛╨▒╤Й╨╡╨╣
+    ╨┐╨░╨┐╨║╨╛╨╣
 items:
-  count: '{count} элементов'
-  total: '{total} всего'
+  count: '{count} ╤Н╨╗╨╡╨╝╨╡╨╜╤В╨╛╨▓'
+  total: '{total} ╨▓╤Б╨╡╨│╨╛'
 java:
-  allocatedLong: Использовать системный Java по умолчанию
-  allocatedShort: Автоматическое выделение
-  allocation: Выделено
-  autoHint: Минимум растёт с количеством установленных модов; максимум использует
-    доступную системную память.
-  change: Изменить
-  importFromFile: Импортировать Java из файла
-  invalid: Неверное расположение Java
-  location: Расположение Java
-  locationHint: Java не выбрана — используется системная по умолчанию
-  maxMemory: Максимальная память
-  memory: Память Java
-  memoryAuto: Автоматически
-  memoryManual: Вручную
-  memoryUnassigned: Не назначено
-  minMemory: Минимальная память
-  name: '{name} o''chirilsinmi'
-  noMemory: Не ограничивать использование памяти
-  openFolder: Papkani ochish
-  presets: Предустановки
-  refresh: Yangilash
-  systemMemory: 'Свободная память системы: {free} / {total}'
+  allocatedLong: ╨Ш╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╤М ╤Б╨╕╤Б╤В╨╡╨╝╨╜╤Л╨╣ Java ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О
+  allocatedShort: ╨Р╨▓╤В╨╛╨╝╨░╤В╨╕╤З╨╡╤Б╨║╨╛╨╡ ╨▓╤Л╨┤╨╡╨╗╨╡╨╜╨╕╨╡
+  allocation: ╨Т╤Л╨┤╨╡╨╗╨╡╨╜╨╛
+  autoHint: ╨Ь╨╕╨╜╨╕╨╝╤Г╨╝ ╤А╨░╤Б╤В╤С╤В ╤Б ╨║╨╛╨╗╨╕╤З╨╡╤Б╤В╨▓╨╛╨╝ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨╜╤Л╤Е
+    ╨╝╨╛╨┤╨╛╨▓; ╨╝╨░╨║╤Б╨╕╨╝╤Г╨╝ ╨╕╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╡╤В
+  change: ╨Ш╨╖╨╝╨╡╨╜╨╕╤В╤М
+  importFromFile: ╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М Java ╨╕╨╖ ╤Д╨░╨╣╨╗╨░
+  invalid: ╨Э╨╡╨▓╨╡╤А╨╜╨╛╨╡ ╤А╨░╤Б╨┐╨╛╨╗╨╛╨╢╨╡╨╜╨╕╨╡ Java
+  location: ╨а╨░╤Б╨┐╨╛╨╗╨╛╨╢╨╡╨╜╨╕╨╡ Java
+  locationHint: Java ╨╜╨╡ ╨▓╤Л╨▒╤А╨░╨╜╨░ тАФ ╨╕╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╡╤В╤Б╤П ╤Б╨╕╤Б╤В╨╡╨╝╨╜╨░╤П
+    ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О
+  maxMemory: ╨Ь╨░╨║╤Б╨╕╨╝╨░╨╗╤М╨╜╨░╤П ╨┐╨░╨╝╤П╤В╤М
+  memory: ╨Я╨░╨╝╤П╤В╤М Java
+  memoryAuto: ╨Р╨▓╤В╨╛╨╝╨░╤В╨╕╤З╨╡╤Б╨║╨╕
+  memoryManual: ╨Т╤А╤Г╤З╨╜╤Г╤О
+  memoryUnassigned: ╨Э╨╡ ╨╜╨░╨╖╨╜╨░╤З╨╡╨╜╨╛
+  minMemory: ╨Ь╨╕╨╜╨╕╨╝╨░╨╗╤М╨╜╨░╤П ╨┐╨░╨╝╤П╤В╤М
+  name: Java
+  noMemory: ╨Э╨╡ ╨╛╨│╤А╨░╨╜╨╕╤З╨╕╨▓╨░╤В╤М ╨╕╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╨╜╨╕╨╡ ╨┐╨░╨╝╤П╤В╨╕
+  openFolder: ╨Ю╤В╨║╤А╤Л╤В╤М ╨┐╨░╨┐╨║╤Г Java
+  presets: ╨Я╤А╨╡╨┤╤Г╤Б╤В╨░╨╜╨╛╨▓╨║╨╕
+  refresh: ╨Ю╨▒╨╜╨╛╨▓╨╕╤В╤М ╨╗╨╛╨║╨░╨╗╤М╨╜╤Л╨╣ Java
+  systemMemory: '╨б╨▓╨╛╨▒╨╛╨┤╨╜╨░╤П ╨┐╨░╨╝╤П╤В╤М ╤Б╨╕╤Б╤В╨╡╨╝╤Л: {free} / {total}'
 labyMod:
-  disable: Tanlanmagan
-  empty: Minecraft {version} uchun tegishli versiya topilmadi
+  disable: LabyMod ╨╜╨╡ ╨▓╤Л╨▒╤А╨░╨╜
+  empty: LabyMod ╨╜╨╡ ╨┐╨╛╨┤╨┤╨╡╤А╨╢╨╕╨▓╨░╨╡╤В ╤В╨╡╨║╤Г╤Й╤Г╤О ╨▓╨╡╤А╤Б╨╕╤О Minecraft
 launch:
-  cancel: Bekor qilish
-  createShortcut: Yorliq yaratish
-  forceKill: Принудительно завершить
-  kill: Остановить
-  killServer: Остановить локальный сервер
-  launch: O'yinni ishga tushirish
-  launchAnyway: Запустить в любом случае
-  launchAs: Запустить от имени
+  cancel: ╨Ю╤В╨╝╨╡╨╜╨╕╤В╤М
+  createShortcut: ╨б╨╛╨╖╨┤╨░╤В╤М ╤П╤А╨╗╤Л╨║
+  forceKill: ╨Я╤А╨╕╨╜╤Г╨┤╨╕╤В╨╡╨╗╤М╨╜╨╛ ╨╖╨░╨▓╨╡╤А╤И╨╕╤В╤М
+  kill: ╨Ю╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М
+  killServer: ╨Ю╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╨╗╨╛╨║╨░╨╗╤М╨╜╤Л╨╣ ╤Б╨╡╤А╨▓╨╡╤А
+  launch: ╨Ч╨░╨┐╤Г╤Б╤В╨╕╤В╤М
+  launchAnyway: ╨Ч╨░╨┐╤Г╤Б╤В╨╕╤В╤М ╨▓ ╨╗╤О╨▒╨╛╨╝ ╤Б╨╗╤Г╤З╨░╨╡
+  launchAs: ╨Ч╨░╨┐╤Г╤Б╤В╨╕╤В╤М ╨╛╤В ╨╕╨╝╨╡╨╜╨╕
   launchTo: Launch to
 launchBlocked:
   launchBadVersion:
-    description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-      komilmi?
-    title: Ошибка файла версии
+    description: ╨д╨░╨╣╨╗ ╨▓╨╡╤А╤Б╨╕╨╕ {version} ╨┐╨╛╨▓╤А╨╡╨╢╨┤╤С╨╜ ╨╕╨╗╨╕ ╨╛╤В╤Б╤Г╤В╤Б╤В╨▓╤Г╨╡╤В.
+      ╨Т╨╛╨╖╨╝╨╛╨╢╨╜╨╛, ╨▓╨░╨╝ ╨╜╤Г╨╢╨╜╨╛
+    title: ╨Ю╤И╨╕╨▒╨║╨░ ╤Д╨░╨╣╨╗╨░ ╨▓╨╡╤А╤Б╨╕╨╕
   launchGeneralException:
-    description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-      komilmi?
-    title: Ошибка запуска
+    description: ╨Т╨╛╨╖╨╜╨╕╨║╨╗╨╕ ╨╛╤И╨╕╨▒╨║╨╕, ╨╕╨╖-╨╖╨░ ╨║╨╛╤В╨╛╤А╤Л╤Е ╨╖╨░╨┐╤Г╤Б╨║
+      ╨╜╨╡ ╤Г╨┤╨░╨╗╤Б╤П.
+    title: ╨Ю╤И╨╕╨▒╨║╨░ ╨╖╨░╨┐╤Г╤Б╨║╨░
   launchInvalidJavaPath:
-    description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-      komilmi?
-    title: Неверный путь к Java
+    description: ╨Т╤Л╨▒╤А╨░╨╜╨╜╤Л╨╣ ╨┐╤Г╤В╤М ╨║ Java ╨╜╨╡╨▓╨╡╤А╨╡╨╜ ╨╕╨╗╨╕ ╤Д╨░╨╣╨╗
+      ╨╛╤В╤Б╤Г╤В╤Б╤В╨▓╤Г╨╡╤В. ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨▓╤Л╨▒╨╡╤А╨╕╤В╨╡
+    title: ╨Э╨╡╨▓╨╡╤А╨╜╤Л╨╣ ╨┐╤Г╤В╤М ╨║ Java
   launchJavaNoPermission:
-    description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-      komilmi?
-    title: Отсутствуют права на выполнение
+    description: ╨г ╨╗╨░╤Г╨╜╤З╨╡╤А╨░ ╨╜╨╡╤В ╤А╨░╨╖╤А╨╡╤И╨╡╨╜╨╕╤П ╨╜╨░ ╨▓╤Л╨┐╨╛╨╗╨╜╨╡╨╜╨╕╨╡
+      Java ╨┐╨╛ ╤Г╨║╨░╨╖╨░╨╜╨╜╨╛╨╝╤Г ╨┐╤Г╤В╨╕.
+    title: ╨Ю╤В╤Б╤Г╤В╤Б╤В╨▓╤Г╤О╤В ╨┐╤А╨░╨▓╨░ ╨╜╨░ ╨▓╤Л╨┐╨╛╨╗╨╜╨╡╨╜╨╕╨╡
   launchNoProperJava:
-    description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-      komilmi?
-    title: Отсутствует подходящая версия Java
+    description: ╨Э╨╡ ╨╜╨░╨╣╨┤╨╡╨╜╨░ ╨┐╨╛╨┤╤Е╨╛╨┤╤П╤Й╨░╤П ╨▓╨╡╤А╤Б╨╕╤П Java ╨┤╨╗╤П
+      ╨╖╨░╨┐╤Г╤Б╨║╨░ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░. ({javaPath}
+    title: ╨Ю╤В╤Б╤Г╤В╤Б╤В╨▓╤Г╨╡╤В ╨┐╨╛╨┤╤Е╨╛╨┤╤П╤Й╨░╤П ╨▓╨╡╤А╤Б╨╕╤П Java
   launchNoVersionInstalled:
-    description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-      komilmi?
-    title: Отсутствует выбранная версия
+    description: ╨Э╨╡ ╤Г╨┤╨░╤С╤В╤Б╤П ╤А╨░╨╖╤А╨╡╤И╨╕╤В╤М ╨▓╨╡╤А╤Б╨╕╤О <span class="highlight">{version}</span>
+    title: ╨Ю╤В╤Б╤Г╤В╤Б╤В╨▓╤Г╨╡╤В ╨▓╤Л╨▒╤А╨░╨╜╨╜╨░╤П ╨▓╨╡╤А╤Б╨╕╤П
   launchSpawnProcessFailed:
-    description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-      komilmi?
-    title: Ошибка запуска процесса экземпляра
-  unexpectedText: Это неожиданно. Вы можете перезапустить лаунчер, чтобы устранить
-    проблему. Если проблема повторится, свяжитесь с автором.
+    description: ╨Я╤А╨╛╨╕╨╖╨╛╤И╨╗╨░ ╨╛╤И╨╕╨▒╨║╨░ ╨┐╤А╨╕ ╨╖╨░╨┐╤Г╤Б╨║╨╡ ╨┐╤А╨╛╤Ж╨╡╤Б╤Б╨░
+      ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░. ╨Я╤А╨╛╨▓╨╡╤А╤М╤В╨╡, ╤З╤В╨╛
+    title: ╨Ю╤И╨╕╨▒╨║╨░ ╨╖╨░╨┐╤Г╤Б╨║╨░ ╨┐╤А╨╛╤Ж╨╡╤Б╤Б╨░ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+  unexpectedText: ╨н╤В╨╛ ╨╜╨╡╨╛╨╢╨╕╨┤╨░╨╜╨╜╨╛. ╨Т╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨┐╨╡╤А╨╡╨╖╨░╨┐╤Г╤Б╤В╨╕╤В╤М
+    ╨╗╨░╤Г╨╜╤З╨╡╤А, ╤З╤В╨╛╨▒╤Л ╤Г╤Б╤В╤А╨░╨╜╨╕╤В╤М
 launchFailed:
-  crash: Игра вылетела!
-  description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-    komilmi?
+  crash: ╨Ш╨│╤А╨░ ╨▓╤Л╨╗╨╡╤В╨╡╨╗╨░!
+  description: ╨Ю╤В╤З╨╡╤В ╨╛ ╤Б╨▒╨╛╨╡ ╨╛╤В╤Б╤Г╤В╤Б╤В╨▓╤Г╨╡╤В. ╨н╤В╨╛ ╨╢╤Г╤А╨╜╨░╨╗
+    ╨╛╤И╨╕╨▒╨╛╨║ ╨╕ ╨┐╨╛╤Б╨╗╨╡╨┤╨╜╨╕╨╣ ╨╢╤Г╤А╨╜╨░╨╗.
   elyByAuthlib:
-    description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-      komilmi?
-    suggestion: Вы можете отключить заменитель Authlib Ely.by в настройках инстанса,
-      чтобы избежать этой проблемы.
-    title: Проблема совместимости Ely.by Authlib
-  failedToLaunch: Не удалось запустить запуск
-  latestLog: 'Последние логи '
-  title: Игра завершилась с аномальным кодом
+    description: ╨Ч╨░╨╝╨╡╨╜╨╕╤В╨╡╨╗╤М Authlib ╨╛╤В Ely.by ╨▒╤Л╨╗ ╨╕╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╨╜
+      ╨┤╨╗╤П ╨▓╨╡╤А╤Б╨╕╨╕ Minecraft
+    suggestion: ╨Т╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨╛╤В╨║╨╗╤О╤З╨╕╤В╤М ╨╖╨░╨╝╨╡╨╜╨╕╤В╨╡╨╗╤М Authlib
+      Ely.by ╨▓ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨░╤Е ╨╕╨╜╤Б╤В╨░╨╜╤Б╨░,
+    title: ╨Я╤А╨╛╨▒╨╗╨╡╨╝╨░ ╤Б╨╛╨▓╨╝╨╡╤Б╤В╨╕╨╝╨╛╤Б╤В╨╕ Ely.by Authlib
+  failedToLaunch: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╨╖╨░╨┐╤Г╤Б╤В╨╕╤В╤М ╨╖╨░╨┐╤Г╤Б╨║
+  latestLog: '╨Я╨╛╤Б╨╗╨╡╨┤╨╜╨╕╨╡ ╨╗╨╛╨│╨╕ '
+  title: ╨Ш╨│╤А╨░ ╨╖╨░╨▓╨╡╤А╤И╨╕╨╗╨░╤Б╤М ╤Б ╨░╨╜╨╛╨╝╨░╨╗╤М╨╜╤Л╨╝ ╨║╨╛╨┤╨╛╨╝
 launchPreExecuteCommandFailed:
-  description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-    komilmi?
-  title: Команда предварительного выполнения не выполнена
+  description: '''╨Ъ╨╛╨╝╨░╨╜╨┤╨░ ╨┐╤А╨╡╨┤╨▓╨░╤А╨╕╤В╨╡╨╗╤М╨╜╨╛╨│╨╛ ╨▓╤Л╨┐╨╛╨╗╨╜╨╡╨╜╨╕╤П
+    ╨╖╨░╨▓╨╡╤А╤И╨╕╨╗╨░╤Б╤М ╤Б ╨╛╤И╨╕╨▒╨║╨╛╨╣: {error}.'
+  title: ╨Ъ╨╛╨╝╨░╨╜╨┤╨░ ╨┐╤А╨╡╨┤╨▓╨░╤А╨╕╤В╨╡╨╗╤М╨╜╨╛╨│╨╛ ╨▓╤Л╨┐╨╛╨╗╨╜╨╡╨╜╨╕╤П ╨╜╨╡
+    ╨▓╤Л╨┐╨╛╨╗╨╜╨╡╨╜╨░
 launchStatus:
-  assigningMemory: Распределение памяти
-  elyByWarning: Заменитель Authlib Ely.by включён. Некоторые версии Minecraft могут
-    быть несовместимы и вызывать падения. Вы можете отключить его в настройках инстанса,
-    если возникнут проблемы.
-  exit: Выйти из игры?
-  injectingAuthLib: Настройка сторонней библиотеки AuthLib
-  launching: Запуск игры...
-  launchingSlow: Запуск игры всё ещё выполняется... Для инициализации графического
-    движка может потребоваться некоторое время...
-  refreshingUser: Обновление токена пользователя
-  spawningProcess: Запуск процесса
+  assigningMemory: ╨а╨░╤Б╨┐╤А╨╡╨┤╨╡╨╗╨╡╨╜╨╕╨╡ ╨┐╨░╨╝╤П╤В╨╕
+  elyByWarning: ╨Ч╨░╨╝╨╡╨╜╨╕╤В╨╡╨╗╤М Authlib Ely.by ╨▓╨║╨╗╤О╤З╤С╨╜. ╨Э╨╡╨║╨╛╤В╨╛╤А╤Л╨╡
+    ╨▓╨╡╤А╤Б╨╕╨╕ Minecraft ╨╝╨╛╨│╤Г╤В
+  exit: ╨Т╤Л╨╣╤В╨╕ ╨╕╨╖ ╨╕╨│╤А╤Л?
+  injectingAuthLib: ╨Э╨░╤Б╤В╤А╨╛╨╣╨║╨░ ╤Б╤В╨╛╤А╨╛╨╜╨╜╨╡╨╣ ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╨╕ AuthLib
+  launching: ╨Ч╨░╨┐╤Г╤Б╨║ ╨╕╨│╤А╤Л...
+  launchingSlow: ╨Ч╨░╨┐╤Г╤Б╨║ ╨╕╨│╤А╤Л ╨▓╤Б╤С ╨╡╤Й╤С ╨▓╤Л╨┐╨╛╨╗╨╜╤П╨╡╤В╤Б╤П... ╨Ф╨╗╤П
+    ╨╕╨╜╨╕╤Ж╨╕╨░╨╗╨╕╨╖╨░╤Ж╨╕╨╕ ╨│╤А╨░╤Д╨╕╤З╨╡╤Б╨║╨╛╨│╨╛
+  refreshingUser: ╨Ю╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╨╡ ╤В╨╛╨║╨╡╨╜╨░ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П
+  spawningProcess: ╨Ч╨░╨┐╤Г╤Б╨║ ╨┐╤А╨╛╤Ж╨╡╤Б╤Б╨░
 launcherUpdate:
-  alreadyLatest: Последняя версия
-  installAndQuit: Перезапустите, чтобы установить
-  noUpdateAvailable: Нет доступных обновлений
-  updateToThisVersion: Скачать и установить
+  alreadyLatest: ╨Я╨╛╤Б╨╗╨╡╨┤╨╜╤П╤П ╨▓╨╡╤А╤Б╨╕╤П
+  installAndQuit: ╨Я╨╡╤А╨╡╨╖╨░╨┐╤Г╤Б╤В╨╕╤В╨╡, ╤З╤В╨╛╨▒╤Л ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М
+  noUpdateAvailable: ╨Э╨╡╤В ╨┤╨╛╤Б╤В╤Г╨┐╨╜╤Л╤Е ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╨╣
+  updateToThisVersion: ╨б╨║╨░╤З╨░╤В╤М ╨╕ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М
 localVersion:
-  auto: Определить автоматически
-  empty: Minecraft {version} uchun tegishli versiya topilmadi
-  hint: Hisobot yaratish va dasturchilar jamoasi bilan bog'lanish uchun tugmani bosing.
-    Hisobot qurilmangiz haqida ma'lumotni, jumladan operatsion tizim turi, versiyasi,
-    foydalanuvchi nomi va boshqa ma'lumotlarni o'z ichiga oladi.
-  reinstallDescription: Если вы считаете, что установка этой версии вызывает проблемы,
-    вы можете попробовать переустановить её.
-  reinstallTitle: Переустановить {version}
-  title: Локальная версия | Локальные версии
+  auto: ╨Ю╨┐╤А╨╡╨┤╨╡╨╗╨╕╤В╤М ╨░╨▓╤В╨╛╨╝╨░╤В╨╕╤З╨╡╤Б╨║╨╕
+  empty: ╨Т╨╡╤А╤Б╨╕╤П ╨╜╨╡ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨░
+  hint: ╨Ч╨░╨┐╤Г╤Б╤В╨╕╤В╤М ╨║╨╛╨╜╨║╤А╨╡╤В╨╜╤Г╤О ╨╗╨╛╨║╨░╨╗╤М╨╜╤Г╤О ╨▓╨╡╤А╤Б╨╕╤О ╨╜╨░╨┐╤А╤П╨╝╤Г╤О
+  reinstallDescription: ╨Х╤Б╨╗╨╕ ╨▓╤Л ╤Б╤З╨╕╤В╨░╨╡╤В╨╡, ╤З╤В╨╛ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨║╨░
+    ╤Н╤В╨╛╨╣ ╨▓╨╡╤А╤Б╨╕╨╕ ╨▓╤Л╨╖╤Л╨▓╨░╨╡╤В ╨┐╤А╨╛╨▒╨╗╨╡╨╝╤Л,
+  reinstallTitle: ╨Я╨╡╤А╨╡╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М {version}
+  title: ╨Ы╨╛╨║╨░╨╗╤М╨╜╨░╤П ╨▓╨╡╤А╤Б╨╕╤П | ╨Ы╨╛╨║╨░╨╗╤М╨╜╤Л╨╡ ╨▓╨╡╤А╤Б╨╕╨╕
 logLevel:
-  error: Ошибка
-  info: Информация
-  success: Buferga nusxalandi
-  warning: Предупреждение
+  error: ╨Ю╤И╨╕╨▒╨║╨░
+  info: ╨Ш╨╜╤Д╨╛╤А╨╝╨░╤Ж╨╕╤П
+  success: ╨г╤Б╨┐╨╡╤Е
+  warning: ╨Я╤А╨╡╨┤╤Г╨┐╤А╨╡╨╢╨┤╨╡╨╜╨╕╨╡
 logView:
-  searchPlaceholder: Поиск логов...
+  searchPlaceholder: ╨Я╨╛╨╕╤Б╨║ ╨╗╨╛╨│╨╛╨▓...
 login:
-  dropHint: Перетащите сюда ссылку с кодом авторизации для ручного входа
-  forgetPassword: Забыли пароль?
-  login: Войти
-  manualLoginUrl: Если браузер не открывается, пожалуйста, нажмите на эту ссылку для
-    авторизации!
-  signup: Зарегистрироваться
-  signupDescription: Нет учётной записи?
-  userRelogin: Срок действия токена доступа пользователя истёк. Пожалуйста, повторите
-    вход!
+  dropHint: ╨Я╨╡╤А╨╡╤В╨░╤Й╨╕╤В╨╡ ╤Б╤О╨┤╨░ ╤Б╤Б╤Л╨╗╨║╤Г ╤Б ╨║╨╛╨┤╨╛╨╝ ╨░╨▓╤В╨╛╤А╨╕╨╖╨░╤Ж╨╕╨╕
+    ╨┤╨╗╤П ╤А╤Г╤З╨╜╨╛╨│╨╛ ╨▓╤Е╨╛╨┤╨░
+  forgetPassword: ╨Ч╨░╨▒╤Л╨╗╨╕ ╨┐╨░╤А╨╛╨╗╤М?
+  login: ╨Т╨╛╨╣╤В╨╕
+  manualLoginUrl: ╨Х╤Б╨╗╨╕ ╨▒╤А╨░╤Г╨╖╨╡╤А ╨╜╨╡ ╨╛╤В╨║╤А╤Л╨▓╨░╨╡╤В╤Б╤П, ╨┐╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░,
+    ╨╜╨░╨╢╨╝╨╕╤В╨╡ ╨╜╨░ ╤Н╤В╤Г ╤Б╤Б╤Л╨╗╨║╤Г ╨┤╨╗╤П
+  signup: ╨Ч╨░╤А╨╡╨│╨╕╤Б╤В╤А╨╕╤А╨╛╨▓╨░╤В╤М╤Б╤П
+  signupDescription: ╨Э╨╡╤В ╤Г╤З╤С╤В╨╜╨╛╨╣ ╨╖╨░╨┐╨╕╤Б╨╕?
+  userRelogin: ╨б╤А╨╛╨║ ╨┤╨╡╨╣╤Б╤В╨▓╨╕╤П ╤В╨╛╨║╨╡╨╜╨░ ╨┤╨╛╤Б╤В╤Г╨┐╨░ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П
+    ╨╕╤Б╤В╤С╨║. ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨┐╨╛╨▓╤В╨╛╤А╨╕╤В╨╡
 loginError:
-  acquireMicrosoftTokenFailed: Не удалось получить токен Microsoft. Это может быть
-    проблема с сетью. Пожалуйста, повторите попытку.
+  acquireMicrosoftTokenFailed: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╨┐╨╛╨╗╤Г╤З╨╕╤В╤М ╤В╨╛╨║╨╡╨╜ Microsoft.
+    ╨н╤В╨╛ ╨╝╨╛╨╢╨╡╤В ╨▒╤Л╤В╤М
   loginCanceled: Microsoft sign-in was canceled.
-  badNetworkOrServer: Проверьте соединение с сетью! Возможно, сервер авторизации недоступен!
-  checkOwnershipFailed: Не удалось подтвердить владение игрой. Пожалуйста, попробуйте
-    ещё раз.
-  connectionReset: Не удалось войти, так как соединение было сброшено сервером
+  badNetworkOrServer: ╨Я╤А╨╛╨▓╨╡╤А╤М╤В╨╡ ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡ ╤Б ╤Б╨╡╤В╤М╤О! ╨Т╨╛╨╖╨╝╨╛╨╢╨╜╨╛,
+    ╤Б╨╡╤А╨▓╨╡╤А ╨░╨▓╤В╨╛╤А╨╕╨╖╨░╤Ж╨╕╨╕ ╨╜╨╡╨┤╨╛╤Б╤В╤Г╨┐╨╡╨╜!
+  checkOwnershipFailed: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╨┐╨╛╨┤╤В╨▓╨╡╤А╨┤╨╕╤В╤М ╨▓╨╗╨░╨┤╨╡╨╜╨╕╨╡
+    ╨╕╨│╤А╨╛╨╣. ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨┐╨╛╨┐╤А╨╛╨▒╤Г╨╣╤В╨╡
+  connectionReset: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╨▓╨╛╨╣╤В╨╕, ╤В╨░╨║ ╨║╨░╨║ ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡
+    ╨▒╤Л╨╗╨╛ ╤Б╨▒╤А╨╛╤И╨╡╨╜╨╛ ╤Б╨╡╤А╨▓╨╡╤А╨╛╨╝
   cyrillicNotAllowed: Cyrillic characters are not allowed
-  fetchMinecraftProfileFailed: 'Не удалось получить профиль Minecraft: {reason}'
-  illegalEmail: Необходим корректный адрес электронной почты
+  fetchMinecraftProfileFailed: '╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╨┐╨╛╨╗╤Г╤З╨╕╤В╤М ╨┐╤А╨╛╤Д╨╕╨╗╤М
+    Minecraft: {reason}'
+  illegalEmail: ╨Э╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝ ╨║╨╛╤А╤А╨╡╨║╤В╨╜╤Л╨╣ ╨░╨┤╤А╨╡╤Б ╤Н╨╗╨╡╨║╤В╤А╨╛╨╜╨╜╨╛╨╣
+    ╨┐╨╛╤З╤В╤Л
   illegalOfflineUsername: Username must be 3-16 characters long and contain only English
-    letters, numbers, and underscores
-  invalidCredentials: Неверные учётные данные. Неверное имя пользователя или пароль.
-  loginMinecraftByXboxFailed: Не удалось получить токен Minecraft с помощью токена
-    Xbox. Убедитесь, что у вас есть Minecraft в Xbox, или попробуйте ещё раз.
+  invalidCredentials: ╨Э╨╡╨▓╨╡╤А╨╜╤Л╨╡ ╤Г╤З╤С╤В╨╜╤Л╨╡ ╨┤╨░╨╜╨╜╤Л╨╡. ╨Э╨╡╨▓╨╡╤А╨╜╨╛╨╡
+    ╨╕╨╝╤П ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П ╨╕╨╗╨╕ ╨┐╨░╤А╨╛╨╗╤М.
+  loginMinecraftByXboxFailed: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╨┐╨╛╨╗╤Г╤З╨╕╤В╤М ╤В╨╛╨║╨╡╨╜ Minecraft
+    ╤Б ╨┐╨╛╨╝╨╛╤Й╤М╤О ╤В╨╛╨║╨╡╨╜╨░
   loginMinecraftByXboxRateLimited: Microsoft's Minecraft authentication service is
-    currently rate-limiting requests (HTTP 429). Please wait a moment and try again.
   loginMinecraftByXboxRateLimitedWithRetry: Microsoft's Minecraft authentication service
-    is currently rate-limiting requests (HTTP 429). Please wait about {seconds} second(s)
-    and try again.
   loginMinecraftByXboxServerError: Microsoft's Minecraft authentication service returned
-    a server error (HTTP {status}). This is on their side. Please try again in a few
-    minutes.
   loginMinecraftByXboxStatus: Fail to exchange Minecraft token by Xbox token (HTTP
-    {status}). Please make sure you have Minecraft in Xbox, or retry.
   loginXboxAdultVerification: Your Microsoft account requires adult verification (commonly
-    required in some regions) before it can sign in to Xbox. Open {url} in your browser
-    to complete verification, then try again.
-  loginXboxAgeRestricted: 'Не в состоянии войти в систему xbox из -за возникновения
-    возраста.
-
-    Пожалуйста, убедитесь, что возраст установлен для вашей учетной записи Microsoft,
-    а возраст превышает 18.'
+  loginXboxAgeRestricted: '''╨Э╨╡ ╨▓ ╤Б╨╛╤Б╤В╨╛╤П╨╜╨╕╨╕ ╨▓╨╛╨╣╤В╨╕ ╨▓ ╤Б╨╕╤Б╤В╨╡╨╝╤Г
+    xbox ╨╕╨╖ -╨╖╨░ ╨▓╨╛╨╖╨╜╨╕╨║╨╜╨╛╨▓╨╡╨╜╨╕╤П'
   loginXboxBadXsts: Microsoft returned an XSTS response without the expected user
-    claims. This is usually temporary -- please try again in a few minutes.
   loginXboxBanned: This Microsoft / Xbox account has been suspended or banned by Microsoft
-    and cannot sign in to Minecraft. Please contact Microsoft / Xbox support.
   loginXboxChildAccount: Your Microsoft account is a child account and needs to be
-    added to a Microsoft Family before it can sign in to Xbox / Minecraft. Open {url}
-    in your browser to fix it, then try again.
-  loginXboxFailed: Не удалось войти в Xbox с помощью токена Microsoft. Убедитесь,
-    что у вас есть независимый аккаунт Xbox от вашего аккаунта Microsoft. Пожалуйста,
-    попробуйте ещё раз.
+  loginXboxFailed: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╨▓╨╛╨╣╤В╨╕ ╨▓ Xbox ╤Б ╨┐╨╛╨╝╨╛╤Й╤М╤О ╤В╨╛╨║╨╡╨╜╨░
+    Microsoft. ╨г╨▒╨╡╨┤╨╕╤В╨╡╤Б╤М,
   loginXboxFailedWithCode: Fail to login Xbox by Microsoft token (XErr {code}). Please
-    search the code for help, or try again later.
   loginXboxNoXboxProfile: This Microsoft account does not have an Xbox profile yet.
-    Open {url} in your browser to create one, then try again.
   loginXboxRegionLocked: Xbox Live is not available in your account's region. Please
-    change your Microsoft account's country/region in Microsoft account settings and
-    try again.
-  noProfileForNewUser: 'Профиль игры не найден!
-
-    Если вы новый пользователь Minecraft, пожалуйста, войдите в систему как минимум
-    один раз в официальной установке Minecraft.'
-  requestFailed: Ошибка входа, причина неизвестна. Пожалуйста, попробуйте ещё раз.
+  noProfileForNewUser: '''╨Я╤А╨╛╤Д╨╕╨╗╤М ╨╕╨│╤А╤Л ╨╜╨╡ ╨╜╨░╨╣╨┤╨╡╨╜!'
+  requestFailed: ╨Ю╤И╨╕╨▒╨║╨░ ╨▓╤Е╨╛╨┤╨░, ╨┐╤А╨╕╤З╨╕╨╜╨░ ╨╜╨╡╨╕╨╖╨▓╨╡╤Б╤В╨╜╨░. ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░,
+    ╨┐╨╛╨┐╤А╨╛╨▒╤Г╨╣╤В╨╡ ╨╡╤Й╤С ╤А╨░╨╖.
   xboxErrorGuideHint: Having trouble signing in? Learn how to fix Microsoft & Xbox
-    login issues.
   openLoginGuide: How to fix this issue
   openDiscordSupport: Still need help? Join our Discord
-  requireEmail: Требуется адрес электронной почты
-  requirePassword: Требуется пароль
-  requireUsername: Требуется имя пользователя
-  timeout: Время ожидания входа истекло. Пожалуйста, попробуйте ещё раз или проверьте
-    соединение с сетью.
+  requireEmail: ╨в╤А╨╡╨▒╤Г╨╡╤В╤Б╤П ╨░╨┤╤А╨╡╤Б ╤Н╨╗╨╡╨║╤В╤А╨╛╨╜╨╜╨╛╨╣ ╨┐╨╛╤З╤В╤Л
+  requirePassword: ╨в╤А╨╡╨▒╤Г╨╡╤В╤Б╤П ╨┐╨░╤А╨╛╨╗╤М
+  requireUsername: ╨в╤А╨╡╨▒╤Г╨╡╤В╤Б╤П ╨╕╨╝╤П ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П
+  timeout: ╨Т╤А╨╡╨╝╤П ╨╛╨╢╨╕╨┤╨░╨╜╨╕╤П ╨▓╤Е╨╛╨┤╨░ ╨╕╤Б╤В╨╡╨║╨╗╨╛. ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░,
+    ╨┐╨╛╨┐╤А╨╛╨▒╤Г╨╣╤В╨╡ ╨╡╤Й╤С ╤А╨░╨╖ ╨╕╨╗╨╕ ╨┐╤А╨╛╨▓╨╡╤А╤М╤В╨╡
 logsCrashes:
-  crashes: Отчёты об ошибках
-  failures: Ошибки запуска
-  logs: Журналы
-  placeholder: Katalogni tanlash uchun bu yerga bosing
+  crashes: ╨Ю╤В╤З╤С╤В╤Л ╨╛╨▒ ╨╛╤И╨╕╨▒╨║╨░╤Е
+  failures: ╨Ю╤И╨╕╨▒╨║╨╕ ╨╖╨░╨┐╤Г╤Б╨║╨░
+  logs: ╨Ц╤Г╤А╨╜╨░╨╗╤Л
+  placeholder: ╨д╨░╨╣╨╗╤Л ╨╜╨╡ ╨╜╨░╨╣╨┤╨╡╨╜╤Л
   serverLogs: Server Logs
   showFile: Show in Folder
-  title: Журналы и отчёты об ошибках
+  title: ╨Ц╤Г╤А╨╜╨░╨╗╤Л ╨╕ ╨╛╤В╤З╤С╤В╤Л ╨╛╨▒ ╨╛╤И╨╕╨▒╨║╨░╤Е
 me:
-  news: Новости
-  recentPlay: Последние игры
+  news: ╨Э╨╛╨▓╨╛╤Б╤В╨╕
+  recentPlay: ╨Я╨╛╤Б╨╗╨╡╨┤╨╜╨╕╨╡ ╨╕╨│╤А╤Л
 migrateMinecraft:
-  name: '{name} o''chirilsinmi'
+  name: ╨Я╨╡╤А╨╡╨╜╨╡╤Б╤В╨╕ ╤Д╨░╨╣╨╗╤Л Minecraft
 xmclAccount:
-  accountSummary: Аккаунт
-  confirmMerge: Подтвердить объединение
-  createdAt: Создано {date}
-  description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-    komilmi?
-  expiresAt: Истекает {date}
-  gameAccountsSeparate: Удаление игрового аккаунта не отвязывает метод входа NeoTerra.
-  guest: Гость
-  identityConflict: Этот вход {provider} принадлежит другому аккаунту NeoTerra.
-  linkAccountWith: Привязать аккаунт через
-  mergePreview: Проверьте ресурсы перед подтверждением.
-  mergeNeedsSession: Войдите в аккаунт NeoTerra для продолжения.
-  mergeQueued: Объединение аккаунтов выполняется.
-  requestFailed: Служба аккаунтов NeoTerra не смогла выполнить запрос.
-  reviewMerge: Проверить объединение
-  session: Сессия
-  sessionActive: Активно
-  sessionExpired: Истекла
-  signOutAll: Выйти на всех устройствах
-  signOutDevice: Выйти на этом устройстве
+  accountSummary: Hisob (Account)
+  confirmMerge: Hisoblarni biriktirishni tasdiqlash
+  createdAt: Yaratilgan sana {date}
+  description: NeoTerra profilingiz (Minecraft o'yin hisobidan alohida).
+  expiresAt: Tugash muddati {date}
+  gameAccountsSeparate: O'yin hisobini o'chirish NeoTerra profilini uzib qo'ymaydi.
+  guest: Mehmon (Guest)
+  identityConflict: Ushbu {provider} kirishi boshqa NeoTerra hisobiga tegishli.
+  linkAccountWith: 'Hisobni quyidagilar orqali biriktirish:'
+  mergePreview: Biriktirishdan oldin resurslarni tekshiring.
+  mergeNeedsSession: Davom etish uchun NeoTerra hisobingizga kiring.
+  mergeQueued: Hisoblarni biriktirish jarayonda.
+  requestFailed: NeoTerra hisob xizmati so'rovni bajara olmadi.
+  reviewMerge: Biriktirishni ko'rib chiqish
+  session: Sessiya
+  sessionActive: Faol
+  sessionExpired: Muddati o'tgan
+  signOutAll: Barcha qurilmalardan chiqish
+  signOutDevice: Ushbu qurilmadan chiqish
   status:
     active: Faol
-    deleted: Удален
-    deletion_pending: Ожидает удаления
-    merged: Объединен
-  title: Аккаунт NeoTerra
+    deleted: O'chirilgan
+    deletion_pending: O'chirilishi kutilmoqda
+    merged: Biriktirilgan
+  title: NeoTerra Hisobi
 minecraftFriends:
-  accept: Qabul qilish
-  add: Do’st qo’shish
-  addPlaceholder: Minecraft foydalanuvchi nomi
-  addedRelative: Qo'shildi {time}
+  accept: Accept
+  add: Do'st qo'shish
+  addPlaceholder: Minecraft username
+  addedRelative: Added {time}
   errors:
     cannotAddSelf: You cannot send a friend request to yourself.
-    duplicate: Ekzemplardan nusxa ko'chirish
+    duplicate: That player is already in your list.
     friendsDisabled: Your Minecraft account has friends disabled or cannot use friends.
-      Enable friends in Minecraft account settings, then try again.
     generic: Something went wrong. Please try again.
     invalidName: Minecraft usernames must be between 3 and 16 characters.
     inviteRejected: That player does not have friends enabled or does not accept invites.
     tokenExpired: Your Microsoft session expired. Please log in again.
     unknownProfile: We could not find a player with that name.
-  expiresRelative: Muddati tugaydi {time}
-  friends: Do'stlar
+  expiresRelative: Expires {time}
+  friends: Friends
   heroEmptyHint: Add a Minecraft player by username above to send a friend request.
   heroEmptyTitle: Your friends list is empty
   incoming: Incoming requests
@@ -911,162 +872,164 @@ minecraftFriends:
   reconnectAction: Reconnect
   requiresMicrosoft: Sign in with a Microsoft account to use friends.
   scopedTo: Signed in as {name}
-  send: Yuborish
-  title: Minecraft Do'stlari
-  unsupported: Do'stlar faqat Microsoft hisoblari uchun mavjud.
+  send: Send
+  title: Minecraft Friends
+  unsupported: Friends are only available for Microsoft accounts.
 migrationWindow:
-  title: Перенос данных
-  preparing: Подготовка к переносу…
-  scanning: Подсчёт…
-  migrating: Перемещение данных
-  done: Перенос завершён
-  files: файлов
-  warning: Не закрывайте лаунчер до завершения, иначе данные могут быть потеряны.
-  error: Не удалось перенести данные
+  title: ╨Я╨╡╤А╨╡╨╜╨╛╤Б ╨┤╨░╨╜╨╜╤Л╤Е
+  preparing: ╨Я╨╛╨┤╨│╨╛╤В╨╛╨▓╨║╨░ ╨║ ╨┐╨╡╤А╨╡╨╜╨╛╤Б╤ГтАж
+  scanning: ╨Я╨╛╨┤╤Б╤З╤С╤ВтАж
+  migrating: ╨Я╨╡╤А╨╡╨╝╨╡╤Й╨╡╨╜╨╕╨╡ ╨┤╨░╨╜╨╜╤Л╤Е
+  done: ╨Я╨╡╤А╨╡╨╜╨╛╤Б ╨╖╨░╨▓╨╡╤А╤И╤С╨╜
+  files: ╤Д╨░╨╣╨╗╨╛╨▓
+  warning: ╨Э╨╡ ╨╖╨░╨║╤А╤Л╨▓╨░╨╣╤В╨╡ ╨╗╨░╤Г╨╜╤З╨╡╤А ╨┤╨╛ ╨╖╨░╨▓╨╡╤А╤И╨╡╨╜╨╕╤П, ╨╕╨╜╨░╤З╨╡
+    ╨┤╨░╨╜╨╜╤Л╨╡ ╨╝╨╛╨│╤Г╤В ╨▒╤Л╤В╤М ╨┐╨╛╤В╨╡╤А╤П╨╜╤Л.
+  error: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╨┐╨╡╤А╨╡╨╜╨╡╤Б╤В╨╕ ╨┤╨░╨╜╨╜╤Л╨╡
 minecraftVersion:
-  name: '{name} o''chirilsinmi'
-  all: Barchasini tanlash
-  release: Релиз
-  showAlpha: Показать snapshot
-  snapshot: Снапшот
+  name: ╨Т╨╡╤А╤Б╨╕╤П Minecraft
+  all: ╨Т╤Б╨╡ ╨▓╨╡╤А╤Б╨╕╨╕
+  release: ╨а╨╡╨╗╨╕╨╖
+  showAlpha: ╨Я╨╛╨║╨░╨╖╨░╤В╤М snapshot
+  snapshot: ╨б╨╜╨░╨┐╤И╨╛╤В
 mod:
-  acceptVersion: Принимает {version}
-  applyGroupRules: Применить сохраненные правила группировки
-  compatible: Mos keladi
-  createGroup: Создать группу
-  currentVersion: Текущая {current}
-  denseView: Компактное отображение модов
-  description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-    komilmi?
-  disableAll: Отключить все
-  dropHint: Перетащите сюда файл мода (.jar/.litemod), чтобы импортировать его.
-  duplicatedDetected: '{count} дублированных модов'
-  duplicatedDetectedDescription: 'Найдены моды с одинаковым идентификатором, но с
-    разными файлами.
-
-    Это может привести к сбою Minecraft.
-
-    Пожалуйста, выберите файл, который вы хотите сохранить.'
-  enableAll: Включить все
-  enabled: 'Всего модов включено: {count}'
-  filter: Фильтр модов
-  group: Группа вверх
-  groupInstalled: Группировать установленные моды
-  groupName: Название группы
-  groupNameRequired: Название группы обязательно
-  hasUpdate: У мода есть новая версия!
-  incompatible: Mos kelmaydigan
-  incompatibleHint: Посмотрите отчет о совместимости вашего мода
-  incompatibleHintDescription: 'Некоторые зависимости модов могут отсутствовать.
-
-    Или некоторые версии зависимостей не совпадают.'
-  maybeCompatible: Возможно, совместим.
-  modloaderSelectHint: 'Мод поддерживает следующие загрузчики модов.
-
-    Пожалуйста, выберите один для установки.'
-  modloaderSelectNotSupported: Не найден {modloader} для Minecraft {minecraft}
-  mods: '{count} Модов'
-  name: '{name} o''chirilsinmi'
-  newFolder: Новая папка
-  noGroupsFound: Группы не найдены
-  noGroupsYet: Групп пока нет. Создайте одну!
-  noModLoaderHint: Не забудьте включить загрузчик модов, чтобы использовать моды!
-  openLink: Открыть ссылку на мод {url}
-  search: Поиск модов
-  searchGroups: Поиск групп...
-  searchOnMcWiki: Найдите {name} в энциклопедии MC.
-  selectOrCreateGroup: Выбрать или создать группу
-  showDirectory: Открыть папку с модами
-  showFile: Показать путь к файлу мода {file}
-  showInModrinth: Показать {name} на Modrinth
-  switchDefaultSource: Источник контента модов по умолчанию
-  syncGroupRules: Сохранить правила группировки
-  toUpdate: '{count} для обновления'
-  ungroup: Негруппинг
+  acceptVersion: ╨Я╤А╨╕╨╜╨╕╨╝╨░╨╡╤В {version}
+  applyGroupRules: ╨Я╤А╨╕╨╝╨╡╨╜╨╕╤В╤М ╤Б╨╛╤Е╤А╨░╨╜╨╡╨╜╨╜╤Л╨╡ ╨┐╤А╨░╨▓╨╕╨╗╨░ ╨│╤А╤Г╨┐╨┐╨╕╤А╨╛╨▓╨║╨╕
+  compatible: ╨б╨╛╨▓╨╝╨╡╤Б╤В╨╕╨╝╤Л╨╣ ╨╝╨╛╨┤.
+  createGroup: ╨б╨╛╨╖╨┤╨░╤В╤М ╨│╤А╤Г╨┐╨┐╤Г
+  currentVersion: ╨в╨╡╨║╤Г╤Й╨░╤П {current}
+  denseView: ╨Ъ╨╛╨╝╨┐╨░╨║╤В╨╜╨╛╨╡ ╨╛╤В╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨╝╨╛╨┤╨╛╨▓
+  description: ╨Ю╨┐╨╕╤Б╨░╨╜╨╕╨╡
+  disableAll: ╨Ю╤В╨║╨╗╤О╤З╨╕╤В╤М ╨▓╤Б╨╡
+  dropHint: ╨Я╨╡╤А╨╡╤В╨░╤Й╨╕╤В╨╡ ╤Б╤О╨┤╨░ ╤Д╨░╨╣╨╗ ╨╝╨╛╨┤╨░ (.jar/.litemod), ╤З╤В╨╛╨▒╤Л
+    ╨╕╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨╡╨│╨╛.
+  duplicatedDetected: '{count} ╨┤╤Г╨▒╨╗╨╕╤А╨╛╨▓╨░╨╜╨╜╤Л╤Е ╨╝╨╛╨┤╨╛╨▓'
+  duplicatedDetectedDescription: '''╨Э╨░╨╣╨┤╨╡╨╜╤Л ╨╝╨╛╨┤╤Л ╤Б ╨╛╨┤╨╕╨╜╨░╨║╨╛╨▓╤Л╨╝
+    ╨╕╨┤╨╡╨╜╤В╨╕╤Д╨╕╨║╨░╤В╨╛╤А╨╛╨╝, ╨╜╨╛ ╤Б'
+  enableAll: ╨Т╨║╨╗╤О╤З╨╕╤В╤М ╨▓╤Б╨╡
+  enabled: '╨Т╤Б╨╡╨│╨╛ ╨╝╨╛╨┤╨╛╨▓ ╨▓╨║╨╗╤О╤З╨╡╨╜╨╛: {count}'
+  filter: ╨д╨╕╨╗╤М╤В╤А ╨╝╨╛╨┤╨╛╨▓
+  group: ╨У╤А╤Г╨┐╨┐╨░ ╨▓╨▓╨╡╤А╤Е
+  groupInstalled: ╨У╤А╤Г╨┐╨┐╨╕╤А╨╛╨▓╨░╤В╤М ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨╜╤Л╨╡ ╨╝╨╛╨┤╤Л
+  groupName: ╨Э╨░╨╖╨▓╨░╨╜╨╕╨╡ ╨│╤А╤Г╨┐╨┐╤Л
+  groupNameRequired: ╨Э╨░╨╖╨▓╨░╨╜╨╕╨╡ ╨│╤А╤Г╨┐╨┐╤Л ╨╛╨▒╤П╨╖╨░╤В╨╡╨╗╤М╨╜╨╛
+  hasUpdate: ╨г ╨╝╨╛╨┤╨░ ╨╡╤Б╤В╤М ╨╜╨╛╨▓╨░╤П ╨▓╨╡╤А╤Б╨╕╤П!
+  incompatible: ╨Э╨╡╤Б╨╛╨▓╨╝╨╡╤Б╤В╨╕╨╝╤Л╨╣ ╨╝╨╛╨┤.
+  incompatibleHint: ╨Я╨╛╤Б╨╝╨╛╤В╤А╨╕╤В╨╡ ╨╛╤В╤З╨╡╤В ╨╛ ╤Б╨╛╨▓╨╝╨╡╤Б╤В╨╕╨╝╨╛╤Б╤В╨╕
+    ╨▓╨░╤И╨╡╨│╨╛ ╨╝╨╛╨┤╨░
+  incompatibleHintDescription: '''╨Э╨╡╨║╨╛╤В╨╛╤А╤Л╨╡ ╨╖╨░╨▓╨╕╤Б╨╕╨╝╨╛╤Б╤В╨╕ ╨╝╨╛╨┤╨╛╨▓
+    ╨╝╨╛╨│╤Г╤В ╨╛╤В╤Б╤Г╤В╤Б╤В╨▓╨╛╨▓╨░╤В╤М.'
+  maybeCompatible: ╨Т╨╛╨╖╨╝╨╛╨╢╨╜╨╛, ╤Б╨╛╨▓╨╝╨╡╤Б╤В╨╕╨╝.
+  modloaderSelectHint: '''╨Ь╨╛╨┤ ╨┐╨╛╨┤╨┤╨╡╤А╨╢╨╕╨▓╨░╨╡╤В ╤Б╨╗╨╡╨┤╤Г╤О╤Й╨╕╨╡ ╨╖╨░╨│╤А╤Г╨╖╤З╨╕╨║╨╕
+    ╨╝╨╛╨┤╨╛╨▓.'
+  modloaderSelectNotSupported: ╨Э╨╡ ╨╜╨░╨╣╨┤╨╡╨╜ {modloader} ╨┤╨╗╤П Minecraft {minecraft}
+  mods: '{count} ╨Ь╨╛╨┤╨╛╨▓'
+  name: ╨Ь╨╛╨┤ | ╨Ь╨╛╨┤╤Л
+  newFolder: ╨Э╨╛╨▓╨░╤П ╨┐╨░╨┐╨║╨░
+  noGroupsFound: ╨У╤А╤Г╨┐╨┐╤Л ╨╜╨╡ ╨╜╨░╨╣╨┤╨╡╨╜╤Л
+  noGroupsYet: ╨У╤А╤Г╨┐╨┐ ╨┐╨╛╨║╨░ ╨╜╨╡╤В. ╨б╨╛╨╖╨┤╨░╨╣╤В╨╡ ╨╛╨┤╨╜╤Г!
+  noModLoaderHint: ╨Э╨╡ ╨╖╨░╨▒╤Г╨┤╤М╤В╨╡ ╨▓╨║╨╗╤О╤З╨╕╤В╤М ╨╖╨░╨│╤А╤Г╨╖╤З╨╕╨║ ╨╝╨╛╨┤╨╛╨▓,
+    ╤З╤В╨╛╨▒╤Л ╨╕╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╤М ╨╝╨╛╨┤╤Л!
+  openLink: ╨Ю╤В╨║╤А╤Л╤В╤М ╤Б╤Б╤Л╨╗╨║╤Г ╨╜╨░ ╨╝╨╛╨┤ {url}
+  search: ╨Я╨╛╨╕╤Б╨║ ╨╝╨╛╨┤╨╛╨▓
+  searchGroups: ╨Я╨╛╨╕╤Б╨║ ╨│╤А╤Г╨┐╨┐...
+  searchOnMcWiki: ╨Э╨░╨╣╨┤╨╕╤В╨╡ {name} ╨▓ ╤Н╨╜╤Ж╨╕╨║╨╗╨╛╨┐╨╡╨┤╨╕╨╕ MC.
+  selectOrCreateGroup: ╨Т╤Л╨▒╤А╨░╤В╤М ╨╕╨╗╨╕ ╤Б╨╛╨╖╨┤╨░╤В╤М ╨│╤А╤Г╨┐╨┐╤Г
+  showDirectory: ╨Ю╤В╨║╤А╤Л╤В╤М ╨┐╨░╨┐╨║╤Г ╤Б ╨╝╨╛╨┤╨░╨╝╨╕
+  showFile: ╨Я╨╛╨║╨░╨╖╨░╤В╤М ╨┐╤Г╤В╤М ╨║ ╤Д╨░╨╣╨╗╤Г ╨╝╨╛╨┤╨░ {file}
+  showInModrinth: ╨Я╨╛╨║╨░╨╖╨░╤В╤М {name} ╨╜╨░ Modrinth
+  switchDefaultSource: ╨Ш╤Б╤В╨╛╤З╨╜╨╕╨║ ╨║╨╛╨╜╤В╨╡╨╜╤В╨░ ╨╝╨╛╨┤╨╛╨▓ ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О
+  syncGroupRules: ╨б╨╛╤Е╤А╨░╨╜╨╕╤В╤М ╨┐╤А╨░╨▓╨╕╨╗╨░ ╨│╤А╤Г╨┐╨┐╨╕╤А╨╛╨▓╨║╨╕
+  toUpdate: '{count} ╨┤╨╗╤П ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╤П'
+  ungroup: ╨Э╨╡╨│╤А╤Г╨┐╨┐╨╕╨╜╨│
 modFilter:
-  clear: Чистый фильтр
-  dependenciesInstallOnly: Только показывать пропущенные моды зависимости
-  disabledOnly: Только показывать отключенные моды
-  hasUpdateOnly: Только у шоу есть моды обновления
-  incompatibleOnly: Показывать только несовместимые или отсутствующие зависимости
-    отсутствующие моды
-  unusedOnly: Показать только неиспользованные библиотечные моды
+  clear: ╨з╨╕╤Б╤В╤Л╨╣ ╤Д╨╕╨╗╤М╤В╤А
+  dependenciesInstallOnly: ╨в╨╛╨╗╤М╨║╨╛ ╨┐╨╛╨║╨░╨╖╤Л╨▓╨░╤В╤М ╨┐╤А╨╛╨┐╤Г╤Й╨╡╨╜╨╜╤Л╨╡
+    ╨╝╨╛╨┤╤Л ╨╖╨░╨▓╨╕╤Б╨╕╨╝╨╛╤Б╤В╨╕
+  disabledOnly: ╨в╨╛╨╗╤М╨║╨╛ ╨┐╨╛╨║╨░╨╖╤Л╨▓╨░╤В╤М ╨╛╤В╨║╨╗╤О╤З╨╡╨╜╨╜╤Л╨╡ ╨╝╨╛╨┤╤Л
+  hasUpdateOnly: ╨в╨╛╨╗╤М╨║╨╛ ╤Г ╤И╨╛╤Г ╨╡╤Б╤В╤М ╨╝╨╛╨┤╤Л ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╤П
+  incompatibleOnly: ╨Я╨╛╨║╨░╨╖╤Л╨▓╨░╤В╤М ╤В╨╛╨╗╤М╨║╨╛ ╨╜╨╡╤Б╨╛╨▓╨╝╨╡╤Б╤В╨╕╨╝╤Л╨╡ ╨╕╨╗╨╕
+    ╨╛╤В╤Б╤Г╤В╤Б╤В╨▓╤Г╤О╤Й╨╕╨╡ ╨╖╨░╨▓╨╕╤Б╨╕╨╝╨╛╤Б╤В╨╕
+  unusedOnly: ╨Я╨╛╨║╨░╨╖╨░╤В╤М ╤В╨╛╨╗╤М╨║╨╛ ╨╜╨╡╨╕╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╨╜╨╜╤Л╨╡ ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╤З╨╜╤Л╨╡
+    ╨╝╨╛╨┤╤Л
 modInstall:
-  archived: '{name} заархивировано.
-
-    {name} не будет получать никаких дальнейших обновлений, если автор не решит разархивировать
-    проект.'
+  archived: '''{name} ╨╖╨░╨░╤А╤Е╨╕╨▓╨╕╤А╨╛╨▓╨░╨╜╨╛.'
   autoUpgrade:
-    description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-      komilmi?
-    'no': Yo'q
-    title: Обновить моды?
-    'yes': O'chirish
-  checkDependencies: Проверить недостающие зависимости
-  checkedDependencies: Недостающие зависимости проверены
-  currentVersion: Выбранная версия
-  dependencyHint: Установлена ​​другая версия {version}
-  releaseOnly: Игнорировать альфа- и бета-версии при обновлении
-  installDependencies: Установить недостающие зависимости
-  installHint: Будет установлен файл {file} с зависимостями {dependents}
-  noVersionSupported: Мод поддерживает только Minecraft {supported}.
-  recommendation: Исследуйте {first} моды в {modrinth} и ​​{curseforge}!
-  removeUnusedLibraries: Удалить неиспользованные моды библиотеков
+    description: ╨Т╤Л ╨╕╨╖╨╝╨╡╨╜╨╕╨╗╨╕ ╨▓╨╡╤А╤Б╨╕╤О Minecraft. ╨е╨╛╤В╨╕╤В╨╡ ╨░╨▓╤В╨╛╨╝╨░╤В╨╕╤З╨╡╤Б╨║╨╕
+      ╨╛╨▒╨╜╨╛╨▓╨╕╤В╤М ╤Б╨╛╨▓╨╝╨╡╤Б╤В╨╕╨╝╤Л╨╡
+    'no': Пропустить
+    title: ╨Ю╨▒╨╜╨╛╨▓╨╕╤В╤М ╨╝╨╛╨┤╤Л?
+    'yes': Обновить моды
+  checkDependencies: ╨Я╤А╨╛╨▓╨╡╤А╨╕╤В╤М ╨╜╨╡╨┤╨╛╤Б╤В╨░╤О╤Й╨╕╨╡ ╨╖╨░╨▓╨╕╤Б╨╕╨╝╨╛╤Б╤В╨╕
+  checkedDependencies: ╨Э╨╡╨┤╨╛╤Б╤В╨░╤О╤Й╨╕╨╡ ╨╖╨░╨▓╨╕╤Б╨╕╨╝╨╛╤Б╤В╨╕ ╨┐╤А╨╛╨▓╨╡╤А╨╡╨╜╤Л
+  currentVersion: ╨Т╤Л╨▒╤А╨░╨╜╨╜╨░╤П ╨▓╨╡╤А╤Б╨╕╤П
+  dependencyHint: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨░ тАЛтАЛ╨┤╤А╤Г╨│╨░╤П ╨▓╨╡╤А╤Б╨╕╤П {version}
+  releaseOnly: ╨Ш╨│╨╜╨╛╤А╨╕╤А╨╛╨▓╨░╤В╤М ╨░╨╗╤М╤Д╨░- ╨╕ ╨▒╨╡╤В╨░-╨▓╨╡╤А╤Б╨╕╨╕ ╨┐╤А╨╕
+    ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╨╕
+  installDependencies: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╨╜╨╡╨┤╨╛╤Б╤В╨░╤О╤Й╨╕╨╡ ╨╖╨░╨▓╨╕╤Б╨╕╨╝╨╛╤Б╤В╨╕
+  installHint: ╨С╤Г╨┤╨╡╤В ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜ ╤Д╨░╨╣╨╗ {file} ╤Б ╨╖╨░╨▓╨╕╤Б╨╕╨╝╨╛╤Б╤В╤П╨╝╨╕
+    {dependents}
+  noVersionSupported: ╨Ь╨╛╨┤ ╨┐╨╛╨┤╨┤╨╡╤А╨╢╨╕╨▓╨░╨╡╤В ╤В╨╛╨╗╤М╨║╨╛ Minecraft {supported}.
+  recommendation: ╨Ш╤Б╤Б╨╗╨╡╨┤╤Г╨╣╤В╨╡ {first} ╨╝╨╛╨┤╤Л ╨▓ {modrinth} ╨╕ тАЛтАЛ{curseforge}!
+  removeUnusedLibraries: ╨г╨┤╨░╨╗╨╕╤В╤М ╨╜╨╡╨╕╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╨╜╨╜╤Л╨╡ ╨╝╨╛╨┤╤Л
+    ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╨╛╨▓
   scanUnusedLibraries: Scan Unused Libraries
-  search: Результаты поиска
-  skipVersion: Пропустите моды с другой версией Minecraft
-  source: Источник контента мода
-  switch: Переключить версию
+  search: ╨а╨╡╨╖╤Г╨╗╤М╤В╨░╤В╤Л ╨┐╨╛╨╕╤Б╨║╨░
+  skipVersion: ╨Я╤А╨╛╨┐╤Г╤Б╤В╨╕╤В╨╡ ╨╝╨╛╨┤╤Л ╤Б ╨┤╤А╤Г╨│╨╛╨╣ ╨▓╨╡╤А╤Б╨╕╨╡╨╣ Minecraft
+  source: ╨Ш╤Б╤В╨╛╤З╨╜╨╕╨║ ╨║╨╛╨╜╤В╨╡╨╜╤В╨░ ╨╝╨╛╨┤╨░
+  switch: ╨Я╨╡╤А╨╡╨║╨╗╤О╤З╨╕╤В╤М ╨▓╨╡╤А╤Б╨╕╤О
 modSearch:
-  noLocalModsFound: Локальные моды, соответствующие вашему поиску, не найдены.
-  noModsFound: Моды не найдены.
-  noModsInstalled: У вас не установлено ни одного мода.
-  searchInMarket: Искать {keyword} на рынке
+  noLocalModsFound: ╨Ы╨╛╨║╨░╨╗╤М╨╜╤Л╨╡ ╨╝╨╛╨┤╤Л, ╤Б╨╛╨╛╤В╨▓╨╡╤В╤Б╤В╨▓╤Г╤О╤Й╨╕╨╡ ╨▓╨░╤И╨╡╨╝╤Г
+    ╨┐╨╛╨╕╤Б╨║╤Г, ╨╜╨╡ ╨╜╨░╨╣╨┤╨╡╨╜╤Л.
+  noModsFound: ╨Ь╨╛╨┤╤Л ╨╜╨╡ ╨╜╨░╨╣╨┤╨╡╨╜╤Л.
+  noModsInstalled: ╨г ╨▓╨░╤Б ╨╜╨╡ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨╛ ╨╜╨╕ ╨╛╨┤╨╜╨╛╨│╨╛ ╨╝╨╛╨┤╨░.
+  searchInMarket: ╨Ш╤Б╨║╨░╤В╤М {keyword} ╨╜╨░ ╤А╤Л╨╜╨║╨╡
 modUpgradePolicy:
   curseforge: Curseforge First
-  curseforgeOnly: Только в Кёрсфордже
-  modrinth: Modrinth Первый
-  modrinthOnly: Только Модринт
-  name: '{name} o''chirilsinmi'
+  curseforgeOnly: ╨в╨╛╨╗╤М╨║╨╛ ╨▓ ╨Ъ╤С╤А╤Б╤Д╨╛╤А╨┤╨╢╨╡
+  modrinth: Modrinth ╨Я╨╡╤А╨▓╤Л╨╣
+  modrinthOnly: ╨в╨╛╨╗╤М╨║╨╛ ╨Ь╨╛╨┤╤А╨╕╨╜╤В
+  name: ╨Я╨╛╨╗╨╕╤В╨╕╨║╨░ ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╤П
 modified:
-  reset: Muloqotni qayta tiklash
-  save: Сохранить
-  unsaved: Ваши изменения не сохранены!
+  reset: ╨б╨▒╤А╨╛╤Б╨╕╤В╤М
+  save: ╨б╨╛╤Е╤А╨░╨╜╨╕╤В╤М
+  unsaved: ╨Т╨░╤И╨╕ ╨╕╨╖╨╝╨╡╨╜╨╡╨╜╨╕╤П ╨╜╨╡ ╤Б╨╛╤Е╤А╨░╨╜╨╡╨╜╤Л!
 modpack:
-  author: Имя автора
-  authorHint: Используется для подписи экспортируемой сборки модов (CurseForge).
-  description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-    komilmi?
-  descriptionHint: Общее описание для вашей сборки модов. Используется при экспорте
-    в формат CurseForge.
-  dropHint: Скиньте сюда zip-файл modpack для импорта
-  emitCurseforge: Создать сборку модов для CurseForge
-  emitModrinth: Создать сборку модов для Modrinth
-  emitModrinthStrict: Строгий формат Modrinth
-  emitModrinthStrictDescription: Разрешены только URL-адреса из 4 доменов, перечисленных
-    в документе Modrinth
-  export: Экспортировать как сборку модов
-  exportDirectory: Экспортный каталог
-  exportDirectoryDescription: Modpack будет экспортирован в папку загрузки по умолчанию
-  includeAssets: Включить ресурсы
-  includes: Файлы для включения
-  modpackVersion: Версия сборки модов
-  name: '{name} o''chirilsinmi'
-  overrides: Переопределения
-  url: URL-адрес
-  urlHint: URL-адрес домашней страницы вашей сборки модов.
+  author: ╨Ш╨╝╤П ╨░╨▓╤В╨╛╤А╨░
+  authorHint: ╨Ш╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╡╤В╤Б╤П ╨┤╨╗╤П ╨┐╨╛╨┤╨┐╨╕╤Б╨╕ ╤Н╨║╤Б╨┐╨╛╤А╤В╨╕╤А╤Г╨╡╨╝╨╛╨╣
+    ╤Б╨▒╨╛╤А╨║╨╕ ╨╝╨╛╨┤╨╛╨▓ (CurseForge).
+  description: ╨Ю╨┐╨╕╤Б╨░╨╜╨╕╨╡
+  descriptionHint: ╨Ю╨▒╤Й╨╡╨╡ ╨╛╨┐╨╕╤Б╨░╨╜╨╕╨╡ ╨┤╨╗╤П ╨▓╨░╤И╨╡╨╣ ╤Б╨▒╨╛╤А╨║╨╕ ╨╝╨╛╨┤╨╛╨▓.
+    ╨Ш╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╡╤В╤Б╤П ╨┐╤А╨╕ ╤Н╨║╤Б╨┐╨╛╤А╤В╨╡
+  dropHint: ╨б╨║╨╕╨╜╤М╤В╨╡ ╤Б╤О╨┤╨░ zip-╤Д╨░╨╣╨╗ modpack ╨┤╨╗╤П ╨╕╨╝╨┐╨╛╤А╤В╨░
+  emitCurseforge: ╨б╨╛╨╖╨┤╨░╤В╤М ╤Б╨▒╨╛╤А╨║╤Г ╨╝╨╛╨┤╨╛╨▓ ╨┤╨╗╤П CurseForge
+  emitModrinth: ╨б╨╛╨╖╨┤╨░╤В╤М ╤Б╨▒╨╛╤А╨║╤Г ╨╝╨╛╨┤╨╛╨▓ ╨┤╨╗╤П Modrinth
+  emitModrinthStrict: ╨б╤В╤А╨╛╨│╨╕╨╣ ╤Д╨╛╤А╨╝╨░╤В Modrinth
+  emitModrinthStrictDescription: ╨а╨░╨╖╤А╨╡╤И╨╡╨╜╤Л ╤В╨╛╨╗╤М╨║╨╛ URL-╨░╨┤╤А╨╡╤Б╨░
+    ╨╕╨╖ 4 ╨┤╨╛╨╝╨╡╨╜╨╛╨▓, ╨┐╨╡╤А╨╡╤З╨╕╤Б╨╗╨╡╨╜╨╜╤Л╤Е
+  export: ╨н╨║╤Б╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨║╨░╨║ ╤Б╨▒╨╛╤А╨║╤Г ╨╝╨╛╨┤╨╛╨▓
+  exportDirectory: ╨н╨║╤Б╨┐╨╛╤А╤В╨╜╤Л╨╣ ╨║╨░╤В╨░╨╗╨╛╨│
+  exportDirectoryDescription: Modpack ╨▒╤Г╨┤╨╡╤В ╤Н╨║╤Б╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╨╜ ╨▓ ╨┐╨░╨┐╨║╤Г
+    ╨╖╨░╨│╤А╤Г╨╖╨║╨╕ ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О
+  includeAssets: ╨Т╨║╨╗╤О╤З╨╕╤В╤М ╤А╨╡╤Б╤Г╤А╤Б╤Л
+  includes: ╨д╨░╨╣╨╗╤Л ╨┤╨╗╤П ╨▓╨║╨╗╤О╤З╨╡╨╜╨╕╤П
+  modpackVersion: ╨Т╨╡╤А╤Б╨╕╤П ╤Б╨▒╨╛╤А╨║╨╕ ╨╝╨╛╨┤╨╛╨▓
+  name: ╨б╨▒╨╛╤А╨║╨░ ╨╝╨╛╨┤╨╛╨▓ | ╨б╨▒╨╛╤А╨║╨╕ ╨╝╨╛╨┤╨╛╨▓
+  overrides: ╨Я╨╡╤А╨╡╨╛╨┐╤А╨╡╨┤╨╡╨╗╨╡╨╜╨╕╤П
+  url: URL-╨░╨┤╤А╨╡╤Б
+  urlHint: URL-╨░╨┤╤А╨╡╤Б ╨┤╨╛╨╝╨░╤И╨╜╨╡╨╣ ╤Б╤В╤А╨░╨╜╨╕╤Ж╤Л ╨▓╨░╤И╨╡╨╣ ╤Б╨▒╨╛╤А╨║╨╕
+    ╨╝╨╛╨┤╨╛╨▓.
 modpackImportConfirm:
-  description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-    komilmi?
-  title: Вы пытаетесь импортировать Modpack?
+  description: '''╨Ю╨▒╨╜╨░╤А╤Г╨╢╨╕╤В╨╡, ╤З╤В╨╛ ╨▓╤Л ╨▒╤А╨╛╤Б╨╕╤В╨╡ ╤Д╨░╨╣╨╗ ╨▓ ╨┐╤Г╤Б╨║╨╛╨▓╤Г╤О
+    ╤Г╤Б╤В╨░╨╜╨╛╨▓╨║╤Г.'
+  title: ╨Т╤Л ╨┐╤Л╤В╨░╨╡╤В╨╡╤Б╤М ╨╕╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М Modpack?
 modpackUpdateOrCreate:
-  createNew: Создать новый
-  description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-    komilmi?
-  title: Экземпляр уже существует
-  update: Обновить существующий
+  createNew: ╨б╨╛╨╖╨┤╨░╤В╤М ╨╜╨╛╨▓╤Л╨╣
+  description: ╨н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А "{name}" ╨┤╨╗╤П ╤Н╤В╨╛╨│╨╛ ╨╝╨╛╨┤╨┐╨░╨║╨░ ╤Г╨╢╨╡
+    ╤Б╤Г╤Й╨╡╤Б╤В╨▓╤Г╨╡╤В. ╨е╨╛╤В╨╕╤В╨╡ ╨╛╨▒╨╜╨╛╨▓╨╕╤В╤М
+  title: ╨н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А ╤Г╨╢╨╡ ╤Б╤Г╤Й╨╡╤Б╤В╨▓╤Г╨╡╤В
+  update: ╨Ю╨▒╨╜╨╛╨▓╨╕╤В╤М ╤Б╤Г╤Й╨╡╤Б╤В╨▓╤Г╤О╤Й╨╕╨╣
 modrinth:
-  browseUrl: Открыть в браузере {url}
+  browseUrl: ╨Ю╤В╨║╤А╤Л╤В╤М ╨▓ ╨▒╤А╨░╤Г╨╖╨╡╤А╨╡ {url}
   categories:
     128x: 128x
     16x: 16x
@@ -1076,353 +1039,335 @@ modrinth:
     512x+: 512x+
     64x: 64x
     8x-: 8x-
-    adventure: Sarguzasht rejimi
-    atmosphere: Атмосфера
-    audio: Аудио
-    blocks: '{count} ta bloklar'
-    bloom: Рассеянный свет
+    adventure: ╨Я╤А╨╕╨║╨╗╤О╤З╨╡╨╜╨╕╨╡
+    atmosphere: ╨Р╤В╨╝╨╛╤Б╤Д╨╡╤А╨░
+    audio: ╨Р╤Г╨┤╨╕╨╛
+    blocks: ╨С╨╗╨╛╨║╨╕
+    bloom: ╨а╨░╤Б╤Б╨╡╤П╨╜╨╜╤Л╨╣ ╤Б╨▓╨╡╤В
     bukkit: Bukkit
     bungeecord: Bungeecord
-    canvas: Полотно
-    cartoon: Мультипликация
-    categories: Категории
-    challenging: Высокая сложность
-    colored-lighting: Разноцветное освещение
-    combat: Бой
-    core-shaders: Базовые шейдеры
-    cursed: Странность
-    datapack: Набор данных
-    decoration: Декорация
-    economy: Экономика
-    entities: Существа
-    environment: Окружение
-    equipment: Экипировка
+    canvas: ╨Я╨╛╨╗╨╛╤В╨╜╨╛
+    cartoon: ╨Ь╤Г╨╗╤М╤В╨╕╨┐╨╗╨╕╨║╨░╤Ж╨╕╤П
+    categories: ╨Ъ╨░╤В╨╡╨│╨╛╤А╨╕╨╕
+    challenging: ╨Т╤Л╤Б╨╛╨║╨░╤П ╤Б╨╗╨╛╨╢╨╜╨╛╤Б╤В╤М
+    colored-lighting: ╨а╨░╨╖╨╜╨╛╤Ж╨▓╨╡╤В╨╜╨╛╨╡ ╨╛╤Б╨▓╨╡╤Й╨╡╨╜╨╕╨╡
+    combat: ╨С╨╛╨╣
+    core-shaders: ╨С╨░╨╖╨╛╨▓╤Л╨╡ ╤И╨╡╨╣╨┤╨╡╤А╤Л
+    cursed: ╨б╤В╤А╨░╨╜╨╜╨╛╤Б╤В╤М
+    datapack: ╨Э╨░╨▒╨╛╤А ╨┤╨░╨╜╨╜╤Л╤Е
+    decoration: ╨Ф╨╡╨║╨╛╤А╨░╤Ж╨╕╤П
+    economy: ╨н╨║╨╛╨╜╨╛╨╝╨╕╨║╨░
+    entities: ╨б╤Г╤Й╨╡╤Б╤В╨▓╨░
+    environment: ╨Ю╨║╤А╤Г╨╢╨╡╨╜╨╕╨╡
+    equipment: ╨н╨║╨╕╨┐╨╕╤А╨╛╨▓╨║╨░
     fabric: Fabric
-    fantasy: Фэнтези
-    features: Функции
+    fantasy: ╨д╤Н╨╜╤В╨╡╨╖╨╕
+    features: ╨д╤Г╨╜╨║╤Ж╨╕╨╕
     folia: Folia
-    foliage: Листва
-    fonts: Шрифты
-    food: Еда
+    foliage: ╨Ы╨╕╤Б╤В╨▓╨░
+    fonts: ╨и╤А╨╕╤Д╤В╤Л
+    food: ╨Х╨┤╨░
     forge: Forge
-    game-mechanics: Игровые механики
-    gui: Графический интерфейс
-    high: Высокая требовательность
+    game-mechanics: ╨Ш╨│╤А╨╛╨▓╤Л╨╡ ╨╝╨╡╤Е╨░╨╜╨╕╨║╨╕
+    gui: ╨У╤А╨░╤Д╨╕╤З╨╡╤Б╨║╨╕╨╣ ╨╕╨╜╤В╨╡╤А╤Д╨╡╨╣╤Б
+    high: ╨Т╤Л╤Б╨╛╨║╨░╤П ╤В╤А╨╡╨▒╨╛╨▓╨░╤В╨╡╨╗╤М╨╜╨╛╤Б╤В╤М
     iris: Iris
-    items: Предметы
-    kitchen-sink: Посуда
-    library: Библиотека
-    lightweight: Малый размер
+    items: ╨Я╤А╨╡╨┤╨╝╨╡╤В╤Л
+    kitchen-sink: ╨Я╨╛╤Б╤Г╨┤╨░
+    library: ╨С╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╨░
+    lightweight: ╨Ь╨░╨╗╤Л╨╣ ╤А╨░╨╖╨╝╨╡╤А
     liteloader: Liteloader
-    locale: Локализация
-    low: Низкая требовательность
-    magic: Магия
-    management: Управление
-    medium: Средняя требовательность
+    locale: ╨Ы╨╛╨║╨░╨╗╨╕╨╖╨░╤Ж╨╕╤П
+    low: ╨Э╨╕╨╖╨║╨░╤П ╤В╤А╨╡╨▒╨╛╨▓╨░╤В╨╡╨╗╤М╨╜╨╛╤Б╤В╤М
+    magic: ╨Ь╨░╨│╨╕╤П
+    management: ╨г╨┐╤А╨░╨▓╨╗╨╡╨╜╨╕╨╡
+    medium: ╨б╤А╨╡╨┤╨╜╤П╤П ╤В╤А╨╡╨▒╨╛╨▓╨░╤В╨╡╨╗╤М╨╜╨╛╤Б╤В╤М
     minecraft: Minecraft
-    minigame: Мини-игры
-    misc: Разнообразие
-    mobs: Мобы
-    modded: Модификация
-    models: Модели
-    modloader: Загрузчик модов
-    multiplayer: Сетевая игра
-    name: '{name} o''chirilsinmi'
+    minigame: ╨Ь╨╕╨╜╨╕-╨╕╨│╤А╤Л
+    misc: ╨а╨░╨╖╨╜╨╛╨╛╨▒╤А╨░╨╖╨╕╨╡
+    mobs: ╨Ь╨╛╨▒╤Л
+    modded: ╨Ь╨╛╨┤╨╕╤Д╨╕╨║╨░╤Ж╨╕╤П
+    models: ╨Ь╨╛╨┤╨╡╨╗╨╕
+    modloader: ╨Ч╨░╨│╤А╤Г╨╖╤З╨╕╨║ ╨╝╨╛╨┤╨╛╨▓
+    multiplayer: ╨б╨╡╤В╨╡╨▓╨░╤П ╨╕╨│╤А╨░
+    name: ╨Ъ╨░╤В╨╡╨│╨╛╤А╨╕╨╕
     neoforge: NeoForge
     optifine: Optifine
-    optimization: Оптимизация
+    optimization: ╨Ю╨┐╤В╨╕╨╝╨╕╨╖╨░╤Ж╨╕╤П
     paper: Paper
-    path-tracing: Трассировка пути
-    pbr: Физически корректный рендеринг (PBR)
-    performance impact: Влияние на производительность
-    potato: Для картофельных ПК
+    path-tracing: ╨в╤А╨░╤Б╤Б╨╕╤А╨╛╨▓╨║╨░ ╨┐╤Г╤В╨╕
+    pbr: ╨д╨╕╨╖╨╕╤З╨╡╤Б╨║╨╕ ╨║╨╛╤А╤А╨╡╨║╤В╨╜╤Л╨╣ ╤А╨╡╨╜╨┤╨╡╤А╨╕╨╜╨│ (PBR)
+    performance impact: ╨Т╨╗╨╕╤П╨╜╨╕╨╡ ╨╜╨░ ╨┐╤А╨╛╨╕╨╖╨▓╨╛╨┤╨╕╤В╨╡╨╗╤М╨╜╨╛╤Б╤В╤М
+    potato: ╨Ф╨╗╤П ╨║╨░╤А╤В╨╛╤Д╨╡╨╗╤М╨╜╤Л╤Е ╨Я╨Ъ
     purpur: Purpur
-    quests: Квесты
+    quests: ╨Ъ╨▓╨╡╤Б╤В╤Л
     quilt: Quilt
-    realistic: Реализм
-    reflections: Отражения
-    resolutions: Разрешения
+    realistic: ╨а╨╡╨░╨╗╨╕╨╖╨╝
+    reflections: ╨Ю╤В╤А╨░╨╢╨╡╨╜╨╕╤П
+    resolutions: ╨а╨░╨╖╤А╨╡╤И╨╡╨╜╨╕╤П
     rift: Rift
-    screenshot: Для снимков экрана
-    semi-realistic: Полуреализм
-    shadows: Тени
-    simplistic: Простота
-    social: Социальность
+    screenshot: ╨Ф╨╗╤П ╤Б╨╜╨╕╨╝╨║╨╛╨▓ ╤Н╨║╤А╨░╨╜╨░
+    semi-realistic: ╨Я╨╛╨╗╤Г╤А╨╡╨░╨╗╨╕╨╖╨╝
+    shadows: ╨в╨╡╨╜╨╕
+    simplistic: ╨Я╤А╨╛╤Б╤В╨╛╤В╨░
+    social: ╨б╨╛╤Ж╨╕╨░╨╗╤М╨╜╨╛╤Б╤В╤М
     spigot: Spigot
     sponge: Sponge
-    storage: Хранение
-    technology: Технологии
-    themed: Тема
-    transportation: Транспортировка
-    tweaks: Твики
-    utility: Полезность
-    vanilla: Ванилла
-    vanilla-like: Похожее на ваниллу
+    storage: ╨е╤А╨░╨╜╨╡╨╜╨╕╨╡
+    technology: ╨в╨╡╤Е╨╜╨╛╨╗╨╛╨│╨╕╨╕
+    themed: ╨в╨╡╨╝╨░
+    transportation: ╨в╤А╨░╨╜╤Б╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨║╨░
+    tweaks: ╨в╨▓╨╕╨║╨╕
+    utility: ╨Я╨╛╨╗╨╡╨╖╨╜╨╛╤Б╤В╤М
+    vanilla: ╨Т╨░╨╜╨╕╨╗╨╗╨░
+    vanilla-like: ╨Я╨╛╤Е╨╛╨╢╨╡╨╡ ╨╜╨░ ╨▓╨░╨╜╨╕╨╗╨╗╤Г
     velocity: Velocity
     waterfall: Waterfall
-    worldgen: Генерация мира
-  clientSide: Клиентская сторона
-  copyTitle: Скопировать текст {title} в буфер обмена
-  createAt: Создано
-  createCollection: Создать коллекцию
-  description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-    komilmi?
-  downloads: Скачиваний
+    worldgen: ╨У╨╡╨╜╨╡╤А╨░╤Ж╨╕╤П ╨╝╨╕╤А╨░
+  clientSide: ╨Ъ╨╗╨╕╨╡╨╜╤В╤Б╨║╨░╤П ╤Б╤В╨╛╤А╨╛╨╜╨░
+  copyTitle: ╨б╨║╨╛╨┐╨╕╤А╨╛╨▓╨░╤В╤М ╤В╨╡╨║╤Б╤В {title} ╨▓ ╨▒╤Г╤Д╨╡╤А ╨╛╨▒╨╝╨╡╨╜╨░
+  createAt: ╨б╨╛╨╖╨┤╨░╨╜╨╛
+  createCollection: ╨б╨╛╨╖╨┤╨░╤В╤М ╨║╨╛╨╗╨╗╨╡╨║╤Ж╨╕╤О
+  description: ╨Ю╨┐╨╕╤Б╨░╨╜╨╕╨╡
+  downloads: ╨б╨║╨░╤З╨╕╨▓╨░╨╜╨╕╨╣
   environments:
-    all: Barchasini tanlash
-    default: Odatiy
-    name: '{name} o''chirilsinmi'
-    optional: Majburiy bo'lmagan
-    required: Zaruriy
-    unsupported: Do'stlar faqat Microsoft hisoblari uchun mavjud.
-  externalResources: Внешние ресурсы
-  featuredVersions: Рекомендуемые версии
-  followedProjects: Следовал проектам
-  followers: Подписчики
-  gallery: Галерея
+    all: ╨Т╤Б╨╡
+    default: ╨Я╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О
+    name: ╨Ю╨║╤А╤Г╨╢╨░╤О╤Й╨░╤П ╤Б╤А╨╡╨┤╨░
+    optional: ╨Э╨╡╨╛╨▒╤П╨╖╨░╤В╨╡╨╗╤М╨╜╨╛
+    required: ╨в╤А╨╡╨▒╤Г╨╡╤В╤Б╤П
+    unsupported: ╨Э╨╡ ╨┐╨╛╨┤╨┤╨╡╤А╨╢╨╕╨▓╨░╨╡╤В╤Б╤П
+  externalResources: ╨Т╨╜╨╡╤И╨╜╨╕╨╡ ╤А╨╡╤Б╤Г╤А╤Б╤Л
+  featuredVersions: ╨а╨╡╨║╨╛╨╝╨╡╨╜╨┤╤Г╨╡╨╝╤Л╨╡ ╨▓╨╡╤А╤Б╨╕╨╕
+  followedProjects: ╨б╨╗╨╡╨┤╨╛╨▓╨░╨╗ ╨┐╤А╨╛╨╡╨║╤В╨░╨╝
+  followers: ╨Я╨╛╨┤╨┐╨╕╤Б╤З╨╕╨║╨╕
+  gallery: ╨У╨░╨╗╨╡╤А╨╡╤П
   gameVersions:
-    name: '{name} o''chirilsinmi'
+    name: ╨Т╨╡╤А╤Б╨╕╨╕ ╨╕╨│╤А╤Л
   headers:
-    status: Статус
-    support: Поддерживает
-    version: Версия
-  issueUrl: Проблемы
-  license: Лицензия
+    status: ╨б╤В╨░╤В╤Г╤Б
+    support: ╨Я╨╛╨┤╨┤╨╡╤А╨╢╨╕╨▓╨░╨╡╤В
+    version: ╨Т╨╡╤А╤Б╨╕╤П
+  issueUrl: ╨Я╤А╨╛╨▒╨╗╨╡╨╝╤Л
+  license: ╨Ы╨╕╤Ж╨╡╨╜╨╖╨╕╤П
   licenses:
-    name: '{name} o''chirilsinmi'
-  loginHint: 'Операция требует от Modrinth для выполнения.
-
-    Пусковая установка откроет окно браузера для входа в Modrinth.'
-  loginTitle: Войдите в Modrinth
+    name: ╨Ы╨╕╤Ж╨╡╨╜╨╖╨╕╨╕
+  loginHint: '''╨Ю╨┐╨╡╤А╨░╤Ж╨╕╤П ╤В╤А╨╡╨▒╤Г╨╡╤В ╨╛╤В Modrinth ╨┤╨╗╤П ╨▓╤Л╨┐╨╛╨╗╨╜╨╡╨╜╨╕╤П.'
+  loginTitle: ╨Т╨╛╨╣╨┤╨╕╤В╨╡ ╨▓ Modrinth
   modLoaders:
-    name: '{name} o''chirilsinmi'
+    name: ╨Ч╨░╨│╤А╤Г╨╖╤З╨╕╨║╨╕ ╨╝╨╛╨┤╨╛╨▓
   modpackSource:
-    source: Источник
-  projectId: ID проекта
-  projectMembers: Участники проекта
+    source: ╨Ш╤Б╤В╨╛╤З╨╜╨╕╨║
+  projectId: ID ╨┐╤А╨╛╨╡╨║╤В╨░
+  projectMembers: ╨г╤З╨░╤Б╤В╨╜╨╕╨║╨╕ ╨┐╤А╨╛╨╡╨║╤В╨░
   projectType:
-    datapack: Набор данных
-    mod: Мод
-    modpack: Сборка модов
-    plugin: Плагин
-    resourcepack: Набор ресурсов
-    shader: Шейдер
-  projects: '{count} проекты'
-  serverSide: Серверная часть
+    datapack: ╨Э╨░╨▒╨╛╤А ╨┤╨░╨╜╨╜╤Л╤Е
+    mod: ╨Ь╨╛╨┤
+    modpack: ╨б╨▒╨╛╤А╨║╨░ ╨╝╨╛╨┤╨╛╨▓
+    plugin: ╨Я╨╗╨░╨│╨╕╨╜
+    resourcepack: ╨Э╨░╨▒╨╛╤А ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓
+    shader: ╨и╨╡╨╣╨┤╨╡╤А
+  projects: '{count} ╨┐╤А╨╛╨╡╨║╤В╤Л'
+  serverSide: ╨б╨╡╤А╨▓╨╡╤А╨╜╨░╤П ╤З╨░╤Б╤В╤М
   sort:
-    downloads: Количество загрузок
-    follows: Количество подписчиков
-    newest: Недавно созданные
-    relevance: Релевантность
-    title: Сортировать по
-    updated: Недавно обновлённые
-  sourceUrl: Исходный код
-  technicalInformation: Техническая информация
-  updateAt: Обновлено
-  versions: Версии
-  wikiUrl: Вики
+    downloads: ╨Ъ╨╛╨╗╨╕╤З╨╡╤Б╤В╨▓╨╛ ╨╖╨░╨│╤А╤Г╨╖╨╛╨║
+    follows: ╨Ъ╨╛╨╗╨╕╤З╨╡╤Б╤В╨▓╨╛ ╨┐╨╛╨┤╨┐╨╕╤Б╤З╨╕╨║╨╛╨▓
+    newest: ╨Э╨╡╨┤╨░╨▓╨╜╨╛ ╤Б╨╛╨╖╨┤╨░╨╜╨╜╤Л╨╡
+    relevance: ╨а╨╡╨╗╨╡╨▓╨░╨╜╤В╨╜╨╛╤Б╤В╤М
+    title: ╨б╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨┐╨╛
+    updated: ╨Э╨╡╨┤╨░╨▓╨╜╨╛ ╨╛╨▒╨╜╨╛╨▓╨╗╤С╨╜╨╜╤Л╨╡
+  sourceUrl: ╨Ш╤Б╤Е╨╛╨┤╨╜╤Л╨╕╠Ж ╨║╨╛╨┤
+  technicalInformation: ╨в╨╡╤Е╨╜╨╕╤З╨╡╤Б╨║╨░╤П ╨╕╨╜╤Д╨╛╤А╨╝╨░╤Ж╨╕╤П
+  updateAt: ╨Ю╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╛
+  versions: ╨Т╨╡╤А╤Б╨╕╨╕
+  wikiUrl: ╨Т╨╕╨║╨╕
 modrinthCard:
-  currentVersion: Текущая версия
+  currentVersion: ╨в╨╡╨║╤Г╤Й╨░╤П ╨▓╨╡╤А╤Б╨╕╤П
 multiplayer:
-  allowTurn: Разрешить сервер-ретранслятор
-  allowTurnHint: Включите ретранслятор, если связь напрямую не работает.  Он может
-    замедлить соединение, используйте осторожно. Включите ретранслятор, если связь
-    напрямую не работает.  Он может замедлить соединение, используйте осторожно.
-  complete: Завершено
-  confirm: Tasdiqlash
-  connectionError: Ошибка соединения
-  connectionFailedHint: Не удалось установить соединение. Проверьте, что у обеих сторон
-    совместимые типы NAT.
+  allowTurn: ╨а╨░╨╖╤А╨╡╤И╨╕╤В╤М ╤Б╨╡╤А╨▓╨╡╤А-╤А╨╡╤В╤А╨░╨╜╤Б╨╗╤П╤В╨╛╤А
+  allowTurnHint: ╨Т╨║╨╗╤О╤З╨╕╤В╨╡ ╤А╨╡╤В╤А╨░╨╜╤Б╨╗╤П╤В╨╛╤А, ╨╡╤Б╨╗╨╕ ╤Б╨▓╤П╨╖╤М ╨╜╨░╨┐╤А╤П╨╝╤Г╤О
+    ╨╜╨╡ ╤А╨░╨▒╨╛╤В╨░╨╡╤В.  ╨Ю╨╜ ╨╝╨╛╨╢╨╡╤В
+  complete: ╨Ч╨░╨▓╨╡╤А╤И╨╡╨╜╨╛
+  confirm: ╨Я╨╛╨┤╤В╨▓╨╡╤А╨┤╨╕╤В╤М
+  connectionError: ╨Ю╤И╨╕╨▒╨║╨░ ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╤П
+  connectionFailedHint: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡.
+    ╨Я╤А╨╛╨▓╨╡╤А╤М╤В╨╡, ╤З╤В╨╛ ╤Г ╨╛╨▒╨╡╨╕╤Е ╤Б╤В╨╛╤А╨╛╨╜
   connectedToHost: Connected to the room host
-  connections: Соединения
-  copied: Скопировано!
-  copy: Копировать
-  copyGroupToFriendHint: Позвольте пользователям присоединиться к группе с помощью
-    этого ID
+  connections: ╨б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╤П
+  copied: ╨б╨║╨╛╨┐╨╕╤А╨╛╨▓╨░╨╜╨╛!
+  copy: ╨Ъ╨╛╨┐╨╕╤А╨╛╨▓╨░╤В╤М
+  copyGroupToFriendHint: ╨Я╨╛╨╖╨▓╨╛╨╗╤М╤В╨╡ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П╨╝ ╨┐╤А╨╕╤Б╨╛╨╡╨┤╨╕╨╜╨╕╤В╤М╤Б╤П
+    ╨║ ╨│╤А╤Г╨┐╨┐╨╡ ╤Б ╨┐╨╛╨╝╨╛╤Й╤М╤О
   directConnection: Direct
-  copyLocalHint: 'Скопируйте локальный токен SDP и отправьте его пользователю, чтобы
-    он ввёл этот токен в раздел присоединения к соединению. <span>Токен может быть
-    использован только для <span style="color: red; font-weight: bold">одного пользователя</span>!
-    Вы не можете отправлять один и тот же токен нескольким пользователям!</span> <br>
-    <span class="hint-text" style="font-style: italic;"> Если вам необходимо подключить
-    нескольких пользователей, необходимо создать <span style="font-weight: bold; color:
-    rgba(245, 158, 11)">несколько</span> соединений.</span>'
-  createLocalToken: Создать локальный токен
-  currentIpTitle: Обнаруженный общедоступный IP
-  currentNatTitle: 'Текущая сеть (NAT):'
-  difficultyLevelHint: Уровень сложности для создания соединения с другими пользователями
-  disconnect: Отключиться
-  disconnectDescription: Вы уверены, что хотите прервать соединение с пользователем
-    {user}({id})?
-  disconnected: отключено
-  enterRemoteToken: Введите удалённый токен
-  enterRemoteTokenHint: После того, как пользователь введёт ваш токен, необходимо
-    ввести его токен в приведённое ниже текстовое поле. Нажмите "Подтвердить", чтобы
-    установить соединение.
-  exposedPortDescription: Порт, который вы предоставили другим узлам
-  exposedPorts: Перенаправленные порты
-  gatheringIce: 'Пожалуйста, подождите, пока сервер ICE соберёт необходимую информацию
-    о вашей сети. Если вы нетерпеливы и информации достаточно, вы можете отправить
-    текущий SDP другому пользователю наперёд и нажать "Далее". <br> Затем, отправьте
-    <span class="v-chip v-chip--label v-size--small" style="font-weight: bold">Локальный
-    токен</span> пользователю, который должен будет его ввести в разделе <span class="v-chip
-    v-chip--label v-size--small" style="font-weight: bold">Присоединиться к соединению</span>.
-    <br> Серверу ICE может потребоваться некоторое время, чтобы собрать вашу информацию
-    для создания <span class="v-chip v-chip--label v-size--small" style="font-weight:
-    bold">Локального токена</span>. <br> Вам не нужно ждать, пока статус ICE будет
-    завершён. Если токен ниже остаётся неизменным, вы можете скопировать и отправить
-    его пользователю.'
-  groupId: ID группы
+  copyLocalHint: '''╨б╨║╨╛╨┐╨╕╤А╤Г╨╣╤В╨╡ ╨╗╨╛╨║╨░╨╗╤М╨╜╤Л╨╣ ╤В╨╛╨║╨╡╨╜ SDP ╨╕ ╨╛╤В╨┐╤А╨░╨▓╤М╤В╨╡
+    ╨╡╨│╨╛ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤О, ╤З╤В╨╛╨▒╤Л'
+  createLocalToken: ╨б╨╛╨╖╨┤╨░╤В╤М ╨╗╨╛╨║╨░╨╗╤М╨╜╤Л╨╣ ╤В╨╛╨║╨╡╨╜
+  currentIpTitle: ╨Ю╨▒╨╜╨░╤А╤Г╨╢╨╡╨╜╨╜╤Л╨╣ ╨╛╨▒╤Й╨╡╨┤╨╛╤Б╤В╤Г╨┐╨╜╤Л╨╣ IP
+  currentNatTitle: '╨в╨╡╨║╤Г╤Й╨░╤П ╤Б╨╡╤В╤М (NAT):'
+  difficultyLevelHint: ╨г╤А╨╛╨▓╨╡╨╜╤М ╤Б╨╗╨╛╨╢╨╜╨╛╤Б╤В╨╕ ╨┤╨╗╤П ╤Б╨╛╨╖╨┤╨░╨╜╨╕╤П ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╤П
+    ╤Б ╨┤╤А╤Г╨│╨╕╨╝╨╕ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П╨╝╨╕
+  disconnect: ╨Ю╤В╨║╨╗╤О╤З╨╕╤В╤М╤Б╤П
+  disconnectDescription: ╨Т╤Л ╤Г╨▓╨╡╤А╨╡╨╜╤Л, ╤З╤В╨╛ ╤Е╨╛╤В╨╕╤В╨╡ ╨┐╤А╨╡╤А╨▓╨░╤В╤М
+    ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡ ╤Б ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╨╡╨╝
+  disconnected: ╨╛╤В╨║╨╗╤О╤З╨╡╨╜╨╛
+  enterRemoteToken: ╨Т╨▓╨╡╨┤╨╕╤В╨╡ ╤Г╨┤╨░╨╗╤С╨╜╨╜╤Л╨╣ ╤В╨╛╨║╨╡╨╜
+  enterRemoteTokenHint: ╨Я╨╛╤Б╨╗╨╡ ╤В╨╛╨│╨╛, ╨║╨░╨║ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤М ╨▓╨▓╨╡╨┤╤С╤В
+    ╨▓╨░╤И ╤В╨╛╨║╨╡╨╜, ╨╜╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╨╛
+  exposedPortDescription: ╨Я╨╛╤А╤В, ╨║╨╛╤В╨╛╤А╤Л╨╣ ╨▓╤Л ╨┐╤А╨╡╨┤╨╛╤Б╤В╨░╨▓╨╕╨╗╨╕ ╨┤╤А╤Г╨│╨╕╨╝
+    ╤Г╨╖╨╗╨░╨╝
+  exposedPorts: ╨Я╨╡╤А╨╡╨╜╨░╨┐╤А╨░╨▓╨╗╨╡╨╜╨╜╤Л╨╡ ╨┐╨╛╤А╤В╤Л
+  gatheringIce: '''╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨┐╨╛╨┤╨╛╨╢╨┤╨╕╤В╨╡, ╨┐╨╛╨║╨░ ╤Б╨╡╤А╨▓╨╡╤А
+    ICE ╤Б╨╛╨▒╨╡╤А╤С╤В ╨╜╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╤Г╤О ╨╕╨╜╤Д╨╛╤А╨╝╨░╤Ж╨╕╤О'
+  groupId: ID ╨│╤А╤Г╨┐╨┐╤Л
   guest: Guest
   host: Host
-  illegalTokenDescription: Недопустимый токен, убедитесь, что токен от пользователя
-    введён верно
-  initiateConnection: Инициировать соединение
-  joinConnection: Если пользователь уже инициировал соединение, вам нужно присоединиться
-    к соединению.
-  joinManual: Присоединиться
-  joinOrCreateGroup: Присоединиться/Создать группу
-  joinOrCreateGroupHint: Получите ID группы от пользователя или создайте группу
-  kernel: Ядро P2P
-  kernelDescription: Используйте WebRTC или node-datachannel.  Переключайтесь между
-    ними только если p2p-соединение иногда вызывает ошибку окна запуска. Используйте
-    WebRTC или node-datachannel.  Переключайтесь между ними только если p2p-соединение
-    иногда вызывает ошибку окна запуска.
-  leaveGroup: Покинуть группу
-  localToken: Локальный токен
-  manualConnect: Ручное соединение
-  name: '{name} o''chirilsinmi'
-  natWarning: Ваш тип NAT может препятствовать прямым соединениям. Попробуйте включить
-    релейный сервер в настройках или попросите друга стать хостом.
-  networkInfo: Информация о сети
-  next: Далее
-  otherExposedPortDescription: Предисловие к порту от {user}
-  placeholder: Katalogni tanlash uchun bu yerga bosing
-  previous: Назад
-  receiveHint: После того, как пользователь введёт ваш токен, соединение будет создано
-    автоматически. Теперь вы можете закрыть диалоговое окно.
-  receiveRemoteTokenHint: Пожалуйста, введите удалённый токен от пользователя здесь.
-  remoteToken: Удалённый токен
+  illegalTokenDescription: ╨Э╨╡╨┤╨╛╨┐╤Г╤Б╤В╨╕╨╝╤Л╨╣ ╤В╨╛╨║╨╡╨╜, ╤Г╨▒╨╡╨┤╨╕╤В╨╡╤Б╤М,
+    ╤З╤В╨╛ ╤В╨╛╨║╨╡╨╜ ╨╛╤В ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П
+  initiateConnection: ╨Ш╨╜╨╕╤Ж╨╕╨╕╤А╨╛╨▓╨░╤В╤М ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡
+  joinConnection: ╨Х╤Б╨╗╨╕ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤М ╤Г╨╢╨╡ ╨╕╨╜╨╕╤Ж╨╕╨╕╤А╨╛╨▓╨░╨╗
+    ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡, ╨▓╨░╨╝ ╨╜╤Г╨╢╨╜╨╛ ╨┐╤А╨╕╤Б╨╛╨╡╨┤╨╕╨╜╨╕╤В╤М╤Б╤П
+  joinManual: ╨Я╤А╨╕╤Б╨╛╨╡╨┤╨╕╨╜╨╕╤В╤М╤Б╤П
+  joinOrCreateGroup: ╨Я╤А╨╕╤Б╨╛╨╡╨┤╨╕╨╜╨╕╤В╤М╤Б╤П/╨б╨╛╨╖╨┤╨░╤В╤М ╨│╤А╤Г╨┐╨┐╤Г
+  joinOrCreateGroupHint: ╨Я╨╛╨╗╤Г╤З╨╕╤В╨╡ ID ╨│╤А╤Г╨┐╨┐╤Л ╨╛╤В ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П
+    ╨╕╨╗╨╕ ╤Б╨╛╨╖╨┤╨░╨╣╤В╨╡ ╨│╤А╤Г╨┐╨┐╤Г
+  kernel: ╨п╨┤╤А╨╛ P2P
+  kernelDescription: ╨Ш╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╣╤В╨╡ WebRTC ╨╕╨╗╨╕ node-datachannel.  ╨Я╨╡╤А╨╡╨║╨╗╤О╤З╨░╨╣╤В╨╡╤Б╤М
+    ╨╝╨╡╨╢╨┤╤Г
+  leaveGroup: ╨Я╨╛╨║╨╕╨╜╤Г╤В╤М ╨│╤А╤Г╨┐╨┐╤Г
+  localToken: ╨Ы╨╛╨║╨░╨╗╤М╨╜╤Л╨╣ ╤В╨╛╨║╨╡╨╜
+  manualConnect: ╨а╤Г╤З╨╜╨╛╨╡ ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡
+  name: ╨Ш╨│╤А╨░ ╨┐╨╛ ╨╗╨╛╨║╨░╨╗╤М╨╜╨╛╨╣ ╤Б╨╡╤В╨╕
+  natWarning: ╨Т╨░╤И ╤В╨╕╨┐ NAT ╨╝╨╛╨╢╨╡╤В ╨┐╤А╨╡╨┐╤П╤В╤Б╤В╨▓╨╛╨▓╨░╤В╤М ╨┐╤А╤П╨╝╤Л╨╝
+    ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╤П╨╝. ╨Я╨╛╨┐╤А╨╛╨▒╤Г╨╣╤В╨╡ ╨▓╨║╨╗╤О╤З╨╕╤В╤М
+  networkInfo: ╨Ш╨╜╤Д╨╛╤А╨╝╨░╤Ж╨╕╤П ╨╛ ╤Б╨╡╤В╨╕
+  next: ╨Ф╨░╨╗╨╡╨╡
+  otherExposedPortDescription: ╨Я╤А╨╡╨┤╨╕╤Б╨╗╨╛╨▓╨╕╨╡ ╨║ ╨┐╨╛╤А╤В╤Г ╨╛╤В {user}
+  placeholder: ╨б╨╛╨╡╨┤╨╕╨╜╨╕╤В╨╡╤Б╤М ╤Б ╨┤╤А╤Г╨│╨╕╨╝ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╨╡╨╝,
+    ╤З╤В╨╛╨▒╤Л ╨╕╨│╤А╨░╤В╤М ╨▓ Minecraft ╨▓ ╨╗╨╛╨║╨░╨╗╤М╨╜╨╛╨╣
+  previous: ╨Э╨░╨╖╨░╨┤
+  receiveHint: ╨Я╨╛╤Б╨╗╨╡ ╤В╨╛╨│╨╛, ╨║╨░╨║ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤М ╨▓╨▓╨╡╨┤╤С╤В ╨▓╨░╤И
+    ╤В╨╛╨║╨╡╨╜, ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡ ╨▒╤Г╨┤╨╡╤В ╤Б╨╛╨╖╨┤╨░╨╜╨╛
+  receiveRemoteTokenHint: ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨▓╨▓╨╡╨┤╨╕╤В╨╡ ╤Г╨┤╨░╨╗╤С╨╜╨╜╤Л╨╣
+    ╤В╨╛╨║╨╡╨╜ ╨╛╤В ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П ╨╖╨┤╨╡╤Б╤М.
+  remoteToken: ╨г╨┤╨░╨╗╤С╨╜╨╜╤Л╨╣ ╤В╨╛╨║╨╡╨╜
   relayConnection: Relay
-  routerInfo: Информация о роутере
-  sendTokenToRemote: Отправить токен
-  share: Ulashish
-  sharing: Обмен файлами...
-  sharingNotificationBody: Вы можете загрузить или создать экземпляр из общих настроек
-    {name}.
-  sharingNotificationTitle: Пользователь делится настройками экземпляра
-  start: Начать
-  startNewP2PConnection: Нажмите на кнопку "Начать", чтобы создать новое p2p-соединение
-myStuff: Мой контент
+  routerInfo: ╨Ш╨╜╤Д╨╛╤А╨╝╨░╤Ж╨╕╤П ╨╛ ╤А╨╛╤Г╤В╨╡╤А╨╡
+  sendTokenToRemote: ╨Ю╤В╨┐╤А╨░╨▓╨╕╤В╤М ╤В╨╛╨║╨╡╨╜
+  share: ╨Я╨╛╨┤╨╡╨╗╨╕╤В╤М╤Б╤П ╨║╨╛╨╜╤Д╨╕╨│╤Г╤А╨░╤Ж╨╕╨╡╨╣ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+  sharing: ╨Ю╨▒╨╝╨╡╨╜ ╤Д╨░╨╣╨╗╨░╨╝╨╕...
+  sharingNotificationBody: ╨Т╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨╖╨░╨│╤А╤Г╨╖╨╕╤В╤М ╨╕╨╗╨╕ ╤Б╨╛╨╖╨┤╨░╤В╤М
+    ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А ╨╕╨╖ ╨╛╨▒╤Й╨╕╤Е ╨╜╨░╤Б╤В╤А╨╛╨╡╨║
+  sharingNotificationTitle: ╨Я╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤М ╨┤╨╡╨╗╨╕╤В╤Б╤П ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨░╨╝╨╕
+    ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+  start: ╨Э╨░╤З╨░╤В╤М
+  startNewP2PConnection: ╨Э╨░╨╢╨╝╨╕╤В╨╡ ╨╜╨░ ╨║╨╜╨╛╨┐╨║╤Г "╨Э╨░╤З╨░╤В╤М", ╤З╤В╨╛╨▒╤Л
+    ╤Б╨╛╨╖╨┤╨░╤В╤М ╨╜╨╛╨▓╨╛╨╡ p2p-╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡
+myStuff: ╨Ь╨╛╨╣ ╨║╨╛╨╜╤В╨╡╨╜╤В
 natType:
-  blocked: Заблокирован
-  fullCone: Полный конус (Full Cone)
-  openInternet: Открытый интернет
-  restrictNat: Ограниченный NAT
-  restrictPortNat: Ограниченный порт NAT
-  symmetricNat: Симметричный NAT
-  symmetricUDPFirewall: Симметричный межсетевой экран UDP
-  unknown: Неизвестно
+  blocked: ╨Ч╨░╨▒╨╗╨╛╨║╨╕╤А╨╛╨▓╨░╨╜
+  fullCone: ╨Я╨╛╨╗╨╜╤Л╨╣ ╨║╨╛╨╜╤Г╤Б (Full Cone)
+  openInternet: ╨Ю╤В╨║╤А╤Л╤В╤Л╨╣ ╨╕╨╜╤В╨╡╤А╨╜╨╡╤В
+  restrictNat: ╨Ю╨│╤А╨░╨╜╨╕╤З╨╡╨╜╨╜╤Л╨╣ NAT
+  restrictPortNat: ╨Ю╨│╤А╨░╨╜╨╕╤З╨╡╨╜╨╜╤Л╨╣ ╨┐╨╛╤А╤В NAT
+  symmetricNat: ╨б╨╕╨╝╨╝╨╡╤В╤А╨╕╤З╨╜╤Л╨╣ NAT
+  symmetricUDPFirewall: ╨б╨╕╨╝╨╝╨╡╤В╤А╨╕╤З╨╜╤Л╨╣ ╨╝╨╡╨╢╤Б╨╡╤В╨╡╨▓╨╛╨╣ ╤Н╨║╤А╨░╨╜ UDP
+  unknown: ╨Э╨╡╨╕╨╖╨▓╨╡╤Б╤В╨╜╨╛
 neoForgedVersion:
-  disable: Tanlanmagan
-  empty: Minecraft {version} uchun tegishli versiya topilmadi
+  disable: NeoForged ╨╜╨╡ ╨▓╤Л╨▒╤А╨░╨╜
+  empty: NeoForged ╨╜╨╡ ╨┐╨╛╨┤╨┤╨╡╤А╨╢╨╕╨▓╨░╨╡╤В {version}
 news:
-  name: '{name} o''chirilsinmi'
-  readMore: Подробнее
+  name: ╨Э╨╛╨▓╨╛╤Б╤В╨╕
+  readMore: ╨Я╨╛╨┤╤А╨╛╨▒╨╜╨╡╨╡
 optifineVersion:
-  disable: Tanlanmagan
-  empty: Minecraft {version} uchun tegishli versiya topilmadi
-optional: Majburiy bo'lmagan
+  disable: Optifine ╨╜╨╡ ╨▓╤Л╨▒╤А╨░╨╜
+  empty: Optifine ╨╜╨╡ ╨┐╨╛╨┤╨┤╨╡╤А╨╢╨╕╨▓╨░╨╡╤В Minecraft {version}
+optional: ╨Э╨╡╨╛╨▒╤П╨╖╨░╤В╨╡╨╗╤М╨╜╨╛
 peerConnectionState:
-  closed: Закрыто
-  connected: Подключено
-  connecting: Подключение
-  disconnected: Отключено
-  failed: Muvaffaqiyatsiz
-  name: '{name} o''chirilsinmi'
-  new: Новое
+  closed: ╨Ч╨░╨║╤А╤Л╤В╨╛
+  connected: ╨Я╨╛╨┤╨║╨╗╤О╤З╨╡╨╜╨╛
+  connecting: ╨Я╨╛╨┤╨║╨╗╤О╤З╨╡╨╜╨╕╨╡
+  disconnected: ╨Ю╤В╨║╨╗╤О╤З╨╡╨╜╨╛
+  failed: ╨Ю╤И╨╕╨▒╨║╨░
+  name: ╨б╨╛╤Б╤В╨╛╤П╨╜╨╕╨╡ ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╤П
+  new: ╨Э╨╛╨▓╨╛╨╡
 peerGroupState:
-  closed: Не в группе
-  closing: Закрытие
-  connected: Подключён к группе
-  connecting: Подключение к группе
+  closed: ╨Э╨╡ ╨▓ ╨│╤А╤Г╨┐╨┐╨╡
+  closing: ╨Ч╨░╨║╤А╤Л╤В╨╕╨╡
+  connected: ╨Я╨╛╨┤╨║╨╗╤О╤З╤С╨╜ ╨║ ╨│╤А╤Г╨┐╨┐╨╡
+  connecting: ╨Я╨╛╨┤╨║╨╗╤О╤З╨╡╨╜╨╕╨╡ ╨║ ╨│╤А╤Г╨┐╨┐╨╡
 peerIceGatheringState:
-  gathering: Сбор информации с сервера ICE
+  gathering: ╨б╨▒╨╛╤А ╨╕╨╜╤Д╨╛╤А╨╝╨░╤Ж╨╕╨╕ ╤Б ╤Б╨╡╤А╨▓╨╡╤А╨░ ICE
 peerSignalingState:
-  have-local-offer: Ожидание описания от пользователя
+  have-local-offer: ╨Ю╨╢╨╕╨┤╨░╨╜╨╕╨╡ ╨╛╨┐╨╕╤Б╨░╨╜╨╕╤П ╨╛╤В ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П
 presence:
-  instance: Неактивен в экземпляре {instance}
-  instanceSetting: 'Редактирует настройки экземпляра: {instance}'
-  mod: Просматривает моды в {instance}
-  modrinthProject: Просматривает {name} в Modrinth
-  resourcePack: Просматривает наборы ресурсов в {instance}
-  save: Просматривает миры в {instance}
-  setting: Просматривает страницу настроек
-  shaderPack: Просматривает наборы шейдеров в {instance}
+  instance: ╨Э╨╡╨░╨║╤В╨╕╨▓╨╡╨╜ ╨▓ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨╡ {instance}
+  instanceSetting: '╨а╨╡╨┤╨░╨║╤В╨╕╤А╤Г╨╡╤В ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░:
+    {instance}'
+  mod: ╨Я╤А╨╛╤Б╨╝╨░╤В╤А╨╕╨▓╨░╨╡╤В ╨╝╨╛╨┤╤Л ╨▓ {instance}
+  modrinthProject: ╨Я╤А╨╛╤Б╨╝╨░╤В╤А╨╕╨▓╨░╨╡╤В {name} ╨▓ Modrinth
+  resourcePack: ╨Я╤А╨╛╤Б╨╝╨░╤В╤А╨╕╨▓╨░╨╡╤В ╨╜╨░╨▒╨╛╤А╤Л ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓ ╨▓ {instance}
+  save: ╨Я╤А╨╛╤Б╨╝╨░╤В╤А╨╕╨▓╨░╨╡╤В ╨╝╨╕╤А╤Л ╨▓ {instance}
+  setting: ╨Я╤А╨╛╤Б╨╝╨░╤В╤А╨╕╨▓╨░╨╡╤В ╤Б╤В╤А╨░╨╜╨╕╤Ж╤Г ╨╜╨░╤Б╤В╤А╨╛╨╡╨║
+  shaderPack: ╨Я╤А╨╛╤Б╨╝╨░╤В╤А╨╕╨▓╨░╨╡╤В ╨╜╨░╨▒╨╛╤А╤Л ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓ ╨▓ {instance}
 proxy:
-  host: Хост
-  port: Порт
+  host: ╨е╨╛╤Б╤В
+  port: ╨Я╨╛╤А╤В
 quiltVersion:
-  disable: Tanlanmagan
-  empty: Minecraft {version} uchun tegishli versiya topilmadi
+  disable: Quilt ╨╜╨╡ ╨▓╤Л╨▒╤А╨░╨╜
+  empty: Quilt ╨╜╨╡ ╨┐╨╛╨┤╨┤╨╡╤А╨╢╨╕╨▓╨░╨╡╤В Minecraft {version}
 reinstall:
-  name: '{name} o''chirilsinmi'
+  name: ╨Я╨╡╤А╨╡╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М {version}
 relative:
-  daysAgo: '{count} kun oldin | {count} kun oldin'
-  hoursAgo: '{count} soat oldin | {count} soat oldin'
-  justNow: hozirgina
-  minutesAgo: '{count} daqiqa oldin | {count} daqiqa oldin'
-  secondsAgo: '{count} soniya oldin | {count} soniya oldin'
+  daysAgo: '{count} day ago | {count} days ago'
+  hoursAgo: '{count} hour ago | {count} hours ago'
+  justNow: just now
+  minutesAgo: '{count} minute ago | {count} minutes ago'
+  secondsAgo: '{count} second ago | {count} seconds ago'
 resourceError:
-  body: '"{path}" could not be parsed ({code}). The file may be corrupted, locked,
-    or incomplete. Try re-downloading or removing it.'
+  body: '''"{path}" could not be parsed ({code}). The file may be corrupted, locked,'
   title: Cannot read {file}
 blueprint:
-  name: '{name} o''chirilsinmi'
+  name: Blueprint | Blueprints
   count: '{count} blueprints'
-  searchLocal: Chizmalarni qidirish...
-  searchOnline: Onlayn qidirish...
+  searchLocal: Search blueprints...
+  searchOnline: Search online...
   market: Market
-  local: Mahalliy
-  provider: Provayder
-  import: Import
-  openFolder: Papkani ochish
+  local: Local
+  provider: Provider
+  import: Import Qilish
+  openFolder: Open folder
   refresh: Yangilash
-  empty: Minecraft {version} uchun tegishli versiya topilmadi
+  empty: No blueprints found. Import a .litematic / .schem / .nbt file or browse the
   dropHint: Drop blueprint files (.litematic / .schem / .nbt) here to import.
   selectHint: Select a blueprint to preview it.
-  blocks: '{count} ta bloklar'
-  materials: Materiallar
-  allNamespaces: Barchasi
+  blocks: '{count} blocks'
+  materials: Materials
+  allNamespaces: All
   findMod: Find the mod for this namespace
-  compatible: Mos keladi
-  incompatible: Mos kelmaydigan
+  compatible: Compatible
+  incompatible: Missing mods
   missingNamespaces: 'Missing mods for: {namespaces}'
   delete: O'chirish
-  cancel: Bekor qilish
+  cancel: Bekor Qilish
   install: O'rnatish
-  goTo: Veb-sayt
+  goTo: Website
   byAuthor: by {author}
-  noDescription: Tavsif berilmagan.
-  loadMore: Yana yuklash
+  noDescription: No description provided.
+  loadMore: Load more
   cmsBrowseOnly: This source is browse-only; open the website to download.
-  mixedSources: Results are mixed from all sources. Some are browse-only — open their
-    website to download.
+  mixedSources: Results are mixed from all sources. Some are browse-only тАФ open
+    their
   formats:
     structure: Vanilla Structure
   preview:
     title: 3D Preview
     loading: Loading preview...
-    empty: Minecraft {version} uchun tegishli versiya topilmadi
-    hint: Hisobot yaratish va dasturchilar jamoasi bilan bog'lanish uchun tugmani
-      bosing. Hisobot qurilmangiz haqida ma'lumotni, jumladan operatsion tizim turi,
-      versiyasi, foydalanuvchi nomi va boshqa ma'lumotlarni o'z ichiga oladi.
-    controls: Drag to look · WASD move · Space/Shift up/down
+    empty: This blueprint has no blocks to display.
+    hint: '{count} blocks ┬╖ {x}├Ч{y}├Ч{z}'
+    controls: Drag to look ┬╖ WASD move ┬╖ Space/Shift up/down
   convert:
     title: Convert format
-    hint: Hisobot yaratish va dasturchilar jamoasi bilan bog'lanish uchun tugmani
-      bosing. Hisobot qurilmangiz haqida ma'lumotni, jumladan operatsion tizim turi,
-      versiyasi, foydalanuvchi nomi va boshqa ma'lumotlarni o'z ichiga oladi.
+    hint: Convert this blueprint to another format. A new file will be created.
     target: Target format
     action: Convert
   replace:
@@ -1437,59 +1382,60 @@ blueprint:
     newFile: Save as a new file
     action: Replace
 resourcepack:
-  compatible: Mos keladi
-  defaultDescription: Внешний вид Minecraft по умолчанию
+  compatible: ╨д╨╛╤А╨╝╨░╤В {format} ╤Б╨╛╨▓╨╝╨╡╤Б╤В╨╕╨╝ ╤Б {version}
+  defaultDescription: ╨Т╨╜╨╡╤И╨╜╨╕╨╣ ╨▓╨╕╨┤ Minecraft ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О
   delete:
-    content: Это приведёт к удалению файла набора ресурсов с диска, и мы не сможем
-      его восстановить. Вы уверены, что хотите это сделать?
-    title: Удалить набор ресурсов
-  dropHint: Перетащите сюда папку/zip-архив с набором ресурсов для импорта.
-  enable: 'Всего наборов ресурсов выбрано: {count}'
-  incompatible: Mos kelmaydigan
-  name: '{name} o''chirilsinmi'
-  linkShared: Общие пакеты ресурсов для всех сборок
-  linkSharedHint: Связать папку resourcepacks этой сборки с общей глобальной папкой,
-    чтобы все сборки использовали одни и те же пакеты ресурсов. Существующие пакеты
-    будут перемещены в общую папку.
+    content: ╨н╤В╨╛ ╨┐╤А╨╕╨▓╨╡╨┤╤С╤В ╨║ ╤Г╨┤╨░╨╗╨╡╨╜╨╕╤О ╤Д╨░╨╣╨╗╨░ ╨╜╨░╨▒╨╛╤А╨░ ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓
+      ╤Б ╨┤╨╕╤Б╨║╨░, ╨╕ ╨╝╤Л ╨╜╨╡ ╤Б╨╝╨╛╨╢╨╡╨╝
+    title: ╨г╨┤╨░╨╗╨╕╤В╤М ╨╜╨░╨▒╨╛╤А ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓
+  dropHint: ╨Я╨╡╤А╨╡╤В╨░╤Й╨╕╤В╨╡ ╤Б╤О╨┤╨░ ╨┐╨░╨┐╨║╤Г/zip-╨░╤А╤Е╨╕╨▓ ╤Б ╨╜╨░╨▒╨╛╤А╨╛╨╝
+    ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓ ╨┤╨╗╤П ╨╕╨╝╨┐╨╛╤А╤В╨░.
+  enable: '╨Т╤Б╨╡╨│╨╛ ╨╜╨░╨▒╨╛╤А╨╛╨▓ ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓ ╨▓╤Л╨▒╤А╨░╨╜╨╛: {count}'
+  incompatible: ╨Э╨╡╤Б╨╛╨▓╨╝╨╡╤Б╤В╨╕╨╝╤Л╨╣ ╤Д╨╛╤А╨╝╨░╤В ╨╜╨░╨▒╨╛╤А╨░ ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓
+    ({format}). ╨Я╨╛╨┤╤Е╨╛╨┤╤П╤Й╨╕╨╣ {accept}.
+  name: ╨Э╨░╨▒╨╛╤А ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓ | ╨Э╨░╨▒╨╛╤А╤Л ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓
+  linkShared: ╨Ю╨▒╤Й╨╕╨╡ ╨┐╨░╨║╨╡╤В╤Л ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓ ╨┤╨╗╤П ╨▓╤Б╨╡╤Е ╤Б╨▒╨╛╤А╨╛╨║
+  linkSharedHint: ╨б╨▓╤П╨╖╨░╤В╤М ╨┐╨░╨┐╨║╤Г resourcepacks ╤Н╤В╨╛╨╣ ╤Б╨▒╨╛╤А╨║╨╕ ╤Б
+    ╨╛╨▒╤Й╨╡╨╣ ╨│╨╗╨╛╨▒╨░╨╗╤М╨╜╨╛╨╣ ╨┐╨░╨┐╨║╨╛╨╣,
   noLocalPacksFound: No local resource packs found matching your search.
-  noPacks: Ресурс-паки не найдены
+  noPacks: ╨а╨╡╤Б╤Г╤А╤Б-╨┐╨░╨║╨╕ ╨╜╨╡ ╨╜╨░╨╣╨┤╨╡╨╜╤Л
   noPacksInstalled: You don't have any resource packs installed.
-  search: Поиск ресурс-паков...
-  searchHint: Поиск пакетов ресурсов
-  searchOnCurseforge: Поиск {name} на CurseForge
+  search: ╨Я╨╛╨╕╤Б╨║ ╤А╨╡╤Б╤Г╤А╤Б-╨┐╨░╨║╨╛╨▓...
+  searchHint: ╨Я╨╛╨╕╤Б╨║ ╨┐╨░╨║╨╡╤В╨╛╨▓ ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓
+  searchOnCurseforge: ╨Я╨╛╨╕╤Б╨║ {name} ╨╜╨░ CurseForge
   searchOnModrinth: :mod.searchOnModrinth
-  selected: Выбранные наборы ресурсов
-  showDirectory: Открыть папку с наборами ресурсов
-  showFile: Показать путь к набору ресурсов {file}
-  showInCurseforge: Показать {name} на CurseForge
-  unselected: Невыбранные наборы ресурсов
+  selected: ╨Т╤Л╨▒╤А╨░╨╜╨╜╤Л╨╡ ╨╜╨░╨▒╨╛╤А╤Л ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓
+  showDirectory: ╨Ю╤В╨║╤А╤Л╤В╤М ╨┐╨░╨┐╨║╤Г ╤Б ╨╜╨░╨▒╨╛╤А╨░╨╝╨╕ ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓
+  showFile: ╨Я╨╛╨║╨░╨╖╨░╤В╤М ╨┐╤Г╤В╤М ╨║ ╨╜╨░╨▒╨╛╤А╤Г ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓ {file}
+  showInCurseforge: ╨Я╨╛╨║╨░╨╖╨░╤В╤М {name} ╨╜╨░ CurseForge
+  unselected: ╨Э╨╡╨▓╤Л╨▒╤А╨░╨╜╨╜╤Л╨╡ ╨╜╨░╨▒╨╛╤А╤Л ╤А╨╡╤Б╤Г╤А╤Б╨╛╨▓
 save:
   allowCheats: Allow Cheats
   copy:
-    name: '{name} o''chirilsinmi'
-  createNew: Создать новый мир
-  createdWorlds: 'Всего миров: {count}'
-  deleteHint: Ekzemplar ma'lumotlari diskdan butunlay o'chiriladi. Buni qilishga ishonchingiz
-    komilmi?
-  deleteTitle: Удалить мир
+    name: ╨Ъ╨╛╨┐╨╕╤А╨╛╨▓╨░╤В╤М ╨╝╨╕╤А
+  createNew: ╨б╨╛╨╖╨┤╨░╤В╤М ╨╜╨╛╨▓╤Л╨╣ ╨╝╨╕╤А
+  createdWorlds: '╨Т╤Б╨╡╨│╨╛ ╨╝╨╕╤А╨╛╨▓: {count}'
+  deleteHint: ╨н╤В╨░ ╨╛╨┐╨╡╤А╨░╤Ж╨╕╤П ╨╜╨╡ ╨╝╨╛╨╢╨╡╤В ╨▒╤Л╤В╤М ╨╛╤В╨╝╨╡╨╜╨╡╨╜╨░. ╨Т╤Л
+    ╨╜╨░╨▓╤Б╨╡╨│╨┤╨░ ╨┐╨╛╤В╨╡╤А╤П╨╡╤В╨╡ ╨┤╨░╨╜╨╜╤Л╨╡ ╤Н╤В╨╛╨│╨╛
+  deleteTitle: ╨г╨┤╨░╨╗╨╕╤В╤М ╨╝╨╕╤А
   difficulty: Difficulty
-  dropHint: Перетащите zip-архив сюда, чтобы импортировать
+  dropHint: ╨Я╨╡╤А╨╡╤В╨░╤Й╨╕╤В╨╡ zip-╨░╤А╤Е╨╕╨▓ ╤Б╤О╨┤╨░, ╤З╤В╨╛╨▒╤Л ╨╕╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М
   datapack:
-    name: '{name} o''chirilsinmi'
+    name: Data Pack | Data Packs
     noSaveHint: Create or select a world first to install this data pack
     packFormat: 'Pack format: {format}'
     imported: Data pack imported into {save}
-  duplicate: Ekzemplardan nusxa ko'chirish
-  export: Экспорт сохранения
-  exportMessage: Экспортировать мир в zip-архив
-  exportTitle: Экспортировать мир
-  gameMode: игровой режим
-  independent: Экземпляр использует независимую папку сохранений
-  linkShared: Общие сохранения для всех сборок
-  linkSharedHint: Связать папку saves этой сборки с общей глобальной папкой, чтобы
-    все сборки использовали одни и те же миры. Существующие сохранения будут перемещены
-    в общую папку.
-  levelName: Название уровня
+  duplicate: Duplicate Save
+  export: ╨н╨║╤Б╨┐╨╛╤А╤В ╤Б╨╛╤Е╤А╨░╨╜╨╡╨╜╨╕╤П
+  exportMessage: ╨н╨║╤Б╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨╝╨╕╤А ╨▓ zip-╨░╤А╤Е╨╕╨▓
+  exportTitle: ╨н╨║╤Б╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨╝╨╕╤А
+  gameMode: ╨╕╨│╤А╨╛╨▓╨╛╨╣ ╤А╨╡╨╢╨╕╨╝
+  independent: ╨н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А ╨╕╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╡╤В ╨╜╨╡╨╖╨░╨▓╨╕╤Б╨╕╨╝╤Г╤О ╨┐╨░╨┐╨║╤Г
+    ╤Б╨╛╤Е╤А╨░╨╜╨╡╨╜╨╕╨╣
+  linkShared: ╨Ю╨▒╤Й╨╕╨╡ ╤Б╨╛╤Е╤А╨░╨╜╨╡╨╜╨╕╤П ╨┤╨╗╤П ╨▓╤Б╨╡╤Е ╤Б╨▒╨╛╤А╨╛╨║
+  linkSharedHint: ╨б╨▓╤П╨╖╨░╤В╤М ╨┐╨░╨┐╨║╤Г saves ╤Н╤В╨╛╨╣ ╤Б╨▒╨╛╤А╨║╨╕ ╤Б ╨╛╨▒╤Й╨╡╨╣
+    ╨│╨╗╨╛╨▒╨░╨╗╤М╨╜╨╛╨╣ ╨┐╨░╨┐╨║╨╛╨╣, ╤З╤В╨╛╨▒╤Л
+  levelName: ╨Э╨░╨╖╨▓╨░╨╜╨╕╨╡ ╤Г╤А╨╛╨▓╨╜╤П
   loadMap: Load Map
   mapError: Map Error
   mapInfo: 'Interactive 3D world preview:'
@@ -1499,7 +1445,7 @@ save:
   panMode: Pan
   chunkSelected: '{count} chunks selected'
   mapHintPan: Drag to pan
-  mapHintSelect: Select
+  mapHintSelect: Tanlash
   mapHintDeselect: Deselect
   toggleGrid: Toggle region grid
   heightTop: Top
@@ -1508,221 +1454,213 @@ save:
   copyChunks: Copy Chunks
   pasteChunks: Paste {count} Chunks
   pasteChunksPlaceHint: Move the mouse to position {count} chunk(s), then click to
-    paste. Existing chunks at the target are overwritten. Press Esc to cancel.
-  pasteChunksCancel: Cancel
+  pasteChunksCancel: Bekor Qilish
   deleteChunks: Delete Chunks
   deleteChunksTitle: Delete Selected Chunks
   deleteChunksHint: Delete {count} selected chunk(s)? This cannot be undone. The chunks
-    will be regenerated the next time the area is loaded in game.
-  mapLoading: Loading map…
+  mapLoading: Loading mapтАж
   noRegions: This world has no generated regions to preview.
   dimOverworld: Overworld
   dimNether: The Nether
   dimEnd: The End
-  name: '{name} o''chirilsinmi'
+  name: ╨Ь╨╕╤А | ╨Ь╨╕╤А╤Л
   noLocalSavesFound: No local saves found matching your search.
   noSavesFound: No saves found
   noSavesInstalled: You don't have any saves.
-  openFolder: Papkani ochish
+  openFolder: ╨Ю╤В╨║╤А╤Л╤В╤М ╨┐╨░╨┐╨║╤Г ╤Б╨╛╤Е╤А╨░╨╜╨╡╨╜╨╕╨╣
   properties: World Properties
-  search: Поиск сохранений
-  searchHint: Поиск миров на CurseForge
-  searchSaves: Поиск сохранений
+  search: ╨Я╨╛╨╕╤Б╨║ ╤Б╨╛╤Е╤А╨░╨╜╨╡╨╜╨╕╨╣
+  searchHint: ╨Я╨╛╨╕╤Б╨║ ╨╝╨╕╤А╨╛╨▓ ╨╜╨░ CurseForge
+  searchSaves: ╨Я╨╛╨╕╤Б╨║ ╤Б╨╛╤Е╤А╨░╨╜╨╡╨╜╨╕╨╣
   seed: Seed
-  selected: местный архив
-  shared: Экземпляр использует общую папку сохранений
-  showDirectory: Открыть папку с мирами
-  unselected: общий архив
-  useCurrent: Использовать текущий мир
+  selected: ╨╝╨╡╤Б╤В╨╜╤Л╨╣ ╨░╤А╤Е╨╕╨▓
+  shared: ╨н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А ╨╕╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╡╤В ╨╛╨▒╤Й╤Г╤О ╨┐╨░╨┐╨║╤Г ╤Б╨╛╤Е╤А╨░╨╜╨╡╨╜╨╕╨╣
+  showDirectory: ╨Ю╤В╨║╤А╤Л╤В╤М ╨┐╨░╨┐╨║╤Г ╤Б ╨╝╨╕╤А╨░╨╝╨╕
+  unselected: ╨╛╨▒╤Й╨╕╨╣ ╨░╤А╤Е╨╕╨▓
+  useCurrent: ╨Ш╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╤М ╤В╨╡╨║╤Г╤Й╨╕╨╣ ╨╝╨╕╤А
   useMouseRotate: Use mouse to rotate view
   useScrollZoom: Use scroll wheel to zoom
   world: World
 screenshots:
-  empty: Minecraft {version} uchun tegishli versiya topilmadi
-  gallery: Галерея скриншотов
-  hint: Hisobot yaratish va dasturchilar jamoasi bilan bog'lanish uchun tugmani bosing.
-    Hisobot qurilmangiz haqida ma'lumotni, jumladan operatsion tizim turi, versiyasi,
-    foydalanuvchi nomi va boshqa ma'lumotlarni o'z ichiga oladi.
-  openFolder: Papkani ochish
-  playRandom: Показывать случайным образом
-  playSequence: Показывать по порядку
+  empty: ╨г ╨▓╨░╤Б ╨╜╨╡╤В ╤Б╨╜╨╕╨╝╨║╨╛╨▓ ╤Н╨║╤А╨░╨╜╨░
+  gallery: ╨У╨░╨╗╨╡╤А╨╡╤П ╤Б╨║╤А╨╕╨╜╤И╨╛╤В╨╛╨▓
+  hint: ╨Т ╨╕╨│╤А╨╡ ╨╜╨░╨╢╨╝╨╕╤В╨╡ F2, ╤З╤В╨╛╨▒╤Л ╤Б╨┤╨╡╨╗╨░╤В╤М ╤Б╨║╤А╨╕╨╜╤И╨╛╤В
+  openFolder: ╨Ю╤В╨║╤А╤Л╤В╤М ╨┐╨░╨┐╨║╤Г ╤Б╨║╤А╨╕╨╜╤И╨╛╤В╨╛╨▓
+  playRandom: ╨Я╨╛╨║╨░╨╖╤Л╨▓╨░╤В╤М ╤Б╨╗╤Г╤З╨░╨╣╨╜╤Л╨╝ ╨╛╨▒╤А╨░╨╖╨╛╨╝
+  playSequence: ╨Я╨╛╨║╨░╨╖╤Л╨▓╨░╤В╤М ╨┐╨╛ ╨┐╨╛╤А╤П╨┤╨║╤Г
 search:
-  favorate: Коллекция
-  local: Mahalliy
-  market: Market
-  emptyInstalled: Пока ничего не установлено
-  browseMarket: Открыть маркет
-  noResults: Mosliklar topilmadi.
-  pageSize: Результатов на странице
+  favorate: ╨Ъ╨╛╨╗╨╗╨╡╨║╤Ж╨╕╤П
+  local: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨╛
+  market: ╨Ь╨░╤А╨║╨╡╤В
+  emptyInstalled: ╨Я╨╛╨║╨░ ╨╜╨╕╤З╨╡╨│╨╛ ╨╜╨╡ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨╛
+  browseMarket: ╨Ю╤В╨║╤А╤Л╤В╤М ╨╝╨░╤А╨║╨╡╤В
+  noResults: ╨Э╨╕╤З╨╡╨│╨╛ ╨╜╨╡ ╨╜╨░╨╣╨┤╨╡╨╜╨╛
+  pageSize: ╨а╨╡╨╖╤Г╨╗╤М╤В╨░╤В╨╛╨▓ ╨╜╨░ ╤Б╤В╤А╨░╨╜╨╕╤Ж╨╡
 localCollection:
   title: Launcher collections
-  newCollection: Yangi kolleksiya
-  namePlaceholder: Kolleksiya nomi
-  addToCollection: Kolleksiyaga qo'shish
-  empty: Minecraft {version} uchun tegishli versiya topilmadi
+  newCollection: New collection
+  namePlaceholder: Collection name
+  addToCollection: Add to collection
+  empty: No launcher collections yet
   corrupted: Your saved collections could not be read and have been reset. A backup
-    was kept next to the data file.
   modrinthSection: Modrinth account
-  installAll: Barchasini o'rnatish
+  installAll: Install all
   installAllHint: Install every project in this collection compatible with the current
-    Minecraft version and loader.
-  incompatibleAlert: '1 project is not compatible with the current instance and was
-    skipped: | {count} projects are not compatible with the current instance and were
-    skipped:'
+  incompatibleAlert: '''1 project is not compatible with the current instance and
+    was'
   projects: No projects | {count} project | {count} projects
   result:
-    failed: Muvaffaqiyatsiz
-    installed: 'O''rnatilgan: {version}'
-    skipped: O'tkazib yuborildi
+    failed: Failed
+    installed: O'rnatildi
+    skipped: Skipped
     title: Collection Installation Result
 server:
-  acceptingMinecraftVersion: Принятие версии Minecraft
-  addServer: Serverdan yaratish
+  acceptingMinecraftVersion: ╨Я╤А╨╕╨╜╤П╤В╨╕╨╡ ╨▓╨╡╤А╤Б╨╕╨╕ Minecraft
+  addServer: Add Server
   address: Server Address
   addressHint: e.g. mc.hypixel.net
   bindUpstream: Bind as upstream
   boundUpstream: Server upstream bound
   boundUpstreamHint: This instance follows the bound server's Minecraft version.
-  creationHint: Пожалуйста, заполните адрес сервера и протестируйте сервер
+  creationHint: ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨╖╨░╨┐╨╛╨╗╨╜╨╕╤В╨╡ ╨░╨┤╤А╨╡╤Б ╤Б╨╡╤А╨▓╨╡╤А╨░
+    ╨╕ ╨┐╤А╨╛╤В╨╡╤Б╤В╨╕╤А╤Г╨╣╤В╨╡ ╤Б╨╡╤А╨▓╨╡╤А
   editServer: Edit Server
-  emptyHint: Agentdan ekzemplarni tekshirishni, modlarni yoqish/o'chirishni, loglarni
-    o'qishni yoki nosozliklarni tashxislashni so'rang.
+  emptyHint: No servers in this instance's servers.dat yet. Add one to get started.
   entryCount: '{count} server | {count} servers'
-  expectedVersions: Поддерживаемые версии
-  export: Экспортный сервер
-  exportNoFilesHint: 'Файлы сервера не найдены.
-
-    Вы можете запустить сервер на локале один раз, чтобы генерировать некоторые файлы.'
-  exportOption: Параметры экспорта сервера
-  exportSSHAuthenticationFailed: 'Все методы аутентификации не удались.
-
-    Пожалуйста, проверьте имя пользователя/пароль или закрытый ключ.'
-  exportSSHOptions: SSH параметры
+  expectedVersions: ╨Я╨╛╨┤╨┤╨╡╤А╨╢╨╕╨▓╨░╨╡╨╝╤Л╨╡ ╨▓╨╡╤А╤Б╨╕╨╕
+  export: ╨н╨║╤Б╨┐╨╛╤А╤В╨╜╤Л╨╣ ╤Б╨╡╤А╨▓╨╡╤А
+  exportNoFilesHint: '''╨д╨░╨╣╨╗╤Л ╤Б╨╡╤А╨▓╨╡╤А╨░ ╨╜╨╡ ╨╜╨░╨╣╨┤╨╡╨╜╤Л.'
+  exportOption: ╨Я╨░╤А╨░╨╝╨╡╤В╤А╤Л ╤Н╨║╤Б╨┐╨╛╤А╤В╨░ ╤Б╨╡╤А╨▓╨╡╤А╨░
+  exportSSHAuthenticationFailed: '''╨Т╤Б╨╡ ╨╝╨╡╤В╨╛╨┤╤Л ╨░╤Г╤В╨╡╨╜╤В╨╕╤Д╨╕╨║╨░╤Ж╨╕╨╕
+    ╨╜╨╡ ╤Г╨┤╨░╨╗╨╕╤Б╤М.'
+  exportSSHOptions: SSH ╨┐╨░╤А╨░╨╝╨╡╤В╤А╤Л
   exportSSHPrivateKeyPath: SSH Private Key Path
-  exportSSHRemotePath: Удаленный путь сервера
-  exportToFolder: Экспорт в папку
-  filterVersion: Фильтр сервер ответил Minecraft версия
-  host: Хост
-  hostHint: Хост (с портом) сервера
-  hostRequired: Пожалуйста, введите IP -адрес сервера
-  ipAddress: IP-адрес
+  exportSSHRemotePath: ╨г╨┤╨░╨╗╨╡╨╜╨╜╤Л╨╣ ╨┐╤Г╤В╤М ╤Б╨╡╤А╨▓╨╡╤А╨░
+  exportToFolder: ╨н╨║╤Б╨┐╨╛╤А╤В ╨▓ ╨┐╨░╨┐╨║╤Г
+  filterVersion: ╨д╨╕╨╗╤М╤В╤А ╤Б╨╡╤А╨▓╨╡╤А ╨╛╤В╨▓╨╡╤В╨╕╨╗ Minecraft ╨▓╨╡╤А╤Б╨╕╤П
+  host: ╨е╨╛╤Б╤В
+  hostHint: ╨е╨╛╤Б╤В (╤Б ╨┐╨╛╤А╤В╨╛╨╝) ╤Б╨╡╤А╨▓╨╡╤А╨░
+  hostRequired: ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨▓╨▓╨╡╨┤╨╕╤В╨╡ IP -╨░╨┤╤А╨╡╤Б ╤Б╨╡╤А╨▓╨╡╤А╨░
+  ipAddress: IP-╨░╨┤╤А╨╡╤Б
   launchClient: Launch client instead
   launchPinned: Pinned
   launchTargetHint: This instance launches straight into the pinned server. Switch
-    back to the client?
-  maxPlayers: Максимум игроковr
-  motd: Сервер MOTD
-  nameHint: Ekzemplarni identifikatsiyalash uchun ishlatiladigan nom.
-  nogui: Нет графического интерфейса сервера
-  onlineMode: Онлайн режим
+  maxPlayers: ╨Ь╨░╨║╤Б╨╕╨╝╤Г╨╝ ╨╕╨│╤А╨╛╨║╨╛╨▓r
+  motd: ╨б╨╡╤А╨▓╨╡╤А MOTD
+  nameHint: Display name shown in the Multiplayer list
+  nogui: ╨Э╨╡╤В ╨│╤А╨░╤Д╨╕╤З╨╡╤Б╨║╨╛╨│╨╛ ╨╕╨╜╤В╨╡╤А╤Д╨╡╨╣╤Б╨░ ╤Б╨╡╤А╨▓╨╡╤А╨░
+  onlineMode: ╨Ю╨╜╨╗╨░╨╣╨╜ ╤А╨╡╨╢╨╕╨╝
   pin: Pin server
   pinAfterSave: Pin as default launch target after save
-  ping: Пинг
-  pings: Пинг
+  ping: ╨Я╨╕╨╜╨│
+  pings: ╨Я╨╕╨╜╨│
   pinnedHeader: 'pinned: {name}'
-  players: Игроки
-  port: Порт
+  players: ╨Ш╨│╤А╨╛╨║╨╕
+  port: ╨Я╨╛╤А╤В
   serverName: Server name
   serversListTitle: Server List
   unbindUpstream: Unbind
-  unknown: Неизвестный сервер
-  unknownDescription: Неизвестный сервер. Пожалуйста, обновите.
+  unknown: ╨Э╨╡╨╕╨╖╨▓╨╡╤Б╤В╨╜╤Л╨╣ ╤Б╨╡╤А╨▓╨╡╤А
+  unknownDescription: ╨Э╨╡╨╕╨╖╨▓╨╡╤Б╤В╨╜╤Л╨╣ ╤Б╨╡╤А╨▓╨╡╤А. ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨╛╨▒╨╜╨╛╨▓╨╕╤В╨╡.
   unpin: Unpin
-  upload: Загрузить сервер
+  upload: ╨Ч╨░╨│╤А╤Г╨╖╨╕╤В╤М ╤Б╨╡╤А╨▓╨╡╤А
   upstreamUpToDate: Your instance matches the server ({version}).
   upstreamUpToDateHint: No upgrade needed. Click to re-ping the server.
   upstreamUpdateAvailable: Server now runs Minecraft {version}. Click to apply.
   upstreamUpdateHint: Applies the suggested Minecraft version to this instance.
   useAsUpstreamHint: The instance will follow the server's reported Minecraft version.
-  version: Сервер требует версию
-  versionHint: Версия Minecraft для пинга
+  version: ╨б╨╡╤А╨▓╨╡╤А ╤В╤А╨╡╨▒╤Г╨╡╤В ╨▓╨╡╤А╤Б╨╕╤О
+  versionHint: ╨Т╨╡╤А╤Б╨╕╤П Minecraft ╨┤╨╗╤П ╨┐╨╕╨╜╨│╨░
 serverStatus:
-  nohost: §4Невозможно найти хост!
-  ping: Соединение...
-  refuse: §4Сервер отказал!
-  timeout: §4Вышло время подключения к серверу!
+  nohost: ┬з4╨Э╨╡╨▓╨╛╨╖╨╝╨╛╨╢╨╜╨╛ ╨╜╨░╨╣╤В╨╕ ╤Е╨╛╤Б╤В!
+  ping: ╨б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡...
+  refuse: ┬з4╨б╨╡╤А╨▓╨╡╤А ╨╛╤В╨║╨░╨╖╨░╨╗!
+  timeout: ┬з4╨Т╤Л╤И╨╗╨╛ ╨▓╤А╨╡╨╝╤П ╨┐╨╛╨┤╨║╨╗╤О╤З╨╡╨╜╨╕╤П ╨║ ╤Б╨╡╤А╨▓╨╡╤А╤Г!
 setting:
-  about: О
-  aboutBmclDescription: BMCL API предоставляет удобные загрузки для пользователей
-    материка
-  aboutContributors: 🧑‍💻 Участники 🧑‍💻
-  aboutDenoDescription: XMCL использует серверную платформу Deno Deploy для приложений
-    JavaScript
-  aboutLicense: Лицензия MIT
-  aboutLicenseInfo: Благодарим SignPath.io за бесплатную подпись кода Windows
-  aboutSponsors: 😇 Спонсоры 😇
-  advancedJavaOptions: Расширенные параметры Java
-  advancedSettings: Расширенные настройки
-  advancedSettingsHint: Опасная зона - сброс или управление данными лаунчера
-  aiAgentApiKey: API-ключ AI Agent
+  about: NeoTerra Launcher Haqida
+  aboutBmclDescription: BMCL API ╨┐╤А╨╡╨┤╨╛╤Б╤В╨░╨▓╨╗╤П╨╡╤В ╤Г╨┤╨╛╨▒╨╜╤Л╨╡ ╨╖╨░╨│╤А╤Г╨╖╨║╨╕
+    ╨┤╨╗╤П ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╨╡╨╣
+  aboutContributors: ЁЯзСтАНЁЯТ╗ ╨г╤З╨░╤Б╤В╨╜╨╕╨║╨╕ ЁЯзСтАНЁЯТ╗
+  aboutDenoDescription: NeoTerra Launcher ╨╕╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╡╤В ╤Б╨╡╤А╨▓╨╡╤А╨╜╤Г╤О
+    ╨┐╨╗╨░╤В╤Д╨╛╤А╨╝╤Г Deno Deploy
+  aboutLicense: MIT Litsenziyasi
+  aboutLicenseInfo: ╨С╨╗╨░╨│╨╛╨┤╨░╤А╨╕╨╝ SignPath.io ╨╖╨░ ╨▒╨╡╤Б╨┐╨╗╨░╤В╨╜╤Г╤О ╨┐╨╛╨┤╨┐╨╕╤Б╤М
+    ╨║╨╛╨┤╨░ Windows
+  aboutSponsors: ЁЯШЗ ╨б╨┐╨╛╨╜╤Б╨╛╤А╤Л ЁЯШЗ
+  advancedJavaOptions: ╨а╨░╤Б╤И╨╕╤А╨╡╨╜╨╜╤Л╨╡ ╨┐╨░╤А╨░╨╝╨╡╤В╤А╤Л Java
+  advancedSettings: ╨а╨░╤Б╤И╨╕╤А╨╡╨╜╨╜╤Л╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕
+  advancedSettingsHint: ╨Ю╨┐╨░╤Б╨╜╨░╤П ╨╖╨╛╨╜╨░ - ╤Б╨▒╤А╨╛╤Б ╨╕╨╗╨╕ ╤Г╨┐╤А╨░╨▓╨╗╨╡╨╜╨╕╨╡
+    ╨┤╨░╨╜╨╜╤Л╨╝╨╕ ╨╗╨░╤Г╨╜╤З╨╡╤А╨░
+  aiAgentApiKey: API-╨║╨╗╤О╤З AI Agent
   aiAgentApiKeyClear: Clear key
-  aiAgentApiKeyDescription: Хранится локально на этом устройстве и используется для
-    запросов агента.
+  aiAgentApiKeyDescription: ╨е╤А╨░╨╜╨╕╤В╤Б╤П ╨╗╨╛╨║╨░╨╗╤М╨╜╨╛ ╨╜╨░ ╤Н╤В╨╛╨╝ ╤Г╤Б╤В╤А╨╛╨╣╤Б╤В╨▓╨╡
+    ╨╕ ╨╕╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╡╤В╤Б╤П ╨┤╨╗╤П
   aiAgentApiKeyEmpty: Paste your API key
   aiAgentApiKeyNotNeeded: Not required
   aiAgentApiKeyNotNeededHint: This provider runs locally and needs no API key
   aiAgentApiKeySaved: Saved
   aiAgentApiKeyStored: Key saved - type to replace
   aiAgentEndpoint: Endpoint AI Agent
-  aiAgentEndpointDescription: URL endpoint для chat completions.
-  aiAgentModel: Модель AI Agent
-  aiAgentModelDescription: Имя модели для запросов chat completion.
+  aiAgentEndpointDescription: URL endpoint ╨┤╨╗╤П chat completions.
+  aiAgentModel: ╨Ь╨╛╨┤╨╡╨╗╤М AI Agent
+  aiAgentModelDescription: ╨Ш╨╝╤П ╨╝╨╛╨┤╨╡╨╗╨╕ ╨┤╨╗╤П ╨╖╨░╨┐╤А╨╛╤Б╨╛╨▓ chat completion.
   aiAgentProvider: AI Agent Provider
   aiAgentProviderCustom: Custom (OpenAI compatible)
   aiAgentProviderDescription: Pick a preset OpenAI-compatible provider to fill the
-    endpoint.
   apiSets:
-    auto: Автоматически (определяется сетью)
-    official: Официальный (Mojang)
+    auto: ╨Р╨▓╤В╨╛╨╝╨░╤В╨╕╤З╨╡╤Б╨║╨╕ (╨╛╨┐╤А╨╡╨┤╨╡╨╗╤П╨╡╤В╤Б╤П ╤Б╨╡╤В╤М╤О)
+    official: ╨Ю╤Д╨╕╤Ж╨╕╨░╨╗╤М╨╜╤Л╨╣ (Mojang)
   appearance: Dizayn va Ko'rinish
   appearanceDescription: Launcher ko'rinishini sozlash
-  appxUpdateHint: Лаунчер скачает и запустит установщик. Если всплывающее окно установщика
-    не откроется автоматически, пожалуйста, запустите его вручную.
-  authenticationSettings: Autentifikatsiya
-  backdropBlur: Fon xiralashishi
-  backgroundColorAbove: Показать цвет фона как наложение
-  backgroundColorAboveDescription: Это позволит отобразить цвет фона над фоновым эффектом.
-  backgroundImage: Фоновое изображение
-  backgroundImageClear: Очистить
-  backgroundImageDescription: Выберите изображение в качестве фона или очистите его.
+  appxUpdateHint: ╨Ы╨░╤Г╨╜╤З╨╡╤А ╤Б╨║╨░╤З╨░╨╡╤В ╨╕ ╨╖╨░╨┐╤Г╤Б╤В╨╕╤В ╤Г╤Б╤В╨░╨╜╨╛╨▓╤Й╨╕╨║.
+    ╨Х╤Б╨╗╨╕ ╨▓╤Б╨┐╨╗╤Л╨▓╨░╤О╤Й╨╡╨╡ ╨╛╨║╨╜╨╛ ╤Г╤Б╤В╨░╨╜╨╛╨▓╤Й╨╕╨║╨░
+  authenticationSettings: ╨Р╤Г╤В╨╡╨╜╤В╨╕╤Д╨╕╨║╨░╤Ж╨╕╤П
+  backdropBlur: ╨д╨╛╨╜ ╤А╨░╨╖╨╝╤Л╤В╨╕╨╡
+  backgroundColorAbove: ╨Я╨╛╨║╨░╨╖╨░╤В╤М ╤Ж╨▓╨╡╤В ╤Д╨╛╨╜╨░ ╨║╨░╨║ ╨╜╨░╨╗╨╛╨╢╨╡╨╜╨╕╨╡
+  backgroundColorAboveDescription: ╨н╤В╨╛ ╨┐╨╛╨╖╨▓╨╛╨╗╨╕╤В ╨╛╤В╨╛╨▒╤А╨░╨╖╨╕╤В╤М ╤Ж╨▓╨╡╤В
+    ╤Д╨╛╨╜╨░ ╨╜╨░╨┤ ╤Д╨╛╨╜╨╛╨▓╤Л╨╝ ╤Н╤Д╤Д╨╡╨║╤В╨╛╨╝.
+  backgroundImage: ╨д╨╛╨╜╨╛╨▓╨╛╨╡ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡
+  backgroundImageClear: ╨Ю╤З╨╕╤Б╤В╨╕╤В╤М
+  backgroundImageDescription: ╨Т╤Л╨▒╨╡╤А╨╕╤В╨╡ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨▓ ╨║╨░╤З╨╡╤Б╤В╨▓╨╡
+    ╤Д╨╛╨╜╨░ ╨╕╨╗╨╕ ╨╛╤З╨╕╤Б╤В╨╕╤В╨╡ ╨╡╨│╨╛.
   useDesktopBackground: Use current desktop wallpaper
   backgroundImageFit:
-    contain: Вместить
-    cover: Обрезать
-    name: '{name} o''chirilsinmi'
-  backgroundImageUrl: URL-адрес изображения
-  backgroundImageUrlPlaceholder: Введите URL-адрес HTTP/HTTPS для изображения
-  backgroundMusic: Фоновая музыка
-  backgroundMusicUrl: URL-адрес музыки
-  backgroundMusicUrlPlaceholder: Введите URL-адрес HTTP/HTTPS для музыки
-  backgroundType: Фоновой эффект
-  backgroundTypeDescription: Показывать специальный эффект на фоне (это может повлиять
-    на производительность).
+    contain: ╨Т╨╝╨╡╤Б╤В╨╕╤В╤М
+    cover: ╨Ю╨▒╤А╨╡╨╖╨░╤В╤М
+    name: ╨Я╨╛╨┤╨╛╨│╨╜╨░╤В╤М
+  backgroundImageUrl: URL-╨░╨┤╤А╨╡╤Б ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╤П
+  backgroundImageUrlPlaceholder: ╨Т╨▓╨╡╨┤╨╕╤В╨╡ URL-╨░╨┤╤А╨╡╤Б HTTP/HTTPS ╨┤╨╗╤П ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╤П
+  backgroundMusic: ╨д╨╛╨╜╨╛╨▓╨░╤П ╨╝╤Г╨╖╤Л╨║╨░
+  backgroundMusicUrl: URL-╨░╨┤╤А╨╡╤Б ╨╝╤Г╨╖╤Л╨║╨╕
+  backgroundMusicUrlPlaceholder: ╨Т╨▓╨╡╨┤╨╕╤В╨╡ URL-╨░╨┤╤А╨╡╤Б HTTP/HTTPS ╨┤╨╗╤П ╨╝╤Г╨╖╤Л╨║╨╕
+  backgroundType: ╨д╨╛╨╜╨╛╨▓╨╛╨╣ ╤Н╤Д╤Д╨╡╨║╤В
+  backgroundTypeDescription: ╨Я╨╛╨║╨░╨╖╤Л╨▓╨░╤В╤М ╤Б╨┐╨╡╤Ж╨╕╨░╨╗╤М╨╜╤Л╨╣ ╤Н╤Д╤Д╨╡╨║╤В
+    ╨╜╨░ ╤Д╨╛╨╜╨╡ (╤Н╤В╨╛ ╨╝╨╛╨╢╨╡╤В ╨┐╨╛╨▓╨╗╨╕╤П╤В╤М
   backgroundTypes:
-    halo: Ореол
-    image: Изображение
-    none: Tanlovni bekor qilish
-    particle: Частицы
-    video: Видео
-  backgroundVideo: Фоновое видео
-  backgroundVideoDescription: Изменить или очистить видео.
-  backgroundVideoUrl: URL-адрес видео
-  backgroundVideoUrlPlaceholder: Введите URL-адрес HTTP/HTTPS для видео
-  backgroundVideoVolume: Громкость
-  backgroundVideoVolumeDescription: Перетащите, чтобы отрегулировать громкость.
-  browseRoot: Изменить
-  checkUpdate: Проверить обновление
+    halo: ╨Ю╤А╨╡╨╛╨╗
+    image: ╨Ш╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡
+    none: ╨Э╨╡╤В
+    particle: ╨з╨░╤Б╤В╨╕╤Ж╤Л
+    video: ╨Т╨╕╨┤╨╡╨╛
+  backgroundVideo: ╨д╨╛╨╜╨╛╨▓╨╛╨╡ ╨▓╨╕╨┤╨╡╨╛
+  backgroundVideoDescription: ╨Ш╨╖╨╝╨╡╨╜╨╕╤В╤М ╨╕╨╗╨╕ ╨╛╤З╨╕╤Б╤В╨╕╤В╤М ╨▓╨╕╨┤╨╡╨╛.
+  backgroundVideoUrl: URL-╨░╨┤╤А╨╡╤Б ╨▓╨╕╨┤╨╡╨╛
+  backgroundVideoUrlPlaceholder: ╨Т╨▓╨╡╨┤╨╕╤В╨╡ URL-╨░╨┤╤А╨╡╤Б HTTP/HTTPS ╨┤╨╗╤П ╨▓╨╕╨┤╨╡╨╛
+  backgroundVideoVolume: ╨У╤А╨╛╨╝╨║╨╛╤Б╤В╤М
+  backgroundVideoVolumeDescription: ╨Я╨╡╤А╨╡╤В╨░╤Й╨╕╤В╨╡, ╤З╤В╨╛╨▒╤Л ╨╛╤В╤А╨╡╨│╤Г╨╗╨╕╤А╨╛╨▓╨░╤В╤М
+    ╨│╤А╨╛╨╝╨║╨╛╤Б╤В╤М.
+  browseRoot: ╨Ш╨╖╨╝╨╡╨╜╨╕╤В╤М
+  checkUpdate: ╨Я╤А╨╛╨▓╨╡╤А╨╕╤В╤М ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╨╡
   colorTheme:
-    appBarColor: Цвет панели приложения
-    backgroundColor: Цвет фона
-    cardColor: Цвет карточки
-    description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-      komilmi?
-    errorColor: Цвет ошибки
-    name: '{name} o''chirilsinmi'
-    primaryColor: Основной цвет
-    sideBarColor: Цвет боковой панели
-    warningColor: Цвет предупреждения
+    appBarColor: ╨ж╨▓╨╡╤В ╨┐╨░╨╜╨╡╨╗╨╕ ╨┐╤А╨╕╨╗╨╛╨╢╨╡╨╜╨╕╤П
+    backgroundColor: ╨ж╨▓╨╡╤В ╤Д╨╛╨╜╨░
+    cardColor: ╨ж╨▓╨╡╤В ╨║╨░╤А╤В╨╛╤З╨║╨╕
+    description: ╨Ш╨╖╨╝╨╡╨╜╨╕╤В╤М ╤Ж╨▓╨╡╤В╨░ ╨▓ ╤В╨╡╨╝╨╡
+    errorColor: ╨ж╨▓╨╡╤В ╨╛╤И╨╕╨▒╨║╨╕
+    name: ╨ж╨▓╨╡╤В ╤В╨╡╨╝╤Л ╨╕ ╤А╨░╨╖╨╝╤Л╤В╨╕╨╡
+    primaryColor: ╨Ю╤Б╨╜╨╛╨▓╨╜╨╛╨╣ ╤Ж╨▓╨╡╤В
+    sideBarColor: ╨ж╨▓╨╡╤В ╨▒╨╛╨║╨╛╨▓╨╛╨╣ ╨┐╨░╨╜╨╡╨╗╨╕
+    warningColor: ╨ж╨▓╨╡╤В ╨┐╤А╨╡╨┤╤Г╨┐╤А╨╡╨╢╨┤╨╡╨╜╨╕╤П
   customCss:
     advancedDescription: Override the launcher's current styling with your own CSS.
     assistantHint: Describe the look you want and I'll write the CSS for you.
@@ -1735,517 +1673,524 @@ setting:
     openInDialog: Open in the agent dialog
     title: Custom CSS
     warning: Custom CSS allows you to customize any aspect of the launcher. Be careful
-      when pasting CSS from untrusted sources, as it can modify the UI layout.
-  darkTheme: Тема
-  darkThemeDescription: Выберите тёмную или светлую тему.
-  devModeLabel: РАЗРАБОТКА
-  developerMode: Режим разработчика
-  developerModeDescription: Эта опция предназначена для тестирования ваших собственных
-    модов.
-  disableTelemetry: Отключить телеметрию
-  disableTelemetryDescription: Если включено, XMCL будет собирать информацию о запуске
-    экземпляра и входа пользователя.
-  enableDedicatedGPUOptimization: Назначить выделенный графический процессор
-  enableDedicatedGPUOptimizationDescription: Эта опция назначит выделенный графический
-    процессор процессу Minecraft.
-  enableDiscord: Включить активность Discord
-  enableDiscordDescription: Эта опция будет показывать статус лаунчера в Discord.
-  enterUrl: Введите URL
-  exportSettings: Экспорт настроек
-  exportSettingsHint: Сохранить текущие настройки в файл
-  general: Общее
-  githubRelease: Релиз GitHub
-  globalJava: Предпочитаемая Java
-  globalJavaHint: В автоматическом режиме сначала используется эта Java и только при
-    несовместимости с версией игры выполняется переход к автоопределению.
-  globalSetting: Глобальные настройки экземпляра
-  globalSettingHint: Экземпляр будет использовать эти настройки по умолчанию.
-  importSettings: Импорт настроек
-  importSettingsHint: Загрузить настройки из ранее экспортированного файла
+  darkTheme: ╨в╨╡╨╝╨░
+  darkThemeDescription: ╨Т╤Л╨▒╨╡╤А╨╕╤В╨╡ ╤В╤С╨╝╨╜╤Г╤О ╨╕╨╗╨╕ ╤Б╨▓╨╡╤В╨╗╤Г╤О ╤В╨╡╨╝╤Г.
+  devModeLabel: ╨а╨Р╨Ч╨а╨Р╨С╨Ю╨в╨Ъ╨Р
+  developerMode: ╨а╨╡╨╢╨╕╨╝ ╤А╨░╨╖╤А╨░╨▒╨╛╤В╤З╨╕╨║╨░
+  developerModeDescription: ╨н╤В╨░ ╨╛╨┐╤Ж╨╕╤П ╨┐╤А╨╡╨┤╨╜╨░╨╖╨╜╨░╤З╨╡╨╜╨░ ╨┤╨╗╤П ╤В╨╡╤Б╤В╨╕╤А╨╛╨▓╨░╨╜╨╕╤П
+    ╨▓╨░╤И╨╕╤Е ╤Б╨╛╨▒╤Б╤В╨▓╨╡╨╜╨╜╤Л╤Е
+  disableTelemetry: ╨Ю╤В╨║╨╗╤О╤З╨╕╤В╤М ╤В╨╡╨╗╨╡╨╝╨╡╤В╤А╨╕╤О
+  disableTelemetryDescription: ╨Х╤Б╨╗╨╕ ╨▓╨║╨╗╤О╤З╨╡╨╜╨╛, NeoTerra Launcher ╨▒╤Г╨┤╨╡╤В
+    ╤Б╨╛╨▒╨╕╤А╨░╤В╤М ╨╕╨╜╤Д╨╛╤А╨╝╨░╤Ж╨╕╤О
+  enableDedicatedGPUOptimization: ╨Э╨░╨╖╨╜╨░╤З╨╕╤В╤М ╨▓╤Л╨┤╨╡╨╗╨╡╨╜╨╜╤Л╨╣ ╨│╤А╨░╤Д╨╕╤З╨╡╤Б╨║╨╕╨╣
+    ╨┐╤А╨╛╤Ж╨╡╤Б╤Б╨╛╤А
+  enableDedicatedGPUOptimizationDescription: ╨н╤В╨░ ╨╛╨┐╤Ж╨╕╤П ╨╜╨░╨╖╨╜╨░╤З╨╕╤В ╨▓╤Л╨┤╨╡╨╗╨╡╨╜╨╜╤Л╨╣
+    ╨│╤А╨░╤Д╨╕╤З╨╡╤Б╨║╨╕╨╣
+  enableDiscord: ╨Т╨║╨╗╤О╤З╨╕╤В╤М ╨░╨║╤В╨╕╨▓╨╜╨╛╤Б╤В╤М Discord
+  enableDiscordDescription: ╨н╤В╨░ ╨╛╨┐╤Ж╨╕╤П ╨▒╤Г╨┤╨╡╤В ╨┐╨╛╨║╨░╨╖╤Л╨▓╨░╤В╤М ╤Б╤В╨░╤В╤Г╤Б
+    ╨╗╨░╤Г╨╜╤З╨╡╤А╨░ ╨▓ Discord.
+  enterUrl: ╨Т╨▓╨╡╨┤╨╕╤В╨╡ URL
+  exportSettings: ╨н╨║╤Б╨┐╨╛╤А╤В ╨╜╨░╤Б╤В╤А╨╛╨╡╨║
+  exportSettingsHint: ╨б╨╛╤Е╤А╨░╨╜╨╕╤В╤М ╤В╨╡╨║╤Г╤Й╨╕╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕ ╨▓ ╤Д╨░╨╣╨╗
+  general: Asosiy Sozlamalar
+  githubRelease: ╨а╨╡╨╗╨╕╨╖ GitHub
+  globalJava: ╨Я╤А╨╡╨┤╨┐╨╛╤З╨╕╤В╨░╨╡╨╝╨░╤П Java
+  globalJavaHint: ╨Т ╨░╨▓╤В╨╛╨╝╨░╤В╨╕╤З╨╡╤Б╨║╨╛╨╝ ╤А╨╡╨╢╨╕╨╝╨╡ ╤Б╨╜╨░╤З╨░╨╗╨░ ╨╕╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╡╤В╤Б╤П
+    ╤Н╤В╨░ Java ╨╕ ╤В╨╛╨╗╤М╨║╨╛ ╨┐╤А╨╕
+  globalSetting: ╨У╨╗╨╛╨▒╨░╨╗╤М╨╜╤Л╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+  globalSettingHint: ╨н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А ╨▒╤Г╨┤╨╡╤В ╨╕╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╤М ╤Н╤В╨╕
+    ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕ ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О.
+  importSettings: ╨Ш╨╝╨┐╨╛╤А╤В ╨╜╨░╤Б╤В╤А╨╛╨╡╨║
+  importSettingsHint: ╨Ч╨░╨│╤А╤Г╨╖╨╕╤В╤М ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕ ╨╕╨╖ ╤А╨░╨╜╨╡╨╡ ╤Н╨║╤Б╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╨╜╨╜╨╛╨│╨╛
+    ╤Д╨░╨╣╨╗╨░
   instanceTheme:
-    activeDescription: 'Этот экземпляр использует пользовательскую тему.
-
-      Вы можете удалить его, чтобы использовать глобальную тему.'
-    description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-      komilmi?
-    name: '{name} o''chirilsinmi'
-  language: Язык
-  languageDescription: Отображаемый язык интерфейса.
-  latestVersion: Последняя версия
+    activeDescription: '''╨н╤В╨╛╤В ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А ╨╕╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╡╤В ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤М╤Б╨║╤Г╤О
+      ╤В╨╡╨╝╤Г.'
+    description: '''╨Т╨║╨╗╤О╤З╨╕╤В╨╡ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤М╤Б╨║╤Г╤О ╤В╨╡╨╝╤Г ╨┤╨╗╤П
+      ╤Н╤В╨╛╨│╨╛ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░.'
+    name: ╨в╨╡╨╝╨░ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+  language: ╨п╨╖╤Л╨║
+  languageDescription: ╨Ю╤В╨╛╨▒╤А╨░╨╢╨░╨╡╨╝╤Л╨╣ ╤П╨╖╤Л╨║ ╨╕╨╜╤В╨╡╤А╤Д╨╡╨╣╤Б╨░.
+  latestVersion: ╨Я╨╛╤Б╨╗╨╡╨┤╨╜╤П╤П ╨▓╨╡╤А╤Б╨╕╤П
   layout:
-    default: Odatiy
-    focus: Для фокусировки
-  layoutDescription: Вид интерфейса лаунчера, представляющий различную логику пользовательского
-    интерфейса.
-  layoutTitle: Вид интерфейса
-  linuxEnableDedicatedGPUOptimization: Назначение выделенного графического процессора
-  linuxEnableDedicatedGPUOptimizationDescription: Эта опция назначает выделенный GPU
-    для процесса Minecraft.
-  linuxTitlebar: Нативный заголовок окна
-  linuxTitlebarDescription: Использовать нативный заголовок окна Linux для лаунчера.
-  livePreview: Живой предпросмотр
-  location: Место для хранения файлов лаунчера
-  manualUpdateHint: Версия не может быть обновлена автоматически. Пожалуйста, скачайте
-    пусковую установку заново с официального сайта!
-  maunalUpdateHint: Данная версия не может быть обновлена автоматически. Пожалуйста,
-    скачайте лаунчер с сайта ещё раз!
-  maxSockets: Максимум сокетов
-  maxSocketsDescription: Ограничьте количество сокетов на хост или для всех. 0 - без
-    ограничений.
-  maxSocketsTitle: Максимальное количество HTTP-сокетов
-  memoryAssignment: Назначение памяти
-  migrateFromOther: Импорт из другого лаунчера
-  minecraftOptions: Настройки Minecraft
-  name: '{name} o''chirilsinmi'
-  network: Настройки сети
-  newsPosition: Переместить раздел новостей
-  officialWebsite: Официальный сайт
+    default: ╨б╤В╨░╨╜╨┤╨░╤А╤В╨╜╤Л╨╣
+    focus: ╨Ф╨╗╤П ╤Д╨╛╨║╤Г╤Б╨╕╤А╨╛╨▓╨║╨╕
+  layoutDescription: ╨Т╨╕╨┤ ╨╕╨╜╤В╨╡╤А╤Д╨╡╨╣╤Б╨░ ╨╗╨░╤Г╨╜╤З╨╡╤А╨░, ╨┐╤А╨╡╨┤╤Б╤В╨░╨▓╨╗╤П╤О╤Й╨╕╨╣
+    ╤А╨░╨╖╨╗╨╕╤З╨╜╤Г╤О ╨╗╨╛╨│╨╕╨║╤Г ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤М╤Б╨║╨╛╨│╨╛
+  layoutTitle: ╨Т╨╕╨┤ ╨╕╨╜╤В╨╡╤А╤Д╨╡╨╣╤Б╨░
+  linuxEnableDedicatedGPUOptimization: ╨Э╨░╨╖╨╜╨░╤З╨╡╨╜╨╕╨╡ ╨▓╤Л╨┤╨╡╨╗╨╡╨╜╨╜╨╛╨│╨╛
+    ╨│╤А╨░╤Д╨╕╤З╨╡╤Б╨║╨╛╨│╨╛ ╨┐╤А╨╛╤Ж╨╡╤Б╤Б╨╛╤А╨░
+  linuxEnableDedicatedGPUOptimizationDescription: ╨н╤В╨░ ╨╛╨┐╤Ж╨╕╤П ╨╜╨░╨╖╨╜╨░╤З╨░╨╡╤В
+    ╨▓╤Л╨┤╨╡╨╗╨╡╨╜╨╜╤Л╨╣ GPU
+  linuxTitlebar: ╨Э╨░╤В╨╕╨▓╨╜╤Л╨╣ ╨╖╨░╨│╨╛╨╗╨╛╨▓╨╛╨║ ╨╛╨║╨╜╨░
+  linuxTitlebarDescription: ╨Ш╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╤М ╨╜╨░╤В╨╕╨▓╨╜╤Л╨╣ ╨╖╨░╨│╨╛╨╗╨╛╨▓╨╛╨║
+    ╨╛╨║╨╜╨░ Linux ╨┤╨╗╤П ╨╗╨░╤Г╨╜╤З╨╡╤А╨░.
+  livePreview: ╨Ц╨╕╨▓╨╛╨╣ ╨┐╤А╨╡╨┤╨┐╤А╨╛╤Б╨╝╨╛╤В╤А
+  location: ╨Ь╨╡╤Б╤В╨╛ ╨┤╨╗╤П ╤Е╤А╨░╨╜╨╡╨╜╨╕╤П ╤Д╨░╨╣╨╗╨╛╨▓ ╨╗╨░╤Г╨╜╤З╨╡╤А╨░
+  manualUpdateHint: ╨Т╨╡╤А╤Б╨╕╤П ╨╜╨╡ ╨╝╨╛╨╢╨╡╤В ╨▒╤Л╤В╤М ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨░ ╨░╨▓╤В╨╛╨╝╨░╤В╨╕╤З╨╡╤Б╨║╨╕.
+    ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╤Б╨║╨░╤З╨░╨╣╤В╨╡
+  maunalUpdateHint: ╨Ф╨░╨╜╨╜╨░╤П ╨▓╨╡╤А╤Б╨╕╤П ╨╜╨╡ ╨╝╨╛╨╢╨╡╤В ╨▒╤Л╤В╤М ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨░
+    ╨░╨▓╤В╨╛╨╝╨░╤В╨╕╤З╨╡╤Б╨║╨╕. ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░,
+  maxSockets: ╨Ь╨░╨║╤Б╨╕╨╝╤Г╨╝ ╤Б╨╛╨║╨╡╤В╨╛╨▓
+  maxSocketsDescription: ╨Ю╨│╤А╨░╨╜╨╕╤З╤М╤В╨╡ ╨║╨╛╨╗╨╕╤З╨╡╤Б╤В╨▓╨╛ ╤Б╨╛╨║╨╡╤В╨╛╨▓
+    ╨╜╨░ ╤Е╨╛╤Б╤В ╨╕╨╗╨╕ ╨┤╨╗╤П ╨▓╤Б╨╡╤Е. 0 - ╨▒╨╡╨╖
+  maxSocketsTitle: ╨Ь╨░╨║╤Б╨╕╨╝╨░╨╗╤М╨╜╨╛╨╡ ╨║╨╛╨╗╨╕╤З╨╡╤Б╤В╨▓╨╛ HTTP-╤Б╨╛╨║╨╡╤В╨╛╨▓
+  memoryAssignment: ╨Э╨░╨╖╨╜╨░╤З╨╡╨╜╨╕╨╡ ╨┐╨░╨╝╤П╤В╨╕
+  migrateFromOther: ╨Ш╨╝╨┐╨╛╤А╤В ╨╕╨╖ ╨┤╤А╤Г╨│╨╛╨│╨╛ ╨╗╨░╤Г╨╜╤З╨╡╤А╨░
+  minecraftOptions: ╨Э╨░╤Б╤В╤А╨╛╨╣╨║╨╕ Minecraft
+  name: ╨У╨╗╨╛╨▒╨░╨╗╤М╨╜╤Л╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕ | ╨У╨╗╨╛╨▒╨░╨╗╤М╨╜╤Л╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕
+  network: ╨Э╨░╤Б╤В╤А╨╛╨╣╨║╨╕ ╤Б╨╡╤В╨╕
+  newsPosition: ╨Я╨╡╤А╨╡╨╝╨╡╤Б╤В╨╕╤В╤М ╤А╨░╨╖╨┤╨╡╨╗ ╨╜╨╛╨▓╨╛╤Б╤В╨╡╨╣
+  officialWebsite: ╨Ю╤Д╨╕╤Ж╨╕╨░╨╗╤М╨╜╤Л╨╣ ╤Б╨░╨╣╤В
   particleMode:
-    bubble: Надувание
-    name: '{name} o''chirilsinmi'
-    push: Добавление
-    remove: Удаление
-    repulse: Отталкивание
-  particleModeDescription: Выберите поведение частиц при нажатии.
-  quickLaunchSettings: Быстрый запуск
-  replaceNative: Заменить нативные библиотеки
-  replaceNativeDescription: Заменить нативные библиотеки в соответствии с архитектурой
-    вашего компьютера.
+    bubble: ╨Э╨░╨┤╤Г╨▓╨░╨╜╨╕╨╡
+    name: ╨Я╨╛╨▓╨╡╨┤╨╡╨╜╨╕╨╡ ╤З╨░╤Б╤В╨╕╤Ж
+    push: ╨Ф╨╛╨▒╨░╨▓╨╗╨╡╨╜╨╕╨╡
+    remove: ╨г╨┤╨░╨╗╨╡╨╜╨╕╨╡
+    repulse: ╨Ю╤В╤В╨░╨╗╨║╨╕╨▓╨░╨╜╨╕╨╡
+  particleModeDescription: ╨Т╤Л╨▒╨╡╤А╨╕╤В╨╡ ╨┐╨╛╨▓╨╡╨┤╨╡╨╜╨╕╨╡ ╤З╨░╤Б╤В╨╕╤Ж ╨┐╤А╨╕
+    ╨╜╨░╨╢╨░╤В╨╕╨╕.
+  quickLaunchSettings: ╨С╤Л╤Б╤В╤А╤Л╨╣ ╨╖╨░╨┐╤Г╤Б╨║
+  replaceNative: ╨Ч╨░╨╝╨╡╨╜╨╕╤В╤М ╨╜╨░╤В╨╕╨▓╨╜╤Л╨╡ ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╨╕
+  replaceNativeDescription: ╨Ч╨░╨╝╨╡╨╜╨╕╤В╤М ╨╜╨░╤В╨╕╨▓╨╜╤Л╨╡ ╨▒╨╕╨▒╨╗╨╕╨╛╤В╨╡╨║╨╕
+    ╨▓ ╤Б╨╛╨╛╤В╨▓╨╡╤В╤Б╤В╨▓╨╕╨╕ ╤Б ╨░╤А╤Е╨╕╤В╨╡╨║╤В╤Г╤А╨╛╨╣
   replaceNatives:
-    all: Barchasini tanlash
-    legacy: Только старые версии
-  resetAllSettings: Сбросить все настройки
-  resetAllSettingsConfirmMessage: Это навсегда удалит все настройки, учетные записи,
-    экземпляры, группы и кэшированные данные. Это действие нельзя отменить. Вы уверены?
-  resetAllSettingsConfirmTitle: Сбросить все настройки?
-  resetAllSettingsHint: Сбросить лаунчер до заводских настроек (удаляет все)
-  resetAllSettingsSuccess: Все настройки были сброшены. Лаунчер перезапустится.
-  resetSettingsError: 'Ошибка при сбросе настроек: {error}'
-  resetToDefault: Сбросить к значениям по умолчанию
-  select: Изменить
+    all: ╨Т╤Б╨╡
+    legacy: ╨в╨╛╨╗╤М╨║╨╛ ╤Б╤В╨░╤А╤Л╨╡ ╨▓╨╡╤А╤Б╨╕╨╕
+  resetAllSettings: ╨б╨▒╤А╨╛╤Б╨╕╤В╤М ╨▓╤Б╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕
+  resetAllSettingsConfirmMessage: ╨н╤В╨╛ ╨╜╨░╨▓╤Б╨╡╨│╨┤╨░ ╤Г╨┤╨░╨╗╨╕╤В ╨▓╤Б╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕,
+    ╤Г╤З╨╡╤В╨╜╤Л╨╡ ╨╖╨░╨┐╨╕╤Б╨╕,
+  resetAllSettingsConfirmTitle: ╨б╨▒╤А╨╛╤Б╨╕╤В╤М ╨▓╤Б╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕?
+  resetAllSettingsHint: ╨б╨▒╤А╨╛╤Б╨╕╤В╤М ╨╗╨░╤Г╨╜╤З╨╡╤А ╨┤╨╛ ╨╖╨░╨▓╨╛╨┤╤Б╨║╨╕╤Е ╨╜╨░╤Б╤В╤А╨╛╨╡╨║
+    (╤Г╨┤╨░╨╗╤П╨╡╤В ╨▓╤Б╨╡)
+  resetAllSettingsSuccess: ╨Т╤Б╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕ ╨▒╤Л╨╗╨╕ ╤Б╨▒╤А╨╛╤И╨╡╨╜╤Л. ╨Ы╨░╤Г╨╜╤З╨╡╤А
+    ╨┐╨╡╤А╨╡╨╖╨░╨┐╤Г╤Б╤В╨╕╤В╤Б╤П.
+  resetSettingsError: '╨Ю╤И╨╕╨▒╨║╨░ ╨┐╤А╨╕ ╤Б╨▒╤А╨╛╤Б╨╡ ╨╜╨░╤Б╤В╤А╨╛╨╡╨║: {error}'
+  resetToDefault: ╨б╨▒╤А╨╛╤Б╨╕╤В╤М ╨║ ╨╖╨╜╨░╤З╨╡╨╜╨╕╤П╨╝ ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О
+  select: ╨Ш╨╖╨╝╨╡╨╜╨╕╤В╤М
   setAsBackground:
-    failed: Muvaffaqiyatsiz
-    global: Сделать фоном лаунчера
-    instance: Сделать фоном экземпляра
-    successGlobal: Фоновое изображение обновлено.
-    successInstance: Фоновое изображение экземпляра обновлено.
-  settingsExported: Настройки успешно экспортированы
-  settingsImportError: Не удалось импортировать настройки. Проверьте формат файла.
-  settingsImported: Настройки успешно импортированы
-  settingsReloadHint: Лаунчер перезагрузится для применения всех настроек.
-  showNewsHeader: Показать витрину новостей
-  showRoot: Открыть папку
-  sidebarAlign: Выравнивание боковой панели
-  sidebarAutoHide: Авто-скрытие боковой панели
-  sidebarAutoHideHint: Скрывать боковую панель автоматически и показывать при наведении
-  sidebarClassic: Классический
+    failed: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╤Д╨╛╨╜╨╛╨▓╨╛╨╡ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡
+    global: ╨б╨┤╨╡╨╗╨░╤В╤М ╤Д╨╛╨╜╨╛╨╝ ╨╗╨░╤Г╨╜╤З╨╡╤А╨░
+    instance: ╨б╨┤╨╡╨╗╨░╤В╤М ╤Д╨╛╨╜╨╛╨╝ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+    successGlobal: ╨д╨╛╨╜╨╛╨▓╨╛╨╡ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╛.
+    successInstance: ╨д╨╛╨╜╨╛╨▓╨╛╨╡ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░ ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╛.
+  settingsExported: ╨Э╨░╤Б╤В╤А╨╛╨╣╨║╨╕ ╤Г╤Б╨┐╨╡╤И╨╜╨╛ ╤Н╨║╤Б╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╨╜╤Л
+  settingsImportError: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╨╕╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╕.
+    ╨Я╤А╨╛╨▓╨╡╤А╤М╤В╨╡ ╤Д╨╛╤А╨╝╨░╤В ╤Д╨░╨╣╨╗╨░.
+  settingsImported: ╨Э╨░╤Б╤В╤А╨╛╨╣╨║╨╕ ╤Г╤Б╨┐╨╡╤И╨╜╨╛ ╨╕╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╨╜╤Л
+  settingsReloadHint: ╨Ы╨░╤Г╨╜╤З╨╡╤А ╨┐╨╡╤А╨╡╨╖╨░╨│╤А╤Г╨╖╨╕╤В╤Б╤П ╨┤╨╗╤П ╨┐╤А╨╕╨╝╨╡╨╜╨╡╨╜╨╕╤П
+    ╨▓╤Б╨╡╤Е ╨╜╨░╤Б╤В╤А╨╛╨╡╨║.
+  showNewsHeader: ╨Я╨╛╨║╨░╨╖╨░╤В╤М ╨▓╨╕╤В╤А╨╕╨╜╤Г ╨╜╨╛╨▓╨╛╤Б╤В╨╡╨╣
+  showRoot: ╨Ю╤В╨║╤А╤Л╤В╤М ╨┐╨░╨┐╨║╤Г
+  sidebarAlign: ╨Т╤Л╤А╨░╨▓╨╜╨╕╨▓╨░╨╜╨╕╨╡ ╨▒╨╛╨║╨╛╨▓╨╛╨╣ ╨┐╨░╨╜╨╡╨╗╨╕
+  sidebarAutoHide: ╨Р╨▓╤В╨╛-╤Б╨║╤А╤Л╤В╨╕╨╡ ╨▒╨╛╨║╨╛╨▓╨╛╨╣ ╨┐╨░╨╜╨╡╨╗╨╕
+  sidebarAutoHideHint: ╨б╨║╤А╤Л╨▓╨░╤В╤М ╨▒╨╛╨║╨╛╨▓╤Г╤О ╨┐╨░╨╜╨╡╨╗╤М ╨░╨▓╤В╨╛╨╝╨░╤В╨╕╤З╨╡╤Б╨║╨╕
+    ╨╕ ╨┐╨╛╨║╨░╨╖╤Л╨▓╨░╤В╤М ╨┐╤А╨╕ ╨╜╨░╨▓╨╡╨┤╨╡╨╜╨╕╨╕
+  sidebarClassic: ╨Ъ╨╗╨░╤Б╤Б╨╕╤З╨╡╤Б╨║╨╕╨╣
   sidebarNotch: Notch
-  sidebarPosition: Положение боковой панели
-  sidebarScale: Масштаб боковой панели
-  sidebarShowOnlyPinned: Показывать только закрепленные экземпляры
-  sidebarShowOnlyPinnedHint: Отображать только закрепленные экземпляры на боковой
-    панели
-  sidebarStyle: Стиль боковой панели
-  sidebarStyleHint: Выберите между классическим и современным дизайном Notch
-  streamerMode: Режим стримера
-  streamerModeDescription: Эта опция скроет вашу личную информацию, такую как электронная
-    почта, в лаунчере.
+  sidebarPosition: ╨Я╨╛╨╗╨╛╨╢╨╡╨╜╨╕╨╡ ╨▒╨╛╨║╨╛╨▓╨╛╨╣ ╨┐╨░╨╜╨╡╨╗╨╕
+  sidebarScale: ╨Ь╨░╤Б╤И╤В╨░╨▒ ╨▒╨╛╨║╨╛╨▓╨╛╨╣ ╨┐╨░╨╜╨╡╨╗╨╕
+  sidebarShowOnlyPinned: ╨Я╨╛╨║╨░╨╖╤Л╨▓╨░╤В╤М ╤В╨╛╨╗╤М╨║╨╛ ╨╖╨░╨║╤А╨╡╨┐╨╗╨╡╨╜╨╜╤Л╨╡
+    ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╤Л
+  sidebarShowOnlyPinnedHint: ╨Ю╤В╨╛╨▒╤А╨░╨╢╨░╤В╤М ╤В╨╛╨╗╤М╨║╨╛ ╨╖╨░╨║╤А╨╡╨┐╨╗╨╡╨╜╨╜╤Л╨╡
+    ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╤Л ╨╜╨░ ╨▒╨╛╨║╨╛╨▓╨╛╨╣
+  sidebarStyle: ╨б╤В╨╕╨╗╤М ╨▒╨╛╨║╨╛╨▓╨╛╨╣ ╨┐╨░╨╜╨╡╨╗╨╕
+  sidebarStyleHint: ╨Т╤Л╨▒╨╡╤А╨╕╤В╨╡ ╨╝╨╡╨╢╨┤╤Г ╨║╨╗╨░╤Б╤Б╨╕╤З╨╡╤Б╨║╨╕╨╝ ╨╕ ╤Б╨╛╨▓╤А╨╡╨╝╨╡╨╜╨╜╤Л╨╝
+    ╨┤╨╕╨╖╨░╨╣╨╜╨╛╨╝ Notch
+  streamerMode: ╨а╨╡╨╢╨╕╨╝ ╤Б╤В╤А╨╕╨╝╨╡╤А╨░
+  streamerModeDescription: ╨н╤В╨░ ╨╛╨┐╤Ж╨╕╤П ╤Б╨║╤А╨╛╨╡╤В ╨▓╨░╤И╤Г ╨╗╨╕╤З╨╜╤Г╤О ╨╕╨╜╤Д╨╛╤А╨╝╨░╤Ж╨╕╤О,
+    ╤В╨░╨║╤Г╤О ╨║╨░╨║ ╤Н╨╗╨╡╨║╤В╤А╨╛╨╜╨╜╨░╤П
   theme:
-    dark: Тёмная тема
-    light: Светлая тема
-    system: Использовать системную тему
-  themeExport: Экспортировать тему
-  themeBorderRadius: Скругленные углы
-  themeBorderRadiusDescription: Включить или отключить скругленные углы для карточек,
-    диалогов, меню и панелей.
-  themeFont: Шрифт
-  themeFontDescription: Изменить шрифт лаунчера.
-  themeFontUrl: URL-адрес шрифта
-  themeFontUrlPlaceholder: Введите URL-адрес HTTP/HTTPS для шрифта
-  themeImport: Импортировать тему
-  themeResetFont: Сбросить
-  themeSelectFont: Изменить
-  themeSettings: Настройки темы
-  themeShare: Поделиться темой
-  themeShareDescription: Вы можете поделиться темой с вашим другом.
+    dark: ╨в╤С╨╝╨╜╨░╤П ╤В╨╡╨╝╨░
+    light: ╨б╨▓╨╡╤В╨╗╨░╤П ╤В╨╡╨╝╨░
+    system: ╨Ш╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╤М ╤Б╨╕╤Б╤В╨╡╨╝╨╜╤Г╤О ╤В╨╡╨╝╤Г
+  themeExport: ╨н╨║╤Б╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╤В╨╡╨╝╤Г
+  themeBorderRadius: ╨б╨║╤А╤Г╨│╨╗╨╡╨╜╨╜╤Л╨╡ ╤Г╨│╨╗╤Л
+  themeBorderRadiusDescription: ╨Т╨║╨╗╤О╤З╨╕╤В╤М ╨╕╨╗╨╕ ╨╛╤В╨║╨╗╤О╤З╨╕╤В╤М ╤Б╨║╤А╤Г╨│╨╗╨╡╨╜╨╜╤Л╨╡
+    ╤Г╨│╨╗╤Л ╨┤╨╗╤П ╨║╨░╤А╤В╨╛╤З╨╡╨║,
+  themeFont: ╨и╤А╨╕╤Д╤В
+  themeFontDescription: ╨Ш╨╖╨╝╨╡╨╜╨╕╤В╤М ╤И╤А╨╕╤Д╤В ╨╗╨░╤Г╨╜╤З╨╡╤А╨░.
+  themeFontUrl: URL-╨░╨┤╤А╨╡╤Б ╤И╤А╨╕╤Д╤В╨░
+  themeFontUrlPlaceholder: ╨Т╨▓╨╡╨┤╨╕╤В╨╡ URL-╨░╨┤╤А╨╡╤Б HTTP/HTTPS ╨┤╨╗╤П ╤И╤А╨╕╤Д╤В╨░
+  themeImport: ╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╤В╨╡╨╝╤Г
+  themeResetFont: ╨б╨▒╤А╨╛╤Б╨╕╤В╤М
+  themeSelectFont: ╨Ш╨╖╨╝╨╡╨╜╨╕╤В╤М
+  themeSettings: ╨Э╨░╤Б╤В╤А╨╛╨╣╨║╨╕ ╤В╨╡╨╝╤Л
+  themeShare: ╨Я╨╛╨┤╨╡╨╗╨╕╤В╤М╤Б╤П ╤В╨╡╨╝╨╛╨╣
+  themeShareDescription: ╨Т╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨┐╨╛╨┤╨╡╨╗╨╕╤В╤М╤Б╤П ╤В╨╡╨╝╨╛╨╣ ╤Б ╨▓╨░╤И╨╕╨╝
+    ╨┤╤А╤Г╨│╨╛╨╝.
   themeStore:
-    description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-      komilmi?
-    loadConfirmMessage: Загрузка сохранённой темы заменит текущую. При необходимости
-      сделайте резервную копию.
-    loadConfirmTitle: Заменить текущую тему?
-    loadTheme: Загрузить тему
-    name: '{name} o''chirilsinmi'
-    noSavedThemes: Сохранённых тем пока нет
-    saveDialogTitle: Сохранить тему
-    saveToStore: Сохранить в хранилище
-    savedThemes: Сохранённые темы
-    themeName: Название темы
-    themeNameHint: Имя для сохранения этой темы
-  update: Обновить
-  useBmclAPI: Использовать BMCL API
-  useBmclAPIDescription: Скачайте Minecraft в Китае с помощью BMCL-API
-  useProxy: HTTP-прокси
-  useProxyDescription: Адрес прокси-сервера для http-запроса
-  viewBackgroundMusic: Просмотр музыки
+    description: ╨б╨╛╤Е╤А╨░╨╜╤П╨╣╤В╨╡ ╨╕ ╤Г╨┐╤А╨░╨▓╨╗╤П╨╣╤В╨╡ ╨│╨╗╨╛╨▒╨░╨╗╤М╨╜╤Л╨╝╨╕
+      ╤В╨╡╨╝╨░╨╝╨╕
+    loadConfirmMessage: ╨Ч╨░╨│╤А╤Г╨╖╨║╨░ ╤Б╨╛╤Е╤А╨░╨╜╤С╨╜╨╜╨╛╨╣ ╤В╨╡╨╝╤Л ╨╖╨░╨╝╨╡╨╜╨╕╤В
+      ╤В╨╡╨║╤Г╤Й╤Г╤О. ╨Я╤А╨╕ ╨╜╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╨╛╤Б╤В╨╕
+    loadConfirmTitle: ╨Ч╨░╨╝╨╡╨╜╨╕╤В╤М ╤В╨╡╨║╤Г╤Й╤Г╤О ╤В╨╡╨╝╤Г?
+    loadTheme: ╨Ч╨░╨│╤А╤Г╨╖╨╕╤В╤М ╤В╨╡╨╝╤Г
+    name: ╨е╤А╨░╨╜╨╕╨╗╨╕╤Й╨╡ ╤В╨╡╨╝
+    noSavedThemes: ╨б╨╛╤Е╤А╨░╨╜╤С╨╜╨╜╤Л╤Е ╤В╨╡╨╝ ╨┐╨╛╨║╨░ ╨╜╨╡╤В
+    saveDialogTitle: ╨б╨╛╤Е╤А╨░╨╜╨╕╤В╤М ╤В╨╡╨╝╤Г
+    saveToStore: ╨б╨╛╤Е╤А╨░╨╜╨╕╤В╤М ╨▓ ╤Е╤А╨░╨╜╨╕╨╗╨╕╤Й╨╡
+    savedThemes: ╨б╨╛╤Е╤А╨░╨╜╤С╨╜╨╜╤Л╨╡ ╤В╨╡╨╝╤Л
+    themeName: ╨Э╨░╨╖╨▓╨░╨╜╨╕╨╡ ╤В╨╡╨╝╤Л
+    themeNameHint: ╨Ш╨╝╤П ╨┤╨╗╤П ╤Б╨╛╤Е╤А╨░╨╜╨╡╨╜╨╕╤П ╤Н╤В╨╛╨╣ ╤В╨╡╨╝╤Л
+  update: ╨Ю╨▒╨╜╨╛╨▓╨╕╤В╤М
+  useBmclAPI: ╨Ш╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╤М BMCL API
+  useBmclAPIDescription: ╨б╨║╨░╤З╨░╨╣╤В╨╡ Minecraft ╨▓ ╨Ъ╨╕╤В╨░╨╡ ╤Б ╨┐╨╛╨╝╨╛╤Й╤М╤О
+    BMCL-API
+  useProxy: HTTP-╨┐╤А╨╛╨║╤Б╨╕
+  useProxyDescription: ╨Р╨┤╤А╨╡╤Б ╨┐╤А╨╛╨║╤Б╨╕-╤Б╨╡╤А╨▓╨╡╤А╨░ ╨┤╨╗╤П http-╨╖╨░╨┐╤А╨╛╤Б╨░
+  viewBackgroundMusic: ╨Я╤А╨╛╤Б╨╝╨╛╤В╤А ╨╝╤Г╨╖╤Л╨║╨╕
 settingLabel:
-  global: Глобальный
-  globalHint: Это настройка будет следовать глобальной настройке.
-  local: Mahalliy
-  localHint: Эта настройка может быть изменена текущим экземпляром.
+  global: ╨У╨╗╨╛╨▒╨░╨╗╤М╨╜╤Л╨╣
+  globalHint: ╨н╤В╨╛ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨░ ╨▒╤Г╨┤╨╡╤В ╤Б╨╗╨╡╨┤╨╛╨▓╨░╤В╤М ╨│╨╗╨╛╨▒╨░╨╗╤М╨╜╨╛╨╣
+    ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨╡.
+  local: ╨Ы╨╛╨║╨░╨╗╤М╨╜╤Л╨╣
+  localHint: ╨н╤В╨░ ╨╜╨░╤Б╤В╤А╨╛╨╣╨║╨░ ╨╝╨╛╨╢╨╡╤В ╨▒╤Л╤В╤М ╨╕╨╖╨╝╨╡╨╜╨╡╨╜╨░ ╤В╨╡╨║╤Г╤Й╨╕╨╝
+    ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨╛╨╝.
 setup:
   account:
-    description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-      komilmi?
-    name: '{name} o''chirilsinmi'
-    skip: Пока пропустить
+    description: ╨Р╨▓╤В╨╛╤А╨╕╨╖╤Г╨╣╤В╨╡╤Б╤М ╨▓ ╤Б╨▓╨╛╨╡╨╣ ╨╕╨│╤А╨╛╨▓╨╛╨╣ ╤Г╤З╤С╤В╨╜╨╛╨╣
+      ╨╖╨░╨┐╨╕╤Б╨╕. ╨Х╤Б╨╗╨╕ ╤Г ╨▓╨░╤Б ╨╡╤С ╨╜╨╡╤В,
+    name: ╨Ф╨╛╨▒╨░╨▓╨╕╤В╤М ╨╕╨│╤А╨╛╨▓╤Г╤О ╤Г╤З╤С╤В╨╜╤Г╤О ╨╖╨░╨┐╨╕╤Б╤М
+    skip: ╨Я╨╛╨║╨░ ╨┐╤А╨╛╨┐╤Г╤Б╤В╨╕╤В╤М
   appearance:
-    name: '{name} o''chirilsinmi'
+    name: :setting.appearance
   dataRoot:
-    description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-      komilmi?
-    drives: Рекомендуемые расположения
-    name: '{name} o''chirilsinmi'
-  defaultLayoutDescription: Вид интерфейса "Стандартный" пытается улучшить концепцию
-    "игрового экземпляра". Он выглядит как приложения, такие как Discord. Он также
-    вдохновлён другими приложениями запуска игр, такими как Steam и т.д.
-  defaultPath: Путь по умолчанию
+    description: ╨Ъ╨╛╤А╨╜╨╡╨▓╨░╤П ╨┐╨░╨┐╨║╨░ ╨╜╨╡ ╤П╨▓╨╗╤П╨╡╤В╤Б╤П ╨╛╨▒╤Л╤З╨╜╨╛╨╣
+      ╨┐╨░╨┐╨║╨╛╨╣ (.minecraft). ╨Я╨╛╤Б╨║╨╛╨╗╤М╨║╤Г
+    drives: ╨а╨╡╨║╨╛╨╝╨╡╨╜╨┤╤Г╨╡╨╝╤Л╨╡ ╤А╨░╤Б╨┐╨╛╨╗╨╛╨╢╨╡╨╜╨╕╤П
+    name: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╨║╨╛╤А╨╜╨╡╨▓╤Г╤О ╨┐╨░╨┐╨║╤Г
+  defaultLayoutDescription: ╨Т╨╕╨┤ ╨╕╨╜╤В╨╡╤А╤Д╨╡╨╣╤Б╨░ "╨б╤В╨░╨╜╨┤╨░╤А╤В╨╜╤Л╨╣" ╨┐╤Л╤В╨░╨╡╤В╤Б╤П
+    ╤Г╨╗╤Г╤З╤И╨╕╤В╤М ╨║╨╛╨╜╤Ж╨╡╨┐╤Ж╨╕╤О
+  defaultPath: ╨Я╤Г╤В╤М ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О
   error:
-    badDataRoot: Недопустимый каталог для данных лаунчера! Пожалуйста, попробуйте
-      другой.
-    exists: Выбранный каталог не пуст. Это нормально, но убедитесь, что вы сделали
-      резервную копию своих данных.
-    invalidChar: 'Путь содержит неверные символы!
-
-      Это может привести к тому, что Minecraft не может начать!
-
-      PLAESE используют только английские персонажи и символ!'
-    noPermission: У лаунчера нет необходимых прав на доступ к выбранному каталогу!
-      Пожалуйста, попробуйте другой.
-    nonDictionary: Выбранный путь является файлом! Пожалуйста, выберите каталог!
-  focusLayoutDescription: Вид интерфейса "Для фокусировки" - это устаревший вид интерфейса
-    Minecraft. Он предназначен для использования с одним экземпляром или небольшим
-    количеством экземпляров.
+    badDataRoot: ╨Э╨╡╨┤╨╛╨┐╤Г╤Б╤В╨╕╨╝╤Л╨╣ ╨║╨░╤В╨░╨╗╨╛╨│ ╨┤╨╗╤П ╨┤╨░╨╜╨╜╤Л╤Е ╨╗╨░╤Г╨╜╤З╨╡╤А╨░!
+      ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░, ╨┐╨╛╨┐╤А╨╛╨▒╤Г╨╣╤В╨╡
+    exists: ╨Т╤Л╨▒╤А╨░╨╜╨╜╤Л╨╣ ╨║╨░╤В╨░╨╗╨╛╨│ ╨╜╨╡ ╨┐╤Г╤Б╤В. ╨н╤В╨╛ ╨╜╨╛╤А╨╝╨░╨╗╤М╨╜╨╛,
+      ╨╜╨╛ ╤Г╨▒╨╡╨┤╨╕╤В╨╡╤Б╤М, ╤З╤В╨╛ ╨▓╤Л ╤Б╨┤╨╡╨╗╨░╨╗╨╕
+    invalidChar: '''╨Я╤Г╤В╤М ╤Б╨╛╨┤╨╡╤А╨╢╨╕╤В ╨╜╨╡╨▓╨╡╤А╨╜╤Л╨╡ ╤Б╨╕╨╝╨▓╨╛╨╗╤Л!'
+    noPermission: ╨г ╨╗╨░╤Г╨╜╤З╨╡╤А╨░ ╨╜╨╡╤В ╨╜╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╤Л╤Е ╨┐╤А╨░╨▓ ╨╜╨░
+      ╨┤╨╛╤Б╤В╤Г╨┐ ╨║ ╨▓╤Л╨▒╤А╨░╨╜╨╜╨╛╨╝╤Г ╨║╨░╤В╨░╨╗╨╛╨│╤Г!
+    nonDictionary: ╨Т╤Л╨▒╤А╨░╨╜╨╜╤Л╨╣ ╨┐╤Г╤В╤М ╤П╨▓╨╗╤П╨╡╤В╤Б╤П ╤Д╨░╨╣╨╗╨╛╨╝! ╨Я╨╛╨╢╨░╨╗╤Г╨╣╤Б╤В╨░,
+      ╨▓╤Л╨▒╨╡╤А╨╕╤В╨╡ ╨║╨░╤В╨░╨╗╨╛╨│!
+  focusLayoutDescription: ╨Т╨╕╨┤ ╨╕╨╜╤В╨╡╤А╤Д╨╡╨╣╤Б╨░ "╨Ф╨╗╤П ╤Д╨╛╨║╤Г╤Б╨╕╤А╨╛╨▓╨║╨╕"
+    - ╤Н╤В╨╛ ╤Г╤Б╤В╨░╤А╨╡╨▓╤И╨╕╨╣ ╨▓╨╕╨┤ ╨╕╨╜╤В╨╡╤А╤Д╨╡╨╣╤Б╨░
   game:
-    name: '{name} o''chirilsinmi'
+    name: ╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╤Б╤Г╤Й╨╡╤Б╤В╨▓╤Г╤О╤Й╤Г╤О ╨╕╨│╤А╤Г
   locale:
-    description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-      komilmi?
-    language: Язык
-    name: '{name} o''chirilsinmi'
-  path: Текущий путь
+    description: ╨Т╤Л╨▒╨╡╤А╨╕╤В╨╡ ╨▓╨░╤И ╨┐╤А╨╡╨┤╨┐╨╛╤З╨╕╤В╨░╨╡╨╝╤Л╨╣ ╤П╨╖╤Л╨║, ╨╡╤Б╨╗╨╕
+      ╨╛╨╜ ╨┤╨╛╤Б╤В╤Г╨┐╨╡╨╜. ╨Х╤Б╨╗╨╕ ╨▓╤Л ╨╜╨╡ ╨▓╨╕╨┤╨╕╤В╨╡
+    language: ╨п╨╖╤Л╨║
+    name: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╤П╨╖╤Л╨║
+  path: ╨в╨╡╨║╤Г╤Й╨╕╨╣ ╨┐╤Г╤В╤М
 shaderPack:
-  deletion: Удалить набор шейдеров
-  deletionHint: Это приведёт к удалению файла набора шейдеров {path} и его будет невозможно
-    восстановить.
-  disabled: Невыбранные наборы шейдеров
-  dropHint: Перетащите сюда файл набора шейдеров (.zip)
-  empty: Minecraft {version} uchun tegishli versiya topilmadi
-  enable: 'Используется набор шейдеров: {name}'
-  enabled: Выбранные наборы шейдеров
-  manage: Шейдера
-  market: Market
-  name: '{name} o''chirilsinmi'
-  linkShared: Общие пакеты шейдеров для всех сборок
-  linkSharedHint: Связать папку shaderpacks этой сборки с общей глобальной папкой,
-    чтобы все сборки использовали одни и те же пакеты шейдеров. Существующие пакеты
-    будут перемещены в общую папку.
+  deletion: ╨г╨┤╨░╨╗╨╕╤В╤М ╨╜╨░╨▒╨╛╤А ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓
+  deletionHint: ╨н╤В╨╛ ╨┐╤А╨╕╨▓╨╡╨┤╤С╤В ╨║ ╤Г╨┤╨░╨╗╨╡╨╜╨╕╤О ╤Д╨░╨╣╨╗╨░ ╨╜╨░╨▒╨╛╤А╨░
+    ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓ {path} ╨╕ ╨╡╨│╨╛ ╨▒╤Г╨┤╨╡╤В ╨╜╨╡╨▓╨╛╨╖╨╝╨╛╨╢╨╜╨╛
+  disabled: ╨Э╨╡╨▓╤Л╨▒╤А╨░╨╜╨╜╤Л╨╡ ╨╜╨░╨▒╨╛╤А╤Л ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓
+  dropHint: ╨Я╨╡╤А╨╡╤В╨░╤Й╨╕╤В╨╡ ╤Б╤О╨┤╨░ ╤Д╨░╨╣╨╗ ╨╜╨░╨▒╨╛╤А╨░ ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓ (.zip)
+  empty: ╨Э╨╡ ╨▓╤Л╨┤╨╡╨╗╨╡╨╜ ╨╜╨╕ ╨╛╨┤╨╕╨╜ ╨╜╨░╨▒╨╛╤А ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓
+  enable: '╨Ш╤Б╨┐╨╛╨╗╤М╨╖╤Г╨╡╤В╤Б╤П ╨╜╨░╨▒╨╛╤А ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓: {name}'
+  enabled: ╨Т╤Л╨▒╤А╨░╨╜╨╜╤Л╨╡ ╨╜╨░╨▒╨╛╤А╤Л ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓
+  manage: ╨и╨╡╨╣╨┤╨╡╤А╨░
+  market: ╨Ь╨░╨│╨░╨╖╨╕╨╜ ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓
+  name: ╨Э╨░╨▒╨╛╤А ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓ | ╨Э╨░╨▒╨╛╤А╤Л ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓
+  linkShared: ╨Ю╨▒╤Й╨╕╨╡ ╨┐╨░╨║╨╡╤В╤Л ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓ ╨┤╨╗╤П ╨▓╤Б╨╡╤Е ╤Б╨▒╨╛╤А╨╛╨║
+  linkSharedHint: ╨б╨▓╤П╨╖╨░╤В╤М ╨┐╨░╨┐╨║╤Г shaderpacks ╤Н╤В╨╛╨╣ ╤Б╨▒╨╛╤А╨║╨╕ ╤Б ╨╛╨▒╤Й╨╡╨╣
+    ╨│╨╗╨╛╨▒╨░╨╗╤М╨╜╨╛╨╣ ╨┐╨░╨┐╨║╨╛╨╣,
   noLocalPacksFound: No local shader packs found matching your search.
-  noPacks: Шейдер-паки не установлены
+  noPacks: ╨и╨╡╨╣╨┤╨╡╤А-╨┐╨░╨║╨╕ ╨╜╨╡ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╤Л
   noPacksInstalled: You don't have any shader packs installed.
-  noShaderMod: Мод шейдеров не установлен
-  noShaderModHint: Вы не можете использовать шейдер без мода шейдера.
-  noShaderModInstallHint: Для загрузки пакета шейдеров вам необходимо установить один
-    из следующих модов.
-  search: Поиск шейдер-паков...
-  searchHint: Поиск набора шейдеров
-  selectSearchHint: Найдите и выберите Shader Pack
-  showDirectory: Открыть папку с наборами шейдеров
-  showFile: Показать путь к набору шейдеров {file}
+  noShaderMod: ╨Ь╨╛╨┤ ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓ ╨╜╨╡ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜
+  noShaderModHint: ╨Т╤Л ╨╜╨╡ ╨╝╨╛╨╢╨╡╤В╨╡ ╨╕╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╤М ╤И╨╡╨╣╨┤╨╡╤А ╨▒╨╡╨╖
+    ╨╝╨╛╨┤╨░ ╤И╨╡╨╣╨┤╨╡╤А╨░.
+  noShaderModInstallHint: ╨Ф╨╗╤П ╨╖╨░╨│╤А╤Г╨╖╨║╨╕ ╨┐╨░╨║╨╡╤В╨░ ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓ ╨▓╨░╨╝
+    ╨╜╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╨╛ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╨╛╨┤╨╕╨╜
+  search: ╨Я╨╛╨╕╤Б╨║ ╤И╨╡╨╣╨┤╨╡╤А-╨┐╨░╨║╨╛╨▓...
+  searchHint: ╨Я╨╛╨╕╤Б╨║ ╨╜╨░╨▒╨╛╤А╨░ ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓
+  selectSearchHint: ╨Э╨░╨╣╨┤╨╕╤В╨╡ ╨╕ ╨▓╤Л╨▒╨╡╤А╨╕╤В╨╡ Shader Pack
+  showDirectory: ╨Ю╤В╨║╤А╤Л╤В╤М ╨┐╨░╨┐╨║╤Г ╤Б ╨╜╨░╨▒╨╛╤А╨░╨╝╨╕ ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓
+  showFile: ╨Я╨╛╨║╨░╨╖╨░╤В╤М ╨┐╤Г╤В╤М ╨║ ╨╜╨░╨▒╨╛╤А╤Г ╤И╨╡╨╣╨┤╨╡╤А╨╛╨▓ {file}
 shared:
-  add: O'yin yaratish
-  author: Автор
-  back: Назад
-  browse: Обзор
-  cancel: Bekor qilish
-  checkUpgrade: Проверить обновления
-  client: Клиент
+  add: ╨Ф╨╛╨▒╨░╨▓╨╕╤В╤М
+  author: ╨Р╨▓╤В╨╛╤А
+  back: ╨Э╨░╨╖╨░╨┤
+  browse: ╨Ю╨▒╨╖╨╛╤А
+  cancel: ╨Ю╤В╨╝╨╡╨╜╨░
+  checkUpgrade: ╨Я╤А╨╛╨▓╨╡╤А╨╕╤В╤М ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╨╕╤П
+  client: ╨Ъ╨╗╨╕╨╡╨╜╤В
   copied: Copied
-  copy: Copy
-  close: Close
+  copy: Nusxalash
+  close: Yopish
   copyFailed: Copy failed
   copyFailedHint: Could not copy to clipboard
-  description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-    komilmi?
-  disable: Tanlanmagan
-  download: Yuklab olish
-  edit: Изменить
-  enable: Включить
-  filter: Фильтр
-  install: O'rnatish
-  installed: 'O''rnatilgan: {version}'
-  keepSelected: Сохранить выбранное
-  manage: Управление
-  name: '{name} o''chirilsinmi'
-  next: Далее
-  'no': Yo'q
-  ok: ОК
-  previous: Назад
-  refresh: Yangilash
-  remove: Удалить
-  save: Save
-  search: Поиск
-  server: Сервер
-  skipForNow: Пропустить сейчас
-  upgrade: Обновить
-  'yes': O'chirish
+  description: ╨Ю╨┐╨╕╤Б╨░╨╜╨╕╨╡
+  disable: ╨Ю╤В╨║╨╗╤О╤З╨╕╤В╤М
+  download: ╨б╨║╨░╤З╨░╤В╤М
+  edit: ╨Ш╨╖╨╝╨╡╨╜╨╕╤В╤М
+  enable: ╨Т╨║╨╗╤О╤З╨╕╤В╤М
+  filter: ╨д╨╕╨╗╤М╤В╤А
+  install: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М
+  installed: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜
+  keepSelected: ╨б╨╛╤Е╤А╨░╨╜╨╕╤В╤М ╨▓╤Л╨▒╤А╨░╨╜╨╜╨╛╨╡
+  manage: ╨г╨┐╤А╨░╨▓╨╗╨╡╨╜╨╕╨╡
+  name: Nomi
+  next: ╨Ф╨░╨╗╨╡╨╡
+  'no': Нет
+  ok: ╨Ю╨Ъ
+  previous: ╨Э╨░╨╖╨░╨┤
+  refresh: ╨Ю╨▒╨╜╨╛╨▓╨╕╤В╤М
+  remove: ╨г╨┤╨░╨╗╨╕╤В╤М
+  save: Saqlash
+  search: ╨Я╨╛╨╕╤Б╨║
+  server: ╨б╨╡╤А╨▓╨╡╤А
+  skipForNow: ╨Я╤А╨╛╨┐╤Г╤Б╤В╨╕╤В╤М ╤Б╨╡╨╣╤З╨░╤Б
+  upgrade: ╨Ю╨▒╨╜╨╛╨▓╨╕╤В╤М
+  'yes': Да
   delete: O'chirish
 sidebar:
-  pin: Закрепить
-  unpin: Открепить
+  pin: ╨Ч╨░╨║╤А╨╡╨┐╨╕╤В╤М
+  unpin: ╨Ю╤В╨║╤А╨╡╨┐╨╕╤В╤М
 sortBy:
-  alphabetAsc: Сортировка по алфавиту (восходящее)
-  alphabetDesc: Сортировка по алфавиту (спуск)
-  name: '{name} o''chirilsinmi'
-  timeAsc: Сортировать по времени модификации (восходящая)
-  timeDesc: Сортировать по времени модификации (спуск)
+  alphabetAsc: ╨б╨╛╤А╤В╨╕╤А╨╛╨▓╨║╨░ ╨┐╨╛ ╨░╨╗╤Д╨░╨▓╨╕╤В╤Г (╨▓╨╛╤Б╤Е╨╛╨┤╤П╤Й╨╡╨╡)
+  alphabetDesc: ╨б╨╛╤А╤В╨╕╤А╨╛╨▓╨║╨░ ╨┐╨╛ ╨░╨╗╤Д╨░╨▓╨╕╤В╤Г (╤Б╨┐╤Г╤Б╨║)
+  name: ╨б╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨┐╨╛
+  timeAsc: ╨б╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨┐╨╛ ╨▓╤А╨╡╨╝╨╡╨╜╨╕ ╨╝╨╛╨┤╨╕╤Д╨╕╨║╨░╤Ж╨╕╨╕ (╨▓╨╛╤Б╤Е╨╛╨┤╤П╤Й╨░╤П)
+  timeDesc: ╨б╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨┐╨╛ ╨▓╤А╨╡╨╝╨╡╨╜╨╕ ╨╝╨╛╨┤╨╕╤Д╨╕╨║╨░╤Ж╨╕╨╕ (╤Б╨┐╤Г╤Б╨║)
 store:
-  discover: Обнаружить
-  empty: Minecraft {version} uchun tegishli versiya topilmadi
-  emptyHint: Agentdan ekzemplarni tekshirishni, modlarni yoqish/o'chirishni, loglarni
-    o'qishni yoki nosozliklarni tashxislashni so'rang.
-  latestMinecraft: Последняя версия Minecraft
-  name: '{name} o''chirilsinmi'
-  searchResult: Результат поиска
-  trending: Тенденции
+  discover: ╨Ю╨▒╨╜╨░╤А╤Г╨╢╨╕╤В╤М
+  empty: ╨Ь╨╛╨┤╨┐╨░╨║╨╕ ╨╜╨╡ ╨╜╨░╨╣╨┤╨╡╨╜╤Л
+  emptyHint: ╨Я╨╛╨┐╤А╨╛╨▒╤Г╨╣╤В╨╡ ╨╕╨╖╨╝╨╡╨╜╨╕╤В╤М ╤Д╨╕╨╗╤М╤В╤А╤Л ╨╕╨╗╨╕ ╨┐╨╛╨╕╤Б╨║╨╛╨▓╤Л╨╣
+    ╨╖╨░╨┐╤А╨╛╤Б.
+  latestMinecraft: ╨Я╨╛╤Б╨╗╨╡╨┤╨╜╤П╤П ╨▓╨╡╤А╤Б╨╕╤П Minecraft
+  name: ╨Ь╨░╨│╨░╨╖╨╕╨╜ ╤Б╨▒╨╛╤А╨╛╨║ ╨╝╨╛╨┤╨╛╨▓
+  searchResult: ╨а╨╡╨╖╤Г╨╗╤М╤В╨░╤В ╨┐╨╛╨╕╤Б╨║╨░
+  trending: ╨в╨╡╨╜╨┤╨╡╨╜╤Ж╨╕╨╕
 tag:
-  create: Yaratish
-  createSelected: Создать тег для выбранного
+  create: ╨б╨╛╨╖╨┤╨░╤В╤М ╤В╨╡╨│
+  createSelected: ╨б╨╛╨╖╨┤╨░╤В╤М ╤В╨╡╨│ ╨┤╨╗╤П ╨▓╤Л╨▒╤А╨░╨╜╨╜╨╛╨│╨╛
 task:
-  cancelled: Отменено
-  clear: Очистить выполненные задачи
+  cancelled: ╨Ю╤В╨╝╨╡╨╜╨╡╨╜╨╛
+  clear: ╨Ю╤З╨╕╤Б╤В╨╕╤В╤М ╨▓╤Л╨┐╨╛╨╗╨╜╨╡╨╜╨╜╤Л╨╡ ╨╖╨░╨┤╨░╤З╨╕
   connection:
-    connected: Подключён
-    free: Бесплатно
-    pending: В ожидании
-    queued: В очереди
-    running: Текущее соединение
-    size: Общее количество
-  connections: Сетевые подключения
-  empty: Minecraft {version} uchun tegishli versiya topilmadi
-  failed: Muvaffaqiyatsiz
-  manager: Менеджер задач
-  nTaskRunning: '{count} задач выполняется'
-  name: '{name} o''chirilsinmi'
-  pause: Приостановить
+    connected: ╨Я╨╛╨┤╨║╨╗╤О╤З╤С╨╜
+    free: ╨С╨╡╤Б╨┐╨╗╨░╤В╨╜╨╛
+    pending: ╨Т ╨╛╨╢╨╕╨┤╨░╨╜╨╕╨╕
+    queued: ╨Т ╨╛╤З╨╡╤А╨╡╨┤╨╕
+    running: ╨в╨╡╨║╤Г╤Й╨╡╨╡ ╤Б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╨╡
+    size: ╨Ю╨▒╤Й╨╡╨╡ ╨║╨╛╨╗╨╕╤З╨╡╤Б╤В╨▓╨╛
+  connections: ╨б╨╡╤В╨╡╨▓╤Л╨╡ ╨┐╨╛╨┤╨║╨╗╤О╤З╨╡╨╜╨╕╤П
+  empty: ╨Э╨╡╤В ╨╖╨░╨┐╤Г╤Й╨╡╨╜╨╜╤Л╤Е ╨╖╨░╨┤╨░╤З
+  failed: ╨Э╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╨▓╤Л╨┐╨╛╨╗╨╜╨╕╤В╤М
+  manager: ╨Ь╨╡╨╜╨╡╨┤╨╢╨╡╤А ╨╖╨░╨┤╨░╤З
+  nTaskRunning: '{count} ╨╖╨░╨┤╨░╤З ╨▓╤Л╨┐╨╛╨╗╨╜╤П╨╡╤В╤Б╤П'
+  name: ╨Ч╨░╨┤╨░╤З╨░ | ╨Ч╨░╨┤╨░╤З╨╕
+  pause: ╨Я╤А╨╕╨╛╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М
 theme:
-  selectImage: Выберите изображение
-  selectMusic: Выберите музыку
-  selectVideo: Выберите видео
-  title: X Minecraft Launcher
-title: X Minecraft Launcher
+  selectImage: ╨Т╤Л╨▒╨╡╤А╨╕╤В╨╡ ╨╕╨╖╨╛╨▒╤А╨░╨╢╨╡╨╜╨╕╨╡
+  selectMusic: ╨Т╤Л╨▒╨╡╤А╨╕╤В╨╡ ╨╝╤Г╨╖╤Л╨║╤Г
+  selectVideo: ╨Т╤Л╨▒╨╡╤А╨╕╤В╨╡ ╨▓╨╕╨┤╨╡╨╛
+  title: NeoTerra Launcher
+title: NeoTerra Launcher
 transportType:
-  host: Хост-кандидат
-  prflx: Пиринг-рефлексивный кандидат
-  relay: Ретранслятор-кандидат
-  srflx: Сервер-рефлексивный кандидат
+  host: ╨е╨╛╤Б╤В-╨║╨░╨╜╨┤╨╕╨┤╨░╤В
+  prflx: ╨Я╨╕╤А╨╕╨╜╨│-╤А╨╡╤Д╨╗╨╡╨║╤Б╨╕╨▓╨╜╤Л╨╣ ╨║╨░╨╜╨┤╨╕╨┤╨░╤В
+  relay: ╨а╨╡╤В╤А╨░╨╜╤Б╨╗╤П╤В╨╛╤А-╨║╨░╨╜╨┤╨╕╨┤╨░╤В
+  srflx: ╨б╨╡╤А╨▓╨╡╤А-╤А╨╡╤Д╨╗╨╡╨║╤Б╨╕╨▓╨╜╤Л╨╣ ╨║╨░╨╜╨┤╨╕╨┤╨░╤В
 turnRegion:
-  fr: Франция
-  guangzhou: Гуанчжоу, Китай
-  hk: Гонконг
-  liaoning: Ляонин, Китай
-  po: Польша
+  fr: ╨д╤А╨░╨╜╤Ж╨╕╤П
+  guangzhou: ╨У╤Г╨░╨╜╤З╨╢╨╛╤Г, ╨Ъ╨╕╤В╨░╨╣
+  hk: ╨У╨╛╨╜╨║╨╛╨╜╨│
+  liaoning: ╨Ы╤П╨╛╨╜╨╕╨╜, ╨Ъ╨╕╤В╨░╨╣
+  po: ╨Я╨╛╨╗╤М╤И╨░
 tutorial:
-  feedbackDescription: Если у вас возникнут какие-либо проблемы, нажмите на эту кнопку,
-    чтобы отправить отзыв!
-  hideNewsHeaderDescription: Вы можете увидеть новости слева. Нажатие на эту кнопку
-    может скрыть этот раздел.
+  feedbackDescription: ╨Х╤Б╨╗╨╕ ╤Г ╨▓╨░╤Б ╨▓╨╛╨╖╨╜╨╕╨║╨╜╤Г╤В ╨║╨░╨║╨╕╨╡-╨╗╨╕╨▒╨╛ ╨┐╤А╨╛╨▒╨╗╨╡╨╝╤Л,
+    ╨╜╨░╨╢╨╝╨╕╤В╨╡ ╨╜╨░ ╤Н╤В╤Г ╨║╨╜╨╛╨┐╨║╤Г,
+  hideNewsHeaderDescription: ╨Т╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╤Г╨▓╨╕╨┤╨╡╤В╤М ╨╜╨╛╨▓╨╛╤Б╤В╨╕ ╤Б╨╗╨╡╨▓╨░.
+    ╨Э╨░╨╢╨░╤В╨╕╨╡ ╨╜╨░ ╤Н╤В╤Г ╨║╨╜╨╛╨┐╨║╤Г
   instance:
-    iconDescription: Нажмите, чтобы изменить иконку.
-    iconTitle: Иконка экземпляра
-    javaDescription: Выберите или измените версию Java.
-    javaImportDescription: Импортировать Java из локального хранилища.
-    javaImportTitle: Импорт Java
-    javaTitle: Список Java
-  instanceAddDescription: Нажмите на эту кнопку, чтобы импортировать существующий
-    Minecraft или создать новый экземпляр/сборку модов с нуля.
-  instanceSelectDescription: Нажатие на эту кнопку откроет страницу выбора экземпляра
-    и прочтения новостей.
-  launchDescription: Нажмите на эту кнопку, чтобы установить или запустить экземпляр.
+    iconDescription: ╨Э╨░╨╢╨╝╨╕╤В╨╡, ╤З╤В╨╛╨▒╤Л ╨╕╨╖╨╝╨╡╨╜╨╕╤В╤М ╨╕╨║╨╛╨╜╨║╤Г.
+    iconTitle: ╨Ш╨║╨╛╨╜╨║╨░ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+    javaDescription: ╨Т╤Л╨▒╨╡╤А╨╕╤В╨╡ ╨╕╨╗╨╕ ╨╕╨╖╨╝╨╡╨╜╨╕╤В╨╡ ╨▓╨╡╤А╤Б╨╕╤О Java.
+    javaImportDescription: ╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М Java ╨╕╨╖ ╨╗╨╛╨║╨░╨╗╤М╨╜╨╛╨│╨╛
+      ╤Е╤А╨░╨╜╨╕╨╗╨╕╤Й╨░.
+    javaImportTitle: ╨Ш╨╝╨┐╨╛╤А╤В Java
+    javaTitle: ╨б╨┐╨╕╤Б╨╛╨║ Java
+  instanceAddDescription: ╨Э╨░╨╢╨╝╨╕╤В╨╡ ╨╜╨░ ╤Н╤В╤Г ╨║╨╜╨╛╨┐╨║╤Г, ╤З╤В╨╛╨▒╤Л ╨╕╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М
+    ╤Б╤Г╤Й╨╡╤Б╤В╨▓╤Г╤О╤Й╨╕╨╣
+  instanceSelectDescription: ╨Э╨░╨╢╨░╤В╨╕╨╡ ╨╜╨░ ╤Н╤В╤Г ╨║╨╜╨╛╨┐╨║╤Г ╨╛╤В╨║╤А╨╛╨╡╤В
+    ╤Б╤В╤А╨░╨╜╨╕╤Ж╤Г ╨▓╤Л╨▒╨╛╤А╨░ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╨░
+  launchDescription: ╨Э╨░╨╢╨╝╨╕╤В╨╡ ╨╜╨░ ╤Н╤В╤Г ╨║╨╜╨╛╨┐╨║╤Г, ╤З╤В╨╛╨▒╤Л ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М
+    ╨╕╨╗╨╕ ╨╖╨░╨┐╤Г╤Б╤В╨╕╤В╤М ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А.
   mod:
-    defaultSourceDescription: Вы можете выбрать источник контента модов здесь. Есть
-      моды, опубликованные как в Modrinth, так и в CurseForge. Если вы хотите переключаться
-      между этими двумя поставщиками контента, вы можете изменить значение здесь.
-    defaultSourceTitle: Выберите источник контента мода
-    detailDescription: Когда вы выбираете элемент слева, вы увидите детали мода. Контент
-      может быть получен из Modrinth, CurseForge или содержимого проанализированного
-      контента мода.
-    detailTitle: Детали мода
-    listDescription: Мы отобразим установленные моды, когда строка поиска будет пуста.
-      Вы увидите искомые моды, как только у вас будет введено ключевое слово или выбрана
-      категория.
-    listTitle: Установленные моды
-    searchDescription: Вы можете искать моды из Modrinth, CurseForge или вашего локального
-      кэша с помощью этого поля поиска.
-    searchTitle: Поиск модов
+    defaultSourceDescription: ╨Т╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨▓╤Л╨▒╤А╨░╤В╤М ╨╕╤Б╤В╨╛╤З╨╜╨╕╨║ ╨║╨╛╨╜╤В╨╡╨╜╤В╨░
+      ╨╝╨╛╨┤╨╛╨▓ ╨╖╨┤╨╡╤Б╤М. ╨Х╤Б╤В╤М
+    defaultSourceTitle: ╨Т╤Л╨▒╨╡╤А╨╕╤В╨╡ ╨╕╤Б╤В╨╛╤З╨╜╨╕╨║ ╨║╨╛╨╜╤В╨╡╨╜╤В╨░ ╨╝╨╛╨┤╨░
+    detailDescription: ╨Ъ╨╛╨│╨┤╨░ ╨▓╤Л ╨▓╤Л╨▒╨╕╤А╨░╨╡╤В╨╡ ╤Н╨╗╨╡╨╝╨╡╨╜╤В ╤Б╨╗╨╡╨▓╨░,
+      ╨▓╤Л ╤Г╨▓╨╕╨┤╨╕╤В╨╡ ╨┤╨╡╤В╨░╨╗╨╕ ╨╝╨╛╨┤╨░. ╨Ъ╨╛╨╜╤В╨╡╨╜╤В
+    detailTitle: ╨Ф╨╡╤В╨░╨╗╨╕ ╨╝╨╛╨┤╨░
+    listDescription: ╨Ь╤Л ╨╛╤В╨╛╨▒╤А╨░╨╖╨╕╨╝ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨╜╤Л╨╡ ╨╝╨╛╨┤╤Л,
+      ╨║╨╛╨│╨┤╨░ ╤Б╤В╤А╨╛╨║╨░ ╨┐╨╛╨╕╤Б╨║╨░ ╨▒╤Г╨┤╨╡╤В ╨┐╤Г╤Б╤В╨░.
+    listTitle: ╨г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨╜╤Л╨╡ ╨╝╨╛╨┤╤Л
+    searchDescription: ╨Т╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨╕╤Б╨║╨░╤В╤М ╨╝╨╛╨┤╤Л ╨╕╨╖ Modrinth, CurseForge
+      ╨╕╨╗╨╕ ╨▓╨░╤И╨╡╨│╨╛ ╨╗╨╛╨║╨░╨╗╤М╨╜╨╛╨│╨╛
+    searchTitle: ╨Я╨╛╨╕╤Б╨║ ╨╝╨╛╨┤╨╛╨▓
   multiplayer:
-    contentDescription: Соединения между вами и пользователями будут перечислены здесь.
+    contentDescription: ╨б╨╛╨╡╨┤╨╕╨╜╨╡╨╜╨╕╤П ╨╝╨╡╨╢╨┤╤Г ╨▓╨░╨╝╨╕ ╨╕ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П╨╝╨╕
+      ╨▒╤Г╨┤╤Г╤В ╨┐╨╡╤А╨╡╤З╨╕╤Б╨╗╨╡╨╜╤Л ╨╖╨┤╨╡╤Б╤М.
     contentTitle: :multiplayer.connections
-    groupDescription: Вы можете создать или присоединиться к группе с другими пользователями.
-      Лаунчер попытается создать P2P-соединения между вами и пользователями в соответствии
-      с группой. Вы можете ввести имя группы, предоставленное пользователями. Или
-      же вы можете создать уникальное имя самостоятельно.
-    groupTitle: Присоединиться к группе
-    joinDescription: Как только вы введёте имя группы, вы можете нажать на эту кнопку,
-      чтобы присоединиться или создать группу. Если имя группы пустое, лаунчер сгенерирует
-      имя для вас.
-    manualDescription: Если вы или пользователь не можете подключиться к группе, вы
-      можете попытаться вручную обменяться токеном, нажав на "ручное соединение".
-      Если это также не удалось, возможно у вас могут быть проблемы с интернетом.
-  recentPlayDescription: Созданные экземпляры будут перечислены здесь. Вы можете переключать
-    представления здесь, чтобы также увидеть установленные версии и загруженные сборки
-    модов.
-  storePoupularModpackDescription: Вы увидите самые популярные сборки модов в CurseForge
-    и Modrinth в этом разделе.
-  storeSearchCategoryDescription: Вы также можете переключать категории или фильтры
-    здесь.
-  storeSearchDescription: Вы можете найти сборку модов, введя необходимый запрос в
-    это поле поиска. Нажмите клавишу Enter для начала поиска.
-  storeSearchResultDescription: Вы увидите все результаты поиска перечисленными здесь.
-  userAccountDescription: Нажмите на эту иконку, чтобы добавить или изменить свою
-    учётную запись Minecraft.
+    groupDescription: ╨Т╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╤Б╨╛╨╖╨┤╨░╤В╤М ╨╕╨╗╨╕ ╨┐╤А╨╕╤Б╨╛╨╡╨┤╨╕╨╜╨╕╤В╤М╤Б╤П
+      ╨║ ╨│╤А╤Г╨┐╨┐╨╡ ╤Б ╨┤╤А╤Г╨│╨╕╨╝╨╕ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П╨╝╨╕.
+    groupTitle: ╨Я╤А╨╕╤Б╨╛╨╡╨┤╨╕╨╜╨╕╤В╤М╤Б╤П ╨║ ╨│╤А╤Г╨┐╨┐╨╡
+    joinDescription: ╨Ъ╨░╨║ ╤В╨╛╨╗╤М╨║╨╛ ╨▓╤Л ╨▓╨▓╨╡╨┤╤С╤В╨╡ ╨╕╨╝╤П ╨│╤А╤Г╨┐╨┐╤Л,
+      ╨▓╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨╜╨░╨╢╨░╤В╤М ╨╜╨░ ╤Н╤В╤Г ╨║╨╜╨╛╨┐╨║╤Г,
+    manualDescription: ╨Х╤Б╨╗╨╕ ╨▓╤Л ╨╕╨╗╨╕ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤М ╨╜╨╡ ╨╝╨╛╨╢╨╡╤В╨╡
+      ╨┐╨╛╨┤╨║╨╗╤О╤З╨╕╤В╤М╤Б╤П ╨║ ╨│╤А╤Г╨┐╨┐╨╡, ╨▓╤Л
+  recentPlayDescription: ╨б╨╛╨╖╨┤╨░╨╜╨╜╤Л╨╡ ╤Н╨║╨╖╨╡╨╝╨┐╨╗╤П╤А╤Л ╨▒╤Г╨┤╤Г╤В ╨┐╨╡╤А╨╡╤З╨╕╤Б╨╗╨╡╨╜╤Л
+    ╨╖╨┤╨╡╤Б╤М. ╨Т╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨┐╨╡╤А╨╡╨║╨╗╤О╤З╨░╤В╤М
+  storePoupularModpackDescription: ╨Т╤Л ╤Г╨▓╨╕╨┤╨╕╤В╨╡ ╤Б╨░╨╝╤Л╨╡ ╨┐╨╛╨┐╤Г╨╗╤П╤А╨╜╤Л╨╡
+    ╤Б╨▒╨╛╤А╨║╨╕ ╨╝╨╛╨┤╨╛╨▓ ╨▓ CurseForge
+  storeSearchCategoryDescription: ╨Т╤Л ╤В╨░╨║╨╢╨╡ ╨╝╨╛╨╢╨╡╤В╨╡ ╨┐╨╡╤А╨╡╨║╨╗╤О╤З╨░╤В╤М
+    ╨║╨░╤В╨╡╨│╨╛╤А╨╕╨╕ ╨╕╨╗╨╕ ╤Д╨╕╨╗╤М╤В╤А╤Л
+  storeSearchDescription: ╨Т╤Л ╨╝╨╛╨╢╨╡╤В╨╡ ╨╜╨░╨╣╤В╨╕ ╤Б╨▒╨╛╤А╨║╤Г ╨╝╨╛╨┤╨╛╨▓, ╨▓╨▓╨╡╨┤╤П
+    ╨╜╨╡╨╛╨▒╤Е╨╛╨┤╨╕╨╝╤Л╨╣ ╨╖╨░╨┐╤А╨╛╤Б ╨▓
+  storeSearchResultDescription: ╨Т╤Л ╤Г╨▓╨╕╨┤╨╕╤В╨╡ ╨▓╤Б╨╡ ╤А╨╡╨╖╤Г╨╗╤М╤В╨░╤В╤Л ╨┐╨╛╨╕╤Б╨║╨░
+    ╨┐╨╡╤А╨╡╤З╨╕╤Б╨╗╨╡╨╜╨╜╤Л╨╝╨╕ ╨╖╨┤╨╡╤Б╤М.
+  userAccountDescription: ╨Э╨░╨╢╨╝╨╕╤В╨╡ ╨╜╨░ ╤Н╤В╤Г ╨╕╨║╨╛╨╜╨║╤Г, ╤З╤В╨╛╨▒╤Л ╨┤╨╛╨▒╨░╨▓╨╕╤В╤М
+    ╨╕╨╗╨╕ ╨╕╨╖╨╝╨╡╨╜╨╕╤В╤М ╤Б╨▓╨╛╤О
 unauthenticatedWarning:
-  cancel: Bekor qilish
-  description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-    komilmi?
-  login: Войти
-  playAnyway: Всё равно запустить
-  title: Вы не вошли в аккаунт
+  cancel: ╨Ю╤В╨╝╨╡╨╜╨░
+  description: ╨Э╨╕ ╨╛╨┤╨╕╨╜ ╨░╨║╨║╨░╤Г╨╜╤В ╨╜╨╡ ╨▓╤Л╨┐╨╛╨╗╨╜╨╕╨╗ ╨▓╤Е╨╛╨┤. ╨Ш╨│╤А╨░
+    ╨╖╨░╨┐╤Г╤Б╤В╨╕╤В╤Б╤П ╨▓ ╨┤╨╡╨╝╨╛-╤А╨╡╨╢╨╕╨╝╨╡. ╨Т╨╛╨╣╨┤╨╕╤В╨╡,
+  login: ╨Т╨╛╨╣╤В╨╕
+  playAnyway: ╨Т╤Б╤С ╤А╨░╨▓╨╜╨╛ ╨╖╨░╨┐╤Г╤Б╤В╨╕╤В╤М
+  title: ╨Т╤Л ╨╜╨╡ ╨▓╨╛╤И╨╗╨╕ ╨▓ ╨░╨║╨║╨░╤Г╨╜╤В
 universalDrop:
-  unknownResource: Неизвестно
+  unknownResource: ╨Э╨╡╨╕╨╖╨▓╨╡╤Б╤В╨╜╨╛
 unresolvedFiles:
-  description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-    komilmi?
-  empty: Minecraft {version} uchun tegishli versiya topilmadi
-  ignoreSelected: Игнорировать {count}
-  install: O'rnatish
-  matched: Совпадение
-  noMatch: Не найдено
-  search: Искать источники
+  description: ╨н╤В╨╕ ╤Д╨░╨╣╨╗╤Л ╨╜╨╡ ╤Г╨┤╨░╨╗╨╛╤Б╤М ╨╖╨░╨│╤А╤Г╨╖╨╕╤В╤М ╨▓╨╛ ╨▓╤А╨╡╨╝╤П
+    ╤Г╤Б╤В╨░╨╜╨╛╨▓╨║╨╕. ╨Э╨░╨╣╨┤╨╕╤В╨╡ ╨┐╨╛╨┤╤Е╨╛╨┤╤П╤Й╨╕╨╣
+  empty: ╨Т╤Б╨╡ ╤Д╨░╨╣╨╗╤Л ╤А╨░╨╖╤А╨╡╤И╨╡╨╜╤Л.
+  ignoreSelected: ╨Ш╨│╨╜╨╛╤А╨╕╤А╨╛╨▓╨░╤В╤М {count}
+  install: '╨г╤Б╤В╨░╨╜╨╛╨▓╨╕╤В╤М ╤Б╨╛╨▓╨┐╨░╨┤╨╡╨╜╨╕╨╣: {count}'
+  matched: ╨б╨╛╨▓╨┐╨░╨┤╨╡╨╜╨╕╨╡
+  noMatch: ╨Э╨╡ ╨╜╨░╨╣╨┤╨╡╨╜╨╛
+  search: ╨Ш╤Б╨║╨░╤В╤М ╨╕╤Б╤В╨╛╤З╨╜╨╕╨║╨╕
   source:
     curseforge-name: CurseForge
-    dependency: Зависимость
-    modrinth-hash: Хеш Modrinth
+    dependency: ╨Ч╨░╨▓╨╕╤Б╨╕╨╝╨╛╤Б╤В╤М
+    modrinth-hash: ╨е╨╡╤И Modrinth
     modrinth-name: Modrinth
-  title: Неразрешённые файлы
-  via: через {source}
+  title: ╨Э╨╡╤А╨░╨╖╤А╨╡╤И╤С╨╜╨╜╤Л╨╡ ╤Д╨░╨╣╨╗╤Л
+  via: ╤З╨╡╤А╨╡╨╖ {source}
 upstream:
-  downgrade: Понизить версию
-  onlyShowCurrentVersion: Показывать только текущую версию Minecraft
-  update: Обновить
+  downgrade: ╨Я╨╛╨╜╨╕╨╖╨╕╤В╤М ╨▓╨╡╤А╤Б╨╕╤О
+  onlyShowCurrentVersion: ╨Я╨╛╨║╨░╨╖╤Л╨▓╨░╤В╤М ╤В╨╛╨╗╤М╨║╨╛ ╤В╨╡╨║╤Г╤Й╤Г╤О ╨▓╨╡╤А╤Б╨╕╤О
+    Minecraft
+  update: ╨Ю╨▒╨╜╨╛╨▓╨╕╤В╤М
 user:
-  accessToken: Токен доступа
-  authMode: Сервис аутентификации
-  authService: Сервис авторизации
-  email: Адрес электронной почты
-  id: Идентификатор пользователя
-  name: '{name} o''chirilsinmi'
-  nameHint: Ekzemplarni identifikatsiyalash uchun ishlatiladigan nom.
-  profile: Профиль
-  tokenExpired: Срок действия токена истёк
-  tokenValidUntil: Срок действия токена
+  accessToken: ╨в╨╛╨║╨╡╨╜ ╨┤╨╛╤Б╤В╤Г╨┐╨░
+  authMode: ╨б╨╡╤А╨▓╨╕╤Б ╨░╤Г╤В╨╡╨╜╤В╨╕╤Д╨╕╨║╨░╤Ж╨╕╨╕
+  authService: ╨б╨╡╤А╨▓╨╕╤Б ╨░╨▓╤В╨╛╤А╨╕╨╖╨░╤Ж╨╕╨╕
+  email: ╨Р╨┤╤А╨╡╤Б ╤Н╨╗╨╡╨║╤В╤А╨╛╨╜╨╜╨╛╨╣ ╨┐╨╛╤З╤В╤Л
+  id: ╨Ш╨┤╨╡╨╜╤В╨╕╤Д╨╕╨║╨░╤В╨╛╤А ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П
+  name: ╨Ш╨╝╤П ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П
+  nameHint: ╨Ш╨╝╤П, ╨╛╤В╨╛╨▒╤А╨░╨╢╨░╨╡╨╝╨╛╨╡ ╨▓ ╨╕╨│╤А╨╡
+  profile: ╨Я╤А╨╛╤Д╨╕╨╗╤М
+  tokenExpired: ╨б╤А╨╛╨║ ╨┤╨╡╨╣╤Б╤В╨▓╨╕╤П ╤В╨╛╨║╨╡╨╜╨░ ╨╕╤Б╤В╤С╨║
+  tokenValidUntil: ╨б╤А╨╛╨║ ╨┤╨╡╨╣╤Б╤В╨▓╨╕╤П ╤В╨╛╨║╨╡╨╜╨░
 userAccount:
-  add: O'yin yaratish
-  removeDescription: Это удалит все данные этого аккаунта. Вы уверены?
-  removeTitle: Удалить аккаунт
+  add: ╨Ф╨╛╨▒╨░╨▓╨╕╤В╤М ╨░╨║╨║╨░╤Г╨╜╤В
+  removeDescription: ╨н╤В╨╛ ╤Г╨┤╨░╨╗╨╕╤В ╨▓╤Б╨╡ ╨┤╨░╨╜╨╜╤Л╨╡ ╤Н╤В╨╛╨│╨╛ ╨░╨║╨║╨░╤Г╨╜╤В╨░.
+    ╨Т╤Л ╤Г╨▓╨╡╤А╨╡╨╜╤Л?
+  removeTitle: ╨г╨┤╨░╨╗╨╕╤В╤М ╨░╨║╨║╨░╤Г╨╜╤В
 userCape:
-  changeTitle: Изменить плащ
-  description: Siz bir nechta Minecraft ekzemplarlarini ishga tushirmoqdasiz. Ishonchingiz
-    komilmi?
-  noCape: Без плаща
+  changeTitle: ╨Ш╨╖╨╝╨╡╨╜╨╕╤В╤М ╨┐╨╗╨░╤Й
+  description: '''╨Я╨╗╨░╤Й╨╕ - ╤Н╤В╨╛ ╤Б╨┐╨╡╤Ж╨╕╨░╨╗╤М╨╜╤Л╨╡ ╨╜╨░╨│╤А╨░╨┤╤Л, ╨║╨╛╤В╨╛╤А╤Л╨╡
+    ╨╕╨│╤А╨╛╨║╨╕ ╨╝╨╛╨│╤Г╤В ╤А╨░╨╖╨▒╨╗╨╛╨║╨╕╤А╨╛╨▓╨░╤В╤М,'
+  noCape: ╨С╨╡╨╖ ╨┐╨╗╨░╤Й╨░
 userService:
-  add: O'yin yaratish
-  authlibInjectorMetadata: Метаданные Authlib-Injector
-  baseUrlHint: Базовый URL-адрес вашего пользовательского сервиса
-  homepage: Домашняя страница
-  implementation: Реализация
-  manageServices: Управлять сервисами
-  register: Регистрация
-  server: Сервер
-  skinDomains: Домены скинов
-  title: Сторонние сервисы пользователя
-  version: Версия
+  add: ╨Ф╨╛╨▒╨░╨▓╨╕╤В╤М ╨╡╤Й╤С ╨╛╨┤╨╕╨╜ ╤Б╨╡╤А╨▓╨╕╤Б
+  authlibInjectorMetadata: ╨Ь╨╡╤В╨░╨┤╨░╨╜╨╜╤Л╨╡ Authlib-Injector
+  baseUrlHint: ╨С╨░╨╖╨╛╨▓╤Л╨╣ URL-╨░╨┤╤А╨╡╤Б ╨▓╨░╤И╨╡╨│╨╛ ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤М╤Б╨║╨╛╨│╨╛
+    ╤Б╨╡╤А╨▓╨╕╤Б╨░
+  homepage: ╨Ф╨╛╨╝╨░╤И╨╜╤П╤П ╤Б╤В╤А╨░╨╜╨╕╤Ж╨░
+  implementation: ╨а╨╡╨░╨╗╨╕╨╖╨░╤Ж╨╕╤П
+  manageServices: ╨г╨┐╤А╨░╨▓╨╗╤П╤В╤М ╤Б╨╡╤А╨▓╨╕╤Б╨░╨╝╨╕
+  register: ╨а╨╡╨│╨╕╤Б╤В╤А╨░╤Ж╨╕╤П
+  server: ╨б╨╡╤А╨▓╨╡╤А
+  skinDomains: ╨Ф╨╛╨╝╨╡╨╜╤Л ╤Б╨║╨╕╨╜╨╛╨▓
+  title: ╨б╤В╨╛╤А╨╛╨╜╨╜╨╕╨╡ ╤Б╨╡╤А╨▓╨╕╤Б╤Л ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П
+  version: ╨Т╨╡╤А╤Б╨╕╤П
 userServices:
   microsoft:
-    account: Аккаунт Microsoft
-    deviceCode: Код устройства
-    deviceCodeHint: Будет сгенерирован после нажатия "Войти"
-    name: '{name} o''chirilsinmi'
-    password: Введите пароль в браузере
-    useDeviceCode: Войти по коду устройства
+    account: ╨Р╨║╨║╨░╤Г╨╜╤В Microsoft
+    deviceCode: ╨Ъ╨╛╨┤ ╤Г╤Б╤В╤А╨╛╨╣╤Б╤В╨▓╨░
+    deviceCodeHint: ╨С╤Г╨┤╨╡╤В ╤Б╨│╨╡╨╜╨╡╤А╨╕╤А╨╛╨▓╨░╨╜ ╨┐╨╛╤Б╨╗╨╡ ╨╜╨░╨╢╨░╤В╨╕╤П
+      "╨Т╨╛╨╣╤В╨╕"
+    name: Microsoft
+    password: ╨Т╨▓╨╡╨┤╨╕╤В╨╡ ╨┐╨░╤А╨╛╨╗╤М ╨▓ ╨▒╤А╨░╤Г╨╖╨╡╤А╨╡
+    useDeviceCode: ╨Т╨╛╨╣╤В╨╕ ╨┐╨╛ ╨║╨╛╨┤╤Г ╤Г╤Б╤В╤А╨╛╨╣╤Б╤В╨▓╨░
   mojang:
-    account: Электронная почта
-    name: '{name} o''chirilsinmi'
-    password: Пароль
+    account: ╨н╨╗╨╡╨║╤В╤А╨╛╨╜╨╜╨░╤П ╨┐╨╛╤З╤В╨░
+    name: Mojang
+    password: ╨Я╨░╤А╨╛╨╗╤М
   offline:
-    account: Имя пользователя
-    name: '{name} o''chirilsinmi'
-    password: Нет пароля
-    uuid: UUID пользователя (необязательно)
+    account: ╨Ш╨╝╤П ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П
+    name: ╨Р╨▓╤В╨╛╨╜╨╛╨╝╨╜╨░╤П ╤Г╤З╨╡╠И╤В╨╜╨░╤П ╨╖╨░╨┐╨╕╤Б╤М
+    password: ╨Э╨╡╤В ╨┐╨░╤А╨╛╨╗╤П
+    uuid: UUID ╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╨╡╨╗╤П (╨╜╨╡╨╛╨▒╤П╨╖╨░╤В╨╡╨╗╤М╨╜╨╛)
 userSkin:
   classic: Classic
-  import: Импортировать скин
-  importFile: Импортировать из файла
-  importLink: Импортировать из ссылки
+  import: ╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╤Б╨║╨╕╨╜
+  importFile: ╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨╕╨╖ ╤Д╨░╨╣╨╗╨░
+  importLink: ╨Ш╨╝╨┐╨╛╤А╤В╨╕╤А╨╛╨▓╨░╤В╤М ╨╕╨╖ ╤Б╤Б╤Л╨╗╨║╨╕
   invalidImage: Choose a valid Minecraft skin image.
   invalidImageTitle: Invalid Skin Image
-  placeUrlHere: Вставьте сюда URL-адрес скина для импорта
-  reset: Muloqotni qayta tiklash
-  save: Сохранить
-  saveTitle: Сохранить скин на диск
-  skinType: Тип скина
+  placeUrlHere: ╨Т╤Б╤В╨░╨▓╤М╤В╨╡ ╤Б╤О╨┤╨░ URL-╨░╨┤╤А╨╡╤Б ╤Б╨║╨╕╨╜╨░ ╨┤╨╗╤П ╨╕╨╝╨┐╨╛╤А╤В╨░
+  reset: ╨б╨▒╤А╨╛╤Б╨╕╤В╤М
+  save: ╨б╨╛╤Е╤А╨░╨╜╨╕╤В╤М
+  saveTitle: ╨б╨╛╤Е╤А╨░╨╜╨╕╤В╤М ╤Б╨║╨╕╨╜ ╨╜╨░ ╨┤╨╕╤Б╨║
+  skinType: ╨в╨╕╨┐ ╤Б╨║╨╕╨╜╨░
   slim: Slim
-  upload: Загрузить скин
+  upload: ╨Ч╨░╨│╤А╤Г╨╖╨╕╤В╤М ╤Б╨║╨╕╨╜
   uploadFailed: Skin Upload Failed
   uploadRejected: Minecraft rejected this skin upload. Please try again later.
-  urlNotEmpty: URL-адрес скина не может быть пустым
-  urlNotValid: URL-адрес скина неверный
-  useSlim: Использовать тонкие руки
+  urlNotEmpty: URL-╨░╨┤╤А╨╡╤Б ╤Б╨║╨╕╨╜╨░ ╨╜╨╡ ╨╝╨╛╨╢╨╡╤В ╨▒╤Л╤В╤М ╨┐╤Г╤Б╤В╤Л╨╝
+  urlNotValid: URL-╨░╨┤╤А╨╡╤Б ╤Б╨║╨╕╨╜╨░ ╨╜╨╡╨▓╨╡╤А╨╜╤Л╨╣
+  useSlim: ╨Ш╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╤В╤М ╤В╨╛╨╜╨║╨╕╨╡ ╤А╤Г╨║╨╕
 version:
-  checkIntegrity: Проверьте целостность
-  name: '{name} o''chirilsinmi'
-  notInstalled: Версия не установлена
+  checkIntegrity: ╨Я╤А╨╛╨▓╨╡╤А╤М╤В╨╡ ╤Ж╨╡╨╗╨╛╤Б╤В╨╜╨╛╤Б╤В╤М
+  name: ╨Т╨╡╤А╤Б╨╕╤П | ╨Т╨╡╤А╤Б╨╕╨╕
+  notInstalled: ╨Т╨╡╤А╤Б╨╕╤П ╨╜╨╡ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨░
 versionType:
-  alpha: Альфа
-  beta: Бета
-  name: '{name} o''chirilsinmi'
-  release: Релиз
+  alpha: ╨Р╨╗╤М╤Д╨░
+  beta: ╨С╨╡╤В╨░
+  name: ╨б╤В╨░╤В╤Г╤Б
+  release: ╨а╨╡╨╗╨╕╨╖
 gamepad:
   detectedTitle: Gamepad Detected
   connected: Controller Connected
   guideTitle: Controller Controls
   enableSwitchLabel: Gamepad Controls
-  enabledState: Yoqilgan
-  disabledState: O'chirilgan
-  toggle: Yoqish/O'chirish
+  enabledState: Enabled
+  disabledState: Disabled
+  toggle: Toggle
   disabledNotify: Gamepad controls disabled.
   enabledNotify: Gamepad controls enabled! Use D-pad/Left stick to navigate, {btnA}
-    to select, {btnB} to go back.
   guide:
-    confirm: Tasdiqlash
-    navigate: Harakatlanish
+    confirm: Tanlash
+    navigate: Navigate
     tabs: Switch tabs
     sections: Switch sections
-    launch: O'yinni ishga tushirish
+    launch: Launch game
     instanceSettings: Instance settings
   modSuggestTitle: Controller Mod
   modSuggestBody: To use your gamepad inside Minecraft, a controller mod is recommended.
-    Would you like to install the appropriate mod for your modloader?
   modInstall: Install Mod
   modSkip: Skip
   modDone: Done
   modInstalled: Controller mod installed successfully! It will be active next time
-    you launch Minecraft.
   modInstalledNotify: '{name} has been installed for in-game controller support.'
   modNotFound: No compatible version found for {loader} on Minecraft {version}.
   autoEnableLabel: Auto Enable Controls
@@ -2254,17 +2199,12 @@ gamepad:
   autoOpenKeyboardHint: Open Steam On-Screen Keyboard when focusing text input fields.
   focusTooltipsLabel: Show Tooltips on Focus
   focusTooltipsHint: Display hover tooltips when navigating elements using gamepad
-    focus.
   disableModPromptLabel: Disable Controller Mod Suggestions
   disableModPromptHint: Do not prompt to install controller mods when launching with
-    a gamepad.
   settingSteamTitle: Add Launcher to Steam
   steamAddedNotify: Launcher added to Steam Library successfully! Please restart Steam
-    to see it.
   steamAlreadyAddedNotify: Launcher is already in your Steam Library.
   steamDeckTitle: Steam Deck Detected
   steamDeckDesc: We detected that you are running on Steam Deck. Would you like to
-    add NeoTerra Launcher to your Steam Library as a non-Steam game for full Steam
-    overlay and controller integration in Gaming Mode?
   steamDeckAddBtn: Add to Steam ({btn})
   steamDeckCancelBtn: Cancel ({btn})
