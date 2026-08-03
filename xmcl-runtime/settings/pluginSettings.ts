@@ -35,10 +35,12 @@ export const pluginSettings: LauncherAppPlugin = async (app) => {
 
   const normalizeLocale = (locale: string) => {
     locale = locale || app.host.getLocale()
-    if (locale.startsWith('en')) {
+    if (locale.startsWith('uz')) {
+      locale = 'uz'
+    } else if (locale.startsWith('en')) {
       locale = 'en'
     }
-    return locale
+    return locale || 'uz'
   }
 
   readJson(settingJsonPath).catch(() => ({})).then((rawData) => {
