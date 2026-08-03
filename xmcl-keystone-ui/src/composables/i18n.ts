@@ -31,7 +31,7 @@ export function useI18nSync(state: Ref<Settings | undefined>) {
     }
 
     if (!locales[`../../locales/${newValue}.yaml`]) {
-      newValue = 'en'
+      newValue = 'ru'
     }
 
     locales[`../../locales/${newValue}.yaml`]().then((message: any) => {
