@@ -2,8 +2,6 @@
 import en from '../locales/en.yaml'
 // @ts-ignore
 import ru from '../locales/ru.yaml'
-// @ts-ignore
-import uz from '../locales/uz.yaml'
 
 export const i18n = createI18n({
   legacy: false,
@@ -15,7 +13,7 @@ export const i18n = createI18n({
   messages: {
     en,
     ru,
-    uz,
+    uz: ru,
   },
 })
 
