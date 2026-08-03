@@ -1,6 +1,5 @@
 AppAddInstanceDialog:
-  choiceTitle: Обнаружено несколько профилей запуска. Пожалуйста, выберите один для
-    импорта.
+  choiceTitle: Bir nechta ishga tushirish profillari aniqlandi. Iltimos, import qilish uchun birini tanlang.
   createTitle: Ekzemplar yaratish
   serverTitle: Serveringiz manzilini kiriting
 AppShareInstanceDialog:
@@ -1318,7 +1317,7 @@ setting:
   apiSets:
     auto: Автоматически (определяется сетью)
     official: Rasmiy (Mojang)
-  appearance: 'name: Sozlamalar ko’rinishi'
+  appearance: Dizayn va Ko’rinish
   appearanceDescription: Launcher ko’rinishini sozlash
   appxUpdateHint: Launcher o’rnatuvchini yuklab oladi va ishga tushiradi. Agar o’rnatuvchining
   authenticationSettings: Autentifikatsiya
@@ -1329,7 +1328,7 @@ setting:
   backgroundImageClear: Tozalash
   backgroundImageDescription: Fon sifatida tasvirni tanlang yoki uni tozalang.
   backgroundImageFit:
-    contain: Вместить
+    contain: Sig’dirmoq
     cover: Qirqib olish
     name: Holat
   backgroundImageUrl: Tasvir URL manzili
