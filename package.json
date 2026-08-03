@@ -1,5 +1,8 @@
 {
-    "version": "0.65.1",
+    "name": "neoterra-launcher",
+    "description": "NeoTerra Launcher - Official Minecraft Launcher",
+    "author": "SarvarDevYT <iskandarovsarvar34@gmail.com>",
+    "version": "1.0.0",
     "private": true,
     "license": "MIT",
     "packageManager": "pnpm@11.10.0",
