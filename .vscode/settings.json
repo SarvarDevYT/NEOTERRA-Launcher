@@ -72,5 +72,6 @@
     "js/ts.tsdk.path": "node_modules/typescript/lib",
     "[vue]": {
         "editor.defaultFormatter": "oxc.oxc-vscode"
-    }
+    },
+    "i18n-ally.sourceLanguage": "uz"
 }
