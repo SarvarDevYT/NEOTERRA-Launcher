@@ -1,339 +1,303 @@
 AppAddInstanceDialog:
   choiceTitle: Обнаружено несколько профилей запуска. Пожалуйста, выберите один для
     импорта.
-  createTitle: Создать экземпляр
-  serverTitle: Введите адрес вашего сервера
+  createTitle: Ekzemplar yaratish
+  serverTitle: Serveringiz manzilini kiriting
 AppShareInstanceDialog:
   alterDownloadDescription: Если вы не хотите менять текущий экземпляр, вы можете
     создать новый экземпляр из конфигурации вашего пользователя. Нажмите на кнопку
     ниже, чтобы создать экземпляр.
-  baseInfo: Локальные настройки
-  cancelShare: Отменить обмен
-  description: После того, как вы разрешите обмен экземпляром, другие пользователи
-    смогут загружать эти файлы через ваш компьютер.
-  downloadDescription: Пожалуйста, проверьте файлы, предоставленные вашим пользователем.
-    Выберите файлы, которые вы хотите скачать. Они будут размещены в текущем экземпляре
-    {name}.
-  downloadNotifyTitle: Скачивание экземпляра от {user}
-  downloadTitle: Скачивание файлов от других пользователей
-  filesToDownload: Выберите файлы для загрузки
-  filesToShare: Выберите файлы для обмена
-  instanceShare: '{user} только что поделился текущим экземпляром с вами'
-  share: Обмен
-  shareNotifyTitle: Обмен экземпляром
-  shareTitle: Обмен игровыми файлами с другими игроками
+  baseInfo: Mahalliy sozlamalar
+  cancelShare: Ulashishni bekor qilish
+  description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+  downloadDescription: Iltimos, foydalanuvchingiz tomonidan taqdim etilgan fayllarni
+  downloadNotifyTitle: '{user} foydalanuvchisidan ekzemplarni yuklab olish'
+  downloadTitle: Boshqa foydalanuvchilardan fayllarni yuklab olish
+  filesToDownload: Yuklab olish uchun fayllarni tanlang
+  filesToShare: Ulashish uchun fayllarni tanlang
+  instanceShare: '{user} hozirgina joriy ekzemplarni siz bilan ulashdi'
+  share: Ekzemplar konfiguratsiyasini ulashish
+  shareNotifyTitle: Ekzemplarni ulashish
+  shareTitle: O’yin fayllarini boshqa o’yinchilar bilan ulashish
 BaseSettingGeneral:
-  title: Общие
+  title: Kolleksiyani O’rnatish Natijasi
 HomeJavaIssueDialog:
-  incompatibleJava: Несовместимая версия Java
-  incompatibleJavaHint: Текущая версия Java может быть несовместима с выбранной версией
-    Minecraft!
-  missingJava: Отсутствует Java
-  missingJavaHint: 'Лаунчер не может обнаружить ни одной версии Java на вашем компьютере.
-    Вы можете:'
+  incompatibleJava: 'name: Java {javaVersion} versiyasi {version} uchun mos kelmaydi!'
+  incompatibleJavaHint: Joriy Java versiyasi tanlangan Minecraft versiyasiga mos
+  missingJava: 'message: Ushbu muammoni hal qilish uchun bosing'
+  missingJavaHint: ’Laucher kompyuteringizda hech qanday Java versiyasini aniqlay
   optionSwitch:
-    name: Переключиться на {version}
+    name: Holat
 HomeLaunchMultiInstanceDialog:
-  confirm: Да, запустить
-  description: Вы запускаете несколько экземпляров Minecraft. Вы уверены?
-  title: Несколько экземпляров
+  confirm: Tasdiqlash
+  description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+  title: Kolleksiyani O’rnatish Natijasi
 SettingMigrationDialog:
   selectRootDirectory: Выбрать корневой каталог
 agent:
-  title: NeoTerra Launcher Agent
-  statusReady: Готов
-  statusWorking: Работаю…
-  statusDisabled: Отключено — нет API-ключа
-  reset: Сбросить диалог
-  notConfiguredTitle: Agent не настроен
-  notConfiguredHint: Укажите API-ключ, модель и endpoint в Настройки → Общие → AI
-    Agent, чтобы включить агента.
-  openSettings: Открыть настройки
-  setupGuide: Руководство по настройке
-  emptyHint: Попросите агента проверить экземпляр, включить/выключить моды, читать
-    логи или диагностировать краш.
-  suggestion1: Обновите этот экземпляр до новой версии Minecraft и обновите моды
-  suggestion2: Мои моды падают — найдите причину и подскажите, как исправить
-  suggestion3: 'Соберите сборку: найдите моды для нужной функции и установите их в
-    этот экземпляр'
-  thinking: думаю…
-  callingTool: вызов {name}…
-  inputPlaceholder: Спросите агента… (Enter — отправить, Shift+Enter — новая строка)
-  disabledPlaceholder: Agent отключен
-  toggleHint: переключить
-  confirmAccept: Continue
+  title: Kolleksiyani O’rnatish Natijasi
+  statusReady: Tayyor
+  statusWorking: Ishlamoqda…
+  statusDisabled: O’chirilgan — API kaliti yo’q
+  reset: Qayta tiklash
+  notConfiguredTitle: Agent sozlanmagan
+  notConfiguredHint: Agentni yoqish uchun Sozlamalar → Umumiy → AI Agent bo’limida
+  openSettings: Sozlamalarni ochish
+  setupGuide: Sozlash bo’yicha qo’llanma
+  emptyHint: Filtrlar yoki qidiruv so’rovini o’zgartirib ko’ring.
+  suggestion1: Ushbu ekzemplarni Minecraft’ning yangi versiyasiga va modlarni yangilang
+  suggestion2: Modlarim buzilmoqda — sababini toping va tuzatishga yordam bering
+  suggestion3: Sborka yig
+  thinking: o’ylamoqda…
+  callingTool: '{name} chaqirilmoqda…'
+  inputPlaceholder: Agentdan so’rang… (Enter — yuborish, Shift+Enter — yangi qator)
+  disabledPlaceholder: Agent o’chirilgan
+  toggleHint: o’tkazish
+  confirmAccept: Davom etish
   confirmCancel: Bekor Qilish
-  confirmTitle: Confirm agent action
-  errorTitle: The agent hit an error
-  toolArguments: Arguments
-  toolResult: Result
-  toolRunning: Waiting for result…
-  marketConfirmMessage: Install {name} into the current instance?
-  marketConfirmTarget: 'Target: {instance}'
-  marketConfirmTitle: Install {type}
-  marketInstall: O'rnatish
-  marketInstalled: O'rnatildi
-  marketInstallFailed: Failed to install {type}
+  confirmTitle: Agent harakatini tasdiqlang
+  errorTitle: Agentda xatolik yuz berdi
+  toolArguments: Argumentlar
+  toolResult: Natija
+  toolRunning: Natija kutilmoqda…
+  marketConfirmMessage: '{name} joriy ekzemplarga o'
+  marketConfirmTarget: 'Nishon: {instance}'
+  marketConfirmTitle: '{type} o'
+  marketInstall: O’rnatish
+  marketInstalled: O’rnatildi
+  marketInstallFailed: '{type} o'
   marketType:
-    datapack: data pack
-    mod: mod
-    modpack: modpack
-    resourcepack: resource pack
-    shader: shader pack
-  marketResultCount: '{count} results'
+    datapack: 'name: Ma’lumotlar paketi | Ma’lumotlar paketlari'
+    mod: 'defaultSourceDescription: Mod kontenti manbasini shu yerda tanlashingiz
+      mumkin.'
+    modpack: Modlar terilmasi
+    resourcepack: 'linkShared: Barcha sborakalar uchun umumiy resurs paketlari'
+    shader: Sheyder
+  marketResultCount: '{count} ta natija'
 ago:
   day: '{duration} день назад | {duration} дней назад'
-  hour: '{duration} час назад | {duration} часов назад'
-  minute: '{duration} минуту назад | {duration} минут назад'
-  second: '{duration} секунду назад | {duration} секунд назад'
+  hour: '{duration} soat | {duration} soat'
+  minute: '{duration} daqiqa | {duration} daqiqa'
+  second: '{duration} soniya | {duration} soniya'
 askAICrash:
   copyPrompt: Скопируйте подсказку, чтобы спросить AI
-  description: 'Пусть AI поможет вам понять игровой сбой!
-
-    Следуйте инструкциям ниже, чтобы спросить ИИ об этом игровом сбое!'
-  selectPlatform: Откройте платформу для ИИ и вставьте только что только что скопированное.
-  agentNotConfigured: Add an AI provider and API key in Settings to let the launcher's
-    built-in agent diagnose and fix this for you.
-  askAgent: Diagnose with the built-in AI agent
-  orExternal: or use an external AI
-  setupAgent: Set up the AI agent
-authProfileAddedNotification: Профиль аутентификации {name} добавлен
+  description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+  selectPlatform: Sun’iy intellekt platformasini oching va nusxalangan matnni joylashtiring.
+  agentNotConfigured: Launcher’ning o’rnatilgan agenti buni siz uchun tashxis qilishi
+  askAgent: O’rnatilgan AI agenti bilan tashxis qilish
+  orExternal: yoki tashqi AI’dan foydalaning
+  setupAgent: AI agentini sozlash
+authProfileAddedNotification: '{name} autentifikatsiya profili qo'
 bedrock:
   installBedrockVersion: Downloading Bedrock {version}
-  versionsTitle: Version manager
-  versionsHint: Download multiple Bedrock versions from Microsoft's servers and switch
-    between them. Windows can register only one version at a time.
-  versionsError: Failed to load the version list. Check your network and try again.
-  channel: Channel
-  channelRelease: Release
+  versionsTitle: Versiya menejeri
+  versionsHint: Microsoft serverlaridan bir nechta Bedrock versiyalarini yuklab oling
+  versionsError: Versiyalar ro’yxatini yuklab bo’lmadi. Tarmoqni tekshiring va qayta
+  channel: Kanal
+  channelRelease: Reliz
   channelBeta: Beta
-  channelPreview: Preview
-  active: Active
-  play: O'ynash
-  download: Yuklab Olish
-  installedTag: O'rnatildi
-  developerModeRequired: Registering a downloaded version requires Windows Developer
-    Mode.
-  enableDeveloperMode: Enable Developer Mode
-  enableDeveloperModeFailed: Failed to enable Developer Mode
-  downloadFailed: Failed to download Bedrock {version}
-  launchFailed: Failed to launch this Bedrock version
-  removeFailed: Failed to remove Bedrock {version}
-  description: Minecraft Bedrock Edition is installed and launched through the Microsoft
-    Store. You need to own a Bedrock license on your Microsoft account.
-  install: Get from Microsoft Store
-  installFailed: Failed to open the Microsoft Store
-  installed: 'Installed: {version}'
-  launchHint: Use the Launch button to start Bedrock Edition.
-  licenseRequired: Sign in with a Microsoft account that owns Minecraft to install
-    and play Bedrock Edition.
+  channelPreview: Dastlabki ko’rish
+  active: Faol
+  play: O’ynash
+  download: Yuklab olish
+  installedTag: O’rnatildi
+  developerModeRequired: Yuklab olingan versiyani ro’yxatdan o’tkazish uchun Windows
+  enableDeveloperMode: Dasturchi rejimini yoqish
+  enableDeveloperModeFailed: Dasturchi rejimini yoqib bo’lmadi
+  downloadFailed: Bedrock {version} yuklab olinmadi
+  launchFailed: 'crash: O’yin o’chib ketdi!'
+  removeFailed: Bedrock {version} o’chirilmadi
+  description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+  install: O’rnatish
+  installFailed: Microsoft Store’ni ochib bo’lmadi
+  installed: O’rnatildi
+  launchHint: Bedrock Edition’ni boshlash uchun Ishga tushirish tugmasini bosing.
+  licenseRequired: Bedrock Edition’ni o’rnatish va o’ynash uchun Minecraft’ga ega
   refresh: Yangilash
 baseSetting:
-  title: Локальные настройки
+  title: Kolleksiyani O’rnatish Natijasi
 browseApp:
-  createShortcut: Создать ярлык
-  default: По умолчанию
-  delete: Удалить
-  launch: Запустить и установить по умолчанию
-browseApps: Просмотр пользовательского интерфейса пусковой установки
-color: Цвет
-confirm: Подтвердить
+  createShortcut: Yorliq yaratish
+  default: Odatiy
+  delete: O’chirish
+  launch: O’yinni ishga tushirish
+browseApps: Launcher foydalanuvchi interfeysini ko’rish
+color: 'red; font-weight: bold">bitta foydalanuvchi</span> uchun ishlatilishi mumkin!'
+confirm: Tasdiqlash
 copyClipboard:
-  success: Скопировано в буфер обмена
-create: Создать
+  success: Muvaffaqiyatli
+create: 'title: Ekzemplar yaratish'
 curseforge:
   category: Категория
-  createdDate: Дата создания
-  lastUpdate: Дата последнего обновления
-  releasedDate: Дата релиза
+  createdDate: Yaratilgan sana
+  lastUpdate: Oxirgi yangilangan sana
+  releasedDate: Chiqarilgan sana
 curseforgeCategory:
   API and Library: API и библиотеки
-  Addons: Дополнения
-  Adventure: Приключение
+  Addons: Qo’shimchalar
+  Adventure: Sarguzasht
   Adventure and RPG: Приключения и RPG
-  Animated: Анимация
+  Animated: Animatsiya
   Armor, Tools, and Weapons: Доспехи, инструменты и оружие
   Combat / PvP: Соревнования/PVP
-  Cosmetic: Внешний вид/декор
-  Creation: Творческий режим
+  Cosmetic: Tashqi ko’rinish/bezak
+  Creation: Ijodiy rejim
   Data Packs: Пакет данных
-  Education: Образование
-  Exploration: Разведка
+  Education: Ta’lim
+  Exploration: Qidiruv va kashfiyot
   Extra Large: Большой размер
   FTB Official Pack: Официальный пакет FTB
   Fabric: Fabric
   FancyMenu: FancyMenu
   Font Packs: Шрифты
-  Food: Еда
+  Food: Ovqat
   Game Map: Игровые карты
-  Hardcore: Хардкор
+  Hardcore: Hardkor
   MCreator: MCreator
-  Magic: Магия
+  Magic: Sehr-jodu
   Map Based: На основе карты
   Map and Information: Карты и информация
-  Medieval: Средневековье
+  Medieval: O’rta asrlar
   Mini Game: Мини-игры
-  Miscellaneous: Разное
+  Miscellaneous: Har xil
   Mod Support: Поддержка модов
   Modded World: Мод для миров
-  Modern: Modern
-  Multiplayer: Мультиплеер
-  Parkour: Паркур
+  Modern: Zamonaviy
+  Multiplayer: Ko’p o’yinchi rejimi
+  Parkour: Parkur
   Photo Realistic: Реалистичная фотография
-  Puzzle: Пазлы
-  QoL: QoL
-  Quests: Квесты
-  Redstone: Redstone
+  Puzzle: Boshqotirmalar
+  QoL: Utilita va QoL
+  Quests: Kvestlar
+  Redstone: Redstoun
   Sci-Fi: Научная фантастика
   Server Utility: Серверный инструмент
   Skyblock: SkyBlock
   Small / Light: Немного
-  Steampunk: Steampunk
-  Storage: Хранение
-  Survival: Выживание
-  Tech: Технология
-  Technology: Технология
-  Traditional: Традиционный
+  Steampunk: Stimpank
+  Storage: Omborxona
+  Survival: Omon qolish
+  Tech: Texnologiya
+  Technology: Texnologiya
+  Traditional: An’anaviy
   Twitch Integration: Интеграция с Twitch
   Utility & QoL: Утилита и Qol
   Vanilla+: Ванила+
   World Gen: Генератор мира
 dataMigration:
   apply: Применить настройки
-  directoryCriteriaHint: Пожалуйста, убедитесь, что новое расположение является пустым
-    каталогом!
-  placeholder: Нажмите здесь, чтобы выбрать каталог
-  setRootCause: Вы потеряете свои данные (карты, наборы ресурсов, моды), если закроете
-    лаунчер во время переноса!
-  setRootDescription: Это изменит корневой каталог данных этого лаунчера и Minecraft.
-  setRootTitle: Установить новое расположение хранилища
-  unknownError: Неизвестная ошибка! Пожалуйста, попробуйте ещё раз или свяжитесь с
-    разработчиком!
-  waitReload: Миграция данных. Пожалуйста, не закрывайте лаунчер или вы потеряете
-    свои данные.
+  directoryCriteriaHint: Iltimos, yangi joylashuv bo’sh katalog ekanligiga ishonch
+  placeholder: Mahalliy tarmoqda Minecraft o’ynash uchun boshqa foydalanuvchi bilan
+  setRootCause: Ma’lumotlarni ko’chirish paytida launcherni yopsangiz, ma’lumotlaringizni
+  setRootDescription: Bu ushbu launcher va Minecraft ma’lumotlarining asosiy katalogini
+  setRootTitle: Yangi saqlash joyini belgilash
+  unknownError: Noma’lum xatolik! Iltimos, qayta urinib ko’ring yoki dasturchi bilan
+  waitReload: Ma’lumotlar ko mechirilmoqda. Iltimos, launcherni yopmang, aks holda
 delete:
-  name: Удалить {name}
+  name: Holat
   'no': Нет
   'yes': Удалить
 dependencies:
   embedded: Встраиваемые
-  incompatible: Несовместимые
-  name: Зависимости
-  optional: Необязательные
-  required: Необходимые
+  incompatible: Modlar yetishmayapti
+  name: Holat
+  optional: Majburiy emas
+  required: Talab qilinadi
 diagnosis:
   badInstall:
-    message: Нажмите, чтобы попытаться переустановить эту версию.
-    name: Неудачная установка на {version}
+    message: Ushbu versiyani qayta o’rnatishga urinish uchun bosing.
+    name: Holat
   corruptedAssets:
-    message: Лаунчер установит ресурсы для вас
-    name: Повреждённый ресурс {name} | Повреждённый ресурс {name} | {count} повреждённых
-      ресурсов
+    message: Ushbu versiyani qayta o’rnatishga urinish uchun bosing.
+    name: Holat
   corruptedAssetsIndex:
-    message: Лаунчер скачает файл индекса ресурсов для вас
-    name: Повреждённый файл индекса ресурсов версии {version}.
+    message: Ushbu versiyani qayta o’rnatishga urinish uchun bosing.
+    name: Holat
   corruptedLibraries:
-    message: Лаунчер установит библиотеки для вас
-    name: Повреждённая библиотека {name} | Повреждённая библиотека {name} | {count}
-      повреждённых библиотек
+    message: Ushbu versiyani qayta o’rnatishga urinish uchun bosing.
+    name: Holat
   corruptedVersionJar:
-    message: Нажмите, чтобы установить эту версию
-    name: Повреждён jar файл версии Minecraft {version}.
+    message: Ushbu versiyani qayta o’rnatishga urinish uchun bosing.
+    name: Holat
   incompatibleJava:
-    name: Версия Java {javaVersion} не подходит для {version}!
+    name: Holat
   instanceFiles:
-    description: Установка экземпляра включает {counts} файлов.
-    title: Незавершённая установка экземпляра
+    description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+    title: Kolleksiyani O’rnatish Natijasi
   invalidJava:
-    name: Неверное расположение Java.
+    name: Holat
   missingJava:
-    message: Нажмите, чтобы решить эту проблему
-    name: Не удаётся найти Java для запуска Minecraft!
+    message: Ushbu versiyani qayta o’rnatishga urinish uchun bosing.
+    name: Holat
   missingLibraries:
-    message: Лаунчер установит библиотеки для вас
-    name: Отсутствует библиотека {name} | Отсутствует библиотека {name} | {count}
-      отсутствующих библиотек | {count} отсутствующих библиотек
+    message: Ushbu versiyani qayta o’rnatishga urinish uchun bosing.
+    name: Holat
   missingVersion:
-    message: Нажмите, чтобы установить эту версию
-    name: Версия {version} не установлена!
+    message: Ushbu versiyani qayta o’rnatishga urinish uchun bosing.
+    name: Holat
   unresolvedFiles:
-    description: Не удалось разрешить {count} файл при установке | Не удалось разрешить
-      {count} файлов при установке
-    title: Неразрешённые файлы
+    description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+    title: Kolleksiyani O’rnatish Natijasi
   unzipFileNotFound:
-    description: Не могу найти {file}
-    title: Файл Modpack не найден
+    description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+    title: Kolleksiyani O’rnatish Natijasi
 disk:
   available: Доступно
-  used: Использовано
-downloadCount: '{count} загрузок'
+  used: Ishlatilgan
+downloadCount: '{count} marta yuklab olingan'
 downloadUpdate:
-  name: Загрузить обновление {version}
+  name: Holat
 duration:
   day: '{duration} день | {duration} дней'
-  hour: '{duration} час | {duration} часов'
-  minute: '{duration} минута | {duration} минут'
-  second: '{duration} секунда | {duration} секунд'
+  hour: '{duration} soat | {duration} soat'
+  minute: '{duration} daqiqa | {duration} daqiqa'
+  second: '{duration} soniya | {duration} soniya'
 env:
   select:
-    all: Выбрать все
-    fit: Выбрать подходящие
-    none: Отменить выбор
+    all: Barchasi
+    fit: Mos keladiganlarini tanlash
+    none: Yo’q
 errors:
   BadForgeInstallerJarError: Не удаётся получить файл загрузчика forge. Возможно,
     у forge новый формат файла загрузчика? Обратитесь к разработчикам, если эта проблема
     будет повторяться.
-  BadInstanceType: 'Недопустимый экземпляр: {type}'
-  BodyTimeoutError: Истекло время ожидания ответа сервера
-  ChecksumNotMatchError: Контрольная сумма не совпадает! Ожидалась {expect}. Получена
-    {actual}.
-  ConnectTimeoutError: Истекло время ожидания соединения с сервером.
-  DNSNotFoundError: Ошибка поиска DNS
-  DatabaseNotOpened: База данных не открыта! Лаунчер не будет работать должным образом!
-    Пожалуйста, выберите каталог данных, к которому лаунчер может получить доступ.
-    Вы можете попробовать сбросить корневой каталог данных на странице настроек.
-  DiskIsFull: 'Ваш диск полон!
-
-    Не могу ничего написать на диск!
-
-    Все функции могут быть не функциональными!'
-  DownloadAggregateError: Не удалось скачать файл.
-  DownloadFileSystemError: Ошибка при доступе к пути сохранения скачанного файла.
-    Убедитесь, что лаунчер имеет разрешение на запись в него.
-  HeadersTimeoutError: Истекло время ожидания заголовков HTTP
-  NotFoundError: 404 Не найдено
-  SocketError: Ошибка сокета сервера
-  bedrockUnsupportedPlatform: Minecraft Bedrock Edition is only supported on the Windows
-    build.
-  bedrockNotInstalled: Minecraft Bedrock Edition is not installed.
-  bedrockLaunchFailed: Failed to launch Minecraft Bedrock Edition.
-  bedrockInstallFailed: Failed to install Minecraft Bedrock Edition.
-  bedrockDownloadUrlUnavailable: This Bedrock version is not available for the current
-    Microsoft account. Beta and Preview versions require an account enrolled in the
-    Minecraft beta programme.
-  bedrockDeveloperModeRequired: Windows Developer Mode is required to register this
-    Bedrock version.
-  bedrockRegisterFailed: Failed to register this Bedrock version with Windows.
-  bedrockVersionNotFound: This Bedrock version is not installed locally.
-  CorruptedResourceMetadata: Detected and cleared corrupted metadata on {count} resource(s).
-    The files still work, but their Modrinth/CurseForge attribution was lost and will
-    be re-detected automatically.
+  BadInstanceType: Noto
+  BodyTimeoutError: Server javobini kutish vaqti tugadi
+  ChecksumNotMatchError: Nazorat summasi mos kelmadi! {expect} kutilgan edi. {actual}
+  ConnectTimeoutError: Server bilan ulanish kutish vaqti tugadi.
+  DNSNotFoundError: DNS qidirishda xatolik
+  DatabaseNotOpened: Ma’lumotlar bazasi ochilmadi! Launcher to’g’ri ishlamaydi!
+  DiskIsFull: Diskingiz to
+  DownloadAggregateError: Faylni yuklab olib bo’lmadi.
+  DownloadFileSystemError: Yuklab olingan faylni saqlash yo’liga kirishda xatolik.
+  HeadersTimeoutError: HTTP sarlavhalarini kutish vaqti tugadi
+  NotFoundError: 404 Topilmadi
+  SocketError: Server soketi xatosi
+  bedrockUnsupportedPlatform: Minecraft Bedrock Edition faqat Windows tizimida qo’llab-quvvatlanadi.
+  bedrockNotInstalled: Minecraft Bedrock Edition o’rnatilmagan.
+  bedrockLaunchFailed: Minecraft Bedrock Edition’ni ishga tushirib bo’lmadi.
+  bedrockInstallFailed: Minecraft Bedrock Edition’ni o’rnatib bo’lmadi.
+  bedrockDownloadUrlUnavailable: Ushbu Bedrock versiyasi joriy Microsoft hisobi
+  bedrockDeveloperModeRequired: Ushbu Bedrock versiyasini ro’yxatdan o’tkazish uchun
+  bedrockRegisterFailed: Ushbu Bedrock versiyasini Windows’da ro’yxatdan o’tkazib
+  bedrockVersionNotFound: Ushbu Bedrock versiyasi mahalliy xotirada o’rnatilmagan.
+  CorruptedResourceMetadata: '{count} ta resursda buzilgan metama'
   InstallBackendUnresponsive:
     body: The launcher's background process stopped responding, so the install could
       not finish. Please fully close and relaunch the launcher, then try again.
-    title: Launcher is not responding
+    title: Kolleksiyani O’rnatish Natijasi
   InstallInstructionFailed:
     body: '{name}: {message}'
-    title: Failed to install Minecraft files
+    title: Kolleksiyani O’rnatish Natijasi
   InstallNetworkError:
     body: A network problem interrupted the install. Check your internet connection
       or proxy and try again.
-    title: Cannot download Minecraft files
+    title: Kolleksiyani O’rnatish Natijasi
   InstallPermissionDenied:
     body: An anti-virus tool or restricted folder permissions blocked the install.
       Add the launcher to your AV exclusion list, or pick a different data root in
       the launcher settings.
-    title: Cannot write to the launcher folder
+    title: Kolleksiyani O’rnatish Natijasi
 eula:
   body: Устанавливая флажок, вы подтверждаете свое согласие с {eula} Minecraft.
 exception:
@@ -342,649 +306,548 @@ exception:
     команда разработчиков.
 extensions:
   mrpack: Сборка модов Modrinth
-  zip: Zip-файл
+  zip: Zip-fayli
 fabricVersion:
-  disable: Fabric не выбран
-  empty: Не найдено соответствующей версии Fabric для Minecraft {version}
-  showSnapshot: Показывать снапшоты
-  stable: Стабильная
-  unstable: Нестабильная
+  disable: O’chirish
+  empty: Hali launcher kolleksiyalari yo’q
+  showSnapshot: Snabshotlarni ko’rsatish
+  stable: Barqaror
+  unstable: Barqaror emas
 command:
   instance:
     launch:
-      title: Запустить экземпляр
-      description: Launch a Minecraft instance
+      title: Kolleksiyani O’rnatish Natijasi
+      description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
     create:
-      title: Создать экземпляр
-      description: Create a new instance
+      title: Kolleksiyani O’rnatish Natijasi
+      description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
     delete:
-      title: Удалить экземпляр
-      description: Delete an existing instance
+      title: Kolleksiyani O’rnatish Natijasi
+      description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
   user:
     login:
-      title: Вход пользователя
-      description: Log in to your account
+      title: Kolleksiyani O’rnatish Natijasi
+      description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
     refresh:
-      title: Обновить пользователя
-      description: Refresh user session
+      title: Kolleksiyani O’rnatish Natijasi
+      description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
 commandPalette:
-  placeholder: Поиск команд, экземпляров, модов…
-  commands: Команды
-  instances: Экземпляры
-  modrinth: Modrinth
-  recent: Недавние
-  open: Быстрое действие
-  openHint: Открыть палитру команд ({shortcut})
-  empty: Введите запрос для поиска.
-  noResults: Нет совпадений.
-  searching: Поиск…
-  hintNavigate: навигация
-  hintInvoke: выполнить
-  hintEnter: открыть
-  hintBack: назад
-  hintClose: закрыть
+  placeholder: Mahalliy tarmoqda Minecraft o’ynash uchun boshqa foydalanuvchi bilan
+  commands: Buyruqlar
+  instances: 'add: Ekzemplar yaratish'
+  modrinth: 'browseUrl: Brauzerda ochish {url}'
+  recent: Yaqindagilar
+  open: Tezkor harakat
+  openHint: Buyruqlar palitrasini ochish ({shortcut})
+  empty: Hali launcher kolleksiyalari yo’q
+  noResults: Hech narsa topilmadi
+  searching: Qidirilmoqda…
+  hintNavigate: navigatsiya
+  hintInvoke: bajarish
+  hintEnter: ochish
+  hintBack: orqaga
+  hintClose: yopish
 feedback:
-  channel: NeoTerra Rasmiy Kanallari
-  description: Muammo yoki taklifingiz bo'lsa, rasmiy kanallarimiz orqali bog'laning.
+  channel: Kanal
+  description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
   discord: Discord Server
-  discordDescription: discord.gg/neoterra — O'yinchilar bilan ovozli muloqot.
-  discordJoin: Qo'shilish
-  generateReport: Создать отчёт
-  generateSaveAs: Сохранить отчёт
+  discordDescription: discord.gg/neoterra — O’yinchilar bilan ovozli muloqot.
+  discordJoin: Qo’shilish
+  generateReport: Hisobot yaratish
+  generateSaveAs: Hisobotni saqlash
   github: NeoTerra Rasmiy Sayti
-  githubDescription: site.neoterra.uz — Server yangiliklari va ma'lumotlar platformasi.
-  githubOpenIssue: Saytga o'tish
-  hint: Нажмите на кнопку, чтобы создать отчёт и связаться с командой разработчиков.
-    Отчёт будет содержать информацию о вашем устройстве, включая тип операционной
-    системы, версию, имя пользователя (в операционной системе) и другие данные.
+  githubDescription: site.neoterra.uz — Server yangiliklari va ma’lumotlar platformasi.
+  githubOpenIssue: Saytga o’tish
+  hint: Ushbu chizmani boshqa formatga o’tkazing. Yangi fayl yaratiladi.
   kook: YouTube Kanal
   kookDescription: youtube.com/NeoTerraMC — Videolar va treylerlar.
-  name: Murojaat va Yordam
+  name: Holat
   qq: Telegram Hamjamiyati
   qqDescription: t.me/NeoTerraServer — Rasmiy Telegram kanal va guruh.
-  qqEnterGroup: A'zo bo'lish
-  kookEnterGroup: Obuna bo'lish
+  qqEnterGroup: A’zo bo’lish
 fileDetail:
   fileSize: Размер файла
-  filesize: Размер файла
-  hash: Hash
-filterLocalOnly: Показывать только установленные
+  filesize: Fayl hajmi
+  hash: Modrinth heshi
+filterLocalOnly: Faqat o’rnatilganlarni ko’rsatish
 forgeVersion:
-  disable: Forge не выбран
-  empty: Для Minecraft {version} нет выпусков Forge
-  latest: Последняя
-  recommended: Рекомендуемая
+  disable: O’chirish
+  empty: Hali launcher kolleksiyalari yo’q
+  latest: Oxirgi
+  recommended: Tavsiya etilgan
 gameType:
-  adventure: Режим приключения
-  creative: Творческий режим
-  spectator: Режим наблюдателя
-  survival: Режим выживания
-help: Справка
-home: Главная
+  adventure: Sarguzasht
+  creative: Ijodiy rejim
+  spectator: Kuzatuvchi rejimi
+  survival: Omon qolish rejimi
+help: Yordam
+home: Bosh sahifa
 importModpack:
-  name: Импортировать сборку модов
+  name: Holat
 installAssets:
   asset: Установить {count} ресурсов
-  assetIndex: Проверить файл индекса ресурсов
-  name: Установить файлы ресурсов
-installAuthlibInjector: Установить authlib-injector
-installCurseforgeFile: Установить файл CurseForge
+  assetIndex: Resurslar indeksi faylini tekshirish
+  name: Holat
+installAuthlibInjector: Authlib-injector o’rnatish
+installCurseforgeFile: CurseForge faylini o’rnatish
 installFabric:
-  name: Установить Fabric
+  name: Holat
 installForge:
   downloadInstaller: Скачать программу установки
-  name: Установить Forge
-  postProcessing: Дополнительная обработка
+  name: Holat
+  postProcessing: Qo’shimcha ishlov berish
 installInstance:
   file: Обновить файл экземпляра {file}
-  link: Копировать или соединить {count} файлов
-  name: Обновить экземпляр
-  resolve: Разрешить конфигурацию экземпляра
-  unzip: Распаковать {count} файлов
+  link: '{count} fayllarni nusxalash yoki biriktirish'
+  name: Holat
+  resolve: Ekzemplar konfiguratsiyasini tasdiqlash
+  unzip: '{count} fayllarni arxivdan chiqarish'
 installJre:
-  decompress: Распаковать файлы JRE в папку
-  download: Скачать сжатый файл JRE
-  name: Установить среду выполнения Java
+  decompress: JRE fayllarini papkaga arxivdan chiqarish
+  download: Yuklab olish
+  name: Holat
 installLabyMod:
-  name: Установить LabyMod
+  name: Holat
 installLibraries:
-  library: Установить библиотеку
-  name: Установить библиотеки
+  library: Kutubxona
+  name: Holat
 installModrinthFile:
-  name: Установить Modrinth
+  name: Holat
 installOptifine:
-  download: Скачать Optifine Universal
-  name: Установить Optifine
+  download: Yuklab olish
+  name: Holat
 installVersion:
   jar: Установить Jar-файл версии
-  json: Установить Json-файл версии
-  name: Установить клиент Minecraft {version}
+  json: Versiyaning Json faylini o me o’rnatish
+  name: Holat
 instance:
   changeIcon: Изменить значок
-  contents: Содержание
-  current: Текущий экземпляр
-  delete: Удалить экземпляр
-  deleteFailed: Не удалось удалить экземпляр
-  deleteFailedPermission: Другая программа заняла файл
-  deleteFile: Удалить файлы экземпляра
-  deleteHint: Данные экземпляра будут удалены с диска навсегда. Вы уверены, что хотите
-    это сделать?
-  duplicate: Дублировать экземпляр
-  duplicatedName: Дублированное имя
-  fileApi: URL API сервера синхронизации файлов
-  fileApiHint: URL для синхронизации файлов экземпляра с удалённым сервером конфигурации.
-  fullscreen: Полноэкранный
-  height: Высота
-  icon: Иконка профиля
-  iconHint: Значок может представлять собой файл или ссылку на URL-адрес в Интернете.
-  iconUrl: URL-адрес иконки
-  installModpack: Обновление экземпляра от Modpack
-  lastPlayed: Последняя игра
-  launchArguments: Предпросмотр аргументов запуска
-  launchServer: Запустить локальный сервер
-  linkFileDesc: 'Это перезапишет локальный {file} экземпляра глобальным {file}.
-
-    Вы уверены, что соедините это?'
-  linkFileTitle: Вы уверены, что хотите связать {file}?
-  mcOptions: Опции Minecraft
-  mcOptionsHint: Дополнительные аргументы запуска Minecraft
-  name: Имя экземпляра
-  nameHint: Имя, используемое для идентификации экземпляра.
-  nameNoCyrillic: Название не может содержать кириллические символы
-  neverPlayed: Никогда не играли
-  openCrashReportFolder: Открыть папку с отчётами об ошибках
-  openLogFolder: Открыть папку с журналами
-  playtime: Время игры
-  preExecCommand: Команда предварительного запуска
-  preExecCommandHint: Команда для выполнения перед запуском Minecraft
-  prependCommand: Добавить команду в начало
-  prependCommandHint: Это добавит эту команду перед всеми командами запуска.
-  requireName: Требуется имя
-  resolution: Разрешение окна
-  resolutionPreset: Резолюция предустановлена
-  showInstance: Открыть папку экземпляра
-  updates: Обновления
-  useSharedOptions: Использовать общие настройки игры
-  useSharedOptionsDesc: Это свяжет файл options.txt с общим файлом в экземпляре.
-  useSharedServersList: Использовать список общих серверов
-  useSharedServersListDesc: Это свяжет файл server.dat с общим файлом в экземпляре.
-  vmOptions: Опции JVM
-  vmOptionsHint: Дополнительные аргументы, передаваемые JVM
-  vmVar: Переменные среды
-  vmVarHint: Нажмите кнопку, чтобы добавить переменные среды.
-  width: Ширина
-  envVarKey: Ключ
-  envVarValue: Значение
+  contents: Tarkibi
+  current: Joriy ekzemplar
+  delete: O’chirish
+  deleteFailed: Ekzemplarni o’chirib bo’lmadi
+  deleteFailedPermission: Boshqa dastur faylni egallab olgan
+  deleteFile: Ekzemplar fayllarini o’chirish
+  deleteHint: Ushbu operatsiyani bekor qilib bo’lmaydi. Ushbu dunyo ma’lumotlarini
+  duplicate: Ushbu o’yinchi allaqachon ro’yxatingizda bor.
+  duplicatedName: Takroriy nom
+  fileApi: Fayllarni sinxronlashtirish serveri API URL’i
+  fileApiHint: Ekzemplar fayllarini masofaviy konfiguratsiya serveri bilan sinxronlashtirish
+  fullscreen: To’liq ekran
+  height: Balandlik
+  icon: Tasvirni tanlang
+  iconHint: Belgi fayl yoki internetdagi URL manziliga havola bo’lishi mumkin.
+  iconUrl: Belgi URL manzili
+  installModpack: Modpack’dan ekzemplarni yangilash
+  lastPlayed: Oxirgi o’ynalgan
+  launchArguments: Ishga tushirish argumentlarini oldindan ko’rish
+  launchServer: Mahalliy serverni ishga tushirish
+  linkFileDesc: ’Bu ekzemplarning mahalliy {file} faylini global {file} fayli bilan
+  linkFileTitle: '{file} faylini bog'
+  mcOptions: Minecraft опцiyalari
+  mcOptionsHint: Minecraft ishga tushirishning qo’shimcha argumentlari
+  name: Holat
+  nameHint: O’yinda ko’rsatiladigan nom
+  nameNoCyrillic: Nomi kirill belgilarini o’z ichiga olishi mumkin emas
+  neverPlayed: Hech qachon o’ynalmagan
+  openCrashReportFolder: Xatolik hisobotlari papkasini ochish
+  openLogFolder: Jurnallar papkasini ochish
+  playtime: O’yin vaqti
+  preExecCommand: Oldindan ishga tushirish buyrug’i
+  preExecCommandHint: Minecraft ishga tushirilishidan oldin bajariladigan buyruq
+  prependCommand: Buyruqni boshiga qo’shish
+  prependCommandHint: Bu ushbu buyruqni barcha ishga tushirish buyruqlari oldiga qo’shadi.
+  requireName: Nom talab qilinadi
+  resolution: Oyna o’lchami
+  resolutionPreset: Oldindan o’rnatilgan o’lcham
+  showInstance: Ekzemplar papkasini ochish
+  updates: Yangilanishlar
+  useSharedOptions: Umumiy o’yin sozlamalaridan foydalanish
+  useSharedOptionsDesc: Bu options.txt faylini ekzemplardagi umumiy faylga bog’laydi.
+  useSharedServersList: Umumiy serverlar ro’yxatidan foydalanish
+  useSharedServersListDesc: Bu server.dat faylini ekzemplardagi umumiy faylga bog’laydi.
+  vmOptions: JVM opsiyalari
+  vmOptionsHint: JVM’ga uzatiladigan qo’shimcha argumentlar
+  vmVar: Muhit o’zgaruvchilari
+  vmVarHint: Muhit o me o’zgaruvchilarini qo’shish uchun tugmani bosing.
+  width: Kenglik
+  envVarKey: Kalit
+  envVarValue: Qiymat
   envVarKeyPlaceholder: MY_VAR
-  envVarValuePlaceholder: значение
-  fileApiPlaceholder: Введите здесь URL удалённой синхронизации, если хотите поддерживать
-    синхронизацию ресурсов
-  deleteHintBedrock: Minecraft Bedrock Edition and all its data will be completely
-    deleted from your computer. Are you sure?
-  hideCard: Hide this card
-  nameInvalidChars: 'The name cannot contain these characters: < > : " / \\ | ? *'
-  namePathTraversal: The name cannot contain path traversal ("..")
-  nameReservedName: This name is reserved by the system and cannot be used
-  nameTrailingDotOrSpace: The name cannot end with a dot or space
-  nameWhitespaceOnly: The name cannot be only whitespace or dots
-  showHiddenCards: Show hidden cards
+  envVarValuePlaceholder: qiymat
+  fileApiPlaceholder: Resurslar sinxronizatsiyasini saqlab turmoqchi bo’lsangiz,
+  deleteHintBedrock: Minecraft Bedrock Edition va uning barcha ma’lumotlari kompyuteringizdan
+  hideCard: Ushbu kartani yashirish
+  nameInvalidChars: Nomi ushbu belgilarni o
+  namePathTraversal: Nomi yo’l kesib o’tish belgisini ("..") o’z ichiga ololmaydi
+  nameReservedName: Ushbu nom tizim tomonidan band qilingan va undan foydalanib bo’lmaydi
+  nameTrailingDotOrSpace: Nomi nuqta yoki bo’sh joy bilan tugashi mumkin emas
+  nameWhitespaceOnly: Nomi faqat bo’sh joylar yoki nuqtalardan iborat bo’lishi mumkin
+  showHiddenCards: Yashirin kartalarni ko’rsatish
 instanceAge:
   older: Старые
-  threeDay: В течение трёх дней
-  today: Сегодня
+  threeDay: Uch kun ichida
+  today: Bugun
 instanceDiscover:
   gameFolder: Откройте {count} папок с играми
-  instanceFolder: 'Найдено экземпляров: {count}'
+  instanceFolder: 'Topilgan ekzemplarlar: {count}'
 instanceFileOperation:
-  add: Добавить
+  add: Do’st qo’shish
   backup-add: Заменить (создать резервную копию)
   backup-remove: Удалить (создать резервную копию)
-  keep: Оставить
-  remove: Удалить
+  keep: Qoldirish
+  remove: O’chirish
 instanceInstallSkip:
   ignore: игнорировать
-  skip: Пропускать
-  title: Потенциальный поврежденный источник файла
-  warning: 'Некоторые файлы загружаются несколько раз, и контрольная сумма не совпадает.
-
-    Это может быть связано с тем, что исходная контрольная сумма неверна.
-
-    Пожалуйста, проверьте.
-
-    Если вы подтвердите, что текущие файлы действительны, вы можете пропустить проверку.'
+  skip: Hozircha o’tkazib yuborish
+  title: Kolleksiyani O’rnatish Natijasi
+  warning: Maxsus CSS launcher’ning har qanday jihatini sozlash imkonini beradi.
 instanceSetting:
   disableAuthlibInjector: Отключить authlib injector
-  disableAuthlibInjectorDescription: Если вы используете систему скинов от сторонних
-    разработчиков, authlib injector может помочь отображать скины в игре.
-  disableElyByAuthlib: Отключить замену authlib от ely.by
-  disableElyByAuthlibDescription: Ely.by имеет уникальную замену authlib для универсального
-    отображения скинов на любом сервере.
-  fastLaunch: Быстрый запуск
-  fastLaunchHint: Игнорировать статус пользователя и существующие неисправленные проблемы.
-  hideLauncher: Скрыть лаунчер после запуска
-  icon: Выбрать изображение
-  showLog: Показывать журнал Minecraft
-  showLogHint: Это откроет окно журнала Minecraft после запуска экземпляра
+  disableAuthlibInjectorDescription: Agar siz uchinchi tomon dasturchilarining skinlar
+  disableElyByAuthlib: Ely.by authlib almashtirishni o’chirish
+  disableElyByAuthlibDescription: Ely.by har qanday serverda skinlarni universal
+  fastLaunch: Tezkor ishga tushirish
+  fastLaunchHint: Foydalanuvchi holati va mavjud tuzatilmagan muammolarni e’tiborsiz
+  hideLauncher: Ishga tushirilgandan so’ng launcherni yashirish
+  icon: Tasvirni tanlang
+  showLog: Minecraft jurnalini ko’rsatish
+  showLogHint: Bu ekzemplar ishga tushirilgandan so’ng Minecraft jurnali oynasini
 instanceTemplate:
   ftb: Это сборка модов FTB
-  preview: Предварительный просмотр сборки модов
+  preview: 'title: 3D Dastlabki ko’rish'
 instanceUpdate:
   basic: Обновление настроек
-  files: Обновление файлов
-  loaderChanged: 'Модлоадер этого экземпляра был изменен.
-
-    Старый модлоадер - это {modloader}, а новый - {newModloader}.'
-  summary: 'Добавить {add} файлы.
-
-    Удалить {remove} файлы.
-
-    Сохранить {keep} файлы.'
-  title: Обновление экземпляра
-  update: Начать обновление
-  noFiles: No file changes
+  files: fayllar
+  loaderChanged: Ushbu ekzemplarning mod yuklovchisi o
+  summary: '{add} fayllarni qo'
+  title: Kolleksiyani O’rnatish Natijasi
+  update: Yangilash
+  noFiles: Fayl o’zgarishlari yo’q
 instances:
-  add: Создать экземпляр
-  addCurseForgeDescription: 'Импортируйте из папки данных Curseforge.
-
-    Вам нужно выбрать корневую папку данных Curseforge.'
-  addDescription: Создать новый экземпляр с нуля
-  addMMCDescription: 'Импортируйте существующий экземпляр MultiMC.
-
-    Вам нужно выбрать папку с данными из MultiMC.'
-  addManually: Создать вручную
-  addModrinthDescription: 'Импортируйте существующий экземпляр Modrinth.
-
-    Вам необходимо выбрать корневую папку данных Modrinth.'
-  addServer: Создать из сервера
-  addServerDescription: Это создаст экземпляр, который запустится непосредственно
-    на сервере.
-  addTemplate: Создать из скачанного модпака
-  addTemplateDescription: Импортировать из загруженной сборки модов
-  addVanilla: Создать из стандартного Minecraft
-  addVanillaDescription: Импортировать из обычной папки (.minecraft). Это дублирует
-    оригинальный профиль экземпляра в NeoTerra Launcher.
-  fix: Исправить
-  folder: Папка
-  folderSetting: Настройки папки
-  importFolderDescription: Импортировать Minecraft в лаунчер
-  loadingFiles: Загрузка файлов сборки модов
-  edition: Издание
-  editionJava: Java-издание
-  editionBedrock: Bedrock-издание
-  editionBedrockHint: Издание Bedrock запускается через приложение Microsoft Store.
-    У вас должна быть лицензия Bedrock. Моды, наборы ресурсов и другие функции, доступные
-    только в Java, недоступны.
-  editionBedrockWindowsOnly: Издание Bedrock поддерживается только в сборке для Windows.
-  linkSharedFolders: Общий доступ к папкам между сборками
-  linkSharedFoldersHint: Создайте эти папки как ссылки на общие папки лаунчера, чтобы
-    эта сборка делила их содержимое со всеми другими связанными сборками. Это не копирование
-    — изменения в одной сборке появляются во всех. Неотмеченные папки остаются приватными
-    для этой сборки.
-  linkFailed: Не удалось связать папку {folder} с общей папкой
-  addPrismDescription: Импортировать существующий инстанс PrismLauncher.
-  instanceCount: '{count} instances'
+  add: Do’st qo’shish
+  addCurseForgeDescription: Curseforge ma
+  addDescription: Noldan yangi ekzemplar yaratish
+  addMMCDescription: ’Mavjud MultiMC ekzemplarlarini import qiling.
+  addManually: Qo’lda yaratish
+  addModrinthDescription: ’Mavjud Modrinth ekzemplarlarini import qiling.
+  addServer: Server qo’shish
+  addServerDescription: Bu bevosita serverda ishga tushadigan ekzemplar yaratadi.
+  addTemplate: Yuklab olingan modpakdan yaratish
+  addTemplateDescription: Yuklab olingan modlar terilmasidan import qilish
+  addVanilla: Oddiy Minecraft’dan yaratish
+  addVanillaDescription: Oddiy papkadan (.minecraft) import qilish. Bu original
+  fix: Tuzatish
+  folder: Papka
+  folderSetting: Papka sozlamalari
+  importFolderDescription: Minecraft’ni launcherga import qilish
+  loadingFiles: Modlar terilmasi fayllarini yuklash
+  edition: Nashr
+  editionJava: Java nashri
+  editionBedrock: Bedrock nashri
+  editionBedrockHint: Bedrock nashri Microsoft Store ilovasi orqali ishga tushadi.
+  editionBedrockWindowsOnly: Bedrock nashri faqat Windows tizimida qo’llab-quvvatlanadi.
+  linkSharedFolders: Sborakalar o’rtasida papkalarni ulashish
+  linkSharedFoldersHint: Ushbu sborka tarkibini barcha boshqa bog’langan sborakalar
+  linkFailed: '{folder} papkasini umumiy papka bilan bog'
+  addPrismDescription: Mavjud PrismLauncher инстансини import qilish.
+  instanceCount: '{count} ta ekzemplar'
 items:
-  count: '{count} элементов'
-  total: '{total} всего'
+  count: '{count} ta chizmalar'
+  total: Jami {total}
 java:
   allocatedLong: Использовать системный Java по умолчанию
-  allocatedShort: Автоматическое выделение
-  importFromFile: Импортировать Java из файла
-  invalid: Неверное расположение Java
-  location: Расположение Java
-  maxMemory: Максимальная память
-  memory: Память Java
-  memoryAuto: Автоматически
-  memoryManual: Вручную
-  memoryUnassigned: Не назначено
-  minMemory: Минимальная память
-  name: Java
-  noMemory: Не ограничивать использование памяти
-  refresh: Обновить локальный Java
-  systemMemory: 'Свободная память системы: {free} / {total}'
-  allocation: Выделено
-  autoHint: Минимум растёт с количеством установленных модов; максимум использует
-    доступную системную память.
-  change: Изменить
-  locationHint: Java не выбрана — используется системная по умолчанию
-  openFolder: Открыть папку Java
-  presets: Предустановки
+  allocatedShort: Avtomatik ajratish
+  importFromFile: Java’ni fayldan import qilish
+  invalid: Noto’g’ri Java joylashuvi
+  location: Launcher fayllarini saqlash joyi
+  maxMemory: Maksimal xotira
+  memory: Java xotirasi
+  memoryAuto: Avtomatik
+  memoryManual: Qo’lda
+  memoryUnassigned: Biriktirilmagan
+  minMemory: Minimal xotira
+  name: Holat
+  noMemory: Xotira ishlatilishini cheklamang
+  refresh: Yangilash
+  systemMemory: Tizimning bo
+  allocation: Ajratilgan
+  autoHint: Minimum o’rnatilgan modlar soni bilan ortadi; maksimum mavjud tizim xotirasidan
+  change: O’zgartirish
+  locationHint: Java tanlanmagan — odatiy tizim Java’si ishlatilmoqda
+  openFolder: Papkani ochish
+  presets: Oldindan o’rnatilgan sozlamalar
 labyMod:
-  disable: LabyMod не выбран
-  empty: LabyMod не поддерживает текущую версию Minecraft
+  disable: O’chirish
+  empty: Hali launcher kolleksiyalari yo’q
 unauthenticatedWarning:
-  title: Вы не вошли в аккаунт
-  description: Ни один аккаунт не выполнил вход. Игра запустится в демо-режиме. Войдите,
-    чтобы получить доступ ко всем возможностям.
-  cancel: Отмена
-  login: Войти
-  playAnyway: Всё равно запустить
+  title: Kolleksiyani O’rnatish Natijasi
+  description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+  cancel: Bekor Qilish
+  login: Kirish
+  playAnyway: Baribir ishga tushirish
 launch:
-  cancel: Отменить
-  createShortcut: Создать ярлык
-  kill: Остановить
-  killServer: Остановить локальный сервер
-  launch: Запустить
-  launchAnyway: Запустить в любом случае
-  launchAs: Запустить от имени
-  forceKill: Принудительно завершить
-  launchTo: Launch to
+  cancel: Bekor Qilish
+  createShortcut: Yorliq yaratish
+  kill: To’xtatish
+  killServer: Mahalliy serverni to’xtatish
+  launch: O’yinni ishga tushirish
+  launchAnyway: Baribir ishga tushirish
+  launchAs: Nomi doirasida ishga tushirish
+  forceKill: Majburiy yakunlash
+  launchTo: Ishga tushirish manzili
 launchBlocked:
   launchBadVersion:
-    description: Файл версии {version} повреждён или отсутствует. Возможно, вам нужно
-      переустановить эту версию?
-    title: Ошибка файла версии
+    description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+    title: Kolleksiyani O’rnatish Natijasi
   launchGeneralException:
-    description: Возникли ошибки, из-за которых запуск не удался.
-    title: Ошибка запуска
+    description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+    title: Kolleksiyani O’rnatish Natijasi
   launchInvalidJavaPath:
-    description: Выбранный путь к Java неверен или файл отсутствует. Пожалуйста, выберите
-      другой путь. <span class="highlight"> {javaPath} </span>
-    title: Неверный путь к Java
+    description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+    title: Kolleksiyani O’rnatish Natijasi
   launchJavaNoPermission:
-    description: У лаунчера нет разрешения на выполнение Java по указанному пути.
-      Измените разрешения файла или запустите лаунчер от имени администратора. <span
-      class="highlight"> {javaPath} </span>
-    title: Отсутствуют права на выполнение
+    description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+    title: Kolleksiyani O’rnatish Natijasi
   launchNoProperJava:
-    description: Не найдена подходящая версия Java для запуска экземпляра. ({javaPath}
-      неверен?)
-    title: Отсутствует подходящая версия Java
+    description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+    title: Kolleksiyani O’rnatish Natijasi
   launchNoVersionInstalled:
-    description: Не удаётся разрешить версию <span class="highlight">{version}</span>
-      для запуска.
-    title: Отсутствует выбранная версия
+    description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+    title: Kolleksiyani O’rnatish Natijasi
   launchSpawnProcessFailed:
-    description: Произошла ошибка при запуске процесса экземпляра. Проверьте, что
-      указана правильная версия Java, и попробуйте предоставить больше разрешений
-      лаунчеру. Если это не поможет, свяжитесь с разработчиками.
-    title: Ошибка запуска процесса экземпляра
-  unexpectedText: Это неожиданно. Вы можете перезапустить лаунчер, чтобы устранить
-    проблему. Если проблема повторится, свяжитесь с автором.
+    description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+    title: Kolleksiyani O’rnatish Natijasi
+  unexpectedText: Bu kutilmagan holat. Muammoni hal qilish uchun launcherni qayta
 launchFailed:
   crash: Игра вылетела!
-  description: Отчет о сбое отсутствует. Это журнал ошибок и последний журнал.
+  description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
   elyByAuthlib:
-    description: Заменитель Authlib от Ely.by был использован для версии Minecraft
-      {version}, но эта версия может быть не полностью совместима.
-    suggestion: Вы можете отключить заменитель Authlib Ely.by в настройках инстанса,
-      чтобы избежать этой проблемы.
-    title: Проблема совместимости Ely.by Authlib
-  failedToLaunch: Не удалось запустить запуск
-  latestLog: 'Последние логи '
-  title: Игра завершилась с аномальным кодом
+    description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+    suggestion: Ushbu muammoni oldini olish uchun ekzemplar sozlamalarida Ely.by Authlib
+    title: Kolleksiyani O’rnatish Natijasi
+  failedToLaunch: Ishga tushirishni bajarib bo’lmadi
+  latestLog: Oxirgi loglar
+  title: Kolleksiyani O’rnatish Natijasi
 launchPreExecuteCommandFailed:
-  description: 'Команда предварительного выполнения завершилась с ошибкой: {error}.
-    Пожалуйста, проверьте команду и повторите попытку.'
-  title: Команда предварительного выполнения не выполнена
+  description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+  title: Kolleksiyani O’rnatish Natijasi
 launchStatus:
   assigningMemory: Распределение памяти
-  elyByWarning: Заменитель Authlib Ely.by включён. Некоторые версии Minecraft могут
-    быть несовместимы и вызывать падения. Вы можете отключить его в настройках инстанса,
-    если возникнут проблемы.
-  exit: Выйти из игры?
-  injectingAuthLib: Настройка сторонней библиотеки AuthLib
-  launching: Запуск игры...
-  launchingSlow: Запуск игры всё ещё выполняется... Для инициализации графического
-    движка может потребоваться некоторое время...
-  refreshingUser: Обновление токена пользователя
-  spawningProcess: Запуск процесса
+  elyByWarning: Ely.by Authlib almashtiruvchisi yoqilgan. Ba’zi Minecraft versiyalari
+  exit: O’yindan chiqilsinmi?
+  injectingAuthLib: Uchinchi tomon AuthLib kutubxonasini sozlash
+  launching: O’yin ishga tushirilmoqda...
+  launchingSlow: O’yinni ishga tushirish hali ham bajarilmoqda... Grafika dvigatelini
+  refreshingUser: Foydalanuvchi tokenini yangilash
+  spawningProcess: Jarayonni ishga tushirish
 launcherUpdate:
   alreadyLatest: Последняя версия
-  installAndQuit: Перезапустите, чтобы установить
-  noUpdateAvailable: Нет доступных обновлений
-  updateToThisVersion: Скачать и установить
+  installAndQuit: O’rnatish uchun qayta ishga tushiring
+  noUpdateAvailable: Mavjud yangilanishlar yo’q
+  updateToThisVersion: Yuklab olish va o’rnatish
 localVersion:
   auto: Определить автоматически
-  empty: Версия не установлена
-  hint: Запустить конкретную локальную версию напрямую
-  reinstallDescription: Если вы считаете, что установка этой версии вызывает проблемы,
-    вы можете попробовать переустановить её.
-  reinstallTitle: Переустановить {version}
-  title: Локальная версия | Локальные версии
+  empty: Hali launcher kolleksiyalari yo’q
+  hint: Ushbu chizmani boshqa formatga o’tkazing. Yangi fayl yaratiladi.
+  reinstallDescription: Agar ushbu versiyani o’rnatish muammolarga olib kelmoqda
+  reinstallTitle: '{version} ni qayta o'
+  title: Kolleksiyani O’rnatish Natijasi
 logLevel:
-  error: Ошибка
-  info: Информация
-  success: Успех
-  warning: Предупреждение
+  error: 'badDataRoot: Launcher ma’lumotlari uchun noto’g’ri katalog! Iltimos, boshqasini'
+  info: Ma’lumot
+  success: Muvaffaqiyatli
+  warning: Maxsus CSS launcher’ning har qanday jihatini sozlash imkonini beradi.
 logView:
   searchPlaceholder: Поиск логов...
 login:
-  dropHint: Перетащите сюда ссылку с кодом авторизации для ручного входа
-  forgetPassword: Забыли пароль?
-  login: Войти
-  manualLoginUrl: Если браузер не открывается, пожалуйста, нажмите на эту ссылку для
-    авторизации!
-  signup: Зарегистрироваться
-  signupDescription: Нет учётной записи?
-  userRelogin: Срок действия токена доступа пользователя истёк. Пожалуйста, повторите
-    вход!
+  dropHint: Import qilish uchun chizma fayllarini (.litematic / .schem / .nbt) shu
+  forgetPassword: Parolni unutdingizmi?
+  login: Kirish
+  manualLoginUrl: Agar brauzer ochilmasa, avtorizatsiyadan o’tish uchun ushbu havolaga
+  signup: Ro’yxatdan o’tish
+  signupDescription: Hisobingiz yo’qmi?
+  userRelogin: Foydalanuvchi kirish tokenining amal qilish muddati tugadi. Iltimos,
 loginError:
   acquireMicrosoftTokenFailed: Не удалось получить токен Microsoft. Это может быть
     проблема с сетью. Пожалуйста, повторите попытку.
-  badNetworkOrServer: Проверьте соединение с сетью! Возможно, сервер авторизации недоступен!
-  checkOwnershipFailed: Не удалось подтвердить владение игрой. Пожалуйста, попробуйте
-    ещё раз.
-  connectionReset: Не удалось войти, так как соединение было сброшено сервером
-  fetchMinecraftProfileFailed: 'Не удалось получить профиль Minecraft: {reason}'
-  illegalEmail: Необходим корректный адрес электронной почты
-  invalidCredentials: Неверные учётные данные. Неверное имя пользователя или пароль.
-  loginMinecraftByXboxFailed: Не удалось получить токен Minecraft с помощью токена
-    Xbox. Убедитесь, что у вас есть Minecraft в Xbox, или попробуйте ещё раз.
-  loginXboxAgeRestricted: 'Не в состоянии войти в систему xbox из -за возникновения
-    возраста.
-
-    Пожалуйста, убедитесь, что возраст установлен для вашей учетной записи Microsoft,
-    а возраст превышает 18.'
-  loginXboxFailed: Не удалось войти в Xbox с помощью токена Microsoft. Убедитесь,
-    что у вас есть независимый аккаунт Xbox от вашего аккаунта Microsoft. Пожалуйста,
-    попробуйте ещё раз.
-  noProfileForNewUser: 'Профиль игры не найден!
-
-    Если вы новый пользователь Minecraft, пожалуйста, войдите в систему как минимум
-    один раз в официальной установке Minecraft.'
-  requestFailed: Ошибка входа, причина неизвестна. Пожалуйста, попробуйте ещё раз.
-  requireEmail: Требуется адрес электронной почты
-  requirePassword: Требуется пароль
-  requireUsername: Требуется имя пользователя
-  timeout: Время ожидания входа истекло. Пожалуйста, попробуйте ещё раз или проверьте
-    соединение с сетью.
-  loginCanceled: Microsoft sign-in was canceled.
-  cyrillicNotAllowed: Cyrillic characters are not allowed
-  illegalOfflineUsername: Username must be 3-16 characters long and contain only English
-    letters, numbers, and underscores
-  loginMinecraftByXboxRateLimited: Microsoft's Minecraft authentication service is
-    currently rate-limiting requests (HTTP 429). Please wait a moment and try again.
-  loginMinecraftByXboxRateLimitedWithRetry: Microsoft's Minecraft authentication service
-    is currently rate-limiting requests (HTTP 429). Please wait about {seconds} second(s)
-    and try again.
-  loginMinecraftByXboxServerError: Microsoft's Minecraft authentication service returned
-    a server error (HTTP {status}). This is on their side. Please try again in a few
-    minutes.
-  loginMinecraftByXboxStatus: Fail to exchange Minecraft token by Xbox token (HTTP
-    {status}). Please make sure you have Minecraft in Xbox, or retry.
-  loginXboxAdultVerification: Your Microsoft account requires adult verification (commonly
-    required in some regions) before it can sign in to Xbox. Open {url} in your browser
-    to complete verification, then try again.
-  loginXboxBadXsts: Microsoft returned an XSTS response without the expected user
-    claims. This is usually temporary -- please try again in a few minutes.
-  loginXboxBanned: This Microsoft / Xbox account has been suspended or banned by Microsoft
-    and cannot sign in to Minecraft. Please contact Microsoft / Xbox support.
-  loginXboxChildAccount: Your Microsoft account is a child account and needs to be
-    added to a Microsoft Family before it can sign in to Xbox / Minecraft. Open {url}
-    in your browser to fix it, then try again.
-  loginXboxFailedWithCode: Fail to login Xbox by Microsoft token (XErr {code}). Please
-    search the code for help, or try again later.
-  loginXboxNoXboxProfile: This Microsoft account does not have an Xbox profile yet.
-    Open {url} in your browser to create one, then try again.
-  loginXboxRegionLocked: Xbox Live is not available in your account's region. Please
-    change your Microsoft account's country/region in Microsoft account settings and
-    try again.
-  xboxErrorGuideHint: Having trouble signing in? Learn how to fix Microsoft & Xbox
-    login issues.
-  openLoginGuide: How to fix this issue
-  openDiscordSupport: Still need help? Join our Discord
+  badNetworkOrServer: Tarmoq ulanishini tekshiring! Avtorizatsiya serveri mavjud
+  checkOwnershipFailed: O’yinga egalik huquqini tasdiqlab bo’lmadi. Iltimos, qayta
+  connectionReset: Ulanish server tomonidan qayta tiklangani sababli kirib bo’lmadi
+  fetchMinecraftProfileFailed: Minecraft profilini olib bo
+  illegalEmail: To’g’ri elektron pochta manzili talab qilinadi
+  invalidCredentials: Noto’g’ri ma’lumotlar. Foydalanuvchi nomi yoki parol noto’g’ri.
+  loginMinecraftByXboxFailed: Xbox tokeni yordamida Minecraft tokenini olib bo’lmadi.
+  loginXboxAgeRestricted: Yosh cheklovi tufayli xbox tizimiga kirib bo
+  loginXboxFailed: Microsoft tokeni yordamida Xbox’ga kirib bo’lmadi. Microsoft Hisobingizdan
+  noProfileForNewUser: O
+  requestFailed: NeoTerra hisob xizmati so’rovni bajara olmadi.
+  requireEmail: Elektron pochta manzili talab qilinadi
+  requirePassword: Parol talab qilinadi
+  requireUsername: Foydalanuvchi nomi talab qilinadi
+  timeout: §4Serverga ulanish vaqti tugadi!
+  loginCanceled: Microsoft tizimiga kirish bekor qilindi.
+  cyrillicNotAllowed: Kirill belgilariga ruxsat berilmaydi
+  illegalOfflineUsername: Foydalanuvchi nomi 3-16 belgi uzunlikda bo’lishi va faqat
+  loginMinecraftByXboxRateLimited: Microsoft’ning Minecraft autentifikatsiya xizmati
+  loginMinecraftByXboxRateLimitedWithRetry: Microsoft’ning Minecraft autentifikatsiya
+  loginMinecraftByXboxServerError: Microsoft’ning Minecraft autentifikatsiya xizmati
+  loginMinecraftByXboxStatus: Xbox tokeni orqali Minecraft tokenini almashtirib
+  loginXboxAdultVerification: Microsoft hisobingiz Xbox’ga kirishdan oldin kattalar
+  loginXboxBadXsts: Microsoft kutilgan foydalanuvchi da’volarisiz XSTS javobini qaytardi.
+  loginXboxBanned: Ushbu Microsoft / Xbox hisobi Microsoft tomonidan to’xtatilgan
+  loginXboxChildAccount: Microsoft hisobingiz bolalar hisobi hisoblanadi va Xbox
+  loginXboxFailedWithCode: Microsoft tokeni orqali Xbox’ga kirib bo’lmadi (XErr
+  loginXboxNoXboxProfile: Ushbu Microsoft hisobida hali Xbox profili yo’q. Profil
+  loginXboxRegionLocked: Xbox Live hisobingiz mintaqasida mavjud emas. Microsoft
+  xboxErrorGuideHint: Tizimga kirishda muammo bormi? Microsoft va Xbox’ga kirish
+  openLoginGuide: Ushbu muammoni qanday tuzatish kerak
+  openDiscordSupport: Hali ham yordam kerakmi? Discord’imizga qo’shiling
 logsCrashes:
   crashes: Отчёты об ошибках
-  logs: Журналы
-  placeholder: Файлы не найдены
-  title: Журналы и отчёты об ошибках
-  failures: Ошибки запуска
-  serverLogs: Server Logs
-  showFile: Show in Folder
+  logs: Jurnallar
+  placeholder: Mahalliy tarmoqda Minecraft o’ynash uchun boshqa foydalanuvchi bilan
+  title: Kolleksiyani O’rnatish Natijasi
+  failures: Ishga tushirish xatolari
+  serverLogs: Server loglari
+  showFile: '{file} sheyder to'
 me:
-  news: Новости
-  recentPlay: Последние игры
+  news: 'name: Yangiliklar'
+  recentPlay: Oxirgi o’yinlar
 migrationWindow:
-  title: Перенос данных
-  preparing: Подготовка к переносу…
-  scanning: Подсчёт…
-  migrating: Перемещение данных
-  done: Перенос завершён
-  files: файлов
-  warning: Не закрывайте лаунчер до завершения, иначе данные могут быть потеряны.
-  error: Не удалось перенести данные
+  title: Kolleksiyani O’rnatish Natijasi
+  preparing: Ko me chirishga tayyorgarlik…
+  scanning: Hisoblanmoqda…
+  migrating: Ma’lumotlar ko me chirilmoqda
+  done: Ko me chirish yakunlandi
+  files: fayllar
+  warning: Maxsus CSS launcher’ning har qanday jihatini sozlash imkonini beradi.
+  error: 'badDataRoot: Launcher ma’lumotlari uchun noto’g’ri katalog! Iltimos, boshqasini'
 minecraftVersion:
-  name: Версия Minecraft
-  all: Все версии
-  release: Релиз
-  showAlpha: Показать snapshot
-  snapshot: Снапшот
+  name: Holat
+  all: Barchasi
+  release: Reliz
+  showAlpha: Snapshot’ni ko me rsatish
+  snapshot: Snabshot
 mod:
   acceptVersion: Принимает {version}
-  applyGroupRules: Применить сохраненные правила группировки
-  compatible: Совместимый мод.
-  createGroup: Создать группу
-  currentVersion: Текущая {current}
-  denseView: Компактное отображение модов
-  description: Описание
-  disableAll: Отключить все
-  dropHint: Перетащите сюда файл мода (.jar/.litemod), чтобы импортировать его.
-  duplicatedDetected: '{count} дублированных модов'
-  duplicatedDetectedDescription: 'Найдены моды с одинаковым идентификатором, но с
-    разными файлами.
-
-    Это может привести к сбою Minecraft.
-
-    Пожалуйста, выберите файл, который вы хотите сохранить.'
-  enableAll: Включить все
-  enabled: 'Всего модов включено: {count}'
-  filter: Фильтр модов
-  group: Группа вверх
-  groupInstalled: Группировать установленные моды
-  groupName: Название группы
-  groupNameRequired: Название группы обязательно
-  hasUpdate: У мода есть новая версия!
-  incompatible: Несовместимый мод.
-  incompatibleHint: Посмотрите отчет о совместимости вашего мода
-  incompatibleHintDescription: 'Некоторые зависимости модов могут отсутствовать.
-
-    Или некоторые версии зависимостей не совпадают.'
-  maybeCompatible: Возможно, совместим.
-  modloaderSelectHint: 'Мод поддерживает следующие загрузчики модов.
-
-    Пожалуйста, выберите один для установки.'
-  modloaderSelectNotSupported: Не найден {modloader} для Minecraft {minecraft}
-  mods: '{count} Модов'
-  name: Мод | Моды
-  newFolder: Новая папка
-  noGroupsFound: Группы не найдены
-  noGroupsYet: Групп пока нет. Создайте одну!
-  noModLoaderHint: Не забудьте включить загрузчик модов, чтобы использовать моды!
-  openLink: Открыть ссылку на мод {url}
-  search: Поиск модов
-  searchGroups: Поиск групп...
-  searchOnMcWiki: Найдите {name} в энциклопедии MC.
-  selectOrCreateGroup: Выбрать или создать группу
-  showDirectory: Открыть папку с модами
-  showFile: Показать путь к файлу мода {file}
-  showInModrinth: Показать {name} на Modrinth
-  switchDefaultSource: Источник контента модов по умолчанию
-  syncGroupRules: Сохранить правила группировки
-  toUpdate: '{count} для обновления'
-  ungroup: Негруппинг
+  applyGroupRules: Saqlangan guruhlash qoidalarini qo’llash
+  compatible: Mos keladi
+  createGroup: Guruh yaratish
+  currentVersion: Tanlangan versiya
+  denseView: Modlarni ixcham ko’rsatish
+  description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+  disableAll: Barchasini o’chirish
+  dropHint: Import qilish uchun chizma fayllarini (.litematic / .schem / .nbt) shu
+  duplicatedDetected: '{count} ta takroriy modlar'
+  duplicatedDetectedDescription: ’Bir xil identifikatorli, ammo har xil faylli modlar
+  enableAll: Barchasini yoqish
+  enabled: Tanlangan sheyderlar to’plamlari
+  filter: Filtr
+  group: Yuqoriga guruhlash
+  groupInstalled: O’rnatilgan modlarni guruhlash
+  groupName: Guruh nomi
+  groupNameRequired: Guruh nomi majburiy
+  hasUpdate: Modda yangi versiya bor!
+  incompatible: Modlar yetishmayapti
+  incompatibleHint: Modingizning moslik hisobotini ko’ring
+  incompatibleHintDescription: Ba
+  maybeCompatible: Ehtimol mos keladi.
+  modloaderSelectHint: Mod quyidagi mod yuklovchilarini qo
+  modloaderSelectNotSupported: Minecraft {minecraft} uchun {modloader} topilmadi
+  mods: '{count} ta Modlar'
+  name: Holat
+  newFolder: Yangi papka
+  noGroupsFound: Guruhlar topilmadi
+  noGroupsYet: Hali guruhlar yo’q. Birtasini yarating!
+  noModLoaderHint: Modlardan foydalanish uchun mod yuklovchisini yoqishni unutmang!
+  openLink: '{url} mod havolasini ochish'
+  search: Manbalarni qidirish
+  searchGroups: Guruhlarni qidirish...
+  searchOnMcWiki: MC ensiklopediyasidan {name} ni toping.
+  selectOrCreateGroup: Guruhni tanlang yoki yarating
+  showDirectory: Sheyder to’plamlari papkasini ochish
+  showFile: '{file} sheyder to'
+  showInModrinth: Modrinth’da {name} ni ko’rsatish
+  switchDefaultSource: Odatiy mod kontenti manbasi
+  syncGroupRules: Guruhlash qoidalarini saqlash
+  toUpdate: '{count} ta yangilanish uchun'
+  ungroup: Guruhdan chiqarish
 modFilter:
-  clear: Чистый фильтр
-  dependenciesInstallOnly: Только показывать пропущенные моды зависимости
-  disabledOnly: Только показывать отключенные моды
-  hasUpdateOnly: Только у шоу есть моды обновления
-  incompatibleOnly: Показывать только несовместимые или отсутствующие зависимости
-    отсутствующие моды
-  unusedOnly: Показать только неиспользованные библиотечные моды
+  clear: Bajarilgan vazifalarni tozalash
+  dependenciesInstallOnly: Faqat yetishmayotgan bog’liq modlarni ko’rsatish
+  disabledOnly: Faqat o’chirilgan modlarni ko me rsatish
+  hasUpdateOnly: Faqat yangilanishi bor modlarni ko me rsatish
+  incompatibleOnly: Faqat mos kelmaydigan yoki bog’liqliklari yetishmayotgan modlarni
+  unusedOnly: Faqat ishlatilmagan kutubxona modlarini ko me rsatish
 modInstall:
   archived: '{name} заархивировано.
 
     {name} не будет получать никаких дальнейших обновлений, если автор не решит разархивировать
     проект.'
   autoUpgrade:
-    description: Вы изменили версию Minecraft. Хотите автоматически обновить совместимые
-      моды до версий, соответствующих Minecraft {version}?
+    description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
     'no': Пропустить
-    title: Обновить моды?
+    title: Kolleksiyani O’rnatish Natijasi
     'yes': Обновить моды
-  checkDependencies: Проверить недостающие зависимости
-  checkedDependencies: Недостающие зависимости проверены
-  currentVersion: Выбранная версия
-  dependencyHint: Установлена ​​другая версия {version}
-  releaseOnly: Игнорировать альфа- и бета-версии при обновлении
-  installDependencies: Установить недостающие зависимости
-  installHint: Будет установлен файл {file} с зависимостями {dependents}
-  noVersionSupported: Мод поддерживает только Minecraft {supported}.
-  recommendation: Исследуйте {first} моды в {modrinth} и ​​{curseforge}!
-  removeUnusedLibraries: Удалить неиспользованные моды библиотеков
-  search: Результаты поиска
-  skipVersion: Пропустите моды с другой версией Minecraft
-  source: Источник контента мода
-  switch: Переключить версию
-  scanUnusedLibraries: Scan Unused Libraries
+  checkDependencies: Yetishmayotgan bog’liqliklarni tekshirish
+  checkedDependencies: Yetishmayotgan bog’liqliklar tekshirildi
+  currentVersion: Tanlangan versiya
+  dependencyHint: Boshqa {version} versiyasi o’rnatilgan
+  releaseOnly: Yangilashda alfa va beta versiyalarini e’tiborsiz qoldirish
+  installDependencies: Yetishmayotgan bog’liqliklarni o’rnatish
+  installHint: '{dependents} bog'
+  noVersionSupported: Mod faqat Minecraft {supported} versiyasini qo’llab-quvvatlaydi.
+  recommendation: '{modrinth} va {curseforge} dagi {first} modlarni o'
+  removeUnusedLibraries: Ishlatilmagan kutubxona modlarini o’chirish
+  search: Manbalarni qidirish
+  skipVersion: Boshqa Minecraft versiyasiga ega modlarni o me tkazib yuborish
+  source: 'curseforge-name: CurseForge'
+  switch: Versiyani o’zgartirish
+  scanUnusedLibraries: Ishlatilmagan kutubxonalarni skanerlash
 modSearch:
   noLocalModsFound: Локальные моды, соответствующие вашему поиску, не найдены.
-  noModsFound: Моды не найдены.
-  noModsInstalled: У вас не установлено ни одного мода.
-  searchInMarket: Искать {keyword} на рынке
+  noModsFound: Modlar topilmadi.
+  noModsInstalled: Sizda hech qanday mod o’rnatilmagan.
+  searchInMarket: Bozordan {keyword} ni qidirish
 modUpgradePolicy:
-  curseforge: Curseforge First
-  curseforgeOnly: Только в Кёрсфордже
-  modrinth: Modrinth Первый
-  modrinthOnly: Только Модринт
-  name: Политика обновления
+  curseforge: 'category: Kategoriya'
+  curseforgeOnly: Faqat Curseforge
+  modrinth: 'browseUrl: Brauzerda ochish {url}'
+  modrinthOnly: Faqat Modrinth
+  name: Holat
 modified:
-  reset: Сбросить
-  save: Сохранить
-  unsaved: Ваши изменения не сохранены!
+  reset: Qayta tiklash
+  save: Saqlash
+  unsaved: O’zgarishlaringiz saqlanmadi!
 modpack:
-  author: Имя автора
-  authorHint: Используется для подписи экспортируемой сборки модов (CurseForge).
-  description: Описание
-  descriptionHint: Общее описание для вашей сборки модов. Используется при экспорте
-    в формат CurseForge.
-  dropHint: Скиньте сюда zip-файл modpack для импорта
-  emitCurseforge: Создать сборку модов для CurseForge
-  emitModrinth: Создать сборку модов для Modrinth
-  emitModrinthStrict: Строгий формат Modrinth
-  emitModrinthStrictDescription: Разрешены только URL-адреса из 4 доменов, перечисленных
-    в документе Modrinth
-  export: Экспортировать как сборку модов
-  exportDirectory: Экспортный каталог
-  exportDirectoryDescription: Modpack будет экспортирован в папку загрузки по умолчанию
-  includeAssets: Включить ресурсы
-  includes: Файлы для включения
-  modpackVersion: Версия сборки модов
-  name: Сборка модов | Сборки модов
-  overrides: Переопределения
-  url: URL-адрес
-  urlHint: URL-адрес домашней страницы вашей сборки модов.
+  author: Muallif
+  authorHint: Eksport qilinadigan modlar terilmasini (CurseForge) imzolash uchun
+  description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+  descriptionHint: Modlar terilmangiz uchun umumiy tavsif. CurseForge formatiga
+  dropHint: Import qilish uchun chizma fayllarini (.litematic / .schem / .nbt) shu
+  emitCurseforge: CurseForge uchun modlar terilmasini yaratish
+  emitModrinth: Modrinth uchun modlar terilmasini yaratish
+  emitModrinthStrict: Qat’iy Modrinth formati
+  emitModrinthStrictDescription: Faqat Modrinth hujjatida ko’rsatilgan 4 domendan
+  export: Serverni eksport qilish
+  exportDirectory: Eksport katalogi
+  exportDirectoryDescription: Modpack odatiy yuklab olish papkasiga eksport qilinadi
+  includeAssets: Resurslarni kiritish
+  includes: Kiritiladigan fayllar
+  modpackVersion: Modlar terilmasi versiyasi
+  name: Holat
+  overrides: Qayta aniqlashlar
+  url: URL manzil
+  urlHint: Modlar terilmangiz bosh sahifasining URL manzili.
 modpackImportConfirm:
-  description: 'Обнаружите, что вы бросите файл в пусковую установку.
-
-    Вы пытаетесь импортировать Modpack?'
-  title: Вы пытаетесь импортировать Modpack?
+  description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+  title: Kolleksiyani O’rnatish Natijasi
 modpackUpdateOrCreate:
-  createNew: Создать новый
-  description: Экземпляр "{name}" для этого модпака уже существует. Хотите обновить
-    его или создать новый?
-  title: Экземпляр уже существует
-  update: Обновить существующий
+  createNew: Yangi dunyo yaratish
+  description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+  title: Kolleksiyani O’rnatish Natijasi
+  update: Yangilash
 modrinth:
   browseUrl: Открыть в браузере {url}
   categories:
@@ -996,1265 +859,1143 @@ modrinth:
     512x+: 512x+
     64x: 64x
     8x-: 8x-
-    adventure: Приключение
-    atmosphere: Атмосфера
-    audio: Аудио
-    blocks: Блоки
-    bloom: Рассеянный свет
+    adventure: Sarguzasht
+    atmosphere: Atmosfera
+    audio: Audio
+    blocks: '{count} ta bloklar'
+    bloom: Tarqoq nur
     bukkit: Bukkit
     bungeecord: Bungeecord
-    canvas: Полотно
-    cartoon: Мультипликация
-    categories: Категории
-    challenging: Высокая сложность
+    canvas: Tuval
+    cartoon: Multiplikatsiya
+    categories: Kategoriyalar
+    challenging: Yuqori murakkablik
     colored-lighting: Разноцветное освещение
-    combat: Бой
+    combat: Jang
     core-shaders: Базовые шейдеры
-    cursed: Странность
-    datapack: Набор данных
-    decoration: Декорация
-    economy: Экономика
-    entities: Существа
-    environment: Окружение
-    equipment: Экипировка
+    cursed: G’alati
+    datapack: 'name: Ma’lumotlar paketi | Ma’lumotlar paketlari'
+    decoration: Bezak
+    economy: Iqtisodiyot
+    entities: Mavjudotlar
+    environment: Atrof-muhit
+    equipment: Ekipirovka
     fabric: Fabric
-    fantasy: Фэнтези
-    features: Функции
+    fantasy: Fantaziya
+    features: Funksiyalar
     folia: Folia
-    foliage: Листва
-    fonts: Шрифты
-    food: Еда
+    foliage: Barglar
+    fonts: Shriftlar
+    food: Ovqat
     forge: Forge
     game-mechanics: Игровые механики
-    gui: Графический интерфейс
-    high: Высокая требовательность
+    gui: Grafik interfeys
+    high: Yuqori talabli
     iris: Iris
-    items: Предметы
+    items: Buyumlar
     kitchen-sink: Посуда
-    library: Библиотека
-    lightweight: Малый размер
+    library: Kutubxona
+    lightweight: Kichik hajm
     liteloader: Liteloader
-    locale: Локализация
-    low: Низкая требовательность
-    magic: Магия
-    management: Управление
-    medium: Средняя требовательность
+    locale: 'description: Agar mavjud bo’lsa, afzal ko’rgan tilingizni tanlang. Agar
+      kerakli'
+    low: Past talabli
+    magic: Sehr-jodu
+    management: Boshqaruv
+    medium: O’rtacha talabli
     minecraft: Minecraft
-    minigame: Мини-игры
-    misc: Разнообразие
-    mobs: Мобы
-    modded: Модификация
-    models: Модели
-    modloader: Загрузчик модов
-    multiplayer: Сетевая игра
-    name: Категории
+    minigame: Mini-o’yinlar
+    misc: Turli xil
+    mobs: Moblar
+    modded: Modifikatsiya
+    models: Modellar
+    modloader: Mod yuklovchi
+    multiplayer: 'contentDescription: Siz va foydalanuvchilar o’rtasidagi ulanishlar
+      bu yerda ko me'
+    name: Holat
     neoforge: NeoForge
     optifine: Optifine
-    optimization: Оптимизация
+    optimization: Optimizatsiya
     paper: Paper
     path-tracing: Трассировка пути
-    pbr: Физически корректный рендеринг (PBR)
+    pbr: Fizik jihatdan to’g’ri renderlash (PBR)
     performance impact: Влияние на производительность
-    potato: Для картофельных ПК
+    potato: Kuchli bo’lmagan PK uchun
     purpur: Purpur
-    quests: Квесты
+    quests: Kvestlar
     quilt: Quilt
-    realistic: Реализм
-    reflections: Отражения
-    resolutions: Разрешения
+    realistic: Yarim realizm
+    reflections: Aks etishlar
+    resolutions: Ruxsatlar
     rift: Rift
-    screenshot: Для снимков экрана
+    screenshot: Ekran tasvirlari uchun
     semi-realistic: Полуреализм
-    shadows: Тени
-    simplistic: Простота
-    social: Социальность
+    shadows: Soyalar
+    simplistic: Oddiylik
+    social: Ijtimoiy
     spigot: Spigot
     sponge: Sponge
-    storage: Хранение
-    technology: Технологии
-    themed: Тема
-    transportation: Транспортировка
-    tweaks: Твики
-    utility: Полезность
-    vanilla: Ванилла
+    storage: Saqlash
+    technology: Texnologiyalar
+    themed: Mavzuli
+    transportation: Transport
+    tweaks: Tviklar
+    utility: Foydalilik
+    vanilla: Vanilla
     vanilla-like: Похожее на ваниллу
     velocity: Velocity
     waterfall: Waterfall
-    worldgen: Генерация мира
-  clientSide: Клиентская сторона
-  copyTitle: Скопировать текст {title} в буфер обмена
-  createAt: Создано
-  createCollection: Создать коллекцию
-  description: Описание
-  downloads: Скачиваний
+    worldgen: Dunyo generatsiyasi
+  clientSide: Klient tomoni
+  copyTitle: '{title} matnini buferga nusxalash'
+  createAt: Yaratilgan
+  createCollection: Kolleksiya yaratish
+  description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+  downloads: Yuklab olishlar
   environments:
-    default: По умолчанию
-    name: Окружающая среда
-    optional: Необязательно
-    required: Требуется
-    unsupported: Не поддерживается
-    all: Все
-  externalResources: Внешние ресурсы
-  featuredVersions: Рекомендуемые версии
-  followedProjects: Следовал проектам
-  followers: Подписчики
-  gallery: Галерея
+    default: Odatiy
+    name: Holat
+    optional: Majburiy emas
+    required: Talab qilinadi
+    unsupported: Do’stlar faqat Microsoft hisoblari uchun mavjud.
+    all: Barchasi
+  externalResources: Tashqi resurslar
+  featuredVersions: Tavsiya etilgan versiyalar
+  followedProjects: Kuzatilgan loyihalar
+  followers: Obunachilar
+  gallery: Skrinshotlar galereyasi
   gameVersions:
-    name: Версии игры
+    name: Holat
   headers:
-    status: Статус
-    support: Поддерживает
-    version: Версия
-  issueUrl: Проблемы
-  license: Лицензия
+    status: 'active: Faol'
+    support: Qo’llab-quvvatlaydi
+    version: 'checkIntegrity: Yaxlitlikni tekshiring'
+  issueUrl: Muammolar
+  license: Litsenziya
   licenses:
-    name: Лицензии
-  loginHint: 'Операция требует от Modrinth для выполнения.
-
-    Пусковая установка откроет окно браузера для входа в Modrinth.'
-  loginTitle: Войдите в Modrinth
+    name: Holat
+  loginHint: Bajarish uchun Modrinth
+  loginTitle: Modrinth’ga kiring
   modLoaders:
-    name: Загрузчики модов
+    name: Holat
   modpackSource:
-    source: Источник
-  projectId: ID проекта
-  projectMembers: Участники проекта
+    source: 'curseforge-name: CurseForge'
+  projectId: Loyiha ID’si
+  projectMembers: Loyiha ishtirokchilari
   projectType:
-    mod: Мод
-    modpack: Сборка модов
-    resourcepack: Набор ресурсов
-    shader: Шейдер
-    datapack: Набор данных
-    plugin: Плагин
-  projects: '{count} проекты'
-  serverSide: Серверная часть
+    mod: 'defaultSourceDescription: Mod kontenti manbasini shu yerda tanlashingiz
+      mumkin.'
+    modpack: Modlar terilmasi
+    resourcepack: 'linkShared: Barcha sborakalar uchun umumiy resurs paketlari'
+    shader: Sheyder
+    datapack: 'name: Ma’lumotlar paketi | Ma’lumotlar paketlari'
+    plugin: Plagin
+  projects: Loyihalar yo’q | {count} ta loyiha | {count} ta loyihalar
+  serverSide: Server qismi
   sort:
-    downloads: Количество загрузок
-    follows: Количество подписчиков
-    newest: Недавно созданные
-    relevance: Релевантность
-    title: Сортировать по
-    updated: Недавно обновлённые
-  sourceUrl: Исходный код
-  technicalInformation: Техническая информация
-  updateAt: Обновлено
-  versions: Версии
-  wikiUrl: Вики
+    downloads: Yuklab olishlar
+    follows: Obunachilar soni
+    newest: Yaqinda yaratilgan
+    relevance: Relevatlik
+    title: Kolleksiyani O’rnatish Natijasi
+    updated: Yaqinda yangilangan
+  sourceUrl: Dastlabki kod
+  technicalInformation: Texnik ma’lumotlar
+  updateAt: Yangilangan
+  versions: Versiyalar
+  wikiUrl: Viki
 modrinthCard:
-  currentVersion: Текущая версия
+  currentVersion: Tanlangan versiya
 multiplayer:
   allowTurn: Разрешить сервер-ретранслятор
-  allowTurnHint: Включите ретранслятор, если связь напрямую не работает.  Он может
-    замедлить соединение, используйте осторожно. Включите ретранслятор, если связь
-    напрямую не работает.  Он может замедлить соединение, используйте осторожно.
-  complete: Завершено
-  confirm: Подтвердить
-  connections: Соединения
-  copied: Скопировано!
-  copy: Копировать
-  copyGroupToFriendHint: Позвольте пользователям присоединиться к группе с помощью
-    этого ID
-  copyLocalHint: 'Скопируйте локальный токен SDP и отправьте его пользователю, чтобы
-    он ввёл этот токен в раздел присоединения к соединению. <span>Токен может быть
-    использован только для <span style="color: red; font-weight: bold">одного пользователя</span>!
-    Вы не можете отправлять один и тот же токен нескольким пользователям!</span> <br>
-    <span class="hint-text" style="font-style: italic;"> Если вам необходимо подключить
-    нескольких пользователей, необходимо создать <span style="font-weight: bold; color:
-    rgba(245, 158, 11)">несколько</span> соединений.</span>'
-  createLocalToken: Создать локальный токен
-  currentIpTitle: Обнаруженный общедоступный IP
-  currentNatTitle: 'Текущая сеть (NAT):'
-  difficultyLevelHint: Уровень сложности для создания соединения с другими пользователями
-  disconnect: Отключиться
-  disconnectDescription: Вы уверены, что хотите прервать соединение с пользователем
-    {user}({id})?
-  disconnected: отключено
-  enterRemoteToken: Введите удалённый токен
-  enterRemoteTokenHint: После того, как пользователь введёт ваш токен, необходимо
-    ввести его токен в приведённое ниже текстовое поле. Нажмите "Подтвердить", чтобы
-    установить соединение.
-  exposedPortDescription: Порт, который вы предоставили другим узлам
-  exposedPorts: Перенаправленные порты
-  gatheringIce: 'Пожалуйста, подождите, пока сервер ICE соберёт необходимую информацию
-    о вашей сети. Если вы нетерпеливы и информации достаточно, вы можете отправить
-    текущий SDP другому пользователю наперёд и нажать "Далее". <br> Затем, отправьте
-    <span class="v-chip v-chip--label v-size--small" style="font-weight: bold">Локальный
-    токен</span> пользователю, который должен будет его ввести в разделе <span class="v-chip
-    v-chip--label v-size--small" style="font-weight: bold">Присоединиться к соединению</span>.
-    <br> Серверу ICE может потребоваться некоторое время, чтобы собрать вашу информацию
-    для создания <span class="v-chip v-chip--label v-size--small" style="font-weight:
-    bold">Локального токена</span>. <br> Вам не нужно ждать, пока статус ICE будет
-    завершён. Если токен ниже остаётся неизменным, вы можете скопировать и отправить
-    его пользователю.'
-  groupId: ID группы
-  illegalTokenDescription: Недопустимый токен, убедитесь, что токен от пользователя
-    введён верно
-  initiateConnection: Инициировать соединение
-  joinConnection: Если пользователь уже инициировал соединение, вам нужно присоединиться
-    к соединению.
-  joinManual: Присоединиться
-  joinOrCreateGroup: Присоединиться/Создать группу
-  joinOrCreateGroupHint: Получите ID группы от пользователя или создайте группу
-  kernel: Ядро P2P
-  kernelDescription: Используйте WebRTC или node-datachannel.  Переключайтесь между
-    ними только если p2p-соединение иногда вызывает ошибку окна запуска. Используйте
-    WebRTC или node-datachannel.  Переключайтесь между ними только если p2p-соединение
-    иногда вызывает ошибку окна запуска.
-  leaveGroup: Покинуть группу
-  localToken: Локальный токен
-  manualConnect: Ручное соединение
-  name: Игра по локальной сети
-  networkInfo: Информация о сети
-  next: Далее
-  otherExposedPortDescription: Предисловие к порту от {user}
-  placeholder: Соединитесь с другим пользователем, чтобы играть в Minecraft в локальной
-    сети!
-  previous: Назад
-  receiveHint: После того, как пользователь введёт ваш токен, соединение будет создано
-    автоматически. Теперь вы можете закрыть диалоговое окно.
-  receiveRemoteTokenHint: Пожалуйста, введите удалённый токен от пользователя здесь.
-  remoteToken: Удалённый токен
-  routerInfo: Информация о роутере
-  sendTokenToRemote: Отправить токен
-  share: Поделиться конфигурацией экземпляра
-  sharing: Обмен файлами...
-  sharingNotificationBody: Вы можете загрузить или создать экземпляр из общих настроек
-    {name}.
-  sharingNotificationTitle: Пользователь делится настройками экземпляра
-  start: Начать
-  startNewP2PConnection: Нажмите на кнопку "Начать", чтобы создать новое p2p-соединение
-  connectionError: Ошибка соединения
-  connectionFailedHint: Не удалось установить соединение. Проверьте, что у обеих сторон
-    совместимые типы NAT.
-  natWarning: Ваш тип NAT может препятствовать прямым соединениям. Попробуйте включить
-    релейный сервер в настройках или попросите друга стать хостом.
-  connectedToHost: Connected to the room host
-  directConnection: Direct
-  guest: Guest
-  host: Host
-  relayConnection: Relay
-myStuff: Мой контент
+  allowTurnHint: Agar bevosita ulanish ishlamasa, retranslyatorni yoqing. U ulanishni
+  complete: Yakunlandi
+  confirm: Tasdiqlash
+  connections: Tarmoq ulanishlari
+  copied: Nusxalandi
+  copy: Nusxalash
+  copyGroupToFriendHint: Foydalanuvchilarga ushbu ID yordamida guruhga qo’shilishlariga
+  copyLocalHint: ’Mahalliy SDP tokenini nusxalang va uni foydalanuvchiga ulanishga
+  createLocalToken: Mahalliy token yaratish
+  currentIpTitle: Aniqlangan ommaviy IP
+  currentNatTitle: 'Joriy tarmoq (NAT):'
+  difficultyLevelHint: Boshqa foydalanuvchilar bilan ulanish hosil qilish uchun qiyinchilik
+  disconnect: Uzish
+  disconnectDescription: ’{user}({id}) foydalanuvchisi bilan ulanishni uzishga ishonchingiz
+  disconnected: Uzildi
+  enterRemoteToken: Masofaviy tokenni kiriting
+  enterRemoteTokenHint: Foydalanuvchi tokeningizni kiritgandan so’ng, uning tokenini
+  exposedPortDescription: Boshqa tugunlarga siz taqdim etgan port
+  exposedPorts: Yo’naltirilgan portlar
+  gatheringIce: Iltimos, ICE serveri tarmog
+  groupId: Guruh ID’si
+  illegalTokenDescription: Noto’g’ri token, foydalanuvchidan olingan token to’g’ri
+  initiateConnection: Ulanishni boshlash
+  joinConnection: Agar foydalanuvchi allaqachon ulanishni boshlagan bo’lsa, ulanishga
+  joinManual: Qo’shilish
+  joinOrCreateGroup: Guruhga qo’shilish/yaratish
+  joinOrCreateGroupHint: Foydalanuvchidan guruh ID’sini oling yoki guruh yarating
+  kernel: P2P yadrosi
+  kernelDescription: WebRTC yoki node-datachannel’dan foydalaning. Faqat p2p-ulanish
+  leaveGroup: Guruhni tark etish
+  localToken: Mahalliy token
+  manualConnect: Qo’lda ulanish
+  name: Holat
+  networkInfo: Tarmoq haqida ma’lumot
+  next: Keyingisi
+  otherExposedPortDescription: '{user} tomonidan port prefaksi'
+  placeholder: Mahalliy tarmoqda Minecraft o’ynash uchun boshqa foydalanuvchi bilan
+  previous: Orqaga
+  receiveHint: Foydalanuvchi tokeningizni kiritgandan so me so’ng ulanish avtotmatik
+  receiveRemoteTokenHint: Iltimos, foydalanuvchidan olingan masofaviy tokenni shu
+  remoteToken: Masofaviy token
+  routerInfo: Ruter haqida ma’lumot
+  sendTokenToRemote: Tokenni yuborish
+  share: Ekzemplar konfiguratsiyasini ulashish
+  sharing: Fayllar ulashilmoqda...
+  sharingNotificationBody: Siz {name} umumiy sozlamalaridan yuklab olishingiz yoki
+  sharingNotificationTitle: Foydalanuvchi ekzemplar sozlamalari bilan ulashmoqda
+  start: Boshlash
+  startNewP2PConnection: Yangi p2p-ulanish yaratish uchun "Boshlash" tugmasini bosing
+  connectionError: Ulanish xatosi
+  connectionFailedHint: Ulanishni o’rnatib bo’lmadi. Har ikki tomonda mos keladigan
+  natWarning: NAT turingiz bevosita ulanishlarga xalaqit berishi mumkin. Sozlamalarda
+  connectedToHost: Xona xostiga ulandi
+  directConnection: Bevosita
+  guest: Mehmon (Guest)
+  host: Xost
+  relayConnection: Retranslyatsiya
+myStuff: Mening kontentim
 natType:
   blocked: Заблокирован
-  fullCone: Полный конус (Full Cone)
-  openInternet: Открытый интернет
-  restrictNat: Ограниченный NAT
-  restrictPortNat: Ограниченный порт NAT
-  symmetricNat: Симметричный NAT
-  symmetricUDPFirewall: Симметричный межсетевой экран UDP
-  unknown: Неизвестно
+  fullCone: To’liq konus (Full Cone)
+  openInternet: Ochiq internet
+  restrictNat: Cheklangan NAT
+  restrictPortNat: Cheklangan portli NAT
+  symmetricNat: Simmetrik NAT
+  symmetricUDPFirewall: Simmetrik UDP xavfsizlik devori
+  unknown: Noma’lum server
 neoForgedVersion:
-  disable: NeoForged не выбран
-  empty: NeoForged не поддерживает {version}
+  disable: O’chirish
+  empty: Hali launcher kolleksiyalari yo’q
 news:
-  name: Новости
-  readMore: Подробнее
+  name: Holat
+  readMore: Batafsil
 optifineVersion:
-  disable: Optifine не выбран
-  empty: Optifine не поддерживает Minecraft {version}
-optional: Необязательно
+  disable: O’chirish
+  empty: Hali launcher kolleksiyalari yo’q
+optional: Majburiy emas
 peerConnectionState:
   closed: Закрыто
-  connected: Подключено
-  connecting: Подключение
-  disconnected: Отключено
-  failed: Ошибка
-  name: Состояние соединения
-  new: Новое
+  connected: Kontroller Ulandi
+  connecting: Guruhga ulanilmoqda
+  disconnected: Uzildi
+  failed: Bajarib bo’lmadi
+  name: Holat
+  new: Yangi
 peerGroupState:
   closed: Не в группе
-  closing: Закрытие
-  connected: Подключён к группе
-  connecting: Подключение к группе
+  closing: Yopilmoqda
+  connected: Kontroller Ulandi
+  connecting: Guruhga ulanilmoqda
 peerIceGatheringState:
   gathering: Сбор информации с сервера ICE
 peerSignalingState:
   have-local-offer: Ожидание описания от пользователя
 presence:
-  instance: Неактивен в экземпляре {instance}
-  instanceSetting: 'Редактирует настройки экземпляра: {instance}'
-  mod: Просматривает моды в {instance}
-  modrinthProject: Просматривает {name} в Modrinth
-  resourcePack: Просматривает наборы ресурсов в {instance}
-  save: Просматривает миры в {instance}
-  setting: Просматривает страницу настроек
-  shaderPack: Просматривает наборы шейдеров в {instance}
+  instance: 'iconDescription: Belgini o’zgartirish uchun bosing.'
+  instanceSetting: 'Ekzemplar sozlamalarini tahrirlamoqda: {instance}'
+  mod: 'defaultSourceDescription: Mod kontenti manbasini shu yerda tanlashingiz mumkin.'
+  modrinthProject: Modrinth’da {name} ni ko’rmoqda
+  resourcePack: '{instance} dagi resurs to'
+  save: Saqlash
+  setting: 'themeStore:'
+  shaderPack: 'linkShared: Barcha sborakalar uchun umumiy sheyder paketlari'
 proxy:
-  host: Хост
-  port: Порт
+  host: Xost
+  port: Port
 quiltVersion:
-  disable: Quilt не выбран
-  empty: Quilt не поддерживает Minecraft {version}
+  disable: O’chirish
+  empty: Hali launcher kolleksiyalari yo’q
 resourcepack:
   linkShared: Общие пакеты ресурсов для всех сборок
-  linkSharedHint: Связать папку resourcepacks этой сборки с общей глобальной папкой,
-    чтобы все сборки использовали одни и те же пакеты ресурсов. Существующие пакеты
-    будут перемещены в общую папку.
-  compatible: Формат {format} совместим с {version}
-  defaultDescription: Внешний вид Minecraft по умолчанию
+  linkSharedHint: Barcha sborakalar bir xil sheyder paketlaridan foydalanishi uchun
+  compatible: Mos keladi
+  defaultDescription: Minecraft’ning odatiy ko’rinishi
   delete:
     content: Это приведёт к удалению файла набора ресурсов с диска, и мы не сможем
       его восстановить. Вы уверены, что хотите это сделать?
-    title: Удалить набор ресурсов
-  dropHint: Перетащите сюда папку/zip-архив с набором ресурсов для импорта.
-  enable: 'Всего наборов ресурсов выбрано: {count}'
-  incompatible: Несовместимый формат набора ресурсов ({format}). Подходящий {accept}.
-    Текущий {actual}.
-  name: Набор ресурсов | Наборы ресурсов
-  searchHint: Поиск пакетов ресурсов
-  searchOnCurseforge: Поиск {name} на CurseForge
-  searchOnModrinth: :mod.searchOnModrinth
-  selected: Выбранные наборы ресурсов
-  showDirectory: Открыть папку с наборами ресурсов
-  showFile: Показать путь к набору ресурсов {file}
-  showInCurseforge: Показать {name} на CurseForge
-  unselected: Невыбранные наборы ресурсов
-  noPacks: Ресурс-паки не найдены
-  search: Поиск ресурс-паков...
-  noLocalPacksFound: No local resource packs found matching your search.
-  noPacksInstalled: You don't have any resource packs installed.
+    title: Kolleksiyani O’rnatish Natijasi
+  dropHint: Import qilish uchun chizma fayllarini (.litematic / .schem / .nbt) shu
+  enable: Yoqish
+  incompatible: Modlar yetishmayapti
+  name: Holat
+  searchHint: Sheyderlar to’plamini qidirish
+  searchOnCurseforge: CurseForge’dan {name} ni qidirish
+  searchOnModrinth: Modrinth’dan qidirish
+  selected: mahalliy arxiv
+  showDirectory: Sheyder to’plamlari papkasini ochish
+  showFile: '{file} sheyder to'
+  showInCurseforge: CurseForge’da {name} ni ko’rsatish
+  unselected: umumiy arxiv
+  noPacks: Sheyder-paklar o’rnatilmagan
+  search: Manbalarni qidirish
+  noLocalPacksFound: Qidiruvingizga mos keladigan mahalliy sheyder paketlari topilmadi.
+  noPacksInstalled: Sizda hech qanday sheyder paketlari o’rnatilmagan.
 save:
   linkShared: Общие сохранения для всех сборок
-  linkSharedHint: Связать папку saves этой сборки с общей глобальной папкой, чтобы
-    все сборки использовали одни и те же миры. Существующие сохранения будут перемещены
-    в общую папку.
+  linkSharedHint: Barcha sborakalar bir xil sheyder paketlaridan foydalanishi uchun
   copy:
-    name: Копировать мир
-  createNew: Создать новый мир
-  createdWorlds: 'Всего миров: {count}'
-  deleteHint: Эта операция не может быть отменена. Вы навсегда потеряете данные этого
-    мира. Вы уверены, что хотите удалить это мир?
-  deleteTitle: Удалить мир
-  dropHint: Перетащите zip-архив сюда, чтобы импортировать
-  export: Экспорт сохранения
-  exportMessage: Экспортировать мир в zip-архив
-  exportTitle: Экспортировать мир
-  gameMode: игровой режим
-  independent: Экземпляр использует независимую папку сохранений
-  levelName: Название уровня
-  name: Мир | Миры
-  search: Поиск сохранений
-  seed: Seed
-  selected: местный архив
-  shared: Экземпляр использует общую папку сохранений
-  showDirectory: Открыть папку с мирами
-  unselected: общий архив
-  useCurrent: Использовать текущий мир
-  openFolder: Открыть папку сохранений
-  searchHint: Поиск миров на CurseForge
-  searchSaves: Поиск сохранений
-  allowCheats: Allow Cheats
-  difficulty: Difficulty
+    name: Holat
+  createNew: Yangi dunyo yaratish
+  createdWorlds: 'Jami dunyolar: {count}'
+  deleteHint: Ushbu operatsiyani bekor qilib bo’lmaydi. Ushbu dunyo ma’lumotlarini
+  deleteTitle: Dunyoni o’chirish
+  dropHint: Import qilish uchun chizma fayllarini (.litematic / .schem / .nbt) shu
+  export: Serverni eksport qilish
+  exportMessage: Dunyoni zip-arxivga eksport qilish
+  exportTitle: Dunyoni eksport qilish
+  gameMode: o’yin rejimi
+  independent: Ekzemplar mustaqil saqlashlar papkasidan foydalanadi
+  levelName: Daraja nomi
+  name: Holat
+  search: Manbalarni qidirish
+  seed: Sid (Seed)
+  selected: mahalliy arxiv
+  shared: 'add: Qo’shish'
+  showDirectory: Sheyder to’plamlari papkasini ochish
+  unselected: umumiy arxiv
+  useCurrent: Joriy dunyodan foydalanish
+  openFolder: Papkani ochish
+  searchHint: Sheyderlar to’plamini qidirish
+  searchSaves: Saqlashlarni qidirish
+  allowCheats: Chitlarga ruxsat berish
+  difficulty: 'easy: Oson (Easy)'
   datapack:
-    name: Data Pack | Data Packs
-    noSaveHint: Create or select a world first to install this data pack
-    packFormat: 'Pack format: {format}'
-    imported: Data pack imported into {save}
-  duplicate: Duplicate Save
-  loadMap: Load Map
-  mapError: Map Error
-  mapInfo: 'Interactive 3D world preview:'
-  mapLoaded: Map Loaded
-  mapPreview: Map Preview
-  chunkSelectMode: Select Chunks
-  panMode: Pan
-  chunkSelected: '{count} chunks selected'
-  mapHintPan: Drag to pan
+    name: Holat
+    noSaveHint: Ushbu ma’lumotlar paketini o’rnatish uchun avval dunyo yarating yoki
+    packFormat: 'Paket formati: {format}'
+    imported: Ma’lumotlar paketi {save} ichiga import qilindi
+  duplicate: Ushbu o’yinchi allaqachon ro’yxatingizda bor.
+  loadMap: Xaritani yuklash
+  mapError: Xarita xatosi
+  mapInfo: Interaktiv 3D dunyo ko
+  mapLoaded: Xarita yuklandi
+  mapPreview: Xaritani ko’rish
+  chunkSelectMode: Chanklarni tanlash
+  panMode: Surish
+  chunkSelected: '{count} ta chank tanlandi'
+  mapHintPan: Surish uchun sudrang
   mapHintSelect: Tanlash
-  mapHintDeselect: Deselect
-  toggleGrid: Toggle region grid
-  heightTop: Top
-  resetView: Reset View
-  clearSelection: Clear Selection
-  copyChunks: Copy Chunks
-  pasteChunks: Paste {count} Chunks
-  pasteChunksPlaceHint: Move the mouse to position {count} chunk(s), then click to
-    paste. Existing chunks at the target are overwritten. Press Esc to cancel.
+  mapHintDeselect: Tanlovni bekor qilish
+  toggleGrid: Mintaqa to’rini yoqish/o’chirish
+  heightTop: Yuqori
+  resetView: Ko’rinishni qayta tiklash
+  clearSelection: Tanlovni tozalash
+  copyChunks: Chanklarni nusxalash
+  pasteChunks: '{count} ta chankni joylashtirish'
+  pasteChunksPlaceHint: ’{count} ta chankni joylashtirish uchun sichqonchani suring,
   pasteChunksCancel: Bekor Qilish
-  deleteChunks: Delete Chunks
-  deleteChunksTitle: Delete Selected Chunks
-  deleteChunksHint: Delete {count} selected chunk(s)? This cannot be undone. The chunks
-    will be regenerated the next time the area is loaded in game.
-  mapLoading: Loading map…
-  noRegions: This world has no generated regions to preview.
-  dimOverworld: Overworld
-  dimNether: The Nether
-  dimEnd: The End
-  noLocalSavesFound: No local saves found matching your search.
-  noSavesFound: No saves found
-  noSavesInstalled: You don't have any saves.
-  properties: World Properties
-  useMouseRotate: Use mouse to rotate view
-  useScrollZoom: Use scroll wheel to zoom
-  world: World
+  deleteChunks: Chanklarni o’chirish
+  deleteChunksTitle: Tanlangan chanklarni o’chirish
+  deleteChunksHint: '{count} ta tanlangan chank(lar) o'
+  mapLoading: Xarita yuklanmoqda…
+  noRegions: Ushbu dunyoda ko’rish uchun yaratilgan mintaqalar yo’q.
+  dimOverworld: Asosiy dunyo (Overworld)
+  dimNether: Do’zax (Nether)
+  dimEnd: Kraj (End)
+  noLocalSavesFound: Qidiruvingizga mos keladigan mahalliy saqlashlar topilmadi.
+  noSavesFound: Saqlangan dunyolar topilmadi
+  noSavesInstalled: Sizda saqlangan dunyolar yo’q.
+  properties: Dunyo xususiyatlari
+  useMouseRotate: Ko’rinishni aylantirish uchun sichqonchadan foydalaning
+  useScrollZoom: Masshtablash uchun sichqoncha g’ildiragidan foydalaning
+  world: Dunyo
 screenshots:
-  empty: У вас нет снимков экрана
-  playRandom: Показывать случайным образом
-  playSequence: Показывать по порядку
-  gallery: Галерея скриншотов
-  hint: В игре нажмите F2, чтобы сделать скриншот
-  openFolder: Открыть папку скриншотов
+  empty: Hali launcher kolleksiyalari yo’q
+  playRandom: Tasodifiy tartibda ko’rsatish
+  playSequence: Ketma-ketlikda ko’rsatish
+  gallery: Skrinshotlar galereyasi
+  hint: Ushbu chizmani boshqa formatga o’tkazing. Yangi fayl yaratiladi.
+  openFolder: Papkani ochish
 search:
   favorate: Коллекция
-  local: Установлено
-  market: Маркет
-  emptyInstalled: Пока ничего не установлено
-  browseMarket: Открыть маркет
-  noResults: Ничего не найдено
-  pageSize: Результатов на странице
+  local: Mahalliy
+  market: Market
+  emptyInstalled: Hali hech narsa o’rnatilmagan
+  browseMarket: Marketni ochish
+  noResults: Hech narsa topilmadi
+  pageSize: Sahifadagi natijalar
 server:
   acceptingMinecraftVersion: Принятие версии Minecraft
-  creationHint: Пожалуйста, заполните адрес сервера и протестируйте сервер
-  expectedVersions: Поддерживаемые версии
-  export: Экспортный сервер
-  exportNoFilesHint: 'Файлы сервера не найдены.
-
-    Вы можете запустить сервер на локале один раз, чтобы генерировать некоторые файлы.'
-  exportOption: Параметры экспорта сервера
-  exportSSHAuthenticationFailed: 'Все методы аутентификации не удались.
-
-    Пожалуйста, проверьте имя пользователя/пароль или закрытый ключ.'
-  exportSSHOptions: SSH параметры
-  exportSSHPrivateKeyPath: SSH Private Key Path
-  exportSSHRemotePath: Удаленный путь сервера
-  exportToFolder: Экспорт в папку
-  filterVersion: Фильтр сервер ответил Minecraft версия
-  host: Хост
-  hostHint: Хост (с портом) сервера
-  hostRequired: Пожалуйста, введите IP -адрес сервера
-  ipAddress: IP-адрес
-  maxPlayers: Максимум игроковr
-  motd: Сервер MOTD
-  nogui: Нет графического интерфейса сервера
-  onlineMode: Онлайн режим
-  ping: Пинг
-  pings: Пинг
-  players: Игроки
-  port: Порт
-  unknown: Неизвестный сервер
-  unknownDescription: Неизвестный сервер. Пожалуйста, обновите.
-  upload: Загрузить сервер
-  version: Сервер требует версию
-  versionHint: Версия Minecraft для пинга
-  addServer: Add Server
-  address: Server Address
-  addressHint: e.g. mc.hypixel.net
-  bindUpstream: Bind as upstream
-  boundUpstream: Server upstream bound
-  boundUpstreamHint: This instance follows the bound server's Minecraft version.
-  editServer: Edit Server
-  emptyHint: No servers in this instance's servers.dat yet. Add one to get started.
-  entryCount: '{count} server | {count} servers'
-  launchClient: Launch client instead
-  launchPinned: Pinned
-  launchTargetHint: This instance launches straight into the pinned server. Switch
-    back to the client?
-  nameHint: Display name shown in the Multiplayer list
-  pin: Pin server
-  pinAfterSave: Pin as default launch target after save
-  pinnedHeader: 'pinned: {name}'
-  serverName: Server name
-  serversListTitle: Server List
-  unbindUpstream: Unbind
-  unpin: Unpin
-  upstreamUpToDate: Your instance matches the server ({version}).
-  upstreamUpToDateHint: No upgrade needed. Click to re-ping the server.
-  upstreamUpdateAvailable: Server now runs Minecraft {version}. Click to apply.
-  upstreamUpdateHint: Applies the suggested Minecraft version to this instance.
-  useAsUpstreamHint: The instance will follow the server's reported Minecraft version.
+  creationHint: Iltimos, server manzilini to’ldiring va serverni sinab ko’ring
+  expectedVersions: Qo’llab-quvvatlanadigan versiyalar
+  export: Serverni eksport qilish
+  exportNoFilesHint: ’Server fayllari topilmadi.
+  exportOption: Serverni eksport qilish parametrlari
+  exportSSHAuthenticationFailed: ’Barcha autentifikatsiya usullari muvaffaqiyatsiz
+  exportSSHOptions: SSH parametrlari
+  exportSSHPrivateKeyPath: SSH shaxsiy kaliti yo’li
+  exportSSHRemotePath: Serverning masofaviy yo’li
+  exportToFolder: Papkaga eksport qilish
+  filterVersion: Server javob bergan Minecraft versiyasini filtrlash
+  host: Xost
+  hostHint: Server xosti (port bilan)
+  hostRequired: Iltimos, server IP-manzilini kiriting
+  ipAddress: IP-manzil
+  maxPlayers: Maksimal o’yinchilar
+  motd: Server MOTD
+  nogui: Serverning grafik interfeysi yo’q
+  onlineMode: Onlayn rejim
+  ping: Ulanilmoqda...
+  pings: Ping
+  players: O’yinchilar
+  port: Port
+  unknown: Noma’lum server
+  unknownDescription: Noma’lum server. Iltimos, yangilang.
+  upload: Skinni yuklash
+  version: 'checkIntegrity: Yaxlitlikni tekshiring'
+  versionHint: Ping uchun Minecraft versiyasi
+  addServer: Server qo’shish
+  address: Server manzili
+  addressHint: masalan, mc.hypixel.net
+  bindUpstream: Asosiy sifatida bog’lash
+  boundUpstream: Server asosiylikka bog’landi
+  boundUpstreamHint: Ushbu ekzemplar bog’langan serverning Minecraft versiyasiga
+  editServer: Serverni tahrirlash
+  emptyHint: Filtrlar yoki qidiruv so’rovini o’zgartirib ko’ring.
+  entryCount: '{count} ta server | {count} ta serverlar'
+  launchClient: Buning o’rniga klientni ishga tushirish
+  launchPinned: Qatirilgan
+  launchTargetHint: Ushbu ekzemplar bevosita qatirilgan serverga ishga tushadi. Klientga
+  nameHint: O’yinda ko’rsatiladigan nom
+  pin: Serverni qatirish
+  pinAfterSave: Saqlagandan so’ng odatiy ishga tushirish nishoni sifatida qatirish
+  pinnedHeader: 'qatirilgan: {name}'
+  serverName: Server nomi
+  serversListTitle: Serverlar ro’yxati
+  unbindUpstream: Boshliqdan uzish
+  unpin: Qatirishni bekor qilish
+  upstreamUpToDate: Ekzemplaringiz serverga mos keladi ({version}).
+  upstreamUpToDateHint: Yangilanish talab qilinmaydi. Serverni qayta ping qilish
+  upstreamUpdateAvailable: Server hozirda Minecraft {version} versiyasida ishlamoqda.
+  upstreamUpdateHint: Ushbu ekzemplarga tavsiya etilgan Minecraft versiyasini qo’llaydi.
+  useAsUpstreamHint: Ekzemplar server xabar bergan Minecraft versiyasiga ergashadi.
 serverStatus:
   nohost: §4Невозможно найти хост!
-  ping: Соединение...
-  refuse: §4Сервер отказал!
-  timeout: §4Вышло время подключения к серверу!
+  ping: Ulanilmoqda...
+  refuse: §4Server rad etdi!
+  timeout: §4Serverga ulanish vaqti tugadi!
 setting:
   themeStore:
-    name: Хранилище тем
-    description: Сохраняйте и управляйте глобальными темами
-    savedThemes: Сохранённые темы
-    noSavedThemes: Сохранённых тем пока нет
-    saveToStore: Сохранить в хранилище
-    saveDialogTitle: Сохранить тему
-    themeName: Название темы
-    themeNameHint: Имя для сохранения этой темы
-    loadConfirmTitle: Заменить текущую тему?
-    loadConfirmMessage: Загрузка сохранённой темы заменит текущую. При необходимости
-      сделайте резервную копию.
-    loadTheme: Загрузить тему
+    name: Holat
+    description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+    savedThemes: Saqlangan mavzular
+    noSavedThemes: Hali saqlangan mavzular yo’q
+    saveToStore: Omborga saqlash
+    saveDialogTitle: Mavzuni saqlash
+    themeName: Mavzu nomi
+    themeNameHint: Ushbu mavzuni saqlash uchun nom
+    loadConfirmTitle: Joriy mavzo almashtirilsinmi?
+    loadConfirmMessage: Saqlangan mavzuni yuklash joriy mavzuni almashtiradi. Zarur
+    loadTheme: Mavzuni yuklash
   about: NeoTerra Launcher Haqida
-  aboutBmclDescription: BMCL API предоставляет удобные загрузки для пользователей
-    материка
-  aboutContributors: 🧑‍💻 Участники 🧑‍💻
-  aboutDenoDescription: NeoTerra Launcher использует серверную платформу Deno Deploy
-    для приложений JavaScript
+  aboutBmclDescription: BMCL API materik foydalanuvchilari uchun qulay yuklab olishlarni
+  aboutContributors: 🧑‍💻 Ishtirokchilar 🧑‍💻
+  aboutDenoDescription: NeoTerra Launcher JavaScript ilovalari uchun Deno Deploy
   aboutLicense: MIT Litsenziyasi
-  aboutLicenseInfo: Благодарим SignPath.io за бесплатную подпись кода Windows
-  aboutSponsors: 😇 Спонсоры 😇
-  advancedJavaOptions: Расширенные параметры Java
-  advancedSettings: Расширенные настройки
-  advancedSettingsHint: Опасная зона - сброс или управление данными лаунчера
-  aiAgentApiKey: API-ключ AI Agent
-  aiAgentApiKeyDescription: Хранится локально на этом устройстве и используется для
-    запросов агента.
-  aiAgentEndpoint: Endpoint AI Agent
-  aiAgentEndpointDescription: URL endpoint для chat completions.
-  aiAgentModel: Модель AI Agent
-  aiAgentModelDescription: Имя модели для запросов chat completion.
+  aboutLicenseInfo: Windows kodini bepul imzolagani uchun SignPath.io’ga minnatdorchilik
+  aboutSponsors: 😇 Homiylar 😇
+  advancedJavaOptions: Kengaytirilgan Java parametrlari
+  advancedSettings: Kengaytirilgan sozlamalar
+  advancedSettingsHint: Xavfli hudud - launcher ma’lumotlarini qayta tiklash yoki
+  aiAgentApiKey: AI Agent API kaliti
+  aiAgentApiKeyDescription: Ushbu qurilmada mahalliy ravishda saqlanadi va agent
+  aiAgentEndpoint: AI Agent Endpoint’i
+  aiAgentEndpointDescription: Chatni yakunlash so’rovlari uchun URL endpoint.
+  aiAgentModel: AI Agent modeli
+  aiAgentModelDescription: Chatni yakunlash so’rovlari uchun model nomi.
   apiSets:
     auto: Автоматически (определяется сетью)
-    official: Официальный (Mojang)
-  appearance: Dizayn va Tashqi Ko'rinish
-  appearanceDescription: Настройка внешнего вида лаунчера
-  appxUpdateHint: Лаунчер скачает и запустит установщик. Если всплывающее окно установщика
-    не откроется автоматически, пожалуйста, запустите его вручную.
-  authenticationSettings: Аутентификация
-  backdropBlur: Фон размытие
-  backgroundColorAbove: Показать цвет фона как наложение
-  backgroundColorAboveDescription: Это позволит отобразить цвет фона над фоновым эффектом.
-  backgroundImage: Фоновое изображение
-  backgroundImageClear: Очистить
-  backgroundImageDescription: Выберите изображение в качестве фона или очистите его.
+    official: Rasmiy (Mojang)
+  appearance: 'name: Sozlamalar ko’rinishi'
+  appearanceDescription: Launcher ko’rinishini sozlash
+  appxUpdateHint: Launcher o’rnatuvchini yuklab oladi va ishga tushiradi. Agar o’rnatuvchining
+  authenticationSettings: Autentifikatsiya
+  backdropBlur: Fon xiralashishi
+  backgroundColorAbove: Fon rangini qoplama sifatida ko’rsatish
+  backgroundColorAboveDescription: Bu fon rangini fon effekti ustida ko’rsatishga
+  backgroundImage: Fon tasviri
+  backgroundImageClear: Tozalash
+  backgroundImageDescription: Fon sifatida tasvirni tanlang yoki uni tozalang.
   backgroundImageFit:
     contain: Вместить
-    cover: Обрезать
-    name: Подогнать
-  backgroundImageUrl: URL-адрес изображения
-  backgroundImageUrlPlaceholder: Введите URL-адрес HTTP/HTTPS для изображения
-  backgroundMusic: Фоновая музыка
-  backgroundMusicUrl: URL-адрес музыки
-  backgroundMusicUrlPlaceholder: Введите URL-адрес HTTP/HTTPS для музыки
-  backgroundType: Фоновой эффект
-  backgroundTypeDescription: Показывать специальный эффект на фоне (это может повлиять
-    на производительность).
+    cover: Qirqib olish
+    name: Holat
+  backgroundImageUrl: Tasvir URL manzili
+  backgroundImageUrlPlaceholder: Tasvir uchun HTTP/HTTPS URL manzilini kiriting
+  backgroundMusic: Fon musiqasi
+  backgroundMusicUrl: Musiqa URL manzili
+  backgroundMusicUrlPlaceholder: Musiqa uchun HTTP/HTTPS URL manzilini kiriting
+  backgroundType: Fon effekti
+  backgroundTypeDescription: Fonda maxsus effektni ko’rsatish (bu unumdorlikka ta’sir
   backgroundTypes:
     halo: Ореол
-    image: Изображение
-    none: Нет
-    particle: Частицы
-    video: Видео
-  backgroundVideo: Фоновое видео
-  backgroundVideoDescription: Изменить или очистить видео.
-  backgroundVideoUrl: URL-адрес видео
-  backgroundVideoUrlPlaceholder: Введите URL-адрес HTTP/HTTPS для видео
-  backgroundVideoVolume: Громкость
-  backgroundVideoVolumeDescription: Перетащите, чтобы отрегулировать громкость.
-  browseRoot: Изменить
-  checkUpdate: Проверить обновление
+    image: Tasvir
+    none: Yo’q
+    particle: Zarrachalar
+    video: Video
+  backgroundVideo: Fon videosi
+  backgroundVideoDescription: Videoni o’zgartirish yoki tozalash.
+  backgroundVideoUrl: Video URL manzili
+  backgroundVideoUrlPlaceholder: Video uchun HTTP/HTTPS URL manzilini kiriting
+  backgroundVideoVolume: Ovoz balandligi
+  backgroundVideoVolumeDescription: Ovoz balandligini sozlash uchun sudrang.
+  browseRoot: O’zgartirish
+  checkUpdate: Yangilanishni tekshirish
   colorTheme:
     appBarColor: Цвет панели приложения
-    backgroundColor: Цвет фона
-    cardColor: Цвет карточки
-    description: Изменить цвета в теме
-    errorColor: Цвет ошибки
-    name: Цвет темы и размытие
-    primaryColor: Основной цвет
-    sideBarColor: Цвет боковой панели
-    warningColor: Цвет предупреждения
-  darkTheme: Тема
-  darkThemeDescription: Выберите тёмную или светлую тему.
-  devModeLabel: РАЗРАБОТКА
-  developerMode: Режим разработчика
-  developerModeDescription: Эта опция предназначена для тестирования ваших собственных
-    модов.
-  disableTelemetry: Отключить телеметрию
-  disableTelemetryDescription: Если включено, NeoTerra Launcher будет собирать информацию
-    о запуске экземпляра и входа пользователя.
-  enableDedicatedGPUOptimization: Назначить выделенный графический процессор
-  enableDedicatedGPUOptimizationDescription: Эта опция назначит выделенный графический
-    процессор процессу Minecraft.
-  enableDiscord: Включить активность Discord
-  enableDiscordDescription: Эта опция будет показывать статус лаунчера в Discord.
-  enterUrl: Введите URL
-  exportSettings: Экспорт настроек
-  exportSettingsHint: Сохранить текущие настройки в файл
+    backgroundColor: Fon rangi
+    cardColor: Karta rangi
+    description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+    errorColor: Xatolik rangi
+    name: Holat
+    primaryColor: Asosiy rang
+    sideBarColor: Yon panel rangi
+    warningColor: Ogohlantirish rangi
+  darkTheme: Mavzu
+  darkThemeDescription: To’q yoki yorug’ mavzuni tanlang.
+  devModeLabel: ISHLAB CHIQARISH
+  developerMode: Dasturchi rejimi
+  developerModeDescription: Ushbu opsiya o’zingizning modlaringizni sinab ko’rish
+  disableTelemetry: Telemetriyani o’chirish
+  disableTelemetryDescription: Agar yoqilgan bo’lsa, NeoTerra Launcher ekzemplar
+  enableDedicatedGPUOptimization: Alohida grafik protsessorni biriktirish
+  enableDedicatedGPUOptimizationDescription: Ushbu opsiya Minecraft jarayoniga alohida
+  enableDiscord: Discord faolligini yoqish
+  enableDiscordDescription: Ushbu opsiya Discord’da launcher holatini ko’rsatadi.
+  enterUrl: URL manzilini kiriting
+  exportSettings: Sozlamalarni eksport qilish
+  exportSettingsHint: Joriy sozlamalarni faylga saqlash
   general: Asosiy Sozlamalar
-  githubRelease: Релиз GitHub
-  globalJava: Предпочитаемая Java
-  globalJavaHint: В автоматическом режиме сначала используется эта Java и только при
-    несовместимости с версией игры выполняется переход к автоопределению.
-  globalSetting: Глобальные настройки экземпляра
-  globalSettingHint: Экземпляр будет использовать эти настройки по умолчанию.
-  importSettings: Импорт настроек
-  importSettingsHint: Загрузить настройки из ранее экспортированного файла
+  githubRelease: GitHub relizi
+  globalJava: Afzal ko me rilgan Java
+  globalJavaHint: Avtomatik rejimda dastlab ushbu Java ishlatiladi va faqat o’yin
+  globalSetting: Ekzemplarlarning global sozlamalari
+  globalSettingHint: Ekzemplar odatiy bo’lib ushbu sozlamalardan foydalanadi.
+  importSettings: Sozlamalarni import qilish
+  importSettingsHint: Sozlamalarni ilgari eksport qilingan fayldan yuklash
   instanceTheme:
     activeDescription: 'Этот экземпляр использует пользовательскую тему.
 
       Вы можете удалить его, чтобы использовать глобальную тему.'
-    description: 'Включите пользовательскую тему для этого экземпляра.
-
-      Это создаст копию текущей глобальной темы.'
-    name: Тема экземпляра
-  language: Язык
-  languageDescription: Отображаемый язык интерфейса.
-  latestVersion: Последняя версия
+    description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+    name: Holat
+  language: Til
+  languageDescription: Interfeysning ko’rsatiladigan tili.
+  latestVersion: Oxirgi versiya
   layout:
-    default: Стандартный
-    focus: Для фокусировки
-  layoutDescription: Вид интерфейса лаунчера, представляющий различную логику пользовательского
-    интерфейса.
-  layoutTitle: Вид интерфейса
-  linuxEnableDedicatedGPUOptimization: Назначение выделенного графического процессора
-  linuxEnableDedicatedGPUOptimizationDescription: Эта опция назначает выделенный GPU
-    для процесса Minecraft.
-  linuxTitlebar: Нативный заголовок окна
-  linuxTitlebarDescription: Использовать нативный заголовок окна Linux для лаунчера.
-  livePreview: Живой предпросмотр
-  location: Место для хранения файлов лаунчера
-  manualUpdateHint: Версия не может быть обновлена автоматически. Пожалуйста, скачайте
-    пусковую установку заново с официального сайта!
-  maunalUpdateHint: Данная версия не может быть обновлена автоматически. Пожалуйста,
-    скачайте лаунчер с сайта ещё раз!
-  maxSockets: Максимум сокетов
-  maxSocketsDescription: Ограничьте количество сокетов на хост или для всех. 0 - без
-    ограничений.
-  maxSocketsTitle: Максимальное количество HTTP-сокетов
-  memoryAssignment: Назначение памяти
-  migrateFromOther: Импорт из другого лаунчера
-  minecraftOptions: Настройки Minecraft
-  name: Глобальные настройки | Глобальные настройки
-  network: Настройки сети
-  newsPosition: Переместить раздел новостей
-  officialWebsite: Официальный сайт
+    default: Odatiy
+    focus: Diqqatni jamlash uchun
+  layoutDescription: Foydalanuvchi interfeysining har xil mantiqini ifodalovchi launcher
+  layoutTitle: Interfeys ko’rinishi
+  linuxEnableDedicatedGPUOptimization: Alohida grafik protsessorni biriktirish
+  linuxEnableDedicatedGPUOptimizationDescription: Ushbu opsiya Minecraft jarayoni
+  linuxTitlebar: Tizimning oyna sarlavhasi
+  linuxTitlebarDescription: Launcher uchun Linux’ning tizim oyna sarlavhasidan foydalanish.
+  livePreview: Jonli ko me rsatish
+  location: Launcher fayllarini saqlash joyi
+  manualUpdateHint: Versiyani avtomatik ravishda yangilab bo’lmaydi. Iltimos, launcherni
+  maunalUpdateHint: Ushbu versiyani avtomatik ravishda yangilab bo’lmaydi. Iltimos,
+  maxSockets: Maksimal soketlar
+  maxSocketsDescription: Bitta xostga yoki barchasi uchun soketlar sonini cheklang.
+  maxSocketsTitle: HTTP soketlarining maksimal soni
+  memoryAssignment: Xotira ajratish
+  migrateFromOther: Boshqa launcher’dan import qilish
+  minecraftOptions: Minecraft sozlamalari
+  name: Holat
+  network: Tarmoq sozlamalari
+  newsPosition: Yangiliklar bo’limini ko’chirish
+  officialWebsite: Rasmiy sayt
   particleMode:
     bubble: Надувание
-    name: Поведение частиц
-    push: Добавление
-    remove: Удаление
-    repulse: Отталкивание
-  particleModeDescription: Выберите поведение частиц при нажатии.
-  quickLaunchSettings: Быстрый запуск
-  replaceNative: Заменить нативные библиотеки
-  replaceNativeDescription: Заменить нативные библиотеки в соответствии с архитектурой
-    вашего компьютера.
+    name: Holat
+    push: Qo’shish
+    remove: O’chirish
+    repulse: Qaytarish
+  particleModeDescription: Bosilganda zarrachalarning o’zini tutishini tanlang.
+  quickLaunchSettings: Tezkor ishga tushirish
+  replaceNative: Tizim kutubxonalarini almashtirish
+  replaceNativeDescription: Tizim kutubxonalarini kompyuteringiz me’morchiligiga
   replaceNatives:
-    all: Все
-    legacy: Только старые версии
-  resetAllSettings: Сбросить все настройки
-  resetAllSettingsConfirmMessage: Это навсегда удалит все настройки, учетные записи,
-    экземпляры, группы и кэшированные данные. Это действие нельзя отменить. Вы уверены?
-  resetAllSettingsConfirmTitle: Сбросить все настройки?
-  resetAllSettingsHint: Сбросить лаунчер до заводских настроек (удаляет все)
-  resetAllSettingsSuccess: Все настройки были сброшены. Лаунчер перезапустится.
-  resetSettingsError: 'Ошибка при сбросе настроек: {error}'
-  resetToDefault: Сбросить к значениям по умолчанию
-  select: Изменить
-  settingsExported: Настройки успешно экспортированы
-  settingsImportError: Не удалось импортировать настройки. Проверьте формат файла.
-  settingsImported: Настройки успешно импортированы
-  settingsReloadHint: Лаунчер перезагрузится для применения всех настроек.
-  showNewsHeader: Показать витрину новостей
-  showRoot: Открыть папку
-  sidebarAlign: Выравнивание боковой панели
-  sidebarAutoHide: Авто-скрытие боковой панели
-  sidebarAutoHideHint: Скрывать боковую панель автоматически и показывать при наведении
-  sidebarClassic: Классический
-  sidebarNotch: Notch
-  sidebarPosition: Положение боковой панели
-  sidebarScale: Масштаб боковой панели
-  sidebarShowOnlyPinned: Показывать только закрепленные экземпляры
-  sidebarShowOnlyPinnedHint: Отображать только закрепленные экземпляры на боковой
-    панели
-  sidebarStyle: Стиль боковой панели
-  sidebarStyleHint: Выберите между классическим и современным дизайном Notch
-  streamerMode: Режим стримера
-  streamerModeDescription: Эта опция скроет вашу личную информацию, такую как электронная
-    почта, в лаунчере.
+    all: Barchasi
+    legacy: Faqat eski versiyalar
+  resetAllSettings: Barcha sozlamalarni qayta tiklash
+  resetAllSettingsConfirmMessage: Bu barcha sozlamalar, hisoblar, ekzemplarlar,
+  resetAllSettingsConfirmTitle: Barcha sozlamalar qayta tiklansinmi?
+  resetAllSettingsHint: Launcherni dastlabki sozlamalariga qaytarish (barchasini
+  resetAllSettingsSuccess: Barcha sozlamalar qayta tiklandi. Launcher qayta ishga
+  resetSettingsError: 'Sozlamalarni qayta tiklashda xatolik: {error}'
+  resetToDefault: Odatiy qiymatlarga qayta tiklash
+  select: O’zgartirish
+  settingsExported: Sozlamalar muvaffaqiyatli eksport qilindi
+  settingsImportError: Sozlamalarni import qilib bo’lmadi. Fayl formatini tekshiring.
+  settingsImported: Sozlamalar muvaffaqiyatli import qilindi
+  settingsReloadHint: Barcha sozlamalarni qo’llash uchun launcher qayta yuklanadi.
+  showNewsHeader: Yangiliklar vitrinasi ko me rsatilsin
+  showRoot: Papkani ochish
+  sidebarAlign: Yon panelni tekshirish
+  sidebarAutoHide: Yon panelni avto-yashirish
+  sidebarAutoHideHint: Yon panelni avtomatik ravishda yashirish va sichqoncha keltirilganda
+  sidebarClassic: Klassik
+  sidebarNotch: O’yiqli (Notch)
+  sidebarPosition: Yon panel joylashuvi
+  sidebarScale: Yon panel masshtabi
+  sidebarShowOnlyPinned: Faqat qatirilgan ekzemplarlarni ko’rsatish
+  sidebarShowOnlyPinnedHint: Yon panelda faqat qatirilgan ekzemplarlarni ko’rsatish
+  sidebarStyle: Yon panel uslubi
+  sidebarStyleHint: Klassik va zamonaviy O’yiqli (Notch) dizayn o’rtasida tanlang
+  streamerMode: Strimer rejimi
+  streamerModeDescription: Ushbu opsiya launcherda elektron pochta kabi shaxsiy ma’lumotlaringizni
   theme:
     dark: Тёмная тема
-    light: Светлая тема
-    system: Использовать системную тему
-  themeExport: Экспортировать тему
-  themeBorderRadius: Скругленные углы
-  themeBorderRadiusDescription: Включить или отключить скругленные углы для карточек,
-    диалогов, меню и панелей.
-  themeFont: Шрифт
-  themeFontDescription: Изменить шрифт лаунчера.
-  themeFontUrl: URL-адрес шрифта
-  themeFontUrlPlaceholder: Введите URL-адрес HTTP/HTTPS для шрифта
-  themeImport: Импортировать тему
-  themeResetFont: Сбросить
-  themeSelectFont: Изменить
-  themeSettings: Настройки темы
-  themeShare: Поделиться темой
-  themeShareDescription: Вы можете поделиться темой с вашим другом.
-  update: Обновить
-  useBmclAPI: Использовать BMCL API
-  useBmclAPIDescription: Скачайте Minecraft в Китае с помощью BMCL-API
-  useProxy: HTTP-прокси
-  useProxyDescription: Адрес прокси-сервера для http-запроса
-  viewBackgroundMusic: Просмотр музыки
+    light: Yorug’ mavzu
+    system: Tizim mavzusidan foydalanish
+  themeExport: Mavzuni eksport qilish
+  themeBorderRadius: Burchaklarni yumaloqlash
+  themeBorderRadiusDescription: Kartalar, muloqot oynalari, menyular va panellar
+  themeFont: Shrift
+  themeFontDescription: Launcher shriftini o’zgartirish.
+  themeFontUrl: Shrift URL manzili
+  themeFontUrlPlaceholder: Shrift uchun HTTP/HTTPS URL manzilini kiriting
+  themeImport: Mavzuni import qilish
+  themeResetFont: Qayta tiklash
+  themeSelectFont: O’zgartirish
+  themeSettings: Mavzu sozlamalari
+  themeShare: Mavzuni ulashish
+  themeShareDescription: Mavzuni do’stingiz bilan ulashishingiz mumkin.
+  update: Yangilash
+  useBmclAPI: BMCL API’dan foydalanish
+  useBmclAPIDescription: Xitoyda BMCL-API yordamida Minecraft’ni yuklab oling
+  useProxy: HTTP-proksi
+  useProxyDescription: http-so’rovi uchun proksi-server manzili
+  viewBackgroundMusic: Musiqani ko’rish
   setAsBackground:
     global: Сделать фоном лаунчера
-    instance: Сделать фоном экземпляра
-    successGlobal: Фоновое изображение обновлено.
-    successInstance: Фоновое изображение экземпляра обновлено.
-    failed: Не удалось установить фоновое изображение
-  title: Sozlamalar
-  aiAgentApiKeyClear: Clear key
-  aiAgentApiKeyEmpty: Paste your API key
-  aiAgentApiKeyNotNeeded: Not required
-  aiAgentApiKeyNotNeededHint: This provider runs locally and needs no API key
-  aiAgentApiKeySaved: Saved
-  aiAgentApiKeyStored: Key saved - type to replace
-  aiAgentProvider: AI Agent Provider
-  aiAgentProviderCustom: Custom (OpenAI compatible)
-  aiAgentProviderDescription: Pick a preset OpenAI-compatible provider to fill the
-    endpoint.
-  useDesktopBackground: Use current desktop wallpaper
+    instance: 'iconDescription: Belgini o’zgartirish uchun bosing.'
+    successGlobal: Fon tasviri yangilandi.
+    successInstance: Ekzemplar fon tasviri yangilandi.
+    failed: Bajarib bo’lmadi
+  aiAgentApiKeyClear: Kalitni tozalash
+  aiAgentApiKeyEmpty: API kalitingizni joylashtiring
+  aiAgentApiKeyNotNeeded: Talab qilinmaydi
+  aiAgentApiKeyNotNeededHint: Ushbu provayder mahalliy ravishda ishlaydi va API kalitiga
+  aiAgentApiKeySaved: Saqlandi
+  aiAgentApiKeyStored: Kalit saqlandi - almashtirish uchun yozing
+  aiAgentProvider: AI Agent Provayderi
+  aiAgentProviderCustom: Maxsus (OpenAI mos keluvchi)
+  aiAgentProviderDescription: Endpoint’ni to me ldirish uchun oldindan o’rnatilgan
+  useDesktopBackground: Joriy ish stoli fon rasmidan foydalanish
   customCss:
     advancedDescription: Override the launcher's current styling with your own CSS.
-    assistantHint: Describe the look you want and I'll write the CSS for you.
-    assistantSuggestion1: Make the sidebar translucent
-    assistantSuggestion2: Add a subtle gradient background to cards
-    assistantTitle: CSS Assistant
-    dropHint: Drop a .css file to load it
-    editorPlaceholder: /* Write your custom CSS here */
-    globalToggle: Toggle Custom CSS
-    openInDialog: Open in the agent dialog
-    title: Custom CSS
-    warning: Custom CSS allows you to customize any aspect of the launcher. Be careful
-      when pasting CSS from untrusted sources, as it can modify the UI layout.
+    assistantHint: Istalgan ko’rinishingizni tasvirlab bering va men siz uchun CSS
+    assistantSuggestion1: Yon panelni yarim shaffof qiling
+    assistantSuggestion2: Kartalarga sezilar-sezilmas gradient fonini qo’shing
+    assistantTitle: CSS Yordamchisi
+    dropHint: Import qilish uchun chizma fayllarini (.litematic / .schem / .nbt) shu
+    editorPlaceholder: /* O’zingizning maxsus CSS kodingizni shu yerga yozing */
+    globalToggle: Maxsus CSS’ni yoqish/o me chirish
+    openInDialog: Agent muloqot oynasida ochish
+    title: Kolleksiyani O’rnatish Natijasi
+    warning: Maxsus CSS launcher’ning har qanday jihatini sozlash imkonini beradi.
 settingLabel:
   global: Глобальный
-  globalHint: Это настройка будет следовать глобальной настройке.
-  local: Локальный
-  localHint: Эта настройка может быть изменена текущим экземпляром.
+  globalHint: Ushbu sozlama global sozlamaga ergashadi.
+  local: Mahalliy
+  localHint: Ushbu sozlama joriy ekzemplar tomonidan o’zgartirilishi mumkin.
 setup:
   account:
-    description: Авторизуйтесь в своей игровой учётной записи. Если у вас её нет,
-      вы можете пропустить это на данный момент.
-    name: Добавить игровую учётную запись
-    skip: Пока пропустить
+    description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+    name: Holat
+    skip: Hozircha o’tkazib yuborish
   appearance:
-    name: :setting.appearance
+    name: Holat
   dataRoot:
-    description: Корневая папка не является обычной папкой (.minecraft). Поскольку
-      структура каталогов данных NeoTerra Launcher отличается от оригинальной, мы
-      не рекомендуем использовать общую папку (.minecraft) в качестве корневой папки
-      данных.
-    drives: Рекомендуемые расположения
-    name: Установить корневую папку
+    description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+    drives: Tavsiya etilgan joylashuvlar
+    name: Holat
   defaultLayoutDescription: Вид интерфейса "Стандартный" пытается улучшить концепцию
     "игрового экземпляра". Он выглядит как приложения, такие как Discord. Он также
     вдохновлён другими приложениями запуска игр, такими как Steam и т.д.
-  defaultPath: Путь по умолчанию
+  defaultPath: Odatiy yo’l
   error:
     badDataRoot: Недопустимый каталог для данных лаунчера! Пожалуйста, попробуйте
       другой.
-    exists: Выбранный каталог не пуст. Это нормально, но убедитесь, что вы сделали
-      резервную копию своих данных.
-    invalidChar: 'Путь содержит неверные символы!
-
-      Это может привести к тому, что Minecraft не может начать!
-
-      PLAESE используют только английские персонажи и символ!'
-    noPermission: У лаунчера нет необходимых прав на доступ к выбранному каталогу!
-      Пожалуйста, попробуйте другой.
-    nonDictionary: Выбранный путь является файлом! Пожалуйста, выберите каталог!
+    exists: Tanlangan katalog bo’sh emas. Bu normal holat, lekin ma’lumotlaringizning
+    invalidChar: Yo
+    noPermission: Launcher tanlangan katalogga kirish uchun kerakli huquqlarga ega
+    nonDictionary: Tanlangan yo’l fayl hisoblanadi! Iltimos, katalogni tanlang!
   focusLayoutDescription: Вид интерфейса "Для фокусировки" - это устаревший вид интерфейса
     Minecraft. Он предназначен для использования с одним экземпляром или небольшим
     количеством экземпляров.
   game:
-    name: Импортировать существующую игру
+    name: Holat
   locale:
-    description: Выберите ваш предпочитаемый язык, если он доступен. Если вы не видите
-      необходимый язык и хотите помочь, вы можете посетить наш Github, чтобы отправить
-      Pool Request для перевода.
-    language: Язык
-    name: Установить язык
-  path: Текущий путь
+    description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+    language: Til
+    name: Holat
+  path: Joriy yo’l
 shaderPack:
   linkShared: Общие пакеты шейдеров для всех сборок
-  linkSharedHint: Связать папку shaderpacks этой сборки с общей глобальной папкой,
-    чтобы все сборки использовали одни и те же пакеты шейдеров. Существующие пакеты
-    будут перемещены в общую папку.
-  deletion: Удалить набор шейдеров
-  deletionHint: Это приведёт к удалению файла набора шейдеров {path} и его будет невозможно
-    восстановить.
-  disabled: Невыбранные наборы шейдеров
-  dropHint: Перетащите сюда файл набора шейдеров (.zip)
-  empty: Не выделен ни один набор шейдеров
-  enable: 'Используется набор шейдеров: {name}'
-  enabled: Выбранные наборы шейдеров
-  manage: Шейдера
-  name: Набор шейдеров | Наборы шейдеров
-  noShaderMod: Мод шейдеров не установлен
-  noShaderModHint: Вы не можете использовать шейдер без мода шейдера.
-  noShaderModInstallHint: Для загрузки пакета шейдеров вам необходимо установить один
-    из следующих модов.
-  searchHint: Поиск набора шейдеров
-  selectSearchHint: Найдите и выберите Shader Pack
-  showDirectory: Открыть папку с наборами шейдеров
-  showFile: Показать путь к набору шейдеров {file}
-  market: Магазин шейдеров
-  noPacks: Шейдер-паки не установлены
-  search: Поиск шейдер-паков...
-  noLocalPacksFound: No local shader packs found matching your search.
-  noPacksInstalled: You don't have any shader packs installed.
+  linkSharedHint: Barcha sborakalar bir xil sheyder paketlaridan foydalanishi uchun
+  deletion: Sheyderlar to’plamini o’chirish
+  deletionHint: Bu {path} sheyderlar to’plami faylini o’chirib tashlaydi va uni qayta
+  disabled: Tanlanmagan sheyderlar to’plamlari
+  dropHint: Import qilish uchun chizma fayllarini (.litematic / .schem / .nbt) shu
+  empty: Hali launcher kolleksiyalari yo’q
+  enable: Yoqish
+  enabled: Tanlangan sheyderlar to’plamlari
+  manage: Boshqaruv
+  name: Holat
+  noShaderMod: Sheyderlar modi o’rnatilmagan
+  noShaderModHint: Sheyder modi bo’lmasdan sheyderdan foydalana olmaysiz.
+  noShaderModInstallHint: Sheyder paketini yuklash uchun quyidagi modlardan birini
+  searchHint: Sheyderlar to’plamini qidirish
+  selectSearchHint: Shader Pack’ni toping va tanlang
+  showDirectory: Sheyder to’plamlari papkasini ochish
+  showFile: '{file} sheyder to'
+  market: Market
+  noPacks: Sheyder-paklar o’rnatilmagan
+  search: Manbalarni qidirish
+  noLocalPacksFound: Qidiruvingizga mos keladigan mahalliy sheyder paketlari topilmadi.
+  noPacksInstalled: Sizda hech qanday sheyder paketlari o’rnatilmagan.
 shared:
-  add: Добавить
-  author: Автор
-  back: Назад
-  browse: Обзор
-  cancel: Отмена
-  checkUpgrade: Проверить обновления
-  client: Клиент
-  description: Описание
-  disable: Отключить
-  download: Скачать
-  edit: Изменить
-  enable: Включить
-  filter: Фильтр
-  install: Установить
-  installed: Установлен
-  keepSelected: Сохранить выбранное
-  manage: Управление
-  name: Nomi
-  next: Далее
+  add: Do’st qo’shish
+  author: Muallif
+  back: Orqaga
+  browse: Ko’rish
+  cancel: Bekor Qilish
+  checkUpgrade: Yangilanishlarni tekshirish
+  client: Klient
+  description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+  disable: O’chirish
+  download: Yuklab olish
+  edit: O’zgartirish
+  enable: Yoqish
+  filter: Filtr
+  install: O’rnatish
+  installed: O’rnatildi
+  keepSelected: Tanlanganlarni saqlash
+  manage: Boshqaruv
+  name: Holat
+  next: Keyingisi
   'no': Нет
-  ok: ОК
-  previous: Назад
-  refresh: Обновить
-  remove: Удалить
-  search: Поиск
-  server: Сервер
-  skipForNow: Пропустить сейчас
-  upgrade: Обновить
+  ok: OK
+  previous: Orqaga
+  refresh: Yangilash
+  remove: O’chirish
+  search: Manbalarni qidirish
+  server: Server
+  skipForNow: Hozircha o’tkazib yuborish
+  upgrade: Yangilash
   'yes': Да
-  copied: Copied
+  copied: Nusxalandi
   copy: Nusxalash
   close: Yopish
-  copyFailed: Copy failed
-  copyFailedHint: Could not copy to clipboard
+  copyFailed: Nusxalash muvaffaqiyatsiz bo’ldi
+  copyFailedHint: Buferga nusxalab bo’lmadi
   save: Saqlash
-  delete: O'chirish
+  delete: O’chirish
 sidebar:
-  pin: Закрепить
-  unpin: Открепить
+  pin: Serverni qatirish
+  unpin: Qatirishni bekor qilish
 sortBy:
   alphabetAsc: Сортировка по алфавиту (восходящее)
-  alphabetDesc: Сортировка по алфавиту (спуск)
-  timeAsc: Сортировать по времени модификации (восходящая)
-  timeDesc: Сортировать по времени модификации (спуск)
-  name: Сортировать по
+  alphabetDesc: Alifbo bo’yicha saralash (kamayib boruvchi)
+  timeAsc: O’zgartirilgan vaqti bo’yicha saralash (o’sib boruvchi)
+  timeDesc: O’zgartirilgan vaqti bo’yicha saralash (kamayib boruvchi)
+  name: Holat
 store:
   discover: Обнаружить
-  latestMinecraft: Последняя версия Minecraft
-  name: Магазин сборок модов
-  searchResult: Результат поиска
-  trending: Тенденции
-  empty: Модпаки не найдены
-  emptyHint: Попробуйте изменить фильтры или поисковый запрос.
+  latestMinecraft: Oxirgi Minecraft versiyasi
+  name: Holat
+  searchResult: Qidiruv natijasi
+  trending: Trenddagilar
+  empty: Hali launcher kolleksiyalari yo’q
+  emptyHint: Filtrlar yoki qidiruv so’rovini o’zgartirib ko’ring.
 tag:
-  create: Создать тег
-  createSelected: Создать тег для выбранного
+  create: 'title: Ekzemplar yaratish'
+  createSelected: Tanlanganlar uchun teg yaratish
 task:
   cancelled: Отменено
-  clear: Очистить выполненные задачи
+  clear: Bajarilgan vazifalarni tozalash
   connection:
-    connected: Подключён
-    free: Бесплатно
-    pending: В ожидании
-    queued: В очереди
-    running: Текущее соединение
-    size: Общее количество
-  connections: Сетевые подключения
-  empty: Нет запущенных задач
-  failed: Не удалось выполнить
-  manager: Менеджер задач
-  nTaskRunning: '{count} задач выполняется'
-  name: Задача | Задачи
-  pause: Приостановить
+    connected: Kontroller Ulandi
+    free: Bepul
+    pending: Kutilmoqda
+    queued: Navbatda
+    running: Joriy ulanish
+    size: Umumiy miqdor
+  connections: Tarmoq ulanishlari
+  empty: Hali launcher kolleksiyalari yo’q
+  failed: Bajarib bo’lmadi
+  manager: Vazifalar menejeri
+  nTaskRunning: '{count} ta vazifa bajarilmoqda'
+  name: Holat
+  pause: Pauza
 theme:
   selectImage: Выберите изображение
-  selectMusic: Выберите музыку
-  selectVideo: Выберите видео
-  title: NeoTerra Launcher
-title: NeoTerra Launcher
+  selectMusic: Musiqani tanlang
+  selectVideo: Videoni tanlang
+  title: Kolleksiyani O’rnatish Natijasi
+title: Kolleksiyani O’rnatish Natijasi
 transportType:
-  host: Хост-кандидат
-  prflx: Пиринг-рефлексивный кандидат
-  relay: Ретранслятор-кандидат
-  srflx: Сервер-рефлексивный кандидат
+  host: Xost
+  prflx: Piring-refleksiv nomzod
+  relay: Retranslyator-nomzod
+  srflx: Server-refleksiv nomzod
 turnRegion:
   fr: Франция
-  guangzhou: Гуанчжоу, Китай
-  hk: Гонконг
-  liaoning: Ляонин, Китай
-  po: Польша
+  guangzhou: Guanchjou, Xitoy
+  hk: Gonkong
+  liaoning: Lyaonin, Xitoy
+  po: Polsha
 tutorial:
   feedbackDescription: Если у вас возникнут какие-либо проблемы, нажмите на эту кнопку,
     чтобы отправить отзыв!
-  hideNewsHeaderDescription: Вы можете увидеть новости слева. Нажатие на эту кнопку
-    может скрыть этот раздел.
+  hideNewsHeaderDescription: Chap tomonda yangiliklarni ko’rishingiz mumkin. Ushbu
   instance:
     iconDescription: Нажмите, чтобы изменить иконку.
-    iconTitle: Иконка экземпляра
-    javaDescription: Выберите или измените версию Java.
-    javaImportDescription: Импортировать Java из локального хранилища.
-    javaImportTitle: Импорт Java
-    javaTitle: Список Java
-  instanceAddDescription: Нажмите на эту кнопку, чтобы импортировать существующий
-    Minecraft или создать новый экземпляр/сборку модов с нуля.
-  instanceSelectDescription: Нажатие на эту кнопку откроет страницу выбора экземпляра
-    и прочтения новостей.
-  launchDescription: Нажмите на эту кнопку, чтобы установить или запустить экземпляр.
+    iconTitle: Ekzemplar belgisi
+    javaDescription: Java versiyasini tanlang yoki o’zgartiring.
+    javaImportDescription: Java’ni mahalliy xotiradan import qilish.
+    javaImportTitle: Java importi
+    javaTitle: Java ro’yxati
+  instanceAddDescription: Mavjud Minecraft’ni import qilish yoki noldan yangi ekzemplar/modlar
+  instanceSelectDescription: Ushbu tugmani bosish ekzemplarlarni tanlash va yangiliklarni
+  launchDescription: Ekzemplarni o’rnatish yoki ishga tushirish uchun ushbu tugmani
   mod:
     defaultSourceDescription: Вы можете выбрать источник контента модов здесь. Есть
       моды, опубликованные как в Modrinth, так и в CurseForge. Если вы хотите переключаться
       между этими двумя поставщиками контента, вы можете изменить значение здесь.
-    defaultSourceTitle: Выберите источник контента мода
-    detailDescription: Когда вы выбираете элемент слева, вы увидите детали мода. Контент
-      может быть получен из Modrinth, CurseForge или содержимого проанализированного
-      контента мода.
-    detailTitle: Детали мода
-    listDescription: Мы отобразим установленные моды, когда строка поиска будет пуста.
-      Вы увидите искомые моды, как только у вас будет введено ключевое слово или выбрана
-      категория.
-    listTitle: Установленные моды
-    searchDescription: Вы можете искать моды из Modrinth, CurseForge или вашего локального
-      кэша с помощью этого поля поиска.
-    searchTitle: Поиск модов
+    defaultSourceTitle: Mod kontenti manbasini tanlang
+    detailDescription: Chap tarafdan elementni tanlaganingizda, mod tafsilotlarini
+    detailTitle: Mod tafsilotlari
+    listDescription: Qidiruv satri bo’sh bo’lganda o’rnatilgan modlarni ko’rsatamiz.
+    listTitle: O’rnatilgan modlar
+    searchDescription: Ushbu qidiruv maydoni yordamida Modrinth, CurseForge yoki mahalliy
+    searchTitle: Modlarni qidirish
   multiplayer:
     contentDescription: Соединения между вами и пользователями будут перечислены здесь.
-    contentTitle: :multiplayer.connections
-    groupDescription: Вы можете создать или присоединиться к группе с другими пользователями.
-      Лаунчер попытается создать P2P-соединения между вами и пользователями в соответствии
-      с группой. Вы можете ввести имя группы, предоставленное пользователями. Или
-      же вы можете создать уникальное имя самостоятельно.
-    groupTitle: Присоединиться к группе
-    joinDescription: Как только вы введёте имя группы, вы можете нажать на эту кнопку,
-      чтобы присоединиться или создать группу. Если имя группы пустое, лаунчер сгенерирует
-      имя для вас.
-    manualDescription: Если вы или пользователь не можете подключиться к группе, вы
-      можете попытаться вручную обменяться токеном, нажав на "ручное соединение".
-      Если это также не удалось, возможно у вас могут быть проблемы с интернетом.
-  recentPlayDescription: Созданные экземпляры будут перечислены здесь. Вы можете переключать
-    представления здесь, чтобы также увидеть установленные версии и загруженные сборки
-    модов.
-  storePoupularModpackDescription: Вы увидите самые популярные сборки модов в CurseForge
-    и Modrinth в этом разделе.
-  storeSearchCategoryDescription: Вы также можете переключать категории или фильтры
-    здесь.
-  storeSearchDescription: Вы можете найти сборку модов, введя необходимый запрос в
-    это поле поиска. Нажмите клавишу Enter для начала поиска.
-  storeSearchResultDescription: Вы увидите все результаты поиска перечисленными здесь.
-  userAccountDescription: Нажмите на эту иконку, чтобы добавить или изменить свою
-    учётную запись Minecraft.
+    contentTitle: Ulanishlar
+    groupDescription: Boshqa foydalanuvchilar bilan guruh yaratishingiz yoki qo’shilishingiz
+    groupTitle: Guruhga qo’shilish
+    joinDescription: Guruh nomini kiritishingiz bilan, qo’shilish yoki guruh yaratish
+    manualDescription: Agar siz yoki foydalanuvchi guruhga ulana olmasangiz, "qo’lda
+  recentPlayDescription: Yaratilgan ekzemplarlar bu yerda ko’rsatiladi. O’rnatilgan
+  storePoupularModpackDescription: Ushbu bo’limda CurseForge va Modrinth’dagi eng
+  storeSearchCategoryDescription: Shuningdek, kategoriyalarni yoki filtrlarni shu
+  storeSearchDescription: Ushbu qidiruv maydoniga kerakli so’rovni kiritish orqali
+  storeSearchResultDescription: Barcha qidiruv natijalarini bu yerda ro’yxatda ko’rasiz.
+  userAccountDescription: Minecraft hisobingizni qo’shish yoki o’zgartirish uchun
 universalDrop:
   unknownResource: Неизвестно
 unresolvedFiles:
-  description: Эти файлы не удалось загрузить во время установки. Найдите подходящий
-    источник, установите совпадения или проигнорируйте файлы, чтобы всё равно запустить.
-  empty: Все файлы разрешены.
-  ignoreSelected: Игнорировать {count}
-  install: 'Установить совпадений: {count}'
-  matched: Совпадение
-  noMatch: Не найдено
-  search: Искать источники
+  description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+  empty: Hali launcher kolleksiyalari yo’q
+  ignoreSelected: '{count} tasini e'
+  install: O’rnatish
+  matched: Mos keldi
+  noMatch: Topilmadi
+  search: Manbalarni qidirish
   source:
     curseforge-name: CurseForge
-    dependency: Зависимость
+    dependency: Bog’liqlik
     modrinth-hash: Хеш Modrinth
     modrinth-name: Modrinth
-  title: Неразрешённые файлы
-  via: через {source}
+  title: Kolleksiyani O’rnatish Natijasi
+  via: '{source} orqali'
 upstream:
   downgrade: Понизить версию
-  onlyShowCurrentVersion: Показывать только текущую версию Minecraft
-  update: Обновить
+  onlyShowCurrentVersion: Faqat joriy Minecraft versiyasini ko’rsatish
+  update: Yangilash
 user:
   accessToken: Токен доступа
-  authMode: Сервис аутентификации
-  authService: Сервис авторизации
-  email: Адрес электронной почты
-  id: Идентификатор пользователя
-  name: Имя пользователя
-  nameHint: Имя, отображаемое в игре
-  profile: Профиль
-  tokenExpired: Срок действия токена истёк
-  tokenValidUntil: Срок действия токена
+  authMode: Autentifikatsiya xizmati
+  authService: Avtorizatsiya xizmati
+  email: Elektron pochta manzili
+  id: Foydalanuvchi identifikatori
+  name: Holat
+  nameHint: O’yinda ko’rsatiladigan nom
+  profile: Profil
+  tokenExpired: Microsoft sessiyangiz muddati tugadi. Iltimos, qayta kiring.
+  tokenValidUntil: Tokenning amal qilish muddati
 userAccount:
-  add: Добавить аккаунт
-  removeDescription: Это удалит все данные этого аккаунта. Вы уверены?
-  removeTitle: Удалить аккаунт
+  add: Do’st qo’shish
+  removeDescription: Bu ushbu hisobning barcha ma’lumotlarini o’chirib tashlaydi.
+  removeTitle: Hisobni o’chirish
 userCape:
   changeTitle: Изменить плащ
-  description: 'Плащи - это специальные награды, которые игроки могут разблокировать,
-    участвуя в различных мероприятиях, кампаниях и других счастливых событиях. Здесь
-    вы можете выбрать между плащами, которые у вас есть:'
-  noCape: Без плаща
+  description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+  noCape: Plashsiz
 userService:
-  add: Добавить ещё один сервис
-  authlibInjectorMetadata: Метаданные Authlib-Injector
-  baseUrlHint: Базовый URL-адрес вашего пользовательского сервиса
-  homepage: Домашняя страница
-  implementation: Реализация
-  manageServices: Управлять сервисами
-  register: Регистрация
-  server: Сервер
-  skinDomains: Домены скинов
-  title: Сторонние сервисы пользователя
-  version: Версия
+  add: Do’st qo’shish
+  authlibInjectorMetadata: Authlib-Injector metama’lumotlari
+  baseUrlHint: Maxsus xizmatiningizning asosiy URL manzili
+  homepage: Bosh sahifa
+  implementation: Amalga oshirish
+  manageServices: Xizmatlarni boshqarish
+  register: Ro’yxatdan o me o’tish
+  server: Server
+  skinDomains: Skinlar domenlari
+  title: Kolleksiyani O’rnatish Natijasi
+  version: 'checkIntegrity: Yaxlitlikni tekshiring'
 userServices:
   microsoft:
-    account: Аккаунт Microsoft
-    deviceCode: Код устройства
+    account: Microsoft Hisobi
+    deviceCode: Qurilma kodi
     deviceCodeHint: Будет сгенерирован после нажатия "Войти"
-    name: Microsoft
-    password: Введите пароль в браузере
-    useDeviceCode: Войти по коду устройства
+    name: Holat
+    password: Parol yo’q
+    useDeviceCode: Qurilma kodi orqali kirish
   mojang:
-    account: Электронная почта
-    name: Mojang
-    password: Пароль
+    account: Microsoft Hisobi
+    name: Holat
+    password: Parol yo’q
   offline:
-    account: Имя пользователя
-    name: Автономная учётная запись
-    password: Нет пароля
-    uuid: UUID пользователя (необязательно)
+    account: Microsoft Hisobi
+    name: Holat
+    password: Parol yo’q
+    uuid: Foydalanuvchi UUID (majburiy emas)
 userSkin:
-  import: Импортировать скин
-  importFile: Импортировать из файла
-  importLink: Импортировать из ссылки
-  placeUrlHere: Вставьте сюда URL-адрес скина для импорта
-  reset: Сбросить
-  save: Сохранить
-  saveTitle: Сохранить скин на диск
-  skinType: Тип скина
-  upload: Загрузить скин
-  urlNotEmpty: URL-адрес скина не может быть пустым
-  urlNotValid: URL-адрес скина неверный
-  useSlim: Использовать тонкие руки
-  classic: Classic
-  invalidImage: Choose a valid Minecraft skin image.
-  invalidImageTitle: Invalid Skin Image
-  slim: Slim
-  uploadFailed: Skin Upload Failed
-  uploadRejected: Minecraft rejected this skin upload. Please try again later.
+  import: Import Qilish
+  importFile: Fayldan import qilish
+  importLink: Havoladan import qilish
+  placeUrlHere: Import qilish uchun skin URL manzilini shu yerga joylashtiring
+  reset: Qayta tiklash
+  save: Saqlash
+  saveTitle: Skinni diskka saqlash
+  skinType: Skin turi
+  upload: Skinni yuklash
+  urlNotEmpty: Skin URL manzili bo’sh bo me bo’lishi mumkin emas
+  urlNotValid: Skin URL manzili noto’g’ri
+  useSlim: Inchka qo’llardan foydalanish
+  classic: Klassik
+  invalidImage: Yaroqli Minecraft skin tasvirini tanlang.
+  invalidImageTitle: Noto’g’ri Skin Tasviri
+  slim: Inchka (Slim)
+  uploadFailed: Skinni Yuklash Muvaffaqiyatsiz Bo’ldi
+  uploadRejected: Minecraft ushbu skin yuklanishini rad etdi. Iltimos, keyinroq qayta
 version:
   checkIntegrity: Проверьте целостность
-  name: Версия | Версии
-  notInstalled: Версия не установлена
+  name: Holat
+  notInstalled: Versiya o’rnatilmagan
 versionType:
   alpha: Альфа
-  beta: Бета
-  name: Статус
-  release: Релиз
+  beta: Beta
+  name: Holat
+  release: Reliz
 downloadModMetadataDb:
-  name: Загрузить базу метаданных модов
+  name: Holat
 duplicateInstance:
-  name: Дублировать инстанс
+  name: Holat
 exportModpack:
-  name: Экспортировать модпак
+  name: Holat
 installProfile:
-  name: Установить профиль {version}
+  name: Holat
 installQuilt:
-  name: Установить Quilt {version}
+  name: Holat
 instanceLauncher:
-  search: Поиск инстансов...
-  showAll: Показать все инстансы
-  title: Все инстансы
+  search: Manbalarni qidirish
+  showAll: Barcha instanslarni ko’rsatish
+  title: Kolleksiyani O’rnatish Natijasi
 migrateMinecraft:
-  name: Перенести файлы Minecraft
+  name: Holat
 reinstall:
-  name: Переустановить {version}
+  name: Holat
 difficulty:
   easy: Easy
-  hard: Hard
-  normal: Normal
-  peaceful: Peaceful
+  hard: Qiyin (Hard)
+  normal: O’rtacha (Normal)
+  peaceful: Tinch (Peaceful)
 xmclAccount:
-  accountSummary: Hisob (Account)
+  accountSummary: Аккаунт
   confirmMerge: Hisoblarni biriktirishni tasdiqlash
   createdAt: Yaratilgan sana {date}
-  description: NeoTerra profilingiz (Minecraft o'yin hisobidan alohida).
+  description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
   expiresAt: Tugash muddati {date}
-  gameAccountsSeparate: O'yin hisobini o'chirish NeoTerra profilini uzib qo'ymaydi.
+  gameAccountsSeparate: O’yin hisobini o’chirish NeoTerra profilini uzib qo’ymaydi.
   guest: Mehmon (Guest)
   identityConflict: Ushbu {provider} kirishi boshqa NeoTerra hisobiga tegishli.
   linkAccountWith: 'Hisobni quyidagilar orqali biriktirish:'
   mergePreview: Biriktirishdan oldin resurslarni tekshiring.
   mergeNeedsSession: Davom etish uchun NeoTerra hisobingizga kiring.
   mergeQueued: Hisoblarni biriktirish jarayonda.
-  requestFailed: NeoTerra hisob xizmati so'rovni bajara olmadi.
-  reviewMerge: Biriktirishni ko'rib chiqish
+  requestFailed: NeoTerra hisob xizmati so’rovni bajara olmadi.
+  reviewMerge: Biriktirishni ko’rib chiqish
   session: Sessiya
   sessionActive: Faol
-  sessionExpired: Muddati o'tgan
+  sessionExpired: Muddati o’tgan
   signOutAll: Barcha qurilmalardan chiqish
   signOutDevice: Ushbu qurilmadan chiqish
   status:
     active: Faol
-    deleted: O'chirilgan
-    deletion_pending: O'chirilishi kutilmoqda
+    deleted: O’chirilgan
+    deletion_pending: O’chirilishi kutilmoqda
     merged: Biriktirilgan
-  title: NeoTerra Hisobi
+  title: Kolleksiyani O’rnatish Natijasi
 minecraftFriends:
   accept: Accept
-  add: Add a friend
-  addPlaceholder: Minecraft username
-  addedRelative: Added {time}
+  add: Do’st qo’shish
+  addPlaceholder: Minecraft foydalanuvchi nomi
+  addedRelative: Qo’shildi {time}
   errors:
     cannotAddSelf: You cannot send a friend request to yourself.
-    duplicate: That player is already in your list.
-    friendsDisabled: Your Minecraft account has friends disabled or cannot use friends.
-      Enable friends in Minecraft account settings, then try again.
-    generic: Something went wrong. Please try again.
-    invalidName: Minecraft usernames must be between 3 and 16 characters.
-    inviteRejected: That player does not have friends enabled or does not accept invites.
-    tokenExpired: Your Microsoft session expired. Please log in again.
-    unknownProfile: We could not find a player with that name.
-  expiresRelative: Expires {time}
-  friends: Friends
-  heroEmptyHint: Add a Minecraft player by username above to send a friend request.
-  heroEmptyTitle: Your friends list is empty
-  incoming: Incoming requests
-  incomingHint: 1 incoming request | {count} incoming requests
-  notifyAdded: Friend request sent to {name}
-  outgoing: Outgoing requests
+    duplicate: Ushbu o’yinchi allaqachon ro’yxatingizda bor.
+    friendsDisabled: Minecraft hisobingizda do’stlar o’chirilgan yoki ulardan foydalanib
+    generic: Nimadir noto’g’ri bajarildi. Iltimos, qayta urinib ko me ko’ring.
+    invalidName: Minecraft foydalanuvchi nomlari 3 va 16 belgi orasida bo’lishi kerak.
+    inviteRejected: Ushbu o’yinchida do me do’stlar yoqilmagan yoki takliflarni qabul
+    tokenExpired: Microsoft sessiyangiz muddati tugadi. Iltimos, qayta kiring.
+    unknownProfile: Ushbu nomga ega o’yinchi topilmadi.
+  expiresRelative: Muddati tugaydi {time}
+  friends: Do’stlar
+  heroEmptyHint: Do’stlik so’rovi yuborish uchun yuqoriga Minecraft o’yinchisi foydalanuvchi
+  heroEmptyTitle: Do’stlar ro’yxatingiz bo’sh
+  incoming: Kiruvchi so’rovlar
+  incomingHint: 1 ta kiruvchi so’rov | {count} ta kiruvchi so’rovlar
+  notifyAdded: '{name} ga do'
+  outgoing: Chiquvchi so’rovlar
   privacy:
     acceptInvites: Accept friend invites
-    acceptInvitesHint: When off, other players cannot send you friend requests.
-    friendsEnabled: Friends list enabled
-  reconnectAction: Reconnect
-  requiresMicrosoft: Sign in with a Microsoft account to use friends.
-  scopedTo: Signed in as {name}
-  send: Send
-  title: Minecraft Friends
-  unsupported: Friends are only available for Microsoft accounts.
+    acceptInvitesHint: O’chirilganda, boshqa o’yinchilar sizga do’stlik so me so’rovlarini
+    friendsEnabled: Do’stlar ro’yxati yoqilgan
+  reconnectAction: Qayta ulanish
+  requiresMicrosoft: Do’stlardan foydalanish uchun Microsoft hisobi bilan kiring.
+  scopedTo: '{name} sifatida kirilgan'
+  send: Yuborish
+  title: Kolleksiyani O’rnatish Natijasi
+  unsupported: Do’stlar faqat Microsoft hisoblari uchun mavjud.
 relative:
   daysAgo: '{count} day ago | {count} days ago'
-  hoursAgo: '{count} hour ago | {count} hours ago'
-  justNow: just now
-  minutesAgo: '{count} minute ago | {count} minutes ago'
-  secondsAgo: '{count} second ago | {count} seconds ago'
+  hoursAgo: '{count} soat oldin | {count} soat oldin'
+  justNow: hozirgina
+  minutesAgo: '{count} daqiqa oldin | {count} daqiqa oldin'
+  secondsAgo: '{count} soniya oldin | {count} soniya oldin'
 resourceError:
   body: '"{path}" could not be parsed ({code}). The file may be corrupted, locked,
     or incomplete. Try re-downloading or removing it.'
-  title: Cannot read {file}
+  title: Kolleksiyani O’rnatish Natijasi
 blueprint:
-  name: Blueprint | Blueprints
-  count: '{count} blueprints'
-  searchLocal: Search blueprints...
-  searchOnline: Search online...
+  name: Holat
+  count: '{count} ta chizmalar'
+  searchLocal: Chizmalarni qidirish...
+  searchOnline: Onlayn qidirish...
   market: Market
-  local: Local
-  provider: Provider
+  local: Mahalliy
+  provider: Provayder
   import: Import Qilish
-  openFolder: Open folder
+  openFolder: Papkani ochish
   refresh: Yangilash
-  empty: No blueprints found. Import a .litematic / .schem / .nbt file or browse the
-    market.
-  dropHint: Drop blueprint files (.litematic / .schem / .nbt) here to import.
-  selectHint: Select a blueprint to preview it.
-  blocks: '{count} blocks'
-  materials: Materials
-  allNamespaces: All
-  findMod: Find the mod for this namespace
-  compatible: Compatible
-  incompatible: Missing mods
-  missingNamespaces: 'Missing mods for: {namespaces}'
-  delete: O'chirish
+  empty: Hali launcher kolleksiyalari yo’q
+  dropHint: Import qilish uchun chizma fayllarini (.litematic / .schem / .nbt) shu
+  selectHint: Dastlabki ko’rish uchun chizmani tanlang.
+  blocks: '{count} ta bloklar'
+  materials: Materiallar
+  allNamespaces: Barchasi
+  findMod: Ushbu nomlar sohasi uchun modni toping
+  compatible: Mos keladi
+  incompatible: Modlar yetishmayapti
+  missingNamespaces: 'Quyidagilar uchun modlar yetishmayapti: {namespaces}'
+  delete: O’chirish
   cancel: Bekor Qilish
-  install: O'rnatish
-  goTo: Website
-  byAuthor: by {author}
-  noDescription: No description provided.
-  loadMore: Load more
-  cmsBrowseOnly: This source is browse-only; open the website to download.
-  mixedSources: Results are mixed from all sources. Some are browse-only — open their
-    website to download.
+  install: O’rnatish
+  goTo: Veb-sayt
+  byAuthor: muallif {author}
+  noDescription: Tavsif berilmagan.
+  loadMore: Yana yuklash
+  cmsBrowseOnly: Ushbu manba faqat ko’rish uchun; yuklab olish uchun veb-saytni oching.
+  mixedSources: Natijalar barcha manbalardan aralashtirilgan. Ba’zilari faqat ko’rish
   formats:
     structure: Vanilla Structure
   preview:
-    title: 3D Preview
-    loading: Loading preview...
-    empty: This blueprint has no blocks to display.
-    hint: '{count} blocks · {x}×{y}×{z}'
-    controls: Drag to look · WASD move · Space/Shift up/down
+    title: Kolleksiyani O’rnatish Natijasi
+    loading: Ko me rish yuklanmoqda...
+    empty: Hali launcher kolleksiyalari yo’q
+    hint: Ushbu chizmani boshqa formatga o’tkazing. Yangi fayl yaratiladi.
+    controls: Qarash uchun sudrang · WASD harakatlanish · Bo’sh joy/Shift yuqoriga/pastga
   convert:
-    title: Convert format
-    hint: Convert this blueprint to another format. A new file will be created.
-    target: Target format
-    action: Convert
+    title: Kolleksiyani O’rnatish Natijasi
+    hint: Ushbu chizmani boshqa formatga o’tkazing. Yangi fayl yaratiladi.
+    target: Maqsaddagi format
+    action: Almashtirish
   replace:
-    title: Replace blocks
-    simple: Simple
-    precise: Precise
-    simpleHint: Match by block id only, keeping the existing block state properties.
-    preciseHint: Match the full block state (id + properties) and replace it entirely.
-    from: From
-    to: To
-    addRule: Add rule
-    newFile: Save as a new file
-    action: Replace
+    title: Kolleksiyani O’rnatish Natijasi
+    simple: Oddiy
+    precise: Aniq
+    simpleHint: Faqat blok id’si bo’yicha moslashtirish, mavjud blok holati xususiyatlarini
+    preciseHint: To’liq blok holatiga moslashtirish (id + xususiyatlar) va uni to
+      me
+    from: Qayerdan
+    to: Qayerga
+    addRule: Qoida qo’shish
+    newFile: Yangi fayl sifatida saqlash
+    action: Almashtirish
 localCollection:
-  title: Launcher collections
-  newCollection: New collection
-  namePlaceholder: Collection name
-  addToCollection: Add to collection
-  empty: No launcher collections yet
-  corrupted: Your saved collections could not be read and have been reset. A backup
-    was kept next to the data file.
-  modrinthSection: Modrinth account
-  installAll: Install all
-  installAllHint: Install every project in this collection compatible with the current
-    Minecraft version and loader.
-  incompatibleAlert: '1 project is not compatible with the current instance and was
-    skipped: | {count} projects are not compatible with the current instance and were
-    skipped:'
-  projects: No projects | {count} project | {count} projects
+  title: Kolleksiyani O’rnatish Natijasi
+  newCollection: Yangi kolleksiya
+  namePlaceholder: Kolleksiya nomi
+  addToCollection: Kolleksiyaga qo’shish
+  empty: Hali launcher kolleksiyalari yo’q
+  corrupted: Saqlangan kolleksiyalaringizni o’qib bo’lmadi va qayta tiklandi. Zahiraviy
+  modrinthSection: Modrinth hisobi
+  installAll: Barchasini o’rnatish
+  installAllHint: Ushbu kolleksiyadagi joriy Minecraft versiyasi va yuklovchiga mos
+  incompatibleAlert: 1 ta loyiha joriy ekzemplarga mos kelmaydi va o
+  projects: Loyihalar yo’q | {count} ta loyiha | {count} ta loyihalar
   result:
-    failed: Failed
-    installed: O'rnatildi
-    skipped: Skipped
-    title: Collection Installation Result
+    failed: Bajarib bo’lmadi
+    installed: O’rnatildi
+    skipped: O’tkazib yuborildi
+    title: Kolleksiyani O’rnatish Natijasi
 gamepad:
   detectedTitle: Gamepad Detected
-  connected: Controller Connected
-  guideTitle: Controller Controls
-  enableSwitchLabel: Gamepad Controls
-  enabledState: Enabled
-  disabledState: Disabled
-  toggle: Toggle
-  disabledNotify: Gamepad controls disabled.
-  enabledNotify: Gamepad controls enabled! Use D-pad/Left stick to navigate, {btnA}
-    to select, {btnB} to go back.
+  connected: Kontroller Ulandi
+  guideTitle: Kontroller Boshqaruvi
+  enableSwitchLabel: Geympad Boshqaruvi
+  enabledState: Yoqilgan
+  disabledState: O’chirilgan
+  toggle: Yoqish/O’chirish
+  disabledNotify: Geympad boshqaruvi o’chirildi.
+  enabledNotify: Geympad boshqaruvi yoqildi! Harakatlanish uchun D-pad/Chap stikdan,
   guide:
-    confirm: Tanlash
-    navigate: Navigate
-    tabs: Switch tabs
-    sections: Switch sections
-    launch: Launch game
-    instanceSettings: Instance settings
-  modSuggestTitle: Controller Mod
-  modSuggestBody: To use your gamepad inside Minecraft, a controller mod is recommended.
-    Would you like to install the appropriate mod for your modloader?
-  modInstall: Install Mod
-  modSkip: Skip
-  modDone: Done
-  modInstalled: Controller mod installed successfully! It will be active next time
-    you launch Minecraft.
-  modInstalledNotify: '{name} has been installed for in-game controller support.'
-  modNotFound: No compatible version found for {loader} on Minecraft {version}.
-  autoEnableLabel: Auto Enable Controls
-  autoEnableHint: Automatically enable gamepad navigation when a controller is detected.
-  autoOpenKeyboardLabel: Auto Open Steam Keyboard
-  autoOpenKeyboardHint: Open Steam On-Screen Keyboard when focusing text input fields.
-  focusTooltipsLabel: Show Tooltips on Focus
-  focusTooltipsHint: Display hover tooltips when navigating elements using gamepad
-    focus.
-  disableModPromptLabel: Disable Controller Mod Suggestions
-  disableModPromptHint: Do not prompt to install controller mods when launching with
-    a gamepad.
-  settingSteamTitle: Add Launcher to Steam
-  steamAddedNotify: Launcher added to Steam Library successfully! Please restart Steam
-    to see it.
-  steamAlreadyAddedNotify: Launcher is already in your Steam Library.
-  steamDeckTitle: Steam Deck Detected
-  steamDeckDesc: We detected that you are running on Steam Deck. Would you like to
-    add NeoTerra Launcher to your Steam Library as a non-Steam game for full Steam
-    overlay and controller integration in Gaming Mode?
-  steamDeckAddBtn: Add to Steam ({btn})
-  steamDeckCancelBtn: Cancel ({btn})
+    confirm: Tasdiqlash
+    navigate: Harakatlanish
+    tabs: Varaqlarni o’zgartirish
+    sections: Bo’limlarni o’zgartirish
+    launch: O’yinni ishga tushirish
+    instanceSettings: Ekzemplar sozlamalari
+  modSuggestTitle: Kontroller Modi
+  modSuggestBody: Minecraft ichida geympadingizdan foydalanish uchun kontroller modi
+  modInstall: Modni O’rnatish
+  modSkip: O’tkazib yuborish
+  modDone: Bajarildi
+  modInstalled: Kontroller modi muvaffaqiyatli o’rnatildi! U keyingi safar Minecraft’ni
+  modInstalledNotify: '{name} o'
+  modNotFound: Minecraft {version} dagi {loader} uchun mos keladigan versiya topilmadi.
+  autoEnableLabel: Boshqaruvni Avto-Yoqish
+  autoEnableHint: Kontroller aniqlanganda geympad navigatsiyasini avtomatik ravishda
+  autoOpenKeyboardLabel: Steam Klaviaturasini Avto-Ochish
+  autoOpenKeyboardHint: Matn kiritish maydonlariga diqqat qaratilganda Steam Ekran
+  focusTooltipsLabel: Diqqat Qaratilganda Maslahatlarni Ko’rsatish
+  focusTooltipsHint: Geympad diqqati yordamida elementlarni ko’rayotganda sichqoncha
+  disableModPromptLabel: Kontroller Modi Takliflarini O’chirish
+  disableModPromptHint: Geympad bilan ishga tushirilganda kontroller modlarini o’rnatishni
+  settingSteamTitle: Launcherni Steam’ga Qo’shish
+  steamAddedNotify: Launcher Steam Kutubxonasiga muvaffaqiyatli qo’shildi! Uni ko
+    me ko’rish
+  steamAlreadyAddedNotify: Launcher allaqachon Steam Kutubxonangizda bor.
+  steamDeckTitle: Steam Deck Aniqlandi
+  steamDeckDesc: Steam Deck’da ishlayotganingizni aniqladik. O’yin Rejimida to’liq
+  steamDeckAddBtn: Steam’ga qo’shish ({btn})
+  steamDeckCancelBtn: Bekor qilish ({btn})
