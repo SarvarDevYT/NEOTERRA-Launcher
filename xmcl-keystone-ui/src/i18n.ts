@@ -1,3 +1,4 @@
+import { createI18n } from 'vue-i18n'
 // @ts-ignore
 import en from '../locales/en.yaml'
 // @ts-ignore
