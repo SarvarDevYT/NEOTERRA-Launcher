@@ -74,16 +74,7 @@ const strictLocales = [
 ]
 
 export function useAllowThirdparty() {
-  const { state: setting } = injection(kSettingsState)
-  const { users } = injection(kUserContext)
-  const allowThirdParty = computed(() => {
-    if (users.value.some((u) => u.authority === AUTHORITY_MICROSOFT)) return true
-    if (setting.value?.developerMode) return true
-    const locale = new Intl.NumberFormat().resolvedOptions().locale
-    if (strictLocales.includes(locale)) return false
-    return true
-  })
-  return allowThirdParty
+  return computed(() => true)
 }
 
 export function useAuthorityItems(authorities: Ref<AuthorityMetadata[] | undefined>) {

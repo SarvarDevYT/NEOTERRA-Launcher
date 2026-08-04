@@ -1896,7 +1896,7 @@ user:
   tokenExpired: Microsoft sessiyangiz muddati tugadi. Iltimos, qayta kiring.
   tokenValidUntil: Tokenning amal qilish muddati
 userAccount:
-  add: Do’st qo’shish
+  add: Hisob qo'shish
   removeDescription: Bu ushbu hisobning barcha ma’lumotlarini o’chirib tashlaydi.
   removeTitle: Hisobni o’chirish
 userCape:
@@ -1904,7 +1904,7 @@ userCape:
   description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
   noCape: Plashsiz
 userService:
-  add: Do’st qo’shish
+  add: Boshqa xizmat qo'shish
   authlibInjectorMetadata: Authlib-Injector metama’lumotlari
   baseUrlHint: Maxsus xizmatiningizning asosiy URL manzili
   homepage: Bosh sahifa
@@ -1919,19 +1919,19 @@ userServices:
   microsoft:
     account: Microsoft Hisobi
     deviceCode: Qurilma kodi
-    deviceCodeHint: Будет сгенерирован после нажатия "Войти"
-    name: Holat
-    password: Parol yo’q
+    deviceCodeHint: Kirish tugmasini bosganingizdan so'ng qurilma kodi yaratiladi
+    name: Microsoft Hisobi
+    password: Parolni brauzerda kiriting
     useDeviceCode: Qurilma kodi orqali kirish
   mojang:
-    account: Microsoft Hisobi
-    name: Holat
-    password: Parol yo’q
+    account: Email manzili
+    name: Mojang Hisobi
+    password: Parol
   offline:
-    account: Microsoft Hisobi
-    name: Holat
-    password: Parol yo’q
-    uuid: Foydalanuvchi UUID (majburiy emas)
+    account: O'yinchi niki (Username)
+    name: Offlayn (Lokal) Hisob
+    password: Parol shart emas
+    uuid: Foydalanuvchi UUID (ixtiyoriy)
 userSkin:
   classic: Klassik
   import: Import Qilish
@@ -1983,7 +1983,7 @@ gamepad:
   modSkip: O’tkazib yuborish
   modDone: Bajarildi
   modInstalled: Kontroller modi muvaffaqiyatli o’rnatildi! U keyingi safar Minecraft’ni
-  modInstalledNotify: '{name} o'
+  modInstalledNotify: "{name} o'rnatildi"
   modNotFound: Minecraft {version} dagi {loader} uchun mos keladigan versiya topilmadi.
   autoEnableLabel: Boshqaruvni Avto-Yoqish
   autoEnableHint: Kontroller aniqlanganda geympad navigatsiyasini avtomatik ravishda
