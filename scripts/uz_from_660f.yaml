@@ -20,11 +20,11 @@ AppShareInstanceDialog:
   shareNotifyTitle: Ekzemplarni ulashish
   shareTitle: O’yin fayllarini boshqa o’yinchilar bilan ulashish
 BaseSettingGeneral:
-  title: Umumiy
+  title: Kolleksiyani O’rnatish Natijasi
 HomeJavaIssueDialog:
-  incompatibleJava: Несовместимая версия Java
+  incompatibleJava: 'name: Java {javaVersion} versiyasi {version} uchun mos kelmaydi!'
   incompatibleJavaHint: Joriy Java versiyasi tanlangan Minecraft versiyasiga mos
-  missingJava: Отсутствует Java
+  missingJava: 'message: Ushbu muammoni hal qilish uchun bosing'
   missingJavaHint: ’Laucher kompyuteringizda hech qanday Java versiyasini aniqlay
   optionSwitch:
     name: Holat
@@ -35,33 +35,31 @@ HomeLaunchMultiInstanceDialog:
 SettingMigrationDialog:
   selectRootDirectory: Выбрать корневой каталог
 agent:
+  title: Kolleksiyani O’rnatish Natijasi
+  statusReady: Tayyor
+  statusWorking: Ishlamoqda…
+  statusDisabled: O’chirilgan — API kaliti yo’q
+  reset: Qayta tiklash
+  notConfiguredTitle: Agent sozlanmagan
+  notConfiguredHint: Agentni yoqish uchun Sozlamalar → Umumiy → AI Agent bo’limida
+  openSettings: Sozlamalarni ochish
+  setupGuide: Sozlash bo’yicha qo’llanma
+  emptyHint: Filtrlar yoki qidiruv so’rovini o’zgartirib ko’ring.
+  suggestion1: Ushbu ekzemplarni Minecraft’ning yangi versiyasiga va modlarni yangilang
+  suggestion2: Modlarim buzilmoqda — sababini toping va tuzatishga yordam bering
+  suggestion3: Sborka yig
+  thinking: o’ylamoqda…
   callingTool: '{name} chaqirilmoqda…'
+  inputPlaceholder: Agentdan so’rang… (Enter — yuborish, Shift+Enter — yangi qator)
+  disabledPlaceholder: Agent o’chirilgan
+  toggleHint: o’tkazish
   confirmAccept: Davom etish
   confirmCancel: Bekor Qilish
   confirmTitle: Agent harakatini tasdiqlang
-  disabledPlaceholder: Agent o’chirilgan
-  emptyHint: Agentdan ekzemplarni tekshirishni, modlarni yoqish/o'chirishni, loglarni
-    o'qishni yoki nosozliklarni tashxislashni so'rang.
   errorTitle: Agentda xatolik yuz berdi
-  inputPlaceholder: Agentdan so’rang… (Enter — yuborish, Shift+Enter — yangi qator)
-  notConfiguredHint: Agentni yoqish uchun Sozlamalar → Umumiy → AI Agent bo’limida
-  notConfiguredTitle: Agent sozlanmagan
-  openSettings: Sozlamalarni ochish
-  reset: Qayta tiklash
-  setupGuide: Sozlash bo’yicha qo’llanma
-  statusDisabled: O’chirilgan — API kaliti yo’q
-  statusReady: Tayyor
-  statusWorking: Ishlamoqda…
-  suggestion1: Ushbu ekzemplarni Minecraft’ning yangi versiyasiga va modlarni yangilang
-  suggestion2: Modlarim buzilmoqda — sababini toping va tuzatishga yordam bering
-  suggestion3: 'Sborka yig''ing: kerakli funksiya uchun modlarni toping va ularni
-    ushbu ekzemplarga o''rnating'
-  thinking: o’ylamoqda…
-  title: NeoTerra Launcher Agenti
   toolArguments: Argumentlar
   toolResult: Natija
   toolRunning: Natija kutilmoqda…
-  toggleHint: o’tkazish
   marketConfirmMessage: '{name} joriy ekzemplarga o'
   marketConfirmTarget: 'Nishon: {instance}'
   marketConfirmTitle: '{type} o'
@@ -69,11 +67,11 @@ agent:
   marketInstalled: O’rnatildi
   marketInstallFailed: '{type} o'
   marketType:
-    datapack: data pack
-    mod: '''defaultSourceDescription: Mod kontenti manbasini shu yerda tanlashingiz
-      mumkin.'''
+    datapack: 'name: Ma’lumotlar paketi | Ma’lumotlar paketlari'
+    mod: 'defaultSourceDescription: Mod kontenti manbasini shu yerda tanlashingiz
+      mumkin.'
     modpack: Modlar terilmasi
-    resourcepack: resource pack
+    resourcepack: 'linkShared: Barcha sborakalar uchun umumiy resurs paketlari'
     shader: Sheyder
   marketResultCount: '{count} ta natija'
 ago:
@@ -82,23 +80,16 @@ ago:
   minute: '{duration} daqiqa | {duration} daqiqa'
   second: '{duration} soniya | {duration} soniya'
 askAICrash:
-  agentNotConfigured: Launcher’ning o’rnatilgan agenti buni siz uchun tashxis qilishi
-  askAgent: O’rnatilgan AI agenti bilan tashxis qilish
   copyPrompt: Скопируйте подсказку, чтобы спросить AI
   description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
-  orExternal: yoki tashqi AI’dan foydalaning
   selectPlatform: Sun’iy intellekt platformasini oching va nusxalangan matnni joylashtiring.
+  agentNotConfigured: Launcher’ning o’rnatilgan agenti buni siz uchun tashxis qilishi
+  askAgent: O’rnatilgan AI agenti bilan tashxis qilish
+  orExternal: yoki tashqi AI’dan foydalaning
   setupAgent: AI agentini sozlash
 authProfileAddedNotification: '{name} autentifikatsiya profili qo'
 bedrock:
-  description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
-  install: O’rnatish
-  installFailed: Microsoft Store’ni ochib bo’lmadi
-  installed: O’rnatildi
-  launchHint: Bedrock Edition’ni boshlash uchun Ishga tushirish tugmasini bosing.
   installBedrockVersion: Downloading Bedrock {version}
-  licenseRequired: Bedrock Edition’ni o’rnatish va o’ynash uchun Minecraft’ga ega
-  refresh: Yangilash
   versionsTitle: Versiya menejeri
   versionsHint: Microsoft serverlaridan bir nechta Bedrock versiyalarini yuklab oling
   versionsError: Versiyalar ro’yxatini yuklab bo’lmadi. Tarmoqni tekshiring va qayta
@@ -114,8 +105,15 @@ bedrock:
   enableDeveloperMode: Dasturchi rejimini yoqish
   enableDeveloperModeFailed: Dasturchi rejimini yoqib bo’lmadi
   downloadFailed: Bedrock {version} yuklab olinmadi
-  launchFailed: Failed to launch this Bedrock version
+  launchFailed: 'crash: O’yin o’chib ketdi!'
   removeFailed: Bedrock {version} o’chirilmadi
+  description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+  install: O’rnatish
+  installFailed: Microsoft Store’ni ochib bo’lmadi
+  installed: O’rnatildi
+  launchHint: Bedrock Edition’ni boshlash uchun Ishga tushirish tugmasini bosing.
+  licenseRequired: Bedrock Edition’ni o’rnatish va o’ynash uchun Minecraft’ga ega
+  refresh: Yangilash
 baseSetting:
   title: Kolleksiyani O’rnatish Natijasi
 browseApp:
@@ -124,11 +122,11 @@ browseApp:
   delete: O’chirish
   launch: O’yinni ishga tushirish
 browseApps: Launcher foydalanuvchi interfeysini ko’rish
-color: Цвет
+color: 'red; font-weight: bold">bitta foydalanuvchi</span> uchun ishlatilishi mumkin!'
 confirm: Tasdiqlash
 copyClipboard:
   success: Muvaffaqiyatli
-create: Создать
+create: 'title: Ekzemplar yaratish'
 curseforge:
   category: Категория
   createdDate: Yaratilgan sana
@@ -196,9 +194,9 @@ dataMigration:
   unknownError: Noma’lum xatolik! Iltimos, qayta urinib ko’ring yoki dasturchi bilan
   waitReload: Ma’lumotlar ko mechirilmoqda. Iltimos, launcherni yopmang, aks holda
 delete:
-  name: '{name} o''chirilsinmi'
-  'no': Yo'q
-  'yes': O'chirish
+  name: Holat
+  'no': Нет
+  'yes': Удалить
 dependencies:
   embedded: Встраиваемые
   incompatible: Modlar yetishmayapti
@@ -243,20 +241,11 @@ diagnosis:
   unzipFileNotFound:
     description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
     title: Kolleksiyani O’rnatish Natijasi
-difficulty:
-  easy: Easy
-  hard: Qiyin (Hard)
-  normal: O’rtacha (Normal)
-  peaceful: Tinch (Peaceful)
 disk:
   available: Доступно
   used: Ishlatilgan
 downloadCount: '{count} marta yuklab olingan'
-downloadModMetadataDb:
-  name: Holat
 downloadUpdate:
-  name: Holat
-duplicateInstance:
   name: Holat
 duration:
   day: '{duration} день | {duration} дней'
@@ -269,6 +258,21 @@ env:
     fit: Mos keladiganlarini tanlash
     none: Yo’q
 errors:
+  BadForgeInstallerJarError: Не удаётся получить файл загрузчика forge. Возможно,
+    у forge новый формат файла загрузчика? Обратитесь к разработчикам, если эта проблема
+    будет повторяться.
+  BadInstanceType: Noto
+  BodyTimeoutError: Server javobini kutish vaqti tugadi
+  ChecksumNotMatchError: Nazorat summasi mos kelmadi! {expect} kutilgan edi. {actual}
+  ConnectTimeoutError: Server bilan ulanish kutish vaqti tugadi.
+  DNSNotFoundError: DNS qidirishda xatolik
+  DatabaseNotOpened: Ma’lumotlar bazasi ochilmadi! Launcher to’g’ri ishlamaydi!
+  DiskIsFull: Diskingiz to
+  DownloadAggregateError: Faylni yuklab olib bo’lmadi.
+  DownloadFileSystemError: Yuklab olingan faylni saqlash yo’liga kirishda xatolik.
+  HeadersTimeoutError: HTTP sarlavhalarini kutish vaqti tugadi
+  NotFoundError: 404 Topilmadi
+  SocketError: Server soketi xatosi
   bedrockUnsupportedPlatform: Minecraft Bedrock Edition faqat Windows tizimida qo’llab-quvvatlanadi.
   bedrockNotInstalled: Minecraft Bedrock Edition o’rnatilmagan.
   bedrockLaunchFailed: Minecraft Bedrock Edition’ni ishga tushirib bo’lmadi.
@@ -277,20 +281,7 @@ errors:
   bedrockDeveloperModeRequired: Ushbu Bedrock versiyasini ro’yxatdan o’tkazish uchun
   bedrockRegisterFailed: Ushbu Bedrock versiyasini Windows’da ro’yxatdan o’tkazib
   bedrockVersionNotFound: Ushbu Bedrock versiyasi mahalliy xotirada o’rnatilmagan.
-  BadForgeInstallerJarError: Не удаётся получить файл загрузчика forge. Возможно,
-    у forge новый формат файла загрузчика? Обратитесь к разработчикам, если эта проблема
-    будет повторяться.
-  BadInstanceType: Noto
-  BodyTimeoutError: Server javobini kutish vaqti tugadi
-  ChecksumNotMatchError: Nazorat summasi mos kelmadi! {expect} kutilgan edi. {actual}
-  ConnectTimeoutError: Server bilan ulanish kutish vaqti tugadi.
   CorruptedResourceMetadata: '{count} ta resursda buzilgan metama'
-  DNSNotFoundError: DNS qidirishda xatolik
-  DatabaseNotOpened: Ma’lumotlar bazasi ochilmadi! Launcher to’g’ri ishlamaydi!
-  DiskIsFull: Diskingiz to
-  DownloadAggregateError: Faylni yuklab olib bo’lmadi.
-  DownloadFileSystemError: Yuklab olingan faylni saqlash yo’liga kirishda xatolik.
-  HeadersTimeoutError: HTTP sarlavhalarini kutish vaqti tugadi
   InstallBackendUnresponsive:
     body: The launcher's background process stopped responding, so the install could
       not finish. Please fully close and relaunch the launcher, then try again.
@@ -307,16 +298,12 @@ errors:
       Add the launcher to your AV exclusion list, or pick a different data root in
       the launcher settings.
     title: Kolleksiyani O’rnatish Natijasi
-  NotFoundError: 404 Topilmadi
-  SocketError: Server soketi xatosi
 eula:
   body: Устанавливая флажок, вы подтверждаете свое согласие с {eula} Minecraft.
 exception:
   http: HTTP-запрос с {url} не выполнен. Код состояния {statusCode}. {code}. Повторите
     попытку или проверьте свой интернет. Если эта ошибка сохраняется, отправьте отчет
     команда разработчиков.
-exportModpack:
-  name: Holat
 extensions:
   mrpack: Сборка модов Modrinth
   zip: Zip-fayli
@@ -429,10 +416,6 @@ installModrinthFile:
 installOptifine:
   download: Yuklab olish
   name: Holat
-installProfile:
-  name: Holat
-installQuilt:
-  name: Holat
 installVersion:
   jar: Установить Jar-файл версии
   json: Versiyaning Json faylini o me o’rnatish
@@ -446,19 +429,12 @@ instance:
   deleteFailedPermission: Boshqa dastur faylni egallab olgan
   deleteFile: Ekzemplar fayllarini o’chirish
   deleteHint: Ushbu operatsiyani bekor qilib bo’lmaydi. Ushbu dunyo ma’lumotlarini
-  deleteHintBedrock: Minecraft Bedrock Edition va uning barcha ma’lumotlari kompyuteringizdan
   duplicate: Ushbu o’yinchi allaqachon ro’yxatingizda bor.
   duplicatedName: Takroriy nom
-  envVarKey: Kalit
-  envVarKeyPlaceholder: MY_VAR
-  envVarValue: Qiymat
-  envVarValuePlaceholder: qiymat
   fileApi: Fayllarni sinxronlashtirish serveri API URL’i
   fileApiHint: Ekzemplar fayllarini masofaviy konfiguratsiya serveri bilan sinxronlashtirish
-  fileApiPlaceholder: Resurslar sinxronizatsiyasini saqlab turmoqchi bo’lsangiz,
   fullscreen: To’liq ekran
   height: Balandlik
-  hideCard: Ushbu kartani yashirish
   icon: Tasvirni tanlang
   iconHint: Belgi fayl yoki internetdagi URL manziliga havola bo’lishi mumkin.
   iconUrl: Belgi URL manzili
@@ -472,12 +448,7 @@ instance:
   mcOptionsHint: Minecraft ishga tushirishning qo’shimcha argumentlari
   name: Holat
   nameHint: O’yinda ko’rsatiladigan nom
-  nameInvalidChars: Nomi ushbu belgilarni o
   nameNoCyrillic: Nomi kirill belgilarini o’z ichiga olishi mumkin emas
-  namePathTraversal: Nomi yo’l kesib o’tish belgisini ("..") o’z ichiga ololmaydi
-  nameReservedName: Ushbu nom tizim tomonidan band qilingan va undan foydalanib bo’lmaydi
-  nameTrailingDotOrSpace: Nomi nuqta yoki bo’sh joy bilan tugashi mumkin emas
-  nameWhitespaceOnly: Nomi faqat bo’sh joylar yoki nuqtalardan iborat bo’lishi mumkin
   neverPlayed: Hech qachon o’ynalmagan
   openCrashReportFolder: Xatolik hisobotlari papkasini ochish
   openLogFolder: Jurnallar papkasini ochish
@@ -489,7 +460,6 @@ instance:
   requireName: Nom talab qilinadi
   resolution: Oyna o’lchami
   resolutionPreset: Oldindan o’rnatilgan o’lcham
-  showHiddenCards: Yashirin kartalarni ko’rsatish
   showInstance: Ekzemplar papkasini ochish
   updates: Yangilanishlar
   useSharedOptions: Umumiy o’yin sozlamalaridan foydalanish
@@ -501,6 +471,19 @@ instance:
   vmVar: Muhit o’zgaruvchilari
   vmVarHint: Muhit o me o’zgaruvchilarini qo’shish uchun tugmani bosing.
   width: Kenglik
+  envVarKey: Kalit
+  envVarValue: Qiymat
+  envVarKeyPlaceholder: MY_VAR
+  envVarValuePlaceholder: qiymat
+  fileApiPlaceholder: Resurslar sinxronizatsiyasini saqlab turmoqchi bo’lsangiz,
+  deleteHintBedrock: Minecraft Bedrock Edition va uning barcha ma’lumotlari kompyuteringizdan
+  hideCard: Ushbu kartani yashirish
+  nameInvalidChars: Nomi ushbu belgilarni o
+  namePathTraversal: Nomi yo’l kesib o’tish belgisini ("..") o’z ichiga ololmaydi
+  nameReservedName: Ushbu nom tizim tomonidan band qilingan va undan foydalanib bo’lmaydi
+  nameTrailingDotOrSpace: Nomi nuqta yoki bo’sh joy bilan tugashi mumkin emas
+  nameWhitespaceOnly: Nomi faqat bo’sh joylar yoki nuqtalardan iborat bo’lishi mumkin
+  showHiddenCards: Yashirin kartalarni ko’rsatish
 instanceAge:
   older: Старые
   threeDay: Uch kun ichida
@@ -519,10 +502,6 @@ instanceInstallSkip:
   skip: Hozircha o’tkazib yuborish
   title: Kolleksiyani O’rnatish Natijasi
   warning: Maxsus CSS launcher’ning har qanday jihatini sozlash imkonini beradi.
-instanceLauncher:
-  search: Manbalarni qidirish
-  showAll: Barcha instanslarni ko’rsatish
-  title: Kolleksiyani O’rnatish Natijasi
 instanceSetting:
   disableAuthlibInjector: Отключить authlib injector
   disableAuthlibInjectorDescription: Agar siz uchinchi tomon dasturchilarining skinlar
@@ -536,56 +515,52 @@ instanceSetting:
   showLogHint: Bu ekzemplar ishga tushirilgandan so’ng Minecraft jurnali oynasini
 instanceTemplate:
   ftb: Это сборка модов FTB
-  preview: Предварительный просмотр сборки модов
+  preview: 'title: 3D Dastlabki ko’rish'
 instanceUpdate:
   basic: Обновление настроек
   files: fayllar
   loaderChanged: Ushbu ekzemplarning mod yuklovchisi o
-  noFiles: Fayl o’zgarishlari yo’q
   summary: '{add} fayllarni qo'
   title: Kolleksiyani O’rnatish Natijasi
   update: Yangilash
+  noFiles: Fayl o’zgarishlari yo’q
 instances:
-  add: Ekzemplar qo'shish
-  instanceCount: '{count} ta ekzemplar'
+  add: Do’st qo’shish
   addCurseForgeDescription: Curseforge ma
   addDescription: Noldan yangi ekzemplar yaratish
   addMMCDescription: ’Mavjud MultiMC ekzemplarlarini import qiling.
   addManually: Qo’lda yaratish
   addModrinthDescription: ’Mavjud Modrinth ekzemplarlarini import qiling.
-  addPrismDescription: Mavjud PrismLauncher инстансини import qilish.
   addServer: Server qo’shish
   addServerDescription: Bu bevosita serverda ishga tushadigan ekzemplar yaratadi.
   addTemplate: Yuklab olingan modpakdan yaratish
   addTemplateDescription: Yuklab olingan modlar terilmasidan import qilish
   addVanilla: Oddiy Minecraft’dan yaratish
   addVanillaDescription: Oddiy papkadan (.minecraft) import qilish. Bu original
-  edition: Nashr
-  editionJava: Java nashri
-  editionBedrock: Bedrock nashri
-  editionBedrockHint: Bedrock nashri Microsoft Store ilovasi orqali ishga tushadi.
-  editionBedrockWindowsOnly: Bedrock nashri faqat Windows tizimida qo’llab-quvvatlanadi.
   fix: Tuzatish
   folder: Papka
   folderSetting: Papka sozlamalari
   importFolderDescription: Minecraft’ni launcherga import qilish
   loadingFiles: Modlar terilmasi fayllarini yuklash
+  edition: Nashr
+  editionJava: Java nashri
+  editionBedrock: Bedrock nashri
+  editionBedrockHint: Bedrock nashri Microsoft Store ilovasi orqali ishga tushadi.
+  editionBedrockWindowsOnly: Bedrock nashri faqat Windows tizimida qo’llab-quvvatlanadi.
   linkSharedFolders: Sborakalar o’rtasida papkalarni ulashish
   linkSharedFoldersHint: Ushbu sborka tarkibini barcha boshqa bog’langan sborakalar
   linkFailed: '{folder} papkasini umumiy papka bilan bog'
+  addPrismDescription: Mavjud PrismLauncher инстансини import qilish.
+  instanceCount: '{count} ta ekzemplar'
 items:
   count: '{count} ta chizmalar'
   total: Jami {total}
 java:
   allocatedLong: Использовать системный Java по умолчанию
   allocatedShort: Avtomatik ajratish
-  allocation: Ajratilgan
-  autoHint: Minimum o’rnatilgan modlar soni bilan ortadi; maksimum mavjud tizim xotirasidan
-  change: O’zgartirish
   importFromFile: Java’ni fayldan import qilish
   invalid: Noto’g’ri Java joylashuvi
   location: Launcher fayllarini saqlash joyi
-  locationHint: Java tanlanmagan — odatiy tizim Java’si ishlatilmoqda
   maxMemory: Maksimal xotira
   memory: Java xotirasi
   memoryAuto: Avtomatik
@@ -594,22 +569,32 @@ java:
   minMemory: Minimal xotira
   name: Holat
   noMemory: Xotira ishlatilishini cheklamang
-  openFolder: Papkani ochish
-  presets: Oldindan o’rnatilgan sozlamalar
   refresh: Yangilash
   systemMemory: Tizimning bo
+  allocation: Ajratilgan
+  autoHint: Minimum o’rnatilgan modlar soni bilan ortadi; maksimum mavjud tizim xotirasidan
+  change: O’zgartirish
+  locationHint: Java tanlanmagan — odatiy tizim Java’si ishlatilmoqda
+  openFolder: Papkani ochish
+  presets: Oldindan o’rnatilgan sozlamalar
 labyMod:
   disable: O’chirish
   empty: Hali launcher kolleksiyalari yo’q
+unauthenticatedWarning:
+  title: Kolleksiyani O’rnatish Natijasi
+  description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+  cancel: Bekor Qilish
+  login: Kirish
+  playAnyway: Baribir ishga tushirish
 launch:
   cancel: Bekor Qilish
   createShortcut: Yorliq yaratish
-  forceKill: Majburiy yakunlash
   kill: To’xtatish
   killServer: Mahalliy serverni to’xtatish
   launch: O’yinni ishga tushirish
   launchAnyway: Baribir ishga tushirish
   launchAs: Nomi doirasida ishga tushirish
+  forceKill: Majburiy yakunlash
   launchTo: Ishga tushirish manzili
 launchBlocked:
   launchBadVersion:
@@ -686,109 +671,49 @@ login:
 loginError:
   acquireMicrosoftTokenFailed: Не удалось получить токен Microsoft. Это может быть
     проблема с сетью. Пожалуйста, повторите попытку.
-  loginCanceled: Microsoft tizimiga kirish bekor qilindi.
   badNetworkOrServer: Tarmoq ulanishini tekshiring! Avtorizatsiya serveri mavjud
   checkOwnershipFailed: O’yinga egalik huquqini tasdiqlab bo’lmadi. Iltimos, qayta
   connectionReset: Ulanish server tomonidan qayta tiklangani sababli kirib bo’lmadi
-  cyrillicNotAllowed: Kirill belgilariga ruxsat berilmaydi
   fetchMinecraftProfileFailed: Minecraft profilini olib bo
   illegalEmail: To’g’ri elektron pochta manzili talab qilinadi
-  illegalOfflineUsername: Foydalanuvchi nomi 3-16 belgi uzunlikda bo’lishi va faqat
   invalidCredentials: Noto’g’ri ma’lumotlar. Foydalanuvchi nomi yoki parol noto’g’ri.
   loginMinecraftByXboxFailed: Xbox tokeni yordamida Minecraft tokenini olib bo’lmadi.
+  loginXboxAgeRestricted: Yosh cheklovi tufayli xbox tizimiga kirib bo
+  loginXboxFailed: Microsoft tokeni yordamida Xbox’ga kirib bo’lmadi. Microsoft Hisobingizdan
+  noProfileForNewUser: O
+  requestFailed: NeoTerra hisob xizmati so’rovni bajara olmadi.
+  requireEmail: Elektron pochta manzili talab qilinadi
+  requirePassword: Parol talab qilinadi
+  requireUsername: Foydalanuvchi nomi talab qilinadi
+  timeout: §4Serverga ulanish vaqti tugadi!
+  loginCanceled: Microsoft tizimiga kirish bekor qilindi.
+  cyrillicNotAllowed: Kirill belgilariga ruxsat berilmaydi
+  illegalOfflineUsername: Foydalanuvchi nomi 3-16 belgi uzunlikda bo’lishi va faqat
   loginMinecraftByXboxRateLimited: Microsoft’ning Minecraft autentifikatsiya xizmati
   loginMinecraftByXboxRateLimitedWithRetry: Microsoft’ning Minecraft autentifikatsiya
   loginMinecraftByXboxServerError: Microsoft’ning Minecraft autentifikatsiya xizmati
   loginMinecraftByXboxStatus: Xbox tokeni orqali Minecraft tokenini almashtirib
   loginXboxAdultVerification: Microsoft hisobingiz Xbox’ga kirishdan oldin kattalar
-  loginXboxAgeRestricted: Yosh cheklovi tufayli xbox tizimiga kirib bo
   loginXboxBadXsts: Microsoft kutilgan foydalanuvchi da’volarisiz XSTS javobini qaytardi.
   loginXboxBanned: Ushbu Microsoft / Xbox hisobi Microsoft tomonidan to’xtatilgan
   loginXboxChildAccount: Microsoft hisobingiz bolalar hisobi hisoblanadi va Xbox
-  loginXboxFailed: Microsoft tokeni yordamida Xbox’ga kirib bo’lmadi. Microsoft Hisobingizdan
   loginXboxFailedWithCode: Microsoft tokeni orqali Xbox’ga kirib bo’lmadi (XErr
   loginXboxNoXboxProfile: Ushbu Microsoft hisobida hali Xbox profili yo’q. Profil
   loginXboxRegionLocked: Xbox Live hisobingiz mintaqasida mavjud emas. Microsoft
-  noProfileForNewUser: O
-  requestFailed: NeoTerra hisob xizmati so’rovni bajara olmadi.
   xboxErrorGuideHint: Tizimga kirishda muammo bormi? Microsoft va Xbox’ga kirish
   openLoginGuide: Ushbu muammoni qanday tuzatish kerak
   openDiscordSupport: Hali ham yordam kerakmi? Discord’imizga qo’shiling
-  requireEmail: Elektron pochta manzili talab qilinadi
-  requirePassword: Parol talab qilinadi
-  requireUsername: Foydalanuvchi nomi talab qilinadi
-  timeout: §4Serverga ulanish vaqti tugadi!
 logsCrashes:
   crashes: Отчёты об ошибках
-  failures: Ishga tushirish xatolari
   logs: Jurnallar
   placeholder: Mahalliy tarmoqda Minecraft o’ynash uchun boshqa foydalanuvchi bilan
+  title: Kolleksiyani O’rnatish Natijasi
+  failures: Ishga tushirish xatolari
   serverLogs: Server loglari
   showFile: '{file} sheyder to'
-  title: Kolleksiyani O’rnatish Natijasi
 me:
-  news: Новости
+  news: 'name: Yangiliklar'
   recentPlay: Oxirgi o’yinlar
-migrateMinecraft:
-  name: Holat
-xmclAccount:
-  accountSummary: Аккаунт
-  confirmMerge: Hisoblarni biriktirishni tasdiqlash
-  createdAt: Yaratilgan sana {date}
-  description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
-  expiresAt: Tugash muddati {date}
-  gameAccountsSeparate: O’yin hisobini o’chirish NeoTerra profilini uzib qo’ymaydi.
-  guest: Mehmon (Guest)
-  identityConflict: Ushbu {provider} kirishi boshqa NeoTerra hisobiga tegishli.
-  linkAccountWith: 'Hisobni quyidagilar orqali biriktirish:'
-  mergePreview: Biriktirishdan oldin resurslarni tekshiring.
-  mergeNeedsSession: Davom etish uchun NeoTerra hisobingizga kiring.
-  mergeQueued: Hisoblarni biriktirish jarayonda.
-  requestFailed: NeoTerra hisob xizmati so’rovni bajara olmadi.
-  reviewMerge: Biriktirishni ko’rib chiqish
-  session: Sessiya
-  sessionActive: Faol
-  sessionExpired: Muddati o’tgan
-  signOutAll: Barcha qurilmalardan chiqish
-  signOutDevice: Ushbu qurilmadan chiqish
-  status:
-    active: Faol
-    deleted: O’chirilgan
-    deletion_pending: O’chirilishi kutilmoqda
-    merged: Biriktirilgan
-  title: Kolleksiyani O’rnatish Natijasi
-minecraftFriends:
-  accept: Accept
-  add: Do'st qo'shish
-  addPlaceholder: Minecraft foydalanuvchi nomi
-  addedRelative: Qo’shildi {time}
-  errors:
-    cannotAddSelf: You cannot send a friend request to yourself.
-    duplicate: Ushbu o’yinchi allaqachon ro’yxatingizda bor.
-    friendsDisabled: Minecraft hisobingizda do’stlar o’chirilgan yoki ulardan foydalanib
-    generic: Nimadir noto’g’ri bajarildi. Iltimos, qayta urinib ko me ko’ring.
-    invalidName: Minecraft foydalanuvchi nomlari 3 va 16 belgi orasida bo’lishi kerak.
-    inviteRejected: Ushbu o’yinchida do me do’stlar yoqilmagan yoki takliflarni qabul
-    tokenExpired: Microsoft sessiyangiz muddati tugadi. Iltimos, qayta kiring.
-    unknownProfile: Ushbu nomga ega o’yinchi topilmadi.
-  expiresRelative: Muddati tugaydi {time}
-  friends: Do’stlar
-  heroEmptyHint: Do’stlik so’rovi yuborish uchun yuqoriga Minecraft o’yinchisi foydalanuvchi
-  heroEmptyTitle: Do’stlar ro’yxatingiz bo’sh
-  incoming: Kiruvchi so’rovlar
-  incomingHint: 1 ta kiruvchi so’rov | {count} ta kiruvchi so’rovlar
-  notifyAdded: '{name} ga do'
-  outgoing: Chiquvchi so’rovlar
-  privacy:
-    acceptInvites: Accept friend invites
-    acceptInvitesHint: O’chirilganda, boshqa o’yinchilar sizga do’stlik so me so’rovlarini
-    friendsEnabled: Do’stlar ro’yxati yoqilgan
-  reconnectAction: Qayta ulanish
-  requiresMicrosoft: Do’stlardan foydalanish uchun Microsoft hisobi bilan kiring.
-  scopedTo: '{name} sifatida kirilgan'
-  send: Yuborish
-  title: Kolleksiyani O’rnatish Natijasi
-  unsupported: Do’stlar faqat Microsoft hisoblari uchun mavjud.
 migrationWindow:
   title: Kolleksiyani O’rnatish Natijasi
   preparing: Ko me chirishga tayyorgarlik…
@@ -875,11 +800,11 @@ modInstall:
   noVersionSupported: Mod faqat Minecraft {supported} versiyasini qo’llab-quvvatlaydi.
   recommendation: '{modrinth} va {curseforge} dagi {first} modlarni o'
   removeUnusedLibraries: Ishlatilmagan kutubxona modlarini o’chirish
-  scanUnusedLibraries: Ishlatilmagan kutubxonalarni skanerlash
   search: Manbalarni qidirish
   skipVersion: Boshqa Minecraft versiyasiga ega modlarni o me tkazib yuborish
   source: 'curseforge-name: CurseForge'
   switch: Versiyani o’zgartirish
+  scanUnusedLibraries: Ishlatilmagan kutubxonalarni skanerlash
 modSearch:
   noLocalModsFound: Локальные моды, соответствующие вашему поиску, не найдены.
   noModsFound: Modlar topilmadi.
@@ -949,7 +874,7 @@ modrinth:
     combat: Jang
     core-shaders: Базовые шейдеры
     cursed: G’alati
-    datapack: Набор данных
+    datapack: 'name: Ma’lumotlar paketi | Ma’lumotlar paketlari'
     decoration: Bezak
     economy: Iqtisodiyot
     entities: Mavjudotlar
@@ -972,8 +897,8 @@ modrinth:
     library: Kutubxona
     lightweight: Kichik hajm
     liteloader: Liteloader
-    locale: '''description: Agar mavjud bo’lsa, afzal ko’rgan tilingizni tanlang.
-      Agar kerakli'''
+    locale: 'description: Agar mavjud bo’lsa, afzal ko’rgan tilingizni tanlang. Agar
+      kerakli'
     low: Past talabli
     magic: Sehr-jodu
     management: Boshqaruv
@@ -985,8 +910,8 @@ modrinth:
     modded: Modifikatsiya
     models: Modellar
     modloader: Mod yuklovchi
-    multiplayer: '''contentDescription: Siz va foydalanuvchilar o’rtasidagi ulanishlar
-      bu yerda ko me'''
+    multiplayer: 'contentDescription: Siz va foydalanuvchilar o’rtasidagi ulanishlar
+      bu yerda ko me'
     name: Holat
     neoforge: NeoForge
     optifine: Optifine
@@ -1028,12 +953,12 @@ modrinth:
   description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
   downloads: Yuklab olishlar
   environments:
-    all: Barchasi
     default: Odatiy
     name: Holat
     optional: Majburiy emas
     required: Talab qilinadi
     unsupported: Do’stlar faqat Microsoft hisoblari uchun mavjud.
+    all: Barchasi
   externalResources: Tashqi resurslar
   featuredVersions: Tavsiya etilgan versiyalar
   followedProjects: Kuzatilgan loyihalar
@@ -1058,13 +983,13 @@ modrinth:
   projectId: Loyiha ID’si
   projectMembers: Loyiha ishtirokchilari
   projectType:
-    datapack: Набор данных
-    mod: '''defaultSourceDescription: Mod kontenti manbasini shu yerda tanlashingiz
-      mumkin.'''
+    mod: 'defaultSourceDescription: Mod kontenti manbasini shu yerda tanlashingiz
+      mumkin.'
     modpack: Modlar terilmasi
-    plugin: Plagin
-    resourcepack: Набор ресурсов
+    resourcepack: 'linkShared: Barcha sborakalar uchun umumiy resurs paketlari'
     shader: Sheyder
+    datapack: 'name: Ma’lumotlar paketi | Ma’lumotlar paketlari'
+    plugin: Plagin
   projects: Loyihalar yo’q | {count} ta loyiha | {count} ta loyihalar
   serverSide: Server qismi
   sort:
@@ -1086,14 +1011,10 @@ multiplayer:
   allowTurnHint: Agar bevosita ulanish ishlamasa, retranslyatorni yoqing. U ulanishni
   complete: Yakunlandi
   confirm: Tasdiqlash
-  connectionError: Ulanish xatosi
-  connectionFailedHint: Ulanishni o’rnatib bo’lmadi. Har ikki tomonda mos keladigan
-  connectedToHost: Xona xostiga ulandi
   connections: Tarmoq ulanishlari
   copied: Nusxalandi
   copy: Nusxalash
   copyGroupToFriendHint: Foydalanuvchilarga ushbu ID yordamida guruhga qo’shilishlariga
-  directConnection: Bevosita
   copyLocalHint: ’Mahalliy SDP tokenini nusxalang va uni foydalanuvchiga ulanishga
   createLocalToken: Mahalliy token yaratish
   currentIpTitle: Aniqlangan ommaviy IP
@@ -1108,8 +1029,6 @@ multiplayer:
   exposedPorts: Yo’naltirilgan portlar
   gatheringIce: Iltimos, ICE serveri tarmog
   groupId: Guruh ID’si
-  guest: Mehmon (Guest)
-  host: Xost
   illegalTokenDescription: Noto’g’ri token, foydalanuvchidan olingan token to’g’ri
   initiateConnection: Ulanishni boshlash
   joinConnection: Agar foydalanuvchi allaqachon ulanishni boshlagan bo’lsa, ulanishga
@@ -1122,7 +1041,6 @@ multiplayer:
   localToken: Mahalliy token
   manualConnect: Qo’lda ulanish
   name: Holat
-  natWarning: NAT turingiz bevosita ulanishlarga xalaqit berishi mumkin. Sozlamalarda
   networkInfo: Tarmoq haqida ma’lumot
   next: Keyingisi
   otherExposedPortDescription: '{user} tomonidan port prefaksi'
@@ -1131,7 +1049,6 @@ multiplayer:
   receiveHint: Foydalanuvchi tokeningizni kiritgandan so me so’ng ulanish avtotmatik
   receiveRemoteTokenHint: Iltimos, foydalanuvchidan olingan masofaviy tokenni shu
   remoteToken: Masofaviy token
-  relayConnection: Retranslyatsiya
   routerInfo: Ruter haqida ma’lumot
   sendTokenToRemote: Tokenni yuborish
   share: Ekzemplar konfiguratsiyasini ulashish
@@ -1140,6 +1057,14 @@ multiplayer:
   sharingNotificationTitle: Foydalanuvchi ekzemplar sozlamalari bilan ulashmoqda
   start: Boshlash
   startNewP2PConnection: Yangi p2p-ulanish yaratish uchun "Boshlash" tugmasini bosing
+  connectionError: Ulanish xatosi
+  connectionFailedHint: Ulanishni o’rnatib bo’lmadi. Har ikki tomonda mos keladigan
+  natWarning: NAT turingiz bevosita ulanishlarga xalaqit berishi mumkin. Sozlamalarda
+  connectedToHost: Xona xostiga ulandi
+  directConnection: Bevosita
+  guest: Mehmon (Guest)
+  host: Xost
+  relayConnection: Retranslyatsiya
 myStuff: Mening kontentim
 natType:
   blocked: Заблокирован
@@ -1180,86 +1105,21 @@ peerSignalingState:
 presence:
   instance: 'iconDescription: Belgini o’zgartirish uchun bosing.'
   instanceSetting: 'Ekzemplar sozlamalarini tahrirlamoqda: {instance}'
-  mod: Просматривает моды в {instance}
+  mod: 'defaultSourceDescription: Mod kontenti manbasini shu yerda tanlashingiz mumkin.'
   modrinthProject: Modrinth’da {name} ni ko’rmoqda
   resourcePack: '{instance} dagi resurs to'
   save: Saqlash
   setting: 'themeStore:'
-  shaderPack: Просматривает наборы шейдеров в {instance}
+  shaderPack: 'linkShared: Barcha sborakalar uchun umumiy sheyder paketlari'
 proxy:
   host: Xost
   port: Port
 quiltVersion:
   disable: O’chirish
   empty: Hali launcher kolleksiyalari yo’q
-reinstall:
-  name: Holat
-relative:
-  daysAgo: '{count} day ago | {count} days ago'
-  hoursAgo: '{count} soat oldin | {count} soat oldin'
-  justNow: hozirgina
-  minutesAgo: '{count} daqiqa oldin | {count} daqiqa oldin'
-  secondsAgo: '{count} soniya oldin | {count} soniya oldin'
-resourceError:
-  body: '''"{path}" could not be parsed ({code}). The file may be corrupted, locked,
-    or incomplete. Try re-downloading or removing it.'''
-  title: Kolleksiyani O’rnatish Natijasi
-blueprint:
-  name: Holat
-  count: '{count} ta chizmalar'
-  searchLocal: Chizmalarni qidirish...
-  searchOnline: Onlayn qidirish...
-  market: Market
-  local: Mahalliy
-  provider: Provayder
-  import: Import Qilish
-  openFolder: Papkani ochish
-  refresh: Yangilash
-  empty: Hali launcher kolleksiyalari yo’q
-  dropHint: Import qilish uchun chizma fayllarini (.litematic / .schem / .nbt) shu
-  selectHint: Dastlabki ko’rish uchun chizmani tanlang.
-  blocks: '{count} ta bloklar'
-  materials: Materiallar
-  allNamespaces: Barchasi
-  findMod: Ushbu nomlar sohasi uchun modni toping
-  compatible: Mos keladi
-  incompatible: Modlar yetishmayapti
-  missingNamespaces: 'Quyidagilar uchun modlar yetishmayapti: {namespaces}'
-  delete: O’chirish
-  cancel: Bekor Qilish
-  install: O’rnatish
-  goTo: Veb-sayt
-  byAuthor: muallif {author}
-  noDescription: Tavsif berilmagan.
-  loadMore: Yana yuklash
-  cmsBrowseOnly: Ushbu manba faqat ko’rish uchun; yuklab olish uchun veb-saytni oching.
-  mixedSources: Natijalar barcha manbalardan aralashtirilgan. Ba’zilari faqat ko’rish
-  formats:
-    structure: Vanilla Structure
-  preview:
-    title: Kolleksiyani O’rnatish Natijasi
-    loading: Ko me rish yuklanmoqda...
-    empty: Hali launcher kolleksiyalari yo’q
-    hint: Ushbu chizmani boshqa formatga o’tkazing. Yangi fayl yaratiladi.
-    controls: Qarash uchun sudrang · WASD harakatlanish · Bo’sh joy/Shift yuqoriga/pastga
-  convert:
-    title: Kolleksiyani O’rnatish Natijasi
-    hint: Ushbu chizmani boshqa formatga o’tkazing. Yangi fayl yaratiladi.
-    target: Maqsaddagi format
-    action: Almashtirish
-  replace:
-    title: Kolleksiyani O’rnatish Natijasi
-    simple: Oddiy
-    precise: Aniq
-    simpleHint: Faqat blok id’si bo’yicha moslashtirish, mavjud blok holati xususiyatlarini
-    preciseHint: To’liq blok holatiga moslashtirish (id + xususiyatlar) va uni to
-      me
-    from: Qayerdan
-    to: Qayerga
-    addRule: Qoida qo’shish
-    newFile: Yangi fayl sifatida saqlash
-    action: Almashtirish
 resourcepack:
+  linkShared: Общие пакеты ресурсов для всех сборок
+  linkSharedHint: Barcha sborakalar bir xil sheyder paketlaridan foydalanishi uchun
   compatible: Mos keladi
   defaultDescription: Minecraft’ning odatiy ko’rinishi
   delete:
@@ -1270,12 +1130,6 @@ resourcepack:
   enable: Yoqish
   incompatible: Modlar yetishmayapti
   name: Holat
-  linkShared: Общие пакеты ресурсов для всех сборок
-  linkSharedHint: Barcha sborakalar bir xil sheyder paketlaridan foydalanishi uchun
-  noLocalPacksFound: Qidiruvingizga mos keladigan mahalliy sheyder paketlari topilmadi.
-  noPacks: Sheyder-paklar o’rnatilmagan
-  noPacksInstalled: Sizda hech qanday sheyder paketlari o’rnatilmagan.
-  search: Manbalarni qidirish
   searchHint: Sheyderlar to’plamini qidirish
   searchOnCurseforge: CurseForge’dan {name} ni qidirish
   searchOnModrinth: Modrinth’dan qidirish
@@ -1284,30 +1138,45 @@ resourcepack:
   showFile: '{file} sheyder to'
   showInCurseforge: CurseForge’da {name} ni ko’rsatish
   unselected: umumiy arxiv
+  noPacks: Sheyder-paklar o’rnatilmagan
+  search: Manbalarni qidirish
+  noLocalPacksFound: Qidiruvingizga mos keladigan mahalliy sheyder paketlari topilmadi.
+  noPacksInstalled: Sizda hech qanday sheyder paketlari o’rnatilmagan.
 save:
-  allowCheats: Chitlarga ruxsat berish
+  linkShared: Общие сохранения для всех сборок
+  linkSharedHint: Barcha sborakalar bir xil sheyder paketlaridan foydalanishi uchun
   copy:
     name: Holat
   createNew: Yangi dunyo yaratish
   createdWorlds: 'Jami dunyolar: {count}'
   deleteHint: Ushbu operatsiyani bekor qilib bo’lmaydi. Ushbu dunyo ma’lumotlarini
   deleteTitle: Dunyoni o’chirish
-  difficulty: 'easy: Oson (Easy)'
   dropHint: Import qilish uchun chizma fayllarini (.litematic / .schem / .nbt) shu
+  export: Serverni eksport qilish
+  exportMessage: Dunyoni zip-arxivga eksport qilish
+  exportTitle: Dunyoni eksport qilish
+  gameMode: o’yin rejimi
+  independent: Ekzemplar mustaqil saqlashlar papkasidan foydalanadi
+  levelName: Daraja nomi
+  name: Holat
+  search: Manbalarni qidirish
+  seed: Sid (Seed)
+  selected: mahalliy arxiv
+  shared: 'add: Qo’shish'
+  showDirectory: Sheyder to’plamlari papkasini ochish
+  unselected: umumiy arxiv
+  useCurrent: Joriy dunyodan foydalanish
+  openFolder: Papkani ochish
+  searchHint: Sheyderlar to’plamini qidirish
+  searchSaves: Saqlashlarni qidirish
+  allowCheats: Chitlarga ruxsat berish
+  difficulty: 'easy: Oson (Easy)'
   datapack:
     name: Holat
     noSaveHint: Ushbu ma’lumotlar paketini o’rnatish uchun avval dunyo yarating yoki
     packFormat: 'Paket formati: {format}'
     imported: Ma’lumotlar paketi {save} ichiga import qilindi
   duplicate: Ushbu o’yinchi allaqachon ro’yxatingizda bor.
-  export: Serverni eksport qilish
-  exportMessage: Dunyoni zip-arxivga eksport qilish
-  exportTitle: Dunyoni eksport qilish
-  gameMode: o’yin rejimi
-  independent: Ekzemplar mustaqil saqlashlar papkasidan foydalanadi
-  linkShared: Общие сохранения для всех сборок
-  linkSharedHint: Barcha sborakalar bir xil sheyder paketlaridan foydalanishi uchun
-  levelName: Daraja nomi
   loadMap: Xaritani yuklash
   mapError: Xarita xatosi
   mapInfo: Interaktiv 3D dunyo ko
@@ -1335,31 +1204,20 @@ save:
   dimOverworld: Asosiy dunyo (Overworld)
   dimNether: Do’zax (Nether)
   dimEnd: Kraj (End)
-  name: Holat
   noLocalSavesFound: Qidiruvingizga mos keladigan mahalliy saqlashlar topilmadi.
   noSavesFound: Saqlangan dunyolar topilmadi
   noSavesInstalled: Sizda saqlangan dunyolar yo’q.
-  openFolder: Papkani ochish
   properties: Dunyo xususiyatlari
-  search: Manbalarni qidirish
-  searchHint: Sheyderlar to’plamini qidirish
-  searchSaves: Saqlashlarni qidirish
-  seed: Sid (Seed)
-  selected: mahalliy arxiv
-  shared: 'add: Qo’shish'
-  showDirectory: Sheyder to’plamlari papkasini ochish
-  unselected: umumiy arxiv
-  useCurrent: Joriy dunyodan foydalanish
   useMouseRotate: Ko’rinishni aylantirish uchun sichqonchadan foydalaning
   useScrollZoom: Masshtablash uchun sichqoncha g’ildiragidan foydalaning
   world: Dunyo
 screenshots:
   empty: Hali launcher kolleksiyalari yo’q
+  playRandom: Tasodifiy tartibda ko’rsatish
+  playSequence: Ketma-ketlikda ko’rsatish
   gallery: Skrinshotlar galereyasi
   hint: Ushbu chizmani boshqa formatga o’tkazing. Yangi fayl yaratiladi.
   openFolder: Papkani ochish
-  playRandom: Tasodifiy tartibda ko’rsatish
-  playSequence: Ketma-ketlikda ko’rsatish
 search:
   favorate: Коллекция
   local: Mahalliy
@@ -1368,35 +1226,9 @@ search:
   browseMarket: Marketni ochish
   noResults: Hech narsa topilmadi
   pageSize: Sahifadagi natijalar
-localCollection:
-  title: Kolleksiyani O’rnatish Natijasi
-  newCollection: Yangi kolleksiya
-  namePlaceholder: Kolleksiya nomi
-  addToCollection: Kolleksiyaga qo’shish
-  empty: Hali launcher kolleksiyalari yo’q
-  corrupted: Saqlangan kolleksiyalaringizni o’qib bo’lmadi va qayta tiklandi. Zahiraviy
-  modrinthSection: Modrinth hisobi
-  installAll: Barchasini o’rnatish
-  installAllHint: Ushbu kolleksiyadagi joriy Minecraft versiyasi va yuklovchiga mos
-  incompatibleAlert: 1 ta loyiha joriy ekzemplarga mos kelmaydi va o
-  projects: Loyihalar yo’q | {count} ta loyiha | {count} ta loyihalar
-  result:
-    failed: Bajarib bo’lmadi
-    installed: O’rnatildi
-    skipped: O’tkazib yuborildi
-    title: Kolleksiyani O’rnatish Natijasi
 server:
   acceptingMinecraftVersion: Принятие версии Minecraft
-  addServer: Server qo’shish
-  address: Server manzili
-  addressHint: masalan, mc.hypixel.net
-  bindUpstream: Asosiy sifatida bog’lash
-  boundUpstream: Server asosiylikka bog’landi
-  boundUpstreamHint: Ushbu ekzemplar bog’langan serverning Minecraft versiyasiga
   creationHint: Iltimos, server manzilini to’ldiring va serverni sinab ko’ring
-  editServer: Serverni tahrirlash
-  emptyHint: Filtrlar yoki qidiruv so’rovini o’zgartirib ko’ring.
-  entryCount: '{count} ta server | {count} ta serverlar'
   expectedVersions: Qo’llab-quvvatlanadigan versiyalar
   export: Serverni eksport qilish
   exportNoFilesHint: ’Server fayllari topilmadi.
@@ -1411,41 +1243,62 @@ server:
   hostHint: Server xosti (port bilan)
   hostRequired: Iltimos, server IP-manzilini kiriting
   ipAddress: IP-manzil
+  maxPlayers: Maksimal o’yinchilar
+  motd: Server MOTD
+  nogui: Serverning grafik interfeysi yo’q
+  onlineMode: Onlayn rejim
+  ping: Ulanilmoqda...
+  pings: Ping
+  players: O’yinchilar
+  port: Port
+  unknown: Noma’lum server
+  unknownDescription: Noma’lum server. Iltimos, yangilang.
+  upload: Skinni yuklash
+  version: 'checkIntegrity: Yaxlitlikni tekshiring'
+  versionHint: Ping uchun Minecraft versiyasi
+  addServer: Server qo’shish
+  address: Server manzili
+  addressHint: masalan, mc.hypixel.net
+  bindUpstream: Asosiy sifatida bog’lash
+  boundUpstream: Server asosiylikka bog’landi
+  boundUpstreamHint: Ushbu ekzemplar bog’langan serverning Minecraft versiyasiga
+  editServer: Serverni tahrirlash
+  emptyHint: Filtrlar yoki qidiruv so’rovini o’zgartirib ko’ring.
+  entryCount: '{count} ta server | {count} ta serverlar'
   launchClient: Buning o’rniga klientni ishga tushirish
   launchPinned: Qatirilgan
   launchTargetHint: Ushbu ekzemplar bevosita qatirilgan serverga ishga tushadi. Klientga
-  maxPlayers: Maksimal o’yinchilar
-  motd: Server MOTD
   nameHint: O’yinda ko’rsatiladigan nom
-  nogui: Serverning grafik interfeysi yo’q
-  onlineMode: Onlayn rejim
   pin: Serverni qatirish
   pinAfterSave: Saqlagandan so’ng odatiy ishga tushirish nishoni sifatida qatirish
-  ping: Ulanilmoqda...
-  pings: Ping
   pinnedHeader: 'qatirilgan: {name}'
-  players: O’yinchilar
-  port: Port
   serverName: Server nomi
   serversListTitle: Serverlar ro’yxati
   unbindUpstream: Boshliqdan uzish
-  unknown: Noma’lum server
-  unknownDescription: Noma’lum server. Iltimos, yangilang.
   unpin: Qatirishni bekor qilish
-  upload: Skinni yuklash
   upstreamUpToDate: Ekzemplaringiz serverga mos keladi ({version}).
   upstreamUpToDateHint: Yangilanish talab qilinmaydi. Serverni qayta ping qilish
   upstreamUpdateAvailable: Server hozirda Minecraft {version} versiyasida ishlamoqda.
   upstreamUpdateHint: Ushbu ekzemplarga tavsiya etilgan Minecraft versiyasini qo’llaydi.
   useAsUpstreamHint: Ekzemplar server xabar bergan Minecraft versiyasiga ergashadi.
-  version: 'checkIntegrity: Yaxlitlikni tekshiring'
-  versionHint: Ping uchun Minecraft versiyasi
 serverStatus:
   nohost: §4Невозможно найти хост!
   ping: Ulanilmoqda...
   refuse: §4Server rad etdi!
   timeout: §4Serverga ulanish vaqti tugadi!
 setting:
+  themeStore:
+    name: Holat
+    description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+    savedThemes: Saqlangan mavzular
+    noSavedThemes: Hali saqlangan mavzular yo’q
+    saveToStore: Omborga saqlash
+    saveDialogTitle: Mavzuni saqlash
+    themeName: Mavzu nomi
+    themeNameHint: Ushbu mavzuni saqlash uchun nom
+    loadConfirmTitle: Joriy mavzo almashtirilsinmi?
+    loadConfirmMessage: Saqlangan mavzuni yuklash joriy mavzuni almashtiradi. Zarur
+    loadTheme: Mavzuni yuklash
   about: NeoTerra Launcher Haqida
   aboutBmclDescription: BMCL API materik foydalanuvchilari uchun qulay yuklab olishlarni
   aboutContributors: 🧑‍💻 Ishtirokchilar 🧑‍💻
@@ -1457,25 +1310,16 @@ setting:
   advancedSettings: Kengaytirilgan sozlamalar
   advancedSettingsHint: Xavfli hudud - launcher ma’lumotlarini qayta tiklash yoki
   aiAgentApiKey: AI Agent API kaliti
-  aiAgentApiKeyClear: Kalitni tozalash
   aiAgentApiKeyDescription: Ushbu qurilmada mahalliy ravishda saqlanadi va agent
-  aiAgentApiKeyEmpty: API kalitingizni joylashtiring
-  aiAgentApiKeyNotNeeded: Talab qilinmaydi
-  aiAgentApiKeyNotNeededHint: Ushbu provayder mahalliy ravishda ishlaydi va API kalitiga
-  aiAgentApiKeySaved: Saqlandi
-  aiAgentApiKeyStored: Kalit saqlandi - almashtirish uchun yozing
   aiAgentEndpoint: AI Agent Endpoint’i
   aiAgentEndpointDescription: Chatni yakunlash so’rovlari uchun URL endpoint.
   aiAgentModel: AI Agent modeli
   aiAgentModelDescription: Chatni yakunlash so’rovlari uchun model nomi.
-  aiAgentProvider: AI Agent Provayderi
-  aiAgentProviderCustom: Maxsus (OpenAI mos keluvchi)
-  aiAgentProviderDescription: Endpoint’ni to me ldirish uchun oldindan o’rnatilgan
   apiSets:
     auto: Автоматически (определяется сетью)
     official: Rasmiy (Mojang)
-  appearance: Dizayn va Ko'rinish
-  appearanceDescription: Launcher ko'rinishini sozlash
+  appearance: 'name: Sozlamalar ko’rinishi'
+  appearanceDescription: Launcher ko’rinishini sozlash
   appxUpdateHint: Launcher o’rnatuvchini yuklab oladi va ishga tushiradi. Agar o’rnatuvchining
   authenticationSettings: Autentifikatsiya
   backdropBlur: Fon xiralashishi
@@ -1484,7 +1328,6 @@ setting:
   backgroundImage: Fon tasviri
   backgroundImageClear: Tozalash
   backgroundImageDescription: Fon sifatida tasvirni tanlang yoki uni tozalang.
-  useDesktopBackground: Joriy ish stoli fon rasmidan foydalanish
   backgroundImageFit:
     contain: Вместить
     cover: Qirqib olish
@@ -1520,18 +1363,6 @@ setting:
     primaryColor: Asosiy rang
     sideBarColor: Yon panel rangi
     warningColor: Ogohlantirish rangi
-  customCss:
-    advancedDescription: Override the launcher's current styling with your own CSS.
-    assistantHint: Istalgan ko’rinishingizni tasvirlab bering va men siz uchun CSS
-    assistantSuggestion1: Yon panelni yarim shaffof qiling
-    assistantSuggestion2: Kartalarga sezilar-sezilmas gradient fonini qo’shing
-    assistantTitle: CSS Yordamchisi
-    dropHint: Import qilish uchun chizma fayllarini (.litematic / .schem / .nbt) shu
-    editorPlaceholder: /* O’zingizning maxsus CSS kodingizni shu yerga yozing */
-    globalToggle: Maxsus CSS’ni yoqish/o me chirish
-    openInDialog: Agent muloqot oynasida ochish
-    title: Kolleksiyani O’rnatish Natijasi
-    warning: Maxsus CSS launcher’ning har qanday jihatini sozlash imkonini beradi.
   darkTheme: Mavzu
   darkThemeDescription: To’q yoki yorug’ mavzuni tanlang.
   devModeLabel: ISHLAB CHIQARISH
@@ -1607,12 +1438,6 @@ setting:
   resetSettingsError: 'Sozlamalarni qayta tiklashda xatolik: {error}'
   resetToDefault: Odatiy qiymatlarga qayta tiklash
   select: O’zgartirish
-  setAsBackground:
-    failed: Bajarib bo’lmadi
-    global: Сделать фоном лаунчера
-    instance: 'iconDescription: Belgini o’zgartirish uchun bosing.'
-    successGlobal: Fon tasviri yangilandi.
-    successInstance: Ekzemplar fon tasviri yangilandi.
   settingsExported: Sozlamalar muvaffaqiyatli eksport qilindi
   settingsImportError: Sozlamalarni import qilib bo’lmadi. Fayl formatini tekshiring.
   settingsImported: Sozlamalar muvaffaqiyatli import qilindi
@@ -1649,24 +1474,40 @@ setting:
   themeSettings: Mavzu sozlamalari
   themeShare: Mavzuni ulashish
   themeShareDescription: Mavzuni do’stingiz bilan ulashishingiz mumkin.
-  themeStore:
-    description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
-    loadConfirmMessage: Saqlangan mavzuni yuklash joriy mavzuni almashtiradi. Zarur
-    loadConfirmTitle: Joriy mavzo almashtirilsinmi?
-    loadTheme: Mavzuni yuklash
-    name: Holat
-    noSavedThemes: Hali saqlangan mavzular yo’q
-    saveDialogTitle: Mavzuni saqlash
-    saveToStore: Omborga saqlash
-    savedThemes: Saqlangan mavzular
-    themeName: Mavzu nomi
-    themeNameHint: Ushbu mavzuni saqlash uchun nom
   update: Yangilash
   useBmclAPI: BMCL API’dan foydalanish
   useBmclAPIDescription: Xitoyda BMCL-API yordamida Minecraft’ni yuklab oling
   useProxy: HTTP-proksi
   useProxyDescription: http-so’rovi uchun proksi-server manzili
   viewBackgroundMusic: Musiqani ko’rish
+  setAsBackground:
+    global: Сделать фоном лаунчера
+    instance: 'iconDescription: Belgini o’zgartirish uchun bosing.'
+    successGlobal: Fon tasviri yangilandi.
+    successInstance: Ekzemplar fon tasviri yangilandi.
+    failed: Bajarib bo’lmadi
+  aiAgentApiKeyClear: Kalitni tozalash
+  aiAgentApiKeyEmpty: API kalitingizni joylashtiring
+  aiAgentApiKeyNotNeeded: Talab qilinmaydi
+  aiAgentApiKeyNotNeededHint: Ushbu provayder mahalliy ravishda ishlaydi va API kalitiga
+  aiAgentApiKeySaved: Saqlandi
+  aiAgentApiKeyStored: Kalit saqlandi - almashtirish uchun yozing
+  aiAgentProvider: AI Agent Provayderi
+  aiAgentProviderCustom: Maxsus (OpenAI mos keluvchi)
+  aiAgentProviderDescription: Endpoint’ni to me ldirish uchun oldindan o’rnatilgan
+  useDesktopBackground: Joriy ish stoli fon rasmidan foydalanish
+  customCss:
+    advancedDescription: Override the launcher's current styling with your own CSS.
+    assistantHint: Istalgan ko’rinishingizni tasvirlab bering va men siz uchun CSS
+    assistantSuggestion1: Yon panelni yarim shaffof qiling
+    assistantSuggestion2: Kartalarga sezilar-sezilmas gradient fonini qo’shing
+    assistantTitle: CSS Yordamchisi
+    dropHint: Import qilish uchun chizma fayllarini (.litematic / .schem / .nbt) shu
+    editorPlaceholder: /* O’zingizning maxsus CSS kodingizni shu yerga yozing */
+    globalToggle: Maxsus CSS’ni yoqish/o me chirish
+    openInDialog: Agent muloqot oynasida ochish
+    title: Kolleksiyani O’rnatish Natijasi
+    warning: Maxsus CSS launcher’ning har qanday jihatini sozlash imkonini beradi.
 settingLabel:
   global: Глобальный
   globalHint: Ushbu sozlama global sozlamaga ergashadi.
@@ -1705,6 +1546,8 @@ setup:
     name: Holat
   path: Joriy yo’l
 shaderPack:
+  linkShared: Общие пакеты шейдеров для всех сборок
+  linkSharedHint: Barcha sborakalar bir xil sheyder paketlaridan foydalanishi uchun
   deletion: Sheyderlar to’plamini o’chirish
   deletionHint: Bu {path} sheyderlar to’plami faylini o’chirib tashlaydi va uni qayta
   disabled: Tanlanmagan sheyderlar to’plamlari
@@ -1713,21 +1556,19 @@ shaderPack:
   enable: Yoqish
   enabled: Tanlangan sheyderlar to’plamlari
   manage: Boshqaruv
-  market: Market
   name: Holat
-  linkShared: Общие пакеты шейдеров для всех сборок
-  linkSharedHint: Barcha sborakalar bir xil sheyder paketlaridan foydalanishi uchun
-  noLocalPacksFound: Qidiruvingizga mos keladigan mahalliy sheyder paketlari topilmadi.
-  noPacks: Sheyder-paklar o’rnatilmagan
-  noPacksInstalled: Sizda hech qanday sheyder paketlari o’rnatilmagan.
   noShaderMod: Sheyderlar modi o’rnatilmagan
   noShaderModHint: Sheyder modi bo’lmasdan sheyderdan foydalana olmaysiz.
   noShaderModInstallHint: Sheyder paketini yuklash uchun quyidagi modlardan birini
-  search: Manbalarni qidirish
   searchHint: Sheyderlar to’plamini qidirish
   selectSearchHint: Shader Pack’ni toping va tanlang
   showDirectory: Sheyder to’plamlari papkasini ochish
   showFile: '{file} sheyder to'
+  market: Market
+  noPacks: Sheyder-paklar o’rnatilmagan
+  search: Manbalarni qidirish
+  noLocalPacksFound: Qidiruvingizga mos keladigan mahalliy sheyder paketlari topilmadi.
+  noPacksInstalled: Sizda hech qanday sheyder paketlari o’rnatilmagan.
 shared:
   add: Do’st qo’shish
   author: Muallif
@@ -1736,11 +1577,6 @@ shared:
   cancel: Bekor Qilish
   checkUpgrade: Yangilanishlarni tekshirish
   client: Klient
-  copied: Nusxalandi
-  copy: Nusxalash
-  close: Yopish
-  copyFailed: Nusxalash muvaffaqiyatsiz bo’ldi
-  copyFailedHint: Buferga nusxalab bo’lmadi
   description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
   disable: O’chirish
   download: Yuklab olish
@@ -1758,12 +1594,17 @@ shared:
   previous: Orqaga
   refresh: Yangilash
   remove: O’chirish
-  save: Saqlash
   search: Manbalarni qidirish
   server: Server
   skipForNow: Hozircha o’tkazib yuborish
   upgrade: Yangilash
   'yes': Да
+  copied: Nusxalandi
+  copy: Nusxalash
+  close: Yopish
+  copyFailed: Nusxalash muvaffaqiyatsiz bo’ldi
+  copyFailedHint: Buferga nusxalab bo’lmadi
+  save: Saqlash
   delete: O’chirish
 sidebar:
   pin: Serverni qatirish
@@ -1771,19 +1612,19 @@ sidebar:
 sortBy:
   alphabetAsc: Сортировка по алфавиту (восходящее)
   alphabetDesc: Alifbo bo’yicha saralash (kamayib boruvchi)
-  name: Holat
   timeAsc: O’zgartirilgan vaqti bo’yicha saralash (o’sib boruvchi)
   timeDesc: O’zgartirilgan vaqti bo’yicha saralash (kamayib boruvchi)
+  name: Holat
 store:
   discover: Обнаружить
-  empty: Hali launcher kolleksiyalari yo’q
-  emptyHint: Filtrlar yoki qidiruv so’rovini o’zgartirib ko’ring.
   latestMinecraft: Oxirgi Minecraft versiyasi
   name: Holat
   searchResult: Qidiruv natijasi
   trending: Trenddagilar
+  empty: Hali launcher kolleksiyalari yo’q
+  emptyHint: Filtrlar yoki qidiruv so’rovini o’zgartirib ko’ring.
 tag:
-  create: Создать тег
+  create: 'title: Ekzemplar yaratish'
   createSelected: Tanlanganlar uchun teg yaratish
 task:
   cancelled: Отменено
@@ -1857,12 +1698,6 @@ tutorial:
   storeSearchDescription: Ushbu qidiruv maydoniga kerakli so’rovni kiritish orqali
   storeSearchResultDescription: Barcha qidiruv natijalarini bu yerda ro’yxatda ko’rasiz.
   userAccountDescription: Minecraft hisobingizni qo’shish yoki o’zgartirish uchun
-unauthenticatedWarning:
-  cancel: Bekor Qilish
-  description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
-  login: Kirish
-  playAnyway: Baribir ishga tushirish
-  title: Kolleksiyani O’rnatish Natijasi
 universalDrop:
   unknownResource: Неизвестно
 unresolvedFiles:
@@ -1933,24 +1768,24 @@ userServices:
     password: Parol yo’q
     uuid: Foydalanuvchi UUID (majburiy emas)
 userSkin:
-  classic: Klassik
   import: Import Qilish
   importFile: Fayldan import qilish
   importLink: Havoladan import qilish
-  invalidImage: Yaroqli Minecraft skin tasvirini tanlang.
-  invalidImageTitle: Noto’g’ri Skin Tasviri
   placeUrlHere: Import qilish uchun skin URL manzilini shu yerga joylashtiring
   reset: Qayta tiklash
   save: Saqlash
   saveTitle: Skinni diskka saqlash
   skinType: Skin turi
-  slim: Inchka (Slim)
   upload: Skinni yuklash
-  uploadFailed: Skinni Yuklash Muvaffaqiyatsiz Bo’ldi
-  uploadRejected: Minecraft ushbu skin yuklanishini rad etdi. Iltimos, keyinroq qayta
   urlNotEmpty: Skin URL manzili bo’sh bo me bo’lishi mumkin emas
   urlNotValid: Skin URL manzili noto’g’ri
   useSlim: Inchka qo’llardan foydalanish
+  classic: Klassik
+  invalidImage: Yaroqli Minecraft skin tasvirini tanlang.
+  invalidImageTitle: Noto’g’ri Skin Tasviri
+  slim: Inchka (Slim)
+  uploadFailed: Skinni Yuklash Muvaffaqiyatsiz Bo’ldi
+  uploadRejected: Minecraft ushbu skin yuklanishini rad etdi. Iltimos, keyinroq qayta
 version:
   checkIntegrity: Проверьте целостность
   name: Holat
@@ -1960,6 +1795,169 @@ versionType:
   beta: Beta
   name: Holat
   release: Reliz
+downloadModMetadataDb:
+  name: Holat
+duplicateInstance:
+  name: Holat
+exportModpack:
+  name: Holat
+installProfile:
+  name: Holat
+installQuilt:
+  name: Holat
+instanceLauncher:
+  search: Manbalarni qidirish
+  showAll: Barcha instanslarni ko’rsatish
+  title: Kolleksiyani O’rnatish Natijasi
+migrateMinecraft:
+  name: Holat
+reinstall:
+  name: Holat
+difficulty:
+  easy: Easy
+  hard: Qiyin (Hard)
+  normal: O’rtacha (Normal)
+  peaceful: Tinch (Peaceful)
+xmclAccount:
+  accountSummary: Аккаунт
+  confirmMerge: Hisoblarni biriktirishni tasdiqlash
+  createdAt: Yaratilgan sana {date}
+  description: NeoTerra profilingiz (Minecraft o’yin hisobidan alohida).
+  expiresAt: Tugash muddati {date}
+  gameAccountsSeparate: O’yin hisobini o’chirish NeoTerra profilini uzib qo’ymaydi.
+  guest: Mehmon (Guest)
+  identityConflict: Ushbu {provider} kirishi boshqa NeoTerra hisobiga tegishli.
+  linkAccountWith: 'Hisobni quyidagilar orqali biriktirish:'
+  mergePreview: Biriktirishdan oldin resurslarni tekshiring.
+  mergeNeedsSession: Davom etish uchun NeoTerra hisobingizga kiring.
+  mergeQueued: Hisoblarni biriktirish jarayonda.
+  requestFailed: NeoTerra hisob xizmati so’rovni bajara olmadi.
+  reviewMerge: Biriktirishni ko’rib chiqish
+  session: Sessiya
+  sessionActive: Faol
+  sessionExpired: Muddati o’tgan
+  signOutAll: Barcha qurilmalardan chiqish
+  signOutDevice: Ushbu qurilmadan chiqish
+  status:
+    active: Faol
+    deleted: O’chirilgan
+    deletion_pending: O’chirilishi kutilmoqda
+    merged: Biriktirilgan
+  title: Kolleksiyani O’rnatish Natijasi
+minecraftFriends:
+  accept: Accept
+  add: Do’st qo’shish
+  addPlaceholder: Minecraft foydalanuvchi nomi
+  addedRelative: Qo’shildi {time}
+  errors:
+    cannotAddSelf: You cannot send a friend request to yourself.
+    duplicate: Ushbu o’yinchi allaqachon ro’yxatingizda bor.
+    friendsDisabled: Minecraft hisobingizda do’stlar o’chirilgan yoki ulardan foydalanib
+    generic: Nimadir noto’g’ri bajarildi. Iltimos, qayta urinib ko me ko’ring.
+    invalidName: Minecraft foydalanuvchi nomlari 3 va 16 belgi orasida bo’lishi kerak.
+    inviteRejected: Ushbu o’yinchida do me do’stlar yoqilmagan yoki takliflarni qabul
+    tokenExpired: Microsoft sessiyangiz muddati tugadi. Iltimos, qayta kiring.
+    unknownProfile: Ushbu nomga ega o’yinchi topilmadi.
+  expiresRelative: Muddati tugaydi {time}
+  friends: Do’stlar
+  heroEmptyHint: Do’stlik so’rovi yuborish uchun yuqoriga Minecraft o’yinchisi foydalanuvchi
+  heroEmptyTitle: Do’stlar ro’yxatingiz bo’sh
+  incoming: Kiruvchi so’rovlar
+  incomingHint: 1 ta kiruvchi so’rov | {count} ta kiruvchi so’rovlar
+  notifyAdded: '{name} ga do'
+  outgoing: Chiquvchi so’rovlar
+  privacy:
+    acceptInvites: Accept friend invites
+    acceptInvitesHint: O’chirilganda, boshqa o’yinchilar sizga do’stlik so me so’rovlarini
+    friendsEnabled: Do’stlar ro’yxati yoqilgan
+  reconnectAction: Qayta ulanish
+  requiresMicrosoft: Do’stlardan foydalanish uchun Microsoft hisobi bilan kiring.
+  scopedTo: '{name} sifatida kirilgan'
+  send: Yuborish
+  title: Kolleksiyani O’rnatish Natijasi
+  unsupported: Do’stlar faqat Microsoft hisoblari uchun mavjud.
+relative:
+  daysAgo: '{count} day ago | {count} days ago'
+  hoursAgo: '{count} soat oldin | {count} soat oldin'
+  justNow: hozirgina
+  minutesAgo: '{count} daqiqa oldin | {count} daqiqa oldin'
+  secondsAgo: '{count} soniya oldin | {count} soniya oldin'
+resourceError:
+  body: '"{path}" could not be parsed ({code}). The file may be corrupted, locked,
+    or incomplete. Try re-downloading or removing it.'
+  title: Kolleksiyani O’rnatish Natijasi
+blueprint:
+  name: Holat
+  count: '{count} ta chizmalar'
+  searchLocal: Chizmalarni qidirish...
+  searchOnline: Onlayn qidirish...
+  market: Market
+  local: Mahalliy
+  provider: Provayder
+  import: Import Qilish
+  openFolder: Papkani ochish
+  refresh: Yangilash
+  empty: Hali launcher kolleksiyalari yo’q
+  dropHint: Import qilish uchun chizma fayllarini (.litematic / .schem / .nbt) shu
+  selectHint: Dastlabki ko’rish uchun chizmani tanlang.
+  blocks: '{count} ta bloklar'
+  materials: Materiallar
+  allNamespaces: Barchasi
+  findMod: Ushbu nomlar sohasi uchun modni toping
+  compatible: Mos keladi
+  incompatible: Modlar yetishmayapti
+  missingNamespaces: 'Quyidagilar uchun modlar yetishmayapti: {namespaces}'
+  delete: O’chirish
+  cancel: Bekor Qilish
+  install: O’rnatish
+  goTo: Veb-sayt
+  byAuthor: muallif {author}
+  noDescription: Tavsif berilmagan.
+  loadMore: Yana yuklash
+  cmsBrowseOnly: Ushbu manba faqat ko’rish uchun; yuklab olish uchun veb-saytni oching.
+  mixedSources: Natijalar barcha manbalardan aralashtirilgan. Ba’zilari faqat ko’rish
+  formats:
+    structure: Vanilla Structure
+  preview:
+    title: Kolleksiyani O’rnatish Natijasi
+    loading: Ko me rish yuklanmoqda...
+    empty: Hali launcher kolleksiyalari yo’q
+    hint: Ushbu chizmani boshqa formatga o’tkazing. Yangi fayl yaratiladi.
+    controls: Qarash uchun sudrang · WASD harakatlanish · Bo’sh joy/Shift yuqoriga/pastga
+  convert:
+    title: Kolleksiyani O’rnatish Natijasi
+    hint: Ushbu chizmani boshqa formatga o’tkazing. Yangi fayl yaratiladi.
+    target: Maqsaddagi format
+    action: Almashtirish
+  replace:
+    title: Kolleksiyani O’rnatish Natijasi
+    simple: Oddiy
+    precise: Aniq
+    simpleHint: Faqat blok id’si bo’yicha moslashtirish, mavjud blok holati xususiyatlarini
+    preciseHint: To’liq blok holatiga moslashtirish (id + xususiyatlar) va uni to
+      me
+    from: Qayerdan
+    to: Qayerga
+    addRule: Qoida qo’shish
+    newFile: Yangi fayl sifatida saqlash
+    action: Almashtirish
+localCollection:
+  title: Kolleksiyani O’rnatish Natijasi
+  newCollection: Yangi kolleksiya
+  namePlaceholder: Kolleksiya nomi
+  addToCollection: Kolleksiyaga qo’shish
+  empty: Hali launcher kolleksiyalari yo’q
+  corrupted: Saqlangan kolleksiyalaringizni o’qib bo’lmadi va qayta tiklandi. Zahiraviy
+  modrinthSection: Modrinth hisobi
+  installAll: Barchasini o’rnatish
+  installAllHint: Ushbu kolleksiyadagi joriy Minecraft versiyasi va yuklovchiga mos
+  incompatibleAlert: 1 ta loyiha joriy ekzemplarga mos kelmaydi va o
+  projects: Loyihalar yo’q | {count} ta loyiha | {count} ta loyihalar
+  result:
+    failed: Bajarib bo’lmadi
+    installed: O’rnatildi
+    skipped: O’tkazib yuborildi
+    title: Kolleksiyani O’rnatish Natijasi
 gamepad:
   detectedTitle: Gamepad Detected
   connected: Kontroller Ulandi
