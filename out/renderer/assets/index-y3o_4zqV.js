@@ -57801,8 +57801,8 @@ function shouldShowDeprecationWarning() {
   return parseInt(versionMatch[1], 10) <= 20;
 }
 if (shouldShowDeprecationWarning()) console.warn("⚠️  Node.js 20 and below are deprecated and will no longer be supported in future versions of @supabase/supabase-js. Please upgrade to Node.js 22 or later. For more information, visit: https://github.com/orgs/supabase/discussions/45715");
-const url = "https://trhlrfszsvtxntksbrel.supabase.co";
-const anonKey = "sb_publishable_ANqV3kvOHuiQ3E7kkXHsxA_p5ICw1jc";
+const url = "https://hhpnhwfzovbttorprudl.supabase.co";
+const anonKey = "sb_publishable_U89tdM9Z213q1fWmx6jNUQ_TnoqX7Mf";
 const supabase = createClient(url, anonKey, {
   auth: {
     persistSession: true,
@@ -58319,7 +58319,7 @@ async function upsertCompanionPresence(nick, companionId) {
     updated_at: (/* @__PURE__ */ new Date()).toISOString()
   });
 }
-const BUCKET = "mcmodhub-skins";
+const BUCKET = "neoterra-skins";
 async function syncSkinApiEntry(nick, skinId, skinUrl) {
   const trimmedNick = nick.trim();
   if (!trimmedNick) return { ok: false, reason: "Minecraft nik belgilanmagan" };
@@ -74031,7 +74031,7 @@ const SOCIAL_LINKS$1 = [
   { key: "website", labelKey: "community.officialSite", handle: "neoterra.uz", url: "https://neoterra.uz/", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Globe, { size: 18, strokeWidth: 1.7 }), color: tokens.emeraldNav },
   { key: "creatorClub", labelKey: "Creator Club", handle: "youtubeclub.uz", url: "https://www.youtubeclub.uz/", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { size: 18, strokeWidth: 1.7 }), color: tokens.gold },
   { key: "discord", labelKey: "Discord", handle: "discord.gg", url: "https://discord.gg/utxmTFFr7", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(DiscordIcon, {}), color: "#5865F2" },
-  { key: "instagram", labelKey: "Instagram", handle: "@NeoTerraAdmin", url: "https://www.instagram.com/mcmodhub/", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(InstagramIcon, {}), color: "#E1306C" },
+  { key: "instagram", labelKey: "Instagram", handle: "@NeoTerraAdmin", url: "https://t.me/NeoTerraServer", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(InstagramIcon, {}), color: "#E1306C" },
   { key: "youtube", labelKey: "YouTube", handle: "@NeoTerraAdminuz", url: "https://www.youtube.com/@NeoTerraAdminuz", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(YoutubeIcon, {}), color: "#FF0000" }
 ];
 const CONTACT_ROWS = [
@@ -76613,7 +76613,7 @@ async function deleteMessage(id2) {
   if (error) throw chatError(error);
 }
 function subscribeToChat(handlers2) {
-  const channel = supabase.channel("mcmodhub-chat").on("postgres_changes", { event: "INSERT", schema: "public", table: "chat_messages" }, (payload) => {
+  const channel = supabase.channel("neoterra-chat").on("postgres_changes", { event: "INSERT", schema: "public", table: "chat_messages" }, (payload) => {
     const row = payload.new;
     if (typeof row.id === "number") handlers2.onInsert(row.id);
   }).on("postgres_changes", { event: "UPDATE", schema: "public", table: "chat_messages" }, (payload) => {

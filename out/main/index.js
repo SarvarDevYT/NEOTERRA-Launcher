@@ -299,7 +299,7 @@ async function ensureLoaderProfile(kind, root, mcVersion) {
 }
 function defaultInstallPath() {
   if (process.platform === "win32") return path.join(electron.app.getPath("appData"), ".neoterra");
-  if (process.platform === "darwin") return path.join(electron.app.getPath("appData"), "mcmodhub");
+  if (process.platform === "darwin") return path.join(electron.app.getPath("appData"), "neoterra");
   return path.join(os.homedir(), ".neoterra");
 }
 function configFilePath() {
@@ -727,7 +727,7 @@ async function ensureJavaRuntime(major, root, options = {}) {
   return javaBin;
 }
 const MR_BASE = "https://api.modrinth.com/v2";
-const USER_AGENT = "MCModHubLauncher/1.0 (Minecraft launcher - github.com/mcmodhub)";
+const USER_AGENT = "NeoTerraLauncher/1.0 (Minecraft launcher - neoterra.uz)";
 const PAGE_SIZE = 24;
 function assetKindForProjectType(projectType) {
   switch (projectType) {
@@ -2182,7 +2182,7 @@ function listInstalledMaps() {
 }
 const MYMEMORY_BASE = "https://api.mymemory.translated.net/get";
 const TARGET_LANG = "uz";
-const CONTACT_EMAIL = "noreply@mcmodhub.uz";
+const CONTACT_EMAIL = "support@neoterra.uz";
 const CONCURRENCY = 5;
 function cacheFilePath() {
   return path.join(electron.app.getPath("userData"), "translations-cache.json");
