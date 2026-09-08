@@ -2245,7 +2245,7 @@ async function translateBatch(texts) {
   }
   return texts.map((t) => c[t] ?? t);
 }
-const UPDATE_BASE_URL = "https://mcmodhubmedia.b-cdn.net/updates/";
+const UPDATE_BASE_URL = "https://site.neoterra.uz/api/launcher/updates/";
 let emitRef = null;
 function canAutoUpdate() {
   if (process.platform === "win32") return true;
@@ -2342,7 +2342,8 @@ function downloadUrlFor(infoFileContent, version) {
   const urls = Array.from(infoFileContent.matchAll(/^\s*-?\s*url:\s*(\S+)/gm)).map((m) => m[1]);
   const candidates = urls.filter((u) => u.toLowerCase().endsWith(extension.toLowerCase()));
   const match = candidates.find((u) => u.includes(arch)) ?? candidates[0];
-  return match ? `${UPDATE_BASE_URL}${match}` : `${UPDATE_BASE_URL}neoterra-launcher-${version}-${arch}${extension}`;
+  if (match && match.startsWith("http")) return match;
+  return match ? `${UPDATE_BASE_URL}${match}` : "https://site.neoterra.uz/download";
 }
 async function checkManualUpdate() {
   try {
