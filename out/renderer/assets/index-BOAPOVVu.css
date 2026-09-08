@@ -1993,8 +1993,8 @@
 .border-none {
   border-style: none;
 }
-.border-\[\#21B45E\]\/45 {
-  border-color: rgb(33 180 94 / 0.45);
+.border-\[\#7C3AED\]\/45, .border-\[\#21B45E\]\/45 {
+  border-color: rgb(124 58 237 / 0.45);
 }
 .border-\[rgba\(255\2c 255\2c 255\2c \.10\)\] {
   border-color: rgba(255,255,255,.10);
@@ -2027,23 +2027,23 @@
 .border-t-white\/60 {
   border-top-color: rgb(255 255 255 / 0.6);
 }
-.bg-\[\#0A0D0C\]\/95 {
-  background-color: rgb(10 13 12 / 0.95);
+.bg-\[\#0D0B18\]\/95, .bg-\[\#0A0D0C\]\/95 {
+  background-color: rgb(13 11 24 / 0.95);
 }
-.bg-\[\#21B45E\] {
+.bg-\[\#7C3AED\], .bg-\[\#21B45E\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(33 180 94 / var(--tw-bg-opacity, 1));
+  background-color: rgb(124 58 237 / var(--tw-bg-opacity, 1));
 }
-.bg-\[\#21B45E\]\/\[\.10\] {
-  background-color: rgb(33 180 94 / .10);
+.bg-\[\#7C3AED\]\/\[\.10\], .bg-\[\#21B45E\]\/\[\.10\] {
+  background-color: rgb(124 58 237 / .10);
 }
-.bg-\[\#29C96C\] {
+.bg-\[\#9333EA\], .bg-\[\#29C96C\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(41 201 108 / var(--tw-bg-opacity, 1));
+  background-color: rgb(147 51 234 / var(--tw-bg-opacity, 1));
 }
-.bg-\[\#2ECC71\] {
+.bg-\[\#A855F7\], .bg-\[\#2ECC71\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(46 204 113 / var(--tw-bg-opacity, 1));
+  background-color: rgb(168 85 247 / var(--tw-bg-opacity, 1));
 }
 .bg-\[rgba\(8\2c 11\2c 10\2c \.14\)\] {
   background-color: rgba(8,11,10,.14);
@@ -2742,9 +2742,9 @@
 .tracking-wide {
   letter-spacing: 0.025em;
 }
-.text-\[\#2ECC71\] {
+.text-\[\#A855F7\], .text-\[\#2ECC71\] {
   --tw-text-opacity: 1;
-  color: rgb(46 204 113 / var(--tw-text-opacity, 1));
+  color: rgb(168 85 247 / var(--tw-text-opacity, 1));
 }
 .text-\[\#4E5651\] {
   --tw-text-opacity: 1;
@@ -3265,9 +3265,9 @@ input, pre { -webkit-user-select: text; -moz-user-select: text; user-select: tex
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #21B45E;
-  border: 2px solid #0A0D0C;
-  box-shadow: 0 0 0 1px rgba(33, 180, 94, .5);
+  background: #7C3AED;
+  border: 2px solid #0D0B18;
+  box-shadow: 0 0 0 1px rgba(124, 58, 237, .5);
   -webkit-transition: transform .12s;
   transition: transform .12s;
 }
@@ -3276,8 +3276,8 @@ input, pre { -webkit-user-select: text; -moz-user-select: text; user-select: tex
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: #21B45E;
-  border: 2px solid #0A0D0C;
+  background: #7C3AED;
+  border: 2px solid #0D0B18;
   cursor: pointer;
 }
 
@@ -3337,9 +3337,9 @@ input, pre { -webkit-user-select: text; -moz-user-select: text; user-select: tex
 .last\:font-semibold:last-child {
   font-weight: 600;
 }
-.focus-within\:border-\[\#2ECC71\]:focus-within {
+.focus-within\:border-\[\#A855F7\], .focus-within\:border-\[\#2ECC71\]:focus-within {
   --tw-border-opacity: 1;
-  border-color: rgb(46 204 113 / var(--tw-border-opacity, 1));
+  border-color: rgb(168 85 247 / var(--tw-border-opacity, 1));
 }
 .focus-within\:shadow-\[0_0_0_3px_rgba\(46\2c 204\2c 113\2c \.12\)\]:focus-within {
   --tw-shadow: 0 0 0 3px rgba(46,204,113,.12);
@@ -3353,12 +3353,12 @@ input, pre { -webkit-user-select: text; -moz-user-select: text; user-select: tex
 .hover\:border-white\/\[\.22\]:hover {
   border-color: rgb(255 255 255 / .22);
 }
-.hover\:bg-\[\#21B45E\]\/\[\.16\]:hover {
-  background-color: rgb(33 180 94 / .16);
+.hover\:bg-\[\#7C3AED\]\/\[\.16\]:hover, .hover\:bg-\[\#21B45E\]\/\[\.16\]:hover {
+  background-color: rgb(124 58 237 / .16);
 }
-.hover\:bg-\[\#29C96C\]:hover {
+.hover\:bg-\[\#9333EA\]:hover, .hover\:bg-\[\#29C96C\]:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(41 201 108 / var(--tw-bg-opacity, 1));
+  background-color: rgb(147 51 234 / var(--tw-bg-opacity, 1));
 }
 .hover\:bg-red-500\/10:hover {
   background-color: rgb(239 68 68 / 0.1);
@@ -3552,4 +3552,18 @@ input, pre { -webkit-user-select: text; -moz-user-select: text; user-select: tex
 }
 .\[\&\:not\(\:first-child\)\]\:border-t:not(:first-child) {
   border-top-width: 1px;
+}
+
+/* NeoTerra Website Liquid Theme Extensions */
+.liquid-shadow {
+  filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.45));
+}
+.neon-glow {
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+}
+.glass-effect {
+  backdrop-filter: blur(24px);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }

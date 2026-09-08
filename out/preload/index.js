@@ -150,7 +150,10 @@ const launcherApi = {
       (ingliz) matnlarni o'zgarishsiz qaytaradi - UI hech qachon buzilmaydi. */
   translateBatch: (texts) => electron.ipcRenderer.invoke(IPC.TRANSLATE_BATCH, texts),
   /** Avtomatik yangilanish - Bunny CDN'dan (faqat o'rnatilgan holatda ishlaydi). */
+  getStoredAccount: () => electron.ipcRenderer.invoke("account:get"),
+  saveStoredAccount: (data) => electron.ipcRenderer.invoke("account:save", data),
   openWebLogin: () => electron.ipcRenderer.invoke("auth:open-web-login"),
+  selectAndUploadSkin: (nickname, token) => electron.ipcRenderer.invoke("skin:upload", { nickname, token }),
   onWebAuthCallback: (cb) => {
     const listener = (_, payload) => cb(payload);
     electron.ipcRenderer.on("auth:web-callback", listener);

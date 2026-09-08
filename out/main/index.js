@@ -1359,28 +1359,33 @@ async function ensureCustomSkinLoaderMod(dir, gameVersion, loader) {
   const buffer = Buffer.from(await res.arrayBuffer());
   fs.writeFileSync(path.join(modsDir2, file.filename), buffer);
 }
-const SUPABASE_URL_FOR_SKINS = "https://trhlrfszsvtxntksbrel.supabase.co";
 function writeCustomSkinLoaderConfig(dir) {
   const cslDir = path.join(dir, "CustomSkinLoader");
   fs.mkdirSync(cslDir, { recursive: true });
   const configPath = path.join(cslDir, "CustomSkinLoader.json");
+  const siteUrl = (process.env.NEOTERRA_SITE_URL || "https://site.neoterra.uz").replace(/\/$/, "");
   const ours = {
-    name: "MCModHub",
+    name: "NeoTerra",
     type: "CustomSkinAPI",
-    root: `${SUPABASE_URL_FOR_SKINS}/storage/v1/object/public/mcmodhub-skins/`
+    root: `${siteUrl}/api/launcher/skins/`
   };
-  let config = { version: "15.0.1", loadlist: [] };
+  const localSkins = {
+    name: "NeoTerraLocal",
+    type: "CustomSkinAPI",
+    root: "http://127.0.0.1:47823/skins/"
+  };
+  let config = { version: "15.0.1", enable: true, loadlist: [] };
   try {
     const parsed = JSON.parse(fs.readFileSync(configPath, "utf-8"));
     if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) config = parsed;
   } catch {
   }
   const previous = Array.isArray(config.loadlist) ? config.loadlist : [];
-  const rest = previous.filter((e) => e?.name !== ours.name);
+  const rest = previous.filter((e) => e?.name !== "NeoTerra" && e?.name !== "NeoTerraLocal" && e?.name !== "MCModHub");
   if (!rest.some((e) => typeof e?.type === "string" && /mojang/i.test(e.type))) {
     rest.push({ name: "Mojang", type: "MojangAPI" });
   }
-  config.loadlist = [ours, ...rest];
+  config.loadlist = [ours, localSkins, ...rest];
   fs.writeFileSync(configPath, JSON.stringify(config, null, 2), "utf-8");
 }
 function writeCompanionConfig(dir, companionId) {
@@ -2702,12 +2707,107 @@ function registerIpc(getWindow) {
     quitAndInstall();
     return { ok: true };
   });
+    electron.ipcMain.handle("account:get", async () => {
+    try {
+      const p = path.join(electron.app.getPath("userData"), "neoterra_account.json");
+      if (fs.existsSync(p)) {
+        return JSON.parse(fs.readFileSync(p, "utf8"));
+      }
+    } catch (e) {
+      console.error("[account:get] error:", e.message);
+    }
+    return null;
+  });
+  electron.ipcMain.handle("account:save", async (_e, data) => {
+    try {
+      const p = path.join(electron.app.getPath("userData"), "neoterra_account.json");
+      if (!data) {
+        if (fs.existsSync(p)) fs.unlinkSync(p);
+      } else {
+        fs.mkdirSync(path.dirname(p), { recursive: true });
+        fs.writeFileSync(p, JSON.stringify(data, null, 2), "utf8");
+      }
+      return { ok: true };
+    } catch (e) {
+      console.error("[account:save] error:", e.message);
+      return { ok: false, error: e.message };
+    }
+  });
   electron.ipcMain.handle("auth:open-web-login", async () => {
     const state = crypto.randomBytes(16).toString("hex");
     const siteBase = process.env.NEOTERRA_SITE_URL || "https://site.neoterra.uz";
     const webUrl = `${siteBase}/launcher/auth?callback=http://127.0.0.1:47823/auth/callback&state=${state}`;
     electron.shell.openExternal(webUrl);
     return { ok: true };
+  });
+  electron.ipcMain.handle("skin:upload", async (_e, { nickname, token }) => {
+    try {
+      const cleanNick = (nickname || "").trim().replace(/[^a-zA-Z0-9_]/g, "");
+      if (!cleanNick) return { ok: false, error: "O'yinchi niki aniqlanmadi" };
+
+      const win = mainWindow || electron.BrowserWindow.getFocusedWindow();
+      const result = await electron.dialog.showOpenDialog(win, {
+        title: "Minecraft Skin (.png) tanlang",
+        buttonLabel: "Skinni yuklash",
+        filters: [{ name: "Minecraft Skin (*.png)", extensions: ["png"] }],
+        properties: ["openFile"]
+      });
+
+      if (result.canceled || !result.filePaths || result.filePaths.length === 0) {
+        return { ok: false, canceled: true };
+      }
+
+      const filePath = result.filePaths[0];
+      const fileBuffer = fs.readFileSync(filePath);
+
+      if (fileBuffer.length < 100 || fileBuffer[0] !== 0x89 || fileBuffer[1] !== 0x50 || fileBuffer[2] !== 0x4e || fileBuffer[3] !== 0x47) {
+        return { ok: false, error: "Fayl haqiqiy PNG formatida emas!" };
+      }
+
+      const width = fileBuffer.readUInt32BE(16);
+      const height = fileBuffer.readUInt32BE(20);
+      if (width !== 64 || (height !== 64 && height !== 32)) {
+        return { ok: false, error: `Skin o'lchami 64x64 yoki 64x32 piksel bo'lishi shart! (Hozirgi: ${width}x${height})` };
+      }
+
+      const siteBase = (process.env.NEOTERRA_SITE_URL || "https://site.neoterra.uz").replace(/\/$/, "");
+      let remoteSkinUrl = null;
+      try {
+        const uploadUrl = `${siteBase}/api/launcher/skins/upload`;
+        const base64Data = fileBuffer.toString("base64");
+        const resp = await fetch(uploadUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ nickname: cleanNick, token, skinBase64: `data:image/png;base64,${base64Data}` })
+        });
+        if (resp.ok) {
+          const json = await resp.json();
+          if (json.success) {
+            remoteSkinUrl = json.fullSkinUrl || json.skinUrl;
+          }
+        }
+      } catch (netErr) {
+        console.warn("[Skin Upload] Veb-saytga yuklashda ogohlantirish:", netErr);
+      }
+
+      try {
+        const cslLocalDir = path.join(gameDir(), "CustomSkinLoader", "LocalSkins", "textures");
+        fs.mkdirSync(cslLocalDir, { recursive: true });
+        fs.writeFileSync(path.join(cslLocalDir, `${cleanNick.toLowerCase()}.png`), fileBuffer);
+      } catch (e) {}
+
+      const previewDataUrl = `data:image/png;base64,${fileBuffer.toString("base64")}`;
+
+      return {
+        ok: true,
+        skinUrl: remoteSkinUrl || previewDataUrl,
+        previewUrl: previewDataUrl,
+        width,
+        height
+      };
+    } catch (err) {
+      return { ok: false, error: err instanceof Error ? err.message : String(err) };
+    }
   });
   electron.app.on("before-quit", () => killGame());
 }
@@ -2747,6 +2847,33 @@ function startRendererServer(rootDir) {
           mainWindow.focus();
           mainWindow.webContents.send("auth:web-callback", { token, nickname, email, balance, uid });
         }
+        return;
+      }
+      if (parsedReq.pathname.startsWith("/skins/")) {
+        const cleanPath = parsedReq.pathname.replace(/^\/skins\//, "");
+        if (cleanPath.endsWith(".json")) {
+          const nick = cleanPath.replace(/\.json$/i, "").toLowerCase();
+          const localSkinPath = path.join(gameDir(), "CustomSkinLoader", "LocalSkins", "textures", `${nick}.png`);
+          if (fs.existsSync(localSkinPath)) {
+            res.writeHead(200, { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" });
+            res.end(JSON.stringify({
+              username: nick,
+              skins: { default: `http://127.0.0.1:47823/skins/textures/${nick}.png` },
+              capes: {}
+            }));
+            return;
+          }
+        } else if (cleanPath.endsWith(".png")) {
+          const nick = cleanPath.split("/").pop().replace(/\.png$/i, "").toLowerCase();
+          const localSkinPath = path.join(gameDir(), "CustomSkinLoader", "LocalSkins", "textures", `${nick}.png`);
+          if (fs.existsSync(localSkinPath)) {
+            res.writeHead(200, { "Content-Type": "image/png", "Access-Control-Allow-Origin": "*" });
+            fs.createReadStream(localSkinPath).pipe(res);
+            return;
+          }
+        }
+        res.writeHead(404);
+        res.end("Skin not found");
         return;
       }
       const urlPath = decodeURIComponent((req.url ?? "/").split("?")[0] ?? "/");

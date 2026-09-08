@@ -33706,24 +33706,19 @@ function Alert({ kind = "error", children }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `alert alert-${kind}`, role: kind === "error" ? "alert" : "status", children });
 }
 const tokens = {
-  text: "#EDF1EF",
-  text2: "#AFB7B2",
-  textDim: "#8B9590",
-  label: "#949E99",
+  text: "#F3F4F6",
+  text2: "#C4B5FD",
+  textDim: "#94A3B8",
+  label: "#A78BFA",
   hairline: "rgba(255,255,255,.10)",
-  surface: "rgba(255,255,255,.03)",
-  surface2: "rgba(255,255,255,.05)",
-  /** Katalog panjarasidagi kartalar (ItemCard/VideoCard/PurchasedItemCard) uchun - bu kartalar
-      video fon ustida to'g'ridan-to'g'ri, keng ochiq maydonda turadi (dialog/panel kabi orqasida
-      alohida qorong'ilashtiruvchi qatlam yo'q), shuning uchun `surface`dan ancha quyuqroq - aks
-      holda ichidagi matn fondagi manzaraga qarab o'qib bo'lmas darajada past kontrastli bo'lib
-      qoladi. Blur ISHLATILMAYDI (bir vaqtda o'nlab-yuzlab karta chizilishi mumkin - kuchsiz
-      kompyuterda GPU compositing narxi yuqori bo'lardi), shunchaki quyuqroq tekis fon yetarli. */
-  cardSurface: "rgba(8,12,11,.40)",
-  emerald: "#21B45E",
-  emeraldNav: "#2ECC71",
-  ground: "#060A09",
-  gold: "#E8B04B"
+  surface: "rgba(255,255,255,.05)",
+  surface2: "rgba(255,255,255,.08)",
+  /** NeoTerra suyuq shisha obsidian panellari */
+  cardSurface: "rgba(18,14,32,.65)",
+  emerald: "#7C3AED",
+  emeraldNav: "#A855F7",
+  ground: "#07060B",
+  gold: "#F59E0B"
 };
 function LaunchFailedDialog({ title, items, onOpenMods, onClose }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 z-50 grid place-items-center bg-black/60", onClick: onClose, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -33731,7 +33726,7 @@ function LaunchFailedDialog({ title, items, onOpenMods, onClose }) {
     {
       onClick: (e) => e.stopPropagation(),
       className: "w-[420px] rounded-[14px] p-6",
-      style: { background: "#0A0D0C", border: `1px solid ${tokens.hairline}` },
+      style: { background: "#0D0B18", border: `1px solid ${tokens.hairline}` },
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-3", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -34791,7 +34786,7 @@ function Toggle({ on }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     "span",
     {
-      className: `relative inline-block h-[18px] w-[34px] shrink-0 rounded-full align-middle transition ${on ? "bg-[#21B45E]" : "bg-white/[.16]"}`,
+      className: `relative inline-block h-[18px] w-[34px] shrink-0 rounded-full align-middle transition ${on ? "bg-[#7C3AED]" : "bg-white/[.16]"}`,
       children: /* @__PURE__ */ jsxRuntimeExports.jsx(
         "span",
         {
@@ -34812,7 +34807,7 @@ function ToggleRow({
     {
       type: "button",
       onClick,
-      className: `flex w-full items-start gap-3 px-3 py-[11px] text-left ${on ? "rounded-[10px] border border-[#21B45E]/45 bg-[#21B45E]/[.10] transition hover:bg-[#21B45E]/[.16]" : `${CARD} ${CARD_HOVER}`}`,
+      className: `flex w-full items-start gap-3 px-3 py-[11px] text-left ${on ? "rounded-[10px] border border-[#7C3AED]/45 bg-[#7C3AED]/[.10] transition hover:bg-[#7C3AED]/[.16]" : `${CARD} ${CARD_HOVER}`}`,
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "min-w-0 flex-1", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block text-[12.5px] font-semibold", style: { color: tokens.text }, children: label }),
@@ -34905,13 +34900,13 @@ function SettingsDialog({
       "div",
       {
         className: `fixed inset-0 z-[60] grid place-items-center p-4 transition-[opacity,backdrop-filter] duration-200 ease-out ${entered && !leaving ? "opacity-100 backdrop-blur-[3px]" : "opacity-0 backdrop-blur-none"}`,
-        style: { background: "rgba(6,10,9,.62)" },
+        style: { background: "rgba(12,9,22,.62)" },
         onClick: requestClose,
         children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "div",
           {
             onClick: (e) => e.stopPropagation(),
-            className: `flex max-h-[min(86vh,720px)] w-[520px] max-w-full flex-col rounded-[14px] border border-white/[.12] bg-[#0A0D0C]/95 backdrop-blur-xl motion-safe:transition-[opacity,transform] motion-safe:duration-200 motion-safe:ease-out ${entered && !leaving ? "scale-100 opacity-100 translate-y-0" : "scale-[.96] opacity-0 translate-y-3"}`,
+            className: `flex max-h-[min(86vh,720px)] w-[520px] max-w-full flex-col rounded-[14px] border border-white/[.12] bg-[#0D0B18]/95 backdrop-blur-xl motion-safe:transition-[opacity,transform] motion-safe:duration-200 motion-safe:ease-out ${entered && !leaving ? "scale-100 opacity-100 translate-y-0" : "scale-[.96] opacity-0 translate-y-3"}`,
             style: { boxShadow: "0 24px 60px -12px rgba(0,0,0,.72), inset 0 1px 0 rgba(255,255,255,.06)" },
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex shrink-0 items-center justify-between px-5 py-4", style: { borderBottom: `1px solid ${tokens.hairline}` }, children: [
@@ -35041,7 +35036,7 @@ function SettingsDialog({
                       {
                         type: "button",
                         onClick: () => setLang(l2.code),
-                        className: `h-9 flex-1 text-[12px] font-semibold ${active ? "rounded-[8px] border border-[#21B45E]/45 bg-[#21B45E]/[.10] transition" : SUBTLE_BTN}`,
+                        className: `h-9 flex-1 text-[12px] font-semibold ${active ? "rounded-[8px] border border-[#7C3AED]/45 bg-[#7C3AED]/[.10] transition" : SUBTLE_BTN}`,
                         style: { color: active ? tokens.emeraldNav : tokens.text2 },
                         children: l2.label
                       },
@@ -35187,7 +35182,7 @@ function ModsNavMenu({ active, isActiveTab, onSelect }) {
                   className: `shrink-0 transition-transform duration-150 ${open ? "rotate-180" : ""}`
                 }
               ),
-              isActiveTab && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute inset-x-[clamp(10px,1.72vw,26px)] bottom-0 h-[2px] bg-[#2ECC71]" })
+              isActiveTab && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute inset-x-[clamp(10px,1.72vw,26px)] bottom-0 h-[2px] bg-gradient-to-r from-[#7C3AED] to-[#A855F7] shadow-[0_0_10px_rgba(168,85,247,0.7)]" })
             ]
           }
         ),
@@ -35195,7 +35190,7 @@ function ModsNavMenu({ active, isActiveTab, onSelect }) {
           "div",
           {
             className: "absolute left-[clamp(6px,1vw,18px)] top-full z-40 w-[224px] overflow-hidden rounded-[12px] py-1.5 shadow-2xl motion-safe:animate-panel-in",
-            style: { background: "#0A0D0C", border: `1px solid ${tokens.hairline}` },
+            style: { background: "#0D0B18", border: `1px solid ${tokens.hairline}` },
             children: ITEMS.map(({ id: id2, icon: Icon2 }) => {
               const isCurrent = isActiveTab && active === id2;
               return /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -35210,7 +35205,7 @@ function ModsNavMenu({ active, isActiveTab, onSelect }) {
                   style: {
                     color: isCurrent ? tokens.emeraldNav : tokens.text2,
                     fontWeight: isCurrent ? 600 : 500,
-                    background: isCurrent ? "rgba(46,204,113,.08)" : "transparent"
+                    background: isCurrent ? "rgba(168,85,247,.08)" : "transparent"
                   },
                   children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { size: 14, className: "shrink-0" }),
@@ -35257,7 +35252,7 @@ function LanguageSelect() {
       "div",
       {
         className: "absolute left-0 top-full z-40 mt-2 w-max min-w-[130px] rounded-[10px] p-1",
-        style: { background: "#0A0D0C", border: `1px solid ${tokens.hairline}` },
+        style: { background: "#0D0B18", border: `1px solid ${tokens.hairline}` },
         children: LANGUAGES.map((l2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
           "button",
           {
@@ -57906,6 +57901,20 @@ function AuthProvider({ children }) {
         }
       }
     } catch (e) {}
+    if (window.launcher?.getStoredAccount) {
+      window.launcher.getStoredAccount().then((acc) => {
+        if (acc && acc.profile) {
+          setSession({ user: { id: acc.profile.id, email: acc.profile.email } });
+          setProfile(acc.profile);
+          try {
+            localStorage.setItem("neoterra_profile", JSON.stringify(acc.profile));
+            if (acc.token) localStorage.setItem("neoterra_token", acc.token);
+            if (acc.customSkinUrl) localStorage.setItem("neoterra_active_skin", acc.customSkinUrl);
+            if (acc.lastNick) localStorage.setItem("neoterra_last_username", acc.lastNick);
+          } catch (e) {}
+        }
+      }).catch(() => {});
+    }
     if (window.launcher?.onWebAuthCallback) {
       window.launcher.onWebAuthCallback((data) => {
         if (data?.token && data?.nickname) {
@@ -57926,6 +57935,10 @@ function AuthProvider({ children }) {
           setProfile(p);
           localStorage.setItem("neoterra_profile", JSON.stringify(p));
           localStorage.setItem("neoterra_token", data.token);
+          localStorage.setItem("neoterra_last_username", data.nickname);
+          if (window.launcher?.saveStoredAccount) {
+            window.launcher.saveStoredAccount({ profile: p, token: data.token, lastNick: data.nickname, customSkinUrl: localStorage.getItem("neoterra_active_skin") || null });
+          }
         }
       });
     }
@@ -57949,8 +57962,11 @@ function AuthProvider({ children }) {
     });
     const { data: sub } = supabase.auth.onAuthStateChange((_event, s) => {
       if (!s) {
-        setSession(null);
-        setProfile(null);
+        const hasLocal = localStorage.getItem("neoterra_profile");
+        if (!hasLocal) {
+          setSession(null);
+          setProfile(null);
+        }
       }
     });
     return () => {
@@ -57992,6 +58008,10 @@ function AuthProvider({ children }) {
         setProfile(p);
         localStorage.setItem("neoterra_profile", JSON.stringify(p));
         if (res.data.token) localStorage.setItem("neoterra_token", res.data.token);
+        localStorage.setItem("neoterra_last_username", p.minecraft_nick || p.username);
+        if (window.launcher?.saveStoredAccount) {
+          window.launcher.saveStoredAccount({ profile: p, token: res.data.token, lastNick: p.minecraft_nick || p.username, customSkinUrl: localStorage.getItem("neoterra_active_skin") || null });
+        }
         return;
       } else if (res.data && res.data.message) {
         throw new Error(res.data.message);
@@ -58064,6 +58084,10 @@ function AuthProvider({ children }) {
   const signOut = reactExports.useCallback(async () => {
     try { localStorage.removeItem("neoterra_profile"); } catch (e) {}
     try { localStorage.removeItem("neoterra_token"); } catch (e) {}
+    try { localStorage.removeItem("neoterra_active_skin"); } catch (e) {}
+    if (window.launcher?.saveStoredAccount) {
+      window.launcher.saveStoredAccount(null).catch(() => {});
+    }
     await supabase.auth.signOut();
     setSession(null);
     setProfile(null);
@@ -71587,7 +71611,7 @@ function WorldPickerDialog({ packName, onPick, onCancel }) {
     {
       onClick: (e) => e.stopPropagation(),
       className: "w-[400px] rounded-[14px] p-6",
-      style: { background: "#0A0D0C", border: `1px solid ${tokens.hairline}` },
+      style: { background: "#0D0B18", border: `1px solid ${tokens.hairline}` },
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[16px] font-semibold", style: { color: tokens.text }, children: t2("mods.worldPicker.title") }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1.5 text-[12.5px] leading-[1.5]", style: { color: tokens.text2 }, children: t2("mods.worldPicker.subtitleFor", { name: packName }) }),
@@ -71939,7 +71963,7 @@ function FilterDropdown({ value, options, onChange }) {
       "div",
       {
         className: "thin-scrollbar absolute right-0 top-full z-40 mt-2 max-h-[240px] w-max min-w-full overflow-y-auto rounded-[10px] p-1",
-        style: { background: "#0A0D0C", border: `1px solid ${tokens.hairline}` },
+        style: { background: "#0D0B18", border: `1px solid ${tokens.hairline}` },
         children: options.map((o) => /* @__PURE__ */ jsxRuntimeExports.jsx(
           "button",
           {
@@ -72076,7 +72100,7 @@ function DependencyConfirmDialog({ mainModName, dependencies, loading: loading2,
               onClick: onConfirm,
               disabled: loading2,
               className: "h-11 flex-1 rounded-[10px] text-[13px] font-bold text-white transition disabled:opacity-70",
-              style: { background: tokens.emeraldNav, boxShadow: `0 0 20px rgba(46,204,113,.45)` },
+              style: { background: tokens.emeraldNav, boxShadow: `0 0 20px rgba(168,85,247,.45)` },
               children: loading2 ? t2("common.loading") : t2("mods.dependencies.confirmAll")
             }
           )
@@ -72689,7 +72713,7 @@ function ModsCatalogScreen({
       {
         onClick: (e) => e.stopPropagation(),
         className: "w-[380px] rounded-[14px] p-6",
-        style: { background: "#0A0D0C", border: `1px solid ${tokens.hairline}` },
+        style: { background: "#0D0B18", border: `1px solid ${tokens.hairline}` },
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(TriangleAlert, { size: 20, color: "#C4614F" }),
@@ -73213,7 +73237,7 @@ function ModelDetailScreen({ id: id2, owned, installedAssets, onBack, onBuy }) {
           {
             ref: viewportWrapRef,
             className: "relative aspect-[4/3] w-full overflow-hidden rounded-[14px]",
-            style: { background: "linear-gradient(160deg,#14181a,#060a09)", border: `1px solid ${tokens.hairline}` },
+            style: { background: "linear-gradient(160deg,#14181a,#07060b)", border: `1px solid ${tokens.hairline}` },
             children: previewSrc ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
               viewerState !== "error" && /* @__PURE__ */ jsxRuntimeExports.jsx(
                 ModelViewer3D,
@@ -73724,7 +73748,7 @@ function PurchaseConfirmDialog({ target, balance, loading: loading2, error, onCo
     {
       onClick: (e) => e.stopPropagation(),
       className: "w-[340px] rounded-[14px] p-6",
-      style: { background: "#0A0D0C", border: `1px solid ${tokens.hairline}` },
+      style: { background: "#0D0B18", border: `1px solid ${tokens.hairline}` },
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[17px] font-semibold", style: { color: tokens.text }, children: target.name }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "mt-1 font-mono text-[24px] font-bold", style: { color: "#E8B04B" }, children: [
@@ -74087,7 +74111,7 @@ function CommunitySection({ isActive }) {
             "div",
             {
               className: "flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-[14px]",
-              style: { background: "rgba(33,180,94,.12)", border: `1px solid ${tokens.emerald}` },
+              style: { background: "rgba(124,58,237,.12)", border: `1px solid ${tokens.emerald}` },
               children: /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { size: 22, strokeWidth: 1.7, style: { color: tokens.emeraldNav } })
             }
           ),
@@ -74352,7 +74376,7 @@ function VideoCard({ video, onOpen }) {
             "span",
             {
               className: "absolute bottom-[8px] right-[8px] flex h-[22px] items-center rounded-[6px] px-[8px] font-mono text-[11px]",
-              style: { background: "rgba(6,10,9,.78)", color: tokens.text },
+              style: { background: "rgba(12,9,22,.78)", color: tokens.text },
               children: formatDuration(video.duration_seconds)
             }
           )
@@ -74557,7 +74581,7 @@ function HubTvCatalogScreen({ scrollRef, onOpen }) {
               "div",
               {
                 className: "absolute inset-0",
-                style: { background: "linear-gradient(180deg,rgba(6,10,9,0) 45%,rgba(6,10,9,.68) 100%)" }
+                style: { background: "linear-gradient(180deg,rgba(12,9,22,0) 45%,rgba(12,9,22,.68) 100%)" }
               }
             ),
             /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 grid place-items-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -74565,9 +74589,9 @@ function HubTvCatalogScreen({ scrollRef, onOpen }) {
               {
                 className: "grid h-20 w-20 place-items-center rounded-full backdrop-blur-sm transition group-hover:scale-105",
                 style: {
-                  background: "rgba(6,10,9,.5)",
+                  background: "rgba(12,9,22,.5)",
                   border: `1px solid ${tokens.emeraldNav}`,
-                  boxShadow: "0 0 26px rgba(46,204,113,.4)"
+                  boxShadow: "0 0 26px rgba(168,85,247,.4)"
                 },
                 children: /* @__PURE__ */ jsxRuntimeExports.jsx(Play, { size: 28, color: "#fff", fill: "#fff" })
               }
@@ -74576,7 +74600,7 @@ function HubTvCatalogScreen({ scrollRef, onOpen }) {
               "span",
               {
                 className: "absolute bottom-[16px] right-[16px] flex h-7 items-center rounded-[6px] px-[10px] font-mono text-[12px]",
-                style: { background: "rgba(6,10,9,.78)", color: tokens.text },
+                style: { background: "rgba(12,9,22,.78)", color: tokens.text },
                 children: formatDuration(featured.duration_seconds)
               }
             ),
@@ -74846,7 +74870,7 @@ function HubTVPlayer({ embedUrl, startSeconds, onProgress }) {
       "div",
       {
         className: "absolute inset-x-0 bottom-0 flex items-center gap-3 px-4 py-3 backdrop-blur-md",
-        style: { background: "rgba(6,10,9,.8)", borderTop: `1px solid ${tokens.hairline}` },
+        style: { background: "rgba(12,9,22,.8)", borderTop: `1px solid ${tokens.hairline}` },
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => skip(-10), className: "shrink-0 transition hover:brightness-125", style: { color: "#fff" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Rewind, { size: 18, fill: "#fff" }) }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: togglePlay, className: "shrink-0 transition hover:brightness-125", style: { color: "#fff" }, children: playing ? /* @__PURE__ */ jsxRuntimeExports.jsx(Pause, { size: 20, fill: "#fff" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(Play, { size: 20, fill: "#fff" }) }),
@@ -74949,7 +74973,7 @@ function SeekBar({ value, onChange, onCommit, onDragStateChange, thin }) {
           "div",
           {
             className: "absolute top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-0 transition-opacity group-hover:opacity-100",
-            style: { left: `${pct}%`, background: tokens.emeraldNav, boxShadow: "0 0 6px rgba(46,204,113,.7)" }
+            style: { left: `${pct}%`, background: tokens.emeraldNav, boxShadow: "0 0 6px rgba(168,85,247,.7)" }
           }
         )
       ]
@@ -75049,7 +75073,7 @@ function WatchScreen({ slug, startAt, onBack, onOpenVideo }) {
                     "span",
                     {
                       className: "absolute bottom-[4px] right-[4px] flex h-[16px] items-center rounded-[4px] px-[5px] font-mono text-[9.5px]",
-                      style: { background: "rgba(6,10,9,.8)", color: tokens.text },
+                      style: { background: "rgba(12,9,22,.8)", color: tokens.text },
                       children: formatDuration(v2.duration_seconds)
                     }
                   )
@@ -75158,7 +75182,7 @@ function SkinTile({ skin, onOpen }) {
           "span",
           {
             className: "absolute bottom-[10px] right-[10px] flex h-[22px] items-center rounded-[6px] px-[8px] font-mono text-[11px]",
-            style: { background: "rgba(6,10,9,.78)", color: tokens.text },
+            style: { background: "rgba(12,9,22,.78)", color: tokens.text },
             children: skin.uses.toLocaleString(numberLocale)
           }
         )
@@ -75489,7 +75513,7 @@ function SkinDetailScreen({ slug, onBack, onOpenProfile }) {
               onClick: () => viewerRef.current?.resetCamera(),
               title: t2("common.restore"),
               className: "grid h-8 w-8 place-items-center rounded-[8px] transition hover:bg-white/[.1]",
-              style: { background: "rgba(6,10,9,.55)", color: tokens.text2 },
+              style: { background: "rgba(12,9,22,.55)", color: tokens.text2 },
               children: /* @__PURE__ */ jsxRuntimeExports.jsx(RotateCcw, { size: 15 })
             }
           ),
@@ -75504,7 +75528,7 @@ function SkinDetailScreen({ slug, onBack, onOpenProfile }) {
               },
               title: t2("skins.walkAnimation"),
               className: "grid h-8 w-8 place-items-center rounded-[8px] transition hover:bg-white/[.1]",
-              style: { background: walking ? tokens.surface2 : "rgba(6,10,9,.55)", color: walking ? tokens.emeraldNav : tokens.text2 },
+              style: { background: walking ? tokens.surface2 : "rgba(12,9,22,.55)", color: walking ? tokens.emeraldNav : tokens.text2 },
               children: /* @__PURE__ */ jsxRuntimeExports.jsx(Footprints, { size: 15 })
             }
           ),
@@ -75515,7 +75539,7 @@ function SkinDetailScreen({ slug, onBack, onOpenProfile }) {
               onClick: () => setPreviewModel((m2) => m2 === "classic" ? "slim" : "classic"),
               title: t2("skins.modelTypeHint"),
               className: "grid h-8 w-8 place-items-center rounded-[8px] transition hover:bg-white/[.1]",
-              style: { background: "rgba(6,10,9,.55)", color: tokens.text2 },
+              style: { background: "rgba(12,9,22,.55)", color: tokens.text2 },
               children: /* @__PURE__ */ jsxRuntimeExports.jsx(Shirt, { size: 15 })
             }
           )
@@ -75904,12 +75928,16 @@ const SOCIAL_LINKS = [
   { key: "instagram", icon: Camera$1, format: (v2) => v2.startsWith("http") ? v2 : `https://instagram.com/${v2.replace(/^@/, "")}` },
   { key: "website", icon: Globe }
 ];
-function ProfileScreen({ target, backLabel, onBack, onOpenSkins, onRequestLogin }) {
+function ProfileScreen({ target, backLabel, onBack, onOpenSkins, onRequestLogin, currentSkinUrl }) {
   const { t: t2, numberLocale } = useLanguage();
-  const { session, refreshProfile } = useAuth();
+  const { session, profile: authProfile, refreshProfile } = useAuth();
   const { showToast } = useToast();
   const isOwner = target.mode === "own";
-  const guestBlocked = isOwner && !session;
+  const localSavedProfile = (() => {
+    try { return JSON.parse(localStorage.getItem("neoterra_profile") || "null"); } catch { return null; }
+  })();
+  const activeUser = authProfile || localSavedProfile;
+  const guestBlocked = isOwner && !session && !activeUser;
   const [data, setData] = reactExports.useState(void 0);
   const [error, setError] = reactExports.useState(null);
   const [skin, setSkin] = reactExports.useState(null);
@@ -75921,6 +75949,11 @@ function ProfileScreen({ target, backLabel, onBack, onOpenSkins, onRequestLogin 
   const [editError, setEditError] = reactExports.useState(null);
   const loadIdRef = reactExports.useRef(0);
   const [updateVersion, setUpdateVersion] = reactExports.useState(null);
+  reactExports.useEffect(() => {
+    if (target.mode === "own" && currentSkinUrl) {
+      setSkin({ name: "Shaxsiy Skin", skin_url: currentSkinUrl, model_type: "classic" });
+    }
+  }, [currentSkinUrl]);
   reactExports.useEffect(() => {
     return window.launcher.onUpdateEvent((e) => {
       if (e.type === "downloaded") setUpdateVersion(e.version);
@@ -75934,6 +75967,36 @@ function ProfileScreen({ target, backLabel, onBack, onOpenSkins, onRequestLogin 
     setSkin(null);
     setPurchased([]);
     setDownloaded([]);
+    if (target.mode === "own" && activeUser) {
+      const fullData = {
+        id: activeUser.id || activeUser.uid || "me",
+        username: activeUser.username || activeUser.minecraft_nick || activeUser.nickname || "SarvarGamer_YT",
+        minecraft_nick: activeUser.minecraft_nick || activeUser.nickname || activeUser.username || "SarvarGamer_YT",
+        avatar_url: activeUser.avatar_url || activeUser.skinUrl || null,
+        bio: activeUser.bio || "NeoTerra Minecraft Server o'yinchisi",
+        role: activeUser.role || "O'yinchi",
+        tariff: activeUser.tariff || "VIP",
+        hbc: Number(activeUser.hbc ?? activeUser.balance ?? 0),
+        streak: activeUser.streak ?? 1,
+        created_at: activeUser.created_at || (new Date()).toISOString(),
+        last_seen: (new Date()).toISOString(),
+        purchased_mods: activeUser.purchased_mods ?? []
+      };
+      setData(fullData);
+      const nick = (fullData.minecraft_nick || fullData.username).toLowerCase();
+      const localSkin = localStorage.getItem(`neoterra_skin_${nick}`);
+      if (localSkin) {
+        setSkin({ name: "Shaxsiy Skin", skin_url: localSkin, model_type: "classic" });
+      } else if (activeUser.skinUrl) {
+        setSkin({ name: "NeoTerra Skin", skin_url: activeUser.skinUrl, model_type: "classic" });
+      } else {
+        setSkin({ name: "Standart Skin", skin_url: "skins/steve.png", model_type: "classic" });
+      }
+      fetchDownloadedItems().then((items) => {
+        if (loadIdRef.current === loadId) setDownloaded(items);
+      }).catch(() => {});
+      return;
+    }
     const req = target.mode === "own" && session ? fetchOwnProfile(session.user.id) : target.mode === "user" ? fetchPublicProfile(target.username) : Promise.resolve(null);
     req.then(async (p2) => {
       if (loadIdRef.current !== loadId) return;
@@ -75998,14 +76061,20 @@ function ProfileScreen({ target, backLabel, onBack, onOpenSkins, onRequestLogin 
     });
   }
   async function handleSaveProfile(values) {
-    if (!session) return;
+    if (!session && !activeUser) return;
     setEditSaving(true);
     setEditError(null);
     try {
-      await updateOwnProfile(session.user.id, values);
+      if (session) {
+        await updateOwnProfile(session.user.id, values);
+      }
+      if (activeUser) {
+        const updated = { ...activeUser, ...values };
+        localStorage.setItem("neoterra_profile", JSON.stringify(updated));
+        setData((prev) => ({ ...prev, ...values }));
+      }
       setEditOpen(false);
       showToast({ kind: "success", title: t2("common.saved"), message: t2("profile.updated") });
-      load();
       void refreshProfile();
     } catch (err) {
       setEditError(err instanceof Error ? err.message : "Saqlab bo'lmadi");
@@ -76045,7 +76114,7 @@ function ProfileScreen({ target, backLabel, onBack, onOpenSkins, onRequestLogin 
             className: "relative h-[140px] w-full overflow-hidden rounded-[14px]",
             style: {
               border: `1px solid ${tokens.hairline}`,
-              background: "linear-gradient(180deg,rgba(6,10,9,.15),rgba(6,10,9,.55)), url(images/profile-banner-default.jpg) center / cover no-repeat"
+              background: "linear-gradient(180deg,rgba(12,9,22,.15),rgba(12,9,22,.55)), url(images/profile-banner-default.jpg) center / cover no-repeat"
             },
             children: [
               isOwner && updateVersion && /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -76070,7 +76139,7 @@ function ProfileScreen({ target, backLabel, onBack, onOpenSkins, onRequestLogin 
                   type: "button",
                   onClick: () => setEditOpen(true),
                   className: `absolute top-4 flex h-8 items-center gap-1.5 rounded-[8px] px-3 text-[12.5px] font-medium transition hover:bg-white/[.08] ${updateVersion ? "right-[172px]" : "right-4"}`,
-                  style: { background: "rgba(6,10,9,.5)", color: tokens.text2 },
+                  style: { background: "rgba(12,9,22,.5)", color: tokens.text2 },
                   children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx(Pencil, { size: 13 }),
                     " Tahrirlash"
@@ -76307,7 +76376,7 @@ function UiThemesTab() {
                   "span",
                   {
                     className: "rounded-full px-2 py-0.5 text-[11px] font-semibold",
-                    style: { background: "rgba(46,204,113,.12)", color: tokens.emeraldNav },
+                    style: { background: "rgba(168,85,247,.12)", color: tokens.emeraldNav },
                     children: t2("shop.uiThemes.free")
                   }
                 )
@@ -76462,7 +76531,7 @@ function ShopScreen({
               onClick: () => onSelectPet(pet.id),
               className: "flex items-center gap-2 rounded-[10px] px-3 py-2.5 text-left transition hover:bg-white/[.06]",
               style: {
-                background: isSelected ? "rgba(46,204,113,.10)" : tokens.surface,
+                background: isSelected ? "rgba(168,85,247,.10)" : tokens.surface,
                 border: `1px solid ${isSelected ? tokens.emerald : tokens.hairline}`
               },
               children: [
@@ -77442,7 +77511,7 @@ function EmojiPicker({ onPick, onClose }) {
     {
       ref: rootRef,
       className: "absolute bottom-full left-0 z-40 mb-2 w-[320px] overflow-hidden rounded-[14px] shadow-2xl",
-      style: { background: "#0A0D0C", border: `1px solid ${tokens.hairline}` },
+      style: { background: "#0D0B18", border: `1px solid ${tokens.hairline}` },
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-0.5 px-2 pt-2", style: { borderBottom: `1px solid ${tokens.hairline}` }, children: EMOJI_CATEGORIES.map((c, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "button",
@@ -77595,8 +77664,8 @@ function MessageBubble({
       }
     );
   }
-  const bubbleBg = isOwn ? "rgba(33,180,94,.14)" : "rgba(8,12,11,.55)";
-  const bubbleBorder = isOwn ? "rgba(46,204,113,.28)" : tokens.hairline;
+  const bubbleBg = isOwn ? "rgba(124,58,237,.14)" : "rgba(16,12,30,.55)";
+  const bubbleBorder = isOwn ? "rgba(168,85,247,.28)" : tokens.hairline;
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "div",
     {
@@ -77650,7 +77719,7 @@ function MessageBubble({
                 "div",
                 {
                   className: `absolute z-30 w-[168px] overflow-hidden rounded-[10px] py-1 shadow-2xl ${isOwn ? "left-0" : "right-0"} ${dropUp ? "bottom-7" : "top-7"}`,
-                  style: { background: "#0A0D0C", border: `1px solid ${tokens.hairline}` },
+                  style: { background: "#0D0B18", border: `1px solid ${tokens.hairline}` },
                   children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx(
                       MenuItem,
@@ -77831,7 +77900,7 @@ function MessageBubble({
                         "div",
                         {
                           className: "pointer-events-none absolute inset-x-0 bottom-0 h-10",
-                          style: { background: `linear-gradient(to bottom, transparent, ${isOwn ? "rgba(15,42,26,.92)" : "rgba(8,12,11,.92)"})` }
+                          style: { background: `linear-gradient(to bottom, transparent, ${isOwn ? "rgba(15,42,26,.92)" : "rgba(16,12,30,.92)"})` }
                         }
                       )
                     ] }),
@@ -78141,7 +78210,7 @@ function ChatScreen({ onBack, backLabel, onOpenProfile, onRequestLogin }) {
       "div",
       {
         className: "relative mt-5 min-h-0 flex-1 overflow-hidden rounded-[14px]",
-        style: { background: "rgba(6,10,9,.55)", border: `1px solid ${tokens.hairline}` },
+        style: { background: "rgba(12,9,22,.55)", border: `1px solid ${tokens.hairline}` },
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: scrollRef, "data-chat-scroll": true, onScroll, className: "no-scrollbar h-full overflow-y-auto px-3 py-3", children: loading2 ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex h-full items-center justify-center gap-2", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(LoaderCircle, { size: 16, className: "animate-spin", style: { color: tokens.textDim } }),
@@ -78210,7 +78279,7 @@ function ChatScreen({ onBack, backLabel, onOpenProfile, onRequestLogin }) {
                 "div",
                 {
                   className: "min-w-0 rounded-[13px] px-3 py-2",
-                  style: { background: "rgba(33,180,94,.14)", border: "1px solid rgba(46,204,113,.28)" },
+                  style: { background: "rgba(124,58,237,.14)", border: "1px solid rgba(168,85,247,.28)" },
                   children: [
                     p2.replyTo && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-1.5 pl-2", style: { borderLeft: `2px solid ${tokens.emeraldNav}` }, children: [
                       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-semibold", style: { color: tokens.emeraldNav }, children: p2.replyTo.author_username ?? t2("chat.unknownUser") }),
@@ -78247,7 +78316,7 @@ function ChatScreen({ onBack, backLabel, onOpenProfile, onRequestLogin }) {
         "div",
         {
           className: "mb-1.5 flex items-center gap-2 rounded-[12px] px-3 py-2",
-          style: { background: "rgba(6,10,9,.55)", border: `1px solid ${tokens.hairline}` },
+          style: { background: "rgba(12,9,22,.55)", border: `1px solid ${tokens.hairline}` },
           children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(CornerUpLeft, { size: 13, style: { color: tokens.emeraldNav } }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0 flex-1", children: [
@@ -78277,9 +78346,9 @@ function ChatScreen({ onBack, backLabel, onOpenProfile, onRequestLogin }) {
         {
           className: "relative flex items-end gap-2 rounded-[14px] px-2.5 py-2 transition-[border-color,box-shadow,background] duration-150",
           style: {
-            background: composerFocused ? "rgba(6,10,9,.72)" : "rgba(6,10,9,.55)",
-            border: `1px solid ${composerFocused ? "rgba(46,204,113,.45)" : tokens.hairline}`,
-            boxShadow: composerFocused ? "0 0 0 3px rgba(46,204,113,.10)" : "none"
+            background: composerFocused ? "rgba(12,9,22,.72)" : "rgba(12,9,22,.55)",
+            border: `1px solid ${composerFocused ? "rgba(168,85,247,.45)" : tokens.hairline}`,
+            boxShadow: composerFocused ? "0 0 0 3px rgba(168,85,247,.10)" : "none"
           },
           children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative shrink-0", children: [
@@ -78291,7 +78360,7 @@ function ChatScreen({ onBack, backLabel, onOpenProfile, onRequestLogin }) {
                   onClick: () => setEmojiOpen((v2) => !v2),
                   title: t2("chat.emoji"),
                   className: "grid h-9 w-9 place-items-center rounded-full transition hover:bg-white/[.08]",
-                  style: { color: emojiOpen ? tokens.emeraldNav : tokens.text2, background: emojiOpen ? "rgba(46,204,113,.10)" : "transparent" },
+                  style: { color: emojiOpen ? tokens.emeraldNav : tokens.text2, background: emojiOpen ? "rgba(168,85,247,.10)" : "transparent" },
                   children: /* @__PURE__ */ jsxRuntimeExports.jsx(FaceSlightlySmiling, { size: 18 })
                 }
               )
@@ -78333,7 +78402,7 @@ function ChatScreen({ onBack, backLabel, onOpenProfile, onRequestLogin }) {
                 disabled: !draft.trim() || sending,
                 title: t2("chat.send"),
                 className: "grid h-9 w-9 shrink-0 place-items-center rounded-full transition-[background,box-shadow,color] duration-150 enabled:hover:brightness-110",
-                style: draft.trim() && !sending ? { background: tokens.emerald, color: "#fff", boxShadow: "0 2px 10px rgba(33,180,94,.28)" } : { background: "transparent", color: tokens.textDim, border: `1px solid ${tokens.hairline}` },
+                style: draft.trim() && !sending ? { background: tokens.emerald, color: "#fff", boxShadow: "0 2px 10px rgba(124,58,237,.28)" } : { background: "transparent", color: tokens.textDim, border: `1px solid ${tokens.hairline}` },
                 children: sending ? /* @__PURE__ */ jsxRuntimeExports.jsx(LoaderCircle, { size: 15, className: "animate-spin" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(Send, { size: 15 })
               }
             )
@@ -78344,7 +78413,7 @@ function ChatScreen({ onBack, backLabel, onOpenProfile, onRequestLogin }) {
       "div",
       {
         className: "flex items-center justify-between gap-3 rounded-[14px] px-4 py-3",
-        style: { background: "rgba(6,10,9,.55)", border: `1px solid ${tokens.hairline}` },
+        style: { background: "rgba(12,9,22,.55)", border: `1px solid ${tokens.hairline}` },
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[12.5px]", style: { color: tokens.text2 }, children: t2("chat.guestHint") }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -78369,7 +78438,7 @@ function ChatScreen({ onBack, backLabel, onOpenProfile, onRequestLogin }) {
       {
         onClick: (e) => e.stopPropagation(),
         className: "w-[360px] rounded-[14px] p-6",
-        style: { background: "#0A0D0C", border: `1px solid ${tokens.hairline}` },
+        style: { background: "#0D0B18", border: `1px solid ${tokens.hairline}` },
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(TriangleAlert, { size: 20, color: "#C4614F" }),
@@ -78451,8 +78520,22 @@ function LauncherScreen() {
   const [bgVideo] = reactExports.useState(pickRandomVideo);
   const bgVideoRef = reactExports.useRef(null);
   const [activeTab, setActiveTab] = reactExports.useState("home");
-  const [username, setUsername] = reactExports.useState("");
-  const [nickSubmitted, setNickSubmitted] = reactExports.useState(false);
+  const [username, setUsername] = reactExports.useState(() => {
+    try {
+      const p = JSON.parse(localStorage.getItem("neoterra_profile") || "null");
+      return p?.minecraft_nick || p?.username || localStorage.getItem("neoterra_last_username") || "";
+    } catch {
+      return localStorage.getItem("neoterra_last_username") || "";
+    }
+  });
+  const [nickSubmitted, setNickSubmitted] = reactExports.useState(() => {
+    try {
+      const p = JSON.parse(localStorage.getItem("neoterra_profile") || "null");
+      return !!(p?.minecraft_nick || p?.username || localStorage.getItem("neoterra_last_username"));
+    } catch {
+      return false;
+    }
+  });
   const { session, profile: profile2, initializing, signIn, signUp, signOut, refreshProfile } = useAuth();
   const { showToast } = useToast();
   const isLoggedIn = !!session && !!profile2;
@@ -78534,24 +78617,94 @@ function LauncherScreen() {
     if (!rawNick) return;
     void upsertCompanionPresence(rawNick, companionEnabled ? getInGameCompanionId(selectedPetId) : null);
   }, [companionEnabled, selectedPetId, rawNick]);
-  const [customSkinUrl, setCustomSkinUrl] = reactExports.useState(null);
+  const [customSkinUrl, setCustomSkinUrl] = reactExports.useState(() => {
+    try {
+      const p = JSON.parse(localStorage.getItem("neoterra_profile") || "null");
+      const nick = (p?.minecraft_nick || p?.username || localStorage.getItem("neoterra_last_username") || "").trim().toLowerCase();
+      return (nick && localStorage.getItem(`neoterra_skin_${nick}`)) || localStorage.getItem("neoterra_active_skin") || p?.skinUrl || p?.avatar_url || null;
+    } catch {
+      return localStorage.getItem("neoterra_active_skin") || null;
+    }
+  });
   reactExports.useEffect(() => {
+    if (window.launcher?.getStoredAccount) {
+      window.launcher.getStoredAccount().then((acc) => {
+        if (acc) {
+          if (acc.lastNick && !username) {
+            setUsername(acc.lastNick);
+            setNickSubmitted(true);
+          }
+          if (acc.customSkinUrl && !customSkinUrl) {
+            setCustomSkinUrl(acc.customSkinUrl);
+          }
+        }
+      }).catch(() => {});
+    }
+  }, []);
+  const [skinUploading, setSkinUploading] = reactExports.useState(false);
+  reactExports.useEffect(() => {
+    const nick = (profile2?.minecraft_nick || username || "").trim().toLowerCase();
+    const savedSkin = nick ? localStorage.getItem(`neoterra_skin_${nick}`) : null;
+    if (savedSkin) {
+      setCustomSkinUrl(savedSkin);
+      return;
+    }
+    if (profile2?.skinUrl) {
+      setCustomSkinUrl(profile2.skinUrl);
+      return;
+    }
     const skinId = profile2?.current_skin_id;
     if (!skinId) {
-      setCustomSkinUrl(null);
       return;
     }
     let cancelled = false;
     void fetchSkinUrlById(skinId).then((url2) => {
-      if (!cancelled) setCustomSkinUrl(url2);
+      if (!cancelled && url2) setCustomSkinUrl(url2);
     }).catch((err) => {
       console.error("[NeoTerra] skin manzili olinmadi:", err);
-      if (!cancelled) setCustomSkinUrl(null);
     });
     return () => {
       cancelled = true;
     };
-  }, [profile2?.current_skin_id]);
+  }, [profile2?.current_skin_id, profile2?.skinUrl, rawNick]);
+  const handleSkinUpload = async () => {
+    const nick = displayNick || "Steve";
+    if (skinUploading) return;
+    setSkinUploading(true);
+    try {
+      if (window.launcher?.selectAndUploadSkin) {
+        const res = await window.launcher.selectAndUploadSkin(nick, session?.access_token || localStorage.getItem("neoterra_token") || "");
+        if (res && res.ok) {
+          const newUrl = res.previewUrl || res.skinUrl;
+          setCustomSkinUrl(newUrl);
+          localStorage.setItem("neoterra_active_skin", newUrl);
+          localStorage.setItem(`neoterra_skin_${nick.toLowerCase()}`, newUrl);
+          if (window.launcher?.saveStoredAccount) {
+            window.launcher.getStoredAccount().then((acc) => {
+              const updated = acc || {};
+              updated.customSkinUrl = newUrl;
+              updated.lastNick = nick;
+              if (updated.profile) updated.profile.skinUrl = newUrl;
+              window.launcher.saveStoredAccount(updated);
+            }).catch(() => {});
+          }
+          showToast({
+            kind: "success",
+            title: "Muvaffaqiyatli!",
+            message: "Yangi skin yuklandi va saqlandi! O'yinda barchaga ko'rinadi."
+          });
+          return;
+        } else if (res && res.error) {
+          showToast({ kind: "error", title: "Skin yuklanmadi", message: res.error });
+          return;
+        }
+      }
+    } catch (err) {
+      showToast({ kind: "error", title: "Xatolik", message: err instanceof Error ? err.message : String(err) });
+    } finally {
+      setSkinUploading(false);
+    }
+  };
   reactExports.useEffect(() => {
     if (!rawNick) return;
     void syncSkinApiEntry(rawNick, profile2?.current_skin_id ?? null, customSkinUrl).then((res) => {
@@ -78788,6 +78941,7 @@ function LauncherScreen() {
     await signOut();
     setUsername("");
     setNickSubmitted(false);
+    setCustomSkinUrl(null);
   }
   const playLabel = !running ? t2("home.play") : percent > 0 ? `${t2("home.loading")} ${percent}%` : status;
   const fieldBase = "w-full bg-transparent text-[clamp(12px,1.05vw,15px)] text-[#EDF1EF] placeholder-[#5A645F] outline-none";
@@ -78807,9 +78961,9 @@ function LauncherScreen() {
       bgVideo
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none fixed inset-0 -z-[15] bg-black/30" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none fixed inset-0 -z-10 [background:linear-gradient(90deg,rgba(6,10,9,0)_30%,rgba(6,10,9,.82)_100%)]" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none fixed inset-0 -z-10 [background:linear-gradient(180deg,rgba(6,10,9,0)_55%,rgba(6,10,9,.50)_100%)]" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-x-0 top-0 z-30 h-[clamp(42px,3.75vw,60px)] border-b border-white/[.05] bg-[rgba(8,11,10,.14)] [-webkit-app-region:drag]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none fixed inset-0 -z-10 [background:linear-gradient(90deg,rgba(12,9,22,0)_30%,rgba(12,9,22,.82)_100%)]" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none fixed inset-0 -z-10 [background:linear-gradient(180deg,rgba(12,9,22,0)_55%,rgba(12,9,22,.50)_100%)]" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-x-0 top-0 z-30 h-[clamp(42px,3.75vw,60px)] border-b border-white/[.05] bg-[rgba(15,11,28,.14)] [-webkit-app-region:drag]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
       "div",
       {
         className: `flex h-full items-center justify-between ${isMac ? "pl-[86px]" : "pl-[clamp(12px,1.4vw,22px)]"}`,
@@ -78823,7 +78977,7 @@ function LauncherScreen() {
                 className: "h-[clamp(18px,2.03vw,30px)] w-[clamp(18px,2.03vw,30px)] shrink-0 rounded-[6px] object-cover"
               }
             ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "leading-[1.2]", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "m-0 text-[clamp(11px,1.17vw,17px)] font-bold tracking-[.14em] text-[#EDF1EF]", children: "NEOTERRA" }) })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "leading-[1.2]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "m-0 text-[clamp(11px,1.17vw,17px)] font-black tracking-[-0.02em] uppercase italic text-white", children: ["NEO ", /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[#A855F7] drop-shadow-[0_0_12px_rgba(168,85,247,0.6)]", children: "TERRA" })] }) })
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("nav", { className: "flex h-full items-center [-webkit-app-region:no-drag]", children: NAV_ITEMS.map((item) => {
             const isActive = activeTab === item.id;
@@ -78858,7 +79012,7 @@ function LauncherScreen() {
                 className: `relative flex h-full shrink-0 items-center whitespace-nowrap px-[clamp(10px,1.35vw,26px)] text-[clamp(10.5px,1.02vw,14.5px)] transition ${isActive ? "font-semibold text-white" : "font-medium text-[#828C87] hover:text-[#B8C2BD]"}`,
                 children: [
                   t2(`common.nav.${item.id}`),
-                  isActive && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute inset-x-[clamp(10px,1.72vw,26px)] bottom-0 h-[2px] bg-[#2ECC71]" })
+                  isActive && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute inset-x-[clamp(10px,1.72vw,26px)] bottom-0 h-[2px] bg-gradient-to-r from-[#7C3AED] to-[#A855F7] shadow-[0_0_10px_rgba(168,85,247,0.7)]" })
                 ]
               },
               item.id
@@ -78909,7 +79063,7 @@ function LauncherScreen() {
                 "div",
                 {
                   className: "absolute right-0 top-full z-40 mt-2 w-[180px] rounded-[10px] p-1",
-                  style: { background: "#0A0D0C", border: `1px solid ${tokens.hairline}` },
+                  style: { background: "#0D0B18", border: `1px solid ${tokens.hairline}` },
                   children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsxs(
                       "button",
@@ -78930,8 +79084,8 @@ function LauncherScreen() {
                       {
                         type: "button",
                         onClick: () => {
-                          setActiveTab("skins");
                           setAccountMenuOpen(false);
+                          void handleSkinUpload();
                         },
                         className: "flex w-full items-center gap-2 rounded-[8px] px-3 py-2 text-left text-[12.5px] transition hover:bg-white/[.08]",
                         style: { color: tokens.text },
@@ -78949,6 +79103,7 @@ function LauncherScreen() {
                         type: "button",
                         onClick: () => {
                           setAccountMenuOpen(false);
+                          closeProfile();
                           void handleLogout();
                         },
                         className: "flex w-full items-center gap-2 rounded-[8px] px-3 py-2 text-left text-[12.5px] text-red-400 transition hover:bg-red-500/10",
@@ -79068,11 +79223,32 @@ function LauncherScreen() {
             paused: running || documentHidden
           }
         ) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none mt-[-8px] h-[clamp(16px,2.1vw,28px)] w-[clamp(221px,27.3vw,546px)] rounded-[50%] [background:radial-gradient(closest-side_at_50%_50%,rgba(0,0,0,.55),rgba(0,0,0,0))]" })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none mt-[-8px] h-[clamp(16px,2.1vw,28px)] w-[clamp(221px,27.3vw,546px)] rounded-[50%] [background:radial-gradient(closest-side_at_50%_50%,rgba(0,0,0,.55),rgba(0,0,0,0))]" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("button", {
+          type: "button",
+          onClick: handleSkinUpload,
+          disabled: skinUploading,
+          title: "Kompyuterdan o'zingizning shaxsiy Minecraft .png skiningizni yuklang",
+          className: "mt-3 z-20 flex items-center gap-2 rounded-full px-4 py-2 text-[12.5px] font-medium transition duration-200 hover:scale-105 active:scale-95 disabled:opacity-50 cursor-pointer shadow-lg",
+          style: {
+            background: "linear-gradient(135deg, rgba(30, 20, 50, 0.9), rgba(15, 23, 42, 0.9))",
+            border: "1px solid rgba(168, 85, 247, 0.45)",
+            color: "#F3E8FF",
+            backdropFilter: "blur(12px)"
+          },
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { width: 15, height: 15, viewBox: "0 0 24 24", fill: "none", stroke: "#C084FC", strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("polyline", { points: "17 8 12 3 7 8" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "12", y1: "3", x2: "12", y2: "15" })
+            ] }),
+            skinUploading ? "Yuklanmoqda..." : "Skinni o'zgartirish (.png)"
+          ]
+        })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex shrink-0 items-center pl-[clamp(20px,2.8vw,48px)] pr-[clamp(18px,4.4vw,72px)]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-[clamp(250px,25.8vw,400px)] -translate-y-[2%]", children: [
         !isAuthMode && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-[clamp(20px,2.8vw,36px)] flex flex-col items-center gap-[clamp(9px,1.1vw,16px)] text-center", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Box, { className: "h-[clamp(20px,2.66vw,38px)] w-[clamp(20px,2.66vw,38px)] text-[#2ECC71]" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Box, { className: "h-[clamp(20px,2.66vw,38px)] w-[clamp(20px,2.66vw,38px)] text-[#A855F7]" }),
           isLoggedIn && profile2 ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-[clamp(16px,2.03vw,28px)] font-normal text-[#EDF1EF]", children: [
               t2("home.welcomeBack"),
@@ -79094,7 +79270,7 @@ function LauncherScreen() {
               authError && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mb-[clamp(8px,0.9vw,14px)]", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Alert, { kind: "error", children: authError }) }),
               authInfo && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mb-[clamp(8px,0.9vw,14px)]", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Alert, { kind: "success", children: authInfo }) }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mb-[clamp(8px,0.78vw,12px)] text-[clamp(8.5px,0.74vw,11px)] font-semibold uppercase tracking-[.18em] text-[#AEB8B3]", children: authView === "login" ? t2("home.login") : t2("home.register") }),
-              authView === "register" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-[clamp(8px,0.7vw,10px)] flex items-center gap-[clamp(8px,0.78vw,12px)] rounded-[10px] border border-white/[.12] bg-black/[.22] px-[clamp(10px,1.09vw,16px)] py-[clamp(9px,1.09vw,16px)] transition focus-within:border-[#2ECC71] focus-within:shadow-[0_0_0_3px_rgba(46,204,113,.12)]", children: [
+              authView === "register" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-[clamp(8px,0.7vw,10px)] flex items-center gap-[clamp(8px,0.78vw,12px)] rounded-[10px] border border-white/[.12] bg-black/[.22] px-[clamp(10px,1.09vw,16px)] py-[clamp(9px,1.09vw,16px)] transition focus-within:border-[#A855F7] focus-within:shadow-[0_0_0_3px_rgba(168,85,247,.25)]", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(User, { size: 16, className: "h-[clamp(13px,1.17vw,18px)] w-[clamp(13px,1.17vw,18px)] shrink-0 text-[#AEB8B3]" }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "input",
@@ -79110,7 +79286,7 @@ function LauncherScreen() {
                   }
                 )
               ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-[clamp(8px,0.7vw,10px)] flex items-center gap-[clamp(8px,0.78vw,12px)] rounded-[10px] border border-white/[.12] bg-black/[.22] px-[clamp(10px,1.09vw,16px)] py-[clamp(9px,1.09vw,16px)] transition focus-within:border-[#2ECC71] focus-within:shadow-[0_0_0_3px_rgba(46,204,113,.12)]", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-[clamp(8px,0.7vw,10px)] flex items-center gap-[clamp(8px,0.78vw,12px)] rounded-[10px] border border-white/[.12] bg-black/[.22] px-[clamp(10px,1.09vw,16px)] py-[clamp(9px,1.09vw,16px)] transition focus-within:border-[#A855F7] focus-within:shadow-[0_0_0_3px_rgba(168,85,247,.25)]", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(Mail, { size: 16, className: "h-[clamp(13px,1.17vw,18px)] w-[clamp(13px,1.17vw,18px)] shrink-0 text-[#AEB8B3]" }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "input",
@@ -79128,7 +79304,7 @@ function LauncherScreen() {
               /* @__PURE__ */ jsxRuntimeExports.jsxs(
                 "div",
                 {
-                  className: `flex items-center gap-[clamp(8px,0.78vw,12px)] rounded-[10px] border border-white/[.12] bg-black/[.22] px-[clamp(10px,1.09vw,16px)] py-[clamp(9px,1.09vw,16px)] transition focus-within:border-[#2ECC71] focus-within:shadow-[0_0_0_3px_rgba(46,204,113,.12)] ${authView === "register" ? "mb-[clamp(8px,0.7vw,10px)]" : "mb-[clamp(12px,1.4vw,20px)]"}`,
+                  className: `flex items-center gap-[clamp(8px,0.78vw,12px)] rounded-[10px] border border-white/[.12] bg-black/[.22] px-[clamp(10px,1.09vw,16px)] py-[clamp(9px,1.09vw,16px)] transition focus-within:border-[#A855F7] focus-within:shadow-[0_0_0_3px_rgba(168,85,247,.25)] ${authView === "register" ? "mb-[clamp(8px,0.7vw,10px)]" : "mb-[clamp(12px,1.4vw,20px)]"}`,
                   children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx(Lock, { size: 16, className: "h-[clamp(13px,1.17vw,18px)] w-[clamp(13px,1.17vw,18px)] shrink-0 text-[#AEB8B3]" }),
                     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -79156,7 +79332,7 @@ function LauncherScreen() {
                   ]
                 }
               ),
-              authView === "register" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-[clamp(12px,1.4vw,20px)] flex items-center gap-[clamp(8px,0.78vw,12px)] rounded-[10px] border border-white/[.12] bg-black/[.22] px-[clamp(10px,1.09vw,16px)] py-[clamp(9px,1.09vw,16px)] transition focus-within:border-[#2ECC71] focus-within:shadow-[0_0_0_3px_rgba(46,204,113,.12)]", children: [
+              authView === "register" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-[clamp(12px,1.4vw,20px)] flex items-center gap-[clamp(8px,0.78vw,12px)] rounded-[10px] border border-white/[.12] bg-black/[.22] px-[clamp(10px,1.09vw,16px)] py-[clamp(9px,1.09vw,16px)] transition focus-within:border-[#A855F7] focus-within:shadow-[0_0_0_3px_rgba(168,85,247,.25)]", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(Lock, { size: 16, className: "h-[clamp(13px,1.17vw,18px)] w-[clamp(13px,1.17vw,18px)] shrink-0 text-[#AEB8B3]" }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "input",
@@ -79198,7 +79374,7 @@ function LauncherScreen() {
                 {
                   type: "button",
                   onClick: () => window.launcher?.openWebLogin ? window.launcher.openWebLogin() : null,
-                  className: "mt-2 flex w-full items-center justify-center gap-2 rounded-[10px] border border-[#2ECC71]/30 bg-black/25 py-[clamp(8px,0.9vw,13px)] text-[clamp(10.5px,0.9vw,13px)] font-medium text-[#2ECC71] transition hover:bg-[#2ECC71]/10 cursor-pointer",
+                  className: "mt-2 flex w-full items-center justify-center gap-2 rounded-[10px] border border-purple-500/30 bg-black/25 py-[clamp(8px,0.9vw,13px)] text-[clamp(10.5px,0.9vw,13px)] font-medium text-[#A855F7] transition hover:bg-[#A855F7]/10 cursor-pointer",
                   children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx(Globe, { size: 14 }),
                     "Sayt orqali kirish (Brauzerda)"
@@ -79272,7 +79448,7 @@ function LauncherScreen() {
               {
                 type: "button",
                 onClick: () => window.launcher?.openWebLogin ? window.launcher.openWebLogin() : setIsAuthMode(true),
-                className: "mt-2 flex w-full items-center justify-center gap-2 rounded-[10px] border border-[#2ECC71]/40 bg-[#2ECC71]/10 py-[clamp(10px,1.15vw,16px)] text-[clamp(11.5px,1vw,14px)] font-semibold text-[#2ECC71] shadow-[0_0_15px_rgba(46,204,113,.1)] transition hover:bg-[#2ECC71]/20 cursor-pointer",
+                className: "mt-2 flex w-full items-center justify-center gap-2 rounded-[10px] border border-purple-500/40 bg-purple-500/10 py-[clamp(10px,1.15vw,16px)] text-[clamp(11.5px,1vw,14px)] font-semibold text-[#A855F7] shadow-[0_0_15px_rgba(168,85,247,.2)] transition hover:bg-[#A855F7]/20 cursor-pointer",
                 children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(Globe, { size: 16 }),
                   "Sayt orqali kirish (Web)"
@@ -79291,7 +79467,7 @@ function LauncherScreen() {
             /* @__PURE__ */ jsxRuntimeExports.jsxs(
               "div",
               {
-                className: `flex items-center gap-[clamp(8px,0.78vw,12px)] rounded-[10px] border bg-black/[.22] px-[clamp(10px,1.09vw,16px)] py-[clamp(9px,1.09vw,16px)] transition focus-within:border-[#2ECC71] focus-within:shadow-[0_0_0_3px_rgba(46,204,113,.12)] ${nickSubmitted && !profile2?.minecraft_nick && !username.trim() ? "border-red-500/50" : "border-white/[.12]"}`,
+                className: `flex items-center gap-[clamp(8px,0.78vw,12px)] rounded-[10px] border bg-black/[.22] px-[clamp(10px,1.09vw,16px)] py-[clamp(9px,1.09vw,16px)] transition focus-within:border-[#A855F7] focus-within:shadow-[0_0_0_3px_rgba(168,85,247,.25)] ${nickSubmitted && !profile2?.minecraft_nick && !username.trim() ? "border-red-500/50" : "border-white/[.12]"}`,
                 children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(User, { size: 16, className: "h-[clamp(13px,1.17vw,18px)] w-[clamp(13px,1.17vw,18px)] shrink-0 text-[#AEB8B3]" }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -79306,7 +79482,7 @@ function LauncherScreen() {
                       className: `${fieldBase} disabled:cursor-not-allowed disabled:opacity-80`
                     }
                   ),
-                  !!profile2?.minecraft_nick && /* @__PURE__ */ jsxRuntimeExports.jsx(Lock, { size: 14, className: "shrink-0 text-[#2ECC71]" })
+                  !!profile2?.minecraft_nick && /* @__PURE__ */ jsxRuntimeExports.jsx(Lock, { size: 14, className: "shrink-0 text-[#A855F7]" })
                 ]
               }
             ),
@@ -79340,7 +79516,7 @@ function LauncherScreen() {
                     ]
                   }
                 ),
-                versionOpen && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute bottom-full left-0 z-40 mb-2 w-full rounded-[10px] border border-white/[.12] bg-[#0A0D0C]/95 p-2 shadow-xl backdrop-blur-xl", children: [
+                versionOpen && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute bottom-full left-0 z-40 mb-2 w-full rounded-[10px] border border-white/[.12] bg-[#0D0B18]/95 p-2 shadow-xl backdrop-blur-xl", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-2 flex items-center gap-2 rounded-[8px] border border-white/[.08] bg-black/30 px-3 py-2", children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx(Search, { size: 13, className: "shrink-0 text-[#9FA9A4]" }),
                     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -79369,7 +79545,7 @@ function LauncherScreen() {
                           setVersionOpen(false);
                           setVersionQuery("");
                         },
-                        className: `flex w-full items-center justify-between rounded-[8px] px-3 py-2 text-left text-sm transition hover:bg-white/[.08] ${v2.id === selected.id ? "text-[#2ECC71]" : "text-[#EDF1EF]"}`,
+                        className: `flex w-full items-center justify-between rounded-[8px] px-3 py-2 text-left text-sm transition hover:bg-white/[.08] ${v2.id === selected.id ? "text-[#A855F7]" : "text-[#EDF1EF]"}`,
                         children: entryLabel(v2)
                       },
                       v2.id
@@ -79415,12 +79591,12 @@ function LauncherScreen() {
               type: "button",
               onClick: () => void handlePlay(),
               disabled: running,
-              className: "relative mt-[clamp(10px,1.25vw,18px)] flex w-full items-center justify-center overflow-hidden rounded-[10px] bg-[#21B45E] py-[clamp(13px,1.56vw,22px)] text-[clamp(12px,1.17vw,17px)] font-bold tracking-[.08em] text-white shadow-[0_10px_30px_rgba(33,180,94,.26)] transition hover:bg-[#29C96C] hover:shadow-[0_10px_36px_rgba(33,180,94,.36)] disabled:cursor-not-allowed disabled:opacity-90",
+              className: "relative mt-[clamp(10px,1.25vw,18px)] flex w-full items-center justify-center overflow-hidden rounded-[12px] bg-gradient-to-r from-[#7C3AED] to-[#9333EA] py-[clamp(13px,1.56vw,22px)] text-[clamp(12px,1.17vw,17px)] font-bold tracking-[.08em] text-white shadow-[0_10px_30px_rgba(124,58,237,.38)] transition hover:from-[#8B5CF6] hover:to-[#A855F7] hover:shadow-[0_10px_36px_rgba(168,85,247,.5)] disabled:cursor-not-allowed disabled:opacity-90",
               children: [
                 running && /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "span",
                   {
-                    className: "absolute inset-y-0 left-0 bg-[#29C96C] transition-[width]",
+                    className: "absolute inset-y-0 left-0 bg-[#C084FC] transition-[width]",
                     style: { width: `${Math.max(percent, 4)}%` }
                   }
                 ),
@@ -79490,14 +79666,14 @@ function LauncherScreen() {
         backLabel: profileState.backLabel,
         onBack: closeProfile,
         onOpenSkins: () => {
-          setActiveTab("skins");
-          closeProfile();
+          void handleSkinUpload();
         },
         onRequestLogin: () => {
           closeProfile();
           setActiveTab("home");
           setIsAuthMode(true);
-        }
+        },
+        currentSkinUrl: customSkinUrl
       }
     ) }),
     !profileState && !chatOpen && shopOpen && /* @__PURE__ */ jsxRuntimeExports.jsx(ScreenOverlay, { className: "z-20", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
