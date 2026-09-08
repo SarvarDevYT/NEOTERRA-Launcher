@@ -58362,11 +58362,42 @@ async function syncSkinApiEntry(nick, skinId, skinUrl) {
 }
 const LIST_COLUMNS$1 = "id, slug, tag, title, summary, cover_url, is_pinned, published_at";
 async function fetchNewsList() {
+  try {
+    const res = await fetch("https://site.neoterra.uz/api/launcher/news");
+    if (res.ok) {
+      const json = await res.json();
+      if (json.success && Array.isArray(json.news) && json.news.length > 0) {
+        return json.news.map((item, index) => {
+          const slug = item.id || ("news-" + index);
+          const lines = (item.content || "").split("\n").filter(Boolean);
+          const summary = lines[0] || item.title;
+          return {
+            id: item.id || slug,
+            slug: slug,
+            tag: "SERVER",
+            title: item.title || "NeoTerra Yangiligi",
+            summary: summary,
+            body: item.content || "",
+            cover_url: item.image || null,
+            is_pinned: index === 0,
+            published_at: item.date || new Date().toISOString()
+          };
+        });
+      }
+    }
+  } catch (e) {
+    console.error("Website news fetch failed, trying supabase fallback:", e);
+  }
   const { data, error } = await supabase.from("news").select(LIST_COLUMNS$1).eq("is_published", true).order("is_pinned", { ascending: false }).order("published_at", { ascending: false }).limit(30);
   if (error) throw new Error(error.message);
   return data ?? [];
 }
 async function fetchNewsArticle(slug) {
+  try {
+    const list = await fetchNewsList();
+    const found = list.find((n) => n.slug === slug || n.id === slug);
+    if (found) return found;
+  } catch (e) {}
   const { data, error } = await supabase.from("news").select("*").eq("slug", slug).eq("is_published", true).maybeSingle();
   if (error) throw new Error(error.message);
   return data;
@@ -74028,7 +74059,7 @@ function YoutubeIcon() {
 }
 const SOCIAL_LINKS$1 = [
   { key: "telegram", labelKey: "community.telegramChannel", handle: "@NeoTerraAdmin", url: "https://t.me/NeoTerraAdmin", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(TelegramIcon, {}), color: "#229ED9" },
-  { key: "website", labelKey: "community.officialSite", handle: "neoterra.uz", url: "https://neoterra.uz/", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Globe, { size: 18, strokeWidth: 1.7 }), color: tokens.emeraldNav },
+  { key: "website", labelKey: "community.officialSite", handle: "site.neoterra.uz", url: "https://site.neoterra.uz/", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Globe, { size: 18, strokeWidth: 1.7 }), color: tokens.emeraldNav },
   { key: "creatorClub", labelKey: "Creator Club", handle: "youtubeclub.uz", url: "https://www.youtubeclub.uz/", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { size: 18, strokeWidth: 1.7 }), color: tokens.gold },
   { key: "discord", labelKey: "Discord", handle: "discord.gg", url: "https://discord.gg/utxmTFFr7", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(DiscordIcon, {}), color: "#5865F2" },
   { key: "instagram", labelKey: "Instagram", handle: "@NeoTerraAdmin", url: "https://t.me/NeoTerraServer", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(InstagramIcon, {}), color: "#E1306C" },
