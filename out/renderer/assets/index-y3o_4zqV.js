@@ -34042,7 +34042,7 @@ const common = {
     ru: "Такого аккаунта нет"
   },
   balance: { uz: "Balansingiz", en: "Your balance", ru: "Ваш баланс" },
-  insufficientHbc: { uz: "NTC yetarli emas", en: "Not enough NTC", ru: "Недостаточно NTC" },
+  insufficientHbc: { uz: "Mablag' yetarli emas", en: "Insufficient balance", ru: "Недостаточно средств" },
   sending: { uz: "Yuborilmoqda...", en: "Sending...", ru: "Отправка..." },
   purchased: { uz: "Sotib olindi", en: "Purchased", ru: "Куплено" }
 };
@@ -34057,9 +34057,9 @@ const home = {
   },
   mcmodhubAccount: { uz: "NeoTerra akkaunti", en: "NeoTerra account", ru: "Аккаунт NeoTerra" },
   savesHbcSkins: {
-    uz: "NTC, skin va yutuqlaringiz saqlanadi",
-    en: "Your NTC, skins and achievements are saved",
-    ru: "Ваши NTC, скины и достижения сохраняются"
+    uz: "Balans, skin va yutuqlaringiz saqlanadi",
+    en: "Your balance, skins and achievements are saved",
+    ru: "Ваш баланс, скины и достижения сохраняются"
   },
   or: { uz: "yoki", en: "or", ru: "или" },
   asGuest: { uz: "Mehmon sifatida", en: "As a guest", ru: "Как гость" },
@@ -71839,7 +71839,7 @@ const ItemCard = reactExports.memo(function ItemCard2({
           style: { border: `1px solid ${tokens.hairline}`, color: "#E8B04B" },
           children: [
             item.priceHbc.toLocaleString(numberLocale),
-            " NTC"
+            " UZS"
           ]
         }
       );
@@ -73418,7 +73418,7 @@ function ModelDetailScreen({ id: id2, owned, installedAssets, onBack, onBuy }) {
         ] }) : soldOut ? /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[15px] font-semibold", style: { color: tokens.textDim }, children: "Tugadi" }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "font-mono text-[30px] font-bold", style: { color: "#E8B04B" }, children: [
             priceHbc.toLocaleString(numberLocale),
-            " NTC"
+            " UZS"
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             "button",
@@ -73806,13 +73806,13 @@ function PurchaseConfirmDialog({ target, balance, loading: loading2, error, onCo
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[17px] font-semibold", style: { color: tokens.text }, children: target.name }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "mt-1 font-mono text-[24px] font-bold", style: { color: "#E8B04B" }, children: [
           target.priceHbc.toLocaleString(numberLocale),
-          " NTC"
+          " UZS"
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "mt-1 text-[12.5px]", style: { color: tokens.textDim }, children: [
           t2("common.balance"),
           ": ",
           balance.toLocaleString(numberLocale),
-          " NTC"
+          " UZS"
         ] }),
         error && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-3", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Alert, { kind: "error", children: error }) }),
         insufficient && !error ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-4 flex flex-col gap-2", children: [
@@ -74194,7 +74194,7 @@ function CommunitySection({ isActive }) {
           " ",
           "— O'zbek Minecraft hamjamiyati uchun rasmiy launcher, modlar va xaritalar katalogi, skinlar kutubxonasi, HubTV va Creator Club. Barcha kontent o'zbek tilida, bir bosishda o'rnatiladi."
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[13px] leading-[1.7]", style: { color: tokens.text2 }, children: "Launcher Microsoft loginini talab qilmaydi — NeoTerra akkaunti yoki mehmon rejimi yetarli. NTC tangalar, skin va yutuqlaringiz akkauntga bog'lanib saqlanadi. Loyiha jamoasi kontentni saralaydi va serverlarni boshqaradi." })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[13px] leading-[1.7]", style: { color: tokens.text2 }, children: "Launcher Microsoft loginini talab qilmaydi — NeoTerra akkaunti yoki mehmon rejimi yetarli. Balans, skin va yutuqlaringiz akkauntga bog'lanib saqlanadi. Loyiha jamoasi kontentni saralaydi va serverlarni boshqaradi." })
       ] })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-[26px]", children: [
@@ -76265,7 +76265,7 @@ function ProfileScreen({ target, backLabel, onBack, onOpenSkins, onRequestLogin,
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-[10px] p-4", style: { border: `1px solid ${tokens.hairline}`, background: tokens.surface }, children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "font-mono text-[18px] font-bold", style: { color: tokens.gold }, children: [
                     (ownData.hbc ?? 0).toLocaleString(numberLocale),
-                    " NTC"
+                    " UZS"
                   ] }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-[11px]", style: { color: tokens.textDim }, children: "Balans" })
                 ] }),
@@ -79106,7 +79106,7 @@ function LauncherScreen() {
                       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "m-0 truncate text-[13px] font-semibold text-white", children: profile2.username || profile2.minecraft_nick || profile2.email }),
                       /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "m-0 font-mono text-[11px]", style: { color: tokens.gold }, children: [
                         (profile2.hbc ?? 0).toLocaleString(numberLocale),
-                        " NTC"
+                        " UZS"
                       ] })
                     ] })
                   ]
