@@ -25,7 +25,8 @@
     },
     "files": [
       "out/**/*",
-      "resources/**/*"
+      "resources/**/*",
+      "public/**/*"
     ],
     "win": {
       "target": "nsis",
