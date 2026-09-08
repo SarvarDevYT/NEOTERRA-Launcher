@@ -58363,34 +58363,48 @@ async function syncSkinApiEntry(nick, skinId, skinUrl) {
 const LIST_COLUMNS$1 = "id, slug, tag, title, summary, cover_url, is_pinned, published_at";
 async function fetchNewsList() {
   try {
-    const res = await fetch("https://site.neoterra.uz/api/launcher/news");
-    if (res.ok) {
-      const json = await res.json();
-      if (json.success && Array.isArray(json.news) && json.news.length > 0) {
-        return json.news.map((item, index) => {
-          const slug = item.id || ("news-" + index);
-          const lines = (item.content || "").split("\n").filter(Boolean);
-          const summary = lines[0] || item.title;
-          return {
-            id: item.id || slug,
-            slug: slug,
-            tag: "SERVER",
-            title: item.title || "NeoTerra Yangiligi",
-            summary: summary,
-            body: item.content || "",
-            cover_url: item.image || null,
-            is_pinned: index === 0,
-            published_at: item.date || new Date().toISOString()
-          };
-        });
-      }
+    let json = null;
+    if (window.launcher && typeof window.launcher.getNews === "function") {
+      json = await window.launcher.getNews();
+    }
+    if (!json || !json.success) {
+      const res = await fetch("https://site.neoterra.uz/api/launcher/news");
+      if (res.ok) json = await res.json();
+    }
+    if (json && json.success && Array.isArray(json.news) && json.news.length > 0) {
+      return json.news.map((item, index) => {
+        const slug = item.id || ("news-" + index);
+        const lines = (item.content || "").split("\n").filter(Boolean);
+        const summary = lines[0] || item.title;
+        return {
+          id: item.id || slug,
+          slug: slug,
+          tag: "SERVER",
+          title: item.title || "NeoTerra Yangiligi",
+          summary: summary,
+          body: item.content || "",
+          cover_url: item.image || null,
+          is_pinned: index === 0,
+          published_at: item.date || new Date().toISOString()
+        };
+      });
     }
   } catch (e) {
-    console.error("Website news fetch failed, trying supabase fallback:", e);
+    console.error("News fetch error:", e);
   }
-  const { data, error } = await supabase.from("news").select(LIST_COLUMNS$1).eq("is_published", true).order("is_pinned", { ascending: false }).order("published_at", { ascending: false }).limit(30);
-  if (error) throw new Error(error.message);
-  return data ?? [];
+  return [
+    {
+      id: "neoterra-welcome",
+      slug: "neoterra-welcome",
+      tag: "SERVER",
+      title: "NeoTerra Serveriga Xush Kelibsiz! 🎮",
+      summary: "NeoTerra - O'zbekistonning eng yaxshi Minecraft serveri! Biz bilan o'ynang va sarguzashtlarga tayyorlaning.",
+      body: "NeoTerra - O'zbekistonning eng yaxshi Minecraft serveri! Biz bilan o'ynang va sarguzashtlarga tayyorlaning.\n\nServer manzili: play.neoterra.uz\nVersiya: 1.20+\n\nKo'p qiziqarli tadbirlar va yangiliklar kutilmoqda!",
+      cover_url: null,
+      is_pinned: true,
+      published_at: "2026-06-22T12:44:47.017Z"
+    }
+  ];
 }
 async function fetchNewsArticle(slug) {
   try {
@@ -58398,9 +58412,17 @@ async function fetchNewsArticle(slug) {
     const found = list.find((n) => n.slug === slug || n.id === slug);
     if (found) return found;
   } catch (e) {}
-  const { data, error } = await supabase.from("news").select("*").eq("slug", slug).eq("is_published", true).maybeSingle();
-  if (error) throw new Error(error.message);
-  return data;
+  return {
+    id: slug,
+    slug: slug,
+    tag: "SERVER",
+    title: "NeoTerra Yangiligi",
+    summary: "NeoTerra rasmiy yangiliklari",
+    body: "NeoTerra - O'zbekistonning eng yaxshi Minecraft serveri!\n\nServer manzili: play.neoterra.uz",
+    cover_url: null,
+    is_pinned: false,
+    published_at: new Date().toISOString()
+  };
 }
 const UZ_MONTHS$2 = [
   "yanvar",

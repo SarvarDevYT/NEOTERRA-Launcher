@@ -2403,6 +2403,15 @@ function registerIpc(getWindow) {
   if (electron.app.isPackaged) {
     startUpdateWatch();
   }
+  electron.ipcMain.handle("system:get-news", async () => {
+    try {
+      const res = await fetch("https://site.neoterra.uz/api/launcher/news");
+      if (!res.ok) return { success: false };
+      return await res.json();
+    } catch (err) {
+      return { success: false, error: String(err) };
+    }
+  });
   electron.ipcMain.handle(IPC.SYSTEM_INFO, async () => {
     try {
       const totalRamGb = Math.round(os.totalmem() / 1024 ** 3);
@@ -2937,6 +2946,7 @@ async function createWindow() {
     // shu yerda ko'rsatilishi kerak, aks holda Electron'ning standart belgichasi chiqaveradi.
     icon: path.join(__dirname, "../../resources/icon.png"),
     webPreferences: {
+      webSecurity: false,
       preload: path.join(__dirname, "../preload/index.js"),
       sandbox: false,
       // Xavfsizlik: renderer'da Node yo'q, hamma narsa preload orqali

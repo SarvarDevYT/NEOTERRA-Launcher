@@ -77,6 +77,7 @@ const launcherApi = {
       oynaning o'z tugmalari chizilmasligi kerak, aks holda tizimning "svetofor" tugmalari
       bilan ikki marta takrorlanardi). */
   platform: process.platform,
+  getNews: () => electron.ipcRenderer.invoke("system:get-news"),
   getSystemInfo: () => electron.ipcRenderer.invoke(IPC.SYSTEM_INFO),
   launch: (req) => electron.ipcRenderer.invoke(IPC.LAUNCH, req),
   cancel: () => electron.ipcRenderer.invoke(IPC.CANCEL),
