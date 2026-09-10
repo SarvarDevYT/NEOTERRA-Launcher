@@ -33706,15 +33706,15 @@ function Alert({ kind = "error", children }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `alert alert-${kind}`, role: kind === "error" ? "alert" : "status", children });
 }
 const tokens = {
-  text: "#F3F4F6",
-  text2: "#C4B5FD",
-  textDim: "#94A3B8",
-  label: "#A78BFA",
-  hairline: "rgba(255,255,255,.10)",
-  surface: "rgba(255,255,255,.05)",
-  surface2: "rgba(255,255,255,.08)",
+  text: "#FFFFFF",
+  text2: "#EDE9FE",
+  textDim: "#CBD5E1",
+  label: "#C084FC",
+  hairline: "rgba(255,255,255,0.18)",
+  surface: "rgba(22,17,40,0.72)",
+  surface2: "rgba(255,255,255,0.10)",
   /** NeoTerra suyuq shisha obsidian panellari */
-  cardSurface: "rgba(18,14,32,.65)",
+  cardSurface: "rgba(18,14,34,0.78)",
   emerald: "#7C3AED",
   emeraldNav: "#A855F7",
   ground: "#07060B",
@@ -33894,7 +33894,8 @@ const common = {
     mods: { uz: "Modlar", en: "Mods", ru: "Моды" },
     maps: { uz: "Hamjamiyat", en: "Community", ru: "Сообщество" },
     skins: { uz: "Skinlar", en: "Skins", ru: "Скины" },
-    hubtv: { uz: "HubTV", en: "HubTV", ru: "HubTV" }
+    hubtv: { uz: "HubTV", en: "HubTV", ru: "HubTV" },
+    mobile: { uz: "📱 Mobil Launcher", en: "📱 Mobile Launcher", ru: "📱 Мобильный лаунчер" }
   },
   /** "Modlar" nav elementi ochadigan menyu - Modrinth katalogining bo'limlari.
       Kalitlar `ModrinthProjectType` qiymatlari bilan AYNAN bir xil bo'lishi shart. */
@@ -35022,9 +35023,45 @@ function SettingsDialog({
                           style: { color: tokens.text },
                           children: t2("settings.open")
                         }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "button",
+                        {
+                          type: "button",
+                          onClick: async () => {
+                            if (window.launcher.resetInstallPath) {
+                              const r = await window.launcher.resetInstallPath();
+                              if (r && r.ok) onInstallPathChanged();
+                            }
+                          },
+                          className: `h-9 flex-1 text-[12px] font-semibold ${SUBTLE_BTN}`,
+                          style: { color: tokens.textDim },
+                          children: lang === "ru" ? "Сброс" : lang === "en" ? "Reset" : "Standart"
+                        }
                       )
                     ] }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-[11px] leading-snug", style: { color: tokens.textDim }, children: t2("settings.installFolderHint") })
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-[11px] leading-snug", style: { color: tokens.textDim }, children: t2("settings.installFolderHint") }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "div",
+                      {
+                        className: "mt-3 pt-3",
+                        style: { borderTop: `1px solid ${tokens.hairline || "rgba(255,255,255,0.08)"}` },
+                        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          ToggleRow,
+                          {
+                            label: lang === "ru" ? "Отдельная папка для каждой версии" : lang === "en" ? "Separate folder for each version" : "Har bir versiya uchun alohida papka",
+                            hint: lang === "ru" ? "Изолировать моды, миры и настройки для каждой версии (home/<версия>, как в TL Legacy)." : lang === "en" ? "Isolate mods, saves, and configs for each version (home/<version>, like TL Legacy)." : "Har bir versiya uchun alohida modlar va dunyolar papkasi (home/<versiya>) yaratiladi (TL Legacy kabi).",
+                            on: system?.separateVersionDirs !== false,
+                            onClick: async () => {
+                              if (window.launcher.setSeparateVersionDirs) {
+                                await window.launcher.setSeparateVersionDirs(system?.separateVersionDirs === false);
+                                onInstallPathChanged();
+                              }
+                            }
+                          }
+                        )
+                      }
+                    )
                   ] })
                 ] }),
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-5", children: [
@@ -57986,6 +58023,21 @@ function AuthProvider({ children }) {
     }, 18e4);
     return () => clearInterval(interval);
   }, [session]);
+  const signInElyBy = reactExports.useCallback(async (username, password) => {
+    if (!window.launcher?.elybyLogin) throw new Error("Ely.by moduli yuklanmadi");
+    const res = await window.launcher.elybyLogin(username, password);
+    if (!res.ok) throw new Error(res.error || "Ely.by autentifikatsiya xatosi");
+    const u = res.user;
+    setSession({ user: { id: u.id, email: u.email } });
+    setProfile(u);
+    localStorage.setItem("neoterra_profile", JSON.stringify(u));
+    localStorage.setItem("neoterra_last_username", u.minecraft_nick || u.username);
+    if (u.avatar_url) localStorage.setItem("neoterra_active_skin", u.avatar_url);
+    if (window.launcher?.saveStoredAccount) {
+      window.launcher.saveStoredAccount({ profile: u, lastNick: u.minecraft_nick || u.username, customSkinUrl: u.avatar_url });
+    }
+    return u;
+  }, []);
   const signIn = reactExports.useCallback(
     async (identifier, password) => {
       const res = await callNeoTerraApi("/api/launcher/auth/login", { identifier, password });
@@ -58013,8 +58065,25 @@ function AuthProvider({ children }) {
           window.launcher.saveStoredAccount({ profile: p, token: res.data.token, lastNick: p.minecraft_nick || p.username, customSkinUrl: localStorage.getItem("neoterra_active_skin") || null });
         }
         return;
-      } else if (res.data && res.data.message) {
+      } else if (res.data && res.data.message && !identifier.toLowerCase().includes('@ely.by')) {
         throw new Error(res.data.message);
+      }
+      if (window.launcher?.elybyLogin) {
+        try {
+          const elyRes = await window.launcher.elybyLogin(identifier, password);
+          if (elyRes.ok && elyRes.user) {
+            const u = elyRes.user;
+            setSession({ user: { id: u.id, email: u.email } });
+            setProfile(u);
+            localStorage.setItem("neoterra_profile", JSON.stringify(u));
+            localStorage.setItem("neoterra_last_username", u.minecraft_nick || u.username);
+            if (u.avatar_url) localStorage.setItem("neoterra_active_skin", u.avatar_url);
+            if (window.launcher?.saveStoredAccount) {
+              window.launcher.saveStoredAccount({ profile: u, lastNick: u.minecraft_nick || u.username, customSkinUrl: u.avatar_url });
+            }
+            return;
+          }
+        } catch (e) {}
       }
       const { data, error } = await supabase.auth.signInWithPassword({
         email: identifier.trim().toLowerCase(),
@@ -58098,7 +58167,9 @@ function AuthProvider({ children }) {
       if (saved) {
         const p = JSON.parse(saved);
         const token = localStorage.getItem("neoterra_token") || "";
-        const query = p.username ? "nickname=" + encodeURIComponent(p.username) : "";
+        const nick = p.username || p.minecraft_nick || "";
+        const uid = p.id || "";
+        const query = (uid ? "uid=" + encodeURIComponent(uid) + "&" : "") + (nick ? "nickname=" + encodeURIComponent(nick) : "");
         for (const base of NEOTERRA_API_BASES) {
           try {
             const res = await fetch(base + "/api/launcher/profile?" + query, {
@@ -58110,7 +58181,7 @@ function AuthProvider({ children }) {
               const u = data.user;
               const updated = {
                 ...p,
-                hbc: Number(u.balance ?? p.hbc),
+                hbc: Number(u.balance !== void 0 ? u.balance : p.hbc),
                 role: u.role || p.role,
                 avatar_url: u.skinUrl || p.avatar_url
               };
@@ -58127,9 +58198,19 @@ function AuthProvider({ children }) {
       setProfile(await loadProfile(session.user.id));
     } catch (e) {}
   }, [session, loadProfile]);
+  reactExports.useEffect(() => {
+    void refreshProfile();
+    const interval = setInterval(() => void refreshProfile(), 25000);
+    const onFocus = () => void refreshProfile();
+    window.addEventListener("focus", onFocus);
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener("focus", onFocus);
+    };
+  }, [refreshProfile]);
   const value = reactExports.useMemo(
-    () => ({ session, profile: profile2, initializing, signIn, signUp, signOut, refreshProfile }),
-    [session, profile2, initializing, signIn, signUp, signOut, refreshProfile]
+    () => ({ session, profile: profile2, initializing, signIn, signInElyBy, signUp, signOut, refreshProfile }),
+    [session, profile2, initializing, signIn, signInElyBy, signUp, signOut, refreshProfile]
   );
   return /* @__PURE__ */ jsxRuntimeExports.jsx(AuthContext.Provider, { value, children });
 }
@@ -58224,24 +58305,371 @@ const TAG_LABELS = {
   ice: "Muz",
   fire: "Olov"
 };
+
+const DEFAULT_SKINS = [
+  {
+    id: "skin-cyber-knight",
+    slug: "cyber-knight",
+    name: "Cyber Knight",
+    model_type: "classic",
+    tags: ["kiber", "jangchi", "binafsha", "neon"],
+    skin_url: "https://minotar.net/skin/Cyber",
+    uses: 1420,
+    is_published: true,
+    created_at: "2026-07-15T10:00:00Z",
+    description: "NeoTerra kiber jangchisi, binafsha neon zirh va qora qoplama."
+  },
+  {
+    id: "skin-shadow-ninja",
+    slug: "shadow-ninja",
+    name: "Shadow Ninja",
+    model_type: "classic",
+    tags: ["ninja", "qora", "anime", "yashirin"],
+    skin_url: "https://minotar.net/skin/Ninja",
+    uses: 2310,
+    is_published: true,
+    created_at: "2026-07-20T12:00:00Z",
+    description: "Tungi sharpaday harakatlanuvchi afsonaviy soya ninjasi."
+  },
+  {
+    id: "skin-valkyrie",
+    slug: "frost-valkyrie",
+    name: "Frost Valkyrie",
+    model_type: "slim",
+    tags: ["qiz", "muz", "jangchi", "oq"],
+    skin_url: "https://minotar.net/skin/Valkyrie",
+    uses: 1890,
+    is_published: true,
+    created_at: "2026-07-22T14:00:00Z",
+    description: "Muzli tog'lar jangchisi, oq va ko'k rangli nafis qiz skini."
+  },
+  {
+    id: "skin-samurai",
+    slug: "crimson-samurai",
+    name: "Crimson Samurai",
+    model_type: "classic",
+    tags: ["samuray", "qizil", "qilichboz"],
+    skin_url: "https://minotar.net/skin/Samurai",
+    uses: 1650,
+    is_published: true,
+    created_at: "2026-07-25T15:00:00Z",
+    description: "Qadimgi samuraylar sharafi va qizil zirhli jangchi."
+  },
+  {
+    id: "skin-demon",
+    slug: "demon-hunter",
+    name: "Demon Hunter",
+    model_type: "classic",
+    tags: ["demon", "qora", "qizil", "dahshatli"],
+    skin_url: "https://minotar.net/skin/Demon",
+    uses: 2780,
+    is_published: true,
+    created_at: "2026-08-01T09:00:00Z",
+    description: "Yerosti dunyosining qudratli ovchisi va qora libos."
+  },
+  {
+    id: "skin-ghost",
+    slug: "phantom-ghost",
+    name: "Phantom Ghost",
+    model_type: "slim",
+    tags: ["sharpalar", "oq", "yashirin", "sehrli"],
+    skin_url: "https://minotar.net/skin/Ghost",
+    uses: 1200,
+    is_published: true,
+    created_at: "2026-08-03T11:00:00Z",
+    description: "Oq sharpasimon nafis va sirli ko'rinish."
+  },
+  {
+    id: "skin-knight",
+    slug: "iron-knight",
+    name: "Iron Knight",
+    model_type: "classic",
+    tags: ["ritzar", "temir", "sovut", "himoya"],
+    skin_url: "https://minotar.net/skin/Knight",
+    uses: 1980,
+    is_published: true,
+    created_at: "2026-08-05T13:00:00Z",
+    description: "Og'ir po'lat sovutli o'rta asr ritsari."
+  },
+  {
+    id: "skin-assassin",
+    slug: "hooded-assassin",
+    name: "Hooded Assassin",
+    model_type: "classic",
+    tags: ["qotil", "hoodie", "qora", "ninja"],
+    skin_url: "https://minotar.net/skin/Assassin",
+    uses: 2150,
+    is_published: true,
+    created_at: "2026-08-08T16:00:00Z",
+    description: "Kapyushonli sirli va chaqqon qotil."
+  },
+  {
+    id: "skin-wizard",
+    slug: "ender-wizard",
+    name: "Ender Wizard",
+    model_type: "classic",
+    tags: ["sehrgar", "binafsha", "ender", "magik"],
+    skin_url: "https://minotar.net/skin/Wizard",
+    uses: 1430,
+    is_published: true,
+    created_at: "2026-08-10T17:00:00Z",
+    description: "Ender olami kuchiga ega binafsharang sehrgar."
+  },
+  {
+    id: "skin-archer",
+    slug: "forest-archer",
+    name: "Forest Archer",
+    model_type: "slim",
+    tags: ["kamondan", "yashil", "o'rmon", "mergan"],
+    skin_url: "https://minotar.net/skin/Archer",
+    uses: 1110,
+    is_published: true,
+    created_at: "2026-08-12T18:00:00Z",
+    description: "Yashil o'rmon mergani va chaqqon kamonchi."
+  },
+  {
+    id: "skin-steve",
+    slug: "steve-original",
+    name: "Steve (Klassik)",
+    model_type: "classic",
+    tags: ["klassik", "odatiy", "boshlang'ich"],
+    skin_url: "https://minotar.net/skin/Steve",
+    uses: 5400,
+    is_published: true,
+    created_at: "2026-08-01T00:00:00Z",
+    description: "Afsonaviy Minecraft Steve — har bir o'yinchining birinchi qahramoni."
+  },
+  {
+    id: "skin-alex",
+    slug: "alex-original",
+    name: "Alex (Klassik)",
+    model_type: "slim",
+    tags: ["klassik", "odatiy", "qiz", "yashil"],
+    skin_url: "https://minotar.net/skin/Alex",
+    uses: 4800,
+    is_published: true,
+    created_at: "2026-08-01T00:00:00Z",
+    description: "Klassik Alex — nafis yashil kiyim va to'q sariq sochli sayohatchi."
+  },
+  {
+    id: "skin-dream",
+    slug: "dream-skin",
+    name: "Dream Smile",
+    model_type: "classic",
+    tags: ["mashhur", "yashil", "tabassum"],
+    skin_url: "https://minotar.net/skin/Dream",
+    uses: 6200,
+    is_published: true,
+    created_at: "2026-08-02T10:00:00Z",
+    description: "Speedrun afsonasi Dream'ning mashhur yashil skini."
+  },
+  {
+    id: "skin-technoblade",
+    slug: "technoblade-crown",
+    name: "Technoblade (Toj)",
+    model_type: "classic",
+    tags: ["afsona", "qirol", "toj", "qizil"],
+    skin_url: "https://minotar.net/skin/Technoblade",
+    uses: 7100,
+    is_published: true,
+    created_at: "2026-08-02T11:00:00Z",
+    description: "Technoblade Never Dies — toj kiygan afsonaviy cho'chqa qiroli."
+  },
+  {
+    id: "skin-goku",
+    slug: "goku-saiyan",
+    name: "Goku (Super Saiyan)",
+    model_type: "classic",
+    tags: ["anime", "goku", "jangchi"],
+    skin_url: "https://minotar.net/skin/Goku",
+    uses: 3300,
+    is_published: true,
+    created_at: "2026-08-04T12:00:00Z",
+    description: "Dragon Ball qahramoni Son Goku — qat'iyatli jangchi."
+  },
+  {
+    id: "skin-naruto",
+    slug: "naruto-uzumaki",
+    name: "Naruto Uzumaki",
+    model_type: "classic",
+    tags: ["anime", "naruto", "ninja"],
+    skin_url: "https://minotar.net/skin/Naruto",
+    uses: 3500,
+    is_published: true,
+    created_at: "2026-08-04T13:00:00Z",
+    description: "Konoxa qishlog'ining 7-Hokagesi Naruto Uzumaki."
+  }
+];
+
+const DEFAULT_HUB_VIDEOS = [
+  {
+    id: "vid-caves-cinematic",
+    slug: "caves-and-cliffs-cinematic",
+    title: "Minecraft Caves & Cliffs Shaders Cinematic | 4K",
+    category: "Kinematik",
+    language: "uz",
+    channel_name: "NeoTerra Media",
+    channel_avatar_url: "resources/icon.ico",
+    thumbnail_url: "https://img.youtube.com/vi/bqjAJvIOyKY/hqdefault.jpg",
+    embed_url: "https://www.youtube.com/watch?v=bqjAJvIOyKY",
+    duration_seconds: 160,
+    views: 48200,
+    is_featured: true,
+    is_published: true,
+    published_at: "2026-08-01T10:00:00Z",
+    description: "Minecraft 1.18 Caves & Cliffs yangilanishining eng yuqori sifatli ultra-realistik shaderli kinematik sayohati. NeoTerra Launcher rasmiy fon videosi."
+  },
+  {
+    id: "vid-dungeons-2",
+    slug: "minecraft-dungeons-2-gameplay",
+    title: "MINECRAFT DUNGEONS II | Rasmiy O'yin Jarayoni Treyleri",
+    category: "Treylerlar",
+    language: "en",
+    channel_name: "Minecraft Rasmiy",
+    channel_avatar_url: "https://minotar.net/avatar/Steve/64",
+    thumbnail_url: "https://img.youtube.com/vi/vBNE3bKMpu8/hqdefault.jpg",
+    embed_url: "https://www.youtube.com/watch?v=vBNE3bKMpu8",
+    duration_seconds: 145,
+    views: 128500,
+    is_featured: true,
+    is_published: true,
+    published_at: "2026-08-10T14:00:00Z",
+    description: "Minecraft Dungeons 2 o'yinining rasmiy gameplay treyleri va yangi sarguzashtlar."
+  },
+  {
+    id: "vid-chaos-cubed",
+    slug: "chaos-cubed-official-trailer",
+    title: "CHAOS CUBED | Minecraft Yangi O'lchami Rasmiy Treyleri",
+    category: "Treylerlar",
+    language: "en",
+    channel_name: "Minecraft Rasmiy",
+    channel_avatar_url: "https://minotar.net/avatar/Alex/64",
+    thumbnail_url: "https://img.youtube.com/vi/jwCKCu3I8tk/hqdefault.jpg",
+    embed_url: "https://www.youtube.com/watch?v=jwCKCu3I8tk",
+    duration_seconds: 110,
+    views: 94200,
+    is_featured: false,
+    is_published: true,
+    published_at: "2026-08-12T16:00:00Z",
+    description: "Minecraftning yangi Chaos Cubed yangilanishi va yangi mexanikalar."
+  },
+  {
+    id: "vid-new-features",
+    slug: "new-features-incoming",
+    title: "Minecraft Yangi Imkoniyatlari: O'rindiqlar va Mebel Qo'shimchalari",
+    category: "Yangiliklar",
+    language: "en",
+    channel_name: "Minecraft",
+    channel_avatar_url: "https://minotar.net/avatar/Notch/64",
+    thumbnail_url: "https://img.youtube.com/vi/Agmsdgyj_8M/hqdefault.jpg",
+    embed_url: "https://www.youtube.com/watch?v=Agmsdgyj_8M",
+    duration_seconds: 98,
+    views: 76300,
+    is_featured: false,
+    is_published: true,
+    published_at: "2026-08-15T18:00:00Z",
+    description: "Minecraftga kelayotgan yangi xususiyatlar, o'tirish mexanikasi va mebellar."
+  },
+  {
+    id: "vid-minecraft-classic-trailer",
+    slug: "minecraft-classic-trailer",
+    title: "Minecraft Afsonaviy Rasmiy Treyleri (Klassik)",
+    category: "Treylerlar",
+    language: "uz",
+    channel_name: "Dennis Vareide / Mojang",
+    channel_avatar_url: "https://minotar.net/avatar/Steve/64",
+    thumbnail_url: "https://img.youtube.com/vi/MmB9b5njVbA/hqdefault.jpg",
+    embed_url: "https://www.youtube.com/watch?v=MmB9b5njVbA",
+    duration_seconds: 104,
+    views: 165000000,
+    is_featured: true,
+    is_published: true,
+    published_at: "2026-08-01T00:00:00Z",
+    description: "Dunyo bo'ylab 165 milliondan ortiq ko'rilgan barcha zamonlarning eng mashhur Minecraft treyleri."
+  },
+  {
+    id: "vid-minecraft-live",
+    slug: "minecraft-live-showcase",
+    title: "Minecraft Live — Katta Yangilanishlar Taqdimoti",
+    category: "Yangiliklar",
+    language: "en",
+    channel_name: "Minecraft Live",
+    channel_avatar_url: "https://minotar.net/avatar/Dream/64",
+    thumbnail_url: "https://img.youtube.com/vi/1DhWXAiNgfQ/hqdefault.jpg",
+    embed_url: "https://www.youtube.com/watch?v=1DhWXAiNgfQ",
+    duration_seconds: 215,
+    views: 840000,
+    is_featured: false,
+    is_published: true,
+    published_at: "2026-08-05T12:00:00Z",
+    description: "Minecraft Live konferensiyasining asosiy lahzalari va kelajakdagi yangilanishlar."
+  },
+  {
+    id: "vid-villager-song",
+    slug: "villager-celebration-song",
+    title: "The 20 Million Villager Song — Minecraft Animatsiyasi",
+    category: "Kinematik",
+    language: "en",
+    channel_name: "Minecraft Official",
+    channel_avatar_url: "https://minotar.net/avatar/Alex/64",
+    thumbnail_url: "https://img.youtube.com/vi/KbnqaIFth70/hqdefault.jpg",
+    embed_url: "https://www.youtube.com/watch?v=KbnqaIFth70",
+    duration_seconds: 130,
+    views: 520000,
+    is_featured: false,
+    is_published: true,
+    published_at: "2026-08-08T15:00:00Z",
+    description: "20 million o'yinchi sharafiga tayyorlangan kulgili va quvnoq Villager animatsion qo'shig'i."
+  },
+  {
+    id: "vid-foul-fowl",
+    slug: "stop-the-foul-fowl",
+    title: "Stop The Foul Fowl — Qiziqarli Minecraft Mini-Film",
+    category: "Kinematik",
+    language: "en",
+    channel_name: "Minecraft",
+    channel_avatar_url: "https://minotar.net/avatar/Steve/64",
+    thumbnail_url: "https://img.youtube.com/vi/jHzr76AAbPk/hqdefault.jpg",
+    embed_url: "https://www.youtube.com/watch?v=jHzr76AAbPk",
+    duration_seconds: 85,
+    views: 310000,
+    is_featured: false,
+    is_published: true,
+    published_at: "2026-08-09T17:00:00Z",
+    description: "Minecraft fermasida yuz bergan qiziq voqealar va tovuqlar isyoni!"
+  }
+];
+
 const LIST_COLUMNS$2 = "id, slug, name, model_type, tags, skin_url, uses";
 async function fetchSkins(sort) {
-  let query = supabase.from("skins").select(LIST_COLUMNS$2).eq("is_published", true);
+  try {
+    let query = supabase.from("skins").select(LIST_COLUMNS$2).eq("is_published", true);
+    if (sort === "all") {
+      query = query.order("name", { ascending: true });
+    } else if (sort === "new") {
+      query = query.order("created_at", { ascending: false });
+    } else {
+      query = query.order("uses", { ascending: false });
+    }
+    const { data, error } = await query.limit(sort === "all" ? 200 : 40);
+    if (!error && data && data.length > 0) return data;
+  } catch (e) {}
+  let list = [...DEFAULT_SKINS];
   if (sort === "all") {
-    query = query.order("name", { ascending: true });
+    list.sort((a, b) => a.name.localeCompare(b.name));
   } else if (sort === "new") {
-    query = query.order("created_at", { ascending: false });
+    list.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
   } else {
-    query = query.order("uses", { ascending: false });
+    list.sort((a, b) => (b.uses || 0) - (a.uses || 0));
   }
-  const { data, error } = await query.limit(sort === "all" ? 200 : 40);
-  if (error) throw new Error(error.message);
-  return data ?? [];
+  return list;
 }
 async function fetchSkinDetail(slug) {
-  const { data, error } = await supabase.from("skins").select("*").eq("slug", slug).eq("is_published", true).maybeSingle();
-  if (error) throw new Error(error.message);
-  return data;
+  try {
+    const { data, error } = await supabase.from("skins").select("*").eq("slug", slug).eq("is_published", true).maybeSingle();
+    if (!error && data) return data;
+  } catch (e) {}
+  return DEFAULT_SKINS.find((s) => s.slug === slug) || null;
 }
 async function fetchSkinUrlById(skinId) {
   const { data, error } = await supabase.from("skins").select("skin_url").eq("id", skinId).maybeSingle();
@@ -58253,9 +58681,32 @@ async function fetchWearers(skinId) {
   if (error) throw new Error(error.message);
   return { items: data ?? [], total: count ?? 0 };
 }
-async function selectSkin(userId, skinId) {
-  const { error } = await supabase.from("profiles").update({ current_skin_id: skinId }).eq("id", userId);
-  if (error) throw new Error(error.message);
+async function selectSkin(userId, skinParam) {
+  const skinId = typeof skinParam === "object" ? skinParam.id : skinParam;
+  const targetSkin = typeof skinParam === "object" ? skinParam : DEFAULT_SKINS.find((s) => s.id === skinId);
+  if (targetSkin?.skin_url) {
+    localStorage.setItem("neoterra_active_skin", targetSkin.skin_url);
+    const saved = localStorage.getItem("neoterra_profile");
+    if (saved) {
+      try {
+        const p = JSON.parse(saved);
+        p.avatar_url = targetSkin.skin_url;
+        p.current_skin_id = skinId;
+        localStorage.setItem("neoterra_profile", JSON.stringify(p));
+        if (p.username) {
+          localStorage.setItem("neoterra_skin_" + p.username.toLowerCase(), targetSkin.skin_url);
+        }
+        if (window.launcher?.saveStoredAccount) {
+          window.launcher.saveStoredAccount({ profile: p, lastNick: p.username || p.minecraft_nick, customSkinUrl: targetSkin.skin_url });
+        }
+      } catch (e) {}
+    }
+    window.dispatchEvent(new Event("storage"));
+  }
+  try {
+    const { error } = await supabase.from("profiles").update({ current_skin_id: skinId }).eq("id", userId);
+    if (error) console.warn("Supabase profile skin update skipped:", error.message);
+  } catch (e) {}
 }
 const DEFAULT_PET_ID = "archmage";
 const PETS = [
@@ -74103,10 +74554,11 @@ function formatNum(n2, locale) {
   return n2 === void 0 ? "—" : n2.toLocaleString(locale);
 }
 const GLASS_STYLE = {
-  background: tokens.surface,
-  border: `1px solid ${tokens.hairline}`,
-  backdropFilter: "blur(14px)",
-  WebkitBackdropFilter: "blur(14px)"
+  background: "linear-gradient(135deg, rgba(28, 22, 52, 0.78) 0%, rgba(15, 11, 30, 0.68) 100%)",
+  border: "1px solid rgba(255, 255, 255, 0.18)",
+  boxShadow: "0 10px 30px -4px rgba(0, 0, 0, 0.5), inset 0 1px 1px 0 rgba(255, 255, 255, 0.22)",
+  backdropFilter: "blur(20px) saturate(190%)",
+  WebkitBackdropFilter: "blur(20px) saturate(190%)"
 };
 function SectionLabel({ children, count }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-3 flex items-center gap-2", children: [
@@ -74208,27 +74660,40 @@ function CommunitySection({ isActive }) {
             onClick: () => openExternal(link2.url),
             onMouseEnter: () => setHoveredLink(link2.key),
             onMouseLeave: () => setHoveredLink(null),
-            className: "flex items-center gap-[14px] rounded-[12px] border p-4 text-left transition hover:-translate-y-[2px]",
+            className: "group relative flex items-center gap-[14px] overflow-hidden rounded-[14px] p-4 text-left transition-all duration-300 hover:-translate-y-1 cursor-pointer",
             style: {
-              background: tokens.surface,
-              backdropFilter: "blur(14px)",
-              WebkitBackdropFilter: "blur(14px)",
-              borderColor: active ? link2.color : "rgba(255,255,255,.10)"
+              background: active
+                ? "linear-gradient(135deg, rgba(38, 28, 68, 0.88) 0%, rgba(20, 15, 40, 0.78) 100%)"
+                : "linear-gradient(135deg, rgba(24, 19, 44, 0.72) 0%, rgba(14, 11, 26, 0.62) 100%)",
+              backdropFilter: "blur(20px) saturate(190%)",
+              WebkitBackdropFilter: "blur(20px) saturate(190%)",
+              border: active ? ("1px solid " + link2.color) : "1px solid rgba(255, 255, 255, 0.18)",
+              boxShadow: active
+                ? ("0 14px 32px -4px " + link2.color + "44, 0 6px 20px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.35)")
+                : "0 8px 24px -4px rgba(0,0,0,0.45), inset 0 1px 1px rgba(255,255,255,0.22)"
             },
             children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", {
+                className: "pointer-events-none absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"
+              }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "span",
                 {
-                  className: "flex h-[38px] w-[38px] shrink-0 items-center justify-center rounded-[10px] transition",
-                  style: { background: tokens.surface2, border: `1px solid ${tokens.hairline}`, color: active ? link2.color : tokens.text2 },
+                  className: "flex h-[40px] w-[40px] shrink-0 items-center justify-center rounded-[11px] transition-all duration-300 group-hover:scale-105",
+                  style: {
+                    background: active ? (link2.color + "26") : "rgba(255, 255, 255, 0.09)",
+                    border: active ? ("1px solid " + link2.color + "66") : "1px solid rgba(255, 255, 255, 0.18)",
+                    color: active ? link2.color : "#FFFFFF",
+                    boxShadow: active ? ("0 0 16px " + link2.color + "55, inset 0 1px 1px rgba(255,255,255,0.3)") : "inset 0 1px 1px rgba(255,255,255,0.2)"
+                  },
                   children: link2.icon
                 }
               ),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "min-w-0 flex-1", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block truncate text-[13.5px] font-semibold", style: { color: tokens.text }, children: t2(link2.labelKey) }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block truncate font-mono text-[11px]", style: { color: tokens.textDim }, children: link2.handle })
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block truncate text-[14px] font-semibold text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]", children: t2(link2.labelKey) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block truncate font-mono text-[11.5px] transition-colors duration-200 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]", style: { color: active ? link2.color : "#CBD5E1" }, children: link2.handle })
               ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUpRight, { size: 15, className: "shrink-0 transition", style: { color: active ? link2.color : tokens.textDim } })
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUpRight, { size: 16, className: "shrink-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5", style: { color: active ? link2.color : "#CBD5E1" } })
             ]
           },
           link2.key
@@ -74315,14 +74780,18 @@ function CommunitySection({ isActive }) {
 }
 const LIST_COLUMNS = "id, slug, title, category, language, channel_name, channel_avatar_url, thumbnail_url, duration_seconds, views, is_featured, published_at";
 async function fetchHubVideos() {
-  const { data, error } = await supabase.from("hub_videos").select(LIST_COLUMNS).eq("is_published", true).order("is_featured", { ascending: false }).order("published_at", { ascending: false }).limit(30);
-  if (error) throw new Error(error.message);
-  return data ?? [];
+  try {
+    const { data, error } = await supabase.from("hub_videos").select(LIST_COLUMNS).eq("is_published", true).order("is_featured", { ascending: false }).order("published_at", { ascending: false }).limit(30);
+    if (!error && data && data.length > 0) return data;
+  } catch (e) {}
+  return DEFAULT_HUB_VIDEOS;
 }
 async function fetchHubVideoDetail(slug) {
-  const { data, error } = await supabase.from("hub_videos").select("*").eq("slug", slug).eq("is_published", true).maybeSingle();
-  if (error) throw new Error(error.message);
-  return data;
+  try {
+    const { data, error } = await supabase.from("hub_videos").select("*").eq("slug", slug).eq("is_published", true).maybeSingle();
+    if (!error && data) return data;
+  } catch (e) {}
+  return DEFAULT_HUB_VIDEOS.find((v) => v.slug === slug) || null;
 }
 async function fetchContinueWatching(userId, catalog) {
   const { data, error } = await supabase.from("hub_video_progress").select("video_id, progress_seconds, completed").eq("user_id", userId).eq("completed", false).gt("progress_seconds", 0).order("updated_at", { ascending: false }).limit(10);
@@ -74344,14 +74813,11 @@ async function fetchContinueWatching(userId, catalog) {
   return result;
 }
 async function fetchNextUp(current) {
-  const { data: sameCategory, error: e1 } = await supabase.from("hub_videos").select(LIST_COLUMNS).eq("is_published", true).eq("category", current.category).neq("id", current.id).order("published_at", { ascending: false }).limit(6);
-  if (e1) throw new Error(e1.message);
-  const result = sameCategory ?? [];
-  if (result.length >= 6) return result;
-  const excludeIds = [current.id, ...result.map((v2) => v2.id)];
-  const { data: filler, error: e2 } = await supabase.from("hub_videos").select(LIST_COLUMNS).eq("is_published", true).not("id", "in", `(${excludeIds.join(",")})`).order("views", { ascending: false }).limit(6 - result.length);
-  if (e2) throw new Error(e2.message);
-  return [...result, ...filler ?? []];
+  try {
+    const { data: sameCategory, error: e1 } = await supabase.from("hub_videos").select(LIST_COLUMNS).eq("is_published", true).eq("category", current.category).neq("id", current.id).order("published_at", { ascending: false }).limit(6);
+    if (!e1 && sameCategory && sameCategory.length > 0) return sameCategory;
+  } catch (e) {}
+  return DEFAULT_HUB_VIDEOS.filter((v) => v.id !== current.id).slice(0, 6);
 }
 async function upsertVideoProgress(userId, videoId, progressSeconds, durationSeconds) {
   const completed = durationSeconds > 0 && progressSeconds >= durationSeconds * 0.9;
@@ -75521,7 +75987,7 @@ function SkinDetailScreen({ slug, onBack, onOpenProfile }) {
     }
     setSelectState("selecting");
     try {
-      await selectSkin(session.user.id, skin.id);
+      await selectSkin(session?.user?.id || "guest", skin);
       setSelectState("selected");
       setWearers((prev) => prev.items.some((w2) => w2.id === session.user.id) ? prev : { ...prev, total: prev.total + 1 });
       setTimeout(() => setSelectState("idle"), 2e3);
@@ -78545,7 +79011,7 @@ function loadSavedVersion() {
     return fallback;
   }
 }
-const BG_VIDEOS = ["53YdriIwMScEeLj3emOg+RDKCdKUAL-g.mp4"];
+const BG_VIDEOS = ["neoterra_bg.mp4"];
 function pickRandomVideo() {
   return `videos/${BG_VIDEOS[Math.floor(Math.random() * BG_VIDEOS.length)]}`;
 }
@@ -78555,8 +79021,117 @@ const NAV_ITEMS = [
   { id: "mods" },
   { id: "maps" },
   { id: "skins" },
-  { id: "hubtv" }
+  { id: "hubtv" },
+  { id: "mobile" }
 ];
+
+function MobileModal({ onClose }) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", {
+    className: "fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4",
+    onClick: onClose,
+    children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+      className: "relative w-full max-w-lg rounded-2xl border border-sky-500/40 bg-[#0B0F19] p-6 text-white shadow-[0_0_50px_rgba(56,189,248,0.25)]",
+      onClick: (e) => e.stopPropagation(),
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+          className: "flex items-center justify-between border-b border-white/10 pb-4 mb-4",
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+              className: "flex items-center gap-3",
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("img", {
+                  src: "images/logo.png",
+                  className: "h-10 w-10 rounded-xl border border-sky-500/30 object-cover shadow-md"
+                }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("h3", {
+                      className: "text-lg font-black text-white tracking-wide uppercase",
+                      children: "NeoTerra Mobile Launcher"
+                    }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", {
+                      className: "text-xs font-medium text-sky-400",
+                      children: "Minecraft Java Edition telefonda (Android)"
+                    })
+                  ]
+                })
+              ]
+            }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("button", {
+              type: "button",
+              onClick: onClose,
+              className: "flex h-8 w-8 items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition",
+              children: "✕"
+            })
+          ]
+        }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+          className: "grid grid-cols-2 gap-2.5 mb-4",
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+              className: "rounded-xl bg-white/[0.04] p-3 border border-white/5",
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sky-400 font-bold text-xs mb-1", children: "⚡ 60+ FPS Optimizatsiya" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-gray-300 leading-tight", children: "Oddiy telefonlarda ham qotmasdan silliq ishlaydi" })
+              ]
+            }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+              className: "rounded-xl bg-white/[0.04] p-3 border border-white/5",
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-purple-400 font-bold text-xs mb-1", children: "🌐 Serverga Kirish" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-gray-300 leading-tight", children: "play.neoterra.uz ga to'g'ridan-to'g'ri ulanish tugmasi" })
+              ]
+            }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+              className: "rounded-xl bg-white/[0.04] p-3 border border-white/5",
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-emerald-400 font-bold text-xs mb-1", children: "🇺🇿 100% O'zbekcha" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-gray-300 leading-tight", children: "Barcha menyular va sozlamalar o'zbek tilida" })
+              ]
+            }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+              className: "rounded-xl bg-white/[0.04] p-3 border border-white/5",
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-amber-400 font-bold text-xs mb-1", children: "🕹 Sensorli Boshqaruv" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-gray-300 leading-tight", children: "Zamonaviy shaffof oyna uslubidagi tugmalar" })
+              ]
+            })
+          ]
+        }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+          className: "space-y-2.5",
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("button", {
+              type: "button",
+              onClick: () => window.launcher?.openExternal("https://github.com/SarvarDevYT/NeoTerra-Mobile-Launcher/releases"),
+              className: "w-full flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 py-3 text-sm font-bold text-white shadow-lg shadow-sky-500/25 transition active:scale-[0.98]",
+              children: [
+                "⬇️ APK Faylini Yuklab Olish (Android)"
+              ]
+            }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("button", {
+              type: "button",
+              onClick: () => window.launcher?.openExternal("https://t.me/NeoTerraServer"),
+              className: "w-full flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 py-2.5 text-xs font-semibold text-gray-200 transition",
+              children: [
+                "✈️ Telegram Hamjamiyatimizdan Yuklash"
+              ]
+            }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("button", {
+              type: "button",
+              onClick: () => window.launcher?.openExternal("https://github.com/SarvarDevYT/NeoTerra-Mobile-Launcher"),
+              className: "w-full flex items-center justify-center gap-2 rounded-xl border border-white/5 bg-transparent hover:bg-white/5 py-2 text-xs text-gray-400 hover:text-white transition",
+              children: [
+                "🐙 GitHub Repozitoriyasini Ko'rish"
+              ]
+            })
+          ]
+        })
+      ]
+    })
+  });
+}
+
 function GrassBlockIcon({ className }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { viewBox: "0 0 32 32", className, "aria-hidden": "true", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "16,2.5 29.5,10 16,17.5 2.5,10", fill: "#6FBF4A" }),
@@ -78589,7 +79164,7 @@ function LauncherScreen() {
       return false;
     }
   });
-  const { session, profile: profile2, initializing, signIn, signUp, signOut, refreshProfile } = useAuth();
+  const { session, profile: profile2, initializing, signIn, signInElyBy, signUp, signOut, refreshProfile } = useAuth();
   const { showToast } = useToast();
   const isLoggedIn = !!session && !!profile2;
   const [isAuthMode, setIsAuthMode] = reactExports.useState(false);
@@ -78637,6 +79212,7 @@ function LauncherScreen() {
     localStorage.setItem("mcmodhub_fps_boost", next ? "1" : "0");
   }
   const [settingsOpen, setSettingsOpen] = reactExports.useState(false);
+  const [mobileModalOpen, setMobileModalOpen] = reactExports.useState(false);
   const [showSnapshots, setShowSnapshots] = reactExports.useState(() => localStorage.getItem("mcmodhub_show_snapshots") === "1");
   function setShowSnapshotsPersisted(next) {
     setShowSnapshots(next);
@@ -78934,7 +79510,13 @@ function LauncherScreen() {
     if (!localStorage.getItem("mcmodhub_launched_before")) setShowFirstLaunchHint(true);
     const uiToken = await fetchUiLaunchToken(displayNick);
     const res = await window.launcher.launch({
-      profile: { nick: displayNick },
+      profile: {
+        nick: displayNick,
+        authType: profile2?.authType,
+        accessToken: profile2?.accessToken,
+        clientToken: profile2?.clientToken,
+        uuid: profile2?.minecraft_uuid
+      },
       version: selected.mcVersion,
       loader: selected.loader === "vanilla" ? void 0 : selected.loader,
       ramMax: ram,
@@ -79013,10 +79595,10 @@ function LauncherScreen() {
       },
       bgVideo
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none fixed inset-0 -z-[15] bg-black/30" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none fixed inset-0 -z-10 [background:linear-gradient(90deg,rgba(12,9,22,0)_30%,rgba(12,9,22,.82)_100%)]" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none fixed inset-0 -z-10 [background:linear-gradient(180deg,rgba(12,9,22,0)_55%,rgba(12,9,22,.50)_100%)]" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-x-0 top-0 z-30 h-[clamp(42px,3.75vw,60px)] border-b border-white/[.05] bg-[rgba(15,11,28,.14)] [-webkit-app-region:drag]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none fixed inset-0 -z-[15] bg-black/45" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none fixed inset-0 -z-10 [background:linear-gradient(90deg,rgba(12,9,22,.70)_0%,rgba(12,9,22,.25)_40%,rgba(12,9,22,.85)_100%)]" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none fixed inset-0 -z-10 [background:linear-gradient(180deg,rgba(12,9,22,.75)_0%,rgba(12,9,22,0)_20%,rgba(12,9,22,.75)_100%)]" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-x-0 top-0 z-30 h-[clamp(42px,3.75vw,60px)] border-b border-white/10 bg-[#0c0916]/85 backdrop-blur-md shadow-lg [-webkit-app-region:drag]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
       "div",
       {
         className: `flex h-full items-center justify-between ${isMac ? "pl-[86px]" : "pl-[clamp(12px,1.4vw,22px)]"}`,
@@ -79034,6 +79616,20 @@ function LauncherScreen() {
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("nav", { className: "flex h-full items-center [-webkit-app-region:no-drag]", children: NAV_ITEMS.map((item) => {
             const isActive = activeTab === item.id;
+            if (item.id === "mobile") {
+              return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "button",
+                {
+                  type: "button",
+                  onClick: () => setMobileModalOpen(true),
+                  className: "relative flex h-full shrink-0 items-center gap-1.5 whitespace-nowrap px-[clamp(8px,1vw,16px)] text-[clamp(11px,1.05vw,14px)] font-bold text-[#38BDF8] hover:text-white transition drop-shadow-[0_0_8px_rgba(56,189,248,0.5)]",
+                  children: [
+                    t2("common.nav.mobile")
+                  ]
+                },
+                item.id
+              );
+            }
             if (item.id === "mods") {
               return /* @__PURE__ */ jsxRuntimeExports.jsx(
                 ModsNavMenu,
@@ -79062,7 +79658,7 @@ function LauncherScreen() {
                   setShopOpen(false);
                   if (item.id === "news") setNewsResetTick((t22) => t22 + 1);
                 },
-                className: `relative flex h-full shrink-0 items-center whitespace-nowrap px-[clamp(10px,1.35vw,26px)] text-[clamp(10.5px,1.02vw,14.5px)] transition ${isActive ? "font-semibold text-white" : "font-medium text-[#828C87] hover:text-[#B8C2BD]"}`,
+                className: `relative flex h-full shrink-0 items-center whitespace-nowrap px-[clamp(10px,1.35vw,26px)] text-[clamp(10.5px,1.02vw,14.5px)] transition ${isActive ? "font-semibold text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]" : "font-medium text-[#CBD3CF] hover:text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"}`,
                 children: [
                   t2(`common.nav.${item.id}`),
                   isActive && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute inset-x-[clamp(10px,1.72vw,26px)] bottom-0 h-[2px] bg-gradient-to-r from-[#7C3AED] to-[#A855F7] shadow-[0_0_10px_rgba(168,85,247,0.7)]" })
@@ -79251,9 +79847,15 @@ function LauncherScreen() {
             type: "button",
             onClick: () => setShopOpen(true),
             title: t2("shop.title"),
-            className: "grid h-11 w-11 place-items-center rounded-full transition hover:border-white/[.22] hover:bg-white/[.08]",
-            style: { background: "rgba(10,13,12,.55)", border: `1px solid ${tokens.hairline}`, backdropFilter: "blur(8px)" },
-            children: /* @__PURE__ */ jsxRuntimeExports.jsx(Store, { size: 18, style: { color: tokens.text2 } })
+            className: "grid h-12 w-12 place-items-center rounded-full transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-[0_0_22px_rgba(168,85,247,0.5)]",
+            style: {
+              background: "linear-gradient(135deg, rgba(30, 22, 54, 0.78) 0%, rgba(15, 11, 28, 0.68) 100%)",
+              border: "1px solid rgba(255, 255, 255, 0.20)",
+              backdropFilter: "blur(18px)",
+              WebkitBackdropFilter: "blur(18px)",
+              boxShadow: "0 8px 24px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.3)"
+            },
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(Store, { size: 19, style: { color: "#FFFFFF" } })
           }
         ),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -79262,9 +79864,15 @@ function LauncherScreen() {
             type: "button",
             onClick: () => setChatOpen(true),
             title: t2("chat.title"),
-            className: "grid h-11 w-11 place-items-center rounded-full transition hover:border-white/[.22] hover:bg-white/[.08]",
-            style: { background: "rgba(10,13,12,.55)", border: `1px solid ${tokens.hairline}`, backdropFilter: "blur(8px)" },
-            children: /* @__PURE__ */ jsxRuntimeExports.jsx(MessagesSquare, { size: 18, style: { color: tokens.text2 } })
+            className: "grid h-12 w-12 place-items-center rounded-full transition-all duration-300 hover:scale-105 hover:border-white/40 hover:shadow-[0_0_22px_rgba(168,85,247,0.5)]",
+            style: {
+              background: "linear-gradient(135deg, rgba(30, 22, 54, 0.78) 0%, rgba(15, 11, 28, 0.68) 100%)",
+              border: "1px solid rgba(255, 255, 255, 0.20)",
+              backdropFilter: "blur(18px)",
+              WebkitBackdropFilter: "blur(18px)",
+              boxShadow: "0 8px 24px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.3)"
+            },
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(MessagesSquare, { size: 19, style: { color: "#FFFFFF" } })
           }
         )
       ] }),
@@ -79303,15 +79911,15 @@ function LauncherScreen() {
         !isAuthMode && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-[clamp(20px,2.8vw,36px)] flex flex-col items-center gap-[clamp(9px,1.1vw,16px)] text-center", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(Box, { className: "h-[clamp(20px,2.66vw,38px)] w-[clamp(20px,2.66vw,38px)] text-[#A855F7]" }),
           isLoggedIn && profile2 ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-[clamp(16px,2.03vw,28px)] font-normal text-[#EDF1EF]", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-[clamp(16px,2.03vw,28px)] font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]", children: [
               t2("home.welcomeBack"),
               ", ",
               profile2.username || profile2.minecraft_nick
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-[clamp(4px,0.6vw,9px)] text-[clamp(9.5px,0.9vw,13px)] text-[#CBD3CF]", children: t2("home.readyToPlay") })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-[clamp(4px,0.6vw,9px)] text-[clamp(9.5px,0.9vw,13px)] text-[#DDD6FE] drop-shadow-[0_1px_2px_rgba(0,0,0,0.85)]", children: t2("home.readyToPlay") })
           ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-[clamp(16px,2.03vw,28px)] font-normal text-[#EDF1EF]", children: t2("home.welcome") }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-[clamp(4px,0.6vw,9px)] text-[clamp(9.5px,0.9vw,13px)] text-[#CBD3CF]", children: t2("home.loginOrGuest") })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-[clamp(16px,2.03vw,28px)] font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]", children: t2("home.welcome") }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-[clamp(4px,0.6vw,9px)] text-[clamp(9.5px,0.9vw,13px)] text-[#DDD6FE] drop-shadow-[0_1px_2px_rgba(0,0,0,0.85)]", children: t2("home.loginOrGuest") })
           ] })
         ] }),
         isAuthMode ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -79434,6 +80042,36 @@ function LauncherScreen() {
                   ]
                 }
               ),
+              authView === "login" && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "button",
+                {
+                  type: "button",
+                  onClick: async () => {
+                    const nick = prompt("Ely.by Login yoki Email kiriting:");
+                    if (!nick || !nick.trim()) return;
+                    const pass = prompt("Ely.by parolingizni kiriting:");
+                    if (!pass) return;
+                    setAuthLoading(true);
+                    setAuthError(null);
+                    try {
+                      if (signInElyBy) {
+                        await signInElyBy(nick.trim(), pass);
+                        setIsAuthMode(false);
+                        setNickSubmitted(false);
+                      }
+                    } catch (err) {
+                      setAuthError(err instanceof Error ? err.message : "Ely.by xatosi");
+                    } finally {
+                      setAuthLoading(false);
+                    }
+                  },
+                  className: "mt-2 flex w-full items-center justify-center gap-2 rounded-[10px] border border-[#38BDF8]/40 bg-[#38BDF8]/10 py-[clamp(8px,0.9vw,13px)] text-[clamp(10.5px,0.9vw,13px)] font-medium text-[#38BDF8] transition hover:bg-[#38BDF8]/20 cursor-pointer",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Box, { size: 14 }),
+                    "Ely.by orqali kirish (Skin & Hisob)"
+                  ]
+                }
+              ),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "button",
                 {
@@ -79520,7 +80158,7 @@ function LauncherScreen() {
             /* @__PURE__ */ jsxRuntimeExports.jsxs(
               "div",
               {
-                className: `flex items-center gap-[clamp(8px,0.78vw,12px)] rounded-[10px] border bg-black/[.22] px-[clamp(10px,1.09vw,16px)] py-[clamp(9px,1.09vw,16px)] transition focus-within:border-[#A855F7] focus-within:shadow-[0_0_0_3px_rgba(168,85,247,.25)] ${nickSubmitted && !profile2?.minecraft_nick && !username.trim() ? "border-red-500/50" : "border-white/[.12]"}`,
+                className: `flex items-center gap-[clamp(8px,0.78vw,12px)] rounded-[12px] border bg-black/45 backdrop-blur-xl px-[clamp(10px,1.09vw,16px)] py-[clamp(9px,1.09vw,16px)] transition shadow-[0_4px_16px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)] focus-within:border-[#A855F7] focus-within:shadow-[0_0_0_3px_rgba(168,85,247,.3),0_6px_24px_rgba(168,85,247,0.25)] ${nickSubmitted && !profile2?.minecraft_nick && !username.trim() ? "border-red-500/50" : "border-white/18"}`,
                 children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(User, { size: 16, className: "h-[clamp(13px,1.17vw,18px)] w-[clamp(13px,1.17vw,18px)] shrink-0 text-[#AEB8B3]" }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -79552,18 +80190,18 @@ function LauncherScreen() {
                   {
                     type: "button",
                     onClick: () => void openVersionPicker(),
-                    className: "flex w-full items-center gap-[clamp(8px,0.94vw,14px)] rounded-[10px] border border-white/[.12] bg-white/[.04] px-[clamp(10px,1.09vw,16px)] py-[clamp(9px,1.25vw,18px)] text-left transition hover:border-white/[.22]",
+                    className: "flex w-full items-center gap-[clamp(8px,0.94vw,14px)] rounded-[12px] border border-white/18 bg-black/45 backdrop-blur-xl px-[clamp(10px,1.09vw,16px)] py-[clamp(9px,1.25vw,18px)] text-left transition hover:border-purple-400/40 hover:bg-black/55 shadow-[0_6px_20px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.15)]",
                     children: [
                       /* @__PURE__ */ jsxRuntimeExports.jsx(GrassBlockIcon, { className: "h-[clamp(24px,2.34vw,36px)] w-[clamp(24px,2.34vw,36px)] shrink-0" }),
                       /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "min-w-0 flex-1 leading-tight", children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block truncate text-[clamp(11px,1.05vw,15px)] font-semibold text-[#EDF1EF]", children: entryLabel(selected) }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block truncate font-mono text-[clamp(8.5px,0.82vw,12px)] text-[#AEB8B3]", children: entrySubtitle(selected) })
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block truncate text-[clamp(11px,1.05vw,15px)] font-semibold text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]", children: entryLabel(selected) }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block truncate font-mono text-[clamp(8.5px,0.82vw,12px)] text-[#D8B4FE] drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]", children: entrySubtitle(selected) })
                       ] }),
                       /* @__PURE__ */ jsxRuntimeExports.jsx(
                         ChevronDown,
                         {
                           size: 16,
-                          className: `h-[clamp(13px,1.02vw,16px)] w-[clamp(13px,1.02vw,16px)] shrink-0 text-[#AEB8B3] transition-transform ${versionOpen ? "rotate-180" : ""}`
+                          className: `h-[clamp(13px,1.02vw,16px)] w-[clamp(13px,1.02vw,16px)] shrink-0 text-white transition-transform ${versionOpen ? "rotate-180" : ""}`
                         }
                       )
                     ]
@@ -79615,9 +80253,9 @@ function LauncherScreen() {
               onClick: () => void window.launcher.openGameDir().then((res) => {
                 if (!res.ok) showToast({ kind: "error", title: t2("home.folderNotOpened"), message: res.error ?? "" });
               }),
-              className: "mt-[clamp(10px,1.1vw,16px)] flex w-full items-center justify-center gap-[clamp(6px,0.7vw,9px)] rounded-[10px] border border-white/[.12] bg-white/[.04] py-[clamp(9px,1.1vw,14px)] text-[clamp(10.5px,1vw,13px)] font-medium text-[#EDF1EF] transition hover:border-white/[.22] hover:bg-white/[.06]",
+              className: "mt-[clamp(10px,1.1vw,16px)] flex w-full items-center justify-center gap-[clamp(6px,0.7vw,9px)] rounded-[12px] border border-white/18 bg-white/[.06] backdrop-blur-xl py-[clamp(9px,1.1vw,14px)] text-[clamp(10.5px,1vw,13px)] font-medium text-white transition hover:border-purple-400/40 hover:bg-white/[.12] shadow-[0_4px_16px_rgba(0,0,0,0.25),inset_0_1px_0_rgba(255,255,255,0.15)] drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]",
               children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(FolderOpen, { size: 15, className: "h-[clamp(12px,1.1vw,16px)] w-[clamp(12px,1.1vw,16px)] shrink-0 text-[#AEB8B3]" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(FolderOpen, { size: 15, className: "h-[clamp(12px,1.1vw,16px)] w-[clamp(12px,1.1vw,16px)] shrink-0 text-[#D8B4FE]" }),
                 t2("home.rootFolder")
               ]
             }
@@ -79644,8 +80282,11 @@ function LauncherScreen() {
               type: "button",
               onClick: () => void handlePlay(),
               disabled: running,
-              className: "relative mt-[clamp(10px,1.25vw,18px)] flex w-full items-center justify-center overflow-hidden rounded-[12px] bg-gradient-to-r from-[#7C3AED] to-[#9333EA] py-[clamp(13px,1.56vw,22px)] text-[clamp(12px,1.17vw,17px)] font-bold tracking-[.08em] text-white shadow-[0_10px_30px_rgba(124,58,237,.38)] transition hover:from-[#8B5CF6] hover:to-[#A855F7] hover:shadow-[0_10px_36px_rgba(168,85,247,.5)] disabled:cursor-not-allowed disabled:opacity-90",
+              className: "relative mt-[clamp(10px,1.25vw,18px)] flex w-full items-center justify-center overflow-hidden rounded-[12px] border border-white/25 bg-gradient-to-r from-[#7C3AED] to-[#9333EA] py-[clamp(13px,1.56vw,22px)] text-[clamp(12px,1.17vw,17px)] font-extrabold tracking-[.09em] text-white shadow-[0_12px_36px_rgba(124,58,237,0.55),inset_0_1px_1px_rgba(255,255,255,0.45)] transition duration-300 hover:from-[#8B5CF6] hover:to-[#A855F7] hover:shadow-[0_14px_42px_rgba(168,85,247,0.7),inset_0_1px_2px_rgba(255,255,255,0.6)] disabled:cursor-not-allowed disabled:opacity-90",
               children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", {
+                  className: "pointer-events-none absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"
+                }),
                 running && /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "span",
                   {
@@ -79653,7 +80294,7 @@ function LauncherScreen() {
                     style: { width: `${Math.max(percent, 4)}%` }
                   }
                 ),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "relative z-10 flex items-center gap-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "relative z-10 flex items-center gap-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]", children: [
                   !running && /* @__PURE__ */ jsxRuntimeExports.jsx(Play, { size: 17, fill: "white" }),
                   playLabel
                 ] })
@@ -79770,6 +80411,7 @@ function LauncherScreen() {
       )
     ] }),
     companionEnabled && !running && !profileState && !shopOpen && !chatOpen && activeTab === "home" && /* @__PURE__ */ jsxRuntimeExports.jsx(CompanionWidget, { modelUrl: getPet(selectedPetId).modelUrl }),
+    mobileModalOpen && /* @__PURE__ */ jsxRuntimeExports.jsx(MobileModal, { onClose: () => setMobileModalOpen(false) }),
     settingsOpen && /* @__PURE__ */ jsxRuntimeExports.jsx(
       SettingsDialog,
       {

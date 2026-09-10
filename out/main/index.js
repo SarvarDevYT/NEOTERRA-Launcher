@@ -305,34 +305,88 @@ function defaultInstallPath() {
 function configFilePath() {
   return path.join(electron.app.getPath("userData"), "config.json");
 }
+function neoterraConfigFilePath() {
+  return path.join(defaultInstallPath(), "config.json");
+}
+function ensureNeoterraStructure(baseDir) {
+  try {
+    const base = baseDir || defaultInstallPath();
+    const dirs = ["assets", "libraries", "versions", "home", "jre", "mods", "resourcepacks", "shaderpacks", "saves", "config", "logs"];
+    for (const d of dirs) {
+      const p = path.join(base, d);
+      if (!fs.existsSync(p)) fs.mkdirSync(p, { recursive: true });
+    }
+    const lp = path.join(base, "launcher_profiles.json");
+    if (!fs.existsSync(lp)) {
+      fs.writeFileSync(lp, JSON.stringify({ clientToken: crypto.randomUUID(), profiles: {} }, null, 2));
+    }
+  } catch {}
+}
 let cache$1 = null;
 function load() {
   if (cache$1) return cache$1;
   const file = configFilePath();
+  const altFile = neoterraConfigFilePath();
+  let parsed = {};
   try {
     if (fs.existsSync(file)) {
-      const parsed = JSON.parse(fs.readFileSync(file, "utf-8"));
-      if (typeof parsed.installPath === "string" && parsed.installPath) {
-        cache$1 = { installPath: parsed.installPath };
-        return cache$1;
-      }
+      parsed = JSON.parse(fs.readFileSync(file, "utf-8"));
+    } else if (fs.existsSync(altFile)) {
+      parsed = JSON.parse(fs.readFileSync(altFile, "utf-8"));
     }
-  } catch {
-  }
-  cache$1 = { installPath: defaultInstallPath() };
+  } catch {}
+  cache$1 = {
+    ...parsed,
+    installPath: typeof parsed.installPath === "string" && parsed.installPath ? parsed.installPath : defaultInstallPath(),
+    separateVersionDirs: parsed.separateVersionDirs !== false
+  };
+  ensureNeoterraStructure(cache$1.installPath);
   return cache$1;
 }
 function save(config) {
-  cache$1 = config;
+  const current = load();
+  cache$1 = { ...current, ...config };
   const file = configFilePath();
-  fs.mkdirSync(path.dirname(file), { recursive: true });
-  fs.writeFileSync(file, JSON.stringify(config, null, 2), "utf-8");
+  const altFile = neoterraConfigFilePath();
+  try {
+    fs.mkdirSync(path.dirname(file), { recursive: true });
+    fs.writeFileSync(file, JSON.stringify(cache$1, null, 2), "utf-8");
+  } catch {}
+  try {
+    fs.mkdirSync(path.dirname(altFile), { recursive: true });
+    fs.writeFileSync(altFile, JSON.stringify(cache$1, null, 2), "utf-8");
+  } catch {}
 }
 function getInstallPath() {
   return load().installPath;
 }
 function setInstallPath(path2) {
   save({ installPath: path2 });
+  ensureNeoterraStructure(path2);
+}
+function isSeparateVersionDirs() {
+  return load().separateVersionDirs !== false;
+}
+function setSeparateVersionDirs(enabled) {
+  save({ separateVersionDirs: !!enabled });
+}
+function getVersionDirName(version, loader) {
+  if (!loader || loader === "vanilla") return version;
+  const loaderFormatted = loader === "forge" ? "Forge" : loader === "fabric" ? "Fabric" : loader === "quilt" ? "Quilt" : loader === "neoforge" ? "NeoForge" : loader;
+  return `${loaderFormatted} ${version}`;
+}
+function getEffectiveGameDir(version, loader) {
+  const base = getInstallPath();
+  if (!isSeparateVersionDirs() || !version) {
+    return base;
+  }
+  const vName = getVersionDirName(version, loader);
+  const vDir = path.join(base, "home", vName);
+  fs.mkdirSync(vDir, { recursive: true });
+  for (const sub of ["mods", "saves", "resourcepacks", "shaderpacks", "config"]) {
+    fs.mkdirSync(path.join(vDir, sub), { recursive: true });
+  }
+  return vDir;
 }
 const DEFAULT_UI_THEME_ID = "forest";
 const DEFAULT_UI_THEME_PACK_URL = "https://mcmodhubmedia.b-cdn.net/ui-themes/forest.zip";
@@ -1380,12 +1434,16 @@ function writeCustomSkinLoaderConfig(dir) {
     if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) config = parsed;
   } catch {
   }
+  const elyBy = {
+    name: "Elyby",
+    type: "ElybyAPI"
+  };
   const previous = Array.isArray(config.loadlist) ? config.loadlist : [];
-  const rest = previous.filter((e) => e?.name !== "NeoTerra" && e?.name !== "NeoTerraLocal" && e?.name !== "MCModHub");
+  const rest = previous.filter((e) => e?.name !== "NeoTerra" && e?.name !== "NeoTerraLocal" && e?.name !== "MCModHub" && e?.name !== "Elyby");
   if (!rest.some((e) => typeof e?.type === "string" && /mojang/i.test(e.type))) {
     rest.push({ name: "Mojang", type: "MojangAPI" });
   }
-  config.loadlist = [ours, localSkins, ...rest];
+  config.loadlist = [ours, localSkins, elyBy, ...rest];
   fs.writeFileSync(configPath, JSON.stringify(config, null, 2), "utf-8");
 }
 function writeCompanionConfig(dir, companionId) {
@@ -1629,27 +1687,89 @@ async function tryAutoFixMissingMods(req, emit, missingIds, missingClasspaths) {
     emit({ type: "closed", code: null });
   }
 }
+
+async function ensureAuthlibInjector(rootDir) {
+  const toolsDir = path.join(rootDir, "tools");
+  fs.mkdirSync(toolsDir, { recursive: true });
+  const jarPath = path.join(toolsDir, "authlib-injector.jar");
+  if (fs.existsSync(jarPath) && fs.statSync(jarPath).size > 100000) {
+    return jarPath;
+  }
+  const urls = [
+    "https://ghfast.top/https://github.com/yushijinhun/authlib-injector/releases/download/v1.2.8/authlib-injector-1.2.8.jar",
+    "https://github.com/yushijinhun/authlib-injector/releases/download/v1.2.8/authlib-injector-1.2.8.jar",
+    "https://bmclapi2.bangbang93.com/mirrors/authlib-injector/artifact/latest/authlib-injector.jar"
+  ];
+  for (const url of urls) {
+    try {
+      const res = await fetch(url, { signal: AbortSignal.timeout(30000) });
+      if (res.ok) {
+        const buf = Buffer.from(await res.arrayBuffer());
+        if (buf.length > 100000) {
+          fs.writeFileSync(jarPath, buf);
+          return jarPath;
+        }
+      }
+    } catch (e) {
+      console.warn("[authlib-injector] Download error from " + url, e.message);
+    }
+  }
+  if (fs.existsSync(jarPath)) return jarPath;
+  throw new Error("authlib-injector yuklanmadi. Internet aloqasini tekshiring.");
+}
+
 async function launchGame(req, emit) {
   if (current) throw new Error("O'yin allaqachon ishga tushirilgan");
   if (!isValidNick(req.profile.nick)) {
     throw new Error("Minecraft nick noto'g'ri (3-16 belgi, faqat A-Z, 0-9, _)");
   }
   const launcher = new minecraftLauncherCore.Client();
-  const auth = buildOfflineAuth(req.profile.nick, req.profile.uuid);
+  let isElyBy = req.profile?.authType === "elyby";
+  if (!isElyBy) {
+    try {
+      const accPath = path.join(electron.app.getPath("userData"), "neoterra_account.json");
+      if (fs.existsSync(accPath)) {
+        const acc = JSON.parse(fs.readFileSync(accPath, "utf8"));
+        if (acc && acc.authType === "elyby" && (acc.username === req.profile.nick || acc.minecraft_nick === req.profile.nick)) {
+          isElyBy = true;
+          req.profile.authType = "elyby";
+          req.profile.accessToken = acc.accessToken;
+          req.profile.clientToken = acc.clientToken;
+          req.profile.uuid = acc.minecraft_uuid || acc.uuid;
+        }
+      }
+    } catch {}
+  }
+  let auth;
+  if (isElyBy && req.profile.accessToken) {
+    const rawUuid = (req.profile.uuid || offlineUuid(req.profile.nick)).replace(/-/g, "");
+    auth = {
+      access_token: req.profile.accessToken,
+      client_token: req.profile.clientToken || req.profile.accessToken,
+      uuid: rawUuid,
+      name: req.profile.nick,
+      user_properties: "{}",
+      meta: { type: "mojang", demo: false }
+    };
+  } else {
+    auth = buildOfflineAuth(req.profile.nick, req.profile.uuid);
+  }
   let customVersion = req.customVersion;
   let versionJsonOverride;
   let forgeInstallerPath;
   let javaPath = req.javaPath;
   const fpsBoost = req.fpsBoost !== false;
+  const rootDir = getInstallPath();
+  const targetGameDir = getEffectiveGameDir(req.version, req.loader);
   if (fpsBoost) {
     try {
-      writeDefaultVideoOptions(gameDir());
+      writeDefaultVideoOptions(targetGameDir);
     } catch {
     }
     applyLinuxGpuPreference();
   }
   try {
-    writeCustomSkinLoaderConfig(gameDir());
+    writeCustomSkinLoaderConfig(targetGameDir);
   } catch (err) {
     emit({
       type: "warning",
@@ -1657,7 +1777,7 @@ async function launchGame(req, emit) {
     });
   }
   try {
-    writeCompanionConfig(gameDir(), req.companionId);
+    writeCompanionConfig(targetGameDir, req.companionId);
   } catch (err) {
     emit({
       type: "warning",
@@ -1665,7 +1785,7 @@ async function launchGame(req, emit) {
     });
   }
   try {
-    writeUiToken(gameDir(), req.uiToken);
+    writeUiToken(targetGameDir, req.uiToken);
   } catch (err) {
     emit({
       type: "warning",
@@ -1675,30 +1795,40 @@ async function launchGame(req, emit) {
   if (await ensureUiMod((message) => emit({ type: "status", message }))) {
     await ensureDefaultTheme((message) => emit({ type: "status", message }));
   }
-  const corruptedCount = removeCorruptedDownloads(gameDir());
+  const corruptedCount = removeCorruptedDownloads(rootDir);
   if (corruptedCount > 0) {
     emit({ type: "log", line: `[NeoTerra]: ${corruptedCount} ta buzilgan kutubxona fayli tozalandi, qayta yuklanadi` });
   }
   emit({ type: "status", message: "Fayllar tayyorlanmoqda..." });
+  let authlibJar = null;
   const downloadTasks = [];
+  if (isElyBy) {
+    downloadTasks.push(
+      ensureAuthlibInjector(rootDir).then((j) => {
+        authlibJar = j;
+      }).catch((err) => {
+        emit({ type: "warning", message: "Ely.by authlib-injector yuklanmadi: " + err.message });
+      })
+    );
+  }
   if (req.loader === "fabric" || req.loader === "quilt") {
     downloadTasks.push(
-      ensureLoaderProfile(req.loader, gameDir(), req.version).then((r) => {
+      ensureLoaderProfile(req.loader, rootDir, req.version).then((r) => {
         customVersion = r.customId;
         versionJsonOverride = r.versionJsonPath;
       })
     );
   } else if (req.loader === "forge") {
     downloadTasks.push(
-      ensureForgeInstaller(gameDir(), req.version).then((p) => {
+      ensureForgeInstaller(rootDir, req.version).then((p) => {
         forgeInstallerPath = p;
       })
     );
-    downloadTasks.push(ensureForgeWrapperJar(gameDir()));
+    downloadTasks.push(ensureForgeWrapperJar(rootDir));
   }
   if (req.loader) {
     downloadTasks.push(
-      ensureCustomSkinLoaderMod(gameDir(), req.version, req.loader).catch((err) => {
+      ensureCustomSkinLoaderMod(targetGameDir, req.version, req.loader).catch((err) => {
         emit({
           type: "warning",
           message: `Skin modi o'rnatilmadi: ${err instanceof Error ? err.message : String(err)}`
@@ -1708,7 +1838,7 @@ async function launchGame(req, emit) {
   }
   if (fpsBoost && req.loader) {
     downloadTasks.push(
-      ensurePerformanceMods(gameDir(), req.version, req.loader, emit).catch((err) => {
+      ensurePerformanceMods(targetGameDir, req.version, req.loader, emit).catch((err) => {
         emit({
           type: "warning",
           message: `FPS modlari o'rnatilmadi: ${err instanceof Error ? err.message : String(err)}`
@@ -1718,7 +1848,7 @@ async function launchGame(req, emit) {
   }
   if (!javaPath) {
     downloadTasks.push(
-      ensureJavaRuntime(requiredJavaMajor(req.version), gameDir(), {
+      ensureJavaRuntime(requiredJavaMajor(req.version), rootDir, {
         // Apple Silicon (M1/M2/...) da 1.19'gacha bo'lgan versiyalar faqat Intel Java bilan
         // ishlaydi - sababi `java.ts` -> `needsIntelJavaOnMac` izohida.
         forceX64: needsIntelJavaOnMac(req.version)
@@ -1732,7 +1862,7 @@ async function launchGame(req, emit) {
   await Promise.all(downloadTasks);
   const opts = {
     authorization: auth,
-    root: gameDir(),
+    root: rootDir,
     version: {
       number: req.version,
       type: "release",
@@ -1756,6 +1886,7 @@ async function launchGame(req, emit) {
     // keladi (HotSpot'da oxirgi qiymat kuchga kiradi).
     customArgs: [
       ...process.platform === "win32" ? [`-Djdk.net.unixdomain.tmpdir=${unixSocketTmpDir()}`] : [],
+      ...authlibJar ? [`-javaagent:${authlibJar}=ely.by`] : [],
       ...fpsBoost ? performanceJvmArgs(req.ramMax) : []
     ],
     // To'g'ridan-to'g'ri serverga ulanish (1.20+ quickPlay, eski versiyalar uchun server/port)
@@ -1775,6 +1906,7 @@ async function launchGame(req, emit) {
     // ishlatadigan diapazon) bilan bu o'nlab marta tezlashadi; Mojang CDN'i (resources.
     // download.minecraft.net) bu darajani muammosiz qabul qiladi.
     overrides: {
+      gameDirectory: targetGameDir,
       maxSockets: 32,
       ...versionJsonOverride ? { versionJson: versionJsonOverride } : {}
     }
@@ -1807,18 +1939,18 @@ async function launchGame(req, emit) {
     current = null;
     const attempts = req.autoFixAttempts ?? 0;
     const crashed = code !== 0;
-    const missingIds = crashed && req.loader ? readMissingMandatoryModIds(gameDir()) : [];
-    const missingClasspaths = crashed && req.loader ? Array.from(/* @__PURE__ */ new Set([...readMissingClasspaths(gameDir()), ...readMissingClasspathsFromRawOutput(recentDataLines)])) : [];
+    const missingIds = crashed && req.loader ? readMissingMandatoryModIds(targetGameDir) : [];
+    const missingClasspaths = crashed && req.loader ? Array.from(/* @__PURE__ */ new Set([...readMissingClasspaths(targetGameDir), ...readMissingClasspathsFromRawOutput(recentDataLines)])) : [];
     if (missingIds.length === 0 && missingClasspaths.length === 0) {
       const isKnotError = recentDataLines.some(
         (l) => l.includes("net.fabricmc.loader.impl.launch.knot.KnotClient") || l.includes("net.fabricmc.loader.launch.knot.KnotClient") || l.includes("org.quiltmc.loader.impl.launch.knot.KnotClient")
       );
       if (isKnotError && (req.loader === "fabric" || req.loader === "quilt")) {
-        cleanupLoaderProfileOnKnotError(gameDir(), req.version);
-        removeCorruptedDownloads(gameDir());
+        cleanupLoaderProfileOnKnotError(rootDir, req.version);
+        removeCorruptedDownloads(rootDir);
       }
       if (crashed) {
-        const summary = readGenericCrashSummary(gameDir());
+        const summary = readGenericCrashSummary(targetGameDir);
         if (summary) {
           emit({
             type: "launch-failed",
@@ -1826,7 +1958,7 @@ async function launchGame(req, emit) {
             items: [summary, `Batafsil ma'lumot uchun "crash-reports" papkasidagi eng so'nggi faylni tekshiring.`]
           });
         } else {
-          const nativeSummary = readJvmNativeCrashSummary(gameDir());
+          const nativeSummary = readJvmNativeCrashSummary(targetGameDir);
           if (nativeSummary) {
             emit({
               type: "launch-failed",
@@ -2423,10 +2555,38 @@ function registerIpc(getWindow) {
           recommendedRamGb: Math.max(2, Math.min(8, Math.floor(totalRamGb / 2))),
           platform: process.platform,
           javaVersion: await detectJava(),
-          gameDir: gameDir(),
+          gameDir: getInstallPath(),
+          separateVersionDirs: isSeparateVersionDirs(),
           appVersion: electron.app.getVersion()
         }
       };
+    } catch (err) {
+      return { ok: false, error: err instanceof Error ? err.message : String(err) };
+    }
+  });
+  electron.ipcMain.handle("system:set-separate-version-dirs", async (_e, val) => {
+    try {
+      setSeparateVersionDirs(val);
+      return { ok: true };
+    } catch (err) {
+      return { ok: false, error: err instanceof Error ? err.message : String(err) };
+    }
+  });
+  electron.ipcMain.handle("system:reset-install-path", async () => {
+    try {
+      const def = defaultInstallPath();
+      setInstallPath(def);
+      return { ok: true, data: def };
+    } catch (err) {
+      return { ok: false, error: err instanceof Error ? err.message : String(err) };
+    }
+  });
+  electron.ipcMain.handle("system:open-versions-dir", async () => {
+    try {
+      const vDir = path.join(getInstallPath(), "versions");
+      fs.mkdirSync(vDir, { recursive: true });
+      const err = await electron.shell.openPath(vDir);
+      return err ? { ok: false, error: err } : { ok: true };
     } catch (err) {
       return { ok: false, error: err instanceof Error ? err.message : String(err) };
     }
@@ -2741,6 +2901,64 @@ function registerIpc(getWindow) {
     } catch (e) {
       console.error("[account:save] error:", e.message);
       return { ok: false, error: e.message };
+    }
+  });
+  electron.ipcMain.handle("auth:elyby-login", async (_e, { username, password }) => {
+    try {
+      const cleanUser = (username || "").trim();
+      if (!cleanUser || !password) {
+        return { ok: false, error: "Login va parolni kiriting" };
+      }
+      const clientToken = crypto.randomUUID();
+      const res = await fetch("https://authserver.ely.by/auth/authenticate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          username: cleanUser,
+          password: password,
+          clientToken: clientToken,
+          requestUser: true
+        }),
+        signal: AbortSignal.timeout(15000)
+      });
+      const data = await res.json();
+      if (!res.ok || data.error) {
+        let msg = data.errorMessage || data.message || "Ely.by autentifikatsiya xatosi";
+        if (msg.toLowerCase().includes("invalid credentials") || msg.toLowerCase().includes("invalid username")) {
+          msg = "Ely.by login yoki parol noto'g'ri!";
+        }
+        return { ok: false, error: msg };
+      }
+      const playerNick = data.selectedProfile?.name || cleanUser;
+      const playerUuid = data.selectedProfile?.id || "";
+      const formattedUuid = playerUuid.length === 32
+        ? `${playerUuid.slice(0, 8)}-${playerUuid.slice(8, 12)}-${playerUuid.slice(12, 16)}-${playerUuid.slice(16, 20)}-${playerUuid.slice(20)}`
+        : playerUuid;
+
+      const profile = {
+        id: playerNick,
+        username: playerNick,
+        email: data.user?.username ? `${data.user.username}@ely.by` : null,
+        avatar_url: `https://skinsystem.ely.by/skins/${playerNick}.png`,
+        role: "user",
+        banned: false,
+        has_club_access: true,
+        minecraft_nick: playerNick,
+        minecraft_uuid: formattedUuid,
+        hbc: 0,
+        current_skin_id: null,
+        authType: "elyby",
+        accessToken: data.accessToken,
+        clientToken: clientToken
+      };
+
+      const accountPath = path.join(electron.app.getPath("userData"), "neoterra_account.json");
+      fs.mkdirSync(path.dirname(accountPath), { recursive: true });
+      fs.writeFileSync(accountPath, JSON.stringify(profile, null, 2), "utf8");
+
+      return { ok: true, user: profile };
+    } catch (err) {
+      return { ok: false, error: err instanceof Error ? err.message : String(err) };
     }
   });
   electron.ipcMain.handle("auth:open-web-login", async () => {

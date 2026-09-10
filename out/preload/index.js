@@ -154,6 +154,7 @@ const launcherApi = {
   getStoredAccount: () => electron.ipcRenderer.invoke("account:get"),
   saveStoredAccount: (data) => electron.ipcRenderer.invoke("account:save", data),
   openWebLogin: () => electron.ipcRenderer.invoke("auth:open-web-login"),
+  elybyLogin: (username, password) => electron.ipcRenderer.invoke("auth:elyby-login", { username, password }),
   selectAndUploadSkin: (nickname, token) => electron.ipcRenderer.invoke("skin:upload", { nickname, token }),
   onWebAuthCallback: (cb) => {
     const listener = (_, payload) => cb(payload);
@@ -166,7 +167,10 @@ const launcherApi = {
     const listener = (_, payload) => cb(payload);
     electron.ipcRenderer.on(IPC.UPDATE_EVENT, listener);
     return () => electron.ipcRenderer.removeListener(IPC.UPDATE_EVENT, listener);
-  }
+  },
+  setSeparateVersionDirs: (val) => electron.ipcRenderer.invoke("system:set-separate-version-dirs", val),
+  resetInstallPath: () => electron.ipcRenderer.invoke("system:reset-install-path"),
+  openVersionsDir: () => electron.ipcRenderer.invoke("system:open-versions-dir")
 };
 if (process.contextIsolated) {
   electron.contextBridge.exposeInMainWorld("electron", preload.electronAPI);
