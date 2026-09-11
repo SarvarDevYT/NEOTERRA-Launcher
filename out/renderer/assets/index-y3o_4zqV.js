@@ -79742,7 +79742,7 @@ function LauncherScreen() {
     setCustomSkinUrl(null);
   }
   const playLabel = !running ? t2("home.play") : percent > 0 ? `${t2("home.loading")} ${percent}%` : status;
-  const fieldBase = "w-full bg-transparent text-[clamp(12px,1.05vw,15px)] text-[#EDF1EF] placeholder-[#5A645F] outline-none";
+  const fieldBase = "w-full bg-transparent text-[clamp(12px,1.05vw,15px)] font-bold text-white placeholder-gray-300 outline-none";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative h-full w-full overflow-hidden font-sans text-[#EDF1EF]", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       "video",
@@ -79758,9 +79758,9 @@ function LauncherScreen() {
       },
       bgVideo
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none fixed inset-0 -z-[15] bg-black/45" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none fixed inset-0 -z-10 [background:linear-gradient(90deg,rgba(12,9,22,.70)_0%,rgba(12,9,22,.25)_40%,rgba(12,9,22,.85)_100%)]" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none fixed inset-0 -z-10 [background:linear-gradient(180deg,rgba(12,9,22,.75)_0%,rgba(12,9,22,0)_20%,rgba(12,9,22,.75)_100%)]" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none fixed inset-0 -z-[15] bg-black/60 backdrop-blur-[1.5px]" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none fixed inset-0 -z-10 [background:linear-gradient(90deg,rgba(10,6,18,.88)_0%,rgba(10,6,18,.45)_45%,rgba(10,6,18,.92)_100%)]" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none fixed inset-0 -z-10 [background:linear-gradient(180deg,rgba(10,6,18,.85)_0%,rgba(10,6,18,0)_25%,rgba(10,6,18,.85)_100%)]" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-x-0 top-0 z-30 h-[clamp(42px,3.75vw,60px)] border-b border-white/10 bg-[#0c0916]/85 backdrop-blur-md shadow-lg [-webkit-app-region:drag]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
       "div",
       {
@@ -79821,7 +79821,7 @@ function LauncherScreen() {
                   setShopOpen(false);
                   if (item.id === "news") setNewsResetTick((t22) => t22 + 1);
                 },
-                className: `relative flex h-full shrink-0 items-center whitespace-nowrap px-[clamp(10px,1.35vw,26px)] text-[clamp(10.5px,1.02vw,14.5px)] transition ${isActive ? "font-semibold text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]" : "font-medium text-[#CBD3CF] hover:text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"}`,
+                className: `relative flex h-full shrink-0 items-center whitespace-nowrap px-[clamp(12px,1.4vw,26px)] text-[clamp(11.5px,1.08vw,15px)] transition ${isActive ? "font-extrabold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)]" : "font-bold text-gray-200 hover:text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]"}`,
                 children: [
                   t2(`common.nav.${item.id}`),
                   isActive && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute inset-x-[clamp(10px,1.72vw,26px)] bottom-0 h-[2px] bg-gradient-to-r from-[#7C3AED] to-[#A855F7] shadow-[0_0_10px_rgba(168,85,247,0.7)]" })
@@ -80070,7 +80070,7 @@ function LauncherScreen() {
           ]
         })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex shrink-0 items-center pl-[clamp(20px,2.8vw,48px)] pr-[clamp(18px,4.4vw,72px)]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-[clamp(250px,25.8vw,400px)] -translate-y-[2%]", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex shrink-0 items-center pl-[clamp(20px,2.8vw,48px)] pr-[clamp(18px,4.4vw,72px)]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-[clamp(280px,26.5vw,420px)] -translate-y-[1%] rounded-[24px] border border-white/20 bg-black/65 backdrop-blur-2xl p-[clamp(16px,2vw,28px)] shadow-[0_24px_60px_rgba(0,0,0,0.85),inset_0_1px_1px_rgba(255,255,255,0.15)]", children: [
         !isAuthMode && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-[clamp(20px,2.8vw,36px)] flex flex-col items-center gap-[clamp(9px,1.1vw,16px)] text-center", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(Box, { className: "h-[clamp(20px,2.66vw,38px)] w-[clamp(20px,2.66vw,38px)] text-[#A855F7]" }),
           isLoggedIn && profile2 ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
@@ -80228,7 +80228,7 @@ function LauncherScreen() {
                       setAuthLoading(false);
                     }
                   },
-                  className: "mt-2 flex w-full items-center justify-center gap-2 rounded-[10px] border border-[#38BDF8]/40 bg-[#38BDF8]/10 py-[clamp(8px,0.9vw,13px)] text-[clamp(10.5px,0.9vw,13px)] font-medium text-[#38BDF8] transition hover:bg-[#38BDF8]/20 cursor-pointer",
+                  className: "mt-2.5 flex w-full items-center justify-center gap-2 rounded-[12px] border-2 border-sky-400/60 bg-sky-600/35 hover:bg-sky-600/50 py-[clamp(9px,1vw,14px)] text-[clamp(11px,0.95vw,13.5px)] font-bold text-white shadow-[0_4px_16px_rgba(56,189,248,0.4)] drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)] transition cursor-pointer active:scale-[0.99]",
                   children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx(Box, { size: 14 }),
                     "Ely.by orqali kirish (Skin & Hisob)"
@@ -80290,7 +80290,7 @@ function LauncherScreen() {
               {
                 type: "button",
                 onClick: () => setIsAuthMode(true),
-                className: "flex w-full items-center justify-center gap-2 rounded-[10px] border border-white/[.14] bg-white/[.05] py-[clamp(11px,1.25vw,18px)] text-[clamp(12px,1.05vw,15px)] font-semibold text-[#EDF1EF] shadow-[inset_0_1px_0_rgba(255,255,255,.06)] transition hover:bg-white/[.08]",
+                className: "flex w-full items-center justify-center gap-2 rounded-[12px] border-2 border-white/30 bg-white/20 hover:bg-white/30 py-[clamp(11px,1.25vw,18px)] text-[clamp(12.5px,1.1vw,15.5px)] font-bold text-white shadow-lg drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)] transition active:scale-[0.99]",
                 children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(Box, { size: 16, className: "text-[#AEB8B3]" }),
                   t2("home.login")
@@ -80302,7 +80302,7 @@ function LauncherScreen() {
               {
                 type: "button",
                 onClick: () => window.launcher?.openWebLogin ? window.launcher.openWebLogin() : setIsAuthMode(true),
-                className: "mt-2 flex w-full items-center justify-center gap-2 rounded-[10px] border border-purple-500/40 bg-purple-500/10 py-[clamp(10px,1.15vw,16px)] text-[clamp(11.5px,1vw,14px)] font-semibold text-[#A855F7] shadow-[0_0_15px_rgba(168,85,247,.2)] transition hover:bg-[#A855F7]/20 cursor-pointer",
+                className: "mt-2.5 flex w-full items-center justify-center gap-2 rounded-[12px] border-2 border-purple-400/60 bg-gradient-to-r from-purple-800/80 to-indigo-800/80 hover:from-purple-700 hover:to-indigo-700 py-[clamp(10px,1.15vw,16px)] text-[clamp(12px,1.05vw,14.5px)] font-bold text-white shadow-[0_6px_20px_rgba(168,85,247,0.45)] drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)] transition cursor-pointer active:scale-[0.99]",
                 children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(Globe, { size: 16 }),
                   "Sayt orqali kirish (Web)"
@@ -80321,7 +80321,7 @@ function LauncherScreen() {
             /* @__PURE__ */ jsxRuntimeExports.jsxs(
               "div",
               {
-                className: `flex items-center gap-[clamp(8px,0.78vw,12px)] rounded-[12px] border bg-black/45 backdrop-blur-xl px-[clamp(10px,1.09vw,16px)] py-[clamp(9px,1.09vw,16px)] transition shadow-[0_4px_16px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)] focus-within:border-[#A855F7] focus-within:shadow-[0_0_0_3px_rgba(168,85,247,.3),0_6px_24px_rgba(168,85,247,0.25)] ${nickSubmitted && !profile2?.minecraft_nick && !username.trim() ? "border-red-500/50" : "border-white/18"}`,
+                className: `flex items-center gap-[clamp(8px,0.78vw,12px)] rounded-[12px] border bg-black/45 backdrop-blur-xl px-[clamp(10px,1.09vw,16px)] py-[clamp(9px,1.09vw,16px)] transition shadow-[0_4px_16px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)] focus-within:border-[#A855F7] focus-within:shadow-[0_0_0_3px_rgba(168,85,247,.3),0_6px_24px_rgba(168,85,247,0.25)] ${nickSubmitted && !profile2?.minecraft_nick && !username.trim() ? "border-red-500/50" : "border-white/30"}`,
                 children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(User, { size: 16, className: "h-[clamp(13px,1.17vw,18px)] w-[clamp(13px,1.17vw,18px)] shrink-0 text-[#AEB8B3]" }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -80353,7 +80353,7 @@ function LauncherScreen() {
                   {
                     type: "button",
                     onClick: () => void openVersionPicker(),
-                    className: "flex w-full items-center gap-[clamp(8px,0.94vw,14px)] rounded-[12px] border border-white/18 bg-black/45 backdrop-blur-xl px-[clamp(10px,1.09vw,16px)] py-[clamp(9px,1.25vw,18px)] text-left transition hover:border-purple-400/40 hover:bg-black/55 shadow-[0_6px_20px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.15)]",
+                    className: "flex w-full items-center gap-[clamp(8px,0.94vw,14px)] rounded-[14px] border-2 border-white/25 bg-black/80 hover:bg-black/90 hover:border-purple-400 backdrop-blur-2xl px-[clamp(12px,1.2vw,18px)] py-[clamp(10px,1.3vw,18px)] text-left transition shadow-[0_8px_24px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.2)] cursor-pointer",
                     children: [
                       /* @__PURE__ */ jsxRuntimeExports.jsx(GrassBlockIcon, { className: "h-[clamp(24px,2.34vw,36px)] w-[clamp(24px,2.34vw,36px)] shrink-0" }),
                       /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "min-w-0 flex-1 leading-tight", children: [
@@ -80416,7 +80416,7 @@ function LauncherScreen() {
               onClick: () => void window.launcher.openGameDir().then((res) => {
                 if (!res.ok) showToast({ kind: "error", title: t2("home.folderNotOpened"), message: res.error ?? "" });
               }),
-              className: "mt-[clamp(10px,1.1vw,16px)] flex w-full items-center justify-center gap-[clamp(6px,0.7vw,9px)] rounded-[12px] border border-white/18 bg-white/[.06] backdrop-blur-xl py-[clamp(9px,1.1vw,14px)] text-[clamp(10.5px,1vw,13px)] font-medium text-white transition hover:border-purple-400/40 hover:bg-white/[.12] shadow-[0_4px_16px_rgba(0,0,0,0.25),inset_0_1px_0_rgba(255,255,255,0.15)] drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]",
+              className: "mt-[clamp(10px,1.1vw,16px)] flex w-full items-center justify-center gap-[clamp(6px,0.7vw,9px)] rounded-[12px] border-2 border-white/25 bg-white/15 hover:bg-white/25 backdrop-blur-xl py-[clamp(10px,1.15vw,15px)] text-[clamp(11.5px,1.05vw,14px)] font-bold text-white transition hover:border-purple-400 shadow-[0_6px_20px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.2)] drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)] cursor-pointer",
               children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(FolderOpen, { size: 15, className: "h-[clamp(12px,1.1vw,16px)] w-[clamp(12px,1.1vw,16px)] shrink-0 text-[#D8B4FE]" }),
                 t2("home.rootFolder")
@@ -80424,7 +80424,7 @@ function LauncherScreen() {
             }
           ),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
-            className: "mt-[clamp(8px,1vw,14px)] flex items-center justify-between rounded-[12px] border border-emerald-500/30 bg-emerald-950/30 backdrop-blur-xl px-3 py-2 text-xs text-white shadow-lg",
+            className: "mt-[clamp(10px,1.1vw,16px)] flex items-center justify-between rounded-[14px] border-2 border-emerald-400/50 bg-emerald-950/75 backdrop-blur-2xl px-4 py-3 text-white shadow-[0_8px_24px_rgba(0,0,0,0.6)]",
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
                 className: "flex items-center gap-2",
@@ -80472,7 +80472,7 @@ function LauncherScreen() {
               type: "button",
               onClick: () => void handlePlay(),
               disabled: running,
-              className: "relative mt-[clamp(10px,1.25vw,18px)] flex w-full items-center justify-center overflow-hidden rounded-[12px] border border-white/25 bg-gradient-to-r from-[#7C3AED] to-[#9333EA] py-[clamp(13px,1.56vw,22px)] text-[clamp(12px,1.17vw,17px)] font-extrabold tracking-[.09em] text-white shadow-[0_12px_36px_rgba(124,58,237,0.55),inset_0_1px_1px_rgba(255,255,255,0.45)] transition duration-300 hover:from-[#8B5CF6] hover:to-[#A855F7] hover:shadow-[0_14px_42px_rgba(168,85,247,0.7),inset_0_1px_2px_rgba(255,255,255,0.6)] disabled:cursor-not-allowed disabled:opacity-90",
+              className: "relative mt-[clamp(12px,1.35vw,20px)] flex w-full items-center justify-center overflow-hidden rounded-[14px] border-2 border-purple-300/50 bg-gradient-to-r from-[#7C3AED] via-[#8B5CF6] to-[#9333EA] py-[clamp(14px,1.65vw,24px)] text-[clamp(13.5px,1.25vw,18px)] font-black tracking-[.12em] text-white shadow-[0_16px_45px_rgba(124,58,237,0.75),inset_0_1px_2px_rgba(255,255,255,0.6)] transition duration-300 hover:from-[#8B5CF6] hover:to-[#A855F7] hover:shadow-[0_20px_55px_rgba(168,85,247,0.9),inset_0_1px_2px_rgba(255,255,255,0.8)] hover:scale-[1.01] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-90 cursor-pointer",
               children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx("span", {
                   className: "pointer-events-none absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"
