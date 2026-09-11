@@ -79021,8 +79021,7 @@ const NAV_ITEMS = [
   { id: "mods" },
   { id: "maps" },
   { id: "skins" },
-  { id: "hubtv" },
-  { id: "mobile" }
+  { id: "hubtv" }
 ];
 
 function MobileModal({ onClose }) {
