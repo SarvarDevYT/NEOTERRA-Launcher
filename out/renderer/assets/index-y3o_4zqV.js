@@ -33894,7 +33894,7 @@ const common = {
     mods: { uz: "Modlar", en: "Mods", ru: "Моды" },
     maps: { uz: "Hamjamiyat", en: "Community", ru: "Сообщество" },
     skins: { uz: "Skinlar", en: "Skins", ru: "Скины" },
-    hubtv: { uz: "HubTV", en: "HubTV", ru: "HubTV" },
+    hubtv: { uz: "🏆 Turnirlar", en: "🏆 Tournaments", ru: "🏆 Турниры" },
     mobile: { uz: "📱 Mobil Launcher", en: "📱 Mobile Launcher", ru: "📱 Мобильный лаунчер" }
   },
   /** "Modlar" nav elementi ochadigan menyu - Modrinth katalogining bo'limlari.
@@ -75611,23 +75611,187 @@ function WatchScreen({ slug, startAt, onBack, onOpenVideo }) {
   ] }) });
 }
 function HubTvSection() {
-  const [view, setView] = reactExports.useState({ type: "catalog" });
-  const scrollRef = reactExports.useRef(null);
-  const savedScrollTop = reactExports.useRef(0);
-  function openWatch(slug, startAt) {
-    savedScrollTop.current = scrollRef.current?.scrollTop ?? 0;
-    setView({ type: "watch", slug, startAt });
-  }
-  function backToCatalog() {
-    setView({ type: "catalog" });
-    requestAnimationFrame(() => {
-      scrollRef.current?.scrollTo({ top: savedScrollTop.current });
-    });
-  }
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative h-full w-full", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: view.type === "catalog" ? "h-full w-full" : "hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx(HubTvCatalogScreen, { scrollRef, onOpen: openWatch }) }),
-    view.type === "watch" && /* @__PURE__ */ jsxRuntimeExports.jsx(WatchScreen, { slug: view.slug, startAt: view.startAt, onBack: backToCatalog, onOpenVideo: openWatch })
-  ] });
+  const [tournaments, setTournaments] = reactExports.useState([
+    {
+      id: "nt-bedwars-cup",
+      title: "NeoTerra BedWars 4v4 Chempionati",
+      description: "Jamoaviy BedWars turniri. 16 jamoa to'qnashadi!",
+      type: "BedWars",
+      prize: "1,500,000 UZS + 1000 NT Coins",
+      startDate: "2026-09-20T18:00:00Z",
+      maxParticipants: 64,
+      participantsCount: 42,
+      status: "open"
+    },
+    {
+      id: "nt-duels-pvp",
+      title: "NeoTerra 1v1 PvP Duel Turniri",
+      description: "Yakkama-yakka jang ustalari uchun maxsus qoidalar!",
+      type: "Duels",
+      prize: "800,000 UZS + VIP maqomi",
+      startDate: "2026-09-27T19:00:00Z",
+      maxParticipants: 32,
+      participantsCount: 28,
+      status: "upcoming"
+    },
+    {
+      id: "nt-survival-games",
+      title: "NeoTerra Survival Games Battle Royale",
+      description: "Katta xaritada tirik qolish jangi. Eng so'nggi qahramon yutadi!",
+      type: "Survival Games",
+      prize: "500,000 UZS",
+      startDate: "2026-10-04T18:00:00Z",
+      maxParticipants: 50,
+      participantsCount: 15,
+      status: "upcoming"
+    }
+  ]);
+  const [loading, setLoading] = reactExports.useState(true);
+
+  reactExports.useEffect(() => {
+    let active = true;
+    fetch("https://site.neoterra.uz/api/launcher/tournaments")
+      .then(res => res.json())
+      .then(data => {
+        if (active && data && Array.isArray(data.tournaments) && data.tournaments.length > 0) {
+          setTournaments(data.tournaments);
+        }
+      })
+      .catch(() => {})
+      .finally(() => { if (active) setLoading(false); });
+    return () => { active = false; };
+  }, []);
+
+  const openWebsite = () => {
+    if (window.launcher?.openExternal) {
+      window.launcher.openExternal("https://site.neoterra.uz/tournaments");
+    } else {
+      window.open("https://site.neoterra.uz/tournaments", "_blank");
+    }
+  };
+
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+    className: "h-full w-full overflow-y-auto p-6 md:p-8 space-y-6 no-scrollbar",
+    children: [
+      /* Header Banner */
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+        className: "relative overflow-hidden rounded-2xl border border-purple-500/30 bg-gradient-to-r from-purple-950/60 via-black/60 to-purple-900/40 p-6 backdrop-blur-xl shadow-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+            className: "space-y-1.5",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+                className: "flex items-center gap-2",
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-2xl", children: "🏆" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h1", {
+                    className: "text-xl md:text-2xl font-black tracking-wide text-white drop-shadow-md",
+                    children: "NeoTerra Turnirlari"
+                  }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", {
+                    className: "rounded-full bg-emerald-500/20 px-2.5 py-0.5 text-[11px] font-bold text-emerald-400 border border-emerald-500/30",
+                    children: "LIVE ARENA"
+                  })
+                ]
+              }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {
+                className: "text-xs md:text-sm text-gray-300 max-w-xl leading-relaxed",
+                children: "NeoTerra rasmiy turnirlarida qatnashing, o'z mahoratingizni ko'rsating, pul mukofotlari va maxsus unvonlarni qo'lga kiriting!"
+              })
+            ]
+          }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("button", {
+            type: "button",
+            onClick: openWebsite,
+            className: "flex items-center gap-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 px-5 py-2.5 text-xs md:text-sm font-bold text-white shadow-lg shadow-purple-600/30 transition active:scale-95 cursor-pointer shrink-0",
+            children: [
+              "Veb-saytda ochish",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "↗" })
+            ]
+          })
+        ]
+      }),
+
+      /* Tournaments Cards Grid */
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", {
+        className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pb-10",
+        children: tournaments.map((t) => {
+          const isOpen = t.status === "open";
+          const isEnded = t.status === "ended";
+          const statusBadge = isOpen ? "🟢 Ochiq" : isEnded ? "🏁 Yakunlangan" : "⏳ Tez kunda";
+          const badgeClass = isOpen ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/30" : isEnded ? "bg-gray-500/20 text-gray-400 border-gray-500/30" : "bg-amber-500/20 text-amber-300 border-amber-500/30";
+
+          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+            key: t.id,
+            className: "group relative flex flex-col justify-between rounded-2xl border border-white/10 bg-black/40 p-5 backdrop-blur-xl transition duration-300 hover:border-purple-500/50 hover:bg-black/60 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-1",
+            children: [
+              /* Top info row */
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+                className: "space-y-3",
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+                    className: "flex items-center justify-between gap-2",
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", {
+                        className: "rounded-full px-2.5 py-0.5 text-[11px] font-bold border " + badgeClass,
+                        children: statusBadge
+                      }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", {
+                        className: "rounded-lg bg-white/5 px-2 py-0.5 text-[10px] font-medium text-gray-400 border border-white/5",
+                        children: t.type || "Minecraft"
+                      })
+                    ]
+                  }),
+                  /* Title */
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", {
+                    className: "text-base font-extrabold text-white group-hover:text-purple-300 transition leading-snug",
+                    children: t.title
+                  }),
+                  /* Description */
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", {
+                    className: "text-xs text-gray-300 line-clamp-2 leading-relaxed",
+                    children: t.description || "NeoTerra rasmiy musobaqasi."
+                  }),
+                  /* Stats / Metadata */
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+                    className: "space-y-1.5 pt-2 border-t border-white/10 text-xs",
+                    children: [
+                      /* Prize */
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+                        className: "flex items-center justify-between text-gray-300",
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gray-400", children: "💰 Sovrin:" }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-bold text-amber-400", children: t.prize || "Sovrinli" })
+                        ]
+                      }),
+                      /* Participants */
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+                        className: "flex items-center justify-between text-gray-300",
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gray-400", children: "👥 Ishtirokchilar:" }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-medium text-sky-400", children: String(t.participantsCount || 0) + " / " + String(t.maxParticipants || 64) })
+                        ]
+                      })
+                    ]
+                  })
+                ]
+              }),
+              /* Action button */
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("button", {
+                type: "button",
+                onClick: openWebsite,
+                className: "mt-4 w-full flex items-center justify-center gap-2 rounded-xl py-2.5 text-xs font-bold transition shadow-md cursor-pointer " + (isOpen ? "bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white shadow-emerald-600/25" : "bg-white/10 hover:bg-white/15 text-gray-200"),
+                children: [
+                  isOpen ? "Ro'yxatdan o'tish" : "Batafsil ma'lumot",
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "↗" })
+                ]
+              })
+            ]
+          });
+        })
+      })
+    ]
+  });
 }
 function SkinsSkeleton() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] gap-[14px]", children: Array.from({ length: 24 }, (_, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -80259,6 +80423,33 @@ function LauncherScreen() {
               ]
             }
           ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+            className: "mt-[clamp(8px,1vw,14px)] flex items-center justify-between rounded-[12px] border border-emerald-500/30 bg-emerald-950/30 backdrop-blur-xl px-3 py-2 text-xs text-white shadow-lg",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+                className: "flex items-center gap-2",
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-2.5 w-2.5 rounded-full bg-emerald-400 animate-pulse shrink-0" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+                    className: "text-left",
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-bold text-emerald-300 text-[11px] leading-tight", children: "NeoTerra Serveri · 1.20.x - 1.21.x" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] text-gray-300 font-mono", children: "IP: play.neoterra.uz" })
+                    ]
+                  })
+                ]
+              }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("button", {
+                type: "button",
+                onClick: () => {
+                  navigator.clipboard?.writeText("play.neoterra.uz");
+                  alert("Server IP nusxalandi: play.neoterra.uz");
+                },
+                className: "rounded-lg bg-emerald-500/20 border border-emerald-500/40 px-2.5 py-1 text-[10px] font-bold text-emerald-300 hover:bg-emerald-500/30 transition cursor-pointer shrink-0",
+                children: "Nusxalash"
+              })
+            ]
+          }),
           updateReady && /* @__PURE__ */ jsxRuntimeExports.jsxs(
             "button",
             {

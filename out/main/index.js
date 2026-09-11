@@ -1406,12 +1406,38 @@ async function ensureCustomSkinLoaderMod(dir, gameVersion, loader) {
     }
   }
   if (existing.length > mismatched.length) return;
-  const file = await resolveLatestFile("customskinloader", gameVersion, wanted);
-  if (!file) return;
-  const res = await fetch(file.url, { signal: AbortSignal.timeout(12e4) });
-  if (!res.ok) throw new Error(`CustomSkinLoader yuklanmadi (HTTP ${res.status})`);
-  const buffer = Buffer.from(await res.arrayBuffer());
-  fs.writeFileSync(path.join(modsDir2, file.filename), buffer);
+  const targetCslJar = path.join(modsDir2, "CustomSkinLoader_Universal-15.0.1.jar");
+  const candidates = [
+    path.join(__dirname, "../../resources/CustomSkinLoader_Universal-15.0.1.jar"),
+    path.join(process.resourcesPath || "", "resources/CustomSkinLoader_Universal-15.0.1.jar"),
+    path.join(process.resourcesPath || "", "CustomSkinLoader_Universal-15.0.1.jar"),
+    path.join(electron.app.getAppPath(), "resources/CustomSkinLoader_Universal-15.0.1.jar")
+  ];
+  for (const c of candidates) {
+    if (fs.existsSync(c)) {
+      try {
+        fs.copyFileSync(c, targetCslJar);
+        return;
+      } catch {}
+    }
+  }
+  try {
+    const siteUrl = (process.env.NEOTERRA_SITE_URL || "https://site.neoterra.uz").replace(/\/$/, "");
+    const resSite = await fetch(`${siteUrl}/downloads/mods/CustomSkinLoader_Universal-15.0.1.jar`, { signal: AbortSignal.timeout(15000) });
+    if (resSite.ok) {
+      const bufferSite = Buffer.from(await resSite.arrayBuffer());
+      fs.writeFileSync(targetCslJar, bufferSite);
+      return;
+    }
+  } catch {}
+  try {
+    const file = await resolveLatestFile("customskinloader", gameVersion, wanted);
+    if (!file) return;
+    const res = await fetch(file.url, { signal: AbortSignal.timeout(12e4) });
+    if (!res.ok) throw new Error(`CustomSkinLoader yuklanmadi (HTTP ${res.status})`);
+    const buffer = Buffer.from(await res.arrayBuffer());
+    fs.writeFileSync(path.join(modsDir2, file.filename), buffer);
+  } catch {}
 }
 function writeCustomSkinLoaderConfig(dir) {
   const cslDir = path.join(dir, "CustomSkinLoader");
