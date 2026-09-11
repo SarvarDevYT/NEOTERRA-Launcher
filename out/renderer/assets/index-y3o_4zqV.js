@@ -35209,7 +35209,7 @@ function ModsNavMenu({ active, isActiveTab, onSelect }) {
           {
             type: "button",
             onClick: () => setOpen((v2) => !v2),
-            className: `relative flex h-full shrink-0 items-center gap-1 whitespace-nowrap px-[clamp(10px,1.35vw,26px)] text-[clamp(10.5px,1.02vw,14.5px)] transition ${isActiveTab ? "font-semibold text-white" : "font-medium text-[#828C87] hover:text-[#B8C2BD]"}`,
+            className: `relative flex items-center justify-center gap-1 whitespace-nowrap rounded-xl px-3.5 py-1.5 text-[clamp(11px,1.02vw,13.5px)] font-bold tracking-wide transition-all duration-200 cursor-pointer ${isActiveTab ? "bg-white/15 text-white border border-white/25 shadow-md shadow-purple-500/10 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]" : "text-gray-300 hover:text-white hover:bg-white/10"}`,
             children: [
               t2("common.nav.mods"),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -79777,7 +79777,7 @@ function LauncherScreen() {
             ),
             /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "leading-[1.2]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "m-0 text-[clamp(11px,1.17vw,17px)] font-black tracking-[-0.02em] uppercase italic text-white", children: ["NEO ", /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[#A855F7] drop-shadow-[0_0_12px_rgba(168,85,247,0.6)]", children: "TERRA" })] }) })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("nav", { className: "flex h-full items-center [-webkit-app-region:no-drag]", children: NAV_ITEMS.map((item) => {
+          /* @__PURE__ */ jsxRuntimeExports.jsx("nav", { className: "flex h-full items-center gap-1.5 md:gap-2.5 px-3 [-webkit-app-region:no-drag]", children: NAV_ITEMS.map((item) => {
             const isActive = activeTab === item.id;
             if (item.id === "mobile") {
               return /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -79785,7 +79785,7 @@ function LauncherScreen() {
                 {
                   type: "button",
                   onClick: () => setMobileModalOpen(true),
-                  className: "relative flex h-full shrink-0 items-center gap-1.5 whitespace-nowrap px-[clamp(8px,1vw,16px)] text-[clamp(11px,1.05vw,14px)] font-bold text-[#38BDF8] hover:text-white transition drop-shadow-[0_0_8px_rgba(56,189,248,0.5)]",
+                  className: "relative flex items-center justify-center gap-1.5 whitespace-nowrap rounded-xl px-3.5 py-1.5 text-[clamp(11px,1.02vw,13.5px)] font-bold text-sky-400 bg-sky-500/10 hover:bg-sky-500/25 border border-sky-400/30 hover:text-white transition cursor-pointer drop-shadow-[0_0_8px_rgba(56,189,248,0.4)]",
                   children: [
                     t2("common.nav.mobile")
                   ]
@@ -79821,10 +79821,10 @@ function LauncherScreen() {
                   setShopOpen(false);
                   if (item.id === "news") setNewsResetTick((t22) => t22 + 1);
                 },
-                className: `relative flex h-full shrink-0 items-center whitespace-nowrap px-[clamp(12px,1.4vw,26px)] text-[clamp(11.5px,1.08vw,15px)] transition ${isActive ? "font-extrabold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)]" : "font-bold text-gray-200 hover:text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]"}`,
+                className: `relative flex items-center justify-center whitespace-nowrap rounded-xl px-3.5 py-1.5 text-[clamp(11px,1.02vw,13.5px)] font-bold tracking-wide transition-all duration-200 cursor-pointer ${isActive ? "bg-white/15 text-white border border-white/25 shadow-md shadow-purple-500/10 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]" : "text-gray-300 hover:text-white hover:bg-white/10"}`,
                 children: [
                   t2(`common.nav.${item.id}`),
-                  isActive && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute inset-x-[clamp(10px,1.72vw,26px)] bottom-0 h-[2px] bg-gradient-to-r from-[#7C3AED] to-[#A855F7] shadow-[0_0_10px_rgba(168,85,247,0.7)]" })
+                  isActive && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute -bottom-1 h-[2.5px] w-6 rounded-full bg-gradient-to-r from-[#7C3AED] to-[#A855F7] shadow-[0_0_8px_rgba(168,85,247,0.9)]" })
                 ]
               },
               item.id
