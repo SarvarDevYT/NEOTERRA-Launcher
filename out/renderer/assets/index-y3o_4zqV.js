@@ -79761,10 +79761,11 @@ function LauncherScreen() {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none fixed inset-0 -z-[15] bg-black/60 backdrop-blur-[1.5px]" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none fixed inset-0 -z-10 [background:linear-gradient(90deg,rgba(10,6,18,.88)_0%,rgba(10,6,18,.45)_45%,rgba(10,6,18,.92)_100%)]" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none fixed inset-0 -z-10 [background:linear-gradient(180deg,rgba(10,6,18,.85)_0%,rgba(10,6,18,0)_25%,rgba(10,6,18,.85)_100%)]" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-x-0 top-0 z-30 h-[clamp(42px,3.75vw,60px)] border-b border-white/10 bg-[#0c0916]/85 backdrop-blur-md shadow-lg [-webkit-app-region:drag]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute inset-x-0 top-0 z-30 h-[clamp(42px,3.75vw,60px)] border-b border-white/10 bg-[#0c0916]/85 backdrop-blur-md shadow-lg [-webkit-app-region:drag]", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(
       "div",
       {
-        className: `flex h-full items-center justify-between ${isMac ? "pl-[86px]" : "pl-[clamp(12px,1.4vw,22px)]"}`,
+        className: `flex h-full items-center justify-between overflow-hidden ${isMac ? "pl-[86px] pr-3" : "pl-[clamp(12px,1.4vw,22px)] pr-[130px]"}`,
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex shrink-0 items-center gap-[clamp(7px,0.78vw,12px)]", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -79861,7 +79862,7 @@ function LauncherScreen() {
                         className: "h-5 w-5 shrink-0 rounded-full"
                       }
                     ),
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-[130px] text-left leading-tight", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-[85px] sm:max-w-[120px] text-left leading-tight", children: [
                       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "m-0 truncate text-[13px] font-semibold text-white", children: profile2.username || profile2.minecraft_nick || profile2.email }),
                       /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "m-0 font-mono text-[11px]", style: { color: tokens.gold }, children: [
                         (profile2.hbc ?? 0).toLocaleString(numberLocale),
@@ -79941,44 +79942,47 @@ function LauncherScreen() {
                 style: { background: tokens.emerald },
                 children: t2("common.login")
               }
-            ),
-            !isMac && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-4 w-px bg-white/10" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "button",
-                {
-                  type: "button",
-                  onClick: () => void window.launcher.minimizeWindow(),
-                  title: t2("common.windowMinimize"),
-                  className: "grid h-full w-[clamp(30px,2.8vw,42px)] place-items-center text-[#828C87] transition hover:bg-white/[.06] hover:text-[#B8C2BD]",
-                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(Minus, { size: 14, className: "h-[clamp(11px,1.02vw,16px)] w-[clamp(11px,1.02vw,16px)]" })
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "button",
-                {
-                  type: "button",
-                  onClick: () => void window.launcher.toggleMaximizeWindow(),
-                  title: t2("common.windowMaximize"),
-                  className: "grid h-full w-[clamp(30px,2.8vw,42px)] place-items-center text-[#828C87] transition hover:bg-white/[.06] hover:text-[#B8C2BD]",
-                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(Square, { size: 12, className: "h-[clamp(9px,0.86vw,13px)] w-[clamp(9px,0.86vw,13px)]" })
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "button",
-                {
-                  type: "button",
-                  onClick: () => void window.launcher.closeWindow(),
-                  title: t2("common.windowClose"),
-                  className: "grid h-full w-[clamp(30px,2.8vw,42px)] place-items-center text-[#828C87] transition hover:bg-red-500/80 hover:text-white",
-                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 14, className: "h-[clamp(11px,1.02vw,16px)] w-[clamp(11px,1.02vw,16px)]" })
-                }
-              )
-            ] })
+            )
           ] })
         ]
       }
-    ) }),
+    ),
+    !isMac && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+      className: "absolute right-0 top-0 bottom-0 z-50 flex items-center bg-[#0c0916]/95 backdrop-blur-md border-l border-white/10 [-webkit-app-region:no-drag]",
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "button",
+          {
+            type: "button",
+            onClick: () => void window.launcher.minimizeWindow(),
+            title: t2("common.windowMinimize"),
+            className: "grid h-full w-[38px] place-items-center text-[#EDF1EF] transition hover:bg-white/15 hover:text-white",
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(Minus, { size: 16, className: "stroke-[2.5]" })
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "button",
+          {
+            type: "button",
+            onClick: () => void window.launcher.toggleMaximizeWindow(),
+            title: t2("common.windowMaximize"),
+            className: "grid h-full w-[38px] place-items-center text-[#EDF1EF] transition hover:bg-white/15 hover:text-white",
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(Square, { size: 14, className: "stroke-[2]" })
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "button",
+          {
+            type: "button",
+            onClick: () => void window.launcher.closeWindow(),
+            title: t2("common.windowClose"),
+            className: "grid h-full w-[44px] place-items-center text-[#EDF1EF] transition hover:bg-red-600 hover:text-white",
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 16, className: "stroke-[2.5]" })
+          }
+        )
+      ]
+    })
+  ] }),
     showFirstLaunchHint && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none absolute inset-x-0 top-[clamp(50px,4.4vw,68px)] z-40 flex justify-center px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
       "div",
       {

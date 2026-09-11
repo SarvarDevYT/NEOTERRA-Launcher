@@ -3165,8 +3165,8 @@ electron.app.commandLine.appendSwitch("autoplay-policy", "no-user-gesture-requir
 let mainWindow = null;
 async function createWindow() {
   mainWindow = new electron.BrowserWindow({
-    width: 1100,
-    height: 700,
+    width: 1200,
+    height: 750,
     minWidth: 940,
     minHeight: 620,
     show: false,
