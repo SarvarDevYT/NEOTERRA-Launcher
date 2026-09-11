@@ -79765,7 +79765,8 @@ function LauncherScreen() {
     /* @__PURE__ */ jsxRuntimeExports.jsxs(
       "div",
       {
-        className: `flex h-full items-center justify-between overflow-hidden ${isMac ? "pl-[86px] pr-3" : "pl-[clamp(12px,1.4vw,22px)] pr-[130px]"}`,
+        className: `flex h-full items-center justify-between ${isMac ? "pl-[86px] pr-3" : "pl-[clamp(12px,1.4vw,22px)]"}`,
+        style: { paddingRight: isMac ? "12px" : "140px" },
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex shrink-0 items-center gap-[clamp(7px,0.78vw,12px)]", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -79778,7 +79779,7 @@ function LauncherScreen() {
             ),
             /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "leading-[1.2]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "m-0 text-[clamp(11px,1.17vw,17px)] font-black tracking-[-0.02em] uppercase italic text-white", children: ["NEO ", /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[#A855F7] drop-shadow-[0_0_12px_rgba(168,85,247,0.6)]", children: "TERRA" })] }) })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("nav", { className: "flex h-full items-center gap-1.5 md:gap-2.5 px-3 [-webkit-app-region:no-drag]", children: NAV_ITEMS.map((item) => {
+          /* @__PURE__ */ jsxRuntimeExports.jsx("nav", { className: "flex h-full items-center gap-1 md:gap-2 px-1 [-webkit-app-region:no-drag]", children: NAV_ITEMS.map((item) => {
             const isActive = activeTab === item.id;
             if (item.id === "mobile") {
               return /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -79875,7 +79876,7 @@ function LauncherScreen() {
               accountMenuOpen && /* @__PURE__ */ jsxRuntimeExports.jsxs(
                 "div",
                 {
-                  className: "absolute right-0 top-full z-40 mt-2 w-[180px] rounded-[10px] p-1",
+                  className: "absolute right-0 top-full z-[60] mt-2 w-[185px] rounded-[10px] p-1 shadow-2xl",
                   style: { background: "#0D0B18", border: `1px solid ${tokens.hairline}` },
                   children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsxs(
