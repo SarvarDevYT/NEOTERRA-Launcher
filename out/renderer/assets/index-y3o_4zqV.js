@@ -79160,10 +79160,10 @@ const MC_VERSION = "1.20.1";
 const SELECTED_VERSION_KEY = "mcmodhub:selectedVersion";
 function loadSavedVersion() {
   const fallback = {
-    id: `vanilla:${MC_VERSION}`,
+    id: `fabric:${MC_VERSION}`,
     mcVersion: MC_VERSION,
     mcType: "release",
-    loader: "vanilla"
+    loader: "fabric"
   };
   try {
     const raw = localStorage.getItem(SELECTED_VERSION_KEY);
@@ -79629,13 +79629,15 @@ function LauncherScreen() {
     }
   }
   function entryLabel(e) {
-    if (e.loader === "forge") return `Forge ${e.mcVersion}`;
-    if (e.loader === "fabric") return `Fabric ${e.mcVersion}`;
+    if (e.loader === "fabric") return `⚡ Fabric ${e.mcVersion} (Tavsiya · Max FPS)`;
+    if (e.loader === "forge") return `Forge ${e.mcVersion} (Modlar)`;
     if (e.loader === "quilt") return `Quilt ${e.mcVersion}`;
     if (e.mcType !== "release") return `${t2("home.snapshot")} ${e.mcVersion}`;
-    return `${t2("home.version")} ${e.mcVersion}`;
+    return `${t2("home.version")} ${e.mcVersion} (Vanilla)`;
   }
   function entrySubtitle(e) {
+    if (e.loader === "fabric") return `⚡ Optimizatsiya va NeoSkinLoader · ${e.mcVersion}`;
+    if (e.loader === "forge") return `Forge Modlar va NeoSkinLoader · ${e.mcVersion}`;
     return `${e.mcType === "release" ? t2("home.release") : t2("home.snapshot")} · ${e.mcVersion}`;
   }
   const query = versionQuery.trim().toLowerCase();

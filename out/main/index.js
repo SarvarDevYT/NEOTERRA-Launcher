@@ -1406,9 +1406,11 @@ async function ensureCustomSkinLoaderMod(dir, gameVersion, loader) {
     }
   }
   if (existing.length > mismatched.length) return;
-  const targetCslJar = path.join(modsDir2, "CustomSkinLoader_Universal-15.0.1.jar");
+  const targetCslJar = path.join(modsDir2, "NeoSkinLoader_Universal-15.0.1.jar");
   const candidates = [
+    path.join(__dirname, "../../resources/NeoSkinLoader_Universal-15.0.1.jar"),
     path.join(__dirname, "../../resources/CustomSkinLoader_Universal-15.0.1.jar"),
+    path.join(process.resourcesPath || "", "resources/NeoSkinLoader_Universal-15.0.1.jar"),
     path.join(process.resourcesPath || "", "resources/CustomSkinLoader_Universal-15.0.1.jar"),
     path.join(process.resourcesPath || "", "CustomSkinLoader_Universal-15.0.1.jar"),
     path.join(electron.app.getAppPath(), "resources/CustomSkinLoader_Universal-15.0.1.jar")
@@ -2718,19 +2720,22 @@ function registerIpc(getWindow) {
         listSupportedGameVersions("quilt"),
         listForgeSupportedVersions()
       ]);
-      const entries = [];
+      const fabricEntries = [];
+      const forgeEntries = [];
+      const otherEntries = [];
       for (const v of vanilla) {
-        entries.push({ id: `vanilla:${v.id}`, mcVersion: v.id, mcType: v.type, loader: "vanilla" });
         if (fabricSet.has(v.id)) {
-          entries.push({ id: `fabric:${v.id}`, mcVersion: v.id, mcType: v.type, loader: "fabric" });
-        }
-        if (quiltSet.has(v.id)) {
-          entries.push({ id: `quilt:${v.id}`, mcVersion: v.id, mcType: v.type, loader: "quilt" });
+          fabricEntries.push({ id: `fabric:${v.id}`, mcVersion: v.id, mcType: v.type, loader: "fabric", recommended: true });
         }
         if (forgeSet.has(v.id)) {
-          entries.push({ id: `forge:${v.id}`, mcVersion: v.id, mcType: v.type, loader: "forge" });
+          forgeEntries.push({ id: `forge:${v.id}`, mcVersion: v.id, mcType: v.type, loader: "forge" });
         }
+        if (quiltSet.has(v.id)) {
+          otherEntries.push({ id: `quilt:${v.id}`, mcVersion: v.id, mcType: v.type, loader: "quilt" });
+        }
+        otherEntries.push({ id: `vanilla:${v.id}`, mcVersion: v.id, mcType: v.type, loader: "vanilla" });
       }
+      const entries = [...fabricEntries, ...forgeEntries, ...otherEntries];
       return { ok: true, data: entries };
     } catch (err) {
       return { ok: false, error: err instanceof Error ? err.message : String(err) };
