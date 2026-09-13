@@ -1444,6 +1444,12 @@ async function ensureCustomSkinLoaderMod(dir, gameVersion, loader) {
 function writeCustomSkinLoaderConfig(dir) {
   const cslDir = path.join(dir, "CustomSkinLoader");
   fs.mkdirSync(cslDir, { recursive: true });
+  const cachesDir = path.join(cslDir, "caches");
+  if (fs.existsSync(cachesDir)) {
+    try {
+      fs.rmSync(cachesDir, { recursive: true, force: true });
+    } catch {}
+  }
   const configPath = path.join(cslDir, "CustomSkinLoader.json");
   const siteUrl = (process.env.NEOTERRA_SITE_URL || "https://site.neoterra.uz").replace(/\/$/, "");
   const ours = {
@@ -1462,6 +1468,8 @@ function writeCustomSkinLoaderConfig(dir) {
     if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) config = parsed;
   } catch {
   }
+  config.forceDisableCache = true;
+  config.cacheExpiry = 0;
   const elyBy = {
     name: "Elyby",
     type: "ElybyAPI"
@@ -3117,7 +3125,7 @@ function startRendererServer(rootDir) {
             res.writeHead(200, { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" });
             res.end(JSON.stringify({
               username: nick,
-              skins: { default: `http://127.0.0.1:47823/skins/textures/${nick}.png` },
+              skins: { default: `${nick}.png` },
               capes: {}
             }));
             return;
