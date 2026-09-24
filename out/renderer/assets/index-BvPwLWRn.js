@@ -64900,6 +64900,25 @@ function translateAuthError(message, t2) {
   return key ? t2(key) : message;
 }
 
+
+async function siteApi(url, options = {}) {
+  const fullUrl = url.startsWith("http") ? url : ("https://site.neoterra.uz" + (url.startsWith("/") ? "" : "/") + url);
+  if (window.launcher?.apiRequest) {
+    const res = await window.launcher.apiRequest(fullUrl, options);
+    if (!res.ok) {
+      const msg = res.data?.message || res.error || `HTTP ${res.status}`;
+      throw new Error(msg);
+    }
+    return res.data;
+  }
+  const r = await fetch(fullUrl, options);
+  const json = await r.json();
+  if (!r.ok || !json.success) {
+    throw new Error(json.message || `HTTP ${r.status}`);
+  }
+  return json;
+}
+
 function toDeterministicUuid(str) {
   if (!str) return "00000000-0000-4000-a000-000000000000";
   const s = String(str);
@@ -65072,13 +65091,12 @@ function AuthProvider({ children }) {
   const signIn = reactExports.useCallback(
     async (email, password) => {
       try {
-        const res = await fetch("https://site.neoterra.uz/api/launcher/auth/login", {
+        const json = await siteApi("/api/launcher/auth/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ identifier: email.trim(), password })
         });
-        const json = await res.json();
-        if (res.ok && json.success && json.user) {
+        if (json && json.success && json.user) {
           const prof = makeNeoTerraProfile(json.user, "email");
           const sess = makeNeoTerraSession(json.user, "email", json.token, json.refreshToken);
           try {
@@ -65088,7 +65106,7 @@ function AuthProvider({ children }) {
           setProfile(prof);
           rememberSignedIn("email");
           return;
-        } else if (json.message && !json.message.includes("baza") && !json.message.includes("Serverda")) {
+        } else if (json?.message && !json.message.includes("baza") && !json.message.includes("Serverda")) {
           throw new Error(json.message);
         }
       } catch (siteErr) {
@@ -65183,17 +65201,14 @@ function AuthProvider({ children }) {
       if (saved) {
         const parsed = JSON.parse(saved);
         const queryParam = parsed.profile?.raw_uid ? `uid=${parsed.profile.raw_uid}` : `nickname=${parsed.profile?.username}`;
-        const res = await fetch(`https://site.neoterra.uz/api/launcher/profile?${queryParam}`).catch(() => null);
-        if (res && res.ok) {
-          const json = await res.json().catch(() => null);
-          if (json && json.success && json.user) {
-            const prof = makeNeoTerraProfile(json.user, parsed.profile?.provider || "email");
-            try {
-              localStorage.setItem("neoterra_launcher_auth_v1", JSON.stringify({ session, profile: prof }));
-            } catch {}
-            setProfile(prof);
-            return;
-          }
+        const json = await siteApi(`/api/launcher/profile?${queryParam}`).catch(() => null);
+        if (json && json.success && json.user) {
+          const prof = makeNeoTerraProfile(json.user, parsed.profile?.provider || "email");
+          try {
+            localStorage.setItem("neoterra_launcher_auth_v1", JSON.stringify({ session, profile: prof }));
+          } catch {}
+          setProfile(prof);
+          return;
         }
       }
     } catch {}
@@ -89485,10 +89500,9 @@ function LoginScreen() {
       busyRef.current = true;
       setNotice({ kind: "info", text: "Telegram sessiyasi yaratilmoqda..." });
       try {
-        const res = await fetch("https://site.neoterra.uz/api/launcher/auth/telegram-session", {
+        const json = await siteApi("/api/launcher/auth/telegram-session", {
           method: "POST"
         });
-        const json = await res.json();
         if (!json.success || !json.session) {
           throw new Error(json.message || "Telegram sessiyasini yaratib bo'lmadi!");
         }
@@ -89505,8 +89519,7 @@ function LoginScreen() {
           await new Promise((r) => setTimeout(r, 2000));
           if (!busyRef.current) break;
           try {
-            const checkRes = await fetch(`https://site.neoterra.uz/api/launcher/auth/telegram-session?session=${sessionToken}`);
-            const checkData = await checkRes.json();
+            const checkData = await siteApi(`/api/launcher/auth/telegram-session?session=${sessionToken}`);
             if (checkData.status === "approved" && checkData.user) {
               const prof = makeNeoTerraProfile(checkData.user, "telegram");
               const sess = makeNeoTerraSession(checkData.user, "telegram", checkData.token);
@@ -89561,8 +89574,7 @@ function LoginScreen() {
         }
         const sessionCode = callback.data;
         setNotice({ kind: "info", text: "Profil ma'lumotlari yuklanmoqda..." });
-        const checkRes = await fetch(`https://site.neoterra.uz/api/launcher/auth/telegram-session?session=${sessionCode}`);
-        const checkData = await checkRes.json();
+        const checkData = await siteApi(`/api/launcher/auth/telegram-session?session=${sessionCode}`);
         if (!checkData.success || !checkData.user) {
           throw new Error("Profil ma'lumotlarini yuklab bo'lmadi!");
         }

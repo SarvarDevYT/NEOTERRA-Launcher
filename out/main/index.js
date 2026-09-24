@@ -5527,7 +5527,7 @@ function renderPage(strings, ok) {
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>MCModHub</title>
+<title>NeoTerra</title>
 <style>
   html,body{height:100%;margin:0}
   body{display:grid;place-items:center;background:#060A09;color:#EDF1EF;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -5542,8 +5542,10 @@ function renderPage(strings, ok) {
   <div class="badge"><svg viewBox="0 0 24 24" aria-hidden="true">${glyph}</svg></div>
   <h1>${title}</h1>
   <p>${message}</p>
-  <span class="brand">MCModHub</span>
-</main></body></html>`;
+  <span class="brand">NeoTerra</span>
+</main>
+<script>setTimeout(function(){ window.close(); }, 2500);</script>
+</body></html>`;
 }
 function respond(res, status, body) {
   res.writeHead(status, {
@@ -5781,6 +5783,29 @@ function registerIpc(getWindow) {
       return { ok: true };
     } catch (err) {
       return { ok: false, error: err instanceof Error ? err.message : String(err) };
+    }
+  });
+  electron.ipcMain.handle("system:api-request", async (_e, payload) => {
+    try {
+      const { url, options = {} } = payload || {};
+      if (typeof url !== "string" || !/^https?:\/\//i.test(url)) {
+        return { ok: false, error: "invalid URL" };
+      }
+      const fetchOptions = {
+        method: options.method || "GET",
+        headers: options.headers || {}
+      };
+      if (options.body) {
+        fetchOptions.body = typeof options.body === "string" ? options.body : JSON.stringify(options.body);
+      }
+      const res = await fetch(url, fetchOptions);
+      const text = await res.text();
+      let data = null;
+      try { data = JSON.parse(text); } catch { data = text; }
+      return { ok: res.ok, status: res.status, data };
+    } catch (err) {
+      console.error("[main api-request error]:", err);
+      return { ok: false, status: 500, error: err instanceof Error ? err.message : String(err) };
     }
   });
   electron.ipcMain.handle(IPC.FETCH_BYTES, async (_e, url) => {
@@ -6315,9 +6340,9 @@ async function createWindow() {
     webPreferences: {
       preload: path.join(__dirname, "../preload/index.js"),
       sandbox: false,
-      // Xavfsizlik: renderer'da Node yo'q, hamma narsa preload orqali
       contextIsolation: true,
-      nodeIntegration: false
+      nodeIntegration: false,
+      webSecurity: false
     }
   });
   mainWindow.on("ready-to-show", () => mainWindow?.show());

@@ -173,6 +173,7 @@ const launcherApi = {
       bilan ba'zi ISP'larda "Failed to fetch" berardi - main process ishlaydi). Baytlar
       IPC orqali `ArrayBuffer` sifatida uzatiladi (JSON raqam-massivi emas — 10-20 barobar
       tez), renderer'da `Uint8Array` bilan o'ralib qaytadi. */
+  apiRequest: (url, options) => electron.ipcRenderer.invoke("system:api-request", { url, options }),
   fetchBytes: async (url) => {
     const res = await electron.ipcRenderer.invoke(IPC.FETCH_BYTES, url);
     if (!res.ok || !res.data) return { ok: false, error: res.error };
