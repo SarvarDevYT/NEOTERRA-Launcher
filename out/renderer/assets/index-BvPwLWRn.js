@@ -65020,8 +65020,7 @@ function AuthProvider({ children }) {
           setProfile(parsed.profile);
           setInitializing(false);
           const queryParam = parsed.profile.raw_uid ? `uid=${parsed.profile.raw_uid}` : `nickname=${parsed.profile.username}`;
-          fetch(`https://site.neoterra.uz/api/launcher/profile?${queryParam}`)
-            .then((r) => r.json())
+          siteApi(`/api/launcher/profile?${queryParam}`)
             .then((j) => {
               if (active && j.success && j.user) {
                 const freshProf = makeNeoTerraProfile(j.user, parsed.profile.provider || "email");
