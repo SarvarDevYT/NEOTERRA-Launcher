@@ -82508,8 +82508,8 @@ const DOWNLOADED_KIND_LABELS = {
   datapack: "Data paket",
   map: "Xarita"
 };
-const OWN_COLUMNS = "id, username, avatar_url, bio, telegram, discord, youtube_url, instagram, website, tariff, hbc, purchased_mods, premium, has_club_access, is_creator, xp, level, streak, current_skin_id, created_at, last_seen, minecraft_nick";
-const PUBLIC_COLUMNS = "id, username, avatar_url, bio, telegram, discord, youtube_url, instagram, website, premium, has_club_access, is_creator, xp, level, streak, current_skin_id, created_at, last_seen";
+const OWN_COLUMNS = "id, username, email, avatar_url, role, banned, has_club_access, premium, is_creator, level, minecraft_nick, minecraft_uuid, hbc, current_skin_id, created_at, updated_at";
+const PUBLIC_COLUMNS = "id, username, email, avatar_url, role, banned, has_club_access, premium, is_creator, level, minecraft_nick, minecraft_uuid, hbc, current_skin_id, created_at, updated_at";
 async function fetchOwnProfile(userId) {
   const { data, error } = await supabase.from("profiles").select(OWN_COLUMNS).eq("id", userId).maybeSingle();
   if (error) throw new Error(error.message);
@@ -82522,7 +82522,7 @@ async function updateOwnProfile(userId, values) {
   throw new Error(error.message);
 }
 async function fetchPublicProfile(username) {
-  const { data, error } = await supabase.from("public_profiles").select(PUBLIC_COLUMNS).eq("username", username).maybeSingle();
+  const { data, error } = await supabase.from("profiles").select(PUBLIC_COLUMNS).eq("username", username).maybeSingle();
   if (error) throw new Error(error.message);
   return data;
 }
@@ -83433,7 +83433,7 @@ function ProfileScreen({ target, backLabel, onBack, onOpenSkins, onRequestLogin 
     return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mx-auto flex h-full max-w-[1600px] items-center justify-center px-12", children: /* @__PURE__ */ jsxRuntimeExports.jsx(EmptyState, { kind: "empty", title: t2("profile.needsAccount"), message: t2("profile.needsAccountHint"), actionLabel: t2("common.login"), onAction: onRequestLogin }) });
   }
   const ownData = target.mode === "own" ? data : void 0;
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "no-scrollbar h-full w-full overflow-y-auto", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "no-scrollbar h-full w-full overflow-y-auto bg-[#0a0d0c]/90 backdrop-blur-2xl", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1600px] px-12 pb-12 pt-7", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { type: "button", onClick: onBack, className: "mb-[18px] flex items-center gap-1.5 text-[12.5px] transition hover:brightness-125", style: { color: tokens.text2 }, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowLeft, { size: 13 }),
@@ -84640,9 +84640,7 @@ const TABS = [
   { id: "capes", icon: Shirt },
   { id: "emotes", icon: Sparkles },
   { id: "skins", icon: UserRound },
-  { id: "cases", icon: Gift },
-  { id: "companion", icon: PawPrint },
-  { id: "uiThemes", icon: Palette }
+  { id: "cases", icon: Gift }
 ];
 const SELF_SCROLLING = /* @__PURE__ */ new Set(["skins"]);
 const PAY_CHAT_URL$1 = "https://t.me/NeoTerraUz";
@@ -84748,71 +84746,7 @@ function ShopScreen({
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "min-h-0 flex-1", children: SELF_SCROLLING.has(tab2) ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-full w-full", children: tab2 === "skins" && /* @__PURE__ */ jsxRuntimeExports.jsx(SkinsSection, { onOpenProfile }) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "thin-scrollbar h-full overflow-y-auto", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto w-full max-w-[1240px] px-[clamp(16px,2.6vw,48px)] py-[clamp(18px,2.2vw,34px)]", children: [
           tab2 === "capes" && /* @__PURE__ */ jsxRuntimeExports.jsx(ShopItemsGrid, { category: "cape" }),
           tab2 === "emotes" && /* @__PURE__ */ jsxRuntimeExports.jsx(ShopItemsGrid, { category: "emote" }),
-          tab2 === "cases" && /* @__PURE__ */ jsxRuntimeExports.jsx(ShopItemsGrid, { category: "case" }),
-          tab2 === "uiThemes" && /* @__PURE__ */ jsxRuntimeExports.jsx(UiThemesTab, {}),
-          tab2 === "companion" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-start justify-between gap-3", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[13px] font-semibold uppercase tracking-wide", style: { color: tokens.text2 }, children: t2("shop.companion.choose") }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1.5 max-w-[560px] text-[12px] leading-[1.5]", style: { color: tokens.textDim }, children: t2("shop.companion.description") }),
-                !getPet(selectedPetId).inGame && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1.5 text-[12px] leading-[1.5]", style: { color: tokens.gold }, children: t2("shop.companion.launcherOnly") })
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "button",
-                {
-                  type: "button",
-                  onClick: onToggleCompanion,
-                  className: "shrink-0 rounded-[10px] px-4 py-2 text-[12.5px] font-semibold transition hover:brightness-110",
-                  style: companionEnabled ? { border: `1px solid ${tokens.hairline}`, color: tokens.text } : { background: tokens.emerald, color: "white" },
-                  children: companionEnabled ? t2("shop.companion.disable") : t2("shop.companion.enable")
-                }
-              )
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `mt-5 ${SHOP_GRID}`, children: PETS.map((pet) => {
-              const isSelected = pet.id === selectedPetId;
-              return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                ShopCard,
-                {
-                  selected: isSelected,
-                  onClick: () => onSelectPet(pet.id),
-                  badge: isSelected && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                    "span",
-                    {
-                      className: "absolute right-2 top-2 flex items-center gap-1 rounded-full px-2 py-[3px] text-[10px] font-bold text-white shadow",
-                      style: { background: tokens.emerald },
-                      children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { size: 11 }),
-                        " ",
-                        t2("shop.companion.selected")
-                      ]
-                    }
-                  ),
-                  media: (
-                    // Fon (SHOP_MEDIA_FALLBACK_BG) 3D kanvas ostida ham turadi - aks holda
-                    // model yuklanguncha kartaning orqasi qop-qora ko'rinib, qolgan
-                    // kartalardan ajralib qolardi. Faqat TANLANGAN kartada jonli
-                    // animatsiya ishlaydi (`still` yo'q) - qolganlarida bitta statik
-                    // kadr (`still`), 13 tasini birdan jonlantirish kuchsiz
-                    // kompyuterga og'ir bo'lardi (foydalanuvchi baribir hammasini
-                    // ko'rishni so'ragani uchun kamida statik ko'rinishda chiziladi).
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `h-full w-full ${SHOP_MEDIA_FALLBACK_BG}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(CompanionMascot, { modelUrl: pet.modelUrl, pose: "idle", facing: 1, still: !isSelected }) })
-                  ),
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "truncate text-[12.5px] font-semibold text-white", children: t2(`shop.pets.${pet.id}`) }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      "span",
-                      {
-                        className: "mt-auto text-[11px] font-semibold",
-                        style: { color: isSelected ? tokens.emeraldNav : tokens.textDim },
-                        children: isSelected ? t2("shop.companion.selected") : t2("shop.companion.select")
-                      }
-                    )
-                  ]
-                },
-                pet.id
-              );
-            }) })
-          ] })
+          tab2 === "cases" && /* @__PURE__ */ jsxRuntimeExports.jsx(ShopItemsGrid, { category: "case" })
         ] }) }) })
       ] })
     }
@@ -84821,7 +84755,7 @@ function ShopScreen({
 const CHAT_RETENTION_DAYS = 5;
 const CHAT_MAX_LENGTH = 2e3;
 const CHAT_PAGE_SIZE = 50;
-const VIEW_COLUMNS = "id, author_id, body, reply_to, created_at, edited_at, author_username, author_avatar_url, author_premium, author_is_creator, author_club, author_level, reply_body, reply_author_id, reply_author_username, author_pro";
+const VIEW_COLUMNS = "id, author_id, body, reply_to, created_at, edited_at, author_username, author_avatar_url, author_premium, author_is_creator, author_club, author_level, reply_body, reply_author_id, reply_author_username";
 function retentionCutoffIso() {
   return new Date(Date.now() - CHAT_RETENTION_DAYS * 24 * 60 * 60 * 1e3).toISOString();
 }
@@ -87573,38 +87507,64 @@ function HomeProCard({ onClick }) {
     {
       type: "button",
       onClick,
-      className: `group relative flex h-[clamp(54px,5.2vw,92px)] w-[clamp(240px,22.6vw,400px)] items-stretch overflow-hidden rounded-[clamp(10px,.85vw,14px)] text-left motion-safe:animate-panel-in [animation-fill-mode:backwards] border border-amber-400/40 bg-gradient-to-r from-amber-500/20 via-black/45 to-black/60 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,.5),0_0_24px_rgba(250,204,21,.15),inset_0_1px_1px_rgba(255,255,255,.2)] transition-all duration-300 hover:border-amber-300 hover:shadow-[0_12px_40px_rgba(0,0,0,.6),0_0_36px_rgba(250,204,21,.35),inset_0_1px_2px_rgba(255,255,255,.3)] hover:-translate-y-[2px]`,
-      style: { animationDelay: "280ms" },
+      style: {
+        width: "100%",
+        height: "52px",
+        borderRadius: "10px",
+        background: "linear-gradient(135deg, rgba(245,158,11,0.22), rgba(10,13,12,0.88) 60%)",
+        border: "1px solid rgba(250,204,21,0.35)",
+        backdropFilter: "blur(16px)",
+        boxShadow: "0 8px 24px rgba(0,0,0,0.45), 0 0 20px rgba(250,204,21,0.12)",
+        display: "flex",
+        alignItems: "center",
+        overflow: "hidden",
+        position: "relative",
+        textAlign: "left",
+        cursor: "pointer"
+      },
+      className: "group transition-all duration-200 hover:border-amber-300 hover:brightness-110",
       children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(253,224,71,.25),transparent_70%)] transition-opacity duration-300 group-hover:opacity-100" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "relative w-[28%] shrink-0 overflow-hidden", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "img",
-            {
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+          style: { width: "62px", height: "100%", position: "relative", flexShrink: 0, overflow: "hidden" },
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("img", {
               src: "images/lobby/pro.jpg",
               alt: "",
               draggable: false,
-              className: "h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute inset-y-0 right-0 w-2/3 bg-gradient-to-r from-transparent to-black/60" })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "relative flex min-w-0 flex-1 flex-col justify-center px-[clamp(10px,1.1vw,18px)] leading-[1.2]", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-[clamp(6px,.6vw,10px)]", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              Crown,
-              {
-                fill: "currentColor",
-                strokeWidth: 1.6,
-                className: "h-[clamp(14px,1.35vw,22px)] w-[clamp(14px,1.35vw,22px)] shrink-0 text-[#FDE047] drop-shadow-[0_0_10px_rgba(250,204,21,.9)]"
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "truncate text-[clamp(13px,1.2vw,20px)] font-bold text-white tracking-wide [text-shadow:0_1px_8px_rgba(0,0,0,.6)]", children: "NeoTerra Pro" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded-full bg-gradient-to-r from-amber-400 to-yellow-300 px-2 py-0.5 text-[9px] font-black uppercase text-black tracking-wider shadow-[0_0_12px_rgba(250,204,21,.6)]", children: "VIP" })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "truncate mt-1 text-[clamp(10px,.9vw,14px)] text-yellow-200/70 font-medium", children: t2("home.proSubtitle") })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { className: "relative my-auto mr-[clamp(10px,1vw,16px)] h-[clamp(16px,1.4vw,24px)] w-[clamp(16px,1.4vw,24px)] shrink-0 text-amber-300/80 transition-transform duration-200 group-hover:translate-x-[4px] group-hover:text-amber-200" })
+              style: { width: "100%", height: "100%", objectFit: "cover" }
+            }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", {
+              style: { position: "absolute", inset: 0, background: "linear-gradient(to right, transparent, rgba(10,13,12,0.85))" }
+            })
+          ]
+        }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+          style: { flex: 1, minWidth: 0, paddingLeft: "10px", display: "flex", flexDirection: "column", justifyContent: "center" },
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+              style: { display: "flex", alignItems: "center", gap: "6px" },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Crown, { size: 14, style: { color: "#FDE047", flexShrink: 0 } }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", {
+                  style: { fontSize: "13px", fontWeight: "bold", color: "#fff", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" },
+                  children: "NeoTerra Pro"
+                }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", {
+                  style: { background: "linear-gradient(135deg, #F59E0B, #EAB308)", color: "#000", fontWeight: "900", fontSize: "9px", padding: "1px 5px", borderRadius: "999px" },
+                  children: "VIP"
+                })
+              ]
+            }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", {
+              style: { fontSize: "11px", color: "rgba(253,230,138,0.75)", marginTop: "2px", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" },
+              children: t2("home.proSubtitle") || "VIP imtiyozlar"
+            })
+          ]
+        }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, {
+          size: 16,
+          style: { color: "rgba(250,204,21,0.85)", marginRight: "12px", flexShrink: 0 }
+        })
       ]
     }
   );
@@ -88405,8 +88365,10 @@ function LauncherScreen() {
           )
         ] })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute right-[clamp(14px,2vw,34px)] top-[clamp(12px,3.4vw,60px)] z-20 w-[clamp(200px,17vw,320px)]", children: /* @__PURE__ */ jsxRuntimeExports.jsx(HomeQuickCards, { onOpen: openTab, onOpenArenas: () => setPage("arenas") }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute bottom-[clamp(52px,6.76vw,132px)] right-[clamp(14px,2vw,34px)] z-20", children: /* @__PURE__ */ jsxRuntimeExports.jsx(HomeProCard, { onClick: () => useProStore.getState().openPage() }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute right-[clamp(14px,2vw,34px)] top-[clamp(12px,3.4vw,60px)] z-20 w-[clamp(200px,17vw,320px)] flex flex-col gap-2.5", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(HomeQuickCards, { onOpen: openTab, onOpenArenas: () => setPage("arenas") }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(HomeProCard, { onClick: () => useProStore.getState().openPage() })
+      ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         HomeFooter,
         {
