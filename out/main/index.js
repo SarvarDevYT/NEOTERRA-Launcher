@@ -4301,7 +4301,7 @@ async function translateBatch(texts) {
   }
   return texts.map((t) => c[t] ?? t);
 }
-const UPDATE_BASE_URL = "https://cdn.neoterra.org/updates/";
+const UPDATE_BASE_URL = "https://site.neoterra.uz/api/launcher/updates/";
 let emitRef = null;
 function canAutoUpdate() {
   if (process.platform === "win32") return true;

@@ -1,6 +1,6 @@
 {
   "name": "neoterra-launcher",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "NeoTerra Minecraft Launcher",
   "main": "./out/main/index.js",
   "author": "NeoTerra",
@@ -22,6 +22,10 @@
     "productName": "NeoTerra Launcher",
     "directories": {
       "output": "dist"
+    },
+    "publish": {
+      "provider": "generic",
+      "url": "https://site.neoterra.uz/api/launcher/updates/"
     },
     "files": [
       "out/**/*",
