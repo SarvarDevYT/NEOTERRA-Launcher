@@ -65481,14 +65481,41 @@ async function copyTexture(skinId, skinUrl) {
 }
 const LIST_COLUMNS$1 = "id, slug, tag, title, summary, cover_url, is_pinned, published_at";
 async function fetchNewsList() {
-  const { data, error } = await supabase.from("news").select(LIST_COLUMNS$1).eq("is_published", true).order("is_pinned", { ascending: false }).order("published_at", { ascending: false }).limit(30);
-  if (error) throw new Error(error.message);
-  return data ?? [];
+  try {
+    const res = await siteApi("/api/launcher/news");
+    if (res?.success && Array.isArray(res.news) && res.news.length > 0) {
+      return res.news.map((item, idx) => ({
+        id: item.id || `news-${idx}`,
+        slug: item.id || `news-${idx}`,
+        tag: item.tag || (idx === 0 ? "MUHIM" : "SERVER"),
+        title: item.title || "NeoTerra Yangiligi",
+        summary: item.summary || (item.content ? item.content.slice(0, 150) + "..." : "NeoTerra loyihasidagi so'nggi yangiliklar va o'zgarishlar."),
+        content: item.content || item.summary || item.title,
+        cover_url: item.image || "images/lobby/news.jpg",
+        is_pinned: idx === 0,
+        published_at: item.date || new Date().toISOString()
+      }));
+    }
+  } catch (e) {
+    console.warn("[news] siteApi news load error:", e);
+  }
+  return [
+    {
+      id: "neoterra-v140-release",
+      slug: "neoterra-v140-release",
+      tag: "MUHIM",
+      title: "NeoTerra Launcher Yangilanishi",
+      summary: "NeoTerra Minecraft Launcher yangilandi! Tezkor o'yin, barqaror avtorizatsiya va yangilangan serverlar.",
+      content: "NeoTerra Minecraft Launcher rasmiy yangilandi! Endilikda yangi serverlar, modlar va qulay interfeys sizni kutmoqda. Telegram bot orqali kirish va yangi imkoniyatlardan bahramand bo'ling.",
+      cover_url: "images/lobby/news.jpg",
+      is_pinned: true,
+      published_at: new Date().toISOString()
+    }
+  ];
 }
 async function fetchNewsArticle(slug) {
-  const { data, error } = await supabase.from("news").select("*").eq("slug", slug).eq("is_published", true).maybeSingle();
-  if (error) throw new Error(error.message);
-  return data;
+  const list = await fetchNewsList();
+  return list.find((n) => n.slug === slug || n.id === slug) || list[0];
 }
 const UZ_MONTHS$2 = [
   "yanvar",
@@ -81206,11 +81233,11 @@ function YoutubeIcon() {
 }
 const SOCIAL_LINKS$1 = [
   { key: "telegram", labelKey: "community.telegramChannel", handle: "@NeoTerraUz", url: "https://t.me/NeoTerraUz", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(TelegramIcon$1, {}), color: "#229ED9" },
-  { key: "website", labelKey: "community.officialSite", handle: "neoterra.uz", url: "https://neoterra.uz/", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Globe, { size: 18, strokeWidth: 1.7 }), color: tokens.emeraldNav },
-  { key: "creatorClub", labelKey: "Creator Club", handle: "youtubeclub.uz", url: "https://www.youtubeclub.uz/", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { size: 18, strokeWidth: 1.7 }), color: tokens.gold },
-  { key: "discord", labelKey: "Discord", handle: "discord.gg", url: "https://discord.gg/utxmTFFr7", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(DiscordIcon$1, {}), color: "#5865F2" },
+  { key: "website", labelKey: "community.officialSite", handle: "site.neoterra.uz", url: "https://site.neoterra.uz", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Globe, { size: 18, strokeWidth: 1.7 }), color: tokens.emeraldNav },
+  { key: "creatorClub", labelKey: "Creator Club", handle: "yt.neoterra.uz", url: "https://yt.neoterra.uz", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { size: 18, strokeWidth: 1.7 }), color: tokens.gold },
+  { key: "discord", labelKey: "Discord", handle: "ds.neoterra.uz", url: "https://ds.neoterra.uz", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(DiscordIcon$1, {}), color: "#5865F2" },
   { key: "instagram", labelKey: "Instagram", handle: "@neoterra.uz", url: "https://www.instagram.com/neoterra.uz/", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(InstagramIcon, {}), color: "#E1306C" },
-  { key: "youtube", labelKey: "YouTube", handle: "@NeoTerraUz", url: "https://www.youtube.com/@NeoTerraUz", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(YoutubeIcon, {}), color: "#FF0000" }
+  { key: "youtube", labelKey: "YouTube", handle: "yt.neoterra.uz", url: "https://yt.neoterra.uz", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(YoutubeIcon, {}), color: "#FF0000" }
 ];
 const CONTACT_ROWS = [
   { icon: /* @__PURE__ */ jsxRuntimeExports.jsx(TelegramIcon$1, {}), labelKey: "community.telegramAdmin", value: "@NeoTerraUz", onClick: () => openExternal("https://t.me/NeoTerraUz") },
@@ -81224,8 +81251,8 @@ const HELP_ROWS = [
     onClick: () => openExternal("https://t.me/NeoTerraUz")
   }
 ];
-const DONATE_CARD_NUMBER = "9860 0401 2652 2826";
-const DONATE_CARD_HOLDER = "Abdushukurov A.";
+const DONATE_CARD_NUMBER = "9860 1866 1405 3814";
+const DONATE_CARD_HOLDER = "NeoTerra";
 const DONATE_TELEGRAM_URL = "https://t.me/NeoTerraUz";
 function DonateBanner() {
   const { showToast } = useToast();
@@ -81503,15 +81530,7 @@ function CommunitySection({ isActive }) {
             "v",
             appVersion ?? "..."
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "button",
-            {
-              type: "button",
-              onClick: () => openExternal("https://sketchfab.com/3d-models/aqua-anime-chibi-model-549de66768ed422681106d3028d1cf4f"),
-              className: "text-left underline-offset-2 transition hover:underline",
-              children: 'Kompanion model: "Aqua" — Partaevil (CC-BY-4.0)'
-            }
-          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "NeoTerra Rasmiy Hamjamiyati" }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
             "© ",
             (/* @__PURE__ */ new Date()).getFullYear(),
@@ -87496,8 +87515,7 @@ const IMAGE_CARDS = [
   { id: "arenas", action: { kind: "arenas" }, labelKey: "home.arenas", image: "images/lobby/arenas.jpg" }
 ];
 const SLIM_CARDS = [
-  { tab: "community", labelKey: "common.nav.community", icon: Users },
-  { tab: "hubtv", labelKey: "common.nav.hubtv", icon: Tv }
+  { tab: "community", labelKey: "common.nav.community", icon: Users }
 ];
 const RADIUS = "rounded-[clamp(7px,.6vw,10px)]";
 const CHEVRON = "h-[clamp(15px,1.3vw,22px)] w-[clamp(15px,1.3vw,22px)] shrink-0 text-white/80 transition-transform duration-200 group-hover:translate-x-[3px] group-hover:text-white";
@@ -87555,11 +87573,11 @@ function HomeProCard({ onClick }) {
     {
       type: "button",
       onClick,
-      className: `group relative flex h-[clamp(50px,4.8vw,86px)] w-[clamp(240px,22.6vw,400px)] items-stretch overflow-hidden rounded-[clamp(8px,.7vw,12px)] text-left motion-safe:animate-panel-in [animation-fill-mode:backwards] ${GLASS$1} ${GLASS_HOVER} !border-[rgba(250,204,21,.38)] !shadow-[0_8px_28px_rgba(0,0,0,.3),0_0_26px_rgba(250,204,21,.10),inset_0_1px_0_rgba(255,255,255,.08)] hover:!border-[rgba(253,224,71,.75)] hover:!shadow-[0_10px_36px_rgba(0,0,0,.45),0_0_34px_rgba(250,204,21,.32),inset_0_1px_0_rgba(255,255,255,.14)]`,
+      className: `group relative flex h-[clamp(54px,5.2vw,92px)] w-[clamp(240px,22.6vw,400px)] items-stretch overflow-hidden rounded-[clamp(10px,.85vw,14px)] text-left motion-safe:animate-panel-in [animation-fill-mode:backwards] border border-amber-400/40 bg-gradient-to-r from-amber-500/20 via-black/45 to-black/60 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,.5),0_0_24px_rgba(250,204,21,.15),inset_0_1px_1px_rgba(255,255,255,.2)] transition-all duration-300 hover:border-amber-300 hover:shadow-[0_12px_40px_rgba(0,0,0,.6),0_0_36px_rgba(250,204,21,.35),inset_0_1px_2px_rgba(255,255,255,.3)] hover:-translate-y-[2px]`,
       style: { animationDelay: "280ms" },
       children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "pointer-events-none absolute inset-0 bg-gradient-to-r from-yellow-400/[.14] via-yellow-400/[.03] to-transparent" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "relative w-[27%] shrink-0 overflow-hidden", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(253,224,71,.25),transparent_70%)] transition-opacity duration-300 group-hover:opacity-100" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "relative w-[28%] shrink-0 overflow-hidden", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             "img",
             {
@@ -87569,31 +87587,30 @@ function HomeProCard({ onClick }) {
               className: "h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
             }
           ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute inset-y-0 right-0 w-2/3 bg-gradient-to-r from-transparent to-black/55" })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute inset-y-0 right-0 w-2/3 bg-gradient-to-r from-transparent to-black/60" })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "relative flex min-w-0 flex-1 flex-col justify-center px-[clamp(9px,1vw,16px)] leading-[1.2]", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-[clamp(5px,.5vw,8px)]", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "relative flex min-w-0 flex-1 flex-col justify-center px-[clamp(10px,1.1vw,18px)] leading-[1.2]", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-[clamp(6px,.6vw,10px)]", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               Crown,
               {
                 fill: "currentColor",
                 strokeWidth: 1.6,
-                className: "h-[clamp(13px,1.25vw,21px)] w-[clamp(13px,1.25vw,21px)] shrink-0 text-[#FDE047] drop-shadow-[0_0_8px_rgba(250,204,21,.75)]"
+                className: "h-[clamp(14px,1.35vw,22px)] w-[clamp(14px,1.35vw,22px)] shrink-0 text-[#FDE047] drop-shadow-[0_0_10px_rgba(250,204,21,.9)]"
               }
             ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "truncate text-[clamp(12px,1.1vw,19px)] font-bold text-white", children: "NeoTerra Pro" })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "truncate text-[clamp(13px,1.2vw,20px)] font-bold text-white tracking-wide [text-shadow:0_1px_8px_rgba(0,0,0,.6)]", children: "NeoTerra Pro" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded-full bg-gradient-to-r from-amber-400 to-yellow-300 px-2 py-0.5 text-[9px] font-black uppercase text-black tracking-wider shadow-[0_0_12px_rgba(250,204,21,.6)]", children: "VIP" })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "truncate text-[clamp(10px,.9vw,15px)] text-white/60", children: t2("home.proSubtitle") })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "truncate mt-1 text-[clamp(10px,.9vw,14px)] text-yellow-200/70 font-medium", children: t2("home.proSubtitle") })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { className: "relative my-auto mr-[clamp(8px,.9vw,14px)] h-[clamp(15px,1.3vw,22px)] w-[clamp(15px,1.3vw,22px)] shrink-0 text-white/80 transition-transform duration-200 group-hover:translate-x-[3px] group-hover:text-[#FDE047]" })
+        /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { className: "relative my-auto mr-[clamp(10px,1vw,16px)] h-[clamp(16px,1.4vw,24px)] w-[clamp(16px,1.4vw,24px)] shrink-0 text-amber-300/80 transition-transform duration-200 group-hover:translate-x-[4px] group-hover:text-amber-200" })
       ]
     }
   );
 }
 function HomeFooter({
   appVersion,
-  companionEnabled,
-  onToggleCompanion,
   updateVersion,
   onUpdate
 }) {
@@ -87621,19 +87638,7 @@ function HomeFooter({
         /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
           "v",
           appVersion ?? "..."
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "button",
-          {
-            type: "button",
-            onClick: onToggleCompanion,
-            title: companionEnabled ? t2("home.companionOff") : t2("home.companionOn"),
-            "aria-pressed": companionEnabled,
-            className: "grid h-[clamp(16px,1.4vw,22px)] w-[clamp(16px,1.4vw,22px)] place-items-center rounded-full transition hover:bg-white/10",
-            style: { color: companionEnabled ? tokens.emeraldNav : "rgba(255,255,255,.55)" },
-            children: /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { className: "h-[85%] w-[85%]" })
-          }
-        )
+        ] })
       ]
     }
   );
@@ -88574,14 +88579,7 @@ function LauncherScreen() {
         children: /* @__PURE__ */ jsxRuntimeExports.jsx(CommunitySection, { isActive: !profileState && activeTab === "community" })
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "div",
-      {
-        className: "mcmodhub-section absolute inset-x-0 bottom-0 top-[var(--lobby-header-h)]",
-        "data-active": !profileState && activeTab === "hubtv",
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx(HubTvSection, {})
-      }
-    ),
+    null,
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       "div",
       {
@@ -88641,7 +88639,6 @@ function LauncherScreen() {
         onBack: () => useProStore.getState().closePage()
       }
     ),
-    companionEnabled && !running && !profileState && !shopOpen && !chatOpen && !anyPageOpen && activeTab === "home" && /* @__PURE__ */ jsxRuntimeExports.jsx(CompanionWidget, { modelUrl: getPet(selectedPetId).modelUrl }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FriendsPanel,
       {
