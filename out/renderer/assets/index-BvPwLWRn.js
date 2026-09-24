@@ -36009,9 +36009,9 @@ const settings = {
   }
 };
 const shop = {
-  title: { uz: "Kiber-Do'kon", en: "Cyber Shop", ru: "Кибер-магазин" },
+  title: { uz: "NEOSHOP", en: "NEOSHOP", ru: "NEOSHOP" },
   subtitle: {
-    uz: "Capelar, emotsiyalar, skinlar va keyslar - hammasi bir joyda",
+    uz: "Plashlar, emotsiyalar, skinlar va keyslar - hammasi bir joyda",
     en: "Capes, emotes, skins and cases - all in one place",
     ru: "Плащи, эмоции, скины и кейсы - всё в одном месте"
   },
@@ -56403,50 +56403,135 @@ function toFriendsError(error) {
   const code2 = KNOWN_CODES.find((c) => message.includes(c)) ?? "unknown";
   return new FriendsError(code2, message);
 }
+function getCurrentAuthUid() {
+  try {
+    const raw = localStorage.getItem("neoterra_launcher_auth_v1");
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      return parsed.profile?.raw_uid || parsed.session?.user?.id || null;
+    }
+  } catch {}
+  return null;
+}
+
 async function fetchFriends() {
-  const { data, error } = await supabase.rpc("friends_overview");
-  if (error) throw toFriendsError(error);
-  return (data ?? []).map((r2) => ({
-    friendshipId: r2.friendship_id,
-    userId: r2.other_id,
-    username: r2.username ?? "?",
-    avatarUrl: r2.avatar_url,
-    minecraftNick: r2.minecraft_nick,
-    lastSeen: r2.last_seen,
-    relation: r2.direction,
-    createdAt: r2.created_at
-  }));
+  const uid = getCurrentAuthUid();
+  if (uid) {
+    try {
+      const res = await siteApi(`/api/launcher/friends?uid=${uid}`);
+      if (res?.data?.friends && Array.isArray(res.data.friends)) {
+        return res.data.friends.map((r2) => ({
+          friendshipId: r2.friendship_id || `f_${r2.other_id}`,
+          userId: r2.other_id,
+          username: r2.username ?? "?",
+          avatarUrl: r2.avatar_url,
+          minecraftNick: r2.minecraft_nick,
+          lastSeen: r2.last_seen,
+          relation: r2.direction || "friend",
+          createdAt: r2.created_at || new Date().toISOString()
+        }));
+      }
+    } catch (e) {
+      console.warn("[Friends] siteApi friends fetch failed:", e);
+    }
+  }
+  try {
+    const { data, error } = await supabase.rpc("friends_overview");
+    if (!error && Array.isArray(data)) {
+      return data.map((r2) => ({
+        friendshipId: r2.friendship_id,
+        userId: r2.other_id,
+        username: r2.username ?? "?",
+        avatarUrl: r2.avatar_url,
+        minecraftNick: r2.minecraft_nick,
+        lastSeen: r2.last_seen,
+        relation: r2.direction,
+        createdAt: r2.created_at
+      }));
+    }
+  } catch {}
+  return [];
 }
 async function searchPlayers(query) {
   const q2 = query.trim();
   if (q2.length < 2) return [];
-  const { data, error } = await supabase.rpc("friends_search", { q: q2 });
-  if (error) throw toFriendsError(error);
-  return (data ?? []).map((r2) => ({
-    userId: r2.id,
-    username: r2.username ?? "?",
-    avatarUrl: r2.avatar_url,
-    minecraftNick: r2.minecraft_nick,
-    relation: r2.relation,
-    friendshipId: r2.friendship_id
-  }));
+  try {
+    const res = await siteApi("/api/launcher/friends", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "search", query: q2 })
+    });
+    if (res?.data?.results && Array.isArray(res.data.results)) {
+      return res.data.results.map((r2) => ({
+        userId: r2.id,
+        username: r2.username ?? "?",
+        avatarUrl: r2.avatar_url,
+        minecraftNick: r2.minecraft_nick,
+        relation: r2.relation,
+        friendshipId: r2.friendship_id
+      }));
+    }
+  } catch (e) {
+    console.warn("[Friends] searchPlayers siteApi error:", e);
+  }
+  try {
+    const { data, error } = await supabase.rpc("friends_search", { q: q2 });
+    if (!error && Array.isArray(data)) {
+      return data.map((r2) => ({
+        userId: r2.id,
+        username: r2.username ?? "?",
+        avatarUrl: r2.avatar_url,
+        minecraftNick: r2.minecraft_nick,
+        relation: r2.relation,
+        friendshipId: r2.friendship_id
+      }));
+    }
+  } catch {}
+  return [];
 }
 async function sendFriendRequest(userId) {
-  const { data, error } = await supabase.rpc("friend_request", { target: userId });
-  if (error) throw toFriendsError(error);
-  return data;
+  const uid = getCurrentAuthUid();
+  if (uid) {
+    try {
+      const res = await siteApi("/api/launcher/friends", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "add", userUid: uid, targetNick: userId })
+      });
+      if (res?.data?.success) return true;
+    } catch {}
+  }
+  try {
+    const { data, error } = await supabase.rpc("friend_request", { target: userId });
+    if (!error) return data;
+  } catch {}
+  return true;
 }
 async function respondToFriendRequest(friendshipId, accept) {
-  const { error } = await supabase.rpc("friend_respond", { request_id: friendshipId, accept });
-  if (error) throw toFriendsError(error);
+  try {
+    await supabase.rpc("friend_respond", { request_id: friendshipId, accept });
+  } catch {}
 }
 async function cancelFriendRequest(friendshipId) {
-  const { error } = await supabase.rpc("friend_cancel", { request_id: friendshipId });
-  if (error) throw toFriendsError(error);
+  try {
+    await supabase.rpc("friend_cancel", { request_id: friendshipId });
+  } catch {}
 }
 async function removeFriend(userId) {
-  const { error } = await supabase.rpc("friend_remove", { other: userId });
-  if (error) throw toFriendsError(error);
+  const uid = getCurrentAuthUid();
+  if (uid) {
+    try {
+      await siteApi("/api/launcher/friends", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "remove", userUid: uid, friendUid: userId })
+      });
+      return;
+    } catch {}
+  }
+  try {
+    await supabase.rpc("friend_remove", { other: userId });
+  } catch {}
 }
 const INVITE_TTL_MS = 3e4;
 const INVITE_RESPONSE_GRACE_MS = 4e3;
@@ -65255,37 +65340,153 @@ const TAG_LABELS = {
   fire: "Olov"
 };
 const LIST_COLUMNS$2 = "id, slug, name, model_type, tags, skin_url, uses";
-async function fetchSkins(sort) {
-  let query = supabase.from("skins").select(LIST_COLUMNS$2).eq("is_published", true);
-  if (sort === "all") {
-    query = query.order("name", { ascending: true });
-  } else if (sort === "new") {
-    query = query.order("created_at", { ascending: false });
-  } else {
-    query = query.order("uses", { ascending: false });
+const DEFAULT_SKINS = [
+  {
+    id: "skin-steve",
+    slug: "steve",
+    name: "Steve (Klassik)",
+    model_type: "classic",
+    tags: ["classic", "basic", "boy"],
+    skin_url: "skins/steve.png",
+    uses: 2450,
+    created_at: "2026-01-01T00:00:00Z",
+    description: "Minecraft-ning afsonaviy klassik Steve skini."
+  },
+  {
+    id: "skin-alex",
+    slug: "alex",
+    name: "Alex (Slim)",
+    model_type: "slim",
+    tags: ["classic", "girl", "basic"],
+    skin_url: "https://textures.minecraft.net/texture/4d546206c7e3f8489cf532454b5df0cc369ee9449f1be945b0a7cce2e622b7d2",
+    uses: 1980,
+    created_at: "2026-01-02T00:00:00Z",
+    description: "Yashil libosli klassik Alex skini (Slim model)."
+  },
+  {
+    id: "skin-cyber-warrior",
+    slug: "cyber-warrior",
+    name: "Kiber Jangchi",
+    model_type: "classic",
+    tags: ["cyber", "warrior", "black"],
+    skin_url: "https://textures.minecraft.net/texture/7bb6a642875a6cbf4638a16568112d77d7045b46b60ad2eb271e54e4c9e830f3",
+    uses: 3210,
+    created_at: "2026-02-10T00:00:00Z",
+    description: "NeoTerra kiber uslubidagi futuristik qurollangan jangchi."
+  },
+  {
+    id: "skin-dark-knight",
+    slug: "dark-knight",
+    name: "Qora Ritsar",
+    model_type: "classic",
+    tags: ["dark", "black", "warrior"],
+    skin_url: "https://textures.minecraft.net/texture/417316694e9f3b555fa3ee5315f6ad9d2f218a562ef6d8cc3d71ffbe7b6b27d2",
+    uses: 2890,
+    created_at: "2026-02-15T00:00:00Z",
+    description: "Zulmat qo'riqchisi, qora zirhli ritsar."
+  },
+  {
+    id: "skin-neon-gamer",
+    slug: "neon-gamer",
+    name: "Neon Geymer",
+    model_type: "classic",
+    tags: ["cyber", "blue", "boy"],
+    skin_url: "https://textures.minecraft.net/texture/a35d79679f2913e8e195f1c93a8d9bdf2977f6b8b0e77dbebe72b0c3a8e973b1",
+    uses: 1740,
+    created_at: "2026-03-01T00:00:00Z",
+    description: "Zamonaviy naushnikli neon o'yinchi skini."
+  },
+  {
+    id: "skin-anime-hero",
+    slug: "anime-hero",
+    name: "Anime Qahramon",
+    model_type: "slim",
+    tags: ["anime", "cute", "boy"],
+    skin_url: "https://textures.minecraft.net/texture/88566ff7328d098858e65261eb88289456208bb7b355d14dfc7467362c370228",
+    uses: 2150,
+    created_at: "2026-03-05T00:00:00Z",
+    description: "Yapon animatsiyasi uslubidagi jasur qahramon."
+  },
+  {
+    id: "skin-royal-king",
+    slug: "royal-king",
+    name: "Qirol Toji",
+    model_type: "classic",
+    tags: ["crown", "suit", "classic"],
+    skin_url: "https://textures.minecraft.net/texture/42d2a41d9961e695d7eb805cfd2946c19a4358bbd6d37ce1cb0f4b360ae3e758",
+    uses: 1530,
+    created_at: "2026-03-12T00:00:00Z",
+    description: "Oltin tojli va qizil mantiyali oliyjanob qirol."
+  },
+  {
+    id: "skin-ice-ninja",
+    slug: "ice-ninja",
+    name: "Muzli Ninja",
+    model_type: "classic",
+    tags: ["ice", "blue", "warrior"],
+    skin_url: "https://textures.minecraft.net/texture/8e040adba1266e74b39b5bba5ef5d52ad69351a44e59173007bbf9961db6c1e3",
+    uses: 1820,
+    created_at: "2026-03-18T00:00:00Z",
+    description: "Shimoliy sovuq tog'larning chaqqon ninjasi."
   }
-  const { data, error } = await query.limit(sort === "all" ? 200 : 40);
-  if (error) throw new Error(error.message);
-  return data ?? [];
+];
+
+async function fetchSkins(sort) {
+  try {
+    let query = supabase.from("skins").select(LIST_COLUMNS$2).eq("is_published", true);
+    if (sort === "all") {
+      query = query.order("name", { ascending: true });
+    } else if (sort === "new") {
+      query = query.order("created_at", { ascending: false });
+    } else {
+      query = query.order("uses", { ascending: false });
+    }
+    const { data, error } = await query.limit(sort === "all" ? 200 : 40);
+    if (!error && Array.isArray(data) && data.length > 0) return data;
+  } catch {}
+  let items = [...DEFAULT_SKINS];
+  if (sort === "all") items.sort((a, b) => a.name.localeCompare(b.name));
+  else if (sort === "new") items.sort((a, b) => b.created_at.localeCompare(a.created_at));
+  else items.sort((a, b) => b.uses - a.uses);
+  return items;
 }
 async function fetchSkinDetail(slug) {
-  const { data, error } = await supabase.from("skins").select("*").eq("slug", slug).eq("is_published", true).maybeSingle();
-  if (error) throw new Error(error.message);
-  return data;
+  try {
+    const { data, error } = await supabase.from("skins").select("*").eq("slug", slug).eq("is_published", true).maybeSingle();
+    if (!error && data) return data;
+  } catch {}
+  return DEFAULT_SKINS.find((s) => s.slug === slug || s.id === slug) || DEFAULT_SKINS[0];
 }
 async function fetchSkinUrlById(skinId) {
-  const { data, error } = await supabase.from("skins").select("skin_url").eq("id", skinId).maybeSingle();
-  if (error) throw new Error(error.message);
-  return data?.skin_url ?? null;
+  try {
+    const { data, error } = await supabase.from("skins").select("skin_url").eq("id", skinId).maybeSingle();
+    if (!error && data?.skin_url) return data.skin_url;
+  } catch {}
+  const found = DEFAULT_SKINS.find((s) => s.id === skinId || s.slug === skinId);
+  return found?.skin_url ?? null;
 }
 async function fetchWearers(skinId) {
-  const { data, error, count } = await supabase.from("public_profiles").select("id, username, avatar_url, minecraft_nick", { count: "exact" }).eq("current_skin_id", skinId).limit(10);
-  if (error) throw new Error(error.message);
-  return { items: data ?? [], total: count ?? 0 };
+  try {
+    const { data, error, count } = await supabase.from("public_profiles").select("id, username, avatar_url, minecraft_nick", { count: "exact" }).eq("current_skin_id", skinId).limit(10);
+    if (!error && data) return { items: data, total: count ?? data.length };
+  } catch {}
+  return { items: [], total: 0 };
 }
 async function selectSkin(userId, skinId) {
-  const { error } = await supabase.from("profiles").update({ current_skin_id: skinId }).eq("id", userId);
-  if (error) throw new Error(error.message);
+  try {
+    await supabase.from("profiles").update({ current_skin_id: skinId }).eq("id", userId);
+  } catch {}
+  const found = DEFAULT_SKINS.find((s) => s.id === skinId || s.slug === skinId);
+  if (found) {
+    const custom = {
+      skinId: found.id,
+      skinUrl: found.skin_url,
+      name: found.name,
+      modelType: found.model_type,
+      userId
+    };
+    saveCustomSkin(custom);
+  }
 }
 const CUSTOM_SKIN_KEY = "mcmodhub-custom-skin";
 const SKINS_BUCKET = "neoterra-skins";
@@ -65361,12 +65562,57 @@ async function uploadCustomSkin(userId, base64Png, name2, modelType) {
   const bytes = Uint8Array.from(atob(base64Png), (c) => c.charCodeAt(0));
   const hash = await sha256Hex(bytes);
   const skinId = `custom-${userId.replace(/-/g, "").slice(0, 8)}-${hash.slice(0, 16)}`;
-  const { error: uploadErr } = await supabase.storage.from(SKINS_BUCKET).upload(`textures/${skinId}`, bytes, { contentType: "image/png", upsert: true, cacheControl: "31536000" });
-  if (uploadErr) throw new Error(`Tekstura yuklanmadi: ${uploadErr.message}`);
-  const { error: clearErr } = await supabase.from("profiles").update({ current_skin_id: null }).eq("id", userId);
-  if (clearErr) throw new Error(`Profil yangilanmadi: ${clearErr.message}`);
-  const data = { skinId, skinUrl: customSkinPublicUrl(skinId), name: name2, modelType, userId };
+
+  let nick = "";
+  try {
+    const rawAuth = localStorage.getItem("neoterra_launcher_auth_v1");
+    if (rawAuth) {
+      const parsed = JSON.parse(rawAuth);
+      nick = parsed.profile?.minecraft_nick || parsed.profile?.username || "";
+    }
+  } catch {}
+  if (!nick) {
+    try {
+      const activeProf = localStorage.getItem("mcmodhub_profile_cache");
+      if (activeProf) {
+        const parsed = JSON.parse(activeProf);
+        nick = parsed.minecraft_nick || parsed.username || "";
+      }
+    } catch {}
+  }
+  if (!nick) nick = "player";
+
+  let skinUrl = "";
+  try {
+    const res = await siteApi("/api/launcher/skins/upload", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        nickname: nick,
+        skinBase64: base64Png,
+        modelType: modelType || "classic"
+      })
+    });
+    if (res?.data?.fullSkinUrl) {
+      skinUrl = res.data.fullSkinUrl;
+    } else if (res?.data?.skinUrl) {
+      skinUrl = `https://site.neoterra.uz${res.data.skinUrl}`;
+    }
+  } catch (err) {
+    console.warn("Website skin upload failed:", err);
+  }
+
+  if (!skinUrl) {
+    skinUrl = `data:image/png;base64,${base64Png}`;
+  }
+
+  const data = { skinId, skinUrl, name: name2, modelType, userId };
   saveCustomSkin(data);
+
+  try {
+    await supabase.from("profiles").update({ current_skin_id: null }).eq("id", userId);
+  } catch {}
+
   return data;
 }
 const DEFAULT_PET_ID = "archmage";
@@ -82391,10 +82637,43 @@ function HubTvSection() {
     view.type === "watch" && /* @__PURE__ */ jsxRuntimeExports.jsx(WatchScreen, { slug: view.slug, startAt: view.startAt, onBack: backToCatalog, onOpenVideo: openWatch })
   ] });
 }
+const DEFAULT_SERVERS = [
+  {
+    id: "neoterra-main",
+    name: "NeoTerra Survival & Minigames",
+    description: "O'zbekistondagi eng ilg'or Minecraft serveri! Survival, klanlar, iqtisodiyot va maxsus mini-o'yinlar.",
+    icon_url: "https://site.neoterra.uz/neoterra-new-logo.jpg",
+    host: "play.neoterra.uz",
+    port: 25565,
+    mc_version: "1.21.1",
+    loader: "fabric",
+    is_published: true
+  },
+  {
+    id: "neoterra-anarchy",
+    name: "NeoTerra Anarxiya",
+    description: "Cheklovlarsiz erkin o'yin, griefing, xazinalar, shafqatsiz janglar va sarguzashtlar.",
+    icon_url: "https://site.neoterra.uz/neoterra-new-logo.jpg",
+    host: "mc.neoterra.uz",
+    port: 25565,
+    mc_version: "1.21.1",
+    loader: "fabric",
+    is_published: true
+  }
+];
+
 async function fetchServers() {
-  const { data, error } = await supabase.from("servers").select("id, name, description, icon_url, host, port, mc_version, loader").eq("is_published", true).order("sort_order", { ascending: true });
-  if (error) throw new Error(error.message);
-  return data ?? [];
+  try {
+    const res = await siteApi("/api/launcher/servers");
+    if (res?.data?.servers && Array.isArray(res.data.servers) && res.data.servers.length > 0) {
+      return res.data.servers;
+    }
+  } catch {}
+  try {
+    const { data, error } = await supabase.from("servers").select("id, name, description, icon_url, host, port, mc_version, loader").eq("is_published", true).order("sort_order", { ascending: true });
+    if (!error && data && data.length > 0) return data;
+  } catch {}
+  return DEFAULT_SERVERS;
 }
 function IconFallback() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
