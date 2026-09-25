@@ -2454,6 +2454,162 @@ async function downloadInto(modsDir, url, filename) {
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   fs.writeFileSync(path.join(modsDir, filename), Buffer.from(await res.arrayBuffer()));
 }
+const FO_MARKER_FILE = "neoterra-fo.json";
+
+async function ensureFabulouslyOptimized(dir, gameVersion, loader, emit2) {
+  const modsDir = path.join(dir, "mods");
+  fs.mkdirSync(modsDir, { recursive: true });
+  const installed = fs.existsSync(modsDir) ? fs.readdirSync(modsDir) : [];
+  if (installed.some((f) => /optifine/i.test(f))) {
+    emit2({
+      type: "log",
+      line: "[NeoTerra]: OptiFine topildi - Fabulously Optimized o'tkazib yuborildi"
+    });
+    return false;
+  }
+
+  const markerPath = path.join(dir, FO_MARKER_FILE);
+  let isAlreadyInstalled = false;
+  if (fs.existsSync(markerPath)) {
+    try {
+      const data = JSON.parse(fs.readFileSync(markerPath, "utf-8"));
+      if (data && data.mcVersion === gameVersion && data.installed === true) {
+        isAlreadyInstalled = true;
+      }
+    } catch {}
+  }
+
+  // Agar allaqachon o'rnatilgan bo'lsa va mods papkasida yetarlicha modlar mavjud bo'lsa, qayta yuklamaymiz
+  if (isAlreadyInstalled && installed.filter((f) => f.endsWith(".jar")).length >= 10) {
+    return true;
+  }
+
+  emit2({
+    type: "status",
+    message: `Fabulously Optimized (${gameVersion}) qidirilmoqda...`
+  });
+
+  const queryUrl = `https://api.modrinth.com/v2/project/fabulously-optimized/version?game_versions=%5B%22${encodeURIComponent(gameVersion)}%22%5D&loaders=%5B%22fabric%22%5D`;
+  let versions = [];
+  try {
+    const res = await fetch(queryUrl, {
+      headers: { "User-Agent": "NeoTerra-Launcher" },
+      signal: AbortSignal.timeout(15000)
+    });
+    if (res.ok) {
+      versions = await res.json();
+    }
+  } catch (err) {
+    emit2({
+      type: "log",
+      line: `[NeoTerra]: Fabulously Optimized tekshirishda xatolik: ${err instanceof Error ? err.message : String(err)}`
+    });
+  }
+
+  if (!versions || versions.length === 0) {
+    emit2({
+      type: "log",
+      line: `[NeoTerra]: ${gameVersion} uchun Fabulously Optimized mrpack topilmadi, individual FPS modlariga o'tiladi.`
+    });
+    return false;
+  }
+
+  const targetVersion = versions[0];
+  const mrpackFile = targetVersion.files.find((f) => f.filename.endsWith(".mrpack")) || targetVersion.files[0];
+  if (!mrpackFile) return false;
+
+  emit2({
+    type: "status",
+    message: `Fabulously Optimized ${targetVersion.version_number} yuklanmoqda...`
+  });
+
+  const mrpackRes = await fetch(mrpackFile.url, { signal: AbortSignal.timeout(60000) });
+  if (!mrpackRes.ok) throw new Error(`MRPACK yuklanmadi (HTTP ${mrpackRes.status})`);
+  const mrpackBuf = Buffer.from(await mrpackRes.arrayBuffer());
+
+  const zip = new AdmZip(mrpackBuf);
+  const indexEntry = zip.getEntry("modrinth.index.json");
+  if (!indexEntry) return false;
+
+  const indexData = JSON.parse(zip.readAsText(indexEntry));
+  const clientFiles = (indexData.files || []).filter((f) => !f.env || f.env.client !== "unsupported");
+
+  // 1. Overrides va config fayllarni ko'chirish
+  const entries = zip.getEntries();
+  for (const entry of entries) {
+    if (entry.entryName.startsWith("overrides/") && !entry.isDirectory) {
+      const relPath = entry.entryName.replace(/^overrides\//, "");
+      const destPath = path.join(dir, relPath);
+      if (fs.existsSync(destPath) && (relPath === "options.txt" || relPath === "servers.dat")) {
+        continue;
+      }
+      try {
+        fs.mkdirSync(path.dirname(destPath), { recursive: true });
+        fs.writeFileSync(destPath, entry.getData());
+      } catch {}
+    }
+  }
+
+  // 2. Modlarni parallel/ketma-ket yuklash
+  const existingFiles = new Set(fs.readdirSync(modsDir).map((f) => f.toLowerCase()));
+  const total = clientFiles.length;
+  let count = 0;
+
+  for (const file of clientFiles) {
+    count++;
+    const targetFilename = path.basename(file.path);
+    const destFile = path.join(dir, file.path);
+    if (fs.existsSync(destFile) || existingFiles.has(targetFilename.toLowerCase())) {
+      continue;
+    }
+    const dlUrl = file.downloads && file.downloads[0];
+    if (!dlUrl) continue;
+
+    emit2({
+      type: "status",
+      message: `Fabulously Optimized (${count}/${total}): ${targetFilename.replace(/\.jar$/i, "")}`
+    });
+
+    try {
+      fs.mkdirSync(path.dirname(destFile), { recursive: true });
+      const fRes = await fetch(dlUrl, { signal: AbortSignal.timeout(45000) });
+      if (fRes.ok) {
+        fs.writeFileSync(destFile, Buffer.from(await fRes.arrayBuffer()));
+        existingFiles.add(targetFilename.toLowerCase());
+      }
+    } catch (e) {
+      emit2({
+        type: "log",
+        line: `[NeoTerra]: Mod yuklanmadi (${targetFilename}): ${e instanceof Error ? e.message : String(e)}`
+      });
+    }
+  }
+
+  // Marker yozish
+  try {
+    fs.writeFileSync(
+      markerPath,
+      JSON.stringify(
+        {
+          mcVersion: gameVersion,
+          version: targetVersion.version_number,
+          installed: true,
+          installedAt: new Date().toISOString()
+        },
+        null,
+        2
+      ),
+      "utf-8"
+    );
+  } catch {}
+
+  emit2({
+    type: "log",
+    line: `[NeoTerra]: Fabulously Optimized ${targetVersion.version_number} to'liq o'rnatildi!`
+  });
+  return true;
+}
+
 async function ensurePerformanceMods(dir, gameVersion, loader, emit2) {
   const modsDir = path.join(dir, "mods");
   fs.mkdirSync(modsDir, { recursive: true });
@@ -3498,8 +3654,22 @@ async function launchGameCore(req, emit2) {
   }
   if (fpsBoost && req.loader) {
     downloadTasks.push(
-      // FPS modlari ham NUSXA papkasidagi mods'ga tushadi - versiyaga xos to'plamda.
-      ensurePerformanceMods(instRoot2, req.version, req.loader, emit2).catch((err) => {
+      (async () => {
+        let foHandled = false;
+        if (req.loader === "fabric" || req.loader === "quilt") {
+          try {
+            foHandled = await ensureFabulouslyOptimized(instRoot2, req.version, req.loader, emit2);
+          } catch (foErr) {
+            emit2({
+              type: "log",
+              line: `[NeoTerra]: Fabulously Optimized yuklashda xatolik: ${foErr instanceof Error ? foErr.message : String(foErr)}, individual FPS modlariga o'tiladi`
+            });
+          }
+        }
+        if (!foHandled) {
+          await ensurePerformanceMods(instRoot2, req.version, req.loader, emit2);
+        }
+      })().catch((err) => {
         emit2({
           type: "warning",
           message: `FPS modlari o'rnatilmadi: ${err instanceof Error ? err.message : String(err)}`

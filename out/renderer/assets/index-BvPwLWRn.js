@@ -34858,14 +34858,14 @@ const home = {
   watch: { uz: "Ko'rish", en: "Watch", ru: "Смотреть" },
   companionOn: { uz: "Kompanionni yoqish", en: "Turn companion on", ru: "Включить компаньона" },
   companionOff: { uz: "Kompanionni o'chirish", en: "Turn companion off", ru: "Выключить компаньона" },
-  fpsBoost: { uz: "FPS tezlatgich", en: "FPS boost", ru: "Ускорение FPS" },
+  fpsBoost: { uz: "Fabulously Optimized (FPS Tezlatgich)", en: "Fabulously Optimized (FPS Boost)", ru: "Fabulously Optimized (Ускорение FPS)" },
   fpsBoostHint: {
-    uz: "Unumdorlik modlari va tezkor sozlamalar",
-    en: "Performance mods and fast settings",
-    ru: "Моды производительности и быстрые настройки"
+    uz: "Fabric uchun Fabulously Optimized modpacki (Sodium, Iris, va boshqalar) hamda CustomSkinLoader",
+    en: "Full Fabulously Optimized modpack for Fabric (Sodium, Iris, etc.) and CustomSkinLoader",
+    ru: "Полный модпак Fabulously Optimized для Fabric (Sodium, Iris и др.) и CustomSkinLoader"
   },
-  fpsBoostOn: { uz: "FPS tezlatgichni yoqish", en: "Turn FPS boost on", ru: "Включить ускорение FPS" },
-  fpsBoostOff: { uz: "FPS tezlatgichni o'chirish", en: "Turn FPS boost off", ru: "Выключить ускорение FPS" },
+  fpsBoostOn: { uz: "Fabulously Optimized yoqish", en: "Turn Fabulously Optimized on", ru: "Включить Fabulously Optimized" },
+  fpsBoostOff: { uz: "Fabulously Optimized o'chirish", en: "Turn Fabulously Optimized off", ru: "Выключить Fabulously Optimized" },
   tabsComingSoon: { uz: "Tez orada...", en: "Coming soon...", ru: "Скоро..." },
   nicknameRequired: { uz: "Nickname kiritish majburiy", en: "Nickname is required", ru: "Никнейм обязателен" },
   nickSavesOnPlay: {
@@ -88843,6 +88843,34 @@ function LauncherScreen() {
         ),
         isLoggedIn && partyGamePhase !== "idle" && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mb-[clamp(6px,.6vw,10px)]", children: /* @__PURE__ */ jsxRuntimeExports.jsx(PartyGameStatus, { launchStatus: status, launchPercent: percent, prewarming }) }),
         isLoggedIn && inParty && isPartyLeader && partyGamePhase === "idle" && !running && selected.loader !== "vanilla" && !supportsAutoLan(selected.mcVersion, selected.loader) && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mb-[clamp(6px,.6vw,10px)]", children: /* @__PURE__ */ jsxRuntimeExports.jsx(LanManualGuide, { compact: true }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            type: "button",
+            onClick: () => setFpsBoostPersisted(!fpsBoost),
+            title: fpsBoost ? "Fabulously Optimized yoqilgan (Ultra FPS)" : "Fabulously Optimized o'chirilgan",
+            className: `mb-2 flex w-full items-center justify-between rounded-[clamp(8px,.7vw,12px)] px-3 py-1.5 transition-all duration-200 border backdrop-blur-md ${
+              fpsBoost
+                ? "bg-emerald-500/15 border-emerald-400/40 text-emerald-300 shadow-[0_0_15px_rgba(16,185,129,0.15)]"
+                : "bg-white/5 border-white/10 text-white/50 hover:bg-white/10"
+            }`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+                className: "flex items-center gap-2",
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Zap, { className: `h-3.5 w-3.5 ${fpsBoost ? "text-emerald-400" : "text-white/40"}` }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[clamp(11px,.9vw,14px)] font-medium", children: "Fabulously Optimized" })
+                ]
+              }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", {
+                className: `text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${
+                  fpsBoost ? "bg-emerald-500/25 text-emerald-200 border border-emerald-400/30" : "bg-white/10 text-white/40"
+                }`,
+                children: fpsBoost ? "ON" : "OFF"
+              })
+            ]
+          }
+        ),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative motion-safe:animate-panel-in [animation-fill-mode:backwards]", ref: versionBoxRef, children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs(
             "button",
