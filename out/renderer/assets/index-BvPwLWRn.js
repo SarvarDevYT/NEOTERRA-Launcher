@@ -88022,74 +88022,8 @@ function HomeQuickCards({ onOpen, onOpenArenas }) {
     ))
   ] });
 }
-function HomeProCard({ onClick }) {
-  const { t: t2 } = useLanguage();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    "button",
-    {
-      type: "button",
-      onClick,
-      style: {
-        width: "100%",
-        height: "52px",
-        borderRadius: "10px",
-        background: "linear-gradient(135deg, rgba(245,158,11,0.22), rgba(10,13,12,0.88) 60%)",
-        border: "1px solid rgba(250,204,21,0.35)",
-        backdropFilter: "blur(16px)",
-        boxShadow: "0 8px 24px rgba(0,0,0,0.45), 0 0 20px rgba(250,204,21,0.12)",
-        display: "flex",
-        alignItems: "center",
-        overflow: "hidden",
-        position: "relative",
-        textAlign: "left",
-        cursor: "pointer"
-      },
-      className: "group transition-all duration-200 hover:border-amber-300 hover:brightness-110",
-      children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
-          style: { width: "62px", height: "100%", position: "relative", flexShrink: 0, overflow: "hidden" },
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("img", {
-              src: "images/lobby/pro.jpg",
-              alt: "",
-              draggable: false,
-              style: { width: "100%", height: "100%", objectFit: "cover" }
-            }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", {
-              style: { position: "absolute", inset: 0, background: "linear-gradient(to right, transparent, rgba(10,13,12,0.85))" }
-            })
-          ]
-        }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
-          style: { flex: 1, minWidth: 0, paddingLeft: "10px", display: "flex", flexDirection: "column", justifyContent: "center" },
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
-              style: { display: "flex", alignItems: "center", gap: "6px" },
-              children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(Crown, { size: 14, style: { color: "#FDE047", flexShrink: 0 } }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", {
-                  style: { fontSize: "13px", fontWeight: "bold", color: "#fff", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" },
-                  children: "NeoTerra Pro"
-                }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", {
-                  style: { background: "linear-gradient(135deg, #F59E0B, #EAB308)", color: "#000", fontWeight: "900", fontSize: "9px", padding: "1px 5px", borderRadius: "999px" },
-                  children: "VIP"
-                })
-              ]
-            }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", {
-              style: { fontSize: "11px", color: "rgba(253,230,138,0.75)", marginTop: "2px", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" },
-              children: t2("home.proSubtitle") || "VIP imtiyozlar"
-            })
-          ]
-        }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, {
-          size: 16,
-          style: { color: "rgba(250,204,21,0.85)", marginRight: "12px", flexShrink: 0 }
-        })
-      ]
-    }
-  );
+function HomeProCard() {
+  return null;
 }
 function HomeFooter({
   appVersion,
@@ -88887,10 +88821,7 @@ function LauncherScreen() {
           )
         ] })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute right-[clamp(14px,2vw,34px)] top-[clamp(12px,3.4vw,60px)] z-20 w-[clamp(200px,17vw,320px)] flex flex-col gap-2.5", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(HomeQuickCards, { onOpen: openTab, onOpenArenas: () => setPage("arenas") }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(HomeProCard, { onClick: () => useProStore.getState().openPage() })
-      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute right-[clamp(14px,2vw,34px)] top-[clamp(12px,3.4vw,60px)] z-20 w-[clamp(200px,17vw,320px)] flex flex-col gap-2.5", children: /* @__PURE__ */ jsxRuntimeExports.jsx(HomeQuickCards, { onOpen: openTab, onOpenArenas: () => setPage("arenas") }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         HomeFooter,
         {
