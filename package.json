@@ -1,6 +1,6 @@
 {
   "name": "neoterra-launcher",
-  "version": "1.4.1",
+  "version": "1.4.3",
   "description": "NeoTerra Minecraft Launcher",
   "main": "./out/main/index.js",
   "author": "NeoTerra",

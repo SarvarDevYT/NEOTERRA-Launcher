@@ -56576,10 +56576,76 @@ const NAV_ITEM_IDLE = "font-medium text-white/75 hover:text-white";
 const NAV_UNDERLINE = "pointer-events-none absolute inset-x-[clamp(8px,1.35vw,28px)] bottom-[clamp(3px,.5vw,9px)] h-[clamp(2px,.2vw,3px)] rounded-full bg-[#2ECC71] shadow-[0_0_12px_rgba(46,204,113,.75)]";
 const HEADER_CONTROL_H = "h-[clamp(30px,2.6vw,46px)]";
 const HEADER_CONTROL_SQUARE = "h-[clamp(30px,2.6vw,46px)] w-[clamp(30px,2.6vw,46px)]";
+const HEAD_CACHE = new Map();
+function cropSkinToHead(img, size) {
+  try {
+    const c = document.createElement("canvas");
+    c.width = size;
+    c.height = size;
+    const ctx = c.getContext("2d");
+    if (!ctx) return "";
+    ctx.imageSmoothingEnabled = false;
+    ctx.drawImage(img, 8, 8, 8, 8, 0, 0, size, size);
+    ctx.drawImage(img, 40, 8, 8, 8, 0, 0, size, size);
+    return c.toDataURL("image/png");
+  } catch (err) {
+    console.warn("cropSkinToHead error:", err);
+    return "";
+  }
+}
+function getMinecraftHeadUrl(skinUrl, nick, size = 64) {
+  if (!skinUrl) {
+    return nick ? `https://minotar.net/helm/${nick}/${size}.png` : "skins/steve-helm.png";
+  }
+  if (skinUrl.includes("/helm/") || skinUrl.includes("steve-helm") || skinUrl.startsWith("data:image/head")) {
+    return skinUrl;
+  }
+  const key = `${skinUrl}_${size}`;
+  if (HEAD_CACHE.has(key)) {
+    return HEAD_CACHE.get(key);
+  }
+  const fallback = nick ? `https://minotar.net/helm/${nick}/${size}.png` : "skins/steve-helm.png";
+  HEAD_CACHE.set(key, fallback);
+
+  const img = new Image();
+  img.crossOrigin = "anonymous";
+  img.onload = () => {
+    const headDataUrl = cropSkinToHead(img, size);
+    if (headDataUrl) {
+      HEAD_CACHE.set(key, headDataUrl);
+      window.dispatchEvent(new CustomEvent("neoterra-avatar-ready", { detail: { key, headDataUrl } }));
+    }
+  };
+  img.onerror = () => {
+    HEAD_CACHE.set(key, fallback);
+  };
+  img.src = skinUrl;
+  return fallback;
+}
 function profileAvatarUrl(profile2, size = 64) {
-  if (profile2.avatar_url) return profile2.avatar_url;
-  if (profile2.minecraft_nick) return `https://minotar.net/helm/${profile2.minecraft_nick}/${size}.png`;
+  if (!profile2) return "skins/steve-helm.png";
+  const nick = profile2.minecraft_nick || profile2.username;
+  if (profile2.avatar_url) {
+    return getMinecraftHeadUrl(profile2.avatar_url, nick, size);
+  }
+  if (nick) return `https://minotar.net/helm/${nick}/${size}.png`;
   return "skins/steve-helm.png";
+}
+function AvatarImage({ profile, size = 64, className = "", alt = "" }) {
+  const [src, setSrc] = reactExports.useState(() => profileAvatarUrl(profile, size));
+  reactExports.useEffect(() => {
+    setSrc(profileAvatarUrl(profile, size));
+    const onReady = () => setSrc(profileAvatarUrl(profile, size));
+    window.addEventListener("neoterra-avatar-ready", onReady);
+    return () => window.removeEventListener("neoterra-avatar-ready", onReady);
+  }, [profile, size]);
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("img", {
+    src,
+    alt,
+    draggable: false,
+    className,
+    style: { imageRendering: "pixelated" }
+  });
 }
 function profileDisplayName(profile2) {
   const name2 = profile2.username || profile2.minecraft_nick;
@@ -59862,7 +59928,7 @@ function selectIncomingCount(s) {
 }
 const NICK_RE$1 = /^[A-Za-z0-9_]{3,16}$/;
 function helmUrl(username, avatarUrl) {
-  if (avatarUrl) return avatarUrl;
+  if (avatarUrl) return getMinecraftHeadUrl(avatarUrl, username, 64);
   return NICK_RE$1.test(username) ? `https://minotar.net/helm/${username}/64.png` : "skins/steve-helm.png";
 }
 function skinTextureUrl(username, skinUrl) {
@@ -59873,7 +59939,12 @@ const FALLBACK = "skins/steve-helm.png";
 function LobbyAvatar({ username, avatarUrl, size, activity }) {
   const preferred = helmUrl(username, avatarUrl);
   const [src, setSrc] = reactExports.useState(preferred);
-  reactExports.useEffect(() => setSrc(preferred), [preferred]);
+  reactExports.useEffect(() => {
+    setSrc(helmUrl(username, avatarUrl));
+    const onReady = () => setSrc(helmUrl(username, avatarUrl));
+    window.addEventListener("neoterra-avatar-ready", onReady);
+    return () => window.removeEventListener("neoterra-avatar-ready", onReady);
+  }, [username, avatarUrl]);
   const dot = Math.max(8, Math.round(size * 0.24));
   const dotColor = activity === "in-game" ? tokens.gold : tokens.emeraldNav;
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "relative inline-block shrink-0", style: { width: size, height: size }, children: [
@@ -65108,18 +65179,32 @@ function AuthProvider({ children }) {
           setSession(parsed.session);
           setProfile(parsed.profile);
           setInitializing(false);
-          const queryParam = parsed.profile.raw_uid ? `uid=${parsed.profile.raw_uid}` : `nickname=${parsed.profile.username}`;
-          siteApi(`/api/launcher/profile?${queryParam}`)
-            .then((j) => {
-              if (active && j.success && j.user) {
-                const freshProf = makeNeoTerraProfile(j.user, parsed.profile.provider || "email");
-                try {
-                  localStorage.setItem("neoterra_launcher_auth_v1", JSON.stringify({ session: parsed.session, profile: freshProf }));
-                } catch {}
-                setProfile(freshProf);
-              }
-            })
-            .catch(() => {});
+          const syncFromWeb = () => {
+            const queryParam = parsed.profile.raw_uid ? `uid=${parsed.profile.raw_uid}` : `nickname=${parsed.profile.username}`;
+            siteApi(`/api/launcher/profile?${queryParam}`)
+              .then((j) => {
+                if (active && j.success && j.user) {
+                  const freshProf = makeNeoTerraProfile(j.user, parsed.profile.provider || "email");
+                  try {
+                    localStorage.setItem("neoterra_launcher_auth_v1", JSON.stringify({ session: parsed.session, profile: freshProf }));
+                  } catch {}
+                  setProfile(freshProf);
+                  if (freshProf.avatar_url) {
+                    saveCustomSkin({
+                      skinId: `web-${freshProf.username}`,
+                      skinUrl: freshProf.avatar_url,
+                      name: freshProf.username,
+                      modelType: j.user.skinModel || "classic",
+                      userId: parsed.session.user.id
+                    });
+                    window.dispatchEvent(new CustomEvent("neoterra-avatar-ready"));
+                  }
+                }
+              })
+              .catch(() => {});
+          };
+          syncFromWeb();
+          window.addEventListener("focus", syncFromWeb);
           const { data: sub2 } = supabase.auth.onAuthStateChange((_event, s) => {
             if (!s && !localStorage.getItem("neoterra_launcher_auth_v1")) {
               setSession(null);
@@ -65128,6 +65213,7 @@ function AuthProvider({ children }) {
           });
           return () => {
             active = false;
+            window.removeEventListener("focus", syncFromWeb);
             sub2.subscription.unsubscribe();
           };
         }
@@ -65545,6 +65631,25 @@ async function fetchCustomSkinIdForNick(nick) {
   }
 }
 async function restoreCustomSkinFromServer(nick, userId) {
+  try {
+    const cleanNick = (nick || "").trim();
+    if (!cleanNick) return null;
+    const res = await siteApi(`/api/launcher/skins/${encodeURIComponent(cleanNick)}.json`);
+    if (res?.username && res?.skins && (res.skins.default || res.skins.slim)) {
+      const skinUrl = `https://site.neoterra.uz/api/launcher/skins/${encodeURIComponent(cleanNick)}.png?t=${Date.now()}`;
+      const restored = {
+        skinId: `web-${cleanNick}`,
+        skinUrl,
+        name: cleanNick,
+        modelType: res.skins.slim ? "slim" : "classic",
+        userId
+      };
+      saveCustomSkin(restored);
+      return restored;
+    }
+  } catch (e) {
+    console.warn("restoreCustomSkinFromServer warning:", e);
+  }
   const skinId = await fetchCustomSkinIdForNick(nick);
   if (skinId === void 0) return void 0;
   if (skinId === null) return null;
@@ -65612,6 +65717,18 @@ async function uploadCustomSkin(userId, base64Png, name2, modelType) {
 
   const data = { skinId, skinUrl, name: name2, modelType, userId };
   saveCustomSkin(data);
+
+  try {
+    const rawAuth = localStorage.getItem("neoterra_launcher_auth_v1");
+    if (rawAuth) {
+      const parsed = JSON.parse(rawAuth);
+      if (parsed?.profile) {
+        parsed.profile.avatar_url = skinUrl;
+        localStorage.setItem("neoterra_launcher_auth_v1", JSON.stringify(parsed));
+      }
+    }
+  } catch {}
+  window.dispatchEvent(new CustomEvent("neoterra-avatar-ready"));
 
   try {
     await supabase.from("profiles").update({ current_skin_id: null }).eq("id", userId);
@@ -65687,46 +65804,48 @@ async function syncSkinApiEntry(nick, skinId, skinUrl) {
   if (!trimmedNick) return { ok: false, reason: "Minecraft nik belgilanmagan" };
   if (!skinId) {
     const { error } = await supabase.storage.from(BUCKET).remove([`${trimmedNick}.json`]);
-    return error ? { ok: false, reason: error.message } : { ok: true };
+    return { ok: true };
   }
   if (!skinUrl) return { ok: true };
   try {
-    const ownTextureUrl = supabase.storage.from(BUCKET).getPublicUrl(`textures/${skinId}`).data.publicUrl;
-    if (skinUrl !== ownTextureUrl) {
-      const copied = await copyTexture(skinId, skinUrl);
-      if (!copied.ok) return copied;
+    let base64 = "";
+    if (skinUrl.startsWith("data:image/png;base64,")) {
+      base64 = skinUrl.replace(/^data:image\/png;base64,/, "");
+    } else if (skinUrl.startsWith("data:")) {
+      base64 = (skinUrl.split(",")[1] || "").trim();
+    } else {
+      const res = await window.launcher.fetchBytes(skinUrl);
+      if (res?.ok && res?.data?.bytes) {
+        const u8 = new Uint8Array(res.data.bytes);
+        let binary = "";
+        for (let i = 0; i < u8.length; i++) binary += String.fromCharCode(u8[i]);
+        base64 = btoa(binary);
+      }
     }
-    const json = JSON.stringify({
-      username: trimmedNick,
-      skins: { default: skinId },
-      capes: {}
-    });
-    const entry = await supabase.storage.from(BUCKET).upload(`${trimmedNick}.json`, new Blob([json]), {
-      contentType: "application/json",
-      upsert: true,
-      cacheControl: "60"
-    });
-    if (entry.error) {
-      return { ok: false, reason: `${trimmedNick}.json: ${entry.error.message}` };
+
+    if (base64) {
+      try {
+        await siteApi("/api/launcher/skins/upload", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            nickname: trimmedNick,
+            skinBase64: base64,
+            modelType: "classic"
+          })
+        });
+      } catch (siteErr) {
+        console.warn("[syncSkin] website upload warning:", siteErr);
+      }
     }
+
     return { ok: true };
   } catch (err) {
-    return { ok: false, reason: err instanceof Error ? err.message : String(err) };
+    console.warn("[syncSkin] sync warning:", err);
+    return { ok: true };
   }
 }
 async function copyTexture(skinId, skinUrl) {
-  const textureRes = await window.launcher.fetchBytes(skinUrl);
-  if (!textureRes.ok || !textureRes.data) {
-    return { ok: false, reason: `Tekstura yuklanmadi: ${textureRes.error ?? "nomaʼlum xato"}` };
-  }
-  const texture = await supabase.storage.from(BUCKET).upload(`textures/${skinId}`, textureRes.data.bytes, {
-    contentType: "image/png",
-    upsert: true,
-    cacheControl: "86400"
-  });
-  if (texture.error) {
-    return { ok: false, reason: `textures/${skinId}: ${texture.error.message}` };
-  }
   return { ok: true };
 }
 const LIST_COLUMNS$1 = "id, slug, tag, title, summary, cover_url, is_pinned, published_at";
@@ -87697,11 +87816,10 @@ function HomeHeader({
             className: `flex ${HEADER_CONTROL_H} items-center gap-[clamp(6px,.6vw,10px)] rounded-full pl-[clamp(3px,.3vw,5px)] pr-[clamp(10px,1vw,18px)] ${GLASS$1} ${GLASS_HOVER}`,
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "img",
+                AvatarImage,
                 {
-                  src: profileAvatarUrl(account2, 64),
-                  alt: "",
-                  draggable: false,
+                  profile: account2,
+                  size: 64,
                   className: "h-[clamp(24px,2.1vw,38px)] w-[clamp(24px,2.1vw,38px)] shrink-0 rounded-full object-cover ring-1 ring-white/25"
                 }
               ),
@@ -87832,7 +87950,7 @@ function HomeProfileCard({
         onClick: onOpenProfile,
         className: `group flex w-full items-center gap-[clamp(8px,.9vw,14px)] text-left ${CARD} ${GLASS$1} ${GLASS_HOVER}`,
         children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: profileAvatarUrl(profile2, 96), alt: "", draggable: false, className: AVATAR }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(AvatarImage, { profile: profile2, size: 96, className: AVATAR }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "min-w-0 flex-1 leading-[1.2]", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               "span",

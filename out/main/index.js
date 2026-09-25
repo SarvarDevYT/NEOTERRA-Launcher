@@ -2786,7 +2786,7 @@ async function ensureCustomSkinLoaderMod(dir, gameVersion, loader) {
   const buffer = Buffer.from(await res.arrayBuffer());
   fs.writeFileSync(path.join(modsDir, file.filename), buffer);
 }
-const SUPABASE_URL_FOR_SKINS = "https://hhpnhwfzovbttorprudl.supabase.co";
+const NEOTERRA_SKINS_API_ROOT = "https://site.neoterra.uz/api/launcher/skins/";
 function writeCustomSkinLoaderConfig(dir) {
   const cslDir = path.join(dir, "CustomSkinLoader");
   fs.mkdirSync(cslDir, { recursive: true });
@@ -2795,10 +2795,17 @@ function writeCustomSkinLoaderConfig(dir) {
     try { fs.rmSync(cachesDir, { recursive: true, force: true }); } catch {}
   }
   const configPath = path.join(cslDir, "CustomSkinLoader.json");
+  const local = {
+    name: "LocalSkin",
+    type: "Legacy",
+    checkPNG: false,
+    skin: "LocalSkin/skins/{USERNAME}.png",
+    cape: "LocalSkin/capes/{USERNAME}.png"
+  };
   const ours = {
     name: "NeoTerra",
     type: "CustomSkinAPI",
-    root: `${SUPABASE_URL_FOR_SKINS}/storage/v1/object/public/neoterra-skins/`
+    root: NEOTERRA_SKINS_API_ROOT
   };
   let config = { version: "15.0.1", loadlist: [] };
   try {
@@ -2807,11 +2814,11 @@ function writeCustomSkinLoaderConfig(dir) {
   } catch {
   }
   const previous = Array.isArray(config.loadlist) ? config.loadlist : [];
-  const rest = previous.filter((e) => e?.name !== ours.name);
+  const rest = previous.filter((e) => e?.name !== ours.name && e?.name !== local.name);
   if (!rest.some((e) => typeof e?.type === "string" && /mojang/i.test(e.type))) {
     rest.push({ name: "Mojang", type: "MojangAPI" });
   }
-  config.loadlist = [ours, ...rest];
+  config.loadlist = [local, ours, ...rest];
   fs.writeFileSync(configPath, JSON.stringify(config, null, 2), "utf-8");
 }
 function writeCompanionConfig(dir, companionId) {
@@ -5810,10 +5817,25 @@ function registerIpc(getWindow) {
   });
   electron.ipcMain.handle(IPC.FETCH_BYTES, async (_e, url) => {
     try {
-      if (typeof url !== "string" || !/^https?:\/\//i.test(url)) {
+      if (typeof url !== "string") {
         return { ok: false, error: "invalid URL" };
       }
-      const res = await fetch(url);
+      if (url.startsWith("data:")) {
+        const parts = url.split(",");
+        const mimeMatch = parts[0].match(/data:([^;]+);/);
+        const mime = mimeMatch ? mimeMatch[1] : "image/png";
+        const base64 = parts[1] || "";
+        const buf = Buffer.from(base64, "base64");
+        return {
+          ok: true,
+          data: { bytes: buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength), contentType: mime }
+        };
+      }
+      const fullUrl = url.startsWith("/") ? `https://site.neoterra.uz${url}` : url;
+      if (!/^https?:\/\//i.test(fullUrl)) {
+        return { ok: false, error: "invalid URL" };
+      }
+      const res = await fetch(fullUrl);
       if (!res.ok) return { ok: false, error: `HTTP ${res.status}` };
       const buf = await res.arrayBuffer();
       if (buf.byteLength > 15 * 1024 * 1024) return { ok: false, error: "response too large" };
