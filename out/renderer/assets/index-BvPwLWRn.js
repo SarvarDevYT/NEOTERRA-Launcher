@@ -56535,10 +56535,10 @@ async function removeFriend(userId) {
 }
 const INVITE_TTL_MS = 3e4;
 const INVITE_RESPONSE_GRACE_MS = 4e3;
-const PARTY_MAX_FREE = 2;
+const PARTY_MAX_FREE = 4;
 const PARTY_MAX_PRO = 4;
-function partyLimit(pro2) {
-  return pro2 ? PARTY_MAX_PRO : PARTY_MAX_FREE;
+function partyLimit(_pro2) {
+  return 4;
 }
 const MEMBER_OFFLINE_GRACE_MS = 2e4;
 const PARTY_CONSISTENCY_CHECK_MS = 1e4;
@@ -58560,43 +58560,20 @@ const useProStore = create$1()((set, get2) => {
     set((s) => ({ notices: [...s.notices.slice(-4), { id: ++noticeSeq$1, kind: "expired" }] }));
   }
   return {
-    isPro: false,
+    isPro: true,
     proUntil: null,
-    status: "idle",
+    status: "ready",
     pageOpen: false,
     pageReason: null,
     notices: [],
     async refresh() {
-      const seq = ++refreshSeq;
-      if (get2().status === "idle") set({ status: "loading" });
-      try {
-        const { data, error } = await supabase.rpc("my_launcher_pro");
-        if (seq !== refreshSeq) return;
-        if (error) throw error;
-        const row = Array.isArray(data) ? data[0] : data;
-        const isPro = row?.is_pro === true;
-        const proUntil = row?.pro_until ?? null;
-        set({ isPro, proUntil, status: "ready" });
-        scheduleExpiry(isPro ? proUntil : null);
-        announceExpiry(isPro, proUntil);
-      } catch (err) {
-        if (seq !== refreshSeq) return;
-        const error = err;
-        if (isMissingBackend(error)) {
-          clearExpiryTimer();
-          set({ isPro: false, proUntil: null, status: "unavailable" });
-        } else {
-          set({ status: "error" });
-        }
-      }
+      set({ isPro: true, proUntil: null, status: "ready" });
     },
     reset() {
-      refreshSeq++;
-      clearExpiryTimer();
-      set({ isPro: false, proUntil: null, status: "idle", notices: [] });
+      set({ isPro: true, proUntil: null, status: "ready", notices: [] });
     },
-    consumeNotices: (ids) => set((s) => ({ notices: s.notices.filter((n2) => !ids.includes(n2.id)) })),
-    openPage: (reason = null) => set({ pageOpen: true, pageReason: reason }),
+    consumeNotices: () => set({ notices: [] }),
+    openPage: () => {},
     closePage: () => set({ pageOpen: false, pageReason: null })
   };
 });
@@ -65104,8 +65081,8 @@ function makeNeoTerraProfile(u, provider) {
     avatar_url: skin,
     role: u.role || "user",
     banned: false,
-    has_club_access: u.role === "admin" || u.role === "vip" || u.tariff === "pro",
-    tariff: u.tariff || (u.role === "admin" || u.role === "vip" ? "pro" : "free"),
+    has_club_access: true,
+    tariff: "free",
     streak: Number(u.streak || 1),
     created_at: u.createdAt || "2026-01-01T00:00:00Z",
     minecraft_uuid: null,
@@ -83961,7 +83938,7 @@ function ProfileScreen({ target, backLabel, onBack, onOpenSkins, onRequestLogin 
           }
         ),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative -mt-12 ml-6 w-fit", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-24 w-24 overflow-hidden rounded-full", style: { border: `3px solid ${tokens.ground}`, background: tokens.surface2 }, children: data.avatar_url ? /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: data.avatar_url, alt: "", className: "h-full w-full object-cover" }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid h-full w-full place-items-center text-[28px] font-bold", style: { color: tokens.textDim }, children: (data.username ?? "?").charAt(0).toUpperCase() }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-24 w-24 overflow-hidden rounded-full", style: { border: `3px solid ${tokens.ground}`, background: tokens.surface2 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(AvatarImage, { profile: data, size: 96, className: "h-full w-full object-cover" }) }),
           isOnline(data.last_seen) && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute bottom-1 right-1 h-[14px] w-[14px] rounded-full", style: { background: tokens.emerald, border: `2px solid ${tokens.ground}` } })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "ml-6 mt-4", children: [
@@ -84019,7 +83996,7 @@ function ProfileScreen({ target, backLabel, onBack, onOpenSkins, onRequestLogin 
               ] });
             })(),
             isOwner && ownData && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-3 gap-3", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-3", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-[10px] p-4", style: { border: `1px solid ${tokens.hairline}`, background: tokens.surface }, children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "font-mono text-[18px] font-bold", style: { color: tokens.gold }, children: [
                     (ownData.hbc ?? 0).toLocaleString(numberLocale),
@@ -84027,26 +84004,6 @@ function ProfileScreen({ target, backLabel, onBack, onOpenSkins, onRequestLogin 
                   ] }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-[11px]", style: { color: tokens.textDim }, children: "Balans" })
                 ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                  "div",
-                  {
-                    className: "rounded-[10px] p-4",
-                    style: {
-                      border: `1px solid ${isPro ? "rgba(250,204,21,.45)" : tokens.hairline}`,
-                      background: isPro ? "rgba(250,204,21,.08)" : tokens.surface
-                    },
-                    children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "flex items-center gap-1.5 text-[15px] font-bold capitalize", style: { color: isPro ? "#FDE047" : tokens.text }, children: [
-                        isPro && /* @__PURE__ */ jsxRuntimeExports.jsx(Crown, { size: 14, fill: "currentColor", strokeWidth: 1.5 }),
-                        isPro ? "PRO" : ownData.tariff && ownData.tariff !== "free" ? ownData.tariff : "Bepul"
-                      ] }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "mt-1 text-[11px]", style: { color: tokens.textDim }, children: [
-                        "Tarif",
-                        proUntilText ? ` · ${proUntilText}` : ""
-                      ] })
-                    ]
-                  }
-                ),
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-[10px] p-4", style: { border: `1px solid ${tokens.hairline}`, background: tokens.surface }, children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[15px] font-bold", style: { color: tokens.text }, children: purchased.length }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-[11px]", style: { color: tokens.textDim }, children: "Sotib olinganlar" })

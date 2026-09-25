@@ -573,7 +573,7 @@ function setEarlyWindowDisabled(value) {
 }
 const DEFAULT_UI_THEME_ID = "forest";
 const DEFAULT_UI_THEME_PACK_URL = "https://cdn.neoterra.org/ui-themes/forest.zip";
-const MOD_DIR = "mcmodhub_ui";
+const MOD_DIR = "neoterra_ui";
 function uiRoot() {
   return path.join(getInstallPath(), MOD_DIR);
 }
@@ -794,7 +794,7 @@ function removeTheme(id) {
   patchConfig(patch);
 }
 const UI_MOD_VERSION = "0.1.0";
-const UI_MOD_FILE = `mcmodhub_ui-${UI_MOD_VERSION}.jar`;
+const UI_MOD_FILE = `neoterra_ui-${UI_MOD_VERSION}.jar`;
 const UI_MOD_URL = `https://cdn.neoterra.org/mods/${UI_MOD_FILE}`;
 const MIN_VALID_BYTES = 5e4;
 function modsDirIn(dir) {
@@ -804,7 +804,7 @@ function modsDirIn(dir) {
 }
 function removeOtherVersions(dir) {
   for (const name of fs.readdirSync(dir)) {
-    if (/^mcmodhub_ui-.*\.jar$/i.test(name) && name !== UI_MOD_FILE) {
+    if (/^(?:mcmodhub|neoterra)_ui-.*\.jar$/i.test(name) && name !== UI_MOD_FILE) {
       try {
         fs.unlinkSync(path.join(dir, name));
       } catch {
@@ -823,7 +823,7 @@ async function ensureUiMod(instanceRoot, onStatus) {
     return false;
   }
   try {
-    onStatus?.("MCModHub UI modi yuklanmoqda...");
+    onStatus?.("NeoTerra UI modi yuklanmoqda...");
     const res = await fetch(UI_MOD_URL, { signal: AbortSignal.timeout(12e4) });
     if (!res.ok) {
       throw new Error(`HTTP ${res.status}`);
@@ -837,11 +837,11 @@ async function ensureUiMod(instanceRoot, onStatus) {
     }
     fs.writeFileSync(target, buf);
     removeOtherVersions(dir);
-    onStatus?.("MCModHub UI modi o'rnatildi");
+    onStatus?.("NeoTerra UI modi o'rnatildi");
     return true;
   } catch (err) {
     onStatus?.(
-      `MCModHub UI modi yuklanmadi (${err instanceof Error ? err.message : String(err)}) - standart menyu bilan davom etamiz`
+      `NeoTerra UI modi yuklanmadi (${err instanceof Error ? err.message : String(err)}) - standart menyu bilan davom etamiz`
     );
     return false;
   }
@@ -854,7 +854,7 @@ function removeUiMod(instancesRoot) {
     const dir = path.join(instancesRoot, inst, "mods");
     if (!fs.existsSync(dir)) continue;
     for (const name of fs.readdirSync(dir)) {
-      if (!/^mcmodhub_ui-.*\.jar$/i.test(name)) continue;
+      if (!/^(?:mcmodhub|neoterra)_ui-.*\.jar$/i.test(name)) continue;
       try {
         fs.unlinkSync(path.join(dir, name));
       } catch {
@@ -2422,10 +2422,17 @@ function isPerformanceModFile(filename, loader) {
   const name = normalize(filename);
   return PERFORMANCE_MODS[loader].some((group) => group.some((slug) => name.includes(normalize(slug))));
 }
-const MEMORY_FILE = "mcmodhub-fps-boost.json";
+const MEMORY_FILE = "neoterra-fps-boost.json";
 function readBoostMemory(dir) {
   try {
-    const parsed = JSON.parse(fs.readFileSync(path.join(dir, MEMORY_FILE), "utf-8"));
+    let filePath = path.join(dir, MEMORY_FILE);
+    if (!fs.existsSync(filePath)) {
+      const old = path.join(dir, "mcmodhub-fps-boost.json");
+      if (fs.existsSync(old)) {
+        try { fs.renameSync(old, filePath); } catch {}
+      }
+    }
+    const parsed = JSON.parse(fs.readFileSync(filePath, "utf-8"));
     if (parsed && typeof parsed === "object") return parsed;
   } catch {
   }
@@ -2454,7 +2461,7 @@ async function ensurePerformanceMods(dir, gameVersion, loader, emit2) {
   if (installed.some((f) => /optifine/i.test(f))) {
     emit2({
       type: "log",
-      line: "[MCModHub]: OptiFine topildi - FPS modlari o'tkazib yuborildi (ular birga ishlamaydi)"
+      line: "[NeoTerra]: OptiFine topildi - FPS modlari o'tkazib yuborildi (ular birga ishlamaydi)"
     });
     return;
   }
@@ -2496,7 +2503,7 @@ async function ensurePerformanceMods(dir, gameVersion, loader, emit2) {
       } catch (err) {
         emit2({
           type: "log",
-          line: `[MCModHub]: "${slug}" yuklanmadi: ${err instanceof Error ? err.message : String(err)}`
+          line: `[NeoTerra]: "${slug}" yuklanmadi: ${err instanceof Error ? err.message : String(err)}`
         });
         continue;
       }
@@ -2637,7 +2644,8 @@ function ensureInstanceDirs(version, loader) {
 }
 function detectLegacyOwner(root) {
   try {
-    const parsed = JSON.parse(fs.readFileSync(path.join(root, "mcmodhub-fps-boost.json"), "utf-8"));
+    const fpsFile = fs.existsSync(path.join(root, "neoterra-fps-boost.json")) ? path.join(root, "neoterra-fps-boost.json") : path.join(root, "mcmodhub-fps-boost.json");
+    const parsed = JSON.parse(fs.readFileSync(fpsFile, "utf-8"));
     for (const key of Object.keys(parsed)) {
       const [v, l] = key.split("|");
       if (v) return { version: v, loader: l || null };
@@ -2715,6 +2723,8 @@ function migrateRootToInstance() {
     "options.txt",
     "optionsof.txt",
     "servers.dat",
+    "neoterra_companion.json",
+    "neoterra-fps-boost.json",
     "mcmodhub_companion.json",
     "mcmodhub-fps-boost.json"
   ];
@@ -2786,8 +2796,40 @@ async function ensureCustomSkinLoaderMod(dir, gameVersion, loader) {
   const buffer = Buffer.from(await res.arrayBuffer());
   fs.writeFileSync(path.join(modsDir, file.filename), buffer);
 }
+function cleanLegacyInstanceFilenames(dir) {
+  try {
+    const oldUi = path.join(dir, "mcmodhub_ui");
+    const newUi = path.join(dir, "neoterra_ui");
+    if (fs.existsSync(oldUi)) {
+      if (!fs.existsSync(newUi)) {
+        try { fs.renameSync(oldUi, newUi); } catch {}
+      } else {
+        try { fs.rmSync(oldUi, { recursive: true, force: true }); } catch {}
+      }
+    }
+    const oldCompanion = path.join(dir, "mcmodhub_companion.json");
+    const newCompanion = path.join(dir, "neoterra_companion.json");
+    if (fs.existsSync(oldCompanion)) {
+      if (!fs.existsSync(newCompanion)) {
+        try { fs.renameSync(oldCompanion, newCompanion); } catch {}
+      } else {
+        try { fs.unlinkSync(oldCompanion); } catch {}
+      }
+    }
+    const oldFps = path.join(dir, "mcmodhub-fps-boost.json");
+    const newFps = path.join(dir, "neoterra-fps-boost.json");
+    if (fs.existsSync(oldFps)) {
+      if (!fs.existsSync(newFps)) {
+        try { fs.renameSync(oldFps, newFps); } catch {}
+      } else {
+        try { fs.unlinkSync(oldFps); } catch {}
+      }
+    }
+  } catch {}
+}
 const NEOTERRA_SKINS_API_ROOT = "https://site.neoterra.uz/api/launcher/skins/";
 function writeCustomSkinLoaderConfig(dir) {
+  cleanLegacyInstanceFilenames(dir);
   const cslDir = path.join(dir, "CustomSkinLoader");
   fs.mkdirSync(cslDir, { recursive: true });
   const cachesDir = path.join(cslDir, "caches");
@@ -2824,13 +2866,17 @@ function writeCustomSkinLoaderConfig(dir) {
 function writeCompanionConfig(dir, companionId) {
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(
-    path.join(dir, "mcmodhub_companion.json"),
+    path.join(dir, "neoterra_companion.json"),
     JSON.stringify({ companion: companionId ?? null }, null, 2),
     "utf-8"
   );
+  try {
+    const old = path.join(dir, "mcmodhub_companion.json");
+    if (fs.existsSync(old)) fs.unlinkSync(old);
+  } catch {}
 }
 function writeUiToken(dir, token) {
-  const target = path.join(dir, "mcmodhub_ui");
+  const target = path.join(dir, "neoterra_ui");
   fs.mkdirSync(target, { recursive: true });
   const file = path.join(target, "launch_token");
   if (token) {
@@ -2838,6 +2884,10 @@ function writeUiToken(dir, token) {
   } else {
     fs.rmSync(file, { force: true });
   }
+  try {
+    const oldDir = path.join(dir, "mcmodhub_ui");
+    if (fs.existsSync(oldDir)) fs.rmSync(oldDir, { recursive: true, force: true });
+  } catch {}
 }
 const FORGEWRAPPER_VERSION = "1.6.0";
 const FORGEWRAPPER_SIZE = 28679;
@@ -3403,7 +3453,7 @@ async function launchGameCore(req, emit2) {
   }
   const corruptedCount = removeCorruptedDownloads(gameDir());
   if (corruptedCount > 0) {
-    emit2({ type: "log", line: `[MCModHub]: ${corruptedCount} ta buzilgan kutubxona fayli tozalandi, qayta yuklanadi` });
+    emit2({ type: "log", line: `[NeoTerra]: ${corruptedCount} ta buzilgan kutubxona fayli tozalandi, qayta yuklanadi` });
   }
   emit2({ type: "status", message: "Fayllar tayyorlanmoqda..." });
   const downloadTasks = [];
@@ -3482,7 +3532,7 @@ async function launchGameCore(req, emit2) {
           if (found) {
             emit2({
               type: "log",
-              line: `[MCModHub]: Java ${requiredMajor} yuklab bo'lmadi, tizimdagi mos Java ishlatiladi (${found})`
+              line: `[NeoTerra]: Java ${requiredMajor} yuklab bo'lmadi, tizimdagi mos Java ishlatiladi (${found})`
             });
             javaPath = found;
           } else {
@@ -3517,11 +3567,11 @@ async function launchGameCore(req, emit2) {
         else if (phase === "assets") setPhase("assets", current2, total);
       }
     }).catch((err) => ({ fixed: 0, failed: [err instanceof Error ? err.message : String(err)] }));
-    if (result.fixed > 0) emit2({ type: "log", line: `[MCModHub]: ${result.fixed} ta fayl yuklandi/tuzatildi` });
+    if (result.fixed > 0) emit2({ type: "log", line: `[NeoTerra]: ${result.fixed} ta fayl yuklandi/tuzatildi` });
     if (result.failed.length > 0) {
       emit2({
         type: "log",
-        line: `[MCModHub]: ${result.failed.length} ta faylni yuklab bo'lmadi: ${result.failed.slice(0, 3).join("; ")}`
+        line: `[NeoTerra]: ${result.failed.length} ta faylni yuklab bo'lmadi: ${result.failed.slice(0, 3).join("; ")}`
       });
     }
   }
@@ -5048,7 +5098,7 @@ class MockMinecraft {
     this.at(3900, () => this.log("Render thread/INFO", "minecraft/SoundEngine", "Sound engine started"));
     if (role === "host") {
       const domain = randomE4mcDomain();
-      this.at(5e3, () => this.log("Server thread/INFO", "minecraft/MinecraftServer", 'Preparing level "MCModHub Party"'));
+      this.at(5e3, () => this.log("Server thread/INFO", "minecraft/MinecraftServer", 'Preparing level "NeoTerra Party"'));
       this.at(5800, () => this.log("Server thread/INFO", "minecraft/MinecraftServer", "Preparing start region for dimension minecraft:overworld"));
       this.at(7e3, () => this.log("Render thread/INFO", "minecraft/IntegratedServer", `Started serving on ${49152 + crypto.randomInt(1e4)}`));
       this.at(7400, () => this.log("e4all_minecraft-init/INFO", "e4all/", "broker req: https://broker.e4mc.link/getBestRelay GET"));
