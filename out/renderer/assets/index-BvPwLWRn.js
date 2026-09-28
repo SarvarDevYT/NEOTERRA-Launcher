@@ -35463,7 +35463,13 @@ const login = {
     }
   },
   emailModal: {
-    title: { uz: "Email bilan kirish", en: "Sign in with email", ru: "Вход по email" },
+    title: { uz: "NeoTerra Hisobi bilan kirish", en: "Sign in with NeoTerra Account", ru: "Вход через аккаунт NeoTerra" },
+    subtitle: {
+      uz: "Sayt yoki o'yindagi Email / Nik va parolingiz bilan kiring.",
+      en: "Use your website or in-game Email / Nickname and password.",
+      ru: "Войдите с помощью Email / Ника и пароля."
+    },
+    title_old: { uz: "Email bilan kirish", en: "Sign in with email", ru: "Вход по email" },
     subtitle: {
       uz: "Eski akkauntingiz email va paroli bilan kiring.",
       en: "Use the email and password of your existing account.",
@@ -64679,6 +64685,8 @@ function SettingsDialog({
   onRamChange,
   showSnapshots,
   onShowSnapshotsChange,
+  versionFilters,
+  onVersionFilterChange,
   fpsBoost,
   onFpsBoostChange,
   updateReadyVersion,
@@ -64838,15 +64846,39 @@ function SettingsDialog({
                 ] }),
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-5", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(SectionHeader, { icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Layers$1, { size: 13 }), title: t2("settings.versions") }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    ToggleRow,
-                    {
-                      label: t2("settings.showSnapshots"),
-                      hint: t2("settings.showSnapshotsHint"),
-                      on: showSnapshots,
-                      onClick: () => onShowSnapshotsChange(!showSnapshots)
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(ToggleRow, {
+                    label: "Relizlar",
+                    hint: "Minecraft rasmiy to'liq reliz versiyalarini ko'rsatish",
+                    on: versionFilters ? versionFilters.releases : true,
+                    onClick: () => onVersionFilterChange && onVersionFilterChange("releases", !versionFilters?.releases)
+                  }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(ToggleRow, {
+                    label: "Modifikatsiyalar (Fabric, Forge, Quilt)",
+                    hint: "Modli Fabric, Forge va Quilt versiyalarini ko'rsatish",
+                    on: versionFilters ? versionFilters.mods : true,
+                    onClick: () => onVersionFilterChange && onVersionFilterChange("mods", !versionFilters?.mods)
+                  }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(ToggleRow, {
+                    label: "Snapshotlar",
+                    hint: "Mojang sinov snapshot va pre-release versiyalarini ko'rsatish",
+                    on: versionFilters ? versionFilters.snapshots : showSnapshots,
+                    onClick: () => {
+                      if (onVersionFilterChange) onVersionFilterChange("snapshots", !versionFilters?.snapshots);
+                      onShowSnapshotsChange(!showSnapshots);
                     }
-                  )
+                  }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(ToggleRow, {
+                    label: "Eski versiyalar (Beta & Alfa)",
+                    hint: "2010-2011 yillardagi klassik Beta va Alfa versiyalari",
+                    on: versionFilters ? versionFilters.oldVersions : false,
+                    onClick: () => onVersionFilterChange && onVersionFilterChange("oldVersions", !versionFilters?.oldVersions)
+                  }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(ToggleRow, {
+                    label: "Faqat o'rnatilganlar",
+                    hint: "Faqat kompyuteringizda allaqachon yuklab olingan versiyalarni ko'rsatish",
+                    on: versionFilters ? versionFilters.installedOnly : false,
+                    onClick: () => onVersionFilterChange && onVersionFilterChange("installedOnly", !versionFilters?.installedOnly)
+                  })
                 ] }),
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-5", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(SectionHeader, { icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Zap, { size: 13 }), title: t2("settings.performance") }),
@@ -88142,7 +88174,31 @@ function LauncherScreen() {
   }
   const isMac = window.launcher?.platform === "darwin";
   const [system, setSystem] = reactExports.useState(null);
-  const [ram, setRam] = reactExports.useState(4);
+  const [ram, setRam] = reactExports.useState(() => {
+    try {
+      const saved = localStorage.getItem("neoterra_ram_gb");
+      if (saved) return Number(saved);
+    } catch {}
+    return 5;
+  });
+  function setRamPersisted(next) {
+    setRam(next);
+    try { localStorage.setItem("neoterra_ram_gb", String(next)); } catch {}
+  }
+  const [versionFilters, setVersionFilters] = reactExports.useState(() => {
+    try {
+      const raw = localStorage.getItem("neoterra_version_filters");
+      if (raw) return JSON.parse(raw);
+    } catch {}
+    return { releases: true, mods: true, snapshots: false, oldVersions: false, installedOnly: false };
+  });
+  function setVersionFilterPersisted(key, val) {
+    setVersionFilters((prev) => {
+      const next = { ...prev, [key]: val };
+      try { localStorage.setItem("neoterra_version_filters", JSON.stringify(next)); } catch {}
+      return next;
+    });
+  }
   const [status, setStatus] = reactExports.useState(t2("home.ready"));
   const [percent, setPercent] = reactExports.useState(0);
   const [running, setRunning] = reactExports.useState(false);
@@ -88295,7 +88351,12 @@ function LauncherScreen() {
     void window.launcher.getSystemInfo().then((res) => {
       if (res.ok && res.data) {
         setSystem(res.data);
-        setRam(res.data.recommendedRamGb);
+        try {
+          const savedRam = localStorage.getItem("neoterra_ram_gb");
+          if (!savedRam) setRam(res.data.recommendedRamGb || 5);
+        } catch {
+          setRam(res.data.recommendedRamGb || 5);
+        }
       }
     });
   }, []);
@@ -88411,8 +88472,18 @@ function LauncherScreen() {
     return `${t2("home.version")} ${e.mcVersion}`;
   }
   const query = versionQuery.trim().toLowerCase();
-  const versionPool = showSnapshots ? versions : versions.filter((v2) => v2.mcType === "release");
-  const filteredVersions = (query ? versionPool.filter((v2) => v2.mcVersion.toLowerCase().includes(query) || v2.loader.includes(query)) : [...versionPool.filter((v2) => v2.mcType === "release"), ...versionPool.filter((v2) => v2.mcType !== "release")]).slice(0, 150);
+  const versionPool = versions.filter((v2) => {
+    if (versionFilters.installedOnly && !v2.installed) return false;
+    const isMod = v2.loader && v2.loader !== "vanilla";
+    if (isMod && !versionFilters.mods) return false;
+    if (!isMod) {
+      if (v2.mcType === "release" && !versionFilters.releases) return false;
+      if (v2.mcType === "snapshot" && !(versionFilters.snapshots || showSnapshots)) return false;
+      if ((v2.mcType === "old_beta" || v2.mcType === "old_alpha") && !versionFilters.oldVersions) return false;
+    }
+    return true;
+  });
+  const filteredVersions = (query ? versionPool.filter((v2) => v2.mcVersion.toLowerCase().includes(query) || v2.loader.includes(query)) : versionPool).slice(0, 300);
   async function prepareLaunch(target) {
     const trimmed = username.trim();
     if (isLoggedIn && profile2) {
@@ -88907,13 +88978,40 @@ function LauncherScreen() {
                 }
               )
             ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-2 flex flex-wrap gap-1 px-1", children: [
+              [
+                { id: "releases", label: "Relizlar" },
+                { id: "mods", label: "Modlar" },
+                { id: "snapshots", label: "Snapshot" },
+                { id: "oldVersions", label: "Beta/Alfa" },
+                { id: "installedOnly", label: "O'rnatilgan" }
+              ].map((f) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  key: f.id,
+                  type: "button",
+                  onClick: (e) => {
+                    e.stopPropagation();
+                    const nextVal = !versionFilters[f.id];
+                    setVersionFilterPersisted(f.id, nextVal);
+                    if (f.id === "snapshots") setShowSnapshotsPersisted(nextVal);
+                  },
+                  className: `px-2 py-0.5 rounded text-[11px] font-medium transition cursor-pointer ${
+                    versionFilters[f.id]
+                      ? "bg-[#2ECC71]/20 text-[#2ECC71] border border-[#2ECC71]/40"
+                      : "bg-white/5 text-white/50 border border-white/10 hover:text-white/80"
+                  }`,
+                  children: f.label
+                }
+              ))
+            ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "no-scrollbar max-h-[clamp(256px,34vh,460px)] overflow-y-auto", children: [
               versionsLoading && /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: `m-0 px-2 py-2 ${MENU_TEXT} text-white/60`, children: [
                 t2("home.loading"),
                 "..."
               ] }),
               versionsError && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: `m-0 px-2 py-2 ${MENU_TEXT} text-red-400`, children: versionsError }),
-              !versionsLoading && !versionsError && filteredVersions.map((v2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+              !versionsLoading && !versionsError && filteredVersions.map((v2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
                 "button",
                 {
                   type: "button",
@@ -88923,7 +89021,13 @@ function LauncherScreen() {
                     setVersionQuery("");
                   },
                   className: `${MENU_ITEM} justify-between ${v2.id === selected.id ? MENU_ITEM_ACTIVE : MENU_ITEM_IDLE}`,
-                  children: entryLabel(v2)
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: entryLabel(v2) }),
+                    v2.installed && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-1 text-[11px] text-[#2ECC71] bg-[#2ECC71]/10 px-1.5 py-0.5 rounded", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-1.5 h-1.5 rounded-full bg-[#2ECC71] inline-block" }),
+                      "O'rnatilgan"
+                    ] })
+                  ]
                 },
                 v2.id
               ))
@@ -89113,9 +89217,11 @@ function LauncherScreen() {
       {
         system,
         ram,
-        onRamChange: setRam,
+        onRamChange: setRamPersisted,
         showSnapshots,
         onShowSnapshotsChange: setShowSnapshotsPersisted,
+        versionFilters,
+        onVersionFilterChange: setVersionFilterPersisted,
         fpsBoost,
         onFpsBoostChange: setFpsBoostPersisted,
         updateReadyVersion: updateReady && !updateReady.downloadUrl ? updateReady.version : null,

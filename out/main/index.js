@@ -5917,7 +5917,7 @@ function registerIpc(getWindow) {
         ok: true,
         data: {
           totalRamGb,
-          recommendedRamGb: Math.max(2, Math.min(8, Math.floor(totalRamGb / 2))),
+          recommendedRamGb: Math.min(5, Math.max(2, totalRamGb >= 6 ? 5 : totalRamGb - 1)),
           platform: process.platform,
           javaVersion: await detectJava(),
           gameDir: gameDir(),
@@ -6187,17 +6187,65 @@ function registerIpc(getWindow) {
         listSupportedGameVersions("quilt"),
         listForgeSupportedVersions()
       ]);
+      const root = gameDir();
+      const versionsDir = path.join(root, "versions");
+      const installedFolders = new Set(
+        fs.existsSync(versionsDir) ? fs.readdirSync(versionsDir) : []
+      );
+      const instancesDir = path.join(root, "instances");
+      const installedInstances = new Set(
+        fs.existsSync(instancesDir) ? fs.readdirSync(instancesDir) : []
+      );
+
+      const checkInstalled = (mcVersion, loader) => {
+        const jarName = loader && loader !== "vanilla" ? `${loader}-${mcVersion}` : mcVersion;
+        const instKey = loader && loader !== "vanilla" ? `${mcVersion}-${loader}` : mcVersion;
+        return (
+          installedFolders.has(mcVersion) ||
+          installedFolders.has(jarName) ||
+          installedFolders.has(`fabric-loader-${mcVersion}`) ||
+          installedFolders.has(`quilt-loader-${mcVersion}`) ||
+          installedFolders.has(`forge-${mcVersion}`) ||
+          installedInstances.has(instKey) ||
+          installedInstances.has(mcVersion)
+        );
+      };
+
       const entries = [];
       for (const v of vanilla) {
-        entries.push({ id: `vanilla:${v.id}`, mcVersion: v.id, mcType: v.type, loader: "vanilla" });
+        entries.push({
+          id: `vanilla:${v.id}`,
+          mcVersion: v.id,
+          mcType: v.type,
+          loader: "vanilla",
+          installed: checkInstalled(v.id, "vanilla")
+        });
         if (fabricSet.has(v.id)) {
-          entries.push({ id: `fabric:${v.id}`, mcVersion: v.id, mcType: v.type, loader: "fabric" });
+          entries.push({
+            id: `fabric:${v.id}`,
+            mcVersion: v.id,
+            mcType: v.type,
+            loader: "fabric",
+            installed: checkInstalled(v.id, "fabric")
+          });
         }
         if (quiltSet.has(v.id)) {
-          entries.push({ id: `quilt:${v.id}`, mcVersion: v.id, mcType: v.type, loader: "quilt" });
+          entries.push({
+            id: `quilt:${v.id}`,
+            mcVersion: v.id,
+            mcType: v.type,
+            loader: "quilt",
+            installed: checkInstalled(v.id, "quilt")
+          });
         }
         if (forgeSet.has(v.id)) {
-          entries.push({ id: `forge:${v.id}`, mcVersion: v.id, mcType: v.type, loader: "forge" });
+          entries.push({
+            id: `forge:${v.id}`,
+            mcVersion: v.id,
+            mcType: v.type,
+            loader: "forge",
+            installed: checkInstalled(v.id, "forge")
+          });
         }
       }
       return { ok: true, data: entries };
