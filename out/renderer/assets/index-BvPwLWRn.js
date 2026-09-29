@@ -88472,18 +88472,26 @@ function LauncherScreen() {
     return `${t2("home.version")} ${e.mcVersion}`;
   }
   const query = versionQuery.trim().toLowerCase();
+  const isSnap = (v) => v.mcType === "snapshot" || /[-_.](rc|pre|snapshot|alpha|beta|exp)/i.test(v.mcVersion) || /^\d\dw\d\d/i.test(v.mcVersion);
+  const isOld = (v) => v.mcType === "old_beta" || v.mcType === "old_alpha" || /^[ab]1\./i.test(v.mcVersion) || /^c0\./i.test(v.mcVersion) || /^rd-/i.test(v.mcVersion);
+  const isRel = (v) => !isSnap(v) && !isOld(v);
   const versionPool = versions.filter((v2) => {
     if (versionFilters.installedOnly && !v2.installed) return false;
     const isMod = v2.loader && v2.loader !== "vanilla";
     if (isMod && !versionFilters.mods) return false;
-    if (!isMod) {
-      if (v2.mcType === "release" && !versionFilters.releases) return false;
-      if (v2.mcType === "snapshot" && !(versionFilters.snapshots || showSnapshots)) return false;
-      if ((v2.mcType === "old_beta" || v2.mcType === "old_alpha") && !versionFilters.oldVersions) return false;
-    }
+    if (isSnap(v2) && !(versionFilters.snapshots || showSnapshots)) return false;
+    if (isOld(v2) && !versionFilters.oldVersions) return false;
+    if (isRel(v2) && !versionFilters.releases) return false;
     return true;
   });
-  const filteredVersions = (query ? versionPool.filter((v2) => v2.mcVersion.toLowerCase().includes(query) || v2.loader.includes(query)) : versionPool).slice(0, 300);
+  const searchTokens = query.split(/\s+/).filter(Boolean);
+  const filteredVersions = (searchTokens.length > 0 ? versionPool.filter((v2) => {
+    const lbl = entryLabel(v2).toLowerCase();
+    const ldr = (v2.loader || "").toLowerCase();
+    const ver = (v2.mcVersion || "").toLowerCase();
+    const combined = `${ldr} ${ver} ${lbl}`;
+    return searchTokens.every((tok) => combined.includes(tok));
+  }) : versionPool).slice(0, 2000);
   async function prepareLaunch(target) {
     const trimmed = username.trim();
     if (isLoggedIn && profile2) {

@@ -6213,13 +6213,6 @@ function registerIpc(getWindow) {
 
       const entries = [];
       for (const v of vanilla) {
-        entries.push({
-          id: `vanilla:${v.id}`,
-          mcVersion: v.id,
-          mcType: v.type,
-          loader: "vanilla",
-          installed: checkInstalled(v.id, "vanilla")
-        });
         if (fabricSet.has(v.id)) {
           entries.push({
             id: `fabric:${v.id}`,
@@ -6247,6 +6240,13 @@ function registerIpc(getWindow) {
             installed: checkInstalled(v.id, "forge")
           });
         }
+        entries.push({
+          id: `vanilla:${v.id}`,
+          mcVersion: v.id,
+          mcType: v.type,
+          loader: "vanilla",
+          installed: checkInstalled(v.id, "vanilla")
+        });
       }
       return { ok: true, data: entries };
     } catch (err) {
