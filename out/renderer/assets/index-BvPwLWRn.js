@@ -34851,7 +34851,7 @@ const home = {
   snapshot: { uz: "Snapshot", en: "Snapshot", ru: "Снапшот" },
   version: { uz: "Versiya", en: "Version", ru: "Версия" },
   firstLaunchHint: {
-    uz: "Birinchi marta ishga tushirilyapti — kerakli fayllar tayyorlanmoqda, bu biroz vaqt olishi mumkin. Shu daqiqalarda HubTV’dagi qiziqarli videolarni tomosha qiling, oʻyiningiz tez orada tayyor boʻladi.",
+    uz: "Kerakli fayllar va versiya yuklanmoqda, bu biroz vaqt olishi mumkin. Versiya yuklanib olguncha o'z ishlaringiz bilan shug'ullanib turishingiz mumkin, oʻyiningiz tez orada tayyor boʻladi.",
     en: "Starting for the first time — the required files are being prepared, this may take a moment. Meanwhile, watch some interesting videos on HubTV, your game will be ready soon.",
     ru: "Первый запуск — идёт подготовка необходимых файлов, это может занять немного времени. Пока посмотрите интересные видео на HubTV, ваша игра скоро будет готова."
   },
@@ -58509,8 +58509,9 @@ const useAuthStore = create$1()((set) => ({
         provider: providerOf(session)
       };
     }
+    const isGuest = (() => { try { return localStorage.getItem("neoterra_guest_mode") === "true"; } catch { return false; } })();
     return {
-      status: state.status === "guest" ? "guest" : "signed-out",
+      status: (state.status === "guest" || isGuest) ? "guest" : "signed-out",
       userId: null,
       displayName: null,
       provider: null
@@ -65441,140 +65442,244 @@ const TAG_LABELS = {
 const LIST_COLUMNS$2 = "id, slug, name, model_type, tags, skin_url, uses";
 const DEFAULT_SKINS = [
   {
+    id: "skin-cyber-knight",
+    slug: "cyber-knight",
+    name: "Cyber Knight",
+    model_type: "classic",
+    tags: ["kiber", "jangchi", "binafsha", "neon"],
+    skin_url: "https://minotar.net/skin/Cyber",
+    uses: 1420,
+    is_published: true,
+    created_at: "2026-07-15T10:00:00Z",
+    description: "NeoTerra kiber jangchisi, binafsha neon zirh va qora qoplama."
+  },
+  {
+    id: "skin-shadow-ninja",
+    slug: "shadow-ninja",
+    name: "Shadow Ninja",
+    model_type: "classic",
+    tags: ["ninja", "qora", "anime", "yashirin"],
+    skin_url: "https://minotar.net/skin/Ninja",
+    uses: 2310,
+    is_published: true,
+    created_at: "2026-07-20T12:00:00Z",
+    description: "Tungi sharpaday harakatlanuvchi afsonaviy soya ninjasi."
+  },
+  {
+    id: "skin-valkyrie",
+    slug: "frost-valkyrie",
+    name: "Frost Valkyrie",
+    model_type: "slim",
+    tags: ["qiz", "muz", "jangchi", "oq"],
+    skin_url: "https://minotar.net/skin/Valkyrie",
+    uses: 1890,
+    is_published: true,
+    created_at: "2026-07-22T14:00:00Z",
+    description: "Muzli tog'lar jangchisi, oq va ko'k rangli nafis qiz skini."
+  },
+  {
+    id: "skin-samurai",
+    slug: "crimson-samurai",
+    name: "Crimson Samurai",
+    model_type: "classic",
+    tags: ["samuray", "qizil", "qilichboz"],
+    skin_url: "https://minotar.net/skin/Samurai",
+    uses: 1650,
+    is_published: true,
+    created_at: "2026-07-25T15:00:00Z",
+    description: "Qadimgi samuraylar sharafi va qizil zirhli jangchi."
+  },
+  {
+    id: "skin-demon",
+    slug: "demon-hunter",
+    name: "Demon Hunter",
+    model_type: "classic",
+    tags: ["demon", "qora", "qizil", "dahshatli"],
+    skin_url: "https://minotar.net/skin/Demon",
+    uses: 2780,
+    is_published: true,
+    created_at: "2026-08-01T09:00:00Z",
+    description: "Yerosti dunyosining qudratli ovchisi va qora libos."
+  },
+  {
+    id: "skin-ghost",
+    slug: "phantom-ghost",
+    name: "Phantom Ghost",
+    model_type: "slim",
+    tags: ["sharpalar", "oq", "yashirin", "sehrli"],
+    skin_url: "https://minotar.net/skin/Ghost",
+    uses: 1200,
+    is_published: true,
+    created_at: "2026-08-03T11:00:00Z",
+    description: "Oq sharpasimon nafis va sirli ko'rinish."
+  },
+  {
+    id: "skin-knight",
+    slug: "iron-knight",
+    name: "Iron Knight",
+    model_type: "classic",
+    tags: ["ritzar", "temir", "sovut", "himoya"],
+    skin_url: "https://minotar.net/skin/Knight",
+    uses: 1980,
+    is_published: true,
+    created_at: "2026-08-05T13:00:00Z",
+    description: "Og'ir po'lat sovutli o'rta asr ritsari."
+  },
+  {
+    id: "skin-assassin",
+    slug: "hooded-assassin",
+    name: "Hooded Assassin",
+    model_type: "classic",
+    tags: ["qotil", "hoodie", "qora", "ninja"],
+    skin_url: "https://minotar.net/skin/Assassin",
+    uses: 2150,
+    is_published: true,
+    created_at: "2026-08-08T16:00:00Z",
+    description: "Kapyushonli sirli va chaqqon qotil."
+  },
+  {
+    id: "skin-wizard",
+    slug: "ender-wizard",
+    name: "Ender Wizard",
+    model_type: "classic",
+    tags: ["sehrgar", "binafsha", "ender", "magik"],
+    skin_url: "https://minotar.net/skin/Wizard",
+    uses: 1430,
+    is_published: true,
+    created_at: "2026-08-10T17:00:00Z",
+    description: "Ender olami kuchiga ega binafsharang sehrgar."
+  },
+  {
+    id: "skin-archer",
+    slug: "forest-archer",
+    name: "Forest Archer",
+    model_type: "slim",
+    tags: ["kamondan", "yashil", "o'rmon", "mergan"],
+    skin_url: "https://minotar.net/skin/Archer",
+    uses: 1110,
+    is_published: true,
+    created_at: "2026-08-12T18:00:00Z",
+    description: "Yashil o'rmon mergani va chaqqon kamonchi."
+  },
+  {
     id: "skin-steve",
-    slug: "steve",
+    slug: "steve-original",
     name: "Steve (Klassik)",
     model_type: "classic",
-    tags: ["classic", "basic", "boy"],
-    skin_url: "skins/steve.png",
-    uses: 2450,
-    created_at: "2026-01-01T00:00:00Z",
-    description: "Minecraft-ning afsonaviy klassik Steve skini."
+    tags: ["klassik", "odatiy", "boshlang'ich"],
+    skin_url: "https://minotar.net/skin/Steve",
+    uses: 5400,
+    is_published: true,
+    created_at: "2026-08-01T00:00:00Z",
+    description: "Afsonaviy Minecraft Steve — har bir o'yinchining birinchi qahramoni."
   },
   {
     id: "skin-alex",
-    slug: "alex",
-    name: "Alex (Slim)",
+    slug: "alex-original",
+    name: "Alex (Klassik)",
     model_type: "slim",
-    tags: ["classic", "girl", "basic"],
-    skin_url: "https://textures.minecraft.net/texture/4d546206c7e3f8489cf532454b5df0cc369ee9449f1be945b0a7cce2e622b7d2",
-    uses: 1980,
-    created_at: "2026-01-02T00:00:00Z",
-    description: "Yashil libosli klassik Alex skini (Slim model)."
+    tags: ["klassik", "odatiy", "qiz", "yashil"],
+    skin_url: "https://minotar.net/skin/Alex",
+    uses: 4800,
+    is_published: true,
+    created_at: "2026-08-01T00:00:00Z",
+    description: "Klassik Alex — nafis yashil kiyim va to'q sariq sochli sayohatchi."
   },
   {
-    id: "skin-cyber-warrior",
-    slug: "cyber-warrior",
-    name: "Kiber Jangchi",
+    id: "skin-dream",
+    slug: "dream-skin",
+    name: "Dream Smile",
     model_type: "classic",
-    tags: ["cyber", "warrior", "black"],
-    skin_url: "https://textures.minecraft.net/texture/7bb6a642875a6cbf4638a16568112d77d7045b46b60ad2eb271e54e4c9e830f3",
-    uses: 3210,
-    created_at: "2026-02-10T00:00:00Z",
-    description: "NeoTerra kiber uslubidagi futuristik qurollangan jangchi."
+    tags: ["mashhur", "yashil", "tabassum"],
+    skin_url: "https://minotar.net/skin/Dream",
+    uses: 6200,
+    is_published: true,
+    created_at: "2026-08-02T10:00:00Z",
+    description: "Speedrun afsonasi Dream'ning mashhur yashil skini."
   },
   {
-    id: "skin-dark-knight",
-    slug: "dark-knight",
-    name: "Qora Ritsar",
+    id: "skin-technoblade",
+    slug: "technoblade-crown",
+    name: "Technoblade (Toj)",
     model_type: "classic",
-    tags: ["dark", "black", "warrior"],
-    skin_url: "https://textures.minecraft.net/texture/417316694e9f3b555fa3ee5315f6ad9d2f218a562ef6d8cc3d71ffbe7b6b27d2",
-    uses: 2890,
-    created_at: "2026-02-15T00:00:00Z",
-    description: "Zulmat qo'riqchisi, qora zirhli ritsar."
+    tags: ["afsona", "qirol", "toj", "qizil"],
+    skin_url: "https://minotar.net/skin/Technoblade",
+    uses: 7100,
+    is_published: true,
+    created_at: "2026-08-02T11:00:00Z",
+    description: "Technoblade Never Dies — toj kiygan afsonaviy cho'chqa qiroli."
   },
   {
-    id: "skin-neon-gamer",
-    slug: "neon-gamer",
-    name: "Neon Geymer",
+    id: "skin-goku",
+    slug: "goku-saiyan",
+    name: "Goku (Super Saiyan)",
     model_type: "classic",
-    tags: ["cyber", "blue", "boy"],
-    skin_url: "https://textures.minecraft.net/texture/a35d79679f2913e8e195f1c93a8d9bdf2977f6b8b0e77dbebe72b0c3a8e973b1",
-    uses: 1740,
-    created_at: "2026-03-01T00:00:00Z",
-    description: "Zamonaviy naushnikli neon o'yinchi skini."
+    tags: ["anime", "goku", "jangchi"],
+    skin_url: "https://minotar.net/skin/Goku",
+    uses: 3300,
+    is_published: true,
+    created_at: "2026-08-04T12:00:00Z",
+    description: "Dragon Ball qahramoni Son Goku — qat'iyatli jangchi."
   },
   {
-    id: "skin-anime-hero",
-    slug: "anime-hero",
-    name: "Anime Qahramon",
-    model_type: "slim",
-    tags: ["anime", "cute", "boy"],
-    skin_url: "https://textures.minecraft.net/texture/88566ff7328d098858e65261eb88289456208bb7b355d14dfc7467362c370228",
-    uses: 2150,
-    created_at: "2026-03-05T00:00:00Z",
-    description: "Yapon animatsiyasi uslubidagi jasur qahramon."
-  },
-  {
-    id: "skin-royal-king",
-    slug: "royal-king",
-    name: "Qirol Toji",
+    id: "skin-naruto",
+    slug: "naruto-uzumaki",
+    name: "Naruto Uzumaki",
     model_type: "classic",
-    tags: ["crown", "suit", "classic"],
-    skin_url: "https://textures.minecraft.net/texture/42d2a41d9961e695d7eb805cfd2946c19a4358bbd6d37ce1cb0f4b360ae3e758",
-    uses: 1530,
-    created_at: "2026-03-12T00:00:00Z",
-    description: "Oltin tojli va qizil mantiyali oliyjanob qirol."
-  },
-  {
-    id: "skin-ice-ninja",
-    slug: "ice-ninja",
-    name: "Muzli Ninja",
-    model_type: "classic",
-    tags: ["ice", "blue", "warrior"],
-    skin_url: "https://textures.minecraft.net/texture/8e040adba1266e74b39b5bba5ef5d52ad69351a44e59173007bbf9961db6c1e3",
-    uses: 1820,
-    created_at: "2026-03-18T00:00:00Z",
-    description: "Shimoliy sovuq tog'larning chaqqon ninjasi."
+    tags: ["anime", "naruto", "ninja"],
+    skin_url: "https://minotar.net/skin/Naruto",
+    uses: 3500,
+    is_published: true,
+    created_at: "2026-08-04T13:00:00Z",
+    description: "Konoxa qishlog'ining 7-Hokagesi Naruto Uzumaki."
   }
 ];
 
 async function fetchSkins(sort) {
   try {
-    let query = supabase.from("skins").select(LIST_COLUMNS$2).eq("is_published", true);
-    if (sort === "all") {
-      query = query.order("name", { ascending: true });
-    } else if (sort === "new") {
-      query = query.order("created_at", { ascending: false });
-    } else {
-      query = query.order("uses", { ascending: false });
+    const res = await siteApi("/api/launcher/skins/list");
+    const list = res?.skins || res?.data?.skins || res;
+    if (Array.isArray(list) && list.length > 0) {
+      let items = [...list];
+      if (sort === "all") items.sort((a, b) => a.name.localeCompare(b.name));
+      else if (sort === "new") items.sort((a, b) => b.created_at.localeCompare(a.created_at));
+      else items.sort((a, b) => (b.uses || 0) - (a.uses || 0));
+      return items;
     }
-    const { data, error } = await query.limit(sort === "all" ? 200 : 40);
-    if (!error && Array.isArray(data) && data.length > 0) return data;
   } catch {}
   let items = [...DEFAULT_SKINS];
   if (sort === "all") items.sort((a, b) => a.name.localeCompare(b.name));
   else if (sort === "new") items.sort((a, b) => b.created_at.localeCompare(a.created_at));
-  else items.sort((a, b) => b.uses - a.uses);
+  else items.sort((a, b) => (b.uses || 0) - (a.uses || 0));
   return items;
 }
 async function fetchSkinDetail(slug) {
   try {
-    const { data, error } = await supabase.from("skins").select("*").eq("slug", slug).eq("is_published", true).maybeSingle();
-    if (!error && data) return data;
+    const res = await siteApi("/api/launcher/skins/list");
+    const list = res?.skins || res?.data?.skins || res;
+    if (Array.isArray(list)) {
+      const found = list.find((s) => s.slug === slug || s.id === slug);
+      if (found) return found;
+    }
   } catch {}
   return DEFAULT_SKINS.find((s) => s.slug === slug || s.id === slug) || DEFAULT_SKINS[0];
 }
 async function fetchSkinUrlById(skinId) {
   try {
-    const { data, error } = await supabase.from("skins").select("skin_url").eq("id", skinId).maybeSingle();
-    if (!error && data?.skin_url) return data.skin_url;
+    const res = await siteApi("/api/launcher/skins/list");
+    const list = res?.skins || res?.data?.skins || res;
+    if (Array.isArray(list)) {
+      const found = list.find((s) => s.id === skinId || s.slug === skinId);
+      if (found?.skin_url) return found.skin_url;
+    }
   } catch {}
   const found = DEFAULT_SKINS.find((s) => s.id === skinId || s.slug === skinId);
   return found?.skin_url ?? null;
 }
 async function fetchWearers(skinId) {
-  try {
-    const { data, error, count } = await supabase.from("public_profiles").select("id, username, avatar_url, minecraft_nick", { count: "exact" }).eq("current_skin_id", skinId).limit(10);
-    if (!error && data) return { items: data, total: count ?? data.length };
-  } catch {}
   return { items: [], total: 0 };
 }
 async function selectSkin(userId, skinId) {
-  try {
-    await supabase.from("profiles").update({ current_skin_id: skinId }).eq("id", userId);
-  } catch {}
   const found = DEFAULT_SKINS.find((s) => s.id === skinId || s.slug === skinId);
   if (found) {
     const custom = {
@@ -65582,7 +65687,7 @@ async function selectSkin(userId, skinId) {
       skinUrl: found.skin_url,
       name: found.name,
       modelType: found.model_type,
-      userId
+      userId: userId || "guest"
     };
     saveCustomSkin(custom);
   }
@@ -84587,24 +84692,27 @@ function SkinDetailScreen({ slug, onBack, onOpenProfile }) {
     return () => document.removeEventListener("keydown", onKey);
   }, [onBack]);
   async function handleSelect() {
-    if (!session || !skin) {
-      showToast({ kind: "info", title: t2("common.loginRequired"), message: t2("skins.loginToApply") });
-      return;
-    }
+    if (!skin) return;
     setSelectState("selecting");
     try {
-      await selectSkin(session.user.id, skin.id);
-      await refreshProfile().catch(() => {
-      });
-      clearCustomSkin();
+      const uId = session?.user?.id ?? "guest";
+      if (session) {
+        await selectSkin(session.user.id, skin.id);
+        await refreshProfile().catch(() => {});
+      }
+      const custom = {
+        skinId: skin.id,
+        skinUrl: skin.skin_url,
+        name: skin.name,
+        modelType: skin.model_type,
+        userId: uId
+      };
+      saveCustomSkin(custom);
       setSelectState("selected");
-      setWearers((prev) => prev.items.some((w2) => w2.id === session.user.id) ? prev : { ...prev, total: prev.total + 1 });
-      setTimeout(() => setSelectState("idle"), 2e3);
-      void fetchWearers(skin.id).then(setWearers).catch(() => {
-      });
+      showToast({ kind: "success", title: "Skin tanlandi", message: "Bosh sahifada va o'yinda endi shu skin ko'rinadi" });
+      setTimeout(() => setSelectState("idle"), 2000);
     } catch (err) {
       showToast({ kind: "error", title: "Skinni tanlab bo'lmadi", message: err instanceof Error ? err.message : String(err) });
-      setSelectState("idle");
     }
   }
   function handleDownload() {
@@ -85118,23 +85226,10 @@ function ShopScreen({
   const { session, profile: profile2 } = useAuth();
   const { showToast } = useToast();
   const requestLogin = useAuthStore((s) => s.requestLogin);
-  const [tab2, setTab] = reactExports.useState(initialTab ?? "capes");
+  const [tab2, setTab] = reactExports.useState(initialTab ?? "skins");
   const loggedIn = !!session && !!profile2;
   function handleTopUp() {
-    if (!loggedIn || !profile2) {
-      showToast({ kind: "info", title: t2("pro.loginFirst") });
-      requestLogin();
-      return;
-    }
-    const message = [
-      "Assalomu alaykum",
-      "NeoTerra Launcher'dan UZS hisobimni to'ldirmoqchiman.",
-      `Joriy balans: ${(profile2.hbc ?? 0).toLocaleString(numberLocale)} UZS`,
-      `Gmail: ${profile2.email ?? "-"}`,
-      `Username: ${profile2.username ?? "-"}`,
-      `ID: ${profile2.id}`
-    ].join("\n");
-    void window.launcher.openExternal(`${PAY_CHAT_URL$1}?text=${encodeURIComponent(message)}`);
+    void window.launcher.openExternal("https://site.neoterra.uz/settings");
   }
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     FullScreenPage,
@@ -85237,8 +85332,10 @@ function chatError(error) {
 async function fetchLatestMessages() {
   try {
     const res = await siteApi("/api/launcher/chat");
-    if (res?.data?.success && Array.isArray(res.data.messages) && res.data.messages.length > 0) {
-      return res.data.messages;
+    const msgs = res?.messages || res?.data?.messages;
+    const ok = res?.success || res?.data?.success;
+    if (ok && Array.isArray(msgs) && msgs.length > 0) {
+      return msgs;
     }
   } catch (err) {
     console.warn("[Chat] siteApi fetch failed:", err);
@@ -85312,8 +85409,10 @@ async function sendMessage(authorId, body, replyTo) {
         reply_to: replyTo
       })
     });
-    if (res?.data?.success && res.data.message) {
-      return res.data.message;
+    const msg = res?.message || res?.data?.message;
+    const ok = res?.success || res?.data?.success;
+    if (ok && msg) {
+      return msg;
     }
   } catch (err) {
     console.warn("[Chat] siteApi send failed, falling back:", err);
@@ -86672,7 +86771,7 @@ function mergeById(list2, incoming) {
   const map2 = /* @__PURE__ */ new Map();
   for (const m2 of list2) map2.set(m2.id, m2);
   for (const m2 of incoming) map2.set(m2.id, m2);
-  return [...map2.values()].sort((a, b) => a.id - b.id);
+  return [...map2.values()].sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime());
 }
 function sameDay(a, b) {
   const x2 = new Date(a);
@@ -86693,8 +86792,8 @@ function ChatScreen({ onBack, backLabel, onOpenProfile, onRequestLogin }) {
   const { t: t2, lang } = useLanguage();
   const { session, profile: profile2 } = useAuth();
   const { showToast } = useToast();
-  const isLoggedIn = !!session && !!profile2;
-  const myId = session?.user.id ?? null;
+  const guestNick = (() => { try { return localStorage.getItem("neoterra_guest_nick") || ""; } catch { return ""; } })(); const isLoggedIn = (!!session && !!profile2) || !!guestNick.trim();
+  const myId = session?.user?.id ?? (guestNick.trim() ? "guest-" + guestNick.trim() : "guest");
   const isAdmin = profile2?.role === "admin";
   const [messages, setMessages] = reactExports.useState([]);
   const [loading2, setLoading] = reactExports.useState(true);
@@ -88132,7 +88231,7 @@ function LauncherScreen() {
   const [bgVideo] = reactExports.useState(pickRandomVideo);
   const bgVideoRef = reactExports.useRef(null);
   const [activeTab, setActiveTab] = reactExports.useState("home");
-  const [username, setUsername] = reactExports.useState("");
+  const [username, setUsername] = reactExports.useState(() => { try { return localStorage.getItem("neoterra_guest_nick") || ""; } catch { return ""; } });
   const [nickSubmitted, setNickSubmitted] = reactExports.useState(false);
   const { session, profile: profile2, initializing, signOut, refreshProfile } = useAuth();
   const { showToast } = useToast();
@@ -88144,9 +88243,9 @@ function LauncherScreen() {
   const proPageOpen = useProStore((s) => s.pageOpen);
   const anyPageOpen = !!page || proPageOpen;
   const [shopOpen, setShopOpen] = reactExports.useState(false);
-  const [shopInitialTab, setShopInitialTab] = reactExports.useState("capes");
+  const [shopInitialTab, setShopInitialTab] = reactExports.useState("skins");
   function openShop(tab2) {
-    setShopInitialTab(tab2 ?? "capes");
+    setShopInitialTab(tab2 ?? "skins");
     setShopOpen(true);
     closeProfile();
     setChatOpen(false);
@@ -88849,7 +88948,7 @@ function LauncherScreen() {
             profile: isLoggedIn ? profile2 : null,
             username,
             nickError: nickSubmitted && !username.trim(),
-            onUsernameChange: setUsername,
+            onUsernameChange: (val) => { setUsername(val); try { localStorage.setItem("neoterra_guest_nick", val); } catch {} },
             onOpenProfile: openOwnProfile,
             onLogin: requestLogin
           }

@@ -6053,6 +6053,16 @@ function registerIpc(getWindow) {
       }
       const fullUrl = url.startsWith("/") ? `https://site.neoterra.uz${url}` : url;
       if (!/^https?:\/\//i.test(fullUrl)) {
+        try {
+          const localPath = path.join(__dirname, "../renderer", url);
+          if (fs.existsSync(localPath)) {
+            const buf = fs.readFileSync(localPath);
+            return {
+              ok: true,
+              data: { bytes: buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength), contentType: "image/png" }
+            };
+          }
+        } catch {}
         return { ok: false, error: "invalid URL" };
       }
       const res = await fetch(fullUrl);
