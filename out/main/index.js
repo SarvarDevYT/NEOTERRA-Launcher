@@ -537,14 +537,15 @@ function load() {
         cache$1 = {
           installPath: parsed.installPath,
           lastInstance: parsed.lastInstance,
-          earlyWindowDisabled: parsed.earlyWindowDisabled === true
+          earlyWindowDisabled: parsed.earlyWindowDisabled === true,
+          launcherActionOnLaunch: parsed.launcherActionOnLaunch || "hide"
         };
         return cache$1;
       }
     }
   } catch {
   }
-  cache$1 = { installPath: defaultInstallPath() };
+  cache$1 = { installPath: defaultInstallPath(), launcherActionOnLaunch: "hide" };
   return cache$1;
 }
 function save(config) {
@@ -570,6 +571,12 @@ function isEarlyWindowDisabled() {
 }
 function setEarlyWindowDisabled(value) {
   save({ ...load(), earlyWindowDisabled: value });
+}
+function getLauncherActionOnLaunch() {
+  return load().launcherActionOnLaunch || "hide";
+}
+function setLauncherActionOnLaunch(value) {
+  save({ ...load(), launcherActionOnLaunch: value });
 }
 const DEFAULT_UI_THEME_ID = "forest";
 const DEFAULT_UI_THEME_PACK_URL = "https://cdn.neoterra.org/ui-themes/forest.zip";
@@ -3818,19 +3825,18 @@ async function launchGameCore(req, emit2) {
       ...versionJsonOverride ? { versionJson: versionJsonOverride } : {}
     }
   };
+  let gameRunning = false;
   const recentDataLines = [];
   launcher.on("debug", (line) => {
-    console.log("[MCLC debug]", line);
-    emit2({ type: "log", line: String(line) });
+    if (!gameRunning) emit2({ type: "log", line: String(line) });
   });
   launcher.on("data", (line) => {
-    console.log("[MCLC data]", line);
-    emit2({ type: "log", line: String(line) });
+    if (!gameRunning) emit2({ type: "log", line: String(line) });
     for (const part of String(line).split("\n")) {
       const trimmed = part.trim();
       if (!trimmed) continue;
       recentDataLines.push(trimmed);
-      if (recentDataLines.length > 20) recentDataLines.shift();
+      if (recentDataLines.length > 30) recentDataLines.shift();
     }
   });
   launcher.on("progress", (e) => {
@@ -3840,6 +3846,7 @@ async function launchGameCore(req, emit2) {
   });
   const onGameClosed = async (code) => {
     console.log("[MCLC close]", code);
+    gameRunning = false;
     current$1 = null;
     const attempts = req.autoFixAttempts ?? 0;
     const crashed = code !== 0 && code !== null;
@@ -4053,6 +4060,7 @@ ${readRecentLogText(instRoot2, launchStartMs)}` : "";
   const child = await launcher.launch(opts);
   if (!child) throw new Error("O'yin jarayoni ishga tushmadi (Java o'rnatilganini tekshiring)");
   current$1 = { client: launcher, child };
+  gameRunning = true;
   emit2({ type: "started" });
 }
 function manualAntivirusHelp(name) {
@@ -5866,20 +5874,38 @@ function pageStrings(raw) {
   };
 }
 function registerIpc(getWindow) {
-  const FALLBACK_MINIMIZE_MS = 25e3;
-  let cancelPendingMinimize = null;
-  function scheduleMinimizeOnFocusLoss(win) {
-    cancelPendingMinimize?.();
+  const FALLBACK_HIDE_MS = 3500;
+  let cancelPendingAction = null;
+  function handleWindowOnGameStart(win) {
+    cancelPendingAction?.();
+    const action = getLauncherActionOnLaunch();
+    if (action === "keep") return;
+    if (action === "close") {
+      const timer = setTimeout(() => {
+        electron.app.quit();
+      }, 1500);
+      cancelPendingAction = () => clearTimeout(timer);
+      return;
+    }
+    const doHide = () => {
+      cancelPendingAction?.();
+      if (!win.isDestroyed()) {
+        try {
+          win.webContents.setAudioMuted(true);
+          win.webContents.send("system:suspend", true);
+          win.webContents.executeJavaScript("document.querySelectorAll('video, audio').forEach(el => el.pause());").catch(() => {});
+        } catch {}
+        win.hide();
+      }
+    };
     const onBlur = () => {
-      cancelPendingMinimize?.();
-      win.minimize();
+      doHide();
     };
     const fallback = setTimeout(() => {
-      cancelPendingMinimize?.();
-      if (!win.isDestroyed()) win.minimize();
-    }, FALLBACK_MINIMIZE_MS);
-    cancelPendingMinimize = () => {
-      cancelPendingMinimize = null;
+      doHide();
+    }, FALLBACK_HIDE_MS);
+    cancelPendingAction = () => {
+      cancelPendingAction = null;
       clearTimeout(fallback);
       if (!win.isDestroyed()) win.off("blur", onBlur);
     };
@@ -5889,12 +5915,18 @@ function registerIpc(getWindow) {
     const win = getWindow();
     win?.webContents.send(IPC.EVENT, e);
     if (e.type === "started") {
-      if (win) scheduleMinimizeOnFocusLoss(win);
+      if (win) handleWindowOnGameStart(win);
     } else if (e.type === "closed" || e.type === "autofixing" || e.type === "launch-failed") {
-      cancelPendingMinimize?.();
-      if (win?.isMinimized()) win.restore();
-      win?.show();
-      win?.focus();
+      cancelPendingAction?.();
+      if (win && !win.isDestroyed()) {
+        try {
+          win.webContents.setAudioMuted(false);
+          win.webContents.send("system:suspend", false);
+        } catch {}
+        win.show();
+        if (win.isMinimized()) win.restore();
+        win.focus();
+      }
     }
   };
   const emitMod = (e) => {
@@ -5921,9 +5953,25 @@ function registerIpc(getWindow) {
           platform: process.platform,
           javaVersion: await detectJava(),
           gameDir: gameDir(),
-          appVersion: electron.app.getVersion()
+          appVersion: electron.app.getVersion(),
+          launcherActionOnLaunch: getLauncherActionOnLaunch()
         }
       };
+    } catch (err) {
+      return { ok: false, error: err instanceof Error ? err.message : String(err) };
+    }
+  });
+  electron.ipcMain.handle("system:set-launcher-action", async (_e, action) => {
+    try {
+      setLauncherActionOnLaunch(action);
+      return { ok: true };
+    } catch (err) {
+      return { ok: false, error: err instanceof Error ? err.message : String(err) };
+    }
+  });
+  electron.ipcMain.handle("system:get-launcher-action", async () => {
+    try {
+      return { ok: true, data: getLauncherActionOnLaunch() };
     } catch (err) {
       return { ok: false, error: err instanceof Error ? err.message : String(err) };
     }

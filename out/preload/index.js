@@ -191,6 +191,13 @@ const launcherApi = {
   minimizeWindow: () => electron.ipcRenderer.invoke(IPC.WINDOW_MINIMIZE),
   closeWindow: () => electron.ipcRenderer.invoke(IPC.WINDOW_CLOSE),
   toggleMaximizeWindow: () => electron.ipcRenderer.invoke(IPC.WINDOW_TOGGLE_MAXIMIZE),
+  setLauncherAction: (action) => electron.ipcRenderer.invoke("system:set-launcher-action", action),
+  getLauncherAction: () => electron.ipcRenderer.invoke("system:get-launcher-action"),
+  onSuspend: (cb) => {
+    const listener = (_, suspend) => cb(suspend);
+    electron.ipcRenderer.on("system:suspend", listener);
+    return () => electron.ipcRenderer.removeListener("system:suspend", listener);
+  },
   getMinecraftVersions: () => electron.ipcRenderer.invoke(IPC.MC_VERSIONS),
   /** Ishga tushirish jarayonidagi hodisalar. Tozalash funksiyasini qaytaradi. */
   onEvent: (cb) => {

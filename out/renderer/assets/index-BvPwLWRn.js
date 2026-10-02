@@ -64771,6 +64771,29 @@ function SettingsDialog({
     const res = await window.launcher.setInstallPath(picked.data);
     if (res.ok) onInstallPathChanged(picked.data);
   }
+
+  const [launcherAction, setLauncherActionState] = reactExports.useState(() => {
+    try { return localStorage.getItem("neoterra_launcher_action") || "hide"; } catch { return "hide"; }
+  });
+  reactExports.useEffect(() => {
+    let cancelled = false;
+    if (window.launcher?.getLauncherAction) {
+      void window.launcher.getLauncherAction().then((res) => {
+        if (!cancelled && res?.ok && typeof res.data === "string") {
+          setLauncherActionState(res.data);
+          try { localStorage.setItem("neoterra_launcher_action", res.data); } catch {}
+        }
+      });
+    }
+    return () => { cancelled = true; };
+  }, []);
+  function handleLauncherActionChange(value) {
+    setLauncherActionState(value);
+    try { localStorage.setItem("neoterra_launcher_action", value); } catch {}
+    if (window.launcher?.setLauncherAction) {
+      void window.launcher.setLauncherAction(value);
+    }
+  }
   return (
     // Fon qatlami: yengil qoplama (foydalanuvchi so'rovi - oyna SHAFFOF bo'lsin). MUHIM: bu tashqi
     // qatlamga `backdrop-filter` QO'YILMAYDI - filtrli ota "backdrop root"ga aylanib, ichidagi
@@ -64914,7 +64937,32 @@ function SettingsDialog({
                       /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: t2("settings.maxFpsUnlimited") })
                     ] }),
                     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-[clamp(11px,1vw,16.5px)] leading-snug", style: { color: tokens.textDim }, children: t2("settings.maxFpsHint") })
-                  ] })
+                  ] }),
+
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${CARD$1} mt-2 px-3 py-3`, children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block text-[clamp(12.5px,1.136vw,18.75px)] font-semibold", style: { color: tokens.text }, children: "O'yin boshlanganda launcher" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mt-[2px] block text-[clamp(11px,1vw,16.5px)] leading-snug", style: { color: tokens.textDim }, children: "RAM va protsessor yuklamasini kamaytirish uchun o'yin ishga tushganda launcher holati" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-3 flex flex-wrap gap-2", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("button", {
+                        type: "button",
+                        onClick: () => handleLauncherActionChange("hide"),
+                        className: `px-3 py-1.5 rounded-lg text-[clamp(11px,0.95vw,14px)] transition ${launcherAction === "hide" ? "bg-[#21B45E] text-black font-semibold shadow-sm" : "bg-white/[.06] text-white/80 hover:bg-white/[.12]"}`,
+                        children: "Yashirish (RAM tejash)"
+                      }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("button", {
+                        type: "button",
+                        onClick: () => handleLauncherActionChange("close"),
+                        className: `px-3 py-1.5 rounded-lg text-[clamp(11px,0.95vw,14px)] transition ${launcherAction === "close" ? "bg-[#21B45E] text-black font-semibold shadow-sm" : "bg-white/[.06] text-white/80 hover:bg-white/[.12]"}`,
+                        children: "Yopish (0% RAM)"
+                      }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("button", {
+                        type: "button",
+                        onClick: () => handleLauncherActionChange("keep"),
+                        className: `px-3 py-1.5 rounded-lg text-[clamp(11px,0.95vw,14px)] transition ${launcherAction === "keep" ? "bg-[#21B45E] text-black font-semibold shadow-sm" : "bg-white/[.06] text-white/80 hover:bg-white/[.12]"}`,
+                        children: "Ochiq qoldirish"
+                      })
+                    ] })
+                  ] }),
                 ] }),
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-5", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(SectionHeader, { icon: /* @__PURE__ */ jsxRuntimeExports.jsx(FolderOpen, { size: 13 }), title: t2("settings.installFolder") }),
