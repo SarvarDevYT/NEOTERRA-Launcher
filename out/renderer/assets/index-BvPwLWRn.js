@@ -64962,6 +64962,40 @@ function SettingsDialog({
                         children: "Ochiq qoldirish"
                       })
                     ] })
+                  ,
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${CARD$1} mt-2 px-3 py-3`, children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block text-[clamp(12.5px,1.136vw,18.75px)] font-semibold", style: { color: tokens.text }, children: "Launcher foni (Wallpaper)" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mt-[2px] block text-[clamp(11px,1vw,16.5px)] leading-snug", style: { color: tokens.textDim }, children: "Launcher orqa foniga o'zingiz yoqtirgan rasm yoki videoni o'rnatish" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-3 flex flex-wrap gap-2", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("button", {
+                        type: "button",
+                        onClick: async () => {
+                          if (window.launcher?.pickWallpaper) {
+                            const res = await window.launcher.pickWallpaper();
+                            if (res && res.ok && res.exists) {
+                              window.location.reload();
+                            }
+                          }
+                        },
+                        className: "px-3 py-1.5 rounded-lg text-[clamp(11px,0.95vw,14px)] bg-[#21B45E] text-black font-semibold shadow-sm hover:brightness-110 transition flex items-center gap-1.5",
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(Image, { size: 14 }),
+                          "Rasm/Video tanlash"
+                        ]
+                      }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("button", {
+                        type: "button",
+                        onClick: async () => {
+                          if (window.launcher?.resetWallpaper) {
+                            await window.launcher.resetWallpaper();
+                            window.location.reload();
+                          }
+                        },
+                        className: "px-3 py-1.5 rounded-lg text-[clamp(11px,0.95vw,14px)] bg-white/[.06] text-white/80 hover:bg-white/[.12] transition",
+                        children: "Standartga qaytarish"
+                      })
+                    ] })
+                  ] })
                   ] }),
                 ] }),
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-5", children: [
@@ -87867,6 +87901,289 @@ function ModsNavMenu({ active, isActiveTab, onSelect }) {
     }
   );
 }
+
+function formatPlaytime(totalSeconds) {
+  if (!totalSeconds || totalSeconds < 60) return "Yangi o'yinchi";
+  const hours = Math.floor(totalSeconds / 3600);
+  const mins = Math.floor((totalSeconds % 3600) / 60);
+  if (hours === 0) return mins + " daqiqa o'ynalgan";
+  return hours + " soat " + mins + " daq o'ynalgan";
+}
+
+
+function ScreenshotsModal({ onClose }) {
+  const [screenshots, setScreenshots] = reactExports.useState([]);
+  const [loading, setLoading] = reactExports.useState(true);
+  const [selectedImg, setSelectedImg] = reactExports.useState(null);
+  const [copiedPath, setCopiedPath] = reactExports.useState(null);
+
+  reactExports.useEffect(() => {
+    loadScreenshots();
+  }, []);
+
+  async function loadScreenshots() {
+    setLoading(true);
+    try {
+      const res = await window.launcher.listScreenshots();
+      if (res && res.ok && Array.isArray(res.data)) {
+        setScreenshots(res.data);
+      }
+    } catch (e) {
+      console.error(e);
+    }
+    setLoading(false);
+  }
+
+  async function handleCopy(item) {
+    try {
+      const ok = await window.launcher.copyScreenshot(item.path);
+      if (ok) {
+        setCopiedPath(item.path);
+        setTimeout(() => setCopiedPath(null), 2500);
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  async function handleReveal(item) {
+    try {
+      await window.launcher.revealScreenshot(item.path);
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  async function handleDelete(item) {
+    if (window.confirm && !window.confirm("Rostdan ham ushbu skrinshotni o'chirmoqchimisiz?")) return;
+    try {
+      await window.launcher.deleteScreenshot(item.path);
+      setScreenshots((prev) => prev.filter((x) => x.path !== item.path));
+      if (selectedImg && selectedImg.path === item.path) setSelectedImg(null);
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  function formatSize(bytes) {
+    if (!bytes) return "";
+    if (bytes < 1024 * 1024) return Math.round(bytes / 1024) + " KB";
+    return (bytes / (1024 * 1024)).toFixed(1) + " MB";
+  }
+
+  function formatDate(mtime) {
+    if (!mtime) return "";
+    const d = new Date(mtime);
+    return d.toLocaleDateString("uz-UZ", { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" });
+  }
+
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "div",
+    {
+      className: "fixed inset-0 z-[70] grid place-items-center p-4 bg-black/60 backdrop-blur-md animate-fade-in",
+      onClick: onClose,
+      children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "div",
+        {
+          className: "relative flex flex-col w-[clamp(650px,65vw,1000px)] max-h-[85vh] rounded-[20px] border border-white/[.16] bg-[rgba(10,13,12,.85)] backdrop-blur-[24px] shadow-2xl overflow-hidden",
+          onClick: (e) => e.stopPropagation(),
+          children: [
+            /* Header */
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+              className: "flex shrink-0 items-center justify-between px-6 py-4 border-b border-white/[.10]",
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+                  className: "flex items-center gap-3",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Camera, { className: "text-[#21B45E] h-5 w-5" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", {
+                      className: "m-0 text-lg font-bold text-white",
+                      children: ["Skrinshotlar galereyasi", screenshots.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "ml-2 text-sm font-normal text-white/50", children: "(" + screenshots.length + " ta)" })]
+                    })
+                  ]
+                }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+                  className: "flex items-center gap-2",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("button", {
+                      type: "button",
+                      onClick: () => window.launcher.openScreenshotsDir(),
+                      className: "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-white/[.08] text-white/80 hover:bg-white/[.16] transition",
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(FolderOpen, { size: 13 }),
+                        "Papkani ochish"
+                      ]
+                    }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("button", {
+                      type: "button",
+                      onClick: onClose,
+                      className: "flex h-8 w-8 items-center justify-center rounded-full hover:bg-white/10 text-white/70 transition",
+                      children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 18 })
+                    })
+                  ]
+                })
+              ]
+            }),
+
+            /* Content */
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", {
+              className: "thin-scrollbar flex-1 overflow-y-auto p-6 min-h-[320px]",
+              children: loading ? (
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", {
+                  className: "flex h-full items-center justify-center text-white/50 py-16",
+                  children: "Skrinshotlar yuklanmoqda..."
+                })
+              ) : screenshots.length === 0 ? (
+                /* Empty state */
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+                  className: "flex flex-col items-center justify-center py-16 text-center",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", {
+                      className: "p-4 rounded-full bg-white/[.05] text-white/30 mb-3",
+                      children: /* @__PURE__ */ jsxRuntimeExports.jsx(Camera, { size: 36 })
+                    }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "m-0 text-base font-semibold text-white", children: "Hozircha skrinshotlar yo'q" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "m-0 mt-1.5 text-xs text-white/50 max-w-sm", children: "O'yinda F2 tugmasini bosib skrinshot oling. Barcha suratlar avtomatik shu yerda aks etadi!" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("button", {
+                      type: "button",
+                      onClick: () => window.launcher.openScreenshotsDir(),
+                      className: "mt-4 flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-[#21B45E] text-black hover:brightness-110 transition shadow-lg",
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(FolderOpen, { size: 14 }),
+                        "Skrinshotlar papkasini ochish"
+                      ]
+                    })
+                  ]
+                })
+              ) : (
+                /* Grid */
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", {
+                  className: "grid grid-cols-2 md:grid-cols-3 gap-3.5",
+                  children: screenshots.map((item) => {
+                    const isCopied = copiedPath === item.path;
+                    return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "div",
+                      {
+                        className: "group relative flex flex-col rounded-xl overflow-hidden border border-white/[.12] bg-black/40 hover:border-[#21B45E]/50 transition duration-200",
+                        children: [
+                          /* Thumbnail */
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+                            className: "relative aspect-video w-full overflow-hidden bg-black/60 cursor-pointer",
+                            onClick: () => setSelectedImg(item),
+                            children: [
+                              /* @__PURE__ */ jsxRuntimeExports.jsx("img", {
+                                src: item.dataUrl || ("file:///" + item.path.replace(/\\/g, "/")),
+                                alt: item.name,
+                                loading: "lazy",
+                                className: "h-full w-full object-cover group-hover:scale-105 transition duration-300"
+                              }),
+                              /* Hover overlay */
+                              /* @__PURE__ */ jsxRuntimeExports.jsx("div", {
+                                className: "absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-200",
+                                children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", {
+                                  className: "p-2 rounded-full bg-black/70 text-white shadow-md",
+                                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(Maximize2, { size: 16 })
+                                })
+                              })
+                            ]
+                          }),
+                          /* Card Footer */
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+                            className: "p-2.5 flex items-center justify-between text-xs bg-black/30 border-t border-white/[.06]",
+                            children: [
+                              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+                                className: "min-w-0 pr-1",
+                                children: [
+                                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "m-0 font-medium text-white/90 truncate text-[11px]", title: item.name, children: item.name }),
+                                  /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[10px] text-white/50", children: [formatDate(item.mtime), " • ", formatSize(item.size)] })
+                                ]
+                              }),
+                              /* Action buttons */
+                              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+                                className: "flex items-center gap-1 shrink-0",
+                                children: [
+                                  /* @__PURE__ */ jsxRuntimeExports.jsx("button", {
+                                    type: "button",
+                                    onClick: (e) => { e.stopPropagation(); handleCopy(item); },
+                                    title: "Rasm nusxasini olish",
+                                    className: "p-1.5 rounded-lg hover:bg-white/10 text-white/70 hover:text-white transition " + (isCopied ? "text-[#21B45E]" : ""),
+                                    children: isCopied ? /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { size: 13 }) : /* @__PURE__ */ jsxRuntimeExports.jsx(Copy, { size: 13 })
+                                  }),
+                                  /* @__PURE__ */ jsxRuntimeExports.jsx("button", {
+                                    type: "button",
+                                    onClick: (e) => { e.stopPropagation(); handleReveal(item); },
+                                    title: "Papkada ko'rsatish",
+                                    className: "p-1.5 rounded-lg hover:bg-white/10 text-white/70 hover:text-white transition",
+                                    children: /* @__PURE__ */ jsxRuntimeExports.jsx(FolderOpen, { size: 13 })
+                                  }),
+                                  /* @__PURE__ */ jsxRuntimeExports.jsx("button", {
+                                    type: "button",
+                                    onClick: (e) => { e.stopPropagation(); handleDelete(item); },
+                                    title: "O'chirish",
+                                    className: "p-1.5 rounded-lg hover:bg-red-500/20 text-white/50 hover:text-red-400 transition",
+                                    children: /* @__PURE__ */ jsxRuntimeExports.jsx(Trash2, { size: 13 })
+                                  })
+                                ]
+                              })
+                            ]
+                          })
+                        ]
+                      },
+                      item.path
+                    );
+                  })
+                })
+              )
+            }),
+
+            /* Lightbox view if an image is selected */
+            selectedImg && /* @__PURE__ */ jsxRuntimeExports.jsx("div", {
+              className: "fixed inset-0 z-[80] grid place-items-center bg-black/90 p-6 animate-fade-in",
+              onClick: () => setSelectedImg(null),
+              children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+                className: "relative max-w-[90vw] max-h-[90vh] flex flex-col items-center",
+                onClick: (e) => e.stopPropagation(),
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("img", {
+                    src: selectedImg.dataUrl || ("file:///" + selectedImg.path.replace(/\\/g, "/")),
+                    alt: selectedImg.name,
+                    className: "max-h-[80vh] max-w-[85vw] object-contain rounded-lg shadow-2xl border border-white/20"
+                  }),
+                  /* Bar below image */
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+                    className: "mt-3 flex items-center gap-3 px-4 py-2 rounded-xl bg-black/75 border border-white/15 text-xs text-white",
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-semibold", children: selectedImg.name }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("button", {
+                        type: "button",
+                        onClick: () => handleCopy(selectedImg),
+                        className: "flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 transition",
+                        children: [/* @__PURE__ */ jsxRuntimeExports.jsx(Copy, { size: 12 }), "Nusxalash"]
+                      }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("button", {
+                        type: "button",
+                        onClick: () => handleReveal(selectedImg),
+                        className: "flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 transition",
+                        children: [/* @__PURE__ */ jsxRuntimeExports.jsx(FolderOpen, { size: 12 }), "Papkada"]
+                      }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("button", {
+                        type: "button",
+                        onClick: () => setSelectedImg(null),
+                        className: "flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 transition",
+                        children: [/* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 12 }), "Yopish"]
+                      })
+                    ]
+                  })
+                ]
+              })
+            })
+          ]
+        }
+      )
+    }
+  );
+}
+
 function HomeHeader({
   activeTab,
   contentType,
@@ -88059,6 +88376,7 @@ function HomeHeader({
 const CARD = "rounded-[clamp(8px,.7vw,12px)] px-[clamp(8px,.9vw,14px)] py-[clamp(6px,.6vw,10px)] motion-safe:animate-panel-in [animation-fill-mode:backwards]";
 const AVATAR = "h-[clamp(34px,2.9vw,50px)] w-[clamp(34px,2.9vw,50px)] shrink-0 rounded-[clamp(6px,.5vw,9px)] object-cover ring-1 ring-white/20 [image-rendering:pixelated]";
 function HomeProfileCard({
+  playtime,
   initializing,
   profile: profile2,
   username,
@@ -88099,7 +88417,8 @@ function HomeProfileCard({
               t2("home.playerId"),
               ": ",
               shortProfileId(profile2.id)
-            ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "mt-1 flex items-center gap-1 text-[clamp(9.5px,.8vw,12.5px)] text-[#21B45E] font-medium tracking-wide", children: [ /* @__PURE__ */ jsxRuntimeExports.jsx(Clock, { size: 11 }), formatPlaytime(playtime?.totalSeconds) ] })
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { className: "h-[clamp(14px,1.2vw,20px)] w-[clamp(14px,1.2vw,20px)] shrink-0 text-white/70 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-white" })
         ]
@@ -88279,6 +88598,32 @@ function LauncherScreen() {
   const [bgVideo] = reactExports.useState(pickRandomVideo);
   const bgVideoRef = reactExports.useRef(null);
   const [activeTab, setActiveTab] = reactExports.useState("home");
+  const [screenshotsOpen, setScreenshotsOpen] = reactExports.useState(false);
+  const [playtime, setPlaytime] = reactExports.useState(null);
+  const [customWallpaper, setCustomWallpaper] = reactExports.useState(null);
+
+  reactExports.useEffect(() => {
+    if (window.launcher?.getPlaytime) {
+      window.launcher.getPlaytime().then((res) => {
+        if (res && res.ok && res.data) setPlaytime(res.data);
+      });
+      const t = setInterval(() => {
+        window.launcher.getPlaytime().then((res) => {
+          if (res && res.ok && res.data) setPlaytime(res.data);
+        });
+      }, 25000);
+      return () => clearInterval(t);
+    }
+  }, [running]);
+
+  reactExports.useEffect(() => {
+    if (window.launcher?.getWallpaper) {
+      window.launcher.getWallpaper().then((res) => {
+        if (res && res.ok && res.exists) setCustomWallpaper(res);
+      });
+    }
+  }, []);
+
   const [username, setUsername] = reactExports.useState(() => { try { return localStorage.getItem("neoterra_guest_nick") || ""; } catch { return ""; } });
   const [nickSubmitted, setNickSubmitted] = reactExports.useState(false);
   const { session, profile: profile2, initializing, signOut, refreshProfile } = useAuth();
@@ -88993,6 +89338,7 @@ function LauncherScreen() {
           HomeProfileCard,
           {
             initializing,
+            playtime,
             profile: isLoggedIn ? profile2 : null,
             username,
             nickError: nickSubmitted && !username.trim(),
@@ -89045,7 +89391,18 @@ function LauncherScreen() {
               ]
             }
           )
-        ] })
+        ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "button",
+            {
+              type: "button",
+              onClick: () => setScreenshotsOpen(true),
+              title: "Skrinshotlar galereyasi",
+              "aria-label": "Skrinshotlar galereyasi",
+              className: RAIL_BUTTON,
+              children: /* @__PURE__ */ jsxRuntimeExports.jsx(Camera, { className: "h-[46%] w-[46%] text-white/85" })
+            }
+          )
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute right-[clamp(14px,2vw,34px)] top-[clamp(12px,3.4vw,60px)] z-20 w-[clamp(200px,17vw,320px)] flex flex-col gap-2.5", children: /* @__PURE__ */ jsxRuntimeExports.jsx(HomeQuickCards, { onOpen: openTab, onOpenArenas: () => setPage("arenas") }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -89388,6 +89745,7 @@ function LauncherScreen() {
         onClose: () => setSettingsOpen(false)
       }
     ),
+    screenshotsOpen && /* @__PURE__ */ jsxRuntimeExports.jsx(ScreenshotsModal, { onClose: () => setScreenshotsOpen(false) }),
     launchFailure && /* @__PURE__ */ jsxRuntimeExports.jsx(
       LaunchFailedDialog,
       {

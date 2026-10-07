@@ -578,6 +578,199 @@ function getLauncherActionOnLaunch() {
 function setLauncherActionOnLaunch(value) {
   save({ ...load(), launcherActionOnLaunch: value });
 }
+
+// === PLAYTIME TRACKING ===
+function playtimeFilePath() {
+  return path.join(electron.app.getPath("userData"), "playtime.json");
+}
+let playtimeCache = null;
+function loadPlaytime() {
+  if (playtimeCache) return playtimeCache;
+  const file = playtimeFilePath();
+  try {
+    if (fs.existsSync(file)) {
+      const parsed = JSON.parse(fs.readFileSync(file, "utf-8"));
+      playtimeCache = {
+        totalSeconds: typeof parsed.totalSeconds === "number" ? parsed.totalSeconds : 0,
+        sessionsCount: typeof parsed.sessionsCount === "number" ? parsed.sessionsCount : 0,
+        lastPlayed: parsed.lastPlayed || null,
+        instances: parsed.instances && typeof parsed.instances === "object" ? parsed.instances : {}
+      };
+      return playtimeCache;
+    }
+  } catch {}
+  playtimeCache = { totalSeconds: 0, sessionsCount: 0, lastPlayed: null, instances: {} };
+  return playtimeCache;
+}
+function savePlaytime(data) {
+  playtimeCache = data;
+  try {
+    const file = playtimeFilePath();
+    fs.mkdirSync(path.dirname(file), { recursive: true });
+    fs.writeFileSync(file, JSON.stringify(data, null, 2), "utf-8");
+  } catch {}
+}
+let activePlaytimeSession = null;
+let playtimeInterval = null;
+function onGameStartTrackPlaytime(instanceKey) {
+  if (playtimeInterval) {
+    clearInterval(playtimeInterval);
+    playtimeInterval = null;
+  }
+  const key = instanceKey || "default";
+  activePlaytimeSession = {
+    startTime: Date.now(),
+    instanceKey: key
+  };
+  const data = loadPlaytime();
+  data.sessionsCount = (data.sessionsCount || 0) + 1;
+  data.lastPlayed = new Date().toISOString();
+  savePlaytime(data);
+
+  playtimeInterval = setInterval(() => {
+    if (!activePlaytimeSession) return;
+    const now = Date.now();
+    const addSec = Math.max(0, Math.floor((now - activePlaytimeSession.startTime) / 1000));
+    if (addSec > 0) {
+      activePlaytimeSession.startTime = now;
+      const cur = loadPlaytime();
+      cur.totalSeconds = (cur.totalSeconds || 0) + addSec;
+      cur.instances[key] = (cur.instances[key] || 0) + addSec;
+      savePlaytime(cur);
+    }
+  }, 60000);
+}
+function onGameEndTrackPlaytime() {
+  if (playtimeInterval) {
+    clearInterval(playtimeInterval);
+    playtimeInterval = null;
+  }
+  if (!activePlaytimeSession) return;
+  const addSec = Math.max(0, Math.floor((Date.now() - activePlaytimeSession.startTime) / 1000));
+  if (addSec > 0) {
+    const cur = loadPlaytime();
+    cur.totalSeconds = (cur.totalSeconds || 0) + addSec;
+    const key = activePlaytimeSession.instanceKey;
+    cur.instances[key] = (cur.instances[key] || 0) + addSec;
+    savePlaytime(cur);
+  }
+  activePlaytimeSession = null;
+}
+
+// === SCREENSHOTS MANAGEMENT ===
+function getScreenshotsDirs() {
+  const dirs = [];
+  const instDir = currentInstanceDir();
+  if (instDir) {
+    const s = path.join(instDir, "screenshots");
+    if (fs.existsSync(s)) dirs.push(s);
+  }
+  const rootS = path.join(gameDir(), "screenshots");
+  if (fs.existsSync(rootS) && !dirs.includes(rootS)) dirs.push(rootS);
+  return dirs;
+}
+function getFileThumbnail(filePath) {
+  try {
+    const buf = fs.readFileSync(filePath);
+    const ext = path.extname(filePath).toLowerCase().replace(".", "");
+    const mime = ext === "jpg" || ext === "jpeg" ? "image/jpeg" : ext === "webp" ? "image/webp" : "image/png";
+    return `data:${mime};base64,${buf.toString("base64")}`;
+  } catch {
+    return null;
+  }
+}
+function listScreenshots() {
+  const dirs = getScreenshotsDirs();
+  const list = [];
+  for (const d of dirs) {
+    try {
+      if (!fs.existsSync(d)) continue;
+      const files = fs.readdirSync(d);
+      for (const f of files) {
+        if (!/\.(png|jpe?g|webp)$/i.test(f)) continue;
+        const fullPath = path.join(d, f);
+        try {
+          const stat = fs.statSync(fullPath);
+          list.push({
+            name: f,
+            path: fullPath,
+            size: stat.size,
+            mtime: stat.mtimeMs,
+            dir: d
+          });
+        } catch {}
+      }
+    } catch {}
+  }
+  list.sort((a, b) => b.mtime - a.mtime);
+  return list.slice(0, 100).map((item) => ({
+    ...item,
+    dataUrl: getFileThumbnail(item.path)
+  }));
+}
+function copyScreenshotToClipboard(filePath) {
+  if (!fs.existsSync(filePath)) return false;
+  try {
+    const img = electron.nativeImage.createFromPath(filePath);
+    if (img.isEmpty()) return false;
+    electron.clipboard.writeImage(img);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+// === CUSTOM WALLPAPER ===
+function getCustomWallpaper() {
+  const dir = electron.app.getPath("userData");
+  for (const ext of [".png", ".jpg", ".jpeg", ".webp", ".mp4"]) {
+    const p = path.join(dir, `custom_wallpaper${ext}`);
+    if (fs.existsSync(p)) {
+      const isVideo = ext === ".mp4";
+      const dataUrl = isVideo ? null : getFileThumbnail(p);
+      const fileUrl = `file:///${p.replace(/\\/g, "/")}`;
+      return { ok: true, exists: true, isVideo, path: p, dataUrl, url: fileUrl };
+    }
+  }
+  return { ok: true, exists: false };
+}
+async function pickCustomWallpaper(parentWin) {
+  const res = await electron.dialog.showOpenDialog(parentWin || undefined, {
+    title: "Launcher foni uchun rasm yoki video tanlang",
+    filters: [
+      { name: "Media fayllar (Rasm va Video)", extensions: ["png", "jpg", "jpeg", "webp", "mp4"] },
+      { name: "Rasmlar", extensions: ["png", "jpg", "jpeg", "webp"] },
+      { name: "Videolar", extensions: ["mp4"] }
+    ],
+    properties: ["openFile"]
+  });
+  if (res.canceled || !res.filePaths || res.filePaths.length === 0) {
+    return { ok: false, canceled: true };
+  }
+  const source = res.filePaths[0];
+  const ext = path.extname(source).toLowerCase();
+  const dir = electron.app.getPath("userData");
+  for (const oldExt of [".png", ".jpg", ".jpeg", ".webp", ".mp4"]) {
+    const oldP = path.join(dir, `custom_wallpaper${oldExt}`);
+    if (fs.existsSync(oldP)) {
+      try { fs.unlinkSync(oldP); } catch {}
+    }
+  }
+  const target = path.join(dir, `custom_wallpaper${ext}`);
+  fs.copyFileSync(source, target);
+  return getCustomWallpaper();
+}
+function resetCustomWallpaper() {
+  const dir = electron.app.getPath("userData");
+  for (const ext of [".png", ".jpg", ".jpeg", ".webp", ".mp4"]) {
+    const p = path.join(dir, `custom_wallpaper${ext}`);
+    if (fs.existsSync(p)) {
+      try { fs.unlinkSync(p); } catch {}
+    }
+  }
+  return { ok: true, exists: false };
+}
+
 const DEFAULT_UI_THEME_ID = "forest";
 const DEFAULT_UI_THEME_PACK_URL = "https://cdn.neoterra.org/ui-themes/forest.zip";
 const MOD_DIR = "neoterra_ui";
@@ -3848,6 +4041,7 @@ async function launchGameCore(req, emit2) {
     console.log("[MCLC close]", code);
     gameRunning = false;
     current$1 = null;
+    try { onGameEndTrackPlaytime(); } catch {}
     const attempts = req.autoFixAttempts ?? 0;
     const crashed = code !== 0 && code !== null;
     const fullText = crashed ? `${recentDataLines.join("\n")}
@@ -4061,6 +4255,7 @@ ${readRecentLogText(instRoot2, launchStartMs)}` : "";
   if (!child) throw new Error("O'yin jarayoni ishga tushmadi (Java o'rnatilganini tekshiring)");
   current$1 = { client: launcher, child };
   gameRunning = true;
+  try { onGameStartTrackPlaytime(`${req.version}-${req.loader || "vanilla"}`); } catch {}
   emit2({ type: "started" });
 }
 function manualAntivirusHelp(name) {
@@ -5972,6 +6167,87 @@ function registerIpc(getWindow) {
   electron.ipcMain.handle("system:get-launcher-action", async () => {
     try {
       return { ok: true, data: getLauncherActionOnLaunch() };
+    } catch (err) {
+      return { ok: false, error: err instanceof Error ? err.message : String(err) };
+    }
+  });
+  // --- Screenshots Gallery ---
+  electron.ipcMain.handle("screenshots:list", async () => {
+    try {
+      const list = listScreenshots();
+      return { ok: true, data: list };
+    } catch (err) {
+      return { ok: false, error: err instanceof Error ? err.message : String(err) };
+    }
+  });
+  electron.ipcMain.handle("screenshots:reveal", async (_e, filePath) => {
+    try {
+      if (filePath && fs.existsSync(filePath)) {
+        electron.shell.showItemInFolder(filePath);
+        return { ok: true };
+      }
+      return { ok: false, error: "Fayl topilmadi" };
+    } catch (err) {
+      return { ok: false, error: err instanceof Error ? err.message : String(err) };
+    }
+  });
+  electron.ipcMain.handle("screenshots:delete", async (_e, filePath) => {
+    try {
+      if (filePath && fs.existsSync(filePath)) {
+        fs.unlinkSync(filePath);
+        return { ok: true };
+      }
+      return { ok: false, error: "Fayl topilmadi" };
+    } catch (err) {
+      return { ok: false, error: err instanceof Error ? err.message : String(err) };
+    }
+  });
+  electron.ipcMain.handle("screenshots:copy", async (_e, filePath) => {
+    try {
+      const copied = copyScreenshotToClipboard(filePath);
+      return { ok: copied };
+    } catch (err) {
+      return { ok: false, error: err instanceof Error ? err.message : String(err) };
+    }
+  });
+  electron.ipcMain.handle("screenshots:open-dir", async () => {
+    try {
+      const dirs = getScreenshotsDirs();
+      const targetDir = dirs[0] || path.join(gameDir(), "screenshots");
+      fs.mkdirSync(targetDir, { recursive: true });
+      await electron.shell.openPath(targetDir);
+      return { ok: true };
+    } catch (err) {
+      return { ok: false, error: err instanceof Error ? err.message : String(err) };
+    }
+  });
+  // --- Playtime Tracking ---
+  electron.ipcMain.handle("playtime:get", async () => {
+    try {
+      const data = loadPlaytime();
+      return { ok: true, data };
+    } catch (err) {
+      return { ok: false, error: err instanceof Error ? err.message : String(err) };
+    }
+  });
+  // --- Custom Wallpaper ---
+  electron.ipcMain.handle("wallpaper:pick", async () => {
+    try {
+      return await pickCustomWallpaper(getWindow());
+    } catch (err) {
+      return { ok: false, error: err instanceof Error ? err.message : String(err) };
+    }
+  });
+  electron.ipcMain.handle("wallpaper:get", async () => {
+    try {
+      return getCustomWallpaper();
+    } catch (err) {
+      return { ok: false, error: err instanceof Error ? err.message : String(err) };
+    }
+  });
+  electron.ipcMain.handle("wallpaper:reset", async () => {
+    try {
+      return resetCustomWallpaper();
     } catch (err) {
       return { ok: false, error: err instanceof Error ? err.message : String(err) };
     }

@@ -193,6 +193,18 @@ const launcherApi = {
   toggleMaximizeWindow: () => electron.ipcRenderer.invoke(IPC.WINDOW_TOGGLE_MAXIMIZE),
   setLauncherAction: (action) => electron.ipcRenderer.invoke("system:set-launcher-action", action),
   getLauncherAction: () => electron.ipcRenderer.invoke("system:get-launcher-action"),
+  // --- Screenshots ---
+  listScreenshots: () => electron.ipcRenderer.invoke("screenshots:list"),
+  revealScreenshot: (filePath) => electron.ipcRenderer.invoke("screenshots:reveal", filePath),
+  deleteScreenshot: (filePath) => electron.ipcRenderer.invoke("screenshots:delete", filePath),
+  copyScreenshot: (filePath) => electron.ipcRenderer.invoke("screenshots:copy", filePath),
+  openScreenshotsDir: () => electron.ipcRenderer.invoke("screenshots:open-dir"),
+  // --- Playtime ---
+  getPlaytime: () => electron.ipcRenderer.invoke("playtime:get"),
+  // --- Custom Wallpaper ---
+  pickWallpaper: () => electron.ipcRenderer.invoke("wallpaper:pick"),
+  getWallpaper: () => electron.ipcRenderer.invoke("wallpaper:get"),
+  resetWallpaper: () => electron.ipcRenderer.invoke("wallpaper:reset"),
   onSuspend: (cb) => {
     const listener = (_, suspend) => cb(suspend);
     electron.ipcRenderer.on("system:suspend", listener);
