@@ -64979,7 +64979,7 @@ function SettingsDialog({
                         },
                         className: "px-3 py-1.5 rounded-lg text-[clamp(11px,0.95vw,14px)] bg-[#21B45E] text-black font-semibold shadow-sm hover:brightness-110 transition flex items-center gap-1.5",
                         children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(Image, { size: 14 }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(Image$1, { size: 14 }),
                           "Rasm/Video tanlash"
                         ]
                       }),
@@ -87995,7 +87995,7 @@ function ScreenshotsModal({ onClose }) {
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
                   className: "flex items-center gap-3",
                   children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(Camera, { className: "text-[#21B45E] h-5 w-5" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Camera$1, { className: "text-[#21B45E] h-5 w-5" }),
                     /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", {
                       className: "m-0 text-lg font-bold text-white",
                       children: ["Skrinshotlar galereyasi", screenshots.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "ml-2 text-sm font-normal text-white/50", children: "(" + screenshots.length + " ta)" })]
@@ -88040,7 +88040,7 @@ function ScreenshotsModal({ onClose }) {
                   children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx("div", {
                       className: "p-4 rounded-full bg-white/[.05] text-white/30 mb-3",
-                      children: /* @__PURE__ */ jsxRuntimeExports.jsx(Camera, { size: 36 })
+                      children: /* @__PURE__ */ jsxRuntimeExports.jsx(Camera$1, { size: 36 })
                     }),
                     /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "m-0 text-base font-semibold text-white", children: "Hozircha skrinshotlar yo'q" }),
                     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "m-0 mt-1.5 text-xs text-white/50 max-w-sm", children: "O'yinda F2 tugmasini bosib skrinshot oling. Barcha suratlar avtomatik shu yerda aks etadi!" }),
@@ -88418,7 +88418,7 @@ function HomeProfileCard({
               ": ",
               shortProfileId(profile2.id)
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "mt-1 flex items-center gap-1 text-[clamp(9.5px,.8vw,12.5px)] text-[#21B45E] font-medium tracking-wide", children: [ /* @__PURE__ */ jsxRuntimeExports.jsx(Clock, { size: 11 }), formatPlaytime(playtime?.totalSeconds) ] })
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "mt-1 flex items-center gap-1 text-[clamp(9.5px,.8vw,12.5px)] text-[#21B45E] font-medium tracking-wide", children: [ /* @__PURE__ */ jsxRuntimeExports.jsx(Clock$1, { size: 11 }), formatPlaytime(playtime?.totalSeconds) ] })
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { className: "h-[clamp(14px,1.2vw,20px)] w-[clamp(14px,1.2vw,20px)] shrink-0 text-white/70 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-white" })
         ]
@@ -88604,17 +88604,23 @@ function LauncherScreen() {
 
   reactExports.useEffect(() => {
     if (window.launcher?.getPlaytime) {
-      window.launcher.getPlaytime().then((res) => {
-        if (res && res.ok && res.data) setPlaytime(res.data);
-      });
-      const t = setInterval(() => {
+      const update = () => {
         window.launcher.getPlaytime().then((res) => {
           if (res && res.ok && res.data) setPlaytime(res.data);
         });
-      }, 25000);
-      return () => clearInterval(t);
+      };
+      update();
+      const t = setInterval(update, 15000);
+      let unsub = null;
+      if (window.launcher.onGameClosed) {
+        unsub = window.launcher.onGameClosed(update);
+      }
+      return () => {
+        clearInterval(t);
+        if (typeof unsub === "function") unsub();
+      };
     }
-  }, [running]);
+  }, []);
 
   reactExports.useEffect(() => {
     if (window.launcher?.getWallpaper) {
@@ -89237,7 +89243,29 @@ function LauncherScreen() {
   const showPlayIcon = !running && !memberWaiting && !partyChecking;
   const playFont = playLabel.length <= 9 ? "text-[clamp(16px,1.9vw,34px)] leading-none tracking-[.06em]" : playLabel.length <= 18 ? "text-[clamp(13px,1.45vw,25px)] leading-none tracking-[.04em]" : "text-[clamp(11px,1.05vw,17px)] leading-tight";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative h-full w-full overflow-hidden font-sans text-[#EDF1EF]", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    customWallpaper && customWallpaper.exists ? (
+      customWallpaper.isVideo ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "video",
+        {
+          ref: bgVideoRef,
+          src: customWallpaper.url,
+          autoPlay: true,
+          loop: true,
+          muted: true,
+          playsInline: true,
+          "aria-hidden": "true",
+          className: "fixed inset-0 -z-20 h-full w-full object-cover"
+        }
+      ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "img",
+        {
+          src: customWallpaper.dataUrl || customWallpaper.url,
+          alt: "",
+          "aria-hidden": "true",
+          className: "fixed inset-0 -z-20 h-full w-full object-cover"
+        }
+      )
+    ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
       "video",
       {
         ref: bgVideoRef,
@@ -89400,7 +89428,7 @@ function LauncherScreen() {
               title: "Skrinshotlar galereyasi",
               "aria-label": "Skrinshotlar galereyasi",
               className: RAIL_BUTTON,
-              children: /* @__PURE__ */ jsxRuntimeExports.jsx(Camera, { className: "h-[46%] w-[46%] text-white/85" })
+              children: /* @__PURE__ */ jsxRuntimeExports.jsx(Camera$1, { className: "h-[46%] w-[46%] text-white/85" })
             }
           )
       ] }),
