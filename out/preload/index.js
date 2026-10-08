@@ -205,6 +205,17 @@ const launcherApi = {
   pickWallpaper: () => electron.ipcRenderer.invoke("wallpaper:pick"),
   getWallpaper: () => electron.ipcRenderer.invoke("wallpaper:get"),
   resetWallpaper: () => electron.ipcRenderer.invoke("wallpaper:reset"),
+  // --- Java Manager ---
+  listJavaRuntimes: () => electron.ipcRenderer.invoke("java:list"),
+  installJavaRuntime: (major) => electron.ipcRenderer.invoke("java:install", major),
+  onJavaProgress: (cb) => {
+    const listener = (_, payload) => cb(payload);
+    electron.ipcRenderer.on("java:progress", listener);
+    return () => electron.ipcRenderer.removeListener("java:progress", listener);
+  },
+  // --- Discord RPC ---
+  getDiscordStatus: () => electron.ipcRenderer.invoke("discord:get-status"),
+  setDiscordEnabled: (val) => electron.ipcRenderer.invoke("discord:set-enabled", val),
   onSuspend: (cb) => {
     const listener = (_, suspend) => cb(suspend);
     electron.ipcRenderer.on("system:suspend", listener);

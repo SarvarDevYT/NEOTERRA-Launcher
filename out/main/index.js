@@ -613,6 +613,7 @@ function savePlaytime(data) {
 let activePlaytimeSession = null;
 let playtimeInterval = null;
 function onGameStartTrackPlaytime(instanceKey) {
+  try { setGamePlayingDiscordActivity(instanceKey); } catch {}
   if (playtimeInterval) {
     clearInterval(playtimeInterval);
     playtimeInterval = null;
@@ -641,6 +642,7 @@ function onGameStartTrackPlaytime(instanceKey) {
   }, 60000);
 }
 function onGameEndTrackPlaytime() {
+  try { setLauncherMenuDiscordActivity(); } catch {}
   if (playtimeInterval) {
     clearInterval(playtimeInterval);
     playtimeInterval = null;
@@ -6171,7 +6173,221 @@ function registerIpc(getWindow) {
       return { ok: false, error: err instanceof Error ? err.message : String(err) };
     }
   });
-  // --- Screenshots Gallery ---
+  
+// ==================== DISCORD RICH PRESENCE (RPC) ====================
+let discordSocket = null;
+let discordConnected = false;
+let discordCurrentActivity = null;
+let discordReconnectTimer = null;
+const DISCORD_CLIENT_ID = "1285239849208479784";
+const launcherStartTime = Math.floor(Date.now() / 1000);
+
+function isDiscordRpcEnabled() {
+  try {
+    const cfg = load();
+    return cfg.discordRpc !== false;
+  } catch {
+    return true;
+  }
+}
+
+function setDiscordRpcEnabled(enabled) {
+  try {
+    const cfg = load();
+    save({ ...cfg, discordRpc: !!enabled });
+  } catch {}
+  if (!enabled) {
+    disconnectDiscordRpc();
+  } else {
+    initDiscordRpc();
+  }
+  return { ok: true, enabled: isDiscordRpcEnabled() };
+}
+
+function getDiscordPipePath(idx = 0) {
+  if (process.platform === "win32") {
+    return `\\\\?\\pipe\\discord-ipc-${idx}`;
+  }
+  const prefix = process.env.XDG_RUNTIME_DIR || process.env.TMPDIR || process.env.TMP || process.env.TEMP || "/tmp";
+  return path.join(prefix, `discord-ipc-${idx}`);
+}
+
+function connectDiscordPipe(pipeIndex = 0) {
+  if (pipeIndex > 9) return;
+  try {
+    const pPath = getDiscordPipePath(pipeIndex);
+    const sock = net.createConnection(pPath);
+    sock.once("connect", () => {
+      discordSocket = sock;
+      discordConnected = true;
+      try {
+        const handshake = JSON.stringify({ v: 1, client_id: DISCORD_CLIENT_ID });
+        const buf = Buffer.alloc(8 + Buffer.byteLength(handshake));
+        buf.writeInt32LE(0, 0); // opcode 0
+        buf.writeInt32LE(Buffer.byteLength(handshake), 4);
+        buf.write(handshake, 8);
+        sock.write(buf);
+
+        if (discordCurrentActivity) {
+          sendDiscordActivity(discordCurrentActivity);
+        } else {
+          setLauncherMenuDiscordActivity();
+        }
+      } catch {}
+    });
+
+    sock.on("data", () => {});
+
+    sock.once("error", () => {
+      try { sock.destroy(); } catch {}
+      if (!discordConnected && pipeIndex < 3) {
+        connectDiscordPipe(pipeIndex + 1);
+      }
+    });
+
+    sock.once("close", () => {
+      discordConnected = false;
+      discordSocket = null;
+      if (isDiscordRpcEnabled() && !discordReconnectTimer) {
+        discordReconnectTimer = setTimeout(() => {
+          discordReconnectTimer = null;
+          initDiscordRpc();
+        }, 30000);
+      }
+    });
+  } catch {}
+}
+
+function initDiscordRpc() {
+  if (!isDiscordRpcEnabled()) return;
+  if (discordConnected && discordSocket) return;
+  connectDiscordPipe(0);
+}
+
+function disconnectDiscordRpc() {
+  if (discordReconnectTimer) {
+    clearTimeout(discordReconnectTimer);
+    discordReconnectTimer = null;
+  }
+  if (discordSocket) {
+    try { discordSocket.destroy(); } catch {}
+    discordSocket = null;
+  }
+  discordConnected = false;
+}
+
+function sendDiscordActivity(activity) {
+  if (!discordSocket || !discordConnected) return;
+  try {
+    const payload = JSON.stringify({
+      cmd: "SET_ACTIVITY",
+      args: {
+        pid: process.pid,
+        activity
+      },
+      nonce: String(Date.now())
+    });
+    const buf = Buffer.alloc(8 + Buffer.byteLength(payload));
+    buf.writeInt32LE(1, 0); // opcode 1 = FRAME
+    buf.writeInt32LE(Buffer.byteLength(payload), 4);
+    buf.write(payload, 8);
+    discordSocket.write(buf);
+  } catch {}
+}
+
+function setDiscordActivity(activity) {
+  discordCurrentActivity = activity;
+  if (isDiscordRpcEnabled()) {
+    sendDiscordActivity(activity);
+  }
+}
+
+function setLauncherMenuDiscordActivity() {
+  setDiscordActivity({
+    details: "Bosh menyuda",
+    state: "NeoTerra Minecraft Launcher",
+    timestamps: { start: launcherStartTime },
+    assets: {
+      large_image: "https://site.neoterra.uz/icon.png",
+      large_text: "NeoTerra Launcher",
+      small_image: "https://site.neoterra.uz/icon.png",
+      small_text: "NeoTerra Network"
+    },
+    buttons: [
+      { label: "O'yinni yuklab olish", url: "https://site.neoterra.uz" }
+    ]
+  });
+}
+
+function setGamePlayingDiscordActivity(instanceKey) {
+  setDiscordActivity({
+    details: "Minecraft o'ynamoqda",
+    state: instanceKey || "Minecraft",
+    timestamps: { start: Math.floor(Date.now() / 1000) },
+    assets: {
+      large_image: "https://site.neoterra.uz/icon.png",
+      large_text: "NeoTerra Launcher",
+      small_image: "https://site.neoterra.uz/icon.png",
+      small_text: instanceKey || "Minecraft"
+    },
+    buttons: [
+      { label: "Serverga qo'shilish", url: "https://site.neoterra.uz" }
+    ]
+  });
+}
+
+// ==================== JAVA RUNTIME MANAGER ====================
+async function listJavaRuntimes() {
+  const osName = adoptiumOs();
+  const root = gameDir();
+  const majors = [
+    { major: 8, title: "Java 8", desc: "1.16.5 va eski versiyalar uchun" },
+    { major: 17, title: "Java 17", desc: "1.17 dan 1.20.4 gacha versiyalar uchun" },
+    { major: 21, title: "Java 21", desc: "1.20.5 va yangi versiyalar uchun" }
+  ];
+  const list = [];
+  for (const m of majors) {
+    const effectiveMajor = adoptiumAvailableMajor(m.major);
+    const arch = adoptiumArch(osName, effectiveMajor, {});
+    const runtimeDir = osName === "windows" ? path.join(root, "jre", String(effectiveMajor)) : path.join(root, "jre", `${effectiveMajor}-${arch}`);
+    const bin = javaBinPath(osName, runtimeDir);
+    let installed = false;
+    let versionStr = "";
+    if (fs.existsSync(bin)) {
+      try {
+        const runs = await verifyRuns(bin);
+        installed = true;
+        versionStr = runs?.version ? String(runs.version) : String(effectiveMajor);
+      } catch {
+        installed = false;
+      }
+    }
+    list.push({
+      major: m.major,
+      title: m.title,
+      desc: m.desc,
+      installed,
+      path: installed ? bin : null,
+      version: versionStr
+    });
+  }
+  return list;
+}
+
+async function installJavaRuntime(major) {
+  const win = getWindow();
+  const res = await ensureJavaRuntime(major, gameDir(), {
+    onProgress: (p) => {
+      if (win && !win.isDestroyed()) {
+        const percent = p.total > 0 ? Math.round((p.transferred / p.total) * 100) : (p.percent || 0);
+        win.webContents.send("java:progress", { major, percent, transferred: p.transferred, total: p.total });
+      }
+    }
+  });
+  return { ok: true, path: res };
+}
+
+// --- Screenshots Gallery ---
   electron.ipcMain.handle("screenshots:list", async () => {
     try {
       const list = listScreenshots();
@@ -6245,6 +6461,31 @@ function registerIpc(getWindow) {
       return { ok: false, error: err instanceof Error ? err.message : String(err) };
     }
   });
+  
+  // --- Java Manager IPC ---
+  electron.ipcMain.handle("java:list", async () => {
+    try {
+      return { ok: true, data: await listJavaRuntimes() };
+    } catch (err) {
+      return { ok: false, error: err instanceof Error ? err.message : String(err) };
+    }
+  });
+  electron.ipcMain.handle("java:install", async (_e, major) => {
+    try {
+      return await installJavaRuntime(Number(major) || 21);
+    } catch (err) {
+      return { ok: false, error: err instanceof Error ? err.message : String(err) };
+    }
+  });
+
+  // --- Discord RPC IPC ---
+  electron.ipcMain.handle("discord:get-status", async () => {
+    return { ok: true, enabled: isDiscordRpcEnabled(), connected: discordConnected };
+  });
+  electron.ipcMain.handle("discord:set-enabled", async (_e, enabled) => {
+    return setDiscordRpcEnabled(enabled);
+  });
+
   electron.ipcMain.handle("wallpaper:reset", async () => {
     try {
       return resetCustomWallpaper();
@@ -6995,6 +7236,7 @@ if (!electron.app.requestSingleInstanceLock()) {
     }
   });
   electron.app.whenReady().then(() => {
+    try { initDiscordRpc(); } catch {}
     utils.electronApp.setAppUserModelId("uz.neoterra.launcher");
     electron.app.on("browser-window-created", (_, window) => utils.optimizer.watchWindowShortcuts(window));
     registerIpc(() => mainWindow);
