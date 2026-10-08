@@ -88233,72 +88233,87 @@ function AchievementsModal({ onClose, playtime }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     "div",
     {
-      className: "fixed inset-0 z-[70] grid place-items-center p-4 bg-black/60 backdrop-blur-md animate-fade-in",
+      className: "fixed inset-0 z-[70] grid place-items-center p-4 bg-black/65 backdrop-blur-md animate-fade-in",
       onClick: onClose,
       children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
         "div",
         {
-          className: "relative flex flex-col w-[clamp(650px,65vw,940px)] max-h-[85vh] rounded-[20px] border border-white/[.16] bg-[rgba(10,13,12,.92)] backdrop-blur-[24px] shadow-2xl overflow-hidden",
+          className: "relative flex flex-col w-[clamp(620px,60vw,880px)] max-h-[85vh] rounded-[28px] border border-white/[.14] bg-[rgba(13,16,15,.92)] backdrop-blur-[32px] shadow-[0_24px_64px_rgba(0,0,0,0.7)] overflow-hidden",
           onClick: (e) => e.stopPropagation(),
           children: [
             /* Header */
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
-              className: "flex shrink-0 items-center justify-between px-6 py-4 border-b border-white/[.10]",
+              className: "flex shrink-0 items-center justify-between px-7 py-4 border-b border-white/[.08]",
               children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
                   className: "flex items-center gap-3",
                   children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(Crown, { className: "text-amber-400 h-5 w-5" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", {
-                      className: "m-0 text-lg font-bold text-white",
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", {
+                      className: "flex h-9 w-9 items-center justify-center rounded-xl bg-amber-400/15 border border-amber-400/30 text-amber-400 shadow-[0_0_14px_rgba(251,191,36,0.2)]",
+                      children: /* @__PURE__ */ jsxRuntimeExports.jsx(Crown, { size: 18 })
+                    }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
                       children: [
-                        "O'yinchi Yutuqlari va Darajasi",
-                        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", {
-                          className: "ml-2.5 text-xs font-semibold px-2 py-0.5 rounded-full bg-white/10 text-white/70",
-                          children: [unlockedCount, " / ", achievements.length, " ta yutuq"]
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("h2", {
+                          className: "m-0 text-lg font-bold text-white tracking-tight leading-snug",
+                          children: "O'yinchi Yutuqlari va Darajasi"
+                        }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", {
+                          className: "m-0 text-[11px] text-white/50",
+                          children: "Minecraft dunyosidagi faolligingiz va nishonlaringiz"
                         })
                       ]
                     })
                   ]
                 }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("button", {
-                  type: "button",
-                  onClick: onClose,
-                  className: "flex h-8 w-8 items-center justify-center rounded-full hover:bg-white/10 text-white/70 transition",
-                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 18 })
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+                  className: "flex items-center gap-2.5",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", {
+                      className: "px-3 py-1 rounded-full text-xs font-semibold bg-white/[.07] border border-white/10 text-white/80 shadow-sm",
+                      children: [unlockedCount, " / ", achievements.length, " ta yutuq"]
+                    }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("button", {
+                      type: "button",
+                      onClick: onClose,
+                      className: "flex h-8 w-8 items-center justify-center rounded-full bg-white/[.06] hover:bg-white/[.14] text-white/70 hover:text-white transition",
+                      children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 16 })
+                    })
+                  ]
                 })
               ]
             }),
 
-            /* Content */
+            /* Scrollable Content */
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
-              className: "thin-scrollbar flex-1 overflow-y-auto p-6 space-y-5",
+              className: "thin-scrollbar flex-1 overflow-y-auto p-6 space-y-6",
               children: [
-                /* Hero Rank Card */
+                /* Hero Rank Card - Ultra Smooth & Rounded */
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
-                  className: "relative overflow-hidden rounded-2xl p-5 border border-white/15 bg-gradient-to-r from-white/[.07] to-white/[.02] shadow-lg",
+                  className: "relative overflow-hidden rounded-[24px] p-5 border border-white/[.12] bg-gradient-to-br from-white/[.07] via-white/[.02] to-transparent shadow-lg",
                   children: [
                     /* Top level info */
                     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
                       className: "flex items-center justify-between flex-wrap gap-4",
                       children: [
+                        /* Left: Icon + Titles */
                         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
-                          className: "flex items-center gap-3.5",
+                          className: "flex items-center gap-4",
                           children: [
-                            /* Level badge icon */
+                            /* Rounded-2xl avatar icon */
                             /* @__PURE__ */ jsxRuntimeExports.jsx("div", {
-                              className: "flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border shadow-inner",
+                              className: "flex h-16 w-16 shrink-0 items-center justify-center rounded-[20px] border shadow-lg transition-transform hover:scale-105",
                               style: { backgroundColor: rank.bg, borderColor: rank.border, color: rank.color },
-                              children: /* @__PURE__ */ jsxRuntimeExports.jsx(Crown, { size: 28 })
+                              children: /* @__PURE__ */ jsxRuntimeExports.jsx(Crown, { size: 30 })
                             }),
                             /* Titles */
                             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
                               children: [
                                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
-                                  className: "flex items-center gap-2",
+                                  className: "flex items-center gap-2.5 flex-wrap",
                                   children: [
                                     /* @__PURE__ */ jsxRuntimeExports.jsxs("span", {
-                                      className: "px-2 py-0.5 rounded-md text-xs font-bold uppercase tracking-wider",
+                                      className: "px-2.5 py-0.5 rounded-full text-[11px] font-extrabold uppercase tracking-wider shadow-sm",
                                       style: { backgroundColor: rank.bg, color: rank.color, border: "1px solid " + rank.border },
                                       children: ["Daraja ", rank.level]
                                     }),
@@ -88318,44 +88333,45 @@ function AchievementsModal({ onClose, playtime }) {
                             })
                           ]
                         }),
-                        /* Quick Stats */
+                        /* Right: Stats pills */
                         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
-                          className: "flex items-center gap-3 text-right",
+                          className: "flex items-center gap-2.5",
                           children: [
                             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
-                              className: "px-3.5 py-2 rounded-xl bg-black/40 border border-white/10",
+                              className: "px-4 py-2.5 rounded-2xl bg-white/[.05] border border-white/[.08] text-center shadow-sm min-w-[85px]",
                               children: [
-                                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block text-[10px] text-white/50 uppercase font-medium", children: "O'yin vaqti" }),
-                                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-sm font-bold text-white", children: [rank.currentHours, " soat"] })
+                                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block text-[10px] text-white/50 uppercase font-semibold tracking-wider", children: "O'yin vaqti" }),
+                                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-sm font-bold text-white mt-0.5 block", children: [rank.currentHours, " soat"] })
                               ]
                             }),
                             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
-                              className: "px-3.5 py-2 rounded-xl bg-black/40 border border-white/10",
+                              className: "px-4 py-2.5 rounded-2xl bg-white/[.05] border border-white/[.08] text-center shadow-sm min-w-[85px]",
                               children: [
-                                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block text-[10px] text-white/50 uppercase font-medium", children: "Seanslar" }),
-                                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-sm font-bold text-white", children: [sessionsCount, " ta"] })
+                                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block text-[10px] text-white/50 uppercase font-semibold tracking-wider", children: "Seanslar" }),
+                                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-sm font-bold text-white mt-0.5 block", children: [sessionsCount, " ta"] })
                               ]
                             })
                           ]
                         })
                       ]
                     }),
-                    /* Progress bar */
+
+                    /* Smooth Progress Bar */
                     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
-                      className: "mt-4",
+                      className: "mt-4 pt-3.5 border-t border-white/[.06]",
                       children: [
                         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
-                          className: "flex justify-between text-xs mb-1.5 font-medium",
+                          className: "flex justify-between items-center text-xs mb-2 font-medium",
                           children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-white/70", children: "Daraja progressi" }),
-                            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { style: { color: rank.color }, children: [rank.progress, "%"] })
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-white/60", children: "Daraja progressi" }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "font-bold", style: { color: rank.color }, children: [rank.progress, "%"] })
                           ]
                         }),
                         /* @__PURE__ */ jsxRuntimeExports.jsx("div", {
-                          className: "h-2 w-full rounded-full bg-white/10 overflow-hidden",
+                          className: "h-2.5 w-full rounded-full bg-black/40 p-[2px] border border-white/10 overflow-hidden",
                           children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", {
-                            className: "h-full rounded-full transition-all duration-500",
-                            style: { width: rank.progress + "%", backgroundColor: rank.color }
+                            className: "h-full rounded-full transition-all duration-500 shadow-sm",
+                            style: { width: Math.max(4, rank.progress) + "%", backgroundColor: rank.color }
                           })
                         })
                       ]
@@ -88363,56 +88379,70 @@ function AchievementsModal({ onClose, playtime }) {
                   ]
                 }),
 
-                /* Achievements Grid Header */
-                /* @__PURE__ */ jsxRuntimeExports.jsx("h4", {
-                  className: "m-0 text-sm font-semibold text-white/90 uppercase tracking-wider",
-                  children: "Barcha Yutuqlar (Kolleksiya)"
+                /* Section Heading */
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+                  className: "flex items-center justify-between",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("h4", {
+                      className: "m-0 text-xs font-bold text-white/70 uppercase tracking-widest",
+                      children: "Yutuqlar kolleksiyasi"
+                    }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", {
+                      className: "text-[11px] text-white/40",
+                      children: "Har bir o'yin daqiqasi hisoblanadi"
+                    })
+                  ]
                 }),
 
-                /* Achievements Grid */
+                /* Achievements Grid - Smooth 2-Column Rounded Cards */
                 /* @__PURE__ */ jsxRuntimeExports.jsx("div", {
-                  className: "grid grid-cols-1 md:grid-cols-2 gap-3",
+                  className: "grid grid-cols-1 sm:grid-cols-2 gap-3.5",
                   children: achievements.map((ach) => {
                     return /* @__PURE__ */ jsxRuntimeExports.jsxs(
                       "div",
                       {
                         key: ach.id,
-                        className: "flex items-start gap-3.5 p-3.5 rounded-xl border transition " + (
+                        className: "relative flex items-center gap-3.5 p-3.5 rounded-[18px] border transition-all duration-200 " + (
                           ach.unlocked
-                            ? "bg-white/[.06] border-[#21B45E]/40 hover:border-[#21B45E]"
-                            : "bg-black/30 border-white/[.08] opacity-60"
+                            ? "bg-gradient-to-br from-[#21B45E]/[0.10] via-white/[0.03] to-transparent border-[#21B45E]/35 hover:border-[#21B45E]/60 shadow-[0_4px_16px_rgba(0,0,0,0.25)]"
+                            : "bg-white/[0.025] border-white/[0.07] opacity-65 hover:opacity-85"
                         ),
                         children: [
-                          /* Icon */
+                          /* Soft Circular Icon */
                           /* @__PURE__ */ jsxRuntimeExports.jsx("div", {
-                            className: "flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border " + (
+                            className: "flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition " + (
                               ach.unlocked
-                                ? "bg-[#21B45E]/15 border-[#21B45E]/50 text-[#21B45E]"
-                                : "bg-white/[.05] border-white/10 text-white/30"
+                                ? "bg-[#21B45E]/20 border-[#21B45E]/40 text-[#21B45E] shadow-[0_0_12px_rgba(33,180,94,0.3)]"
+                                : "bg-white/[0.04] border-white/10 text-white/35"
                             ),
                             children: ach.unlocked
-                              ? /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { size: 20 })
-                              : /* @__PURE__ */ jsxRuntimeExports.jsx(Lock, { size: 18 })
+                              ? /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { size: 18 })
+                              : /* @__PURE__ */ jsxRuntimeExports.jsx(Lock, { size: 16 })
                           }),
                           /* Text details */
                           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
-                            className: "flex-1 min-w-0",
+                            className: "flex-1 min-w-0 pr-1",
                             children: [
                               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
-                                className: "flex items-center justify-between gap-2",
+                                className: "flex items-center justify-between gap-1.5",
                                 children: [
                                   /* @__PURE__ */ jsxRuntimeExports.jsx("h5", {
-                                    className: "m-0 text-sm font-bold text-white truncate",
+                                    className: "m-0 text-[13px] font-bold text-white truncate",
                                     children: ach.title
                                   }),
+                                  /* Pill status */
                                   /* @__PURE__ */ jsxRuntimeExports.jsx("span", {
-                                    className: "text-[11px] font-medium shrink-0 " + (ach.unlocked ? "text-[#21B45E]" : "text-white/40"),
+                                    className: "px-2 py-0.5 rounded-full text-[10px] font-semibold shrink-0 " + (
+                                      ach.unlocked
+                                        ? "bg-[#21B45E]/20 text-[#21B45E] border border-[#21B45E]/30"
+                                        : "bg-white/[0.05] text-white/40 border border-white/5"
+                                    ),
                                     children: ach.progressText
                                   })
                                 ]
                               }),
                               /* @__PURE__ */ jsxRuntimeExports.jsx("p", {
-                                className: "m-0 mt-1 text-xs text-white/60 leading-relaxed",
+                                className: "m-0 mt-1 text-[11.5px] text-white/55 leading-snug line-clamp-2",
                                 children: ach.desc
                               })
                             ]
@@ -88430,7 +88460,6 @@ function AchievementsModal({ onClose, playtime }) {
     }
   );
 }
-
 
 function ScreenshotsModal({ onClose }) {
   const [screenshots, setScreenshots] = reactExports.useState([]);
@@ -88940,22 +88969,7 @@ function HomeProfileCard({
               ": ",
               shortProfileId(profile2.id)
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "mt-1 flex items-center gap-1 text-[clamp(9.5px,.8vw,12.5px)] text-[#21B45E] font-medium tracking-wide", children: [ /* @__PURE__ */ jsxRuntimeExports.jsx(Clock$1, { size: 11 }), formatPlaytime(playtime?.totalSeconds) ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("button", {
-              type: "button",
-              onClick: (e) => { e.stopPropagation(); onOpenAchievements?.(); },
-              title: "Darajangiz: " + calculatePlayerRank(playtime?.totalSeconds).title + " (Yutuqlarni ko'rish)",
-              className: "mt-1.5 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md text-[clamp(9.5px,.8vw,11.5px)] font-bold transition hover:scale-105 cursor-pointer shadow-sm w-fit",
-              style: {
-                color: calculatePlayerRank(playtime?.totalSeconds).color,
-                backgroundColor: calculatePlayerRank(playtime?.totalSeconds).bg,
-                border: "1px solid " + calculatePlayerRank(playtime?.totalSeconds).border
-              },
-              children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(Crown, { size: 11, className: "shrink-0" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: ["Lv.", calculatePlayerRank(playtime?.totalSeconds).level, " ", calculatePlayerRank(playtime?.totalSeconds).badge] })
-              ]
-            })
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "mt-1 flex items-center gap-1 text-[clamp(9.5px,.8vw,12.5px)] text-[#21B45E] font-medium tracking-wide", children: [ /* @__PURE__ */ jsxRuntimeExports.jsx(Clock$1, { size: 11 }), formatPlaytime(playtime?.totalSeconds) ] })
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { className: "h-[clamp(14px,1.2vw,20px)] w-[clamp(14px,1.2vw,20px)] shrink-0 text-white/70 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-white" })
         ]
@@ -89959,28 +89973,33 @@ function LauncherScreen() {
             }
           )
         ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "button",
-            {
-              type: "button",
-              onClick: () => setAchievementsOpen(true),
-              title: "O'yinchi yutuqlari va darajasi",
-              "aria-label": "O'yinchi yutuqlari va darajasi",
-              className: RAIL_BUTTON,
-              children: /* @__PURE__ */ jsxRuntimeExports.jsx(Crown, { className: "h-[46%] w-[46%] text-amber-400" })
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "button",
-            {
-              type: "button",
-              onClick: () => setScreenshotsOpen(true),
-              title: "Skrinshotlar galereyasi",
-              "aria-label": "Skrinshotlar galereyasi",
-              className: RAIL_BUTTON,
-              children: /* @__PURE__ */ jsxRuntimeExports.jsx(Camera$1, { className: "h-[46%] w-[46%] text-white/85" })
-            }
-          )
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
+          className: "flex gap-[clamp(8px,.85vw,14px)] motion-safe:animate-panel-in [animation-delay:100ms] [animation-fill-mode:backwards]",
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                type: "button",
+                onClick: () => setAchievementsOpen(true),
+                title: "O'yinchi yutuqlari va darajasi",
+                "aria-label": "O'yinchi yutuqlari va darajasi",
+                className: RAIL_BUTTON,
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx(Crown, { className: "h-[46%] w-[46%] text-amber-400" })
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                type: "button",
+                onClick: () => setScreenshotsOpen(true),
+                title: "Skrinshotlar galereyasi",
+                "aria-label": "Skrinshotlar galereyasi",
+                className: RAIL_BUTTON,
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx(Camera$1, { className: "h-[46%] w-[46%] text-white/85" })
+              }
+            )
+          ]
+        })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute right-[clamp(14px,2vw,34px)] top-[clamp(12px,3.4vw,60px)] z-20 w-[clamp(200px,17vw,320px)] flex flex-col gap-2.5", children: /* @__PURE__ */ jsxRuntimeExports.jsx(HomeQuickCards, { onOpen: openTab, onOpenArenas: () => setPage("arenas") }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
