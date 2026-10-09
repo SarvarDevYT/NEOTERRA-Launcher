@@ -3183,6 +3183,11 @@ function cleanLegacyInstanceFilenames(dir) {
         try { fs.unlinkSync(oldFps); } catch {}
       }
     }
+    const modsDir = path.join(dir, "mods");
+    const oldNsl = path.join(modsDir, "NeoSkinLoader_Universal-15.0.1.jar");
+    if (fs.existsSync(oldNsl)) {
+      try { fs.unlinkSync(oldNsl); } catch {}
+    }
   } catch {}
 }
 const NEOTERRA_SKINS_API_ROOT = "https://site.neoterra.uz/api/launcher/skins/";
@@ -3213,12 +3218,22 @@ function writeCustomSkinLoaderConfig(dir) {
     if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) config = parsed;
   } catch {
   }
+  const gameProfile = {
+    name: "GameProfile",
+    type: "GameProfile"
+  };
   const previous = Array.isArray(config.loadlist) ? config.loadlist : [];
-  const rest = previous.filter((e) => e?.name !== ours.name && e?.name !== local.name);
+  const rest = previous.filter(
+    (e) =>
+      e?.name !== ours.name &&
+      e?.name !== local.name &&
+      e?.name !== gameProfile.name &&
+      e?.type !== gameProfile.type
+  );
   if (!rest.some((e) => typeof e?.type === "string" && /mojang/i.test(e.type))) {
     rest.push({ name: "Mojang", type: "MojangAPI" });
   }
-  config.loadlist = [local, ours, ...rest];
+  config.loadlist = [gameProfile, local, ours, ...rest];
   fs.writeFileSync(configPath, JSON.stringify(config, null, 2), "utf-8");
 }
 function writeCompanionConfig(dir, companionId) {
