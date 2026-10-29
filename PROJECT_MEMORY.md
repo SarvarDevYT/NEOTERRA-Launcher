@@ -188,5 +188,17 @@
 
 ---
 
-*Hujjat yangilangan sana: 26-Oktyabr, 2026-yil. NeoTerra Dev Team.*
+## 🚀 8. Versiya 1.6.0 Ommaviy Relizi (Public Release)
+- **Versiya**: `v1.6.0`
+- **Sana**: 29-Oktyabr, 2026-yil
+- **GitHub Repository**: `origin main` ga push qilindi va `v1.6.0` tegi yaratildi.
+- **Production Paket**: `dist/NeoTerra Launcher Setup 1.6.0.exe` (238 MB) va `dist/latest.yml` yaratildi.
+- **Veb-sayt va Avto-yangilanish**:
+  - `NeoTerra-Web-Site-Liquid` loyihasidagi Firestore `settings/launcher` hujjati `v1.6.0` ga yangilandi.
+  - `public/downloads/NeoTerraLauncher-Setup.exe` yangilandi.
+  - Barcha foydalanuvchilar uchun 1.6.0 yangilanish xabarnomasi yuborildi.
+
+---
+
+*Hujjat yangilangan sana: 29-Oktyabr, 2026-yil. NeoTerra Dev Team.*
 
