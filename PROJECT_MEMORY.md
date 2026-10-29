@@ -188,15 +188,17 @@
 
 ---
 
-## 🚀 8. Versiya 1.6.0 Ommaviy Relizi (Public Release)
-- **Versiya**: `v1.6.0`
+## 🚀 8. Versiya 1.6.1 Ommaviy Relizi (Fixed Bugs)
+- **Versiya**: `v1.6.1`
 - **Sana**: 29-Oktyabr, 2026-yil
-- **GitHub Repository**: `origin main` ga push qilindi va `v1.6.0` tegi yaratildi.
-- **Production Paket**: `dist/NeoTerra Launcher Setup 1.6.0.exe` (238 MB) va `dist/latest.yml` yaratildi.
-- **Veb-sayt va Avto-yangilanish**:
-  - `NeoTerra-Web-Site-Liquid` loyihasidagi Firestore `settings/launcher` hujjati `v1.6.0` ga yangilandi.
-  - `public/downloads/NeoTerraLauncher-Setup.exe` yangilandi.
-  - Barcha foydalanuvchilar uchun 1.6.0 yangilanish xabarnomasi yuborildi.
+- **GitHub Repository**: `SarvarDevYT/NEOTERRA-Launcher` (`origin main` va `v1.6.1` relizi)
+- **Production Paket**: `dist/NeoTerra Launcher Setup 1.6.1.exe` (238 MB) va `dist/latest.yml`
+- **Kiritilgan tuzatishlar (Fixed Bugs)**:
+  1. **inPAY to'lov tizimi integratsiyasi**: Launcher orqali NTC hisobini to'ldirish to'liq inPAY (Click, Payme, Uzum, Uzcard/Humo) orqali avtomatlashtirildi.
+  2. **Do'kon va Hisob balansi sinxronizatsiyasi**: Do'kondan xaridlar (PRO, kosmetika, to'plamlar) amalga oshirilganda, balans veb-sayt va launcherda real vaqtda kamayadi.
+  3. **Do'stlik tizimi**: "friends_overview" xatosi bartaraf etildi, onlayn do'stlar va so'rovlar tizimi to'liq barqarorlashtirildi.
+  4. **3D Skinlar va Plashlar**: CustomSkinLoader sozlamalari va NeoTerra skin API'si o'yin ichida to'liq ko'rinadigan qilib sozlandi.
+  5. **Avto-yangilanish tizimi**: 1.6.0 yuklab olish 404 xatosi tuzatildi, 1.6.1 fayllari rasmiy server va GitHub'ga to'liq joylashtirildi.
 
 ---
 
