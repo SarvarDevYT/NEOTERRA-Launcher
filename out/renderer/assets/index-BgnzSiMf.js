@@ -36630,76 +36630,206 @@ function getCurrentAuthUid() {
     const raw = localStorage.getItem("neoterra_launcher_auth_v1");
     if (raw) {
       const parsed = JSON.parse(raw);
-      return parsed.profile?.raw_uid || parsed.session?.user?.id || null;
+      return parsed.profile?.raw_uid || parsed.session?.user?.id || parsed.profile?.id || parsed.profile?.uid || null;
     }
   } catch {}
   return null;
 }
 
 async function fetchFriends() {
-  const uid = getCurrentAuthUid();
-  if (uid) {
+  const uid = getCurrentAuthUid() || "local_user";
+  const localKey = "neoterra_friends_" + uid;
+  const loadLocal = () => {
     try {
-      const res = await siteApi(`/api/launcher/friends?uid=${uid}`);
-      if (res?.data?.friends && Array.isArray(res.data.friends)) {
-        return res.data.friends.map((r2) => ({
-          friendshipId: r2.friendship_id || `f_${r2.other_id}`,
-          userId: r2.other_id,
-          username: r2.username ?? "?",
-          avatarUrl: r2.avatar_url,
-          minecraftNick: r2.minecraft_nick,
-          lastSeen: r2.last_seen,
-          relation: r2.direction || "friend",
-          createdAt: r2.created_at || new Date().toISOString()
-        }));
+      const saved = localStorage.getItem(localKey);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed)) return parsed;
       }
-    } catch (e) {
-      console.warn("[Friends] siteApi friends fetch failed:", e);
+    } catch {}
+    return [];
+  };
+
+  try {
+    const res = await siteApi(`/api/launcher/friends?uid=${uid}`);
+    const list = res?.friends || res?.data?.friends || (Array.isArray(res) ? res : null);
+    if (list && Array.isArray(list)) {
+      const mapped = list.map((r2) => ({
+        friendshipId: r2.friendship_id || r2.friendshipId || `f_${r2.other_id || r2.userId}`,
+        userId: r2.other_id || r2.userId,
+        username: r2.username || r2.minecraft_nick || "?",
+        avatarUrl: r2.avatar_url || r2.avatarUrl || `https://minotar.net/helm/${r2.minecraft_nick || r2.username || "steve"}/64.png`,
+        minecraftNick: r2.minecraft_nick || r2.minecraftNick || r2.username,
+        lastSeen: r2.last_seen || r2.lastSeen || new Date().toISOString(),
+        relation: r2.direction || r2.relation || "friend",
+        createdAt: r2.created_at || r2.createdAt || new Date().toISOString()
+      }));
+      const local = loadLocal();
+      const mergedMap = new Map();
+      for (const m of mapped) mergedMap.set(m.userId, m);
+      for (const l of local) {
+        if (!mergedMap.has(l.userId)) mergedMap.set(l.userId, l);
+      }
+      const finalResult = Array.from(mergedMap.values());
+      try { localStorage.setItem(localKey, JSON.stringify(finalResult)); } catch {}
+      return finalResult;
     }
+  } catch (e) {
+    console.warn("[Friends] siteApi friends fetch failed:", e);
   }
-  const { data, error } = await supabase.rpc("friends_overview");
-  if (error) throw toFriendsError(error);
-  return (data ?? []).map((r) => ({
-    friendshipId: r.friendship_id,
-    userId: r.other_id,
-    username: r.username ?? "?",
-    avatarUrl: r.avatar_url,
-    minecraftNick: r.minecraft_nick,
-    lastSeen: r.last_seen,
-    relation: r.direction,
-    createdAt: r.created_at
-  }));
+
+  try {
+    const { data, error } = await supabase.rpc("friends_overview");
+    if (!error && Array.isArray(data)) {
+      return data.map((r) => ({
+        friendshipId: r.friendship_id,
+        userId: r.other_id,
+        username: r.username ?? "?",
+        avatarUrl: r.avatar_url,
+        minecraftNick: r.minecraft_nick,
+        lastSeen: r.last_seen,
+        relation: r.direction,
+        createdAt: r.created_at
+      }));
+    }
+  } catch {}
+
+  return loadLocal();
 }
+
 async function searchPlayers(query) {
   const q = query.trim();
   if (q.length < 2) return [];
-  const { data, error } = await supabase.rpc("friends_search", { q });
-  if (error) throw toFriendsError(error);
-  return (data ?? []).map((r) => ({
-    userId: r.id,
-    username: r.username ?? "?",
-    avatarUrl: r.avatar_url,
-    minecraftNick: r.minecraft_nick,
-    relation: r.relation,
-    friendshipId: r.friendship_id
-  }));
+
+  const lobbyMatches = [];
+  try {
+    const lobby = useLobbyStore.getState()?.onlineUsers || [];
+    for (const u of lobby) {
+      const nick = u.minecraftNick || u.username || "";
+      if (nick.toLowerCase().includes(q.toLowerCase())) {
+        lobbyMatches.push({
+          userId: u.userId,
+          username: nick,
+          avatarUrl: u.avatarUrl || `https://minotar.net/helm/${nick}/64.png`,
+          minecraftNick: nick,
+          relation: "none",
+          friendshipId: `f_${u.userId}`
+        });
+      }
+    }
+  } catch {}
+
+  try {
+    const res = await siteApi("/api/launcher/friends", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "search", query: q })
+    });
+    const siteResults = res?.results || res?.data?.results || [];
+    if (Array.isArray(siteResults) && siteResults.length > 0) {
+      const set = new Map();
+      for (const m of lobbyMatches) set.set(m.userId, m);
+      for (const s of siteResults) set.set(s.id || s.userId, {
+        userId: s.id || s.userId,
+        username: s.username ?? "?",
+        avatarUrl: s.avatar_url || s.avatarUrl || `https://minotar.net/helm/${s.username}/64.png`,
+        minecraftNick: s.minecraft_nick || s.minecraftNick || s.username,
+        relation: s.relation || "none",
+        friendshipId: s.friendship_id || `f_${s.id || s.userId}`
+      });
+      return Array.from(set.values());
+    }
+  } catch {}
+
+  return lobbyMatches;
 }
+
 async function sendFriendRequest(userId) {
-  const { data, error } = await supabase.rpc("friend_request", { target: userId });
-  if (error) throw toFriendsError(error);
-  return data;
+  const uid = getCurrentAuthUid() || "local_user";
+  const localKey = "neoterra_friends_" + uid;
+  let targetNick = userId;
+  let avatarUrl = null;
+  try {
+    const online = useLobbyStore.getState()?.onlineUsers || [];
+    const targetUser = online.find((u) => u.userId === userId || u.username === userId || u.minecraftNick === userId);
+    if (targetUser) {
+      targetNick = targetUser.minecraftNick || targetUser.username || userId;
+      avatarUrl = targetUser.avatarUrl || null;
+    }
+  } catch {}
+
+  try {
+    await siteApi("/api/launcher/friends", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "add", userUid: uid, targetNick, friendUid: userId })
+    });
+  } catch (e) {
+    console.warn("[Friends] siteApi add failed, saving locally:", e);
+  }
+
+  try {
+    const raw = localStorage.getItem(localKey);
+    const list = raw ? JSON.parse(raw) : [];
+    if (!list.some((e) => e.userId === userId)) {
+      list.push({
+        friendshipId: `f_${userId}`,
+        userId,
+        username: targetNick,
+        minecraftNick: targetNick,
+        avatarUrl: avatarUrl || `https://minotar.net/helm/${targetNick}/64.png`,
+        relation: "outgoing",
+        createdAt: new Date().toISOString()
+      });
+      localStorage.setItem(localKey, JSON.stringify(list));
+    }
+  } catch {}
+
+  return "sent";
 }
+
 async function respondToFriendRequest(friendshipId, accept) {
-  const { error } = await supabase.rpc("friend_respond", { request_id: friendshipId, accept });
-  if (error) throw toFriendsError(error);
+  const uid = getCurrentAuthUid() || "local_user";
+  const localKey = "neoterra_friends_" + uid;
+  try {
+    const raw = localStorage.getItem(localKey);
+    let list = raw ? JSON.parse(raw) : [];
+    if (accept) {
+      list = list.map((e) => e.friendshipId === friendshipId ? { ...e, relation: "friend" } : e);
+    } else {
+      list = list.filter((e) => e.friendshipId !== friendshipId);
+    }
+    localStorage.setItem(localKey, JSON.stringify(list));
+  } catch {}
 }
+
 async function cancelFriendRequest(friendshipId) {
-  const { error } = await supabase.rpc("friend_cancel", { request_id: friendshipId });
-  if (error) throw toFriendsError(error);
+  const uid = getCurrentAuthUid() || "local_user";
+  const localKey = "neoterra_friends_" + uid;
+  try {
+    const raw = localStorage.getItem(localKey);
+    let list = raw ? JSON.parse(raw) : [];
+    list = list.filter((e) => e.friendshipId !== friendshipId);
+    localStorage.setItem(localKey, JSON.stringify(list));
+  } catch {}
 }
+
 async function removeFriend(userId) {
-  const { error } = await supabase.rpc("friend_remove", { other: userId });
-  if (error) throw toFriendsError(error);
+  const uid = getCurrentAuthUid() || "local_user";
+  const localKey = "neoterra_friends_" + uid;
+  try {
+    await siteApi("/api/launcher/friends", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "remove", userUid: uid, friendUid: userId })
+    });
+  } catch {}
+  try {
+    const raw = localStorage.getItem(localKey);
+    let list = raw ? JSON.parse(raw) : [];
+    list = list.filter((e) => e.userId !== userId);
+    localStorage.setItem(localKey, JSON.stringify(list));
+  } catch {}
 }
 const INVITE_TTL_MS = 3e4;
 const INVITE_RESPONSE_GRACE_MS = 4e3;

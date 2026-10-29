@@ -1195,7 +1195,7 @@ const BUILTIN_MOD_IDS = /* @__PURE__ */ new Set([
   "java"
 ]);
 const BUILTIN_LANGUAGES = /* @__PURE__ */ new Set(["javafml", "lowcodefml", "minecraft"]);
-const LAUNCHER_MANAGED$2 = /^(mcmodhub|customskinloader)/i;
+const LAUNCHER_MANAGED$2 = /^(neoterra|mcmodhub|customskinloader)/i;
 const QUALIFIER_RANK = {
   alpha: -6,
   a: -6,
@@ -1789,7 +1789,7 @@ async function ensureModDependencies(opts) {
   if (cachedNotFound && notFoundDirty) saveNotFound(instRoot2, cachedNotFound);
   return result;
 }
-const LAUNCHER_MANAGED$1 = /^(mcmodhub|customskinloader)/i;
+const LAUNCHER_MANAGED$1 = /^(neoterra|mcmodhub|customskinloader)/i;
 const STORE_DIR = "mods-incompatible";
 const CACHE_FILE = ".mcmodhub-modstage.json";
 const CACHE_VERSION = 1;
@@ -6194,41 +6194,73 @@ async function ensureCustomSkinLoaderMod(dir, gameVersion, loader) {
   return `CustomSkinLoader yuklandi (${file2.filename})`;
 }
 const SUPABASE_URL_FOR_SKINS = "https://hhpnhwfzovbttorprudl.supabase.co";
+const NEOTERRA_SKINS_API_ROOT = "https://site.neoterra.uz/api/launcher/skins/";
 function writeCustomSkinLoaderConfig(dir) {
-  const cslDir = path.join(dir, "CustomSkinLoader");
-  fs.mkdirSync(cslDir, { recursive: true });
-  const configPath = path.join(cslDir, "CustomSkinLoader.json");
-  const ours = {
-    name: "NeoTerra",
-    type: "CustomSkinAPI",
-    root: `${SUPABASE_URL_FOR_SKINS}/storage/v1/object/public/neoterra-skins/`
-  };
-  let config = { version: "15.0.1", loadlist: [] };
-  try {
-    const parsed = JSON.parse(fs.readFileSync(configPath, "utf-8"));
-    if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) config = parsed;
-  } catch {
+  const dirs = [dir];
+  const gDir = gameDir();
+  if (gDir && gDir !== dir) dirs.push(gDir);
+
+  for (const targetDir of dirs) {
+    try {
+      const cslDir = path.join(targetDir, "CustomSkinLoader");
+      fs.mkdirSync(cslDir, { recursive: true });
+      const configPath = path.join(cslDir, "CustomSkinLoader.json");
+
+      const gameProfile = {
+        name: "GameProfile",
+        type: "GameProfile"
+      };
+
+      const local = {
+        name: "LocalSkin",
+        type: "Legacy",
+        checkPNG: false,
+        skin: "LocalSkin/skins/{USERNAME}.png",
+        cape: "LocalSkin/capes/{USERNAME}.png",
+        model: "auto"
+      };
+
+      const neoterraSite = {
+        name: "NeoTerra",
+        type: "CustomSkinAPI",
+        root: NEOTERRA_SKINS_API_ROOT
+      };
+
+      const neoterraStorage = {
+        name: "NeoTerraStorage",
+        type: "Legacy",
+        checkPNG: true,
+        skin: `${SUPABASE_URL_FOR_SKINS}/storage/v1/object/public/neoterra-skins/skins/{USERNAME}.png`,
+        cape: `${SUPABASE_URL_FOR_SKINS}/storage/v1/object/public/neoterra-skins/capes/{USERNAME}.png`
+      };
+
+      const mojang = {
+        name: "Mojang",
+        type: "MojangAPI"
+      };
+
+      const config = {
+        version: "15.0.1",
+        loadlist: [gameProfile, local, neoterraSite, neoterraStorage, mojang],
+        forceLoadAllTextures: false,
+        cacheExpiry: 180
+      };
+
+      fs.writeFileSync(configPath, JSON.stringify(config, null, 2), "utf-8");
+    } catch {}
   }
-  const previous = Array.isArray(config.loadlist) ? config.loadlist : [];
-  const rest = previous.filter((e) => e?.name !== ours.name);
-  if (!rest.some((e) => typeof e?.type === "string" && /mojang/i.test(e.type))) {
-    rest.push({ name: "Mojang", type: "MojangAPI" });
-  }
-  if (!rest.some((e) => e?.name === "LocalSkin")) {
-    rest.unshift({ name: "LocalSkin", type: "Legacy", checkPNG: false, skin: "LocalSkin/skins/{USERNAME}.png", cape: "LocalSkin/capes/{USERNAME}.png", model: "auto" });
-  }
-  config.loadlist = [ours, ...rest];
-  config.forceLoadAllTextures = false;
-  const expiry = typeof config.cacheExpiry === "number" ? config.cacheExpiry : 0;
-  if (expiry < 180) config.cacheExpiry = 180;
-  fs.writeFileSync(configPath, JSON.stringify(config, null, 2), "utf-8");
 }
 const PNG_MAGIC = Buffer.from([137, 80, 78, 71]);
 async function cacheLocalSkin(instRoot2, nick, skinUrl, capeUrl) {
+  const targetsSkin = [
+    path.join(instRoot2, "CustomSkinLoader", "LocalSkin", "skins", `${nick}.png`),
+    path.join(gameDir(), "CustomSkinLoader", "LocalSkin", "skins", `${nick}.png`)
+  ];
   const shared = path.join(gameDir(), "skin-cache", `${nick}.png`);
-  const target = path.join(instRoot2, "CustomSkinLoader", "LocalSkin", "skins", `${nick}.png`);
   if (!skinUrl) {
-    fs.rmSync(target, { force: true });
+    for (const t of targetsSkin) {
+      try { fs.rmSync(t, { force: true }); } catch {}
+    }
   } else {
     let bytes = null;
     if (skinUrl && /^https:\/\//i.test(skinUrl)) {
@@ -6245,13 +6277,20 @@ async function cacheLocalSkin(instRoot2, nick, skinUrl, capeUrl) {
     }
     if (!bytes && fs.existsSync(shared)) bytes = fs.readFileSync(shared);
     if (bytes) {
-      fs.mkdirSync(path.dirname(target), { recursive: true });
-      fs.writeFileSync(target, bytes);
+      for (const t of targetsSkin) {
+        try {
+          fs.mkdirSync(path.dirname(t), { recursive: true });
+          fs.writeFileSync(t, bytes);
+        } catch {}
+      }
     }
   }
   if (capeUrl) {
+    const targetsCape = [
+      path.join(instRoot2, "CustomSkinLoader", "LocalSkin", "capes", `${nick}.png`),
+      path.join(gameDir(), "CustomSkinLoader", "LocalSkin", "capes", `${nick}.png`)
+    ];
     const sharedCape = path.join(gameDir(), "skin-cache", `${nick}_cape.png`);
-    const targetCape = path.join(instRoot2, "CustomSkinLoader", "LocalSkin", "capes", `${nick}.png`);
     let capeBytes = null;
     if (/^https:\/\//i.test(capeUrl)) {
       try {
@@ -6267,8 +6306,12 @@ async function cacheLocalSkin(instRoot2, nick, skinUrl, capeUrl) {
     }
     if (!capeBytes && fs.existsSync(sharedCape)) capeBytes = fs.readFileSync(sharedCape);
     if (capeBytes) {
-      fs.mkdirSync(path.dirname(targetCape), { recursive: true });
-      fs.writeFileSync(targetCape, capeBytes);
+      for (const t of targetsCape) {
+        try {
+          fs.mkdirSync(path.dirname(t), { recursive: true });
+          fs.writeFileSync(t, capeBytes);
+        } catch {}
+      }
     }
   }
 }
@@ -8329,7 +8372,7 @@ function isSafeFileName(v) {
 function toNameList(names) {
   return { names: names.slice(0, MAX_ISSUE_NAMES), total: names.length };
 }
-const LAUNCHER_MANAGED = [/^customskinloader/i, /^mcmodhub[_-]/i, /^e4(?:all|mc)/i, /^(?:oculus|iris)/i];
+const LAUNCHER_MANAGED = [/^customskinloader/i, /^(?:neoterra|mcmodhub)[_-]/i, /^e4(?:all|mc)/i, /^(?:oculus|iris)/i];
 function isLauncherManagedMod(filename, loader) {
   if (LAUNCHER_MANAGED.some((re) => re.test(filename))) return true;
   return isPartyLoader(loader) && isPerformanceModFile(filename, loader);

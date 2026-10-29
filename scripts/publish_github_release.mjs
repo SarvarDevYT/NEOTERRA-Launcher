@@ -13,6 +13,30 @@ const releaseId = 427685537;
 const owner = "SarvarDevYT";
 const repo = "NEOTERRA-Launcher";
 
+async function getExistingAssets() {
+  const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/releases/${releaseId}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "User-Agent": "NeoTerra-Release",
+      Accept: "application/vnd.github.v3+json"
+    }
+  });
+  if (!res.ok) return [];
+  const data = await res.json();
+  return data.assets || [];
+}
+
+async function deleteAsset(assetId) {
+  await fetch(`https://api.github.com/repos/${owner}/${repo}/releases/assets/${assetId}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "User-Agent": "NeoTerra-Release",
+      Accept: "application/vnd.github.v3+json"
+    }
+  });
+}
+
 function uploadWithCurl(fileName, filePath) {
   return new Promise((resolve, reject) => {
     console.log(`Uploading '${fileName}' via curl.exe...`);
@@ -54,12 +78,23 @@ function uploadWithCurl(fileName, filePath) {
 }
 
 async function main() {
-  // First upload latest.yml
-  await uploadWithCurl("latest.yml", path.resolve("dist/latest.yml"));
-  // Next upload NeoTerraLauncher-Setup.exe
-  await uploadWithCurl("NeoTerraLauncher-Setup.exe", path.resolve("NeoTerraLauncher-Setup.exe"));
-  // Next upload NeoTerra Launcher Setup 1.6.0.exe
-  await uploadWithCurl("NeoTerra Launcher Setup 1.6.0.exe", path.resolve("dist/NeoTerra Launcher Setup 1.6.0.exe"));
+  console.log("Checking existing assets on release...");
+  const existingAssets = await getExistingAssets();
+  
+  const files = [
+    { name: "latest.yml", path: path.resolve("dist/latest.yml") },
+    { name: "NeoTerraLauncher-Setup.exe", path: path.resolve("NeoTerraLauncher-Setup.exe") },
+    { name: "NeoTerra Launcher Setup 1.6.0.exe", path: path.resolve("dist/NeoTerra Launcher Setup 1.6.0.exe") }
+  ];
+
+  for (const item of files) {
+    const existing = existingAssets.find(a => a.name === item.name || a.name === item.name.replace(/\s+/g, '.'));
+    if (existing) {
+      console.log(`Deleting existing ${item.name} (ID: ${existing.id})...`);
+      await deleteAsset(existing.id);
+    }
+    await uploadWithCurl(item.name, item.path);
+  }
 
   console.log("ALL FILES UPLOADED SUCCESSFULLY!");
 }
