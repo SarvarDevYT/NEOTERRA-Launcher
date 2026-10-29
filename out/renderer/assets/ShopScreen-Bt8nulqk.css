@@ -1,0 +1,1122 @@
+/* "Ultimate" 3D sandiq (CaseChest.tsx). Faqat transform/opacity animatsiyalari; 3D obyekt ichida filter yo'q (preserve-3d'ni yassilab
+   qo'yadi). O'lcham birligi --u = konteyner enining 1/24 qismi (cqw), shu sabab sandiq istalgan kattalikda bir xil ko'rinadi. */
+.vc-root {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 0.86;
+  container-type: inline-size;
+  pointer-events: none;
+}
+.vc-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.vc-aura {
+  position: absolute;
+  inset: -6% -4% 0;
+  background: radial-gradient(50% 48% at 50% 52%, color-mix(in srgb, var(--neon) 55%, transparent), transparent 72%);
+  opacity: 0.9;
+}
+.vc-ground {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 2%;
+  height: 16%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--neon) 55%, transparent), transparent);
+  opacity: 0.8;
+}
+.vc-beam {
+  position: absolute;
+  left: 22%;
+  right: 22%;
+  bottom: 48%;
+  height: 120%;
+  background: linear-gradient(0deg, var(--glow), color-mix(in srgb, var(--neon) 40%, transparent) 45%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 30%, #000 70%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 30%, #000 70%, transparent);
+  transform-origin: 50% 100%;
+  transform: scaleY(0);
+  opacity: 0;
+  mix-blend-mode: screen;
+}
+.vc-scene {
+  --u: calc(100cqw / 24);
+  position: absolute;
+  inset: 0;
+  perspective: calc(var(--u) * 75);
+  perspective-origin: 50% 35%;
+}
+.vc-obj {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  transform: rotateX(-19deg) rotateY(-31deg);
+}
+.vc-box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+}
+.vc-face {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  backface-visibility: hidden;
+  box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, var(--shade, 0));
+}
+.vc-face > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/* qopqoq oshiq-moshig'i: orqa pastki qirra (y = -1u, z = -5u) */
+.vc-hinge {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  transform: translate3d(0, calc(var(--u) * -0.9), calc(var(--u) * -5)) rotateX(0deg);
+  transition: transform 0.3s cubic-bezier(0.2, 1.5, 0.4, 1);
+}
+
+/* ---- holatlar ---- */
+.vc-root.is-anim .vc-obj {
+  animation: vc-idle 7s ease-in-out infinite alternate;
+}
+.vc-root.is-anim .vc-aura,
+.vc-root.is-charging .vc-aura {
+  animation: vc-pulse 2.4s ease-in-out infinite;
+}
+.vc-root.is-anim .vc-core-glow {
+  animation: vc-pulse 1.8s ease-in-out infinite;
+}
+.vc-root.is-charging .vc-obj {
+  animation: vc-charge-spin var(--p1, 0.8s) cubic-bezier(0.5, 0, 0.6, 1) both;
+}
+.vc-root.is-charging .vc-hinge {
+  animation: vc-rattle 0.09s linear infinite;
+}
+.vc-root.is-charging .vc-core-glow {
+  animation: vc-flicker 0.12s steps(2) infinite;
+}
+.vc-root.is-charging .vc-aura {
+  opacity: 1;
+}
+.vc-root.is-open .vc-hinge {
+  transform: translate3d(0, calc(var(--u) * -0.9), calc(var(--u) * -5)) rotateX(108deg);
+}
+.vc-root.is-open .vc-obj {
+  transform: rotateX(-19deg) rotateY(-24deg);
+}
+.vc-root.is-open .vc-beam {
+  opacity: 1;
+  transform: scaleY(1);
+  transition: transform 0.28s cubic-bezier(0.2, 1.2, 0.4, 1), opacity 0.1s;
+}
+.vc-root.is-open .vc-aura {
+  opacity: 1;
+}
+
+@keyframes vc-idle {
+  0% {
+    transform: rotateX(-19deg) rotateY(-40deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotateX(-17deg) rotateY(-31deg) translate3d(0, calc(var(--u) * -0.5), 0);
+  }
+  100% {
+    transform: rotateX(-19deg) rotateY(-20deg) translate3d(0, 0, 0);
+  }
+}
+@keyframes vc-charge-spin {
+  0% {
+    transform: rotateX(-19deg) rotateY(-31deg);
+  }
+  100% {
+    transform: rotateX(-24deg) rotateY(-31deg) rotateY(-360deg);
+  }
+}
+@keyframes vc-rattle {
+  0% {
+    transform: translate3d(0, calc(var(--u) * -0.9), calc(var(--u) * -5)) rotateX(0deg);
+  }
+  50% {
+    transform: translate3d(0, calc(var(--u) * -1.05), calc(var(--u) * -5)) rotateX(7deg);
+  }
+  100% {
+    transform: translate3d(0, calc(var(--u) * -0.9), calc(var(--u) * -5)) rotateX(2deg);
+  }
+}
+@keyframes vc-pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes vc-flicker {
+  50% {
+    opacity: 0.25;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vc-root.is-anim .vc-obj,
+  .vc-root.is-anim .vc-aura,
+  .vc-root.is-anim .vc-core-glow {
+    animation: none;
+  }
+}
+/* Keyslar (omad sandiqlari). Prefiks `kc-`. QOIDA: harakatlanuvchi narsalarda backdrop-filter / filter: blur YO'Q - faqat
+   transform/opacity (kompozitor). Ranglar: Oddiy #9CA3AF, Noyob #38BDF8, Epik #C084FC, Afsonaviy #FACC15 (RARITY_COLOR). */
+
+.kc-root {
+  --kc-gold: #facc15;
+  --kc-r-common: #9ca3af;
+  --kc-r-rare: #38bdf8;
+  --kc-r-epic: #c084fc;
+  --kc-r-legendary: #facc15;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 0.9vw, 16px);
+  min-height: 100%;
+  color: #fff;
+}
+
+/* ---------------- 1-qator: sandiq kartalari ---------------- */
+.kc-cases {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(8px, 0.9vw, 16px);
+}
+.kc-case {
+  --c: #38bdf8;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 0.8vw, 14px);
+  min-width: 0;
+  padding: clamp(6px, 0.6vw, 10px) clamp(10px, 1vw, 18px) clamp(6px, 0.6vw, 10px) clamp(6px, 0.6vw, 10px);
+  border: 1px solid color-mix(in srgb, var(--c) 35%, transparent);
+  border-radius: clamp(10px, 0.9vw, 16px);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--c) 14%, rgba(8, 10, 18, 0.72)), rgba(6, 8, 14, 0.72));
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s;
+}
+.kc-case:hover {
+  border-color: color-mix(in srgb, var(--c) 70%, transparent);
+  transform: translateY(-1px);
+}
+.kc-case.is-on {
+  border: 2px solid var(--c);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--c) 40%, transparent), 0 0 26px color-mix(in srgb, var(--c) 45%, transparent),
+    inset 0 0 24px color-mix(in srgb, var(--c) 18%, transparent);
+}
+.kc-case.is-on::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -7px;
+  width: 12px;
+  height: 12px;
+  background: var(--c);
+  transform: translateX(-50%) rotate(45deg);
+  border-radius: 2px;
+}
+.kc-chest.kc-case-art {
+  width: clamp(72px, 7.2vw, 128px);
+  flex-shrink: 0;
+}
+.kc-chest.kc-chest-sm {
+  width: 76px;
+  flex-shrink: 0;
+}
+.kc-case-name {
+  display: block;
+  font-size: clamp(12px, 1.05vw, 18px);
+  font-weight: 700;
+  line-height: 1.15;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.kc-case.is-on .kc-case-name {
+  color: color-mix(in srgb, var(--c) 55%, #fff);
+}
+.kc-case-price {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 3px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: clamp(12px, 1vw, 17px);
+  font-weight: 700;
+  color: #fde68a;
+}
+.kc-keys-badge {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(46, 204, 113, 0.18);
+  border: 1px solid rgba(46, 204, 113, 0.5);
+  font-size: 11px;
+  font-weight: 700;
+  color: #86efac;
+}
+
+/* ---------------- Pity (kafolat) ---------------- */
+.kc-pity {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 0.9vw, 16px);
+  padding: clamp(6px, 0.55vw, 10px) clamp(10px, 1vw, 18px);
+  border: 1px solid rgba(250, 204, 21, 0.22);
+  border-radius: 999px;
+  background: rgba(8, 9, 14, 0.62);
+}
+.kc-tile {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: clamp(26px, 2.2vw, 36px);
+  height: clamp(26px, 2.2vw, 36px);
+  border-radius: 28%;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+.kc-pity-text {
+  min-width: 0;
+  flex: 1 1 auto;
+  font-size: clamp(11px, 0.92vw, 15px);
+  line-height: 1.25;
+}
+.kc-pity-text b {
+  color: #fff;
+}
+.kc-pity-text span {
+  color: #fde68a;
+}
+.kc-pity-bar {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 3px;
+  width: clamp(120px, 16vw, 280px);
+  flex-shrink: 0;
+}
+.kc-pity-bar i {
+  height: clamp(6px, 0.55vw, 9px);
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  transform: skewX(-18deg);
+}
+.kc-pity-bar i.on {
+  background: linear-gradient(90deg, #f59e0b, #facc15);
+  box-shadow: 0 0 8px rgba(250, 204, 21, 0.55);
+}
+.kc-pity-num {
+  flex-shrink: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 700;
+  font-size: clamp(11px, 0.92vw, 15px);
+  color: rgba(255, 255, 255, 0.8);
+}
+.kc-pity.is-next {
+  border-color: rgba(250, 204, 21, 0.7);
+  box-shadow: 0 0 22px rgba(250, 204, 21, 0.25);
+}
+
+/* ---------------- Sahna (lenta) ---------------- */
+.kc-stage {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: clamp(190px, 30vh, 360px);
+  border-radius: clamp(12px, 1vw, 18px);
+  overflow: hidden;
+  background: radial-gradient(120% 90% at 50% 50%, rgba(18, 22, 40, 0.75), rgba(4, 5, 10, 0.88));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  isolation: isolate;
+}
+.kc-ambient {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.12s linear;
+  will-change: opacity;
+  pointer-events: none;
+}
+.kc-viewport {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  transition: opacity 0.25s;
+}
+.kc-viewport.is-dim {
+  opacity: 0.25;
+}
+.kc-strip {
+  position: relative;
+  display: flex;
+  gap: clamp(8px, 0.7vw, 14px);
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+.kc-card {
+  --c: var(--kc-r-common);
+  position: relative;
+  flex: 0 0 auto;
+  width: clamp(104px, 10.5vw, 188px);
+  aspect-ratio: 0.86;
+  display: flex;
+  flex-direction: column;
+  border-radius: clamp(9px, 0.8vw, 14px);
+  border: 2px solid color-mix(in srgb, var(--c) 75%, transparent);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--c) 10%, #0b0e18) 0%, color-mix(in srgb, var(--c) 30%, #0b0e18) 100%);
+  box-shadow: inset 0 0 22px color-mix(in srgb, var(--c) 22%, transparent);
+  overflow: hidden;
+  contain: layout paint;
+}
+.kc-r-common {
+  --c: var(--kc-r-common);
+}
+.kc-r-rare {
+  --c: var(--kc-r-rare);
+}
+.kc-r-epic {
+  --c: var(--kc-r-epic);
+}
+.kc-r-legendary {
+  --c: var(--kc-r-legendary);
+}
+.kc-card-media {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  margin: 8% 8% 0;
+  display: grid;
+  place-items: center;
+}
+.kc-media-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.kc-card-foot {
+  padding: 4px 8px 8px;
+  text-align: center;
+  line-height: 1.15;
+}
+.kc-card-rar {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: 5px;
+  background: color-mix(in srgb, var(--c) 28%, transparent);
+  color: color-mix(in srgb, var(--c) 70%, #fff);
+  font-size: clamp(8.5px, 0.65vw, 11px);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.kc-card-name {
+  display: block;
+  margin-top: 3px;
+  font-size: clamp(10.5px, 0.85vw, 14px);
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* Fake-Out: ko'k "aldamchi" karta sinadi */
+.kc-card.kc-break {
+  animation: kc-break 0.45s ease-out forwards;
+}
+.kc-card.kc-break::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 44%, rgba(255, 255, 255, 0.95) 46%, transparent 48%),
+    linear-gradient(60deg, transparent 58%, rgba(255, 255, 255, 0.8) 59.5%, transparent 61%),
+    linear-gradient(160deg, transparent 30%, rgba(186, 230, 253, 0.85) 31.5%, transparent 33%);
+  animation: kc-crack 0.45s ease-out forwards;
+}
+@keyframes kc-break {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  30% {
+    transform: scale(1.06) rotate(-1.5deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.9) rotate(2deg);
+    opacity: 0.3;
+  }
+}
+@keyframes kc-crack {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+/* Yutuq kartasi */
+.kc-card.kc-win {
+  z-index: 2;
+  transform: scale(1.1);
+  border-color: var(--c);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--c) 60%, transparent), 0 0 38px color-mix(in srgb, var(--c) 75%, transparent),
+    inset 0 0 30px color-mix(in srgb, var(--c) 40%, transparent);
+  transition: transform 0.35s cubic-bezier(0.2, 1.6, 0.4, 1), box-shadow 0.35s;
+  overflow: visible;
+}
+
+.kc-pointer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+.kc-pointer-line {
+  position: absolute;
+  top: 6%;
+  bottom: 6%;
+  left: -1.5px;
+  width: 3px;
+  background: linear-gradient(180deg, transparent, #fde68a 12%, #facc15 50%, #fde68a 88%, transparent);
+  box-shadow: 0 0 12px #facc15, 0 0 26px rgba(250, 204, 21, 0.6);
+  opacity: 0.9;
+}
+.kc-pointer-tri {
+  position: absolute;
+  left: -9px;
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.9));
+}
+.kc-pointer-tri.kc-top {
+  top: 2%;
+  border-top: 13px solid #facc15;
+}
+.kc-pointer-tri.kc-bot {
+  bottom: 2%;
+  border-bottom: 13px solid #facc15;
+}
+.kc-edge {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 14%;
+  z-index: 2;
+  pointer-events: none;
+}
+.kc-edge-l {
+  left: 0;
+  background: linear-gradient(90deg, rgba(4, 5, 10, 0.95), transparent);
+}
+.kc-edge-r {
+  right: 0;
+  background: linear-gradient(270deg, rgba(4, 5, 10, 0.95), transparent);
+}
+.kc-fx {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 6;
+  pointer-events: none;
+}
+/* Kamera silkinishi */
+.kc-stage.kc-shake {
+  animation: kc-shake 0.42s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+@keyframes kc-shake {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  10% {
+    transform: translate3d(-9px, 4px, 0);
+  }
+  20% {
+    transform: translate3d(8px, -5px, 0);
+  }
+  30% {
+    transform: translate3d(-7px, -3px, 0);
+  }
+  45% {
+    transform: translate3d(6px, 4px, 0);
+  }
+  60% {
+    transform: translate3d(-4px, 2px, 0);
+  }
+  80% {
+    transform: translate3d(2px, -1px, 0);
+  }
+}
+
+/* ---------------- 1-faza: sandiq ---------------- */
+.kc-chest-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+.kc-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(55% 65% at 50% 50%, transparent 0%, rgba(0, 0, 0, 0.55) 55%, rgba(0, 0, 0, 0.92) 100%);
+  animation: kc-fade-in calc(var(--p1) * 0.5) ease-out both;
+}
+.kc-chest-layer.is-burst .kc-vignette {
+  animation: kc-fade-out 0.26s ease-out both;
+}
+.kc-chest-wrap {
+  position: relative;
+  width: clamp(170px, 19vw, 300px);
+  will-change: transform, opacity;
+}
+.kc-chest-layer.is-charge .kc-chest-wrap {
+  animation: kc-rise var(--p1) cubic-bezier(0.2, 0.9, 0.3, 1) both, kc-micro 0.06s linear calc(var(--p1) * 0.4) infinite;
+}
+.kc-chest-layer.is-burst .kc-chest-wrap {
+  animation: kc-pop 0.26s ease-out both;
+}
+@keyframes kc-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes kc-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes kc-rise {
+  0% {
+    transform: translate3d(0, 34px, 0) scale(0.82);
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, -6px, 0) scale(1.06);
+    opacity: 1;
+  }
+}
+@keyframes kc-micro {
+  0% {
+    translate: -2px 1px;
+  }
+  50% {
+    translate: 2px -1px;
+  }
+  100% {
+    translate: -1px -1px;
+  }
+}
+@keyframes kc-pop {
+  0% {
+    transform: translate3d(0, -6px, 0) scale(1.06);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, -10px, 0) scale(1.3);
+    opacity: 0;
+  }
+}
+
+/* ---------------- Boshqaruv ---------------- */
+.kc-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 1vw, 18px);
+  flex-wrap: wrap;
+}
+.kc-open {
+  --a: #fde047;
+  --b: #e89a0b;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 0.8vw, 14px);
+  min-width: clamp(170px, 17vw, 300px);
+  padding: clamp(8px, 0.75vw, 13px) clamp(16px, 1.6vw, 28px);
+  border-radius: clamp(10px, 0.9vw, 16px);
+  border: 2px solid color-mix(in srgb, var(--a) 80%, #fff);
+  background: linear-gradient(180deg, var(--a), var(--b));
+  color: #1a1200;
+  cursor: pointer;
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--b) 40%, transparent), inset 0 2px 0 rgba(255, 255, 255, 0.5);
+  transition: transform 0.15s, filter 0.15s;
+  text-align: left;
+}
+.kc-open:hover:not(:disabled) {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+}
+.kc-open:active:not(:disabled) {
+  transform: scale(0.98);
+}
+.kc-open:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.kc-open.is-purple {
+  --a: #c084fc;
+  --b: #7e22ce;
+  color: #fff;
+}
+.kc-open.is-dark {
+  --a: #1e293b;
+  --b: #0f172a;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.55);
+}
+.kc-open.is-green {
+  --a: #4ade80;
+  --b: #16a34a;
+  color: #04210f;
+}
+.kc-open b {
+  display: block;
+  font-size: clamp(14px, 1.25vw, 22px);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+}
+.kc-open small {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: clamp(11px, 0.92vw, 15px);
+  font-weight: 700;
+  opacity: 0.9;
+}
+.kc-save {
+  position: absolute;
+  top: -10px;
+  right: -8px;
+  padding: 2px 8px;
+  border-radius: 7px;
+  background: #ff3b6b;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(255, 59, 107, 0.45);
+}
+.kc-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: clamp(11px, 0.88vw, 14px);
+  color: rgba(255, 255, 255, 0.72);
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.kc-switch {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  transition: background 0.18s;
+  flex-shrink: 0;
+}
+.kc-switch::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.18s;
+}
+.kc-switch.on {
+  background: #2ecc71;
+}
+.kc-switch.on::after {
+  transform: translateX(16px);
+}
+.kc-icon-btn {
+  display: grid;
+  place-items: center;
+  width: clamp(32px, 2.6vw, 42px);
+  height: clamp(32px, 2.6vw, 42px);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.kc-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* ---------------- Sandiq ichidagi buyumlar ---------------- */
+.kc-contents {
+  padding: clamp(8px, 0.8vw, 14px) clamp(10px, 1vw, 18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: clamp(12px, 1vw, 18px);
+  background: rgba(6, 8, 14, 0.62);
+}
+.kc-contents-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: clamp(6px, 0.6vw, 10px);
+}
+.kc-contents-head h3 {
+  margin: 0;
+  font-size: clamp(13px, 1.05vw, 18px);
+  font-weight: 800;
+}
+.kc-contents-head p {
+  margin: 0;
+  font-size: clamp(10.5px, 0.8vw, 13px);
+  color: rgba(255, 255, 255, 0.55);
+}
+.kc-link {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: clamp(10.5px, 0.82vw, 13px);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.kc-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.kc-groups {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(6px, 0.6vw, 12px);
+}
+.kc-group {
+  --c: var(--kc-r-common);
+  min-width: 0;
+  padding: clamp(6px, 0.5vw, 9px);
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--c) 40%, transparent);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--c) 12%, transparent), transparent);
+}
+.kc-group-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+  font-size: clamp(11px, 0.85vw, 14px);
+  font-weight: 700;
+  color: color-mix(in srgb, var(--c) 65%, #fff);
+}
+.kc-group-head em {
+  font-style: normal;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.55);
+}
+.kc-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c);
+  box-shadow: 0 0 8px var(--c);
+}
+.kc-thumbs {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.kc-thumbs::-webkit-scrollbar {
+  display: none;
+}
+.kc-thumb {
+  --c: var(--kc-r-common);
+  position: relative;
+  flex: 0 0 auto;
+  width: clamp(48px, 4.4vw, 76px);
+  aspect-ratio: 1;
+  border-radius: 9px;
+  border: 1px solid color-mix(in srgb, var(--c) 55%, transparent);
+  background: color-mix(in srgb, var(--c) 14%, #0b0e18);
+  overflow: hidden;
+}
+.kc-thumb-odds {
+  position: absolute;
+  left: 3px;
+  bottom: 2px;
+  font-size: 9.5px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 2px #000;
+}
+.kc-empty-group {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.35);
+  padding: 8px 0;
+}
+
+/* ---------------- Natija paneli ---------------- */
+.kc-win-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  display: flex;
+  flex-direction: column;
+  background: rgba(3, 4, 9, 0.84);
+  animation: kc-fade-in 0.25s ease-out both;
+  overflow: hidden;
+}
+.kc-rays {
+  position: absolute;
+  left: 25%;
+  top: 50%;
+  width: 150vmax;
+  height: 150vmax;
+  margin: -75vmax 0 0 -75vmax;
+  background: repeating-conic-gradient(from 0deg, color-mix(in srgb, var(--c) 28%, transparent) 0deg 7deg, transparent 7deg 20deg);
+  -webkit-mask-image: radial-gradient(circle, #000 0%, transparent 32%);
+  mask-image: radial-gradient(circle, #000 0%, transparent 32%);
+  animation: kc-spin 22s linear infinite;
+  will-change: transform;
+  pointer-events: none;
+}
+@keyframes kc-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.kc-win-body {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: clamp(8px, 1.2vw, 24px);
+  padding: clamp(10px, 1.2vw, 22px);
+}
+.kc-hero {
+  position: relative;
+  height: 100%;
+  min-height: 0;
+}
+.kc-hero-glow {
+  position: absolute;
+  inset: 10% 15% 0;
+  background: radial-gradient(50% 50% at 50% 60%, color-mix(in srgb, var(--c) 45%, transparent), transparent 70%);
+  pointer-events: none;
+}
+.kc-win-title {
+  margin: 0;
+  font-size: clamp(22px, 2.6vw, 46px);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  background: linear-gradient(180deg, #fff, var(--c));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: kc-title-in 0.5s cubic-bezier(0.2, 1.5, 0.4, 1) both;
+}
+@keyframes kc-title-in {
+  from {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+.kc-win-name {
+  margin: clamp(6px, 0.6vw, 10px) 0 0;
+  font-size: clamp(16px, 1.7vw, 30px);
+  font-weight: 800;
+  line-height: 1.1;
+}
+.kc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: clamp(6px, 0.7vw, 12px);
+}
+.kc-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: clamp(10.5px, 0.82vw, 13px);
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+}
+.kc-win-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(6px, 0.7vw, 12px);
+  margin-top: clamp(10px, 1.1vw, 20px);
+}
+.kc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: clamp(7px, 0.65vw, 11px) clamp(12px, 1.1vw, 20px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff;
+  font-size: clamp(12px, 0.95vw, 16px);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+}
+.kc-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.14);
+}
+.kc-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.kc-btn.is-main {
+  border-color: #86efac;
+  background: linear-gradient(180deg, #4ade80, #16a34a);
+  color: #04210f;
+  box-shadow: 0 8px 24px rgba(34, 197, 94, 0.35);
+}
+.kc-btn.is-gold {
+  border-color: #fde68a;
+  background: linear-gradient(180deg, #fde047, #e89a0b);
+  color: #1a1200;
+}
+.kc-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+}
+.kc-multi {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: clamp(6px, 0.6vw, 10px);
+  padding: 0 clamp(10px, 1.2vw, 22px) clamp(10px, 1vw, 18px);
+}
+.kc-mini {
+  --c: var(--kc-r-common);
+  position: relative;
+  width: clamp(64px, 6vw, 100px);
+  aspect-ratio: 0.9;
+  border-radius: 10px;
+  border: 2px solid color-mix(in srgb, var(--c) 65%, transparent);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--c) 8%, #0b0e18), color-mix(in srgb, var(--c) 28%, #0b0e18));
+  overflow: hidden;
+  cursor: pointer;
+  animation: kc-mini-in 0.4s cubic-bezier(0.2, 1.4, 0.4, 1) both;
+}
+.kc-mini.is-on {
+  box-shadow: 0 0 0 2px var(--c), 0 0 18px color-mix(in srgb, var(--c) 60%, transparent);
+}
+.kc-mini-flag {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  bottom: 3px;
+  font-size: 9.5px;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 2px #000;
+}
+@keyframes kc-mini-in {
+  from {
+    transform: translateY(14px) scale(0.85);
+    opacity: 0;
+  }
+}
+
+/* ---------------- Barcha buyumlar oynasi ---------------- */
+.kc-all-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(92px, 8vw, 130px), 1fr));
+  gap: 8px;
+}
+.kc-all-item {
+  --c: var(--kc-r-common);
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--c) 50%, transparent);
+  background: color-mix(in srgb, var(--c) 10%, #0b0e18);
+  overflow: hidden;
+}
+.kc-all-item .kc-thumb-media {
+  position: relative;
+  aspect-ratio: 1;
+}
+.kc-all-item p {
+  margin: 0;
+  padding: 4px 6px 6px;
+  font-size: 11px;
+  line-height: 1.2;
+}
+.kc-all-item p b {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.kc-all-item p span {
+  color: color-mix(in srgb, var(--c) 70%, #fff);
+  font-weight: 700;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kc-rays {
+    animation: none;
+  }
+}

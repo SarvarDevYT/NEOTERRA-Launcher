@@ -10,5 +10,10 @@ Thumbs.db
 mcmodhublauncherphotos/
 design/
 *.exe
+*.blockmap
+Desktop.ini
+latest.yml
+.agents/
 scratch/
 *.bak
+out.backup-v1.5.0/

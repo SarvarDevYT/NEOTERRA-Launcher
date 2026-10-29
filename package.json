@@ -1,6 +1,6 @@
 {
   "name": "neoterra-launcher",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "NeoTerra Minecraft Launcher",
   "main": "./out/main/index.js",
   "author": "NeoTerra",
@@ -40,6 +40,10 @@
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
       "shortcutName": "NeoTerra Launcher"
-    }
+    },
+    "asarUnpack": [
+      "resources/icon.ico",
+      "resources/icon.png"
+    ]
   }
 }
