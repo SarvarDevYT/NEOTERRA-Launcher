@@ -1713,30 +1713,129 @@ function toError(error) {
 function firstRow(data) {
   return (Array.isArray(data) ? data[0] : data) ?? null;
 }
+async function callPaymentApi(body) {
+  const fullUrl = "https://site.neoterra.uz/api/launcher/payment";
+  if (window.launcher?.apiRequest) {
+    const res = await window.launcher.apiRequest(fullUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body
+    });
+    if (!res.ok) {
+      const msg = res.data?.message || res.error || `HTTP ${res.status}`;
+      throw new Error(msg);
+    }
+    return res.data;
+  }
+  const r = await fetch(fullUrl, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body)
+  });
+  if (!r.ok) {
+    let errJson = null;
+    try { errJson = await r.json(); } catch {}
+    throw new Error(errJson?.message || `HTTP ${r.status}`);
+  }
+  return await r.json();
+}
 async function initHbcPayment(amountUzs) {
-  const { data, error } = await supabase.rpc("hbc_payment_init", { p_amount_uzs: amountUzs });
-  if (error) throw toError(error);
-  const row = firstRow(data);
-  if (!row?.transaction_code || !row.expires_at) throw new HbcPaymentError("unknown", "empty response");
-  return {
-    transactionCode: row.transaction_code,
-    amountUzs: Number(row.amount_uzs ?? amountUzs),
-    amountHbc: Number(row.amount_hbc ?? 0),
-    expiresAt: row.expires_at,
-    firstPurchase: row.first_purchase === true
-  };
+  let uid = "";
+  let username = "";
+  try {
+    const storeState = useAuthStore.getState();
+    uid = storeState.userId || storeState.profile?.raw_uid || storeState.profile?.id || "";
+    username = storeState.profile?.username || storeState.profile?.nickname || "";
+  } catch {}
+  if (!uid) {
+    try {
+      const raw = localStorage.getItem("neoterra_launcher_auth_v1");
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        uid = parsed.profile?.raw_uid || parsed.profile?.id || parsed.session?.user?.id || "";
+        username = parsed.profile?.username || "";
+      }
+    } catch {}
+  }
+  const tokenQty = Math.floor(amountUzs / 1000);
+  try {
+    const data = await callPaymentApi({
+      action: "create",
+      uid,
+      username,
+      amountUzs,
+      tokenQty
+    });
+    if (!data || !data.success || !data.payUrl) {
+      throw new HbcPaymentError("unknown", data?.message || "To'lov havolasini olib bo'lmadi");
+    }
+    try {
+      if (window.launcher?.openExternal) {
+        void window.launcher.openExternal(data.payUrl);
+      } else {
+        window.open(data.payUrl, "_blank");
+      }
+    } catch {}
+    const expiresAt = new Date(Date.now() + 15 * 60 * 1000).toISOString();
+    return {
+      transactionCode: data.orderId || `inpay_${Date.now()}`,
+      amountUzs: Number(data.amountUzs ?? amountUzs),
+      amountHbc: Number(data.amountNtc ?? tokenQty),
+      expiresAt,
+      payUrl: data.payUrl,
+      firstPurchase: false
+    };
+  } catch (err) {
+    throw new HbcPaymentError("unknown", err instanceof Error ? err.message : String(err));
+  }
 }
 async function checkHbcPayment(code) {
-  const { data, error } = await supabase.rpc("hbc_payment_status", { p_code: code });
-  if (error) throw toError(error);
-  const row = firstRow(data);
-  if (!row) return null;
-  const status = row.status === "success" || row.status === "rejected" ? row.status : "pending";
-  return {
-    status,
-    creditedHbc: row.credited_hbc == null ? null : Number(row.credited_hbc),
-    receiptSent: row.receipt_sent === true
-  };
+  let uid = "";
+  try {
+    const storeState = useAuthStore.getState();
+    uid = storeState.userId || storeState.profile?.raw_uid || storeState.profile?.id || "";
+  } catch {}
+  if (!uid) {
+    try {
+      const raw = localStorage.getItem("neoterra_launcher_auth_v1");
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        uid = parsed.profile?.raw_uid || parsed.profile?.id || parsed.session?.user?.id || "";
+      }
+    } catch {}
+  }
+  try {
+    const data = await callPaymentApi({
+      action: "check",
+      uid,
+      orderId: code
+    });
+    if (!data || !data.success) return null;
+    const isSuccess = data.status === "success";
+    if (isSuccess && data.currentBalanceNtc != null) {
+      try {
+        const prof = useAuthStore.getState().profile;
+        if (prof) {
+          useAuthStore.setState({ profile: { ...prof, hbc: data.currentBalanceNtc } });
+        }
+        const raw = localStorage.getItem("neoterra_launcher_auth_v1");
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (parsed.profile) {
+            parsed.profile.hbc = data.currentBalanceNtc;
+            localStorage.setItem("neoterra_launcher_auth_v1", JSON.stringify(parsed));
+          }
+        }
+      } catch {}
+    }
+    return {
+      status: isSuccess ? "success" : data.status === "rejected" ? "rejected" : "pending",
+      creditedHbc: data.creditedHbc ?? null,
+      receiptSent: isSuccess
+    };
+  } catch {
+    return null;
+  }
 }
 const BOT_USERNAME = "neoterrauz_bot";
 const DEFAULT_RECEIVER = "9860 1866 1405 3814, NeoTerra";
@@ -1930,7 +2029,7 @@ function PaymentModal({ isOpen, onClose, packageData, onSuccess, receiver = DEFA
     };
   }, [isOpen, onClose]);
   const code = tx?.transactionCode ?? "";
-  const qrUrl = reactExports.useMemo(() => `https://t.me/${BOT_USERNAME}?start=${code}`, [code]);
+  const qrUrl = reactExports.useMemo(() => tx?.payUrl || `https://t.me/${BOT_USERNAME}?start=${code}`, [code, tx]);
   if (!isOpen) return null;
   const botHandle = `@${BOT_USERNAME}`;
   const telegramUrl = `tg://resolve?domain=${BOT_USERNAME}&start=${code}`;
@@ -1943,10 +2042,14 @@ function PaymentModal({ isOpen, onClose, packageData, onSuccess, receiver = DEFA
       e.preventDefault();
       return;
     }
+    const targetUrl = tx?.payUrl || telegramUrl;
     const bridge = window.launcher?.openExternal;
-    if (!bridge) return;
-    e.preventDefault();
-    void bridge(telegramUrl);
+    if (bridge) {
+      e.preventDefault();
+      void bridge(targetUrl);
+    } else {
+      window.open(targetUrl, "_blank");
+    }
   }
   async function copy(kind, text) {
     try {
@@ -2000,52 +2103,43 @@ function PaymentModal({ isOpen, onClose, packageData, onSuccess, receiver = DEFA
             {
               className: `${CARD} items-center justify-center border-[#D4FF00] bg-[#D4FF00]/[.05] pt-7 text-center shadow-[0_0_28px_rgba(212,255,0,.16)]`,
               children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-[#D4FF00] px-3 py-[3px] text-[11px] font-extrabold uppercase tracking-wide text-black", children: t("premium.pay.pcBadge") }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-[#10B981] px-3 py-[3px] text-[11px] font-extrabold uppercase tracking-wide text-black shadow-md", children: "inPAY (Tezkor)" }),
                 /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                  "a",
+                  "button",
                   {
-                    href: telegramUrl,
+                    type: "button",
                     onClick: openTelegram,
                     "aria-disabled": timedOut,
-                    className: `flex w-full items-center justify-center gap-2.5 rounded-xl bg-gradient-to-b from-[#2AABEE] to-[#1E88C7] px-4 py-4 text-[15px] font-bold text-white shadow-[0_10px_30px_rgba(34,158,217,.4),inset_0_1px_0_rgba(255,255,255,.3)] transition hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200 active:scale-[.985] ${timedOut ? "pointer-events-none opacity-40" : ""}`,
+                    className: `flex w-full items-center justify-center gap-2.5 rounded-xl bg-gradient-to-b from-[#10B981] to-[#059669] px-4 py-4 text-[15px] font-bold text-white shadow-[0_10px_30px_rgba(16,185,129,.4),inset_0_1px_0_rgba(255,255,255,.3)] transition hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-200 active:scale-[.985] ${timedOut ? "pointer-events-none opacity-40" : ""}`,
                     children: [
                       /* @__PURE__ */ jsxRuntimeExports.jsx(Monitor, { className: "h-5 w-5 shrink-0" }),
-                      t("premium.pay.openTelegram")
+                      "inPAY orqali to'lash"
                     ]
                   }
                 ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "m-0 text-[13px] leading-snug text-white/70", children: t("premium.pay.pcHint") })
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "m-0 text-[13px] leading-snug text-white/70", children: "Click, Payme, Uzum yoki karta orqali to'lang. To'lov amalga oshishi bilan NTC avtomatik tushadi." })
               ]
             }
           ),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: CARD, children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "m-0 text-[13px] font-semibold text-white/85", children: t("premium.pay.manualTitle") }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "m-0 text-[13px] font-semibold text-white/85", children: "Buyurtma ma'lumotlari" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "m-0 text-xs text-white/55", children: t("premium.pay.step1") }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                CopyField,
-                {
-                  value: botHandle,
-                  copied: copied === "bot",
-                  copyLabel: t("premium.pay.copy"),
-                  copiedLabel: t("premium.pay.copied"),
-                  onCopy: () => void copy("bot", botHandle)
-                }
-              )
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "m-0 text-xs text-white/55", children: t("premium.pay.step2") }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "m-0 text-xs text-white/55", children: "To'lov ID raqami:" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 CopyField,
                 {
                   big: true,
                   value: code,
                   copied: copied === "code",
-                  copyLabel: t("premium.pay.copy"),
-                  copiedLabel: t("premium.pay.copied"),
+                  copyLabel: "Nusxa olish",
+                  copiedLabel: "Nusxalandi",
                   onCopy: () => void copy("code", code)
                 }
               )
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-2 rounded-lg bg-white/[.04] p-3 text-xs leading-relaxed text-white/60", children: [
+              "Holat: ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-semibold text-[#10B981]", children: "Avtomatik tekshirilmoqda..." })
             ] })
           ] })
         ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex min-h-[260px] flex-col items-center justify-center gap-3 p-6 text-center", children: [

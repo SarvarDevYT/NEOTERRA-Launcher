@@ -6228,10 +6228,16 @@ function writeCustomSkinLoaderConfig(dir) {
 
       const neoterraStorage = {
         name: "NeoTerraStorage",
+        type: "CustomSkinAPI",
+        root: `${SUPABASE_URL_FOR_SKINS}/storage/v1/object/public/neoterra-skins/`
+      };
+
+      const neoterraDirect = {
+        name: "NeoTerraDirect",
         type: "Legacy",
         checkPNG: true,
-        skin: `${SUPABASE_URL_FOR_SKINS}/storage/v1/object/public/neoterra-skins/skins/{USERNAME}.png`,
-        cape: `${SUPABASE_URL_FOR_SKINS}/storage/v1/object/public/neoterra-skins/capes/{USERNAME}.png`
+        skin: `${SUPABASE_URL_FOR_SKINS}/storage/v1/object/public/neoterra-skins/textures/{USERNAME}.png`,
+        cape: `${SUPABASE_URL_FOR_SKINS}/storage/v1/object/public/neoterra-skins/textures/{USERNAME}_cape.png`
       };
 
       const mojang = {
@@ -6241,7 +6247,7 @@ function writeCustomSkinLoaderConfig(dir) {
 
       const config = {
         version: "15.0.1",
-        loadlist: [gameProfile, local, neoterraSite, neoterraStorage, mojang],
+        loadlist: [gameProfile, local, neoterraStorage, neoterraSite, neoterraDirect, mojang],
         forceLoadAllTextures: false,
         cacheExpiry: 180
       };

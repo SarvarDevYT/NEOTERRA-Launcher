@@ -42514,7 +42514,7 @@ const caseAudio = {
   }
 };
 const TABLE = "player_cosmetics";
-function localDeductNtc(price) {
+async function localDeductNtc(price, description = "Do'kon xaridi", itemKey = "item") {
   try {
     let curBal = 0;
     try {
@@ -42523,18 +42523,49 @@ function localDeductNtc(price) {
     } catch {}
     const raw = localStorage.getItem("neoterra_launcher_auth_v1");
     let auth = null;
+    let uid = null;
     if (raw) {
       try {
         auth = JSON.parse(raw);
         if (!curBal && auth.profile?.hbc != null) curBal = Number(auth.profile.hbc);
+        uid = auth.profile?.raw_uid || auth.profile?.id || auth.session?.user?.id;
       } catch {}
     }
-    if (curBal < price) return { ok: false, error: "NTC yetarli emas" };
-    const newBal = Math.max(0, curBal - price);
+    if (!uid) {
+      try {
+        uid = useAuthStore.getState().userId;
+      } catch {}
+    }
+    if (curBal < price) return { ok: false, error: `NTC yetarli emas! Sizda ${curBal} NTC bor, talab qilinadi: ${price} NTC.` };
+    let newBal = Math.max(0, curBal - price);
+    if (uid) {
+      try {
+        const payRes = await siteApi("/api/launcher/payment", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            action: "deduct",
+            uid,
+            amountNtc: price,
+            description,
+            itemKey
+          })
+        });
+        if (payRes) {
+          if (payRes.success === false) {
+            return { ok: false, error: payRes.message || "Balansdan yechib bo'lmadi" };
+          }
+          if (payRes.newBalanceNtc != null) {
+            newBal = Number(payRes.newBalanceNtc);
+          }
+        }
+      } catch (e) {
+        console.warn("[Payment] siteApi deduct error:", e);
+      }
+    }
     if (auth && auth.profile) {
       auth.profile.hbc = newBal;
       localStorage.setItem("neoterra_launcher_auth_v1", JSON.stringify(auth));
-      const uid = auth.profile.id || auth.session?.user?.id || auth.profile.raw_uid;
       if (uid) {
         void supabase.from("profiles").update({ hbc: newBal }).eq("id", uid).then(() => {}).catch(() => {});
       }
@@ -42675,7 +42706,7 @@ async function purchaseLauncherPro() {
       return { ok: false, error: error.message };
     }
   } catch {}
-  const res = localDeductNtc(price);
+  const res = await localDeductNtc(price, "NeoTerra PRO (30 kun)", "pro:launcher-30d");
   if (!res.ok) return res;
   const proUntil = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString();
   try {
@@ -42719,7 +42750,7 @@ async function purchaseCosmetic(itemKey2, titleOverride) {
       return { ok: false, error: error.message };
     }
   } catch {}
-  const res = localDeductNtc(price);
+  const res = await localDeductNtc(price, "NeoTerra PRO (30 kun)", "pro:launcher-30d");
   if (!res.ok) return res;
   try {
     const userId = useAuthStore.getState().userId || "user";
@@ -42780,7 +42811,7 @@ async function purchaseCosmeticUpsell(itemKey2) {
     full = Number(cat?.priceHbc ?? 50);
   }
   const price = upsellPrice(full);
-  const res = localDeductNtc(price);
+  const res = await localDeductNtc(price, "Maxsus taklif", "upsell");
   if (!res.ok) return res;
   try {
     const userId = useAuthStore.getState().userId || "user";
@@ -42881,7 +42912,7 @@ async function purchaseBundle(bundleId) {
       return { ok: false, error: error.message };
     }
   } catch {}
-  const res = localDeductNtc(150);
+  const res = await localDeductNtc(150, "To'plam xaridi", String(bundleId));
   if (!res.ok) return res;
   return { ok: true, newBalance: res.newBalance, itemKeys: [] };
 }
@@ -42896,7 +42927,7 @@ async function purchaseStarterPack() {
       return { ok: false, error: error.message };
     }
   } catch {}
-  const res = localDeductNtc(50);
+  const res = await localDeductNtc(50, "Boshlang'ich to'plam", "starter_pack");
   if (!res.ok) return res;
   return { ok: true, newBalance: res.newBalance, itemKeys: [], compensation: 0, cashback: 0 };
 }
@@ -46551,7 +46582,7 @@ async function purchaseBackground(dbId) {
     }
   } catch {}
   const price = 50;
-  const res = localDeductNtc(price);
+  const res = await localDeductNtc(price, "Fon xaridi", String(dbId));
   if (!res.ok) return res;
   try {
     const userId = useAuthStore.getState().userId || "user";
@@ -48975,7 +49006,7 @@ async function purchaseModel(modelId) {
     }
   } catch {}
   const price = 50;
-  const res = localDeductNtc(price);
+  const res = await localDeductNtc(price, "Fon xaridi", String(dbId));
   if (!res.ok) return res;
   try {
     const userId = useAuthStore.getState().userId || "user";
