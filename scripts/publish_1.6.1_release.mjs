@@ -119,15 +119,28 @@ function uploadWithCurl(releaseId, fileName, filePath) {
   });
 }
 
+async function getAssets(releaseId) {
+  const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/releases/${releaseId}/assets`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "User-Agent": "NeoTerra-Release",
+      Accept: "application/vnd.github.v3+json"
+    }
+  });
+  if (res.ok) {
+    return await res.json();
+  }
+  return [];
+}
+
 async function main() {
   const release = await createOrGetRelease();
-  const existingAssets = release.assets || [];
 
   const files = [
     { name: "latest.yml", path: path.resolve("dist/latest.yml") },
     { name: "NeoTerraLauncher-Setup.exe", path: path.resolve("dist/NeoTerraLauncher-Setup.exe") },
-    { name: "NeoTerra Launcher Setup 1.6.1.exe", path: path.resolve("dist/NeoTerra Launcher Setup 1.6.1.exe") },
-    { name: "NeoTerra Launcher Setup 1.6.1.exe.blockmap", path: path.resolve("dist/NeoTerra Launcher Setup 1.6.1.exe.blockmap") }
+    { name: "NeoTerra.Launcher.Setup.1.6.1.exe", path: path.resolve("dist/NeoTerra Launcher Setup 1.6.1.exe") },
+    { name: "NeoTerra.Launcher.Setup.1.6.1.exe.blockmap", path: path.resolve("dist/NeoTerra Launcher Setup 1.6.1.exe.blockmap") }
   ];
 
   for (const item of files) {
@@ -135,10 +148,17 @@ async function main() {
       console.warn(`File not found: ${item.path}`);
       continue;
     }
-    const existing = existingAssets.find(a => a.name === item.name);
+    const currentAssets = await getAssets(release.id);
+    const itemSize = fs.statSync(item.path).size;
+    const existing = currentAssets.find(a => a.name === item.name || a.name === item.name.replace(/\s+/g, '.'));
     if (existing) {
-      console.log(`Deleting existing ${item.name} (ID: ${existing.id})...`);
+      if (existing.size === itemSize && (item.name !== 'latest.yml')) {
+        console.log(`Skipping ${item.name} — already uploaded with exact size (${itemSize} bytes)`);
+        continue;
+      }
+      console.log(`Deleting existing ${existing.name} (ID: ${existing.id}, size: ${existing.size} vs ${itemSize})...`);
       await deleteExistingAsset(existing.id);
+      await new Promise(r => setTimeout(r, 1000));
     }
     await uploadWithCurl(release.id, item.name, item.path);
   }
