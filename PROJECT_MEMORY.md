@@ -190,17 +190,29 @@
 
 ## 🚀 8. Versiya 1.6.1 Ommaviy Relizi (Fixed Bugs)
 - **Versiya**: `v1.6.1`
-- **Sana**: 29-Oktyabr, 2026-yil
+- **Sana**: 30-Oktyabr, 2026-yil
 - **GitHub Repository**: `SarvarDevYT/NEOTERRA-Launcher` (`origin main` va `v1.6.1` relizi)
 - **Production Paket**: `dist/NeoTerra Launcher Setup 1.6.1.exe` (238 MB) va `dist/latest.yml`
 - **Kiritilgan tuzatishlar (Fixed Bugs)**:
   1. **inPAY to'lov tizimi integratsiyasi**: Launcher orqali NTC hisobini to'ldirish to'liq inPAY (Click, Payme, Uzum, Uzcard/Humo) orqali avtomatlashtirildi.
   2. **Do'kon va Hisob balansi sinxronizatsiyasi**: Do'kondan xaridlar (PRO, kosmetika, to'plamlar) amalga oshirilganda, balans veb-sayt va launcherda real vaqtda kamayadi.
   3. **Do'stlik tizimi**: "friends_overview" xatosi bartaraf etildi, onlayn do'stlar va so'rovlar tizimi to'liq barqarorlashtirildi.
-  4. **3D Skinlar va Plashlar**: CustomSkinLoader sozlamalari va NeoTerra skin API'si o'yin ichida to'liq ko'rinadigan qilib sozlandi.
-  5. **Avto-yangilanish tizimi**: 1.6.0 yuklab olish 404 xatosi tuzatildi, 1.6.1 fayllari rasmiy server va GitHub'ga to'liq joylashtirildi.
+  4. **Lobbyda 3D Skinlar va Model (Classic/Slim)**:
+     - `SKIN_HOSTS` ro'yxatiga `site.neoterra.uz`, `neoterra.uz`, `storage.googleapis.com` qo'shildi.
+     - Minotar o'rniga zaxira skinlar to'g'ridan-to'g'ri `https://site.neoterra.uz/api/launcher/skins/textures/{nick}.png` dan yuklanadigan qilindi.
+     - Lobbyda boshqa o'yinchilarning modeli (classic/slim) va 3D personaji to'liq sinxronlandi.
+  5. **O'yin ichida boshqa o'yinchilarning 3D kosmetikasi (Wings, Accessories, Pets)**:
+     - Saytda (`site.neoterra.uz`) `/rest/v1/public_profiles` va `/rest/v1/player_cosmetics` API yo'llari yaratildi.
+     - Launcher o'yinni ishga tushirishda `writeCosmeticsConfig` orqali `supabaseUrl`ni `https://site.neoterra.uz`ga yo'naltirdi va kiyilgan narsalarni sinxronladi.
+     - Endi serverda yoki LAN'da o'ynaganda har ikki o'yinchi bir-birining 3D qanotlari, shlyapalari va petlarini to'liq ko'radi.
+  6. **Launcherdagi RAM sarfi va Xotira sizishi (Memory Leak)**:
+     - Three.js va SkinViewer render tsikllari cheksiz FPS'dan 30 FPS ga cheklandi (`maxFps: 30`).
+     - WebGL `pixelRatio` xotira sarfini tejash uchun 1.25 ga moslandi.
+     - Launcher orqa fonga o'tganda (`window blur`) video va 3D render avtomatik to'xtatiladi (`pause`).
+     - Electron Chromium jarayoniga `--max-old-space-size=256` va GPU buffer cheklovlari o'rnatildi.
+  7. **Avto-yangilanish tizimi**: 1.6.0 yuklab olish 404 xatosi tuzatildi, 1.6.1 fayllari rasmiy server va GitHub'ga to'liq joylashtirildi.
 
 ---
 
-*Hujjat yangilangan sana: 29-Oktyabr, 2026-yil. NeoTerra Dev Team.*
+*Hujjat yangilangan sana: 30-Oktyabr, 2026-yil. NeoTerra Dev Team.*
 
