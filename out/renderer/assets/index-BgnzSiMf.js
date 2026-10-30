@@ -30977,7 +30977,7 @@ const CosmeticStage = reactExports.forwardRef(function CosmeticStage2({
       height: wrapRef.current.clientHeight,
       zoom: baseZoomRef.current,
       fov: 45,
-      pixelRatio: Math.min(window.devicePixelRatio || 1, 2),
+      pixelRatio: Math.min(window.devicePixelRatio || 1, 1.25),
       animation: new IdleAnimation()
     });
     viewer.controls.enableRotate = true;
@@ -30989,8 +30989,8 @@ const CosmeticStage = reactExports.forwardRef(function CosmeticStage2({
     const fullRender = viewer.render.bind(viewer);
     let lastRenderAt = 0;
     viewer.render = () => {
-      const cap = maxFpsRef.current;
-      if (cap > 0 && !viewer.renderPaused) {
+      const cap = maxFpsRef.current || 30;
+      if (!viewer.renderPaused) {
         const now2 = performance.now();
         if (now2 - lastRenderAt < 1e3 / cap - 2) return;
         lastRenderAt = now2;
@@ -37011,7 +37011,7 @@ const SUPABASE_HOST = (() => {
     return "";
   }
 })();
-const SKIN_HOSTS = new Set(["cdn.mcmodhub.org", "minotar.net", "mcmodhubmedia.b-cdn.net", SUPABASE_HOST].filter(Boolean));
+const SKIN_HOSTS = new Set(["cdn.mcmodhub.org", "minotar.net", "mcmodhubmedia.b-cdn.net", "site.neoterra.uz", "neoterra.uz", "firebasestorage.googleapis.com", "storage.googleapis.com", SUPABASE_HOST].filter(Boolean));
 function isRecord(v) {
   return typeof v === "object" && v !== null && !Array.isArray(v);
 }
@@ -37028,7 +37028,9 @@ function sanitizeSkinUrl(v) {
   if (typeof v !== "string" || v.length > 512) return null;
   try {
     const url2 = new URL(v);
-    return url2.protocol === "https:" && SKIN_HOSTS.has(url2.host) ? url2.toString() : null;
+    const validProto = url2.protocol === "https:" || url2.protocol === "http:";
+    const validHost = SKIN_HOSTS.has(url2.host) || url2.host.endsWith("neoterra.uz") || url2.host.endsWith("supabase.co");
+    return validProto && validHost ? url2.toString() : null;
   } catch {
     return null;
   }
@@ -37049,7 +37051,8 @@ function parseIdentity(v) {
     userId: v.userId,
     username,
     avatarUrl: sanitizeAvatarUrl(v.avatarUrl),
-    skinUrl: sanitizeSkinUrl(v.skinUrl)
+    skinUrl: sanitizeSkinUrl(v.skinUrl),
+    skinModel: v.skinModel === "slim" ? "slim" : "default"
   };
 }
 const LOBBY_BG_MAX = 160;
@@ -39458,7 +39461,14 @@ function saveVoicePrefs(micMuted, deafened) {
   }
 }
 function identityOf(p) {
-  return { userId: p.userId, username: p.username, avatarUrl: p.avatarUrl, skinUrl: p.skinUrl };
+  return {
+    userId: p.userId,
+    username: p.username,
+    avatarUrl: p.avatarUrl,
+    skinUrl: p.skinUrl,
+    skinModel: p.skinModel === "slim" ? "slim" : "default",
+    cosmetics: p.cosmetics || {}
+  };
 }
 async function fetchManifest(target) {
   if (!target) throw new Error("O'yin versiyasi tanlanmagan");
@@ -39559,10 +39569,11 @@ function buildMembers(s) {
       username: live?.username ?? m.username,
       avatarUrl: live?.avatarUrl ?? m.avatarUrl,
       skinUrl: live?.skinUrl ?? m.skinUrl,
+      skinModel: live?.skinModel ?? m.skinModel ?? "default",
       activity: live?.activity ?? "online",
       micMuted: live?.micMuted ?? true,
       deafened: live?.deafened ?? false,
-      cosmetics: live?.cosmetics ?? {},
+      cosmetics: live?.cosmetics ?? m.cosmetics ?? {},
       lobbyBg: live?.lobbyBg ?? null,
       arena: live?.arena ?? null,
       isPro: live?.isPro ?? false,
@@ -41266,7 +41277,7 @@ function helmUrl(username, avatarUrl) {
 }
 function skinTextureUrl(username, skinUrl) {
   if (skinUrl) return skinUrl;
-  return NICK_RE$1.test(username) ? `https://minotar.net/skin/${username}` : "skins/steve.png";
+  return NICK_RE$1.test(username) ? `https://site.neoterra.uz/api/launcher/skins/textures/${username.toLowerCase()}.png` : "skins/steve.png";
 }
 const FALLBACK$1 = "skins/steve-helm.png";
 function LobbyAvatar({ username, avatarUrl, size, activity, status }) {
@@ -42600,6 +42611,14 @@ async function savePlayerCosmetics(userId, slots) {
   const clean = sanitizeSlots(slots);
   try {
     localStorage.setItem("neoterra_player_cosmetics_" + userId, JSON.stringify(clean));
+  } catch {}
+  try {
+    const authProf = useAuthStore.getState()?.displayName || "";
+    fetch("https://site.neoterra.uz/api/launcher/cosmetics/sync", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ userId, nickname: authProf, slots: clean })
+    }).catch(() => {});
   } catch {}
   try {
     await supabase.from(TABLE).upsert({ user_id: userId, slots: clean, updated_at: (/* @__PURE__ */ new Date()).toISOString() }, { onConflict: "user_id" });
@@ -45725,11 +45744,21 @@ function SkinViewer3D({ skinUrl, paused: pausedProp = false, model }) {
       // qo'shimcha "*2" bilan sun'iy ravishda 2-4 barobar ko'proq piksel chizdirish shart emas
       // edi (kuchsiz GPU'da doimiy ishlab turadigan bu ko'rgazma uchun eng katta yuk manbai
       // edi) - endi haqiqiy zichlik, 2gacha cheklab olinadi (juda yuqori DPI ekranlar uchun).
-      pixelRatio: Math.min(window.devicePixelRatio || 1, 2),
+      pixelRatio: Math.min(window.devicePixelRatio || 1, 1.25),
       animation: new IdleAnimation()
     });
     viewer.controls.enableZoom = false;
     viewer.controls.enablePan = false;
+    const fullRender = viewer.render.bind(viewer);
+    let lastRenderAt = 0;
+    viewer.render = () => {
+      if (!viewer.renderPaused) {
+        const now2 = performance.now();
+        if (now2 - lastRenderAt < 31) return;
+        lastRenderAt = now2;
+      }
+      fullRender();
+    };
     viewerRef.current = viewer;
     const resize = () => {
       if (!wrapRef.current) return;
@@ -46042,7 +46071,7 @@ const PartyStage = reactExports.memo(function PartyStage2({ selfSkinUrl, paused 
         density,
         paused,
         skinUrl: m.isSelf ? selfSkinUrl : skinTextureUrl(m.username, m.skinUrl),
-        skinModel: m.isSelf ? selfModel : void 0,
+        skinModel: m.isSelf ? (selfModel === "slim" ? "slim" : "default") : (m.skinModel === "slim" ? "slim" : "default"),
         pro: proIds.has(m.userId),
         fxKey: `${partyId ?? ""}:${m.userId}`,
         amLeader
@@ -46317,6 +46346,7 @@ function PartySlot({
               skinUrl,
               skinModel: skinModel === "slim" ? "slim" : "default",
               paused,
+              maxFps: 30,
               plain: /* @__PURE__ */ jsxRuntimeExports.jsx(SkinViewer3D, { skinUrl, paused, model: skinModel })
             }
           )
@@ -46855,7 +46885,7 @@ function useBackgroundsSync() {
     void useOwnedBackgroundsStore.getState().load();
   }, [userId]);
 }
-function useLobbyConnection({ userId, username, avatarUrl, skinUrl, inGame }) {
+function useLobbyConnection({ userId, username, avatarUrl, skinUrl, skinModel, inGame }) {
   const { t } = useLanguage();
   const { showToast } = useToast();
   const activity = inGame ? "in-game" : "online";
@@ -46865,12 +46895,12 @@ function useLobbyConnection({ userId, username, avatarUrl, skinUrl, inGame }) {
       if (store.self) store.disconnect();
       return;
     }
-    store.connect({ userId, username, avatarUrl, skinUrl }, activity);
+    store.connect({ userId, username, avatarUrl, skinUrl, skinModel: skinModel || "default" }, activity);
   }, [userId, username]);
   reactExports.useEffect(() => {
     if (!userId) return;
-    useLobbyStore.getState().updateSelf({ avatarUrl, skinUrl, activity });
-  }, [userId, avatarUrl, skinUrl, activity]);
+    useLobbyStore.getState().updateSelf({ avatarUrl, skinUrl, skinModel: skinModel || "default", activity });
+  }, [userId, avatarUrl, skinUrl, skinModel, activity]);
   const equipped = useCosmeticsStore((s) => s.equipped);
   reactExports.useEffect(() => {
     if (!userId) return;
@@ -54822,9 +54852,9 @@ function LauncherScreen() {
     if (!rawNick || !userId || !activeSkinKnown) return;
     void queueSkinSync(rawNick, activeSkinId, customSkinUrl, activeSkinModel);
   }, [rawNick, userId, activeSkinKnown, activeSkinId, customSkinUrl, activeSkinModel, queueSkinSync]);
-  const nickSkinUrl = rawNick ? `https://minotar.net/skin/${rawNick}` : null;
+  const nickSkinUrl = rawNick ? `https://site.neoterra.uz/api/launcher/skins/textures/${rawNick.toLowerCase()}.png` : null;
   const homeSkinUrl = customSkinUrl || nickSkinUrl || "skins/steve.png";
-  const homeSkinModel = customSkinUrl && activeSkin?.forceModel ? activeSkinModel : void 0;
+  const homeSkinModel = activeSkinModel === "slim" ? "slim" : "default";
   reactExports.useEffect(() => {
     useMySkinModelStore.getState().setModel(homeSkinModel);
   }, [homeSkinModel]);
@@ -54833,6 +54863,7 @@ function LauncherScreen() {
     username: profile2?.username || profile2?.minecraft_nick || null,
     avatarUrl: profile2?.avatar_url ?? null,
     skinUrl: customSkinUrl || nickSkinUrl,
+    skinModel: homeSkinModel,
     inGame: running
   });
   const lobbyHasInvites = useLobbyStore((s) => s.pendingInvites.length > 0);
@@ -54956,10 +54987,25 @@ function LauncherScreen() {
   reactExports.useEffect(() => {
     const v = bgVideoRef.current;
     if (!v) return;
-    if (isHomeVisible && !running && !documentHidden) void v.play().catch(() => {
+    const isFocused = typeof document !== "undefined" ? document.hasFocus() : true;
+    if (isHomeVisible && !running && !documentHidden && isFocused) void v.play().catch(() => {
     });
     else v.pause();
   }, [isHomeVisible, running, documentHidden, lobbyBg.id]);
+  reactExports.useEffect(() => {
+    const onBlur = () => {
+      bgVideoRef.current?.pause();
+    };
+    const onFocus = () => {
+      if (isHomeVisible && !running && !documentHidden) bgVideoRef.current?.play().catch(() => {});
+    };
+    window.addEventListener("blur", onBlur);
+    window.addEventListener("focus", onFocus);
+    return () => {
+      window.removeEventListener("blur", onBlur);
+      window.removeEventListener("focus", onFocus);
+    };
+  }, [isHomeVisible, running, documentHidden]);
   reactExports.useEffect(() => {
     const off = window.launcher.onEvent((e) => {
       switch (e.type) {

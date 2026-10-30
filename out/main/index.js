@@ -3384,11 +3384,11 @@ async function installSystemMod(instanceRoot, build) {
 function writeCosmeticsConfig(instanceRoot, nick, cosmetics, gameToken) {
   fs.mkdirSync(instanceRoot, { recursive: true });
   const data = {
-    supabaseUrl: cosmetics?.supabaseUrl ?? null,
-    supabaseAnonKey: cosmetics?.supabaseAnonKey ?? null,
+    supabaseUrl: "https://site.neoterra.uz",
+    supabaseAnonKey: cosmetics?.supabaseAnonKey || "neoterra-client-key",
     // Model fayllari: mod regexta faqat mcmodhub.uz ga ruxsat beradi
     apiBase: "https://mcmodhub.uz",
-    gameToken,
+    gameToken: gameToken || "neoterra-game-token",
     // Pet sinxroni uchun lokal ko'prik (faqat 127.0.0.1, har ishga tushishda yangi token).
     petBridge: petBridgeInfo(),
     self: {
@@ -3402,6 +3402,15 @@ function writeCosmeticsConfig(instanceRoot, nick, cosmetics, gameToken) {
   const jsonStr = JSON.stringify(data, null, 2);
   fs.writeFileSync(path.join(instanceRoot, "neoterra_cosmetics.json"), jsonStr, "utf-8");
   fs.writeFileSync(path.join(instanceRoot, "mcmodhub_cosmetics.json"), jsonStr, "utf-8");
+  try {
+    if (nick && cosmetics?.slots && typeof cosmetics.slots === "object") {
+      fetch("https://site.neoterra.uz/api/launcher/cosmetics/sync", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userId: cosmetics?.userId || null, nickname: nick, slots: cosmetics.slots })
+      }).catch(() => {});
+    }
+  } catch {}
 }
 async function refreshCatalogSnapshot(instanceRoot) {
   for (let attempt = 0; attempt < 3; attempt++) {
@@ -14032,6 +14041,8 @@ function registerFocus(getRendererUrl) {
 }
 electron.app.commandLine.appendSwitch("autoplay-policy", "no-user-gesture-required");
 electron.app.commandLine.appendSwitch("disable-features", "WebRtcHideLocalIpsWithMdns");
+electron.app.commandLine.appendSwitch("js-flags", "--max-old-space-size=256");
+electron.app.commandLine.appendSwitch("disable-gpu-memory-buffer-video-frames");
 let mainWindow = null;
 let tray = null;
 let lobbyKeepAlive = false;
